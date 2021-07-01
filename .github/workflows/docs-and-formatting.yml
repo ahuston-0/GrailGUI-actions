@@ -19,6 +19,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          ref: docs 
+
+      - uses: actions/checkout@v2
       
       - name: Generate Documentation
         uses: mattnotmitt/doxygen-action@v1.3.1
