@@ -26,17 +26,17 @@
 
 using namespace std;
 
-class Request; // forward reference, all code is included in .cc
+class Request;  // forward reference, all code is included in .cc
 class Socket {
  protected:
   const char* address;
   uint16_t port;
-  #ifdef __linux__
-       char sockaddress[16]; // placeholder big enough to hold sockaddr_in structure
-  #elif _WIN32
-      static WSADATA wsaData;
-      struct addrinfo* result;
-  #endif
+#ifdef __linux__
+  char sockaddress[16];  // placeholder big enough to hold sockaddr_in structure
+#elif _WIN32
+  static WSADATA wsaData;
+  struct addrinfo* result;
+#endif
   Request* req;    // to be called when a request is INCOMING (req->handle() )
   Buffer in, out;  // buffers to send and receive data
 

@@ -1,6 +1,7 @@
 #include "Benchmark.hh"
-#include <unistd.h>
+
 #include <sys/times.h>
+#include <unistd.h>
 
 using namespace std;
 
@@ -10,11 +11,12 @@ static struct tms endCPUTimes;
 static time_t endWallTime;
 static clock_t t;
 
-Benchmark::Benchmark() :
-  elapsedUserTime(0), elapsedSystemTime(0), elapsedWallTime(0), elapsedClockTicks(0),
-  BENCHCLOCKS_PER_SEC(sysconf(_SC_CLK_TCK)) {
-}
-
+Benchmark::Benchmark()
+    : elapsedUserTime(0),
+      elapsedSystemTime(0),
+      elapsedWallTime(0),
+      elapsedClockTicks(0),
+      BENCHCLOCKS_PER_SEC(sysconf(_SC_CLK_TCK)) {}
 
 void Benchmark::start() {
   times(&startCPUTimes);
@@ -33,7 +35,7 @@ void Benchmark::end() {
   elapsedClockTicks = clock() - t;
 }
 
-void Benchmark::benchmark(void (*Func)() ) {
+void Benchmark::benchmark(void (*Func)()) {
   Benchmark a;
   a.start();
   Func();
@@ -41,7 +43,7 @@ void Benchmark::benchmark(void (*Func)() ) {
   std::cout << a << '\n';
 }
 
-void Benchmark::benchmark(void (*Func)(int), int n ) {
+void Benchmark::benchmark(void (*Func)(int), int n) {
   Benchmark a;
   a.start();
   Func(n);
@@ -49,12 +51,11 @@ void Benchmark::benchmark(void (*Func)(int), int n ) {
   std::cout << a << '\n';
 }
 
-ostream& operator <<(ostream& s, const Benchmark& b) {
-  return
-    s <<
-    "User:        " << b.elapsedUserTime / double(b.BENCHCLOCKS_PER_SEC) << '\n' <<
-    "System:      " << b.elapsedSystemTime  / double(b.BENCHCLOCKS_PER_SEC) << '\n' <<
-    "Wall:        " << b.elapsedWallTime << '\n' <<
-    "Clock Ticks: " << b.elapsedClockTicks << '\n';
-
+ostream& operator<<(ostream& s, const Benchmark& b) {
+  return s << "User:        "
+           << b.elapsedUserTime / double(b.BENCHCLOCKS_PER_SEC) << '\n'
+           << "System:      "
+           << b.elapsedSystemTime / double(b.BENCHCLOCKS_PER_SEC) << '\n'
+           << "Wall:        " << b.elapsedWallTime << '\n'
+           << "Clock Ticks: " << b.elapsedClockTicks << '\n';
 }

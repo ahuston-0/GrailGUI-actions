@@ -87,7 +87,7 @@ void XDLRequest::handle(int fd) {
   }
 
   XDLType* x = xdlData[requestId];
-  //Struct* s = (Struct*)st->getSymbol(root);
+  // Struct* s = (Struct*)st->getSymbol(root);
   x->writeMeta(out);
   x->write(out);
   out.displayRaw();

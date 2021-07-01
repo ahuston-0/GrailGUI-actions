@@ -685,6 +685,4 @@ void GLWin::loadBindings() {
   // bind2DOrtho();
 }
 
-double GLWin::getTime() {
-  return glfwGetTime();
-}
+double GLWin::getTime() { return glfwGetTime(); }

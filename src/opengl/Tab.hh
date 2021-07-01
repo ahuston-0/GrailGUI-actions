@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+
 #include "opengl/Canvas.hh"
 #include "util/DynArray.hh"
 /*
@@ -16,31 +17,28 @@ class GLWin;
 class StyledMultiShape2D;
 class MultiText;
 class Tab {
-private:
+ private:
   DynArray<Canvas*> canvases;
   DynArray<Style*> styles;
 
-	MainCanvas mainCanvas; //special canvas for drawing GUI and menus
-	// For anything custom, you should use your own objects, not use these
+  MainCanvas mainCanvas;  // special canvas for drawing GUI and menus
+  // For anything custom, you should use your own objects, not use these
   GLWin* parent;
-public:
+
+ public:
   Tab(GLWin* parent);
   ~Tab();
   GLWin* getParent() const { return parent; }
 
-  //copying a tab is not supported. What would it mean?
+  // copying a tab is not supported. What would it mean?
   Tab(const Tab& orig) = delete;
-  Tab& operator =(const Tab& orig) = delete;
-  Canvas* addCanvas
-	(const Style* style, uint32_t vpX, uint32_t vpY, uint32_t vpW, uint32_t vpH);
+  Tab& operator=(const Tab& orig) = delete;
+  Canvas* addCanvas(const Style* style, uint32_t vpX, uint32_t vpY,
+                    uint32_t vpW, uint32_t vpH);
 
-  Canvas* getCanvas(uint32_t i){
-    return canvases[i];
-  }
+  Canvas* getCanvas(uint32_t i) { return canvases[i]; }
 
-  MainCanvas* getMainCanvas(){
-    return &mainCanvas;
-  }
+  MainCanvas* getMainCanvas() { return &mainCanvas; }
 
   void init();
   void update();

@@ -59,18 +59,18 @@ class Camera {
     camPos += delta;
   }
 
-  void zoomIn() {
-    zoomIn(0.5);
-  }
+  void zoomIn() { zoomIn(0.5); }
 
-  void zoomOut() {
-    zoomIn(-0.5);
-  }
+  void zoomOut() { zoomIn(-0.5); }
 
-//TODO: make this not inline, move to c++ file, and have multiple different projections
-// also, keep more of the computation in the matrices, not computed on the fly each time
+  // TODO: make this not inline, move to c++ file, and have multiple different
+  // projections
+  // also, keep more of the computation in the matrices, not computed on the fly
+  // each time
   inline glm::mat4 getViewProjection() {
-    projection = glm::perspective(glm::radians(fov), float(screenWidth) / float(screenHeight), zNear, zFar);
+    projection =
+        glm::perspective(glm::radians(fov),
+                         float(screenWidth) / float(screenHeight), zNear, zFar);
     view = glm::lookAt(camPos, lookingAt, upVector);
     return projection * view;
   }

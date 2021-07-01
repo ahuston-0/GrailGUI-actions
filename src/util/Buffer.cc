@@ -81,8 +81,7 @@ void Buffer::write(const char* s, uint32_t len) {
 }
 
 void Buffer::write(XDLRaw& v) {
-  if (p != buffer)
-    flush();
+  if (p != buffer) flush();
   ::write(fd, v.data, v.len);
 }
 

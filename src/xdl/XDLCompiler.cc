@@ -1,5 +1,6 @@
-#include "util/datatype.hh"
 #include "xdl/XDLCompiler.hh"
+
+#include "util/datatype.hh"
 
 using namespace std;
 
@@ -40,5 +41,4 @@ XDLCompiler::XDLCompiler()
       errorCount(0),
       warningCount(0),
       filename(""),
-      lineNumber(0) {
-}
+      lineNumber(0) {}

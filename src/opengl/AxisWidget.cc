@@ -70,8 +70,8 @@ void LinearAxisWidget::setTickInterval(double tickInterval) {
 
 void LinearAxisWidget::init() {
   double scale = w / abs(maxBound - minBound);
-  bottomOffset = tickDrawSize + m->getStyle()->f->getHeight() *1.25;
-  if (isVert) bottomOffset = -bottomOffset/2;
+  bottomOffset = tickDrawSize + m->getStyle()->f->getHeight() * 1.25;
+  if (isVert) bottomOffset = -bottomOffset / 2;
   m->drawLine(x, y + h, x + w, y + h, axisColor);
 
   double counter = 0;
