@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classCSPClient" xml:lang="en-US">
+<title>CSPClient Class Reference</title>
+<indexterm><primary>CSPClient</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCSPClient_1a16c5592fd56ed3420184d12327e39f92"/><emphasis role="strong">CSPClient</emphasis> (char *addr, int port)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSPClient_1a0e8118d7b4d6c0ebb9ec8903be9b3033"/><link linkend="_classpageBuffer">pageBuffer</link> <emphasis role="strong">pageRequest</emphasis> (uint32_t pageid)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSPClient_1aea23c65ba5d1a7eabca7e7d51ac12e34"/>void <emphasis role="strong">testPrint</emphasis> (int pageid)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSPClient_1a548cd69e149dc41c83d5e08a0f56021a"/>void <emphasis role="strong">addPage</emphasis> (string staticData, vector&lt; <link linkend="_classInsertion">Insertion</link> &gt; &amp;dynamic)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSPClient_1a8f8926f18e188df09b9f2b3578883544"/>void <emphasis role="strong">addPage</emphasis> (string staticData)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSPClient_1a158e742940fc89822005b820fe6314eb"/>void <emphasis role="strong">addPage</emphasis> (string staticFile, string offsetFile)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSPClient_1ab533d265d61fb88871c09c2190eae373"/>void <emphasis role="strong">printPageData</emphasis> (int pageid)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSPClient_1a9356c0a17af3736ce0fdfec210230be6"/><link linkend="_classpageBuffer">pageBuffer</link> <emphasis role="strong">pageRequestFile</emphasis> (uint32_t pageid)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCSPClient_1a8e087d48b8671d3b749186dcb2eab347"/><link linkend="_classBuffer">Buffer</link> &amp; <emphasis role="strong">in</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSPClient_1a1401e8c373201e90b17b6f884e0adbd5"/><link linkend="_classBuffer">Buffer</link> &amp; <emphasis role="strong">out</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

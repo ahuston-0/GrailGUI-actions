@@ -1,0 +1,81 @@
+.TH "Style" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Style
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStyle\fP (const char *fontFamily, float fontSize, float fontWeight, float bgRed, float bgGreen, float bgBlue, float fgRed, float fgGreen, float fgBlue, int shaderIndex=0)"
+.br
+.ti -1c
+.RI "\fBStyle\fP (const char *fontFamily, float fontSize, float fontWeight, float bgRed, float bgGreen, float bgBlue, float bgAlpha, float fgRed, float fgGreen, float fgBlue, float fgAlpha, int shaderIndex=0)"
+.br
+.ti -1c
+.RI "\fBStyle\fP (const \fBFont\fP *font, float bgRed, float bgGreen, float bgBlue, float fgRed, float fgGreen, float fgBlue, int shaderIndex=0)"
+.br
+.ti -1c
+.RI "\fBStyle\fP (const \fBFont\fP *font, float bgRed, float bgGreen, float bgBlue, float bgAlpha, float fgRed, float fgGreen, float fgBlue, float fgAlpha)"
+.br
+.ti -1c
+.RI "\fBStyle\fP (const \fBFont\fP *font, const glm::vec4 &bgColor, const glm::vec4 &fgColor)"
+.br
+.ti -1c
+.RI "const \fBFont\fP * \fBlookup\fP (const char *fontFamily, const float size, const float weight)"
+.br
+.ti -1c
+.RI "void \fBapply\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetShaderIndex\fP (uint32_t val)"
+.br
+.ti -1c
+.RI "uint32_t \fBgetShaderIndex\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetLineWidth\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLineWidth\fP (uint32_t val)"
+.br
+.ti -1c
+.RI "const glm::vec4 & \fBgetBgColor\fP () const"
+.br
+.ti -1c
+.RI "const glm::vec4 & \fBgetFgColor\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBStyle\fP * \fBgetStyle\fP (uint8_t a)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const \fBFont\fP * \fBf\fP"
+.br
+.ti -1c
+.RI "glm::vec4 \fBbg\fP"
+.br
+.ti -1c
+.RI "glm::vec4 \fBfg\fP"
+.br
+.ti -1c
+.RI "float \fBlineWidth\fP"
+.br
+.ti -1c
+.RI "int \fBshaderIndex\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

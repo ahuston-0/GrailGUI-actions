@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classHashMap_1_1Iterator" xml:lang="en-US">
+<title>HashMap&lt; Val &gt;::Iterator Class Reference</title>
+<indexterm><primary>HashMap&lt; Val &gt;::Iterator</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classHashMap_1_1Iterator_1a9236d33275d90e4ce856dbf13aa619d8"/><emphasis role="strong">Iterator</emphasis> (const <link linkend="_classHashMap">HashMap</link> &amp;list)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMap_1_1Iterator_1a27e8a2b249c80143265ae955ef512d0e"/>bool <emphasis role="strong">operator!</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMap_1_1Iterator_1ad8da16d5a24e6fab764c070b7019009a"/>void <emphasis role="strong">operator++</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMap_1_1Iterator_1a6c924d87bc0fdaa610d3692da241977c"/>const char * <emphasis role="strong">key</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMap_1_1Iterator_1a2cda230c5df432c29761c8ad74199285"/>Val * <emphasis role="strong">value</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

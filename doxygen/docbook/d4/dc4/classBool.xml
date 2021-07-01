@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classBool" xml:lang="en-US">
+<title>Bool Class Reference</title>
+<indexterm><primary>Bool</primary></indexterm>
+<para>Inheritance diagram for Bool:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d4/dc4/classBool.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classBool_1acb08c5f9910678fb5dbb62fb45e0b66f"/><emphasis role="strong">Bool</emphasis> (bool val=false)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBool_1a3b95969dd864dabc3b7c519c222853dc"/>DataType <emphasis role="strong">getDataType</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBool_1afd81302e3e8487c4439e6db0ad5481c8"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBool_1ad0817f5c84b007a4ad7b5c6e9cc04d88"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBool_1aa9a9391db6ba152cd3d8429c70ff4dc0"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBool_1aa1353ce23a8a15eeef1e2a3135a89ed7"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

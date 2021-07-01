@@ -1,0 +1,58 @@
+.TH "List1< T >" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+List1< T >
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBList1\fP (uint8_t initialSize)"
+.br
+.ti -1c
+.RI "\fBList1\fP (const \fBList\fP &orig)=delete"
+.br
+.ti -1c
+.RI "\fBList1\fP & \fBoperator=\fP (const \fBList\fP &orig)=delete"
+.br
+.ti -1c
+.RI "void \fBaddEnd\fP (const T &v)"
+.br
+.ti -1c
+.RI "\fBList1\fP (uint32_t initialSize)"
+.br
+.ti -1c
+.RI "\fBList1\fP (const \fBList1\fP &orig)"
+.br
+.ti -1c
+.RI "uint32_t \fBserializeSize\fP () const"
+.br
+.ti -1c
+.RI "char * \fBread\fP (char *p)"
+.br
+.ti -1c
+.RI "char * \fBwrite\fP (char *p)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (const T &v)"
+.br
+.ti -1c
+.RI "uint32_t \fBgetUsed\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetCapacity\fP () const"
+.br
+.ti -1c
+.RI "T \fBgetData\fP (int i) const"
+.br
+.ti -1c
+.RI "uint32_t \fBsize\fP () const"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

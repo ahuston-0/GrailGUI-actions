@@ -1,0 +1,49 @@
+\hypertarget{Socket_8hh_source}{}\doxysection{Socket.\+hh}
+\label{Socket_8hh_source}\index{src/csp/Socket.hh@{src/csp/Socket.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00020 \textcolor{comment}{//\#include "{}csp/Request.hh"{}}}
+\DoxyCodeLine{00021 \textcolor{preprocessor}{\#include "{}util/Buffer.hh"{}}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \textcolor{preprocessor}{\#ifdef \_WIN32}}
+\DoxyCodeLine{00024 \textcolor{preprocessor}{\#include <winsock2.h>}}
+\DoxyCodeLine{00025 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029 \textcolor{keyword}{class }\mbox{\hyperlink{classRequest}{Request}}; \textcolor{comment}{// forward reference, all code is included in .cc}}
+\DoxyCodeLine{\Hypertarget{Socket_8hh_source_l00030}\mbox{\hyperlink{classSocket}{00030}} \textcolor{keyword}{class }\mbox{\hyperlink{classSocket}{Socket}} \{}
+\DoxyCodeLine{00031  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00032   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* address;}
+\DoxyCodeLine{00033   uint16\_t port;}
+\DoxyCodeLine{00034 \textcolor{preprocessor}{  \#ifdef \_\_linux\_\_}}
+\DoxyCodeLine{00035        \textcolor{keywordtype}{char} sockaddress[16]; \textcolor{comment}{// placeholder big enough to hold sockaddr\_in structure}}
+\DoxyCodeLine{00036 \textcolor{preprocessor}{  \#elif \_WIN32}}
+\DoxyCodeLine{00037       \textcolor{keyword}{static} WSADATA wsaData;}
+\DoxyCodeLine{00038       \textcolor{keyword}{struct }addrinfo* result;}
+\DoxyCodeLine{00039 \textcolor{preprocessor}{  \#endif}}
+\DoxyCodeLine{00040   \mbox{\hyperlink{classRequest}{Request}}* req;    \textcolor{comment}{// to be called when a request is INCOMING (req-\/>handle() )}}
+\DoxyCodeLine{00041   \mbox{\hyperlink{classBuffer}{Buffer}} in, out;  \textcolor{comment}{// buffers to send and receive data}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044   \mbox{\hyperlink{classSocket}{Socket}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* addr, uint16\_t port);}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046   \textcolor{comment}{// TODO: simplify}}
+\DoxyCodeLine{00047   \textcolor{comment}{// below two constructors could be merged depends on the location of variable}}
+\DoxyCodeLine{00048   \textcolor{comment}{// "{}req"{} Constructor for CSP server}}
+\DoxyCodeLine{00049   \mbox{\hyperlink{classSocket}{Socket}}(uint16\_t port, \mbox{\hyperlink{classRequest}{Request}}* req);}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051   \mbox{\hyperlink{classSocket}{Socket}}(uint16\_t port);  \textcolor{comment}{// Constructor for server (addres not specified)}}
+\DoxyCodeLine{00052   \string~\mbox{\hyperlink{classSocket}{Socket}}();}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054   \textcolor{keyword}{static} \textcolor{keywordtype}{void} classCleanup();}
+\DoxyCodeLine{00055   \textcolor{keyword}{static} \textcolor{keywordtype}{void} classInit();}
+\DoxyCodeLine{00056   \textcolor{keywordtype}{void} attach(\mbox{\hyperlink{classRequest}{Request}}* r) \{ req = r; \}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058   \mbox{\hyperlink{classBuffer}{Buffer}}\& getOut() \{ \textcolor{keywordflow}{return} out; \}}
+\DoxyCodeLine{00059   \mbox{\hyperlink{classBuffer}{Buffer}}\& getIn() \{ \textcolor{keywordflow}{return} in; \}}
+\DoxyCodeLine{00060   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} wait() = 0;}
+\DoxyCodeLine{00061 \};}
+
+\end{DoxyCode}

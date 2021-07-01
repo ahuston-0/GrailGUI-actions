@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classXDLCompiler" xml:lang="en-US">
+<title>XDLCompiler Class Reference</title>
+<indexterm><primary>XDLCompiler</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classXDLCompiler_1addb1e88a9efdc466820d5a1040ecfaf7"/><emphasis role="strong">XDLCompiler</emphasis> (const char filename[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classXDLCompiler_1a47b10342410d9995a5843d339c200758"/><link linkend="_classSymbolTable">SymbolTable</link> &amp; <emphasis role="strong">getSymbolTable</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classXDLCompiler_1a31d596f231fc349476e26c009260b379"/>void <emphasis role="strong">generateCode</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classXDLCompiler_1ae16c27776475bd9275d8e1a2044ae527"/>void <emphasis role="strong">error</emphasis> (const std::string &amp;msg)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classXDLCompiler_1a477fde2f99975740a082af228464fb7c"/>void <emphasis role="strong">duplicateSymbol</emphasis> (const std::string &amp;name)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classXDLCompiler_1aaee3a8b311397afee7d90486e7b2440f"/>void <emphasis role="strong">undefinedSymbol</emphasis> (const std::string &amp;name)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classXDLCompiler_1acc83efc979db678361bc9b112c9a952c"/>void <emphasis role="strong">internalError</emphasis> (const std::string &amp;name)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classXDLCompiler_1a59ba4758b0a1ca75e6843d35b94be836"/>void <emphasis role="strong">warning</emphasis> (const std::string &amp;msg)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

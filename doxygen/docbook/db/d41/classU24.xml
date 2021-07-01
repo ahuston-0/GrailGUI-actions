@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classU24" xml:lang="en-US">
+<title>U24 Class Reference</title>
+<indexterm><primary>U24</primary></indexterm>
+<para>Inheritance diagram for U24:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../db/d41/classU24.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classU24_1a1968f3ab7cef75e62603c1707c81d79a"/><emphasis role="strong">U24</emphasis> (uint32_t val=0)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU24_1acdb50c6af1d341c51b4bc480323a44a8"/>DataType <emphasis role="strong">getDataType</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU24_1a9be79311f55bdae0fd272e7736779ce9"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU24_1a095b00b1e1acecaa263a44464bbe6126"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU24_1a2b3cf02c50e0d5a756037e069c79ae5e"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU24_1a4597785e787a5afe70f2b602b99a9186"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classU24_1a07d5a5f9478ce46312bed49e1dcd349e"/>bool <emphasis role="strong">operator==</emphasis> (const <link linkend="_classU24">U24</link> &amp;a, const <link linkend="_classU24">U24</link> &amp;b)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

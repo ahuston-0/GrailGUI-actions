@@ -1,0 +1,48 @@
+\hypertarget{classMultiShape3D}{}\doxysection{Multi\+Shape3D Class Reference}
+\label{classMultiShape3D}\index{MultiShape3D@{MultiShape3D}}
+Inheritance diagram for Multi\+Shape3D\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{df/d52/classMultiShape3D}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMultiShape3D_a36c1582ed627b7f654f13a0ad0e808d0}\label{classMultiShape3D_a36c1582ed627b7f654f13a0ad0e808d0}} 
+{\bfseries Multi\+Shape3D} (\mbox{\hyperlink{classCanvas}{Canvas}} $\ast$canv, \mbox{\hyperlink{classCamera}{Camera}} $\ast$c, const std\+::vector$<$ const char $\ast$ $>$ \&texture\+Files, \mbox{\hyperlink{classTransformation}{Transformation}} $\ast$t, uint32\+\_\+t elem\+Per\+Vert=3, uint32\+\_\+t vert\+Count=1024, uint32\+\_\+t solid\+Ind\+Count=1024, uint32\+\_\+t line\+Ind\+Count=1024, uint32\+\_\+t point\+Ind\+Count=1024, uint32\+\_\+t color\+Ind\+Count=1024)
+\item 
+\mbox{\Hypertarget{classMultiShape3D_a97aafe9d6c867a7d35ffe0ca1f0b18e5}\label{classMultiShape3D_a97aafe9d6c867a7d35ffe0ca1f0b18e5}} 
+{\bfseries Multi\+Shape3D} (\mbox{\hyperlink{classCanvas}{Canvas}} $\ast$canv, \mbox{\hyperlink{classCamera}{Camera}} $\ast$c, const char texture\+File\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{classTransformation}{Transformation}} $\ast$t, uint32\+\_\+t elem\+Per\+Vert=3, uint32\+\_\+t vert\+Count=1024, uint32\+\_\+t solid\+Ind\+Count=1024, uint32\+\_\+t line\+Ind\+Count=1024, uint32\+\_\+t point\+Ind\+Count=1024, uint32\+\_\+t color\+Ind\+Count=1024)
+\item 
+\mbox{\Hypertarget{classMultiShape3D_a6d6e11b4c37d80e4ade6fab1d1c658bc}\label{classMultiShape3D_a6d6e11b4c37d80e4ade6fab1d1c658bc}} 
+void {\bfseries init} () override
+\item 
+\mbox{\Hypertarget{classMultiShape3D_a3596632d271b9afe21f02fea26223b44}\label{classMultiShape3D_a3596632d271b9afe21f02fea26223b44}} 
+void {\bfseries render} () override
+\item 
+\mbox{\Hypertarget{classMultiShape3D_abe5e7045d7887fa29b6761374b8ba401}\label{classMultiShape3D_abe5e7045d7887fa29b6761374b8ba401}} 
+void {\bfseries gen\+Fast\+Rect\+Prism} (float x, float y, float z, uint32\+\_\+t width, uint32\+\_\+t length, uint32\+\_\+t height, uint32\+\_\+t tex\+Index, Tex\+Coord\+Vector \&tex\+Coords)
+\item 
+\mbox{\Hypertarget{classMultiShape3D_af0f05e766efdbab04431b620d4185aee}\label{classMultiShape3D_af0f05e766efdbab04431b620d4185aee}} 
+void {\bfseries gen\+Fast\+Cube} (float x, float y, float z, uint32\+\_\+t length, uint32\+\_\+t tex\+Index, Tex\+Coord\+Vector \&tex\+Coords)
+\item 
+\mbox{\Hypertarget{classMultiShape3D_a8565f77df4aa8f2f1424060bcb53198a}\label{classMultiShape3D_a8565f77df4aa8f2f1424060bcb53198a}} 
+void {\bfseries gen\+Rect\+Prism} (float x, float y, float z, uint32\+\_\+t width, uint32\+\_\+t length, uint32\+\_\+t height, uint32\+\_\+t tex\+Index, Tex\+Coord\+Vector \&tex\+Coords)
+\item 
+\mbox{\Hypertarget{classMultiShape3D_ae7e494544d4dcb7da45ca8ac08b4b6f3}\label{classMultiShape3D_ae7e494544d4dcb7da45ca8ac08b4b6f3}} 
+void {\bfseries gen\+Cube} (float x, float y, float z, uint32\+\_\+t length, uint32\+\_\+t tex\+Index, Tex\+Coord\+Vector \&tex\+Coords)
+\item 
+\mbox{\Hypertarget{classMultiShape3D_af396d02b52269d44683c935cab979586}\label{classMultiShape3D_af396d02b52269d44683c935cab979586}} 
+void {\bfseries gen\+OBJModel} (const char $\ast$file\+Path, std\+::vector$<$ uint32\+\_\+t $>$ \&tex\+Indices, float x\+Offset=0, float y\+Offset=0, float z\+Offset=0)
+\item 
+\mbox{\Hypertarget{classMultiShape3D_a598bfb004fbd6344cb919e5f4c098ed5}\label{classMultiShape3D_a598bfb004fbd6344cb919e5f4c098ed5}} 
+void {\bfseries gen\+OBJModel} (const char $\ast$file\+Path)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMultiShape3D_a4d7289127f159ff3b99ee922de0872e7}\label{classMultiShape3D_a4d7289127f159ff3b99ee922de0872e7}} 
+uint32\+\_\+t {\bfseries elem\+Per\+Vert}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}

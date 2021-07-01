@@ -1,0 +1,71 @@
+\hypertarget{classGraphWidget}{}\doxysection{Graph\+Widget Class Reference}
+\label{classGraphWidget}\index{GraphWidget@{GraphWidget}}
+Inheritance diagram for Graph\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d8/d93/classGraphWidget}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGraphWidget_a137c005a4e6c214d5c5bd7536698933b}\label{classGraphWidget_a137c005a4e6c214d5c5bd7536698933b}} 
+enum {\bfseries Axis\+Type} \{ {\bfseries LINEAR}
+, {\bfseries LOGARITHMIC}
+, {\bfseries TEXT}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGraphWidget_a48117ac2557a16b76147a7af3f33dca2}\label{classGraphWidget_a48117ac2557a16b76147a7af3f33dca2}} 
+{\bfseries Graph\+Widget} (\mbox{\hyperlink{classCanvas}{Canvas}} $\ast$c, \mbox{\hyperlink{classStyledMultiShape2D}{Styled\+Multi\+Shape2D}} $\ast$m, \mbox{\hyperlink{classMultiText}{Multi\+Text}} $\ast$t, double x, double y, double w, double h)
+\item 
+\mbox{\Hypertarget{classGraphWidget_ae287624499d234ca05735b39d07fe266}\label{classGraphWidget_ae287624499d234ca05735b39d07fe266}} 
+virtual void {\bfseries create\+XAxis} (Axis\+Type a)=0
+\item 
+\mbox{\Hypertarget{classGraphWidget_a11600848dbaa46baccd81d2f62a4da06}\label{classGraphWidget_a11600848dbaa46baccd81d2f62a4da06}} 
+virtual void {\bfseries create\+YAxis} (Axis\+Type a)=0
+\item 
+\mbox{\Hypertarget{classGraphWidget_a27174baaa206beff7467128dd757d70e}\label{classGraphWidget_a27174baaa206beff7467128dd757d70e}} 
+void {\bfseries set\+Graph\+Title} (std\+::string text)
+\item 
+\mbox{\Hypertarget{classGraphWidget_a6b8ce833b4d5bb958e43f0efecfc2c7e}\label{classGraphWidget_a6b8ce833b4d5bb958e43f0efecfc2c7e}} 
+void {\bfseries set\+XAxis\+Text\+Style} (const \mbox{\hyperlink{classStyle}{Style}} $\ast$x\+Axis\+Text\+Style)
+\item 
+\mbox{\Hypertarget{classGraphWidget_a6aae045dda93bb64678f3d5ef9ea15c5}\label{classGraphWidget_a6aae045dda93bb64678f3d5ef9ea15c5}} 
+void {\bfseries set\+YAxis\+Text\+Style} (const \mbox{\hyperlink{classStyle}{Style}} $\ast$y\+Axis\+Text\+Style)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGraphWidget_af7671f33844b9dac6fe644177aec20ed}\label{classGraphWidget_af7671f33844b9dac6fe644177aec20ed}} 
+\mbox{\hyperlink{classAxisWidget}{Axis\+Widget}} $\ast$ {\bfseries x\+Axis}
+\item 
+\mbox{\Hypertarget{classGraphWidget_ad1eed7be9f758b9a5a70e2917cc4d94b}\label{classGraphWidget_ad1eed7be9f758b9a5a70e2917cc4d94b}} 
+\mbox{\hyperlink{classAxisWidget}{Axis\+Widget}} $\ast$ {\bfseries y\+Axis}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGraphWidget_ac0c37cfad1ee7f8ac0ff34dd0821abe3}\label{classGraphWidget_ac0c37cfad1ee7f8ac0ff34dd0821abe3}} 
+void {\bfseries common\+Render} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGraphWidget_af49d8cd2c8a805c6c1bba592861ea6e6}\label{classGraphWidget_af49d8cd2c8a805c6c1bba592861ea6e6}} 
+std\+::string {\bfseries graph\+Title}
+\item 
+\mbox{\Hypertarget{classGraphWidget_a27262007aa01e09c9927ea050ad9204f}\label{classGraphWidget_a27262007aa01e09c9927ea050ad9204f}} 
+const \mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries x\+Axis\+Text\+Style}
+\item 
+\mbox{\Hypertarget{classGraphWidget_acf7d0a09c976e6f89440276d977b8ee5}\label{classGraphWidget_acf7d0a09c976e6f89440276d977b8ee5}} 
+const \mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries y\+Axis\+Text\+Style}
+\item 
+\mbox{\Hypertarget{classGraphWidget_accb6a2d9a4c13e68fba1d1c6bf9fa6fb}\label{classGraphWidget_accb6a2d9a4c13e68fba1d1c6bf9fa6fb}} 
+Axis\+Type {\bfseries x\+Axis\+Type}
+\item 
+\mbox{\Hypertarget{classGraphWidget_a64d148cc77106bb1cf4162c6a4eb8add}\label{classGraphWidget_a64d148cc77106bb1cf4162c6a4eb8add}} 
+Axis\+Type {\bfseries y\+Axis\+Type}
+\end{DoxyCompactItemize}

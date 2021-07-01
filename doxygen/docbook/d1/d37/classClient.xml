@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classClient" xml:lang="en-US">
+<title>Client&lt; SocketImpl, ProtocolImpl &gt; Class Template Reference</title>
+<indexterm><primary>Client&lt; SocketImpl, ProtocolImpl &gt;</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classClient_1aaa27f5baee3e954f1bea47d6698a2ad3"/><emphasis role="strong">Client</emphasis> (const char addr[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classClient_1a5abbdbe365f193e705896fde511f26f9"/><emphasis role="strong">Client</emphasis> (const <link linkend="_classClient">Client</link> &amp;)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classClient_1a0661b151691c16938a885e287eee10fd"/><link linkend="_classClient">Client</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classClient">Client</link> &amp;)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classClient_1a1c054ac1d323f62bf842e7b9ba5b99cc"/>void <emphasis role="strong">connect</emphasis> (const char addr[])</para>
+</listitem>
+            <listitem><para>&lt; T &gt; void <link linkend="_classClient_1aee5ee5fb1cefb83dfa096b0813473257">write</link> (const T &amp;data)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classClient_1acbc5bbece87fc717e7f2619d753f9a78"/>void <emphasis role="strong">send</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classClient_1a52b5d528f6a8fcc21cf4fcd505421e60"/>void <emphasis role="strong">sendAndWaitforResponse</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classClient_1a9bb51938f1cf117f236804b1a7c21005"/>void <emphasis role="strong">sendAndKeepOpen</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classClient_1aee5ee5fb1cefb83dfa096b0813473257"/>    <section>
+    <title>write()</title>
+<indexterm><primary>write</primary><secondary>Client&lt; SocketImpl, ProtocolImpl &gt;</secondary></indexterm>
+<indexterm><primary>Client&lt; SocketImpl, ProtocolImpl &gt;</primary><secondary>write</secondary></indexterm>
+<computeroutput>template&lt;typename SocketImpl , typename ProtocolImpl &gt; </computeroutput><para><computeroutput>&lt;T&gt; void <link linkend="_classClient">Client</link>&lt; SocketImpl, ProtocolImpl &gt;::write (const T &amp; data)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>Write data into the out buffer </para>
+</section>
+</section>
+</section>

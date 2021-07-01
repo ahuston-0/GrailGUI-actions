@@ -1,0 +1,106 @@
+.TH "CSRGraph< VertexIndex_t, EdgeIndex_t, Weight_t >" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CSRGraph< VertexIndex_t, EdgeIndex_t, Weight_t >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBGraph\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBVertexCount\fP"
+.br
+.in -1c
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef void(* \fBFuncVert\fP) (uint32_t src, uint32_t dest)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCSRGraph\fP (const \fBCSRGraph\fP &orig)=delete"
+.br
+.ti -1c
+.RI "\fBCSRGraph\fP & \fBoperator=\fP (const \fBCSRGraph\fP &orig)=delete"
+.br
+.ti -1c
+.RI "uint32_t \fBgetV\fP () const"
+.br
+.ti -1c
+.RI "uint64_t \fBgetE\fP () const"
+.br
+.ti -1c
+.RI "Weight_t \fBgetW\fP (VertexIndex_t src, VertexIndex_t dest) const"
+.br
+.ti -1c
+.RI "bool \fBisAdjacent\fP (VertexIndex_t src, VertexIndex_t dest) const"
+.br
+.ti -1c
+.RI "void \fBgetEdge\fP (EdgeIndex_t i, VertexIndex_t *v1, VertexIndex_t *v2)"
+.br
+.ti -1c
+.RI "VertexIndex_t \fBcountAdjacencies\fP (VertexIndex_t v)"
+.br
+.ti -1c
+.RI "\fBCSRGraph\fP (const char csrBeginName[], const char csrAdjName[], const char weightName[])"
+.br
+.ti -1c
+.RI "void \fBdfs\fP (VertexIndex_t v, FuncVert f)"
+.br
+.ti -1c
+.RI "void \fBbfs\fP (uint32_t v, FuncVert f)"
+.br
+.ti -1c
+.RI "uint32_t * \fBcomputeHistogram\fP () const"
+.br
+.ti -1c
+.RI "void \fBprintHistogram\fP () const"
+.br
+.ti -1c
+.RI "const VertexIndex_t * \fBgroup\fP ()"
+.br
+.ti -1c
+.RI "void \fBcluster\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBsortDescCount\fP (const \fBVertexCount\fP &a, const \fBVertexCount\fP &b)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "VertexIndex_t \fBstartIndexLen\fP"
+.br
+.ti -1c
+.RI "EdgeIndex_t \fBadjLen\fP"
+.br
+.ti -1c
+.RI "EdgeIndex_t \fBweightLen\fP"
+.br
+.ti -1c
+.RI "EdgeIndex_t * \fBstartIndex\fP"
+.br
+.ti -1c
+.RI "VertexIndex_t * \fBadjacency\fP"
+.br
+.ti -1c
+.RI "Weight_t * \fBweight\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

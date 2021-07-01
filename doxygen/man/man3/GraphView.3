@@ -1,0 +1,62 @@
+.TH "GraphView" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GraphView
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBShape\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCSRGraph\fP< uint64_t, uint64_t, float > * \fBgetGraph\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetVertexRadius\fP (float vertR)"
+.br
+.ti -1c
+.RI "void \fBaddColor\fP (float r, float g, float b)"
+.br
+.ti -1c
+.RI "void \fBaddVert\fP (uint64_t v, float x, float y, uint8_t initialVertColor, \fBPoint\fP points[])"
+.br
+.ti -1c
+.RI "void \fBaddEdge\fP (uint64_t i, float x1, float y1, float x2, float y2, uint8_t initialEdgeColor)"
+.br
+.ti -1c
+.RI "void \fBupdateVert\fP (uint64_t v, uint8_t colorVal)"
+.br
+.ti -1c
+.RI "void \fBupdateEdge\fP (uint64_t i, uint8_t colorVal)"
+.br
+.ti -1c
+.RI "\fBGraphView\fP (\fBCSRGraph\fP< uint64_t, uint64_t, float > &g, \fBCanvas\fP *c, \fBStyle\fP *style, glm::vec4 s)"
+.br
+.ti -1c
+.RI "uint64_t \fBgetE\fP () const"
+.br
+.ti -1c
+.RI "void \fBprocess_input\fP (Inputs *, float dt) override"
+.br
+.ti -1c
+.RI "void \fBinit\fP () override"
+.br
+.ti -1c
+.RI "void \fBrender\fP () override"
+.br
+.ti -1c
+.RI "void \fBupdate\fP () override"
+.br
+.ti -1c
+.RI "void \fBaddEdges\fP (const \fBPoint\fP vertexPos[], uint8_t initialEdgeColor)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

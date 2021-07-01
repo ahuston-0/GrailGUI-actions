@@ -1,0 +1,42 @@
+\hypertarget{classMultiShape}{}\doxysection{Multi\+Shape Class Reference}
+\label{classMultiShape}\index{MultiShape@{MultiShape}}
+Inheritance diagram for Multi\+Shape\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{dc/d29/classMultiShape}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMultiShape_aa15e91929d010153d82595b4c944d8a2}\label{classMultiShape_aa15e91929d010153d82595b4c944d8a2}} 
+{\bfseries Multi\+Shape} (\mbox{\hyperlink{classCanvas}{Canvas}} $\ast$parent, uint32\+\_\+t vert\+Count=1024, uint32\+\_\+t solid\+Ind\+Count=1024, uint32\+\_\+t line\+Ind\+Count=1024, uint32\+\_\+t point\+Ind\+Count=1024, uint32\+\_\+t color\+Ind\+Count=1024)
+\item 
+\mbox{\Hypertarget{classMultiShape_ad4da84336c024d2e59a31d3d6cf5c2e2}\label{classMultiShape_ad4da84336c024d2e59a31d3d6cf5c2e2}} 
+void {\bfseries process\+\_\+input} (Inputs $\ast$in, float dt) override
+\item 
+\mbox{\Hypertarget{classMultiShape_a558564ccfb69f5e3202cfd8006a3e68a}\label{classMultiShape_a558564ccfb69f5e3202cfd8006a3e68a}} 
+void {\bfseries update} () override
+\item 
+\mbox{\Hypertarget{classMultiShape_a62f11ff8c9efcb55f6468d51ca7de19f}\label{classMultiShape_a62f11ff8c9efcb55f6468d51ca7de19f}} 
+void {\bfseries add\+Point} (float x, float y)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMultiShape_ae0488f93375447923aa529f7ed5ba584}\label{classMultiShape_ae0488f93375447923aa529f7ed5ba584}} 
+std\+::vector$<$ float $>$ {\bfseries vertices}
+\item 
+\mbox{\Hypertarget{classMultiShape_ab770b80e9cf9c69a60e27667888a6a01}\label{classMultiShape_ab770b80e9cf9c69a60e27667888a6a01}} 
+std\+::vector$<$ uint32\+\_\+t $>$ {\bfseries solid\+Indices}
+\item 
+\mbox{\Hypertarget{classMultiShape_a37c5d0aa2f7714cff1ff75bb7edba136}\label{classMultiShape_a37c5d0aa2f7714cff1ff75bb7edba136}} 
+std\+::vector$<$ uint32\+\_\+t $>$ {\bfseries line\+Indices}
+\item 
+\mbox{\Hypertarget{classMultiShape_a75ae2725b2347e10bbadec3d92a8f939}\label{classMultiShape_a75ae2725b2347e10bbadec3d92a8f939}} 
+std\+::vector$<$ uint32\+\_\+t $>$ {\bfseries point\+Indices}
+\item 
+\mbox{\Hypertarget{classMultiShape_a19befa7524473aeb72c1e9ebd8b6b107}\label{classMultiShape_a19befa7524473aeb72c1e9ebd8b6b107}} 
+std\+::vector$<$ float $>$ {\bfseries color\+Indices}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}

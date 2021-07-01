@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classStyle" xml:lang="en-US">
+<title>Style Class Reference</title>
+<indexterm><primary>Style</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classStyle_1a6f029df7ed81c03a080d9dfd14b9cc31"/><emphasis role="strong">Style</emphasis> (const char *fontFamily, float fontSize, float fontWeight, float bgRed, float bgGreen, float bgBlue, float fgRed, float fgGreen, float fgBlue, int shaderIndex=0)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyle_1ac1d1eb354972bc176478b8b1fd5ff813"/><emphasis role="strong">Style</emphasis> (const char *fontFamily, float fontSize, float fontWeight, float bgRed, float bgGreen, float bgBlue, float bgAlpha, float fgRed, float fgGreen, float fgBlue, float fgAlpha, int shaderIndex=0)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyle_1a24d51d3de11e3e6aaab8ea92ec418948"/><emphasis role="strong">Style</emphasis> (const <link linkend="_classFont">Font</link> *font, float bgRed, float bgGreen, float bgBlue, float fgRed, float fgGreen, float fgBlue, int shaderIndex=0)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyle_1aeb4acf120d8d9ab9ec1f0be151980df0"/><emphasis role="strong">Style</emphasis> (const <link linkend="_classFont">Font</link> *font, float bgRed, float bgGreen, float bgBlue, float bgAlpha, float fgRed, float fgGreen, float fgBlue, float fgAlpha)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyle_1aa0d9146a22e82d2acf83b4b975c99bf7"/><emphasis role="strong">Style</emphasis> (const <link linkend="_classFont">Font</link> *font, const glm::vec4 &amp;bgColor, const glm::vec4 &amp;fgColor)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyle_1ab5f27edeb2223379cedacae845b8387a"/>const <link linkend="_classFont">Font</link> * <emphasis role="strong">lookup</emphasis> (const char *fontFamily, const float size, const float weight)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyle_1a4fbab4eaf13f9dbbc9a9bc9c58255d65"/>void <emphasis role="strong">apply</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyle_1ad64548f90845a1edd4124cae7fda5e15"/>void <emphasis role="strong">setShaderIndex</emphasis> (uint32_t val)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyle_1aa2a37fc2ada7f444dbeeb85a24dc576a"/>uint32_t <emphasis role="strong">getShaderIndex</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyle_1a6702727526ed0fd9b565edee0ec06b6c"/>uint32_t <emphasis role="strong">getLineWidth</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyle_1a9d770ee00f6ea2a50948793f9c6a7774"/>void <emphasis role="strong">setLineWidth</emphasis> (uint32_t val)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyle_1ac8f6a6dae4bc63a8205358231efd58a8"/>const glm::vec4 &amp; <emphasis role="strong">getBgColor</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyle_1a94094f497eba215ff44a1bf18b9545e2"/>const glm::vec4 &amp; <emphasis role="strong">getFgColor</emphasis> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classStyle_1ae3b9948e0b2d8eaa577caff289d2afc8"/>static <link linkend="_classStyle">Style</link> * <emphasis role="strong">getStyle</emphasis> (uint8_t a)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classStyle_1ac21b27e6b11be4ad4281fff48f288b84"/>const <link linkend="_classFont">Font</link> * <emphasis role="strong">f</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyle_1aa13fd4aa3de050f07391ec329593dfa1"/>glm::vec4 <emphasis role="strong">bg</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyle_1a3eaac1d47d5c233cd1f2a95c24713b15"/>glm::vec4 <emphasis role="strong">fg</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyle_1ac771e0d1a6cfbbc31fd760cb075f9f18"/>float <emphasis role="strong">lineWidth</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyle_1a5c4d40e09901bce205981a4c2d4f78d5"/>int <emphasis role="strong">shaderIndex</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

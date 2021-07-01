@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classFatalEx" xml:lang="en-US">
+<title>FatalEx Class Reference</title>
+<indexterm><primary>FatalEx</primary></indexterm>
+<para>Inheritance diagram for FatalEx:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d7/d12/classFatalEx.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classFatalEx_1a0c9640a9a235810969415eb71791e654"/><emphasis role="strong">FatalEx</emphasis> (const char filename[], int lineNum, Errcode e, const std::string &amp;name=&quot;&quot;)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

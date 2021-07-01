@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classSymbol" xml:lang="en-US">
+<title>Symbol Class Reference</title>
+<indexterm><primary>Symbol</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classSymbol_1a45bac5296b60b5953dd6d6c6839ce9d4"/>uint32_t <emphasis role="strong">size</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSymbol_1aae414c7ddc8c0cfcd3678d5142490f11"/>std::string <emphasis role="strong">name</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSymbol_1a10e02ff07ff15a20fe9a476c516d8274"/>std::string <emphasis role="strong">cppType</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSymbol_1a4cb54a4786c6478d7773e20ce7fa9244"/><link linkend="_classSymbol">Symbol</link> * <emphasis role="strong">assignCompatibleWith</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

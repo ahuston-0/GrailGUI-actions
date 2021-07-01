@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classEx" xml:lang="en-US">
+<title>Ex Class Reference</title>
+<indexterm><primary>Ex</primary></indexterm>
+<para>Inheritance diagram for Ex:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d1/d0a/classEx.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classEx_1a7d1901b6b89a83800c2191ad7b47b1f8"/><emphasis role="strong">Ex</emphasis> (const char filename[], uint32_t lineNum, Errcode e, const std::string &amp;name=&quot;&quot;)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classEx_1af24893df351cccf392f4f7a497e87936"/>const char * <emphasis role="strong">filename</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classEx_1a13b39c954338829a5e4eea209c5cd080"/>const uint32_t <emphasis role="strong">lineNum</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classEx_1a90f5b245e0f8788a1c53d99bae55166e"/>const std::string <emphasis role="strong">name</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classEx_1a060eae0fbd1d6813642d20f41ab5583a"/>int <emphasis role="strong">param</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classEx_1a4cdd379376b350cf04849706ccfa0b30"/>Errcode <emphasis role="strong">e</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classEx_1a2364338fd530ceb7271525453b0c4915"/>static const char * <emphasis role="strong">errNames</emphasis> []</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classEx_1aab58231e9b98d5587241057df8efce32"/>std::ostream &amp; <emphasis role="strong">operator&lt;&lt;</emphasis> (std::ostream &amp;s, const <link linkend="_classEx">Ex</link> &amp;e)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

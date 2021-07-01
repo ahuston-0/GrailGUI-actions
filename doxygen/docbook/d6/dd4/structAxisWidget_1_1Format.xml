@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structAxisWidget_1_1Format" xml:lang="en-US">
+<title>AxisWidget::Format Struct Reference</title>
+<indexterm><primary>AxisWidget::Format</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structAxisWidget_1_1Format_1aa78a24d9c478d2acbec118c27eb7b87d"/>int <emphasis role="strong">width</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structAxisWidget_1_1Format_1a61aa4dcfab2ea1fd660b81cf549ee5e5"/>int <emphasis role="strong">precision</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classESRIPoint" xml:lang="en-US">
+<title>ESRIPoint Class Reference</title>
+<indexterm><primary>ESRIPoint</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classESRIPoint_1afae509eedcc074dcce7bd29fbf73cccd"/><emphasis role="strong">ESRIPoint</emphasis> (double x, double y)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classESRIPoint_1af746d61da0dee96e8b925b41b5f5e2ec"/>double <emphasis role="strong">x</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classESRIPoint_1ae229c71541d7f632c73b7d5e4b92a5e5"/>double <emphasis role="strong">y</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

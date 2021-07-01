@@ -1,0 +1,243 @@
+\hypertarget{classStats1D}{}\doxysection{Stats1D$<$ T $>$ Class Template Reference}
+\label{classStats1D}\index{Stats1D$<$ T $>$@{Stats1D$<$ T $>$}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structStats1D_1_1Summary}{Summary}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStats1D_a41c5ea69b3c10f2d81a37daa22bf69b2}{Stats1D}} (T $\ast$array, uint32\+\_\+t size, bool sorted=false)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classStats1D}{Stats1D}} object of a numeric type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStats1D_a01485e9087a47de410873e7036a25103}{update\+Array}} (T $\ast$new\+Array, uint32\+\_\+t new\+Size, bool sorted=false)
+\begin{DoxyCompactList}\small\item\em Updates the content of the array. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classStats1D_ab3b7cfd6058625ed131b218c03c02db2}{get\+Mean}} ()
+\begin{DoxyCompactList}\small\item\em Calculates mean of a numeric type. \end{DoxyCompactList}\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classStats1D_a45ba7369a7b206a13d696a1ae09088ed}{get\+Modes}} ()
+\begin{DoxyCompactList}\small\item\em Finds the modes of a numeric type. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classStats1D_ae87ce391ec43fcf4f071d786b6e41dae}{get\+IQR}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the IQR of a numeric type. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structStats1D_1_1Summary}{Summary}} \mbox{\hyperlink{classStats1D_a2efbfaca016e548a9fe970ae854bc82d}{get\+Summary}} ()
+\begin{DoxyCompactList}\small\item\em Returns a struct containing the five number summary of a numeric type. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classStats1D_a140451b77c198677c2cc24c3bbe5c0e6}{get\+Std\+Dev}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the standard deviation of a numeric type. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classStats1D_a3a69d2cbb665886f149f5454e103990d}{get\+Variance}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the variance of a numeric type. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classStats1D_ae116d4fdc3994b47742a265e097bc54b}{get\+Quantile}} (double percentile)
+\begin{DoxyCompactList}\small\item\em get\+Quantile -\/ Gets a quantile of the sorted array \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStats1D_a5e32644483fdcdc5b8adb889a136ddb0}\label{classStats1D_a5e32644483fdcdc5b8adb889a136ddb0}} 
+{\footnotesize template$<$typename U $>$ }\\std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, \mbox{\hyperlink{classStats1D}{Stats1D}}$<$ U $>$ \&stats)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStats1D_a41c5ea69b3c10f2d81a37daa22bf69b2}\label{classStats1D_a41c5ea69b3c10f2d81a37daa22bf69b2}} 
+\index{Stats1D$<$ T $>$@{Stats1D$<$ T $>$}!Stats1D@{Stats1D}}
+\index{Stats1D@{Stats1D}!Stats1D$<$ T $>$@{Stats1D$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Stats1D()}{Stats1D()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classStats1D}{Stats1D}}$<$ T $>$\+::\mbox{\hyperlink{classStats1D}{Stats1D}} (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{uint32\+\_\+t}]{size,  }\item[{bool}]{sorted = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classStats1D}{Stats1D}} object of a numeric type. 
+
+The array may be of any numeric type and may be unsorted when it is passed into the object. The size of the array is assumed to match the size of the variable. The sorted flag defaults to false.
+
+If a mistake is made when creating the array, or the array is updated, use update\+Array to make any necessary changes.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Any numeric type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em array} & \mbox{\hyperlink{classA}{A}} pointer to the array to be analyzed \\
+\hline
+{\em size} & The size of the array to be analyzed \\
+\hline
+{\em sorted} & \mbox{\hyperlink{classA}{A}} flag indicating if the array is sorted \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStats1D_ae87ce391ec43fcf4f071d786b6e41dae}\label{classStats1D_ae87ce391ec43fcf4f071d786b6e41dae}} 
+\index{Stats1D$<$ T $>$@{Stats1D$<$ T $>$}!getIQR@{getIQR}}
+\index{getIQR@{getIQR}!Stats1D$<$ T $>$@{Stats1D$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getIQR()}{getIQR()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classStats1D}{Stats1D}}$<$ T $>$\+::get\+IQR}
+
+
+
+Calculates the IQR of a numeric type. 
+
+The interquartile range is the 50\% range between the first and third quartile of a dataset. Together with the median of the dataset, it presents an alternative to the mean and standard deviation for finding outliers.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Any numeric type \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+T The IQR of a dataset 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStats1D_ab3b7cfd6058625ed131b218c03c02db2}\label{classStats1D_ab3b7cfd6058625ed131b218c03c02db2}} 
+\index{Stats1D$<$ T $>$@{Stats1D$<$ T $>$}!getMean@{getMean}}
+\index{getMean@{getMean}!Stats1D$<$ T $>$@{Stats1D$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getMean()}{getMean()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+double \mbox{\hyperlink{classStats1D}{Stats1D}}$<$ T $>$\+::get\+Mean}
+
+
+
+Calculates mean of a numeric type. 
+
+For a dataset without outliers or skew, the mean will represent the center of a dataset. Together with the standard deviation, it is useful for catching extreme values and describing the distribution of the data.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Any numeric type \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+double The mean of a dataset 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStats1D_a45ba7369a7b206a13d696a1ae09088ed}\label{classStats1D_a45ba7369a7b206a13d696a1ae09088ed}} 
+\index{Stats1D$<$ T $>$@{Stats1D$<$ T $>$}!getModes@{getModes}}
+\index{getModes@{getModes}!Stats1D$<$ T $>$@{Stats1D$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getModes()}{getModes()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+vector$<$ T $>$ \mbox{\hyperlink{classStats1D}{Stats1D}}$<$ T $>$\+::get\+Modes}
+
+
+
+Finds the modes of a numeric type. 
+
+The mode of a dataset is value that most frequently appears.
+
+This returns a vector in order to allow the possibility of multiple modes, rather than just returning one of many modes.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Any numeric type \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+T$>$ \mbox{\hyperlink{classA}{A}} vector of modes of a dataset 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStats1D_ae116d4fdc3994b47742a265e097bc54b}\label{classStats1D_ae116d4fdc3994b47742a265e097bc54b}} 
+\index{Stats1D$<$ T $>$@{Stats1D$<$ T $>$}!getQuantile@{getQuantile}}
+\index{getQuantile@{getQuantile}!Stats1D$<$ T $>$@{Stats1D$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getQuantile()}{getQuantile()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+double \mbox{\hyperlink{classStats1D}{Stats1D}}$<$ T $>$\+::get\+Quantile (\begin{DoxyParamCaption}\item[{double}]{percentile }\end{DoxyParamCaption})}
+
+
+
+get\+Quantile -\/ Gets a quantile of the sorted array 
+
+This looks like it implements the R-\/6 algorithm for finding quantiles, but it is actually R-\/7. Upon reviewing the relevant paper, the index functions refer to an array with a starting index of 1, but C++ is 0-\/indexed. As such, the added one that is expected in R-\/7 has been negated. (Hyndman and Fan, 1997).
+
+
+\begin{DoxyParams}{Parameters}
+{\em percentile} & The percentile to look for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double The resultant quantile 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStats1D_a140451b77c198677c2cc24c3bbe5c0e6}\label{classStats1D_a140451b77c198677c2cc24c3bbe5c0e6}} 
+\index{Stats1D$<$ T $>$@{Stats1D$<$ T $>$}!getStdDev@{getStdDev}}
+\index{getStdDev@{getStdDev}!Stats1D$<$ T $>$@{Stats1D$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getStdDev()}{getStdDev()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+double \mbox{\hyperlink{classStats1D}{Stats1D}}$<$ T $>$\+::get\+Std\+Dev}
+
+
+
+Calculates the standard deviation of a numeric type. 
+
+The standard deviation of a dataset describes the spread of a data. \mbox{\hyperlink{classA}{A}} higher standard deviation indicates that the data is spread further from the mean of the dataset.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Any numeric type \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+double The standard deviation of a dataset 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStats1D_a2efbfaca016e548a9fe970ae854bc82d}\label{classStats1D_a2efbfaca016e548a9fe970ae854bc82d}} 
+\index{Stats1D$<$ T $>$@{Stats1D$<$ T $>$}!getSummary@{getSummary}}
+\index{getSummary@{getSummary}!Stats1D$<$ T $>$@{Stats1D$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getSummary()}{getSummary()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+struct \mbox{\hyperlink{classStats1D}{Stats1D}}$<$ T $>$\+::\mbox{\hyperlink{structStats1D_1_1Summary}{Summary}} \mbox{\hyperlink{classStats1D}{Stats1D}}$<$ T $>$\+::get\+Summary}
+
+
+
+Returns a struct containing the five number summary of a numeric type. 
+
+The five number summary contains the minimum, maximum, median, first quartile, and third quartile. These values are useful to describe the distribution of the dataset and find outliers.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Any generic type \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+struct Stats1\+D$<$\+T$>$\+::\+Summary \mbox{\hyperlink{classA}{A}} struct of the five number summary 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStats1D_a3a69d2cbb665886f149f5454e103990d}\label{classStats1D_a3a69d2cbb665886f149f5454e103990d}} 
+\index{Stats1D$<$ T $>$@{Stats1D$<$ T $>$}!getVariance@{getVariance}}
+\index{getVariance@{getVariance}!Stats1D$<$ T $>$@{Stats1D$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getVariance()}{getVariance()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+double \mbox{\hyperlink{classStats1D}{Stats1D}}$<$ T $>$\+::get\+Variance}
+
+
+
+Calculates the variance of a numeric type. 
+
+The variance of a dataset is the square of standard deviation and is another descriptor of the spread of a dataset. Among its many uses are sampling, inference, hypothesis testing, and goodness of fit.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Any numeric type \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+double The variance of a dataset 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStats1D_a01485e9087a47de410873e7036a25103}\label{classStats1D_a01485e9087a47de410873e7036a25103}} 
+\index{Stats1D$<$ T $>$@{Stats1D$<$ T $>$}!updateArray@{updateArray}}
+\index{updateArray@{updateArray}!Stats1D$<$ T $>$@{Stats1D$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{updateArray()}{updateArray()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classStats1D}{Stats1D}}$<$ T $>$\+::update\+Array (\begin{DoxyParamCaption}\item[{T $\ast$}]{new\+Array,  }\item[{uint32\+\_\+t}]{new\+Size,  }\item[{bool}]{sorted = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Updates the content of the array. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Any numeric type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Array} & \mbox{\hyperlink{classA}{A}} new array \\
+\hline
+{\em new\+Size} & \mbox{\hyperlink{classA}{A}} new size \\
+\hline
+{\em sorted} & \mbox{\hyperlink{classA}{A}} new sorted flag, defaults to the existing flag \\
+\hline
+\end{DoxyParams}

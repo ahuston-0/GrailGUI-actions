@@ -1,0 +1,134 @@
+.TH "BlockMapLoader" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BlockMapLoader
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBBlockLoader\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBBlockMapHeader\fP"
+.br
+.ti -1c
+.RI "struct \fBBoundRect\fP"
+.br
+.ti -1c
+.RI "struct \fBNamedEntities\fP"
+.br
+.ti -1c
+.RI "struct \fBNamedEntry\fP"
+.br
+.ti -1c
+.RI "struct \fBRegion\fP"
+.br
+.ti -1c
+.RI "struct \fBRegionContainer\fP"
+.br
+.ti -1c
+.RI "struct \fBSegment\fP"
+.br
+.in -1c
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum class \fBEntityType\fP { \fBREGION_CONTAINER\fP, \fBREGION\fP, \fBSEGMENT\fP, \fBPOINT\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinit\fP (const uint64_t *mem, uint64_t size)"
+.br
+.ti -1c
+.RI "void \fBinit\fP (uint32_t numLists, uint32_t numPoints)"
+.br
+.ti -1c
+.RI "\fBBlockMapLoader\fP (const char filename[])"
+.br
+.ti -1c
+.RI "\fBBlockMapLoader\fP (const char filename[], const char[])"
+.br
+.ti -1c
+.RI "const \fBRegion\fP * \fBgetRegions\fP () const"
+.br
+.ti -1c
+.RI "const \fBSegment\fP * \fBgetSegments\fP () const"
+.br
+.ti -1c
+.RI "void \fBsave\fP (const char filename[])"
+.br
+.ti -1c
+.RI "void \fBfilterX\fP (double xMin, double xMax)"
+.br
+.ti -1c
+.RI "void \fBfilterY\fP (double yMin, double yMax)"
+.br
+.ti -1c
+.RI "void \fBfilter\fP (double xMin, double xMax, double yMin, double yMax)"
+.br
+.ti -1c
+.RI "void \fBmethodPolygon\fP ()"
+.br
+.ti -1c
+.RI "void \fBmethodPolyline\fP ()"
+.br
+.ti -1c
+.RI "uint64_t \fBsum\fP () const"
+.br
+.ti -1c
+.RI "void \fBdeltaEncode\fP ()"
+.br
+.ti -1c
+.RI "void \fBdeltaUnEncode\fP ()"
+.br
+.ti -1c
+.RI "void \fBdumpSegment\fP (uint32_t seg)"
+.br
+.ti -1c
+.RI "uint32_t \fBgetNumRegionContainers\fP () const"
+.br
+.ti -1c
+.RI "const \fBBlockMapHeader\fP * \fBgetBlockMapHeader\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetNumRegions\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetNumSegments\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetNumPoints\fP () const"
+.br
+.ti -1c
+.RI "const float * \fBgetXPoints\fP () const"
+.br
+.ti -1c
+.RI "const float * \fBgetYPoints\fP () const"
+.br
+.ti -1c
+.RI "const \fBSegment\fP & \fBgetSegment\fP (uint32_t i)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBBlockMapLoader\fP \fBloadCompressed\fP (const char filename[])"
+.br
+.ti -1c
+.RI "static void \fBdiff\fP (const \fBBlockMapLoader\fP &a, const \fBBlockMapLoader\fP &b)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

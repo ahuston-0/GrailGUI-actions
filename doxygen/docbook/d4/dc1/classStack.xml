@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classStack" xml:lang="en-US">
+<title>Stack&lt; T &gt; Class Template Reference</title>
+<indexterm><primary>Stack&lt; T &gt;</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classStack_1a04fd1295ca45b3ada832637914530416"/><emphasis role="strong">Stack</emphasis> (uint32_t capacity)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStack_1a611e88227d9bc833c54207d5707b37c3"/>void <emphasis role="strong">push</emphasis> (const T &amp;v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStack_1a01e885dfcc4ee3282ce581e178354310"/>bool <emphasis role="strong">isEmpty</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStack_1a7ec1c3bd7b5aa9036fba8766ce9dad8e"/>T <emphasis role="strong">peek</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStack_1aa2ea0e8c3293648589dd734d52487408"/>T <emphasis role="strong">pop</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classStack_1aea711e8cf9dbebb97cb1eb557e9ee495"/>std::ostream &amp; <emphasis role="strong">operator&lt;&lt;</emphasis> (std::ostream &amp;s, const <link linkend="_classStack">Stack</link> &amp;stack)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

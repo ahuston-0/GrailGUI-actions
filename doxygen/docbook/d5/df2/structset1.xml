@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structset1" xml:lang="en-US">
+<title>set1 Struct Reference</title>
+<indexterm><primary>set1</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structset1_1aa60d6b7435d7a878b91c8766f721eb16"/>uint32_t <emphasis role="strong">a</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

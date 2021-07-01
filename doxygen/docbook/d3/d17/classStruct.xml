@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classStruct" xml:lang="en-US">
+<title>Struct Class Reference</title>
+<indexterm><primary>Struct</primary></indexterm>
+<para>Inheritance diagram for Struct:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d3/d17/classStruct.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classStruct_1_1Member">Member</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classStruct_1acb582ad919f52bfb5d50feb5c1898a02"/><emphasis role="strong">Struct</emphasis> (const char name[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1a505a5e638da9a4c84adefe9990e8a1d8"/>void <emphasis role="strong">add</emphasis> (const char name[], DataType t)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1a868588aff363336301bdaed4362b1568"/>void <emphasis role="strong">write</emphasis> (char *buf)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1ab4de6ae6a32778499d69ac8a09b47084"/>void <emphasis role="strong">read</emphasis> (const char buf[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1aeefdcc7fdab108b6aa9f8b09308f4b81"/><emphasis role="strong">Struct</emphasis> (const <link linkend="_classStruct">Struct</link> &amp;orig)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1ad8f3ec86a459bba39ae09e2d2b40fd8b"/><emphasis role="strong">Struct</emphasis> (<link linkend="_classXDLCompiler">XDLCompiler</link> *compiler, const std::string &amp;name)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1acecbbc8246cb2ba32372a50acbc855ee"/><emphasis role="strong">Struct</emphasis> (<link linkend="_classXDLCompiler">XDLCompiler</link> *c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1ac2c41c279b8aaeeb19c6a4998a410874"/>void <emphasis role="strong">addSym</emphasis> (const string &amp;name, const <link linkend="_classXDLType">XDLType</link> *t)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1a7fb4666df91cd59419904ec38699328c"/>void <emphasis role="strong">addSymCheckNull</emphasis> (const string &amp;name, const <link linkend="_classXDLType">XDLType</link> *t)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1ab4a84a8a2ac4771c3d9c4bd05b5fa824"/>void <emphasis role="strong">addSymCheckDup</emphasis> (const string &amp;name, const <link linkend="_classXDLType">XDLType</link> *t)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1a5a85dd24780cd4e2d1f47a9c4f64c78b"/>uint32_t <emphasis role="strong">addMemberName</emphasis> (const char memberName[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1ab68261641798faaf4bb9f55ad1c8ac03"/>void <emphasis role="strong">addMember</emphasis> (const std::string &amp;name, const <link linkend="_classXDLType">XDLType</link> *t)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1a31c908d0be6e3ee0db731a5a897e5928"/>void <emphasis role="strong">addBuiltin</emphasis> (const std::string &amp;name, DataType dt)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1a4684dd64ab83124084e15230130718ba"/>void <emphasis role="strong">addRegex</emphasis> (const std::string &amp;name, const std::string &amp;regex)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1a1ecf37fe0ee29a6ac70f2eb6d11d7659"/>void <emphasis role="strong">addTypedef</emphasis> (const char name[], const char type[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1aeed39161dde15088e3af348b71d20ddb"/>void <emphasis role="strong">addStructMember</emphasis> (const std::string &amp;memberName, const <link linkend="_classStruct">Struct</link> *memberStruct)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1a7a50c9c113cfdc38586d168e572580f8"/>const <link linkend="_classXDLType">XDLType</link> * <emphasis role="strong">getMemberType</emphasis> (const std::string &amp;memberName) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1acf47968dacfe4e2861295ed1562885a4"/>const <link linkend="_classXDLType">XDLType</link> * <emphasis role="strong">getMemberType</emphasis> (uint32_t index) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1a21db25fb144e309d4e9c57facc517a6a"/>uint32_t <emphasis role="strong">getMemberCount</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1a8fbfdf856fba45764119f080e58b3c32"/>std::string <emphasis role="strong">getMemberName</emphasis> (uint32_t index) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1af94deea8ad619c8c61fa65ac54263735"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1a566ac1b7ee6fc815e2ae887b588f5fcc"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1a45fa5256118014a462ba5dac0c7a9d64"/>void <emphasis role="strong">writeMeta</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1aec1d1732177f82cb1e95f68a845b9dfb"/>DataType <emphasis role="strong">getDataType</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1a262b66c65d914d93d67092fd3576e771"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1a254206d662143fb46e0c1233175940b3"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classStruct_1a2c8f63276e3d06420b268779a41b8827"/><link linkend="_classXDLCompiler">XDLCompiler</link> * <emphasis role="strong">compiler</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1a4b9b7897155b4f2216f5c8139802efa2"/><link linkend="_classDynArray">DynArray</link>&lt; <link linkend="_classStruct_1_1Member">Member</link> &gt; <emphasis role="strong">members</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classStruct_1a5f6813217b13f1b4926f7da4bb5a0a46"/>std::ostream &amp; <emphasis role="strong">operator&lt;&lt;</emphasis> (std::ostream &amp;s, const <link linkend="_classStruct">Struct</link> &amp;str)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

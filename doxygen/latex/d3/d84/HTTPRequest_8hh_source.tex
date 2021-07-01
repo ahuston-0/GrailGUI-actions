@@ -1,0 +1,37 @@
+\hypertarget{HTTPRequest_8hh_source}{}\doxysection{HTTPRequest.\+hh}
+\label{HTTPRequest_8hh_source}\index{src/csp/HTTPRequest.hh@{src/csp/HTTPRequest.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}csp/Request.hh"{}}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}csp/ServletMap.hh"{}}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{\Hypertarget{HTTPRequest_8hh_source_l00007}\mbox{\hyperlink{classHTTPRequest}{00007}} \textcolor{keyword}{class }\mbox{\hyperlink{classHTTPRequest}{HTTPRequest}} : \textcolor{keyword}{public} \mbox{\hyperlink{classRequest}{Request}} \{}
+\DoxyCodeLine{00008 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009     \textcolor{keywordtype}{void} tokenize();}
+\DoxyCodeLine{00010     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* method;}
+\DoxyCodeLine{00011     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* url = \textcolor{keyword}{nullptr};     \textcolor{comment}{// the complete url including socket number http://www.foo.com/test1.hsp}}
+\DoxyCodeLine{00012     uint32\_t urlLength;}
+\DoxyCodeLine{00013     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* httpVersion = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00014     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* host = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00015     uint32\_t hostLength;}
+\DoxyCodeLine{00016 \textcolor{comment}{//  const char* body;}}
+\DoxyCodeLine{00017 \textcolor{comment}{//  size\_t bodySize;}}
+\DoxyCodeLine{00018 \textcolor{comment}{//  size\_t bodyLength;}}
+\DoxyCodeLine{00019     \textcolor{comment}{//TODO: static servlet map!}}
+\DoxyCodeLine{00020     \textcolor{comment}{//ServletMap servlets;}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023     \mbox{\hyperlink{classHTTPRequest}{HTTPRequest}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* ReqType);}
+\DoxyCodeLine{00024     \string~\mbox{\hyperlink{classHTTPRequest}{HTTPRequest}}();}
+\DoxyCodeLine{00025     \textcolor{keyword}{const} \textcolor{keyword}{static} std::string POST;}
+\DoxyCodeLine{00026     \textcolor{keyword}{const} \textcolor{keyword}{static} std::string GET;}
+\DoxyCodeLine{00027     \textcolor{keyword}{const} \textcolor{keyword}{static} std::string UNIMPLEMENTED;}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     \textcolor{keywordtype}{void} handle(\textcolor{keywordtype}{int} sckt) \textcolor{keyword}{override};}
+\DoxyCodeLine{00030     \textcolor{keywordtype}{void} handle(\textcolor{keywordtype}{int} sckt, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* command) \textcolor{keyword}{override};}
+\DoxyCodeLine{00031 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classColorGrid" xml:lang="en-US">
+<title>ColorGrid Class Reference</title>
+<indexterm><primary>ColorGrid</primary></indexterm>
+<para>Inheritance diagram for ColorGrid:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d6/d18/classColorGrid.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classColorGrid_1acce41cf59f3bd412691e708110f01379"/><emphasis role="strong">ColorGrid</emphasis> (uint32_t xsize, uint32_t ysize)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classColorGrid_1a7d1fb7f09f60688047a05b1f8febe411"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classColorGrid_1a6efb063e969112778e19cf8c84392081"/>void <emphasis role="strong">render</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classColorGrid_1a103dd3719e2028ff619789c456c028d9"/>void <emphasis role="strong">addGrid</emphasis> (float x0, float y0, float dx, float dy)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classColorGrid_1a638ffc41d19e3fc3040eedc4e012abda"/>void <emphasis role="strong">addRectangle</emphasis> (float x, float y, float w, float h)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

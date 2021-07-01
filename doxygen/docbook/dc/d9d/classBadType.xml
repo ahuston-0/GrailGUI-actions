@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classBadType" xml:lang="en-US">
+<title>BadType Class Reference</title>
+<indexterm><primary>BadType</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Config.hh&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classBadType_1ab805a7692ccf7c40e02b100d0f724ced"/><emphasis role="strong">BadType</emphasis> (const char filename[], int lineNum)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classBadType_1a8027fb74caf303a162807ccf25c194ef"/>ostream &amp; <emphasis role="strong">operator&lt;&lt;</emphasis> (ostream &amp;s, const <link linkend="_classBadType">BadType</link> &amp;e)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Represent a config file used to configure complicated applications</para>
+
+<para>File format supports comments starting with # name-value pairs of data, with declaration of the type of names supported in the constructor so that subclsses of <link linkend="_classConfig">Config</link> can specify the required types of each tag. In this way, the <link linkend="_classConfig">Config</link> utility can display the line number and an error if the data is not as required</para>
+
+<para>TODO: Since <link linkend="_classConfig">Config</link> files can be very large, and parsing is slow, it is possible to extend this model to automatically generate a binary version of the config. In this way, the config file can effectively be compiled. This is important only if the file is large so at the moment we can ignore </para>
+</section>
+</section>

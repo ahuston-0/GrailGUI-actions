@@ -1,0 +1,57 @@
+\hypertarget{MatrixGraph_8hh_source}{}\doxysection{Matrix\+Graph.\+hh}
+\label{MatrixGraph_8hh_source}\index{src/visualcs/MatrixGraph.hh@{src/visualcs/MatrixGraph.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <limits>}}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{\Hypertarget{MatrixGraph_8hh_source_l00006}\mbox{\hyperlink{classMatrixGraph}{00006}} \textcolor{keyword}{class }\mbox{\hyperlink{classMatrixGraph}{MatrixGraph}} \{}
+\DoxyCodeLine{00007 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00008   uint32\_t V;}
+\DoxyCodeLine{00009   \textcolor{keywordtype}{double}* e;}
+\DoxyCodeLine{00010   uint32\_t edgeCount;}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013   constexpr \textcolor{keyword}{static} \textcolor{keywordtype}{double} INF = std::numeric\_limits<double>::infinity();}
+\DoxyCodeLine{00014   \mbox{\hyperlink{classMatrixGraph}{MatrixGraph}}(\textcolor{keywordtype}{int} V) : V(V), e(\textcolor{keyword}{new} \textcolor{keywordtype}{double}[V*V]) \{}
+\DoxyCodeLine{00015     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < V*V; i++)}
+\DoxyCodeLine{00016       e[i] = INF;}
+\DoxyCodeLine{00017     edgeCount = 0;}
+\DoxyCodeLine{00018   \}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020   \string~\mbox{\hyperlink{classMatrixGraph}{MatrixGraph}}() \{}
+\DoxyCodeLine{00021     \textcolor{keyword}{delete} [] e;}
+\DoxyCodeLine{00022   \}}
+\DoxyCodeLine{00023   \mbox{\hyperlink{classMatrixGraph}{MatrixGraph}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrixGraph}{MatrixGraph}}\& orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00024   \mbox{\hyperlink{classMatrixGraph}{MatrixGraph}}\& operator =(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrixGraph}{MatrixGraph}}\& orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026   uint32\_t getV()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} V; \}}
+\DoxyCodeLine{00027   uint32\_t getE()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} edgeCount; \}}
+\DoxyCodeLine{00028   \textcolor{keywordtype}{double} getW(uint32\_t from, uint32\_t to)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} e[from * V + to]; \}}
+\DoxyCodeLine{00029   \textcolor{keywordtype}{void} setW(uint32\_t from, uint32\_t to, \textcolor{keywordtype}{double} v) \{e[from * V + to] = v; \}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031   \textcolor{keywordtype}{double} operator ()(\textcolor{keywordtype}{int} from, \textcolor{keywordtype}{int} to)\textcolor{keyword}{ const }\{  \textcolor{keywordflow}{return} e[from * V + to]; \}}
+\DoxyCodeLine{00032   \textcolor{keywordtype}{double}\& operator ()(\textcolor{keywordtype}{int} from, \textcolor{keywordtype}{int} to) \{  \textcolor{keywordflow}{return} e[from * V + to]; \}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034   \textcolor{keyword}{friend} std::istream\& operator >>(std::istream\& s, \mbox{\hyperlink{classMatrixGraph}{MatrixGraph}}\& g) \{}
+\DoxyCodeLine{00035     \textcolor{keyword}{delete} [] g.e;}
+\DoxyCodeLine{00036     s >> g.V;}
+\DoxyCodeLine{00037     g.e = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[g.V*g.V];}
+\DoxyCodeLine{00038     \textcolor{keywordtype}{double} edge;}
+\DoxyCodeLine{00039     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < g.V*g.V; i++) \{}
+\DoxyCodeLine{00040       s >> edge;}
+\DoxyCodeLine{00041       \textcolor{keywordflow}{if} (edge > 1e50)}
+\DoxyCodeLine{00042         edge = INF;}
+\DoxyCodeLine{00043       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00044         g.edgeCount++;}
+\DoxyCodeLine{00045       g.e[i] = edge;}
+\DoxyCodeLine{00046     \}}
+\DoxyCodeLine{00047     \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{00048   \}}
+\DoxyCodeLine{00049   \textcolor{keywordtype}{void} dfs(\textcolor{keywordtype}{int} v);}
+\DoxyCodeLine{00050   }
+\DoxyCodeLine{00051 \};}
+
+\end{DoxyCode}

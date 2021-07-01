@@ -1,0 +1,47 @@
+.TH "Transformation" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Transformation
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBident\fP ()"
+.br
+.ti -1c
+.RI "void \fBtranslate\fP (float x, float y, float z)"
+.br
+.ti -1c
+.RI "void \fBscale\fP (float x, float y, float z)"
+.br
+.ti -1c
+.RI "void \fBscale\fP (float s)"
+.br
+.ti -1c
+.RI "void \fBsetRotate\fP (float angleRad, float xAxis, float yAxis, float zAxis)"
+.br
+.ti -1c
+.RI "void \fBrotate\fP (float angleRad, float xAxis, float yAxis, float zAxis)"
+.br
+.ti -1c
+.RI "void \fBrotateZ\fP (float angleRad)"
+.br
+.ti -1c
+.RI "const glm::mat4 & \fBgetTransform\fP () const"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &s, const \fBTransformation\fP &t)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

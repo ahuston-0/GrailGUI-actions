@@ -1,0 +1,135 @@
+\hypertarget{MultiShape3D_8hh_source}{}\doxysection{Multi\+Shape3\+D.\+hh}
+\label{MultiShape3D_8hh_source}\index{src/opengl/MultiShape3D.hh@{src/opengl/MultiShape3D.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}glad/glad.h"{}}}
+\DoxyCodeLine{00007 \textcolor{comment}{//\#include "{}grail/Grail.hh"{}}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include "{}opengl/Style.hh"{}}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include "{}obj/loader.h"{}}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "{}opengl/Canvas.hh"{}}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "{}opengl/GLMath.hh"{}}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "{}opengl/GLWin.hh"{}}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "{}opengl/Shader.hh"{}}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "{}opengl/MultiShape.hh"{}}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include "{}opengl/util/Camera.hh"{}}}
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include "{}opengl/util/Transformation.hh"{}}}
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include "{}opengl/util/TextureArray.hh"{}}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{\Hypertarget{MultiShape3D_8hh_source_l00019}\mbox{\hyperlink{classMultiShape3D}{00019}} \textcolor{keyword}{class }\mbox{\hyperlink{classMultiShape3D}{MultiShape3D}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMultiShape}{MultiShape}} \{}
+\DoxyCodeLine{00020   \textcolor{comment}{// Stores x,y pairs for texture coordinates}}
+\DoxyCodeLine{00021   \textcolor{keyword}{typedef} \textcolor{keyword}{const} std::vector<std::pair<float, float>> TexCoordVector;}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00024   uint32\_t elemPerVert;}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027   \textcolor{keyword}{const} uint32\_t fastRectDistinctVertices = 14;}
+\DoxyCodeLine{00028   \textcolor{keyword}{const} uint32\_t rectDistinctVertices = 24;}
+\DoxyCodeLine{00029   \mbox{\hyperlink{classShader}{Shader}}* shader = NULL;}
+\DoxyCodeLine{00030   \mbox{\hyperlink{classTextureArray}{TextureArray}}* texture = NULL;}
+\DoxyCodeLine{00031   objl::Loader Loader;}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033   \textcolor{keywordtype}{void} addFace(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} z1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2, \textcolor{keywordtype}{float} z2,}
+\DoxyCodeLine{00034                \textcolor{keywordtype}{float} x3, \textcolor{keywordtype}{float} y3, \textcolor{keywordtype}{float} z3, \textcolor{keywordtype}{float} x4, \textcolor{keywordtype}{float} y4, \textcolor{keywordtype}{float} z4);}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037 \textcolor{comment}{//  Style* style;}}
+\DoxyCodeLine{00038   \mbox{\hyperlink{classCamera}{Camera}}* camera;}
+\DoxyCodeLine{00039   \mbox{\hyperlink{classTransformation}{Transformation}}* transform;}
+\DoxyCodeLine{00040   std::vector<const char*> textureFiles;}
+\DoxyCodeLine{00041   std::vector<uint32\_t> textureIndices;}
+\DoxyCodeLine{00042   \textcolor{comment}{// Added this in addition to what is inherited for textures}}
+\DoxyCodeLine{00043   uint32\_t tbo;}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045   \textcolor{keywordtype}{void} addRect(uint32\_t i1, uint32\_t i2, uint32\_t i3, uint32\_t i4,}
+\DoxyCodeLine{00046                uint32\_t offset);}
+\DoxyCodeLine{00047   \textcolor{keywordtype}{void} add3DPoint(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z) \{}
+\DoxyCodeLine{00048     vertices.push\_back(x);}
+\DoxyCodeLine{00049     vertices.push\_back(y);}
+\DoxyCodeLine{00050     vertices.push\_back(z);}
+\DoxyCodeLine{00051   \}}
+\DoxyCodeLine{00052   \textcolor{keywordtype}{void} addTextureCoord(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y) \{}
+\DoxyCodeLine{00053     colorIndices.push\_back(x);}
+\DoxyCodeLine{00054     colorIndices.push\_back(y);}
+\DoxyCodeLine{00055   \}}
+\DoxyCodeLine{00056   uint32\_t getPointIndex() \{ \textcolor{keywordflow}{return} vertices.size() / elemPerVert; \}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00059   \mbox{\hyperlink{classMultiShape3D}{MultiShape3D}}(\mbox{\hyperlink{classCanvas}{Canvas}}* canv, \mbox{\hyperlink{classCamera}{Camera}}* c, \textcolor{keyword}{const} std::vector<const char*>\& textureFiles,}
+\DoxyCodeLine{00060                \mbox{\hyperlink{classTransformation}{Transformation}}* t, }
+\DoxyCodeLine{00061                uint32\_t elemPerVert = 3, uint32\_t vertCount = 1024,}
+\DoxyCodeLine{00062                uint32\_t solidIndCount = 1024, uint32\_t lineIndCount = 1024,}
+\DoxyCodeLine{00063                uint32\_t pointIndCount = 1024, uint32\_t colorIndCount = 1024)}
+\DoxyCodeLine{00064       : \mbox{\hyperlink{classMultiShape}{MultiShape}}(canv, vertCount, solidIndCount, lineIndCount, pointIndCount,}
+\DoxyCodeLine{00065                    colorIndCount),}
+\DoxyCodeLine{00066         camera(c),}
+\DoxyCodeLine{00067         transform(t),}
+\DoxyCodeLine{00068         textureFiles(textureFiles),}
+\DoxyCodeLine{00069         elemPerVert(elemPerVert) \{}
+\DoxyCodeLine{00070     textureIndices.reserve(textureFiles.size());}
+\DoxyCodeLine{00071   \}}
+\DoxyCodeLine{00072   \mbox{\hyperlink{classMultiShape3D}{MultiShape3D}}(\mbox{\hyperlink{classCanvas}{Canvas}}* canv, \mbox{\hyperlink{classCamera}{Camera}}* c, \textcolor{keyword}{const} \textcolor{keywordtype}{char} textureFile[],}
+\DoxyCodeLine{00073                \mbox{\hyperlink{classTransformation}{Transformation}}* t,}
+\DoxyCodeLine{00074                uint32\_t elemPerVert = 3, uint32\_t vertCount = 1024,}
+\DoxyCodeLine{00075                uint32\_t solidIndCount = 1024, uint32\_t lineIndCount = 1024,}
+\DoxyCodeLine{00076                uint32\_t pointIndCount = 1024, uint32\_t colorIndCount = 1024)}
+\DoxyCodeLine{00077       : \mbox{\hyperlink{classMultiShape3D}{MultiShape3D}}(canv, c, std::vector<const char*>(\{textureFile\}), t,}
+\DoxyCodeLine{00078        elemPerVert, vertCount,}
+\DoxyCodeLine{00079        solidIndCount, lineIndCount, pointIndCount, colorIndCount) \{\}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
+\DoxyCodeLine{00082   \textcolor{keywordtype}{void} render() \textcolor{keyword}{override};}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084   \textcolor{comment}{// Experimental, trying to send less than 36 vertices to gpu}}
+\DoxyCodeLine{00085   \textcolor{keywordtype}{void} genFastRectPrism(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z, uint32\_t width,}
+\DoxyCodeLine{00086                         uint32\_t length, uint32\_t height, uint32\_t texIndex,}
+\DoxyCodeLine{00087                         TexCoordVector\& texCoords);}
+\DoxyCodeLine{00088   \textcolor{keywordtype}{void} genFastCube(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z, uint32\_t length,}
+\DoxyCodeLine{00089                    uint32\_t texIndex, TexCoordVector\& texCoords);}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091   \textcolor{keywordtype}{void} genRectPrism(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z, uint32\_t width, uint32\_t length,}
+\DoxyCodeLine{00092                     uint32\_t height, uint32\_t texIndex,}
+\DoxyCodeLine{00093                     TexCoordVector\& texCoords);}
+\DoxyCodeLine{00094   \textcolor{keywordtype}{void} genCube(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z, uint32\_t length, uint32\_t texIndex,}
+\DoxyCodeLine{00095                TexCoordVector\& texCoords);}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097   \textcolor{keywordtype}{void} genOBJModel(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filePath, std::vector<uint32\_t>\& texIndices,}
+\DoxyCodeLine{00098                    \textcolor{keywordtype}{float} xOffset = 0, \textcolor{keywordtype}{float} yOffset = 0, \textcolor{keywordtype}{float} zOffset = 0);}
+\DoxyCodeLine{00099   \textcolor{keywordtype}{void} genOBJModel(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filePath);}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101   \string~\mbox{\hyperlink{classMultiShape3D}{MultiShape3D}}();}
+\DoxyCodeLine{00102 }
+\DoxyCodeLine{00103   \textcolor{comment}{// static uint32\_t addTransformedVert(std::vector<float>\& vert,}}
+\DoxyCodeLine{00104   \textcolor{comment}{//                                    double x, double y, double}}
+\DoxyCodeLine{00105   \textcolor{comment}{// z,                                     const Transform* t);}}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107   \textcolor{comment}{// static void genSphere(std::vector<float>\& vert,}}
+\DoxyCodeLine{00108   \textcolor{comment}{//                                            std::vector<uint32\_t>\&}}
+\DoxyCodeLine{00109   \textcolor{comment}{// ind,                                           uint32\_t latRes, uint32\_t lonRes,                                           const Transform* t); static void}}
+\DoxyCodeLine{00110   \textcolor{comment}{// genCylinder(std::vector<float>\& vert,                                              std::vector<uint32\_t>\& ind,                                                 uint32\_t}}
+\DoxyCodeLine{00111   \textcolor{comment}{// lonRes,                                                const Transform* t); static void cube(std::vector<float>\& vert,}}
+\DoxyCodeLine{00112   \textcolor{comment}{// const Transform* t); static void tetrahedron(std::vector<float>\& vert,}}
+\DoxyCodeLine{00113   \textcolor{comment}{// const Transform* t); static void dodecahedron(std::vector<float>\& vert,}}
+\DoxyCodeLine{00114   \textcolor{comment}{// const Transform* t); static void icosahedron(std::vector<float>\& vert,const}}
+\DoxyCodeLine{00115   \textcolor{comment}{// Transform* t); void textureSphere(double r, uint32\_t resLat, uint32\_t}}
+\DoxyCodeLine{00116   \textcolor{comment}{// resLon, int imgTexture); void wireframeSphere(double r, uint32\_t resLat,}}
+\DoxyCodeLine{00117   \textcolor{comment}{// uint32\_t resLon); void pointSphere(double r, uint32\_t resLat, uint32\_t}}
+\DoxyCodeLine{00118   \textcolor{comment}{// resLon);}}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120   \textcolor{comment}{// void textureCylinder(double r, double h, uint32\_t resLon, int imgTexture);}}
+\DoxyCodeLine{00121   \textcolor{comment}{// void wireframeCylinder(double r, double h, uint32\_t resLon);}}
+\DoxyCodeLine{00122   \textcolor{comment}{// void pointCylinder(double r, uint32\_t resLat, uint32\_t resLon);}}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124   \textcolor{comment}{// void textureCube(double r, double h, uint32\_t resLon, int imgTexture);}}
+\DoxyCodeLine{00125   \textcolor{comment}{// void wireframeCube(double r, double h, uint32\_t resLon);}}
+\DoxyCodeLine{00126   \textcolor{comment}{// void pointCube(double r, uint32\_t resLat, uint32\_t resLon);}}
+\DoxyCodeLine{00127 }
+\DoxyCodeLine{00128   \textcolor{comment}{// void triangleStrip(const float vert[], uint32\_t len);}}
+\DoxyCodeLine{00129 \};}
+
+\end{DoxyCode}

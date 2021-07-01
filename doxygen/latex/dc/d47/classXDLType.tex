@@ -1,0 +1,95 @@
+\hypertarget{classXDLType}{}\doxysection{XDLType Class Reference}
+\label{classXDLType}\index{XDLType@{XDLType}}
+Inheritance diagram for XDLType\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{dc/d47/classXDLType}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classXDLType_a172107ab9073ae1b1de5fa0e04fa0213}\label{classXDLType_a172107ab9073ae1b1de5fa0e04fa0213}} 
+{\bfseries XDLType} (const std\+::string \&type\+Name)
+\item 
+\mbox{\Hypertarget{classXDLType_a168baeab157988fd97c82a9556b8fe85}\label{classXDLType_a168baeab157988fd97c82a9556b8fe85}} 
+{\bfseries XDLType} (Data\+Type t)
+\item 
+\mbox{\Hypertarget{classXDLType_a44f9bb7bca197dc9ef2742b642053072}\label{classXDLType_a44f9bb7bca197dc9ef2742b642053072}} 
+virtual void {\bfseries write} (\mbox{\hyperlink{classBuffer}{Buffer}} \&b) const =0
+\item 
+\mbox{\Hypertarget{classXDLType_a769a4f3b12aeb5659fd1077db464c044}\label{classXDLType_a769a4f3b12aeb5659fd1077db464c044}} 
+virtual void {\bfseries write\+Meta} (\mbox{\hyperlink{classBuffer}{Buffer}} \&buf) const
+\item 
+\mbox{\Hypertarget{classXDLType_a42edc53944560c6cfb7fa2132c844b03}\label{classXDLType_a42edc53944560c6cfb7fa2132c844b03}} 
+virtual uint32\+\_\+t {\bfseries size} () const =0
+\item 
+\mbox{\Hypertarget{classXDLType_a3752b48035754082bcc5de454cafc88a}\label{classXDLType_a3752b48035754082bcc5de454cafc88a}} 
+virtual Data\+Type {\bfseries get\+Data\+Type} () const =0
+\item 
+\mbox{\Hypertarget{classXDLType_a61129908069454a43977202081dc02d7}\label{classXDLType_a61129908069454a43977202081dc02d7}} 
+const std\+::string \& {\bfseries get\+Type\+Name} () const
+\item 
+\mbox{\Hypertarget{classXDLType_aa3529d66389a9fb8f4c1d16387dc1a07}\label{classXDLType_aa3529d66389a9fb8f4c1d16387dc1a07}} 
+virtual \mbox{\hyperlink{classXDLIterator}{XDLIterator}} $\ast$ {\bfseries create\+Iterator} ()
+\item 
+\mbox{\Hypertarget{classXDLType_a468ae62bb88e270b23ad5c15294ee825}\label{classXDLType_a468ae62bb88e270b23ad5c15294ee825}} 
+virtual void {\bfseries display} (\mbox{\hyperlink{classBuffer}{Buffer}} \&binary\+In, \mbox{\hyperlink{classBuffer}{Buffer}} \&ascii\+Out) const
+\item 
+\mbox{\Hypertarget{classXDLType_ad84aa790e50c2d5b3f6a8905c17efac5}\label{classXDLType_ad84aa790e50c2d5b3f6a8905c17efac5}} 
+void {\bfseries format} (\mbox{\hyperlink{classBuffer}{Buffer}} \&binary\+In, \mbox{\hyperlink{classBuffer}{Buffer}} \&ascii\+Out, const char fmt\mbox{[}$\,$\mbox{]}) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classXDLType_ad0aafc838f213c30628d4f2da427e862}\label{classXDLType_ad0aafc838f213c30628d4f2da427e862}} 
+static void {\bfseries class\+Init} ()
+\item 
+\mbox{\Hypertarget{classXDLType_a60c160bd7d182b7bddb827c437259689}\label{classXDLType_a60c160bd7d182b7bddb827c437259689}} 
+static void {\bfseries class\+Cleanup} ()
+\item 
+\mbox{\Hypertarget{classXDLType_ac36eaa9c08207b2677638c4669afb4f4}\label{classXDLType_ac36eaa9c08207b2677638c4669afb4f4}} 
+static uint32\+\_\+t {\bfseries compute\+Name\+Offset} (const std\+::string \&type\+Name)
+\item 
+\mbox{\Hypertarget{classXDLType_a557b80f447006fb1d1899602181ec0e2}\label{classXDLType_a557b80f447006fb1d1899602181ec0e2}} 
+static uint32\+\_\+t {\bfseries compute\+Name\+Offset} (Data\+Type t)
+\item 
+\mbox{\Hypertarget{classXDLType_ac715ed370b33252b9667c1007eeab62b}\label{classXDLType_ac715ed370b33252b9667c1007eeab62b}} 
+static const \mbox{\hyperlink{classXDLType}{XDLType}} $\ast$ {\bfseries get\+Builtin\+Type} (Data\+Type dt)
+\item 
+\mbox{\Hypertarget{classXDLType_a4268365d69a14d6f38e1016ba1cea296}\label{classXDLType_a4268365d69a14d6f38e1016ba1cea296}} 
+static void {\bfseries read\+Meta} (\mbox{\hyperlink{classXDLCompiler}{XDLCompiler}} $\ast$compiler, \mbox{\hyperlink{classBuffer}{Buffer}} \&in, uint32\+\_\+t count, \mbox{\hyperlink{classStruct}{Struct}} $\ast$s)
+\item 
+\mbox{\Hypertarget{classXDLType_ae150a2f5efeacdcf131ecda654c5cea1}\label{classXDLType_ae150a2f5efeacdcf131ecda654c5cea1}} 
+static const \mbox{\hyperlink{classStruct}{Struct}} $\ast$ {\bfseries read} (\mbox{\hyperlink{classBuffer}{Buffer}} \&in)
+\item 
+\mbox{\Hypertarget{classXDLType_a1328641d9430a1930369383a9684b8b0}\label{classXDLType_a1328641d9430a1930369383a9684b8b0}} 
+static Data\+Type {\bfseries read\+Type} (\mbox{\hyperlink{classBuffer}{Buffer}} \&in)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classXDLType_a9d803223932fd85748c01abc0ad3c721}\label{classXDLType_a9d803223932fd85748c01abc0ad3c721}} 
+static void {\bfseries add\+Type} (const \mbox{\hyperlink{classXDLType}{XDLType}} $\ast$type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classXDLType_ace115907e0b5eb85b194efa5d40a7f80}\label{classXDLType_ace115907e0b5eb85b194efa5d40a7f80}} 
+uint32\+\_\+t {\bfseries name\+Offset}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classXDLType_a119a1d8abddbbd7c807725ebf721f44d}\label{classXDLType_a119a1d8abddbbd7c807725ebf721f44d}} 
+static const std\+::string {\bfseries empty} = \char`\"{}\char`\"{}
+\item 
+\mbox{\Hypertarget{classXDLType_a958324c5b89520712dcb6a189dca8281}\label{classXDLType_a958324c5b89520712dcb6a189dca8281}} 
+static \mbox{\hyperlink{classDynArray}{Dyn\+Array}}$<$ const \mbox{\hyperlink{classXDLType}{XDLType}} $\ast$ $>$ {\bfseries types}
+\item 
+\mbox{\Hypertarget{classXDLType_a62cb7bab05fac7d89e5a7fdc4fb78ed6}\label{classXDLType_a62cb7bab05fac7d89e5a7fdc4fb78ed6}} 
+static \mbox{\hyperlink{classDynArray}{Dyn\+Array}}$<$ std\+::string $>$ {\bfseries type\+Names}
+\item 
+\mbox{\Hypertarget{classXDLType_a995e800b9656db1a66eeea9208ed4372}\label{classXDLType_a995e800b9656db1a66eeea9208ed4372}} 
+static std\+::unordered\+\_\+map$<$ std\+::string, uint32\+\_\+t $>$ {\bfseries by\+Name}
+\end{DoxyCompactItemize}

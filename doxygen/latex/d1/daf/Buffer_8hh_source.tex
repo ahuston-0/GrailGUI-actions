@@ -1,0 +1,461 @@
+\hypertarget{Buffer_8hh_source}{}\doxysection{Buffer.\+hh}
+\label{Buffer_8hh_source}\index{src/util/Buffer.hh@{src/util/Buffer.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <fcntl.h>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <regex>}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include "{}csp/cspservlet/Student.hh"{}}}
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include "{}csp/SocketIO.hh"{}}}
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include "{}util/List1.hh"{}}}
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#include "{}util/datatype.hh"{}}}
+\DoxyCodeLine{00019 \textcolor{preprocessor}{\#include "{}csp/csp.hh"{}}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 \textcolor{keyword}{class }\mbox{\hyperlink{classXDLRaw}{XDLRaw}};}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00024 \textcolor{keyword}{class }\mbox{\hyperlink{classBuffer}{Buffer}} \{}
+\DoxyCodeLine{00025  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026   \mbox{\hyperlink{classBuffer}{Buffer}}(\textcolor{keywordtype}{size\_t} initialSize, \textcolor{keywordtype}{bool} writing);}
+\DoxyCodeLine{00027   \mbox{\hyperlink{classBuffer}{Buffer}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[], \textcolor{keywordtype}{size\_t} initialSize);}
+\DoxyCodeLine{00028   \mbox{\hyperlink{classBuffer}{Buffer}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[], \textcolor{keywordtype}{size\_t} initialSize, \textcolor{keyword}{const} \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{00029   \mbox{\hyperlink{classBuffer}{Buffer}}(\textcolor{keyword}{const} \mbox{\hyperlink{classBuffer}{Buffer}}\& c) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00030   \string~\mbox{\hyperlink{classBuffer}{Buffer}}() \{}
+\DoxyCodeLine{00031     \textcolor{keywordflow}{if} (writing) flush();}
+\DoxyCodeLine{00032     \textcolor{keyword}{delete}[] preBuffer;}
+\DoxyCodeLine{00033   \}}
+\DoxyCodeLine{00034   \textcolor{keywordtype}{void} operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classBuffer}{Buffer}}\& orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036   \textcolor{keywordtype}{void} attachWrite(\textcolor{keywordtype}{int} sockfd) \{}
+\DoxyCodeLine{00037     fd = sockfd;}
+\DoxyCodeLine{00038     p = buffer;}
+\DoxyCodeLine{00039     availSize = size;}
+\DoxyCodeLine{00040   \}}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042   \textcolor{keywordtype}{void} attachRead(\textcolor{keywordtype}{int} sockfd) \{}
+\DoxyCodeLine{00043     fd = sockfd;}
+\DoxyCodeLine{00044     p = buffer;}
+\DoxyCodeLine{00045     availSize = size;}
+\DoxyCodeLine{00046     readNext();}
+\DoxyCodeLine{00047   \}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049   \textcolor{keywordtype}{void} displayText(ostream\& s) \textcolor{keyword}{const};}
+\DoxyCodeLine{00050   \textcolor{keywordtype}{void} displayRawRead() \textcolor{keyword}{const};}
+\DoxyCodeLine{00051   \textcolor{keywordtype}{void} displayRaw() \textcolor{keyword}{const};}
+\DoxyCodeLine{00052   \textcolor{keywordtype}{void} displayHTTPRaw();  \textcolor{comment}{// TODO: eliminate! die die die}}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054   \textcolor{keywordtype}{void} flush() \{  \textcolor{comment}{// TODO: this will fail if we overflow slightly}}
+\DoxyCodeLine{00055     \textcolor{keywordflow}{if}(isSockBuf) }
+\DoxyCodeLine{00056       SocketIO::send(fd, buffer, p -\/ buffer, 0);}
+\DoxyCodeLine{00057     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00058       \textcolor{keywordflow}{if}(::write(fd, buffer, p-\/buffer) < 0)}
+\DoxyCodeLine{00059         \textcolor{keywordflow}{throw} Ex1(Errcode::FILE\_WRITE);}
+\DoxyCodeLine{00060     \}}
+\DoxyCodeLine{00061     p = buffer;}
+\DoxyCodeLine{00062     availSize = size;}
+\DoxyCodeLine{00063   \}}
+\DoxyCodeLine{00064   \textcolor{keywordtype}{void} readNext();}
+\DoxyCodeLine{00065   \textcolor{comment}{// write is binary}}
+\DoxyCodeLine{00066   \textcolor{keywordtype}{void} write(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& s);}
+\DoxyCodeLine{00067   \textcolor{keywordtype}{void} write(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* s, uint32\_t len);}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069   \textcolor{comment}{// append is ASCII text}}
+\DoxyCodeLine{00070   \textcolor{keywordtype}{void} appendU8(uint8\_t);}
+\DoxyCodeLine{00071   \textcolor{keywordtype}{void} appendU16(uint16\_t);}
+\DoxyCodeLine{00072   \textcolor{keywordtype}{void} appendU32(uint32\_t);}
+\DoxyCodeLine{00073   \textcolor{keywordtype}{void} appendU64(uint64\_t);}
+\DoxyCodeLine{00074   \textcolor{keywordtype}{void} appendI8(int8\_t);}
+\DoxyCodeLine{00075   \textcolor{keywordtype}{void} appendI16(int16\_t);}
+\DoxyCodeLine{00076   \textcolor{keywordtype}{void} appendI32(int32\_t);}
+\DoxyCodeLine{00077   \textcolor{keywordtype}{void} appendI64(int64\_t);}
+\DoxyCodeLine{00078   \textcolor{keywordtype}{void} appendF32(\textcolor{keywordtype}{float});}
+\DoxyCodeLine{00079   \textcolor{keywordtype}{void} appendF64(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{00080   \textcolor{keywordtype}{void} append(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* v);}
+\DoxyCodeLine{00081   \textcolor{keywordtype}{void} append(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* v, uint32\_t len);}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083   \textcolor{comment}{//    void append(float f);}}
+\DoxyCodeLine{00084   uint32\_t parseU32() \{}
+\DoxyCodeLine{00085     \textcolor{keywordtype}{char}* temp;}
+\DoxyCodeLine{00086     uint32\_t v = strtoul(p, \&temp, 10);}
+\DoxyCodeLine{00087     p = temp;}
+\DoxyCodeLine{00088     \textcolor{keywordflow}{return} v;}
+\DoxyCodeLine{00089   \}}
+\DoxyCodeLine{00090   \textcolor{keywordtype}{double} parseF64() \{}
+\DoxyCodeLine{00091     \textcolor{keywordtype}{char}* temp;}
+\DoxyCodeLine{00092     \textcolor{keywordtype}{double} v = strtod(p, \&temp);}
+\DoxyCodeLine{00093     p = temp;}
+\DoxyCodeLine{00094     \textcolor{keywordflow}{return} v;}
+\DoxyCodeLine{00095   \}}
+\DoxyCodeLine{00096   \textcolor{keywordtype}{float} parseF32() \{}
+\DoxyCodeLine{00097     \textcolor{keywordtype}{char}* temp;}
+\DoxyCodeLine{00098     \textcolor{keywordtype}{float} v = strtof(p, \&temp);}
+\DoxyCodeLine{00099     p = temp;}
+\DoxyCodeLine{00100     \textcolor{keywordflow}{return} v;}
+\DoxyCodeLine{00101   \}}
+\DoxyCodeLine{00102 }
+\DoxyCodeLine{00103   \textcolor{keywordtype}{bool} parseRegex(\textcolor{keyword}{const} regex\& r, \textcolor{keyword}{const} \textcolor{keywordtype}{char}*\& start, \textcolor{keywordtype}{int}\& len);}
+\DoxyCodeLine{00104   \textcolor{comment}{// if parse returns true, advance past the token}}
+\DoxyCodeLine{00105   \textcolor{keywordtype}{bool} parseToken(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& match);}
+\DoxyCodeLine{00106   \textcolor{keywordtype}{bool} getUrl(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*\& ptr, uint32\_t\& len);}
+\DoxyCodeLine{00107   \textcolor{keywordtype}{bool} getHTTPVersion(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*\& ptr, uint32\_t\& len);}
+\DoxyCodeLine{00108   \textcolor{keywordtype}{bool} getHost(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*\& ptr, uint32\_t\& len);}
+\DoxyCodeLine{00109   \textcolor{keywordtype}{void} pointToStart();}
+\DoxyCodeLine{00116   \textcolor{keywordtype}{bool} getNextTokenWithSpace(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*\& ptr, \textcolor{keyword}{const} uint32\_t\& len);}
+\DoxyCodeLine{00117   \textcolor{keywordtype}{string} readString8();}
+\DoxyCodeLine{00118   \textcolor{keywordtype}{string} readString16();}
+\DoxyCodeLine{00119   \textcolor{keywordtype}{string} readString32();}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121   \textcolor{comment}{/*}}
+\DoxyCodeLine{00122 \textcolor{comment}{    Write out a data type as a single byte}}
+\DoxyCodeLine{00123 \textcolor{comment}{   */}}
+\DoxyCodeLine{00124   \textcolor{keywordtype}{void} write(DataType t) \{ write(uint8\_t(t)); \}}
+\DoxyCodeLine{00125   DataType readType() \{ \textcolor{keywordflow}{return} DataType(*p++); \}}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127   \textcolor{keywordtype}{void} write(DataType t, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* name) \{}
+\DoxyCodeLine{00128     write(t);}
+\DoxyCodeLine{00129     write(name, strlen(name));}
+\DoxyCodeLine{00130   \}}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00139   \textcolor{comment}{//************ uint8\_t uint16\_t uint32\_t uint64\_t *************//}}
+\DoxyCodeLine{00140   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{Buffer_8hh_source_l00141}\mbox{\hyperlink{classBuffer_a63aed180baa43f1304aad55015dcd238}{00141}}   \textcolor{keywordtype}{void} \mbox{\hyperlink{classBuffer_a63aed180baa43f1304aad55015dcd238}{write}}(T v) \{}
+\DoxyCodeLine{00142     *(T*)p = v;}
+\DoxyCodeLine{00143     p = p + \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{00144     availSize -\/= \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{00145   \}}
+\DoxyCodeLine{00146 }
+\DoxyCodeLine{00152     \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classXDLRaw}{XDLRaw}}\& v);}
+\DoxyCodeLine{00153 }
+\DoxyCodeLine{00154   \textcolor{comment}{// for writing big objects, don't copy into the buffer, write it to the socket}}
+\DoxyCodeLine{00155   \textcolor{comment}{// directly}}
+\DoxyCodeLine{00156   \textcolor{keywordtype}{void} specialWrite(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* buf, \textcolor{keyword}{const} uint32\_t len) \{}
+\DoxyCodeLine{00157     flush();}
+\DoxyCodeLine{00158     ::write(fd, buf, len);}
+\DoxyCodeLine{00159   \}}
+\DoxyCodeLine{00160 }
+\DoxyCodeLine{00161   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00162   \textcolor{keywordtype}{void} writeList(\mbox{\hyperlink{classList1}{List1<T>}}\& list) \{}
+\DoxyCodeLine{00163     checkSpace(list.serializeSize());}
+\DoxyCodeLine{00164     list.write(p);}
+\DoxyCodeLine{00165     p += list.serializeSize();}
+\DoxyCodeLine{00166     availSize -\/= list.serializeSize();}
+\DoxyCodeLine{00167   \}}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169   \textcolor{keywordtype}{void} writeStudent(\mbox{\hyperlink{classStudent}{Student}} v) \{}
+\DoxyCodeLine{00170     checkSpace(v.serializeSize());}
+\DoxyCodeLine{00171     v.write(p);}
+\DoxyCodeLine{00172     p += v.serializeSize();}
+\DoxyCodeLine{00173     availSize -\/= v.serializeSize();}
+\DoxyCodeLine{00174   \}}
+\DoxyCodeLine{00175 }
+\DoxyCodeLine{00176   \textcolor{comment}{// template<>}}
+\DoxyCodeLine{00177   \textcolor{keywordtype}{void} writeList(\mbox{\hyperlink{classList1}{List1<Student>}}\& list) \{}
+\DoxyCodeLine{00178     write(list.getUsed());}
+\DoxyCodeLine{00179     \textcolor{keywordflow}{for} (uint32\_t i = 0; i < list.getUsed(); i++) \{}
+\DoxyCodeLine{00180       writeStudent(list.getData(i));}
+\DoxyCodeLine{00181     \}}
+\DoxyCodeLine{00182   \}}
+\DoxyCodeLine{00183 }
+\DoxyCodeLine{00184   \textcolor{comment}{//************ uint8\_t uint16\_t uint32\_t uint64\_t array *************//}}
+\DoxyCodeLine{00185   \textcolor{comment}{/*}}
+\DoxyCodeLine{00186 \textcolor{comment}{   if there is not enough space to write this data without overflowing the}}
+\DoxyCodeLine{00187 \textcolor{comment}{   buffer overflow region, then flush.  This assumes that the object being}}
+\DoxyCodeLine{00188 \textcolor{comment}{   written is small enough to fit into the buffer at all}}
+\DoxyCodeLine{00189 \textcolor{comment}{   */}}
+\DoxyCodeLine{00190   \textcolor{keywordtype}{void} checkSpace(\textcolor{keywordtype}{size\_t} sz) \{}
+\DoxyCodeLine{00191     \textcolor{keywordflow}{if} (p + sz > buffer + size + extra) \{  \textcolor{comment}{// p>buffer+size}}
+\DoxyCodeLine{00192       flush();}
+\DoxyCodeLine{00193     \}}
+\DoxyCodeLine{00194   \}}
+\DoxyCodeLine{00195 }
+\DoxyCodeLine{00196       \textcolor{comment}{//************ uint8\_t uint16\_t uint32\_t uint64\_t array *************//}}
+\DoxyCodeLine{00197   \textcolor{comment}{/*}}
+\DoxyCodeLine{00198 \textcolor{comment}{    The fastest way to write 32k at a time is to write each object into}}
+\DoxyCodeLine{00199 \textcolor{comment}{        the buffer as long as it is less than the overflow size.}}
+\DoxyCodeLine{00200 \textcolor{comment}{        Then, after writing, if you have filled the buffer, flush}}
+\DoxyCodeLine{00201 \textcolor{comment}{        and move the remaining bytes to the beginning of the buffer and start over.}}
+\DoxyCodeLine{00202 \textcolor{comment}{   */}}
+\DoxyCodeLine{00203   \textcolor{keywordtype}{void} fastCheckSpace(\textcolor{keywordtype}{size\_t} sz) \{}
+\DoxyCodeLine{00204     \textcolor{keywordflow}{if} (p > buffer + size ) \{  \textcolor{comment}{// p>buffer+size}}
+\DoxyCodeLine{00205             uint32\_t beyondEnd = p -\/ (buffer+size);}
+\DoxyCodeLine{00206       flush();}
+\DoxyCodeLine{00207             memcpy(buffer, buffer+size, beyondEnd);}
+\DoxyCodeLine{00208             p += beyondEnd;}
+\DoxyCodeLine{00209             availSize -\/= beyondEnd;}
+\DoxyCodeLine{00210     \}}
+\DoxyCodeLine{00211   \}}
+\DoxyCodeLine{00212 }
+\DoxyCodeLine{00213 }
+\DoxyCodeLine{00214 }
+\DoxyCodeLine{00215     \textcolor{comment}{//*********************************//}}
+\DoxyCodeLine{00216   \textcolor{comment}{//************ uint8\_t uint16\_t uint32\_t uint64\_t array *************//}}
+\DoxyCodeLine{00217 }
+\DoxyCodeLine{00218   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00219   \textcolor{keywordtype}{void} checkArraySpace(T v[], \textcolor{keywordtype}{size\_t} n) \{}
+\DoxyCodeLine{00220     \textcolor{keywordflow}{if} (size < n * \textcolor{keyword}{sizeof}(T)) \{}
+\DoxyCodeLine{00221       \textcolor{comment}{// TODO: buffer is not big enough to copy data, write directly}}
+\DoxyCodeLine{00222     \}}
+\DoxyCodeLine{00223 }
+\DoxyCodeLine{00224     \textcolor{comment}{// TODO: efficiency, and for big arrays if (n > ???)}}
+\DoxyCodeLine{00225     \textcolor{keywordflow}{if} (availSize < n * \textcolor{keyword}{sizeof}(T)) \{}
+\DoxyCodeLine{00226       flush();}
+\DoxyCodeLine{00227     \}}
+\DoxyCodeLine{00228   \}}
+\DoxyCodeLine{00229   \textcolor{comment}{//*********************************//}}
+\DoxyCodeLine{00230   \textcolor{comment}{//************ uint8\_t uint16\_t uint32\_t uint64\_t vector *************//}}
+\DoxyCodeLine{00231   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00232   \textcolor{keywordtype}{void} checkVectorSpace(\textcolor{keyword}{const} vector<T>\& v) \{}
+\DoxyCodeLine{00233     \textcolor{keywordflow}{if} (size < v.size() * \textcolor{keyword}{sizeof}(T)) \{}
+\DoxyCodeLine{00234       \textcolor{comment}{// TODO: buffer is not big enough to copy data, write directly}}
+\DoxyCodeLine{00235     \}}
+\DoxyCodeLine{00236     \textcolor{keywordflow}{if} (availSize < v.size() * \textcolor{keyword}{sizeof}(T)) flush();}
+\DoxyCodeLine{00237   \}}
+\DoxyCodeLine{00238 }
+\DoxyCodeLine{00239   \textcolor{comment}{//*********************************//}}
+\DoxyCodeLine{00240   \textcolor{comment}{//************ uint8\_t uint16\_t uint32\_t uint64\_t operator *************//}}
+\DoxyCodeLine{00241   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00242   \mbox{\hyperlink{classBuffer}{Buffer}}\& operator<<(T v) \{  \textcolor{comment}{// there is a write in flush function}}
+\DoxyCodeLine{00243     checkSpace(\textcolor{keyword}{sizeof}(T));}
+\DoxyCodeLine{00244     write(v);}
+\DoxyCodeLine{00245     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00246   \}}
+\DoxyCodeLine{00247 }
+\DoxyCodeLine{00248   \textcolor{comment}{/*}}
+\DoxyCodeLine{00249 \textcolor{comment}{   TODO: For writing large arrays, it would be more efficient to flush the}}
+\DoxyCodeLine{00250 \textcolor{comment}{   buffer, then write directly from the arrays.}}
+\DoxyCodeLine{00251 \textcolor{comment}{*/}}
+\DoxyCodeLine{00252 }
+\DoxyCodeLine{00253   int8\_t \_readI8() \{}
+\DoxyCodeLine{00254     int8\_t temp = *(int8\_t*)p;}
+\DoxyCodeLine{00255     p += \textcolor{keyword}{sizeof}(int8\_t);}
+\DoxyCodeLine{00256     availSize -\/= \textcolor{keyword}{sizeof}(int8\_t);}
+\DoxyCodeLine{00257     \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{00258   \}}
+\DoxyCodeLine{00259 }
+\DoxyCodeLine{00260   int16\_t \_readI16() \{}
+\DoxyCodeLine{00261     int16\_t temp = *(int16\_t*)p;}
+\DoxyCodeLine{00262     p += \textcolor{keyword}{sizeof}(int16\_t);}
+\DoxyCodeLine{00263     availSize -\/= \textcolor{keyword}{sizeof}(int16\_t);}
+\DoxyCodeLine{00264     \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{00265   \}}
+\DoxyCodeLine{00266 }
+\DoxyCodeLine{00267   int32\_t \_readI32() \{}
+\DoxyCodeLine{00268     int32\_t temp = *(int32\_t*)p;}
+\DoxyCodeLine{00269     p += \textcolor{keyword}{sizeof}(int32\_t);}
+\DoxyCodeLine{00270     availSize -\/= \textcolor{keyword}{sizeof}(int32\_t);}
+\DoxyCodeLine{00271     \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{00272   \}}
+\DoxyCodeLine{00273 }
+\DoxyCodeLine{00274   int64\_t \_readI64() \{}
+\DoxyCodeLine{00275     int64\_t temp = *(int64\_t*)p;}
+\DoxyCodeLine{00276     p += \textcolor{keyword}{sizeof}(int64\_t);}
+\DoxyCodeLine{00277     availSize -\/= \textcolor{keyword}{sizeof}(int64\_t);}
+\DoxyCodeLine{00278     \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{00279   \}}
+\DoxyCodeLine{00280 }
+\DoxyCodeLine{00281   int8\_t readI8() \{}
+\DoxyCodeLine{00282     checkAvailableRead(\textcolor{keyword}{sizeof}(int8\_t));}
+\DoxyCodeLine{00283     \textcolor{keywordflow}{return} \_readI8();}
+\DoxyCodeLine{00284   \}}
+\DoxyCodeLine{00285 }
+\DoxyCodeLine{00286   int16\_t readI16() \{}
+\DoxyCodeLine{00287     checkAvailableRead(\textcolor{keyword}{sizeof}(int16\_t));}
+\DoxyCodeLine{00288     \textcolor{keywordflow}{return} \_readI16();}
+\DoxyCodeLine{00289   \}}
+\DoxyCodeLine{00290 }
+\DoxyCodeLine{00291   int32\_t readI32() \{}
+\DoxyCodeLine{00292     checkAvailableRead(\textcolor{keyword}{sizeof}(int32\_t));}
+\DoxyCodeLine{00293     \textcolor{keywordflow}{return} \_readI32();}
+\DoxyCodeLine{00294   \}}
+\DoxyCodeLine{00295 }
+\DoxyCodeLine{00296   int64\_t readI64() \{}
+\DoxyCodeLine{00297     checkAvailableRead(\textcolor{keyword}{sizeof}(int64\_t));}
+\DoxyCodeLine{00298     \textcolor{keywordflow}{return} \_readI64();}
+\DoxyCodeLine{00299   \}}
+\DoxyCodeLine{00300 }
+\DoxyCodeLine{00301   uint8\_t \_readU8() \{}
+\DoxyCodeLine{00302     uint8\_t temp = *(uint8\_t*)p;}
+\DoxyCodeLine{00303     p += \textcolor{keyword}{sizeof}(uint8\_t);}
+\DoxyCodeLine{00304     availSize -\/= \textcolor{keyword}{sizeof}(uint8\_t);}
+\DoxyCodeLine{00305     \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{00306   \}}
+\DoxyCodeLine{00307 }
+\DoxyCodeLine{00308   uint16\_t \_readU16() \{}
+\DoxyCodeLine{00309     uint16\_t temp = *(uint16\_t*)p;}
+\DoxyCodeLine{00310     p += \textcolor{keyword}{sizeof}(uint16\_t);}
+\DoxyCodeLine{00311     availSize -\/= \textcolor{keyword}{sizeof}(uint16\_t);}
+\DoxyCodeLine{00312     \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{00313   \}}
+\DoxyCodeLine{00314 }
+\DoxyCodeLine{00315   uint32\_t \_readU32() \{}
+\DoxyCodeLine{00316     uint32\_t temp = *(uint32\_t*)p;}
+\DoxyCodeLine{00317     p += \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{00318     availSize -\/= \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{00319     \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{00320   \}}
+\DoxyCodeLine{00321 }
+\DoxyCodeLine{00322   uint64\_t \_readU64() \{}
+\DoxyCodeLine{00323     uint64\_t temp = *(uint64\_t*)p;}
+\DoxyCodeLine{00324     p += \textcolor{keyword}{sizeof}(uint64\_t);}
+\DoxyCodeLine{00325     availSize -\/= \textcolor{keyword}{sizeof}(uint64\_t);}
+\DoxyCodeLine{00326     \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{00327   \}}
+\DoxyCodeLine{00328 }
+\DoxyCodeLine{00329   \textcolor{keywordtype}{float} \_readF32() \{}
+\DoxyCodeLine{00330     \textcolor{keywordtype}{float} temp = *(\textcolor{keywordtype}{float}*)p;}
+\DoxyCodeLine{00331     p += \textcolor{keyword}{sizeof}(float);}
+\DoxyCodeLine{00332     availSize -\/= \textcolor{keyword}{sizeof}(float);}
+\DoxyCodeLine{00333     \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{00334   \}}
+\DoxyCodeLine{00335 }
+\DoxyCodeLine{00336   \textcolor{keywordtype}{double} \_readF64() \{}
+\DoxyCodeLine{00337     \textcolor{keywordtype}{double} temp = *(\textcolor{keywordtype}{double}*)p;}
+\DoxyCodeLine{00338     p += \textcolor{keyword}{sizeof}(double);}
+\DoxyCodeLine{00339     availSize -\/= \textcolor{keyword}{sizeof}(double);}
+\DoxyCodeLine{00340     \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{00341   \}}
+\DoxyCodeLine{00342 }
+\DoxyCodeLine{00343   uint8\_t readU8() \{}
+\DoxyCodeLine{00344     checkAvailableRead(\textcolor{keyword}{sizeof}(uint8\_t));}
+\DoxyCodeLine{00345     \textcolor{keywordflow}{return} \_readU8();}
+\DoxyCodeLine{00346   \}}
+\DoxyCodeLine{00347 }
+\DoxyCodeLine{00348   uint16\_t readU16() \{}
+\DoxyCodeLine{00349     checkAvailableRead(\textcolor{keyword}{sizeof}(uint16\_t));}
+\DoxyCodeLine{00350     \textcolor{keywordflow}{return} \_readU16();}
+\DoxyCodeLine{00351   \}}
+\DoxyCodeLine{00352 }
+\DoxyCodeLine{00353   uint32\_t readU32() \{}
+\DoxyCodeLine{00354     checkAvailableRead(\textcolor{keyword}{sizeof}(uint32\_t));}
+\DoxyCodeLine{00355     \textcolor{keywordflow}{return} \_readU32();}
+\DoxyCodeLine{00356   \}}
+\DoxyCodeLine{00357 }
+\DoxyCodeLine{00358   uint64\_t readU64() \{}
+\DoxyCodeLine{00359     checkAvailableRead(\textcolor{keyword}{sizeof}(uint64\_t));}
+\DoxyCodeLine{00360     \textcolor{keywordflow}{return} \_readU64();}
+\DoxyCodeLine{00361   \}}
+\DoxyCodeLine{00362 }
+\DoxyCodeLine{00363   \textcolor{keywordtype}{float} readF32() \{}
+\DoxyCodeLine{00364     checkAvailableRead(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}));}
+\DoxyCodeLine{00365     \textcolor{keywordflow}{return} \_readF32();}
+\DoxyCodeLine{00366   \}}
+\DoxyCodeLine{00367 }
+\DoxyCodeLine{00368   \textcolor{keywordtype}{double} readF64() \{}
+\DoxyCodeLine{00369     checkAvailableRead(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00370     \textcolor{keywordflow}{return} \_readF64();}
+\DoxyCodeLine{00371   \}}
+\DoxyCodeLine{00372 }
+\DoxyCodeLine{00373   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00374   T \_read() \{}
+\DoxyCodeLine{00375     T temp = *(T*)p;}
+\DoxyCodeLine{00376     p += \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{00377     availSize -\/= \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{00378     \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{00379   \}}
+\DoxyCodeLine{00380 }
+\DoxyCodeLine{00381 \textcolor{preprocessor}{\#if 0}}
+\DoxyCodeLine{00382   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00383   T \_readString() \{}
+\DoxyCodeLine{00384     \textcolor{keywordtype}{char} length = *p;}
+\DoxyCodeLine{00385     \textcolor{keywordtype}{char} word[length + 1];}
+\DoxyCodeLine{00386     memcpy(word, p + 1, length);}
+\DoxyCodeLine{00387     word[length] = 0;}
+\DoxyCodeLine{00388     \textcolor{keywordflow}{return} word;}
+\DoxyCodeLine{00389   \}}
+\DoxyCodeLine{00390 }
+\DoxyCodeLine{00391   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00392   T read() \{}
+\DoxyCodeLine{00393     \textcolor{comment}{// cout << (uint64\_t)p << endl;}}
+\DoxyCodeLine{00394     checkAvailableRead(\textcolor{keyword}{sizeof}(T));}
+\DoxyCodeLine{00395     \textcolor{keywordflow}{return} \_read<T>();}
+\DoxyCodeLine{00396   \}}
+\DoxyCodeLine{00397 }
+\DoxyCodeLine{00398   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00399   T readString() \{}
+\DoxyCodeLine{00400     \textcolor{keywordflow}{return} \_readString<T>();}
+\DoxyCodeLine{00401   \}}
+\DoxyCodeLine{00402 }
+\DoxyCodeLine{00403   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00404   \mbox{\hyperlink{classList1}{List1<T>}} readList() \{}
+\DoxyCodeLine{00405     uint32\_t len = read<uint32\_t>();}
+\DoxyCodeLine{00406     \mbox{\hyperlink{classList1}{List1<T>}} temp(len);}
+\DoxyCodeLine{00407     \textcolor{keywordflow}{for} (uint32\_t i = 0; i < len; i++) \{}
+\DoxyCodeLine{00408       T val = read<T>();}
+\DoxyCodeLine{00409       temp.add(val);}
+\DoxyCodeLine{00410       \textcolor{comment}{// TODO: For some reason code does not work without this print statement.}}
+\DoxyCodeLine{00411       \textcolor{comment}{// More specifically the endl.}}
+\DoxyCodeLine{00412       \textcolor{comment}{// TODO: It appears that this is no longer necessary after the switch to}}
+\DoxyCodeLine{00413       \textcolor{comment}{// vector}}
+\DoxyCodeLine{00414       \textcolor{comment}{/*std::cout.setstate(std::ios::failbit);}}
+\DoxyCodeLine{00415 \textcolor{comment}{      //cout<<temp.getData(i)<<endl;}}
+\DoxyCodeLine{00416 \textcolor{comment}{      cout<<"{}"{}<<endl;}}
+\DoxyCodeLine{00417 \textcolor{comment}{      std::cout.clear();*/}}
+\DoxyCodeLine{00418     \}}
+\DoxyCodeLine{00419     \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{00420   \}}
+\DoxyCodeLine{00421 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00422 }
+\DoxyCodeLine{00423  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00424   \textcolor{keywordtype}{bool} writing;}
+\DoxyCodeLine{00425   \textcolor{keywordtype}{bool} isSockBuf = \textcolor{keyword}{false};}
+\DoxyCodeLine{00426   \textcolor{keywordtype}{size\_t} size;}
+\DoxyCodeLine{00427   \textcolor{keyword}{const} \textcolor{keywordtype}{size\_t} extra = 128;}
+\DoxyCodeLine{00428   \textcolor{keywordtype}{char}* preBuffer;}
+\DoxyCodeLine{00429   \textcolor{keywordtype}{char}* buffer;       \textcolor{comment}{// pointer to the buffer}}
+\DoxyCodeLine{00430   int32\_t availSize;  \textcolor{comment}{// how much space is left in the buffer}}
+\DoxyCodeLine{00431   \textcolor{keywordtype}{char}* p;            \textcolor{comment}{// cursor to current byte for reading/writing}}
+\DoxyCodeLine{00432   \textcolor{keywordtype}{int} fd;  \textcolor{comment}{// file descriptor for file backing this buffer (read or write)}}
+\DoxyCodeLine{00433   \textcolor{keywordtype}{void} checkAvailableRead(\textcolor{keywordtype}{size\_t} sz) \{}
+\DoxyCodeLine{00434     \textcolor{keywordflow}{if} (availSize < sz) \{}
+\DoxyCodeLine{00435       \textcolor{keywordtype}{size\_t} overflowSize = availSize;}
+\DoxyCodeLine{00436       memcpy(buffer -\/ overflowSize, p, overflowSize);}
+\DoxyCodeLine{00437       readNext();}
+\DoxyCodeLine{00438       availSize += overflowSize;}
+\DoxyCodeLine{00439       p = buffer -\/ overflowSize;}
+\DoxyCodeLine{00440     \}}
+\DoxyCodeLine{00441   \}}
+\DoxyCodeLine{00442   \textcolor{keywordtype}{void} checkAvailableWrite() \{}
+\DoxyCodeLine{00443     \textcolor{keywordflow}{if} (p > buffer + size) \{}
+\DoxyCodeLine{00444       uint32\_t overflow = p -\/ (buffer + size);}
+\DoxyCodeLine{00445       flush();}
+\DoxyCodeLine{00446       memcpy(p, p + size, overflow);}
+\DoxyCodeLine{00447       p += overflow;}
+\DoxyCodeLine{00448       availSize -\/= overflow;}
+\DoxyCodeLine{00449     \}}
+\DoxyCodeLine{00450   \}}
+\DoxyCodeLine{00451   \textcolor{keywordtype}{void} checkAvailableWrite(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* ptr, uint32\_t len) \{}
+\DoxyCodeLine{00452     \textcolor{keywordflow}{if} (p + len > buffer + size) \{}
+\DoxyCodeLine{00453       memcpy(p, ptr, availSize);}
+\DoxyCodeLine{00454       uint32\_t remaining = len -\/ availSize;}
+\DoxyCodeLine{00455       flush();}
+\DoxyCodeLine{00456       \textcolor{comment}{// TODO: Check if the string is too big!}}
+\DoxyCodeLine{00457       memcpy(p, ptr + size, remaining);}
+\DoxyCodeLine{00458       p += remaining;}
+\DoxyCodeLine{00459       availSize -\/= remaining;}
+\DoxyCodeLine{00460       \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00461     \}}
+\DoxyCodeLine{00462     \textcolor{comment}{// TODO: check case where string is bigger than buffer}}
+\DoxyCodeLine{00463     \textcolor{keywordflow}{if} (len > size) \{}
+\DoxyCodeLine{00464       flush();}
+\DoxyCodeLine{00465       \textcolor{comment}{// TODO: Do something completely different}}
+\DoxyCodeLine{00466       ::write(fd, ptr, len);}
+\DoxyCodeLine{00467       \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00468     \}}
+\DoxyCodeLine{00469     memcpy(p, ptr, len);}
+\DoxyCodeLine{00470     p += len;}
+\DoxyCodeLine{00471     availSize -\/= len;}
+\DoxyCodeLine{00472   \}}
+\DoxyCodeLine{00473 \};}
+
+\end{DoxyCode}

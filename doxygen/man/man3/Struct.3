@@ -1,0 +1,124 @@
+.TH "Struct" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Struct
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBCompoundType\fP\&.
+.PP
+Inherited by \fBSymbolTable\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBMember\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStruct\fP (const char name[])"
+.br
+.ti -1c
+.RI "void \fBadd\fP (const char name[], DataType t)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (char *buf)"
+.br
+.ti -1c
+.RI "void \fBread\fP (const char buf[])"
+.br
+.ti -1c
+.RI "\fBStruct\fP (const \fBStruct\fP &orig)"
+.br
+.ti -1c
+.RI "\fBStruct\fP (\fBXDLCompiler\fP *compiler, const std::string &name)"
+.br
+.ti -1c
+.RI "\fBStruct\fP (\fBXDLCompiler\fP *c)"
+.br
+.ti -1c
+.RI "void \fBaddSym\fP (const string &name, const \fBXDLType\fP *t)"
+.br
+.ti -1c
+.RI "void \fBaddSymCheckNull\fP (const string &name, const \fBXDLType\fP *t)"
+.br
+.ti -1c
+.RI "void \fBaddSymCheckDup\fP (const string &name, const \fBXDLType\fP *t)"
+.br
+.ti -1c
+.RI "uint32_t \fBaddMemberName\fP (const char memberName[])"
+.br
+.ti -1c
+.RI "void \fBaddMember\fP (const std::string &name, const \fBXDLType\fP *t)"
+.br
+.ti -1c
+.RI "void \fBaddBuiltin\fP (const std::string &name, DataType dt)"
+.br
+.ti -1c
+.RI "void \fBaddRegex\fP (const std::string &name, const std::string &regex)"
+.br
+.ti -1c
+.RI "void \fBaddTypedef\fP (const char name[], const char type[])"
+.br
+.ti -1c
+.RI "void \fBaddStructMember\fP (const std::string &memberName, const \fBStruct\fP *memberStruct)"
+.br
+.ti -1c
+.RI "const \fBXDLType\fP * \fBgetMemberType\fP (const std::string &memberName) const"
+.br
+.ti -1c
+.RI "const \fBXDLType\fP * \fBgetMemberType\fP (uint32_t index) const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetMemberCount\fP () const"
+.br
+.ti -1c
+.RI "std::string \fBgetMemberName\fP (uint32_t index) const"
+.br
+.ti -1c
+.RI "uint32_t \fBsize\fP () const override"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBBuffer\fP &buf) const override"
+.br
+.ti -1c
+.RI "void \fBwriteMeta\fP (\fBBuffer\fP &buf) const override"
+.br
+.ti -1c
+.RI "DataType \fBgetDataType\fP () const"
+.br
+.ti -1c
+.RI "void \fBdisplay\fP (\fBBuffer\fP &binaryIn, \fBBuffer\fP &asciiOut) const"
+.br
+.ti -1c
+.RI "void \fBformat\fP (\fBBuffer\fP &binaryIn, \fBBuffer\fP &asciiOut, const char fmt[]) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBXDLCompiler\fP * \fBcompiler\fP"
+.br
+.ti -1c
+.RI "\fBDynArray\fP< \fBMember\fP > \fBmembers\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &s, const \fBStruct\fP &str)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

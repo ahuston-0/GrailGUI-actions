@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classI256" xml:lang="en-US">
+<title>I256 Class Reference</title>
+<indexterm><primary>I256</primary></indexterm>
+<para>Inheritance diagram for I256:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d5/d09/classI256.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classI256_1a31997dea56d2a8b4a2babc20788699da"/><emphasis role="strong">I256</emphasis> (int64_t a, uint64_t b, uint64_t c, uint64_t d)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classI256_1a7007f3b689fa88ba8101dc169e5d9d6b"/>DataType <emphasis role="strong">getDataType</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classI256_1a7b95b5ac7e3a53652f05f44287a44408"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classI256_1a6d1f5d753037e44bbf9a0a6c52859c40"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classI256_1a271b1ce01c6544b5047f1bae964847b4"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classI256_1a58c69f636444a206bd675dcbe543a4f9"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classI256_1ab3cdeb88dd468eab5f92b16fa0ef7c16"/>bool <emphasis role="strong">operator==</emphasis> (const <link linkend="_classI256">I256</link> &amp;a, const <link linkend="_classI256">I256</link> &amp;b)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

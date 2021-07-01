@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classU16" xml:lang="en-US">
+<title>U16 Class Reference</title>
+<indexterm><primary>U16</primary></indexterm>
+<para>Inheritance diagram for U16:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d5/d08/classU16.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classU16_1a04e6c7cb89f34884a96639cc8b465d8e"/><emphasis role="strong">U16</emphasis> (uint16_t val=0)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU16_1a652c45a2c21abaacf717087e3484e5b9"/>DataType <emphasis role="strong">getDataType</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU16_1a21c5f1d947fd5e9cf0bc40092d71e093"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU16_1a25bfd2531f42bfe0c933797720c01cad"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU16_1aedc0aa47b17161156da017efdea8971d"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU16_1a91b071823ede3d2af843dd2c81a8b351"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classU16_1a9d988aec442b740e01bbfdaa907a4788"/>bool <emphasis role="strong">operator==</emphasis> (const <link linkend="_classU16">U16</link> &amp;a, const <link linkend="_classU16">U16</link> &amp;b)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

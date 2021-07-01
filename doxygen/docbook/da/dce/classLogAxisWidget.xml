@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classLogAxisWidget" xml:lang="en-US">
+<title>LogAxisWidget Class Reference</title>
+<indexterm><primary>LogAxisWidget</primary></indexterm>
+<para>Inheritance diagram for LogAxisWidget:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../da/dce/classLogAxisWidget.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classLogAxisWidget_1a63434054b3587fcc7c68f8de814e6483"/><emphasis role="strong">LogAxisWidget</emphasis> (<link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, double x, double y, double w, double h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classLogAxisWidget_1a997a5b51a0d1fef581e22b9f8eccdfb0"/>void <emphasis role="strong">setBounds</emphasis> (double minBound, double maxBound) override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classLogAxisWidget_1a3115f661658af4eea15fe9c70ea1ca84"/>void <emphasis role="strong">setTickInterval</emphasis> (double tickInterval) override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classLogAxisWidget_1a561710bfe468c73942434132db82b6ae"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

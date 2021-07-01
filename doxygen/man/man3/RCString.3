@@ -1,0 +1,60 @@
+.TH "RCString" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RCString
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRCString\fP (const char msg[], uint32_t len)"
+.br
+.ti -1c
+.RI "\fBRCString\fP (const char msg[])"
+.br
+.ti -1c
+.RI "\fBRCString\fP (const \fBRCString\fP &a, const \fBRCString\fP &b, const \fBRCString\fP &c)"
+.br
+.ti -1c
+.RI "\fBRCString\fP (const \fBRCString\fP &orig)"
+.br
+.ti -1c
+.RI "\fBRCString\fP & \fBoperator=\fP (const \fBRCString\fP &orig)"
+.br
+.ti -1c
+.RI "\fBRCString\fP (\fBRCString\fP &&orig)"
+.br
+.ti -1c
+.RI "char \fBoperator[]\fP (uint32_t i) const"
+.br
+.ti -1c
+.RI "char & \fBoperator[]\fP (uint32_t i)"
+.br
+.ti -1c
+.RI "uint32_t \fBlen\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static uint32_t \fBsetMark\fP ()"
+.br
+.ti -1c
+.RI "static void \fBfreeToMark\fP (uint32_t mark)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &s, const \fBRCString\fP &str)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

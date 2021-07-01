@@ -1,0 +1,148 @@
+\hypertarget{MapViewer_8hh_source}{}\doxysection{Map\+Viewer.\+hh}
+\label{MapViewer_8hh_source}\index{src/opengl/MapViewer.hh@{src/opengl/MapViewer.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}opengl/Canvas.hh"{}}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}opengl/MultiShape2D.hh"{}}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{\Hypertarget{MapViewer_8hh_source_l00008}\mbox{\hyperlink{classStyledMultiShape2D}{00008}} \textcolor{keyword}{class }\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMultiShape2D}{MultiShape2D}} \{}
+\DoxyCodeLine{00009  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010   glm::mat4 transform;}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013   \mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}(\mbox{\hyperlink{classCanvas}{Canvas}}* parent, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s, \textcolor{keywordtype}{float} angle = 0,}
+\DoxyCodeLine{00014                      \textcolor{keywordtype}{float} x = 0, \textcolor{keywordtype}{float} y = 0, uint32\_t vertCount = 1024,}
+\DoxyCodeLine{00015                      uint32\_t solidIndCount = 1024,}
+\DoxyCodeLine{00016                      uint32\_t lineIndCount = 1024,}
+\DoxyCodeLine{00017                      uint32\_t pointIndCount = 1024)}
+\DoxyCodeLine{00018       : \mbox{\hyperlink{classMultiShape2D}{MultiShape2D}}(parent, s, vertCount, solidIndCount, lineIndCount,}
+\DoxyCodeLine{00019                      pointIndCount, 5),}
+\DoxyCodeLine{00020         currentIndex(0),}
+\DoxyCodeLine{00021         transform(1.0f) \{}
+\DoxyCodeLine{00022     startIndices.push\_back(0);}
+\DoxyCodeLine{00023     transform = glm::translate(transform, glm::vec3(x, y, 0));}
+\DoxyCodeLine{00024     transform = glm::rotate(transform, angle, glm::vec3(0, 0, -\/1));}
+\DoxyCodeLine{00025     transform = glm::translate(transform, glm::vec3(-\/x, -\/y, 0));}
+\DoxyCodeLine{00026   \}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028   uint32\_t addSector(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} fromAngle,}
+\DoxyCodeLine{00029                      \textcolor{keywordtype}{float} toAngle, \textcolor{keywordtype}{float} angleInc, \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031   \textcolor{keywordtype}{void} addColor(\textcolor{keyword}{const} glm::vec4\& rgb) \{}
+\DoxyCodeLine{00032     vertices.push\_back(rgb.x);}
+\DoxyCodeLine{00033     vertices.push\_back(rgb.y);}
+\DoxyCodeLine{00034     vertices.push\_back(rgb.z);}
+\DoxyCodeLine{00035   \}}
+\DoxyCodeLine{00036   \textcolor{keywordtype}{void} addColor(\textcolor{keywordtype}{float} r, \textcolor{keywordtype}{float} g, \textcolor{keywordtype}{float} b) \{}
+\DoxyCodeLine{00037     vertices.push\_back(r);}
+\DoxyCodeLine{00038     vertices.push\_back(g);}
+\DoxyCodeLine{00039     vertices.push\_back(b);}
+\DoxyCodeLine{00040   \}}
+\DoxyCodeLine{00041   \textcolor{keywordtype}{void} setColors(\textcolor{keywordtype}{float} cols[], uint32\_t size) \{}
+\DoxyCodeLine{00042     colors.insert(colors.end(), \&cols[0], \&cols[size]);}
+\DoxyCodeLine{00043   \}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045   \textcolor{keywordtype}{void} setColors(std::vector<float>\& cols) \{ colors = cols; \}}
+\DoxyCodeLine{00046   \textcolor{keywordtype}{void} addStyledPoint(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} glm::vec4\& rgb) \{}
+\DoxyCodeLine{00047     addPoint(x, y);}
+\DoxyCodeLine{00048     addColor(rgb);}
+\DoxyCodeLine{00049   \}}
+\DoxyCodeLine{00050   \textcolor{comment}{// override Shape methods to draw us}}
+\DoxyCodeLine{00051   \string~\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{00052   \textcolor{keywordtype}{void} clear() \{}
+\DoxyCodeLine{00053     vertices.clear();}
+\DoxyCodeLine{00054     colors.clear();}
+\DoxyCodeLine{00055     lineIndices.clear();}
+\DoxyCodeLine{00056     pointIndices.clear();}
+\DoxyCodeLine{00057   \}}
+\DoxyCodeLine{00058   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
+\DoxyCodeLine{00059   \textcolor{keywordtype}{void} render() \textcolor{keyword}{override};}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061   \textcolor{comment}{// Update Methods (in progress)}}
+\DoxyCodeLine{00062   \textcolor{keywordtype}{void} updateColors(\textcolor{keyword}{const} uint64\_t pos, \textcolor{keyword}{const} \textcolor{keywordtype}{float} r, \textcolor{keyword}{const} \textcolor{keywordtype}{float} g,}
+\DoxyCodeLine{00063                     \textcolor{keyword}{const} \textcolor{keywordtype}{float} b);}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065   \textcolor{comment}{// Update buffers}}
+\DoxyCodeLine{00066   \textcolor{keywordtype}{void} updatePoints();}
+\DoxyCodeLine{00067   \textcolor{keywordtype}{void} updateIndices();}
+\DoxyCodeLine{00068   \textcolor{comment}{// Solid Primitives}}
+\DoxyCodeLine{00069   \textcolor{keywordtype}{void} fillRectangle(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00070   \textcolor{keywordtype}{void} fillRoundRect(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keywordtype}{float} rx, \textcolor{keywordtype}{float} ry,}
+\DoxyCodeLine{00071                      \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00072   \textcolor{keywordtype}{void} fillTriangle(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2, \textcolor{keywordtype}{float} x3, \textcolor{keywordtype}{float} y3,}
+\DoxyCodeLine{00073                     \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00074   \textcolor{keywordtype}{void} fillPolygon(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} n,}
+\DoxyCodeLine{00075                    \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00076   \textcolor{keywordtype}{void} fillCircle(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} rad, \textcolor{keywordtype}{float} angleInc,}
+\DoxyCodeLine{00077                   \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00078   \textcolor{keywordtype}{void} fillEllipse(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} angleInc,}
+\DoxyCodeLine{00079                    \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081   \textcolor{comment}{// Line Primitives}}
+\DoxyCodeLine{00082   \textcolor{keywordtype}{void} drawRectangle(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00083   \textcolor{keywordtype}{void} drawRoundRect(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keywordtype}{float} rx, \textcolor{keywordtype}{float} ry,}
+\DoxyCodeLine{00084                      \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00085   \textcolor{keywordtype}{void} drawTriangle(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2, \textcolor{keywordtype}{float} x3, \textcolor{keywordtype}{float} y3,}
+\DoxyCodeLine{00086                     \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00087   \textcolor{keywordtype}{void} drawPolygon(\textcolor{keyword}{const} std::vector<float>\& v, \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00088   \textcolor{keywordtype}{void} drawPolygon(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} n,}
+\DoxyCodeLine{00089                    \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00090   \textcolor{keywordtype}{void} drawCompletePolygon(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} n,}
+\DoxyCodeLine{00091                            \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00092   \textcolor{keywordtype}{void} drawCircle(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} rad, \textcolor{keywordtype}{float} angleInc,}
+\DoxyCodeLine{00093                   \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00094   \textcolor{keywordtype}{void} drawEllipse(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} angleInc,}
+\DoxyCodeLine{00095                    \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00096   \textcolor{keywordtype}{void} drawLine(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2, \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00097   \textcolor{keywordtype}{void} drawPolyline(\textcolor{keyword}{const} \textcolor{keywordtype}{float} xy[], uint32\_t n, \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00098   \textcolor{keywordtype}{void} fillPolyline(\textcolor{keyword}{const} \textcolor{keywordtype}{float} xy[], uint32\_t n, \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00099   \textcolor{keywordtype}{void} drawPolygon(\textcolor{keyword}{const} \textcolor{keywordtype}{float} xy[], uint32\_t n, \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00100   \textcolor{keywordtype}{void} fillPolygon(\textcolor{keyword}{const} \textcolor{keywordtype}{float} xy[], uint32\_t n, \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00101   \textcolor{comment}{// drawBezier, end bezier,grid}}
+\DoxyCodeLine{00102   \textcolor{keywordtype}{void} bezierSegment(\textcolor{keyword}{const} \mbox{\hyperlink{classBezier}{Bezier}}* b);}
+\DoxyCodeLine{00103   \textcolor{keywordtype}{void} bezierSegmentByPoints(\textcolor{keywordtype}{float} p1x, \textcolor{keywordtype}{float} p1y, \textcolor{keywordtype}{float} p2x, \textcolor{keywordtype}{float} p2y,}
+\DoxyCodeLine{00104                              \textcolor{keywordtype}{float} p3x, \textcolor{keywordtype}{float} p3y, \textcolor{keywordtype}{float} p4x, \textcolor{keywordtype}{float} p4y, \textcolor{keywordtype}{int} n,}
+\DoxyCodeLine{00105                              \textcolor{keywordtype}{bool} end, \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00106   \textcolor{keywordtype}{void} spline(\textcolor{keyword}{const} std::vector<double>\& points, \textcolor{keywordtype}{int} n, \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00107 }
+\DoxyCodeLine{00108   \textcolor{comment}{// Grids}}
+\DoxyCodeLine{00109   \textcolor{comment}{// rectangular grid}}
+\DoxyCodeLine{00110   \textcolor{keywordtype}{void} drawGrid(\textcolor{keywordtype}{float} x0, \textcolor{keywordtype}{float} y0, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, uint32\_t numHoriz,}
+\DoxyCodeLine{00111                 uint32\_t numVert, \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113   \textcolor{keywordtype}{void} fillGrid(\textcolor{keywordtype}{float} x0, \textcolor{keywordtype}{float} y0, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, uint32\_t numHoriz,}
+\DoxyCodeLine{00114                 uint32\_t numVert, \textcolor{keyword}{const} glm::vec4\& lc, \textcolor{keyword}{const} glm::vec4\& bc);}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116   \textcolor{comment}{// draw an equilateral triangle broken into equilateral triangles}}
+\DoxyCodeLine{00117   \textcolor{keywordtype}{void} drawTriGrid(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} s, uint32\_t trianglesPerSide,}
+\DoxyCodeLine{00118                    \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00119   \textcolor{keywordtype}{void} drawHexGrid(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h,}
+\DoxyCodeLine{00120                    uint32\_t numHorizHexagons, \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00121 }
+\DoxyCodeLine{00122   \textcolor{comment}{// Point Primitives}}
+\DoxyCodeLine{00123   \textcolor{keywordtype}{void} rectanglePoints(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00124   \textcolor{keywordtype}{void} roundRectPoints(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keywordtype}{float} rx, \textcolor{keywordtype}{float} ry,}
+\DoxyCodeLine{00125                        \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00126   \textcolor{keywordtype}{void} trianglePoints(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2, \textcolor{keywordtype}{float} x3,}
+\DoxyCodeLine{00127                       \textcolor{keywordtype}{float} y3, \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00128   \textcolor{keywordtype}{void} polygonPoints(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} n,}
+\DoxyCodeLine{00129                      \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00130   \textcolor{keywordtype}{void} circlePoints(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} rad, \textcolor{keywordtype}{float} angleInc,}
+\DoxyCodeLine{00131                     \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00132   \textcolor{keywordtype}{void} ellipsePoints(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} angleInc,}
+\DoxyCodeLine{00133                      \textcolor{keyword}{const} glm::vec4\& c);}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135   \textcolor{keywordtype}{void} dump();}
+\DoxyCodeLine{00136 }
+\DoxyCodeLine{00137  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00138   std::vector<float> colors;}
+\DoxyCodeLine{00139   std::vector<int> startIndices;}
+\DoxyCodeLine{00140   std::vector<int> numIndices;}
+\DoxyCodeLine{00141   \textcolor{keywordtype}{int} currentIndex;}
+\DoxyCodeLine{00142 \};}
+
+\end{DoxyCode}

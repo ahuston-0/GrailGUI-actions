@@ -1,0 +1,47 @@
+\hypertarget{classMatrixGraph}{}\doxysection{Matrix\+Graph Class Reference}
+\label{classMatrixGraph}\index{MatrixGraph@{MatrixGraph}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMatrixGraph_a7824404c4ddeb3365f12e31cb3320aca}\label{classMatrixGraph_a7824404c4ddeb3365f12e31cb3320aca}} 
+{\bfseries Matrix\+Graph} (int V)
+\item 
+\mbox{\Hypertarget{classMatrixGraph_a3e547dbed71c52bb3ea9af0d4f11ea3b}\label{classMatrixGraph_a3e547dbed71c52bb3ea9af0d4f11ea3b}} 
+{\bfseries Matrix\+Graph} (const \mbox{\hyperlink{classMatrixGraph}{Matrix\+Graph}} \&orig)=delete
+\item 
+\mbox{\Hypertarget{classMatrixGraph_af23041d659ca43c374f465f645df01c3}\label{classMatrixGraph_af23041d659ca43c374f465f645df01c3}} 
+\mbox{\hyperlink{classMatrixGraph}{Matrix\+Graph}} \& {\bfseries operator=} (const \mbox{\hyperlink{classMatrixGraph}{Matrix\+Graph}} \&orig)=delete
+\item 
+\mbox{\Hypertarget{classMatrixGraph_a35a822277f954ef636a5480c728510aa}\label{classMatrixGraph_a35a822277f954ef636a5480c728510aa}} 
+uint32\+\_\+t {\bfseries getV} () const
+\item 
+\mbox{\Hypertarget{classMatrixGraph_a564609fb21f1027fe40b3d732e04cf1c}\label{classMatrixGraph_a564609fb21f1027fe40b3d732e04cf1c}} 
+uint32\+\_\+t {\bfseries getE} () const
+\item 
+\mbox{\Hypertarget{classMatrixGraph_afbccfb026ce233f386ce34f39aff5842}\label{classMatrixGraph_afbccfb026ce233f386ce34f39aff5842}} 
+double {\bfseries getW} (uint32\+\_\+t from, uint32\+\_\+t to) const
+\item 
+\mbox{\Hypertarget{classMatrixGraph_a7b8e149466f18c2c4653c745440d3f35}\label{classMatrixGraph_a7b8e149466f18c2c4653c745440d3f35}} 
+void {\bfseries setW} (uint32\+\_\+t from, uint32\+\_\+t to, double v)
+\item 
+\mbox{\Hypertarget{classMatrixGraph_aeffc81fe82f2afcfaf01235691357e8c}\label{classMatrixGraph_aeffc81fe82f2afcfaf01235691357e8c}} 
+double {\bfseries operator()} (int from, int to) const
+\item 
+\mbox{\Hypertarget{classMatrixGraph_ac0b266f307d17ec68827e7c48a585a59}\label{classMatrixGraph_ac0b266f307d17ec68827e7c48a585a59}} 
+double \& {\bfseries operator()} (int from, int to)
+\item 
+\mbox{\Hypertarget{classMatrixGraph_add45193340b1c3a8b39e656a2d7c641a}\label{classMatrixGraph_add45193340b1c3a8b39e656a2d7c641a}} 
+void {\bfseries dfs} (int v)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMatrixGraph_a17b6be7972e6c8e7c299110bdc597a8c}\label{classMatrixGraph_a17b6be7972e6c8e7c299110bdc597a8c}} 
+constexpr static double {\bfseries INF} = std\+::numeric\+\_\+limits$<$double$>$\+::infinity()
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMatrixGraph_ac02b7091c5c5c4469d48f1eefd1f74bf}\label{classMatrixGraph_ac02b7091c5c5c4469d48f1eefd1f74bf}} 
+std\+::istream \& {\bfseries operator$>$$>$} (std\+::istream \&s, \mbox{\hyperlink{classMatrixGraph}{Matrix\+Graph}} \&g)
+\end{DoxyCompactItemize}

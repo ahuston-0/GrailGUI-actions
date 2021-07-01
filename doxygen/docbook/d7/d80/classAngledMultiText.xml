@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classAngledMultiText" xml:lang="en-US">
+<title>AngledMultiText Class Reference</title>
+<indexterm><primary>AngledMultiText</primary></indexterm>
+<para>Inheritance diagram for AngledMultiText:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d7/d80/classAngledMultiText.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classAngledMultiText_1a4075ebe183a8e178a66fccd5bada1034"/><emphasis role="strong">AngledMultiText</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, const <link linkend="_classStyle">Style</link> *s, float angle, float x, float y)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAngledMultiText_1ac4408efcded18350c8a97a6ccaa34f05"/>void <emphasis role="strong">render</emphasis> () override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

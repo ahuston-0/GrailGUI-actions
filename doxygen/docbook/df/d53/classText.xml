@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classText" xml:lang="en-US">
+<title>Text Class Reference</title>
+<indexterm><primary>Text</primary></indexterm>
+<para>Inheritance diagram for Text:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../df/d53/classText.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classText_1af572f3feaa16f4506c56997443efc50e"/><emphasis role="strong">Text</emphasis> (float x, float y, <link linkend="_classStyle">Style</link> *style, const std::string &amp;text)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classText_1a7a0ef9099009b05e9d7e18bde5e9ce2c"/>void <emphasis role="strong">init</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classText_1a7d35d487d1b61052257473d88392d6fb"/>void <emphasis role="strong">update</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classText_1a8a365f1337c52ee44e006bd59b82ff28"/>void <emphasis role="strong">render</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classText_1aad16c4eeaf93313fb378c0885d447456"/><emphasis role="strong">Text</emphasis> (<link linkend="_classGLWin">GLWin</link> *w, float x, float y, const std::string &amp;text)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classText_1a7a0ef9099009b05e9d7e18bde5e9ce2c"/>void <emphasis role="strong">init</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classText_1a8a365f1337c52ee44e006bd59b82ff28"/>void <emphasis role="strong">render</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classText_1ab2c2b7c9d6628f717219f213db023747"/>static const uint32_t <emphasis role="strong">LINE_LENGTH</emphasis> = 256</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classText_1a809040d29e444ca37fdecb734cf08d53"/>constexpr static uint32_t <emphasis role="strong">LINE_LENGTH</emphasis> = 256</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

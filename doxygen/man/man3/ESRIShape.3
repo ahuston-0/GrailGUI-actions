@@ -1,0 +1,45 @@
+.TH "ESRIShape" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ESRIShape
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBESRIPolygon\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBESRIShape\fP (SHPObject *shapePtr)"
+.br
+.ti -1c
+.RI "virtual std::vector< \fBESRIPoint\fP > \fBgetPoints\fP ()=0"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::vector< std::unique_ptr< \fBESRIShape\fP > > \fBconvertSHPObjects\fP (const std::vector< SHPObject * > &shapeObjects)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBshapeType\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "SHPObject * \fBshapePtr\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

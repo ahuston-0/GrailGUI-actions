@@ -1,0 +1,53 @@
+.TH "MultiShape" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MultiShape
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBShape\fP\&.
+.PP
+Inherited by \fBMultiShape2D\fP, and \fBMultiShape3D\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMultiShape\fP (\fBCanvas\fP *parent, uint32_t vertCount=1024, uint32_t solidIndCount=1024, uint32_t lineIndCount=1024, uint32_t pointIndCount=1024, uint32_t colorIndCount=1024)"
+.br
+.ti -1c
+.RI "void \fBprocess_input\fP (Inputs *in, float dt) override"
+.br
+.ti -1c
+.RI "void \fBupdate\fP () override"
+.br
+.ti -1c
+.RI "void \fBaddPoint\fP (float x, float y)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< float > \fBvertices\fP"
+.br
+.ti -1c
+.RI "std::vector< uint32_t > \fBsolidIndices\fP"
+.br
+.ti -1c
+.RI "std::vector< uint32_t > \fBlineIndices\fP"
+.br
+.ti -1c
+.RI "std::vector< uint32_t > \fBpointIndices\fP"
+.br
+.ti -1c
+.RI "std::vector< float > \fBcolorIndices\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

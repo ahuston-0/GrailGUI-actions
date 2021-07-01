@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structCSRGraph_1_1VertexCount" xml:lang="en-US">
+<title>CSRGraph&lt; VertexIndex_t, EdgeIndex_t, Weight_t &gt;::VertexCount Struct Reference</title>
+<indexterm><primary>CSRGraph&lt; VertexIndex_t, EdgeIndex_t, Weight_t &gt;::VertexCount</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structCSRGraph_1_1VertexCount_1ae7f7e2d80d1677e85c20d6abc4967015"/><emphasis role="strong">VertexCount</emphasis> (VertexIndex_t v, VertexIndex_t countAdj)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structCSRGraph_1_1VertexCount_1a3180d039dd44c07659d549f610472d40"/>VertexIndex_t <emphasis role="strong">v</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structCSRGraph_1_1VertexCount_1a8845a5ae48e914c8093b19ff45c8c205"/>VertexIndex_t <emphasis role="strong">countAdj</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

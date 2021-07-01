@@ -1,0 +1,61 @@
+\hypertarget{Shape_8hh_source}{}\doxysection{Shape.\+hh}
+\label{Shape_8hh_source}\index{src/opengl/Shape.hh@{src/opengl/Shape.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#if 0}}
+\DoxyCodeLine{00007 \textcolor{keyword}{namespace }std \{}
+\DoxyCodeLine{00008   \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00009     \textcolor{keyword}{class }vector;}
+\DoxyCodeLine{00010 \};}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{keyword}{class }Inputs;}
+\DoxyCodeLine{00014 \textcolor{keyword}{class }\mbox{\hyperlink{classCanvas}{Canvas}};}
+\DoxyCodeLine{\Hypertarget{Shape_8hh_source_l00015}\mbox{\hyperlink{classShape}{00015}} \textcolor{keyword}{class }\mbox{\hyperlink{classShape}{Shape}} \{}
+\DoxyCodeLine{00016 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00017   uint32\_t vao,vbo,sbo,lbo,pbo,cbo;}
+\DoxyCodeLine{00018   \mbox{\hyperlink{classCanvas}{Canvas}} *parentCanvas;}
+\DoxyCodeLine{00019   \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00020   \textcolor{keywordtype}{void} gen(uint32\_t\& vb, std::vector<T>\& list);}
+\DoxyCodeLine{00021 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022   \mbox{\hyperlink{classShape}{Shape}}(\mbox{\hyperlink{classCanvas}{Canvas}}* parent) : parentCanvas(parent)  \{  \}}
+\DoxyCodeLine{00023   \textcolor{keyword}{virtual} \string~\mbox{\hyperlink{classShape}{Shape}}();}
+\DoxyCodeLine{00024 \textcolor{preprocessor}{\#if 0}}
+\DoxyCodeLine{00025   \textcolor{keywordtype}{void} setParentCanvas(\mbox{\hyperlink{classCanvas}{Canvas}} *c) \{}
+\DoxyCodeLine{00026     parentCanvas = c;}
+\DoxyCodeLine{00027   \}}
+\DoxyCodeLine{00028 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00029 \textcolor{preprocessor}{  \#if 0}}
+\DoxyCodeLine{00030   \textcolor{comment}{// Get the width, in pixels, of this Shape's}}
+\DoxyCodeLine{00031   \textcolor{comment}{// parent Canvas}}
+\DoxyCodeLine{00032   uint32\_t getParentCanvasWidth()}
+\DoxyCodeLine{00033   \{}
+\DoxyCodeLine{00034     \textcolor{keywordflow}{if} (parentCanvas)}
+\DoxyCodeLine{00035       \textcolor{keywordflow}{return} parentCanvas-\/>getWidth();}
+\DoxyCodeLine{00036     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00037   \}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039   \textcolor{comment}{// Get the height, in pixels, of this Shape's}}
+\DoxyCodeLine{00040   \textcolor{comment}{// parent Canvas}}
+\DoxyCodeLine{00041   uint32\_t getParentCanvasHeight()}
+\DoxyCodeLine{00042   \{}
+\DoxyCodeLine{00043     \textcolor{keywordflow}{if} (parentCanvas)}
+\DoxyCodeLine{00044       \textcolor{keywordflow}{return} parentCanvas-\/>getHeight();}
+\DoxyCodeLine{00045     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00046   \}}
+\DoxyCodeLine{00047 \textcolor{preprocessor}{  \#endif}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} init() = 0;}
+\DoxyCodeLine{00050     \textcolor{comment}{//TODO: We need to clean up and eliminate process\_input or completely overhaul}}
+\DoxyCodeLine{00051     \textcolor{comment}{//in the meantime, I just made the parent implement a default nop}}
+\DoxyCodeLine{00052   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} process\_input(Inputs* in,\textcolor{keywordtype}{float} dt) \{\}}
+\DoxyCodeLine{00053   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} update() = 0;}
+\DoxyCodeLine{00054   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} render() = 0;}
+\DoxyCodeLine{00055 \};}
+
+\end{DoxyCode}

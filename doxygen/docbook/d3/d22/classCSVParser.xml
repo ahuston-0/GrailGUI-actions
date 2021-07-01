@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classCSVParser" xml:lang="en-US">
+<title>CSVParser Class Reference</title>
+<indexterm><primary>CSVParser</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCSVParser_1a9712f3972d50c07f0e2e0b9ae2b9ad20"/>static std::vector&lt; std::vector&lt; std::string &gt; &gt; <link linkend="_classCSVParser_1a9712f3972d50c07f0e2e0b9ae2b9ad20">readCSV</link> (const char filename[])</para>
+
+<para>Read CSV file, Excel dialect. Accept &quot;quoted fields &quot;&quot;with quotes&quot;&quot;&quot;. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

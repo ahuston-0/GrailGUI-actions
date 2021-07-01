@@ -1,0 +1,64 @@
+\hypertarget{Log_8hh_source}{}\doxysection{Log.\+hh}
+\label{Log_8hh_source}\index{src/util/Log.hh@{src/util/Log.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <fcntl.h>}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}opengl/Errcode.hh"{}}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include "{}util/Ex.hh"{}}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{\Hypertarget{Log_8hh_source_l00010}\mbox{\hyperlink{classLog}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{classLog}{Log}} \{}
+\DoxyCodeLine{00011 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012     \textcolor{keyword}{enum class} Level \{ LOGINFO, LOGDEBUG, LOGWARN, LOGERROR, LOGCRITICAL \};}
+\DoxyCodeLine{00013 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014     Level lev;}
+\DoxyCodeLine{00015     \textcolor{keywordtype}{int} fh;}
+\DoxyCodeLine{00016 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017     \mbox{\hyperlink{classLog}{Log}}() \{\}}
+\DoxyCodeLine{00018     \string~\mbox{\hyperlink{classLog}{Log}}() \{}
+\DoxyCodeLine{00019         \textcolor{keywordflow}{if} (fh >= 0)}
+\DoxyCodeLine{00020             close(fh);}
+\DoxyCodeLine{00021     \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024     \textcolor{keywordtype}{void} setLogFile(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]) \{}
+\DoxyCodeLine{00025         fh = creat(filename, 0644);}
+\DoxyCodeLine{00026         \textcolor{keywordflow}{if} (fh < 0)}
+\DoxyCodeLine{00027           \textcolor{keywordflow}{throw} Ex1(Errcode::IOEXCEPTION); \textcolor{comment}{// TODO: Put in real exception object!}}
+\DoxyCodeLine{00028     \}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     \textcolor{keywordtype}{void} setLevel(Level L) \{}
+\DoxyCodeLine{00031         lev = L;}
+\DoxyCodeLine{00032     \}}
+\DoxyCodeLine{00033     \textcolor{keywordtype}{void} log(Level severity, uint16\_t message) \{\}}
+\DoxyCodeLine{00034     \textcolor{keywordtype}{void} log(Level severity, uint16\_t message, uint32\_t param) \{\}}
+\DoxyCodeLine{00035     \textcolor{keywordtype}{void} log(Level severity, uint16\_t message, uint32\_t param1, uint32\_t param2) \{\}}
+\DoxyCodeLine{00036     \textcolor{comment}{// write a variable-\/length string into the log, pad to 32-\/bit length}}
+\DoxyCodeLine{00037     \textcolor{keywordtype}{void} log(Level severity, uint16\_t message, \textcolor{keyword}{const} std::string\& name) \{\}}
+\DoxyCodeLine{00038     \textcolor{keywordtype}{void} warn(Errcode message) \{}
+\DoxyCodeLine{00039         log(Level::LOGWARN, (uint16\_t)message);}
+\DoxyCodeLine{00040     \}}
+\DoxyCodeLine{00041     \textcolor{keywordtype}{void} error(Errcode message) \{}
+\DoxyCodeLine{00042         log(Level::LOGERROR, (uint16\_t)message);}
+\DoxyCodeLine{00043     \}}
+\DoxyCodeLine{00044     \textcolor{keywordtype}{void} critical(Errcode message) \{}
+\DoxyCodeLine{00045         log(Level::LOGCRITICAL, (uint16\_t)message);}
+\DoxyCodeLine{00046     \}}
+\DoxyCodeLine{00047 \};}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{\Hypertarget{Log_8hh_source_l00052}\mbox{\hyperlink{classLogReader}{00052}} \textcolor{keyword}{class }\mbox{\hyperlink{classLogReader}{LogReader}} \{}
+\DoxyCodeLine{00053 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054     \mbox{\hyperlink{classLogReader}{LogReader}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[], \textcolor{keyword}{const} \textcolor{keywordtype}{char} language[]);}
+\DoxyCodeLine{00055     \textcolor{comment}{//TODO: Fix these next two functions}}
+\DoxyCodeLine{00056     \textcolor{keywordtype}{bool} hasNext(Log::Level severity) \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{00057     \textcolor{keywordtype}{bool} hasNext(uint16\_t message) \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{comment}{//print the current message}}
+\DoxyCodeLine{00060     \textcolor{keywordtype}{void} print(std::ostream\& s);}
+\DoxyCodeLine{00061 \};}
+
+\end{DoxyCode}

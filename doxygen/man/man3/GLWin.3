@@ -1,0 +1,400 @@
+.TH "GLWin" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GLWin
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBInputs\fP { \fBINSERT\fP = 260, \fBDEL\fP = 261, \fBRARROW\fP = 262, \fBLARROW\fP = 263, \fBUPARROW\fP = 265, \fBDOWNARROW\fP = 264, \fBPAGEUP\fP = 266, \fBPAGEDOWN\fP = 267, \fBF1\fP = 290, \fBF2\fP = 291, \fBF3\fP = 292, \fBF4\fP = 293, \fBF5\fP = 294, \fBF6\fP = 295, \fBF7\fP = 296, \fBF8\fP = 297, \fBF9\fP = 298, \fBF10\fP = 299, \fBF11\fP = 300, \fBF12\fP = 301, \fBWHEELUP\fP = 401, \fBWHEELDOWN\fP = 399, \fBMOUSE0\fP = 0, \fBMOUSE1\fP = 1, \fBMOUSE2\fP = 2, \fBMOUSE3\fP = 3, \fBMOUSE4\fP = 4, \fBPRESS\fP = 8, \fBRELEASE\fP = 0, \fBCTRL\fP = 512, \fBSHIFT\fP = 1024, \fBALT\fP = 2048 }"
+.br
+.ti -1c
+.RI "enum class \fBSecurity\fP { \fBSAFE\fP, \fBRESTRICTED\fP, \fBASK\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "float \fBgetTime\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBlookupAction\fP (const char actionName[])"
+.br
+.ti -1c
+.RI "void \fBsetEvent\fP (uint32_t e, uint32_t a)"
+.br
+.ti -1c
+.RI "void \fBsetEvent\fP (uint32_t key, uint32_t mod, uint32_t a)"
+.br
+.ti -1c
+.RI "void \fBsetAction\fP (uint32_t a, Action action)"
+.br
+.ti -1c
+.RI "void \fBloadBindings\fP ()"
+.br
+.ti -1c
+.RI "uint32_t \fBinternalRegisterAction\fP (const char name[], Security s, Action action)"
+.br
+.ti -1c
+.RI "void \fBbind\fP (uint32_t input, const char actionName[])"
+.br
+.ti -1c
+.RI "void \fBbind\fP (const char inputCmd[], const char actionName[])"
+.br
+.ti -1c
+.RI "double \fBtime\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDt\fP (double delta)"
+.br
+.ti -1c
+.RI "\fBGLWin\fP (uint32_t bgColor=0x000000FF, uint32_t fgColor=0xFFFFFFFF, const char title[]=nullptr, uint32_t exitAfter=0)"
+.br
+.ti -1c
+.RI "\fBGLWin\fP (uint32_t w, uint32_t h, uint32_t bgColor, uint32_t fgColor, const char title[], uint32_t exitAfter=0)"
+.br
+.RI "need to call setSize, startWindow manually "
+.ti -1c
+.RI "\fBTab\fP * \fBcurrentTab\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetSize\fP (uint32_t w, uint32_t h)"
+.br
+.ti -1c
+.RI "uint32_t \fBgetWidth\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetHeight\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBinit\fP ()"
+.br
+.ti -1c
+.RI "void \fBstartWindow\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBrender\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddFontPath\fP (std::string path, std::string name)"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBcleanup\fP ()"
+.br
+.ti -1c
+.RI "void \fBresetAnim\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetTime\fP (float t)"
+.br
+.ti -1c
+.RI "void \fBtick\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetEndTime\fP (float t)"
+.br
+.ti -1c
+.RI "void \fBsetDesiredColor\fP (const glm::vec3 &c, float delta)"
+.br
+.ti -1c
+.RI "void \fBrandom\fP (glm::vec3 &v)"
+.br
+.ti -1c
+.RI "void \fBmainLoop\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetDirty\fP ()"
+.br
+.ti -1c
+.RI "const \fBStyle\fP * \fBgetDefaultStyle\fP () const"
+.br
+.ti -1c
+.RI "const \fBStyle\fP * \fBgetGuiStyle\fP () const"
+.br
+.ti -1c
+.RI "const \fBStyle\fP * \fBgetGuiTextStyle\fP () const"
+.br
+.ti -1c
+.RI "const \fBStyle\fP * \fBgetMenuStyle\fP () const"
+.br
+.ti -1c
+.RI "const \fBStyle\fP * \fBgetMenuTextStyle\fP () const"
+.br
+.ti -1c
+.RI "const \fBFont\fP * \fBgetDefaultFont\fP () const"
+.br
+.ti -1c
+.RI "const \fBFont\fP * \fBgetGuiFont\fP () const"
+.br
+.ti -1c
+.RI "const \fBFont\fP * \fBgetMenuFont\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBbaseInit\fP ()"
+.br
+.ti -1c
+.RI "void \fBbind2DOrtho\fP ()"
+.br
+.ti -1c
+.RI "void \fBbind3D\fP ()"
+.br
+.ti -1c
+.RI "void \fBclearSelected\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "double \fBgetTime\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBinit\fP (\fBGLWin\fP *g, uint32_t w, uint32_t h, uint32_t exitAfter=0)"
+.br
+.ti -1c
+.RI "static int \fBinit\fP (\fBGLWin\fP *g, uint32_t exitAfter=0)"
+.br
+.ti -1c
+.RI "static glm::mat4 * \fBgetProjection\fP ()"
+.br
+.ti -1c
+.RI "static void \fBclassInit\fP ()"
+.br
+.ti -1c
+.RI "static void \fBclassCleanup\fP ()"
+.br
+.ti -1c
+.RI "static void \fBquit\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBrefresh\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBsaveFrame\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBresetCamera\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBgotoStartTime\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBgotoEndTime\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBspeedTime\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBslowTime\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBresetTimeDilation\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBresetProjection3D\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBzoomOut3D\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBzoomIn3D\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBpanRight3D\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBpanLeft3D\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBpanUp3D\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBpanDown3D\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBselectObject3D\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBaddSelectObject3D\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBtoggleSelectObject3D\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBresetProjection2D\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBzoomOut2D\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBzoomIn2D\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBpanRight2D\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBpanLeft2D\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBpanUp2D\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBpanDown2D\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBgotoTop\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBgotoBottom\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBscrollUp\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBscrollDown\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBpageUp\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBpageDown\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBsectionUp\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBsectionDown\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBplaySound\fP (\fBGLWin\fP *w, const char name[])"
+.br
+.ti -1c
+.RI "static void \fBstopSound\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBpressOnWidget\fP (\fBGLWin\fP *w)"
+.br
+.ti -1c
+.RI "static void \fBreleaseWidget\fP (\fBGLWin\fP *w)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBmouseX\fP"
+.br
+.ti -1c
+.RI "double \fBmouseY\fP"
+.br
+.ti -1c
+.RI "float \fBmousePressX\fP"
+.br
+.ti -1c
+.RI "float \fBmousePressY\fP"
+.br
+.ti -1c
+.RI "bool \fBdragMode\fP"
+.br
+.ti -1c
+.RI "int \fBwinXPos\fP"
+.br
+.ti -1c
+.RI "int \fBwinYPos\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBwidth\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBheight\fP"
+.br
+.ti -1c
+.RI "bool \fBdirty\fP"
+.br
+.ti -1c
+.RI "bool \fBdirty2\fP"
+.br
+.ti -1c
+.RI "bool \fBfocused\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBexitAfter\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBnumActions\fP [3]"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "constexpr static uint32_t \fBCOMMON_SHADER\fP = 0"
+.br
+.ti -1c
+.RI "constexpr static uint32_t \fBPER_VERTEX_SHADER\fP = 1"
+.br
+.ti -1c
+.RI "constexpr static uint32_t \fBTEXT_SHADER\fP = 2"
+.br
+.ti -1c
+.RI "constexpr static uint32_t \fBTEXTURE_SHADER\fP = 3"
+.br
+.ti -1c
+.RI "constexpr static uint32_t \fBCURSOR_SHADER\fP = 4"
+.br
+.ti -1c
+.RI "constexpr static uint32_t \fBMULTI_TEXTURE_SHADER\fP = 5"
+.br
+.ti -1c
+.RI "static std::string \fBbaseDir\fP"
+.br
+.ti -1c
+.RI "static uint32_t \fBinputMap\fP [32768]"
+.br
+.ti -1c
+.RI "static Action \fBactionMap\fP [4096]"
+.br
+.ti -1c
+.RI "static std::unordered_map< std::string, int > \fBactionNameMap\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBStyle\fP * \fBdefaultStyle\fP"
+.br
+.ti -1c
+.RI "\fBStyle\fP * \fBguiStyle\fP"
+.br
+.ti -1c
+.RI "\fBStyle\fP * \fBguiTextStyle\fP"
+.br
+.ti -1c
+.RI "\fBStyle\fP * \fBmenuStyle\fP"
+.br
+.ti -1c
+.RI "\fBStyle\fP * \fBmenuTextStyle\fP"
+.br
+.ti -1c
+.RI "\fBFont\fP * \fBdefaultFont\fP"
+.br
+.ti -1c
+.RI "\fBFont\fP * \fBguiFont\fP"
+.br
+.ti -1c
+.RI "\fBFont\fP * \fBmenuFont\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

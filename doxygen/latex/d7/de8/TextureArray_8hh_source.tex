@@ -1,0 +1,26 @@
+\hypertarget{TextureArray_8hh_source}{}\doxysection{Texture\+Array.\+hh}
+\label{TextureArray_8hh_source}\index{src/opengl/util/TextureArray.hh@{src/opengl/util/TextureArray.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include<iostream>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include<string>}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}stb/stb\_image.h"{}}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}glad/glad.h"{}}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}opengl/Shader.hh"{}}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{\Hypertarget{TextureArray_8hh_source_l00009}\mbox{\hyperlink{classTextureArray}{00009}} \textcolor{keyword}{class }\mbox{\hyperlink{classTextureArray}{TextureArray}} \{}
+\DoxyCodeLine{00010 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011     \mbox{\hyperlink{classTextureArray}{TextureArray}}(\mbox{\hyperlink{classShader}{Shader}}* shader, uint8\_t allocSize = 32);}
+\DoxyCodeLine{00012     \string~\mbox{\hyperlink{classTextureArray}{TextureArray}}();}
+\DoxyCodeLine{00013     \textcolor{comment}{// Code from: http://www.opengl-\/tutorial.org/beginners-\/tutorials/tutorial-\/5-\/a-\/textured-\/cube/}}
+\DoxyCodeLine{00014     GLuint loadImage(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* imagePath, uint8\_t unit);}
+\DoxyCodeLine{00015     GLuint bindImage(uint8\_t unit);}
+\DoxyCodeLine{00016 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017     \mbox{\hyperlink{classShader}{Shader}}* shader;}
+\DoxyCodeLine{00018     uint8\_t allocSize;}
+\DoxyCodeLine{00019     GLuint textureID[32]; \textcolor{comment}{//TODO: Alex this should be fixed! Maybe a vector? for now, we allocated 32 so we are not out of bounds!!!}}
+\DoxyCodeLine{00020 \};}
+
+\end{DoxyCode}

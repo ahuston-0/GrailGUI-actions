@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classShape2D" xml:lang="en-US">
+<title>Shape2D Class Reference</title>
+<indexterm><primary>Shape2D</primary></indexterm>
+<para>Inheritance diagram for Shape2D:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d5/db1/classShape2D.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classShape2D_1a8fdf1f512d46026bee2aec9c87b5ae5f"/><emphasis role="strong">Shape2D</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, float x, float y, <link linkend="_classStyle">Style</link> *style, <link linkend="_classTransformation">Transformation</link> *transform=new <link linkend="_classTransformation">Transformation</link>())</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1a95ee0e415aca073bf6361d72047d35d0"/>void <emphasis role="strong">addPoint</emphasis> (float x, float y)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1af227e5e31b9a69efddf83a4b40917d73"/>void <emphasis role="strong">addColor</emphasis> (float r, float g, float b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1af8c0cae87742dbb1eaf37c0b6e639904"/>void <emphasis role="strong">setColors</emphasis> (float cols[], uint32_t size)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1a769d727f96fa98cc0ff4d41fae270bcb"/>void <emphasis role="strong">setColors</emphasis> (std::vector&lt; float &gt; cols)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1acbf2150cf857d15ac64911f4a0e96b05"/>std::vector&lt; float &gt; <emphasis role="strong">getVertices</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1a4c12e0bc440fb9ff8aeac9bc863c7af8"/>uint32_t <emphasis role="strong">getSize</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1a2d48b0e27b7649690c3b27b527dee31c"/><link linkend="_classStyle">Style</link> * <emphasis role="strong">getStyle</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1a6c07e8e1a179c520f7cb4436c5d50ae6"/><link linkend="_classTransformation">Transformation</link> * <emphasis role="strong">getTransformation</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1a0d0fb6e9bec138a2a05913e4f7043154"/>void <emphasis role="strong">setTransform</emphasis> (<link linkend="_classTransformation">Transformation</link> *t)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1a04dfa67a7e58d20653b185cdc6e8dc72"/>virtual void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1a1cc96845f73ccb9de6ddbae47b7a5293"/>virtual void <emphasis role="strong">process_input</emphasis> (Inputs *in, float dt) override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1a4bdf0664f4c02c6512775b53f55efcf1"/>virtual void <emphasis role="strong">update</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1acbdf6e7feab30f888baec4663ae54f7b"/>virtual void <emphasis role="strong">render</emphasis> ()=0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1ae9d0c11aa29da4bb022bbc63d632d22e"/>void <emphasis role="strong">initIndices</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classShape2D_1a271d58fd7deddcb5ecccd4ec9bb39718"/>void <emphasis role="strong">applyTransform</emphasis> (<link linkend="_classShader">Shader</link> *s)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classShape2D_1a934c77b6a8cd5982176c385f98a14d17"/>float <emphasis role="strong">x</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1a0e9416774b84b1cd787d2e6a761f3cfe"/>float <emphasis role="strong">y</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1aa5197b6dd3f375081303b9bc30eb616d"/>std::vector&lt; float &gt; <emphasis role="strong">vertices</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1a11c9ac8075f534cee4e60edc84c3ac6b"/>std::vector&lt; float &gt; <emphasis role="strong">colors</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1a827a5749cb7493392f353a5bc4e689f6"/>std::vector&lt; uint32_t &gt; <emphasis role="strong">solidIndices</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1ace10d7c9ef44741e2dae1d10e765002d"/>std::vector&lt; uint32_t &gt; <emphasis role="strong">lineIndices</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1a1141d683e176f3cb9ee2a75404321630"/>std::vector&lt; uint32_t &gt; <emphasis role="strong">pointIndices</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1a84d7dbb7500e5c85c2749ca263d1f6c3"/><link linkend="_classStyle">Style</link> * <emphasis role="strong">style</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShape2D_1a44dffdf8bf43de6d2e1adc1b8ae89996"/><link linkend="_classTransformation">Transformation</link> * <emphasis role="strong">transform</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

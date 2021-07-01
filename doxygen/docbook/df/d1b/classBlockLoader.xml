@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classBlockLoader" xml:lang="en-US">
+<title>BlockLoader Class Reference</title>
+<indexterm><primary>BlockLoader</primary></indexterm>
+<para>Inheritance diagram for BlockLoader:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../df/d1b/classBlockLoader.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structBlockLoader_1_1GeneralHeader">GeneralHeader</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structBlockLoader_1_1Info">Info</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structBlockLoader_1_1SecurityHeaderV0">SecurityHeaderV0</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structBlockLoader_1_1SecurityHeaderV1">SecurityHeaderV1</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classBlockLoader_1ab1230c6c97c4e0f21e3f3e2501638884"/>enum class <emphasis role="strong">Type</emphasis> { <emphasis role="strong">gismap</emphasis>
+, <emphasis role="strong">hashmap</emphasis>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classBlockLoader_1a0caa638656dc9c3e3dc51f900602000e"/><emphasis role="strong">BlockLoader</emphasis> (const char filename[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockLoader_1a91d3fa8a019c6bd2de74d5603924bc05"/><emphasis role="strong">BlockLoader</emphasis> (const <link linkend="_classBlockLoader">BlockLoader</link> &amp;orig)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockLoader_1a60f52671d5ac767bc5dcb019255ee1d7"/><link linkend="_classBlockLoader">BlockLoader</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classBlockLoader">BlockLoader</link> &amp;orig)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockLoader_1a1ec7bfbda55e372fa76f1f82f718b658"/>void <emphasis role="strong">init</emphasis> (uint64_t *mem, uint64_t size)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockLoader_1ab5c89c17177ebe380a26685607a30266"/>void <emphasis role="strong">init</emphasis> (uint64_t bytes, Type t, uint32_t version)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockLoader_1a93bcbf54087f0f99b7c6df0a564de34a"/>void <emphasis role="strong">readBlockFile</emphasis> (const char filename[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockLoader_1a9c05c56514c0385115ff7a582556fd95"/>uint32_t <emphasis role="strong">getAuthHeaderSize</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockLoader_1a29f953155e0f54194278572201467bde"/>uint32_t <emphasis role="strong">getHeaderSize</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockLoader_1a3efb7c091085bce50f034ecbcd0a9e4c"/>bool <emphasis role="strong">authenticate</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockLoader_1a844e8ae19157421a56b90cb476d5e15c"/><emphasis role="strong">BlockLoader</emphasis> (uint64_t bytes, Type t, uint32_t version)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockLoader_1a9c05c56514c0385115ff7a582556fd95"/>uint32_t <emphasis role="strong">getAuthHeaderSize</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockLoader_1a3efb7c091085bce50f034ecbcd0a9e4c"/>bool <emphasis role="strong">authenticate</emphasis> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classBlockLoader_1a49a6a1b006a0406f6e1fb8e8cb24231e"/>uint64_t * <emphasis role="strong">mem</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockLoader_1ad46324af83350f479846f546b23d8265"/>uint64_t <emphasis role="strong">size</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockLoader_1a63316b4534a767b2d0f1c68b22cea7c7"/><link linkend="_structBlockLoader_1_1GeneralHeader">GeneralHeader</link> * <emphasis role="strong">generalHeader</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockLoader_1a374a72e9099de86d8c699ecfc88d0b5a"/><link linkend="_structBlockLoader_1_1SecurityHeaderV0">SecurityHeaderV0</link> * <emphasis role="strong">securityHeader</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classBlockLoader_1ad0385a9e4e89f06f9cf2a84da5cd4861"/><emphasis role="strong">BlockLoader</emphasis> (const <link linkend="_structBlockLoader_1_1Info">Info</link> &amp;info)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

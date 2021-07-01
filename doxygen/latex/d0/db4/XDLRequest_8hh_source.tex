@@ -1,0 +1,31 @@
+\hypertarget{XDLRequest_8hh_source}{}\doxysection{XDLRequest.\+hh}
+\label{XDLRequest_8hh_source}\index{src/csp/XDLRequest.hh@{src/csp/XDLRequest.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}csp/Request.hh"{}}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}util/Buffer.hh"{}}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}util/DynArray.hh"{}}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}xdl/SymbolTable.hh"{}}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{keyword}{class }\mbox{\hyperlink{classXDLCompiler}{XDLCompiler}};}
+\DoxyCodeLine{\Hypertarget{XDLRequest_8hh_source_l00009}\mbox{\hyperlink{classXDLRequest}{00009}} \textcolor{keyword}{class }\mbox{\hyperlink{classXDLRequest}{XDLRequest}} : \textcolor{keyword}{public} \mbox{\hyperlink{classRequest}{Request}} \{}
+\DoxyCodeLine{00010  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011   \mbox{\hyperlink{classDynArray}{DynArray<XDLType*>}} xdlData;}
+\DoxyCodeLine{00012   \mbox{\hyperlink{classXDLCompiler}{XDLCompiler}}* compiler;}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015   \mbox{\hyperlink{classXDLRequest}{XDLRequest}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]);}
+\DoxyCodeLine{00016   \string~\mbox{\hyperlink{classXDLRequest}{XDLRequest}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{00017   \mbox{\hyperlink{classXDLRequest}{XDLRequest}}(\textcolor{keyword}{const} \mbox{\hyperlink{classXDLRequest}{XDLRequest}}\& r) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00018   \mbox{\hyperlink{classXDLRequest}{XDLRequest}}\& operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classXDLRequest}{XDLRequest}}\& r) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00019   \textcolor{keywordtype}{void} addPage(\textcolor{keyword}{const} \textcolor{keywordtype}{char} metaDataFilename[], \textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]);}
+\DoxyCodeLine{00020   \textcolor{keywordtype}{void} addPage(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]);}
+\DoxyCodeLine{00021   \textcolor{keywordtype}{void} handle(\textcolor{keywordtype}{int} fd) \textcolor{keyword}{override};}
+\DoxyCodeLine{00022   \textcolor{comment}{//below is from father class Request, it is for http server}}
+\DoxyCodeLine{00023   \textcolor{keywordtype}{void} handle(\textcolor{keywordtype}{int} sckt, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* command) \textcolor{keyword}{override};}
+\DoxyCodeLine{00024   \textcolor{comment}{//TODO:   getParameter(const string\& name);}}
+\DoxyCodeLine{00025 \};}
+
+\end{DoxyCode}

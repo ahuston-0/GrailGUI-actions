@@ -1,0 +1,35 @@
+.TH "BadType" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BadType
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Config\&.hh>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBadType\fP (const char filename[], int lineNum)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &s, const \fBBadType\fP &e)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represent a config file used to configure complicated applications
+.PP
+File format supports comments starting with # name-value pairs of data, with declaration of the type of names supported in the constructor so that subclsses of \fBConfig\fP can specify the required types of each tag\&. In this way, the \fBConfig\fP utility can display the line number and an error if the data is not as required
+.PP
+TODO: Since \fBConfig\fP files can be very large, and parsing is slow, it is possible to extend this model to automatically generate a binary version of the config\&. In this way, the config file can effectively be compiled\&. This is important only if the file is large so at the moment we can ignore 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

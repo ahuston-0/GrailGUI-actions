@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classGraph" xml:lang="en-US">
+<title>Graph Class Reference</title>
+<indexterm><primary>Graph</primary></indexterm>
+<para>Inheritance diagram for Graph:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d2/d62/classGraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classGraph_1a9dbd53ee973b53010774c237d242cf3f"/>uint64_t <emphasis role="strong">V</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraph_1a09e422addab8124d6d632ed61bd20804"/>uint64_t <emphasis role="strong">E</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

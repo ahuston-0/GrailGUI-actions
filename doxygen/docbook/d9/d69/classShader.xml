@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classShader" xml:lang="en-US">
+<title>Shader Class Reference</title>
+<indexterm><primary>Shader</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classShader_1adf033446828155873bfcd0dcd0e52a27"/><emphasis role="strong">Shader</emphasis> (const char shaderName[], const char vertexPath[], const char fragmentPath[], const char geometryPath[]=nullptr)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a134f0273210077a563ef60e85d7d7e76"/>void <emphasis role="strong">cleanup</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a3c7896754f0e1fca8bde860cfef63832"/>void <emphasis role="strong">use</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1ab1a56d6c299bd7eaa18c2e142ef7bd9f"/>void <emphasis role="strong">setBool</emphasis> (const std::string &amp;name, bool value) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1ad2cf2b063b62d5c3a573a6657ae44c78"/>void <emphasis role="strong">setBool</emphasis> (const char name[], bool value) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1ab57b90cc10180295604372977f85b70d"/>void <emphasis role="strong">setBool</emphasis> (int pos, bool value) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1ad362e2b654cd95a3574cd505411e41fd"/>void <emphasis role="strong">setInt</emphasis> (const std::string &amp;name, int value) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1aac6cea1d7ce5e32da73eae8a8acd8174"/>void <emphasis role="strong">setInt</emphasis> (const char name[], int value) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a910b472d5755aa1afb74640caaf829d7"/>void <emphasis role="strong">setInt</emphasis> (int pos, int value) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1afe7367621f74c2d26431d8ac15252bf3"/>void <emphasis role="strong">setFloat</emphasis> (const std::string &amp;name, float value) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1aad166f8fbf59f994087ff9954b92ed38"/>void <emphasis role="strong">setFloat</emphasis> (const char name[], float value) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a5c6f467e3d4b9440a2ddc06a69ac1658"/>void <emphasis role="strong">setFloat</emphasis> (int pos, float value) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1afd4d41322a1cdd1d5155bf124d19debf"/>void <emphasis role="strong">setVec2</emphasis> (const std::string &amp;name, const glm::vec2 &amp;value) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1ab5d0c9d74441c73dfb4ca3678c1a781d"/>void <emphasis role="strong">setVec2</emphasis> (const char name[], const glm::vec2 &amp;value) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a5eaf0d2f6e234e7ce8bb103f4d5fc8e4"/>void <emphasis role="strong">setVec2</emphasis> (int pos, const glm::vec2 &amp;value) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1afb91bc9e954bf590857c96ab1331b0ec"/>void <emphasis role="strong">setVec2</emphasis> (const std::string &amp;name, float x, float y) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a019fbf59df1c7b20858f7579c07014e6"/>void <emphasis role="strong">setVec2</emphasis> (const char name[], float x, float y) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1aeeef3c73e6f91dd44c2215ce5f5e8d89"/>void <emphasis role="strong">setVec2</emphasis> (int pos, float x, float y) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1aeb021061c5d451329d92257b07dbfec3"/>void <emphasis role="strong">setVec3</emphasis> (const std::string &amp;name, const glm::vec3 &amp;value) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a9899e1d2f0d8ddd762bac96d950dca31"/>void <emphasis role="strong">setVec3</emphasis> (const char name[], const glm::vec3 &amp;value) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1aa39c8ad37be022591a0408520868f846"/>void <emphasis role="strong">setVec3</emphasis> (int pos, const glm::vec3 &amp;value) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a90092c25b7dc23964c465b93887300f9"/>void <emphasis role="strong">setVec3</emphasis> (const std::string &amp;name, float x, float y, float z) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1ad6dc2ccfa07dc5de813a3db4f5d275e1"/>void <emphasis role="strong">setVec3</emphasis> (const char name[], float x, float y, float z) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a8becc83b1ec3fc8324968b4c19cb2091"/>void <emphasis role="strong">setVec3</emphasis> (int pos, float x, float y, float z) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a79cbe674f6bf1a576a48045dcb924de5"/>void <emphasis role="strong">setVec4</emphasis> (const std::string &amp;name, const glm::vec4 &amp;value) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a8ec0e4e401cbcbc702d85b758e59ddfa"/>void <emphasis role="strong">setVec4</emphasis> (const char name[], const glm::vec4 &amp;value) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a4837aceaaed2d84991a19a288bef0f89"/>void <emphasis role="strong">setVec4</emphasis> (int pos, const glm::vec4 &amp;value) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a913e10fe2501b00746ae6901b97a1730"/>void <emphasis role="strong">setVec4</emphasis> (const std::string &amp;name, float x, float y, float z, float w)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a34c3f4447ea64bab4e6df7a6f9b80c74"/>void <emphasis role="strong">setVec4</emphasis> (const char name[], float x, float y, float z, float w)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1ac1ff33a0615b93e51aa715c2d67f1b50"/>void <emphasis role="strong">setVec4</emphasis> (int pos, float x, float y, float z, float w)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a91a6ee79b959cacd618c9e29a5bbd732"/>void <emphasis role="strong">setMat2</emphasis> (const std::string &amp;name, const glm::mat2 &amp;mat) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a2f6542050e1f761ace20a012ff9d5311"/>void <emphasis role="strong">setMat2</emphasis> (const char name[], const glm::mat2 &amp;mat) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1ad2a3c88db8b4dea8e0f95676b4d1a443"/>void <emphasis role="strong">setMat2</emphasis> (int pos, const glm::mat2 &amp;mat) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a3e24fcad187493dfebaa12939072e91d"/>void <emphasis role="strong">setMat3</emphasis> (const std::string &amp;name, const glm::mat3 &amp;mat) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a7ff14214fe72823c2895136dcb57927d"/>void <emphasis role="strong">setMat3</emphasis> (const char name[], const glm::mat3 &amp;mat) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a0253a6eca93a8da7ba8c0d97966dfda6"/>void <emphasis role="strong">setMat3</emphasis> (int pos, const glm::mat3 &amp;mat) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a8e711c96f3e1722cbfb88fde9478977c"/>void <emphasis role="strong">setMat4</emphasis> (const std::string &amp;name, const glm::mat4 &amp;mat) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a8e6ebf39cf8dd0d1fff3b487b3edd1c5"/>void <emphasis role="strong">setMat4</emphasis> (const char name[], const glm::mat4 &amp;mat) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1ac24db862ecff20a16d2088a4527ec130"/>void <emphasis role="strong">setMat4</emphasis> (int pos, const glm::mat4 &amp;mat) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1ab7bc466dd21b5fe46fee5504fa0dc9d2"/>uint32_t <emphasis role="strong">getID</emphasis> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classShader_1a3ec7554b742bc5b221268dc117b6d76a"/>static void <emphasis role="strong">setDir</emphasis> (const std::string &amp;shaderDir)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a353fbc8d344e51fa9627e432d36e838f"/>static uint32_t <emphasis role="strong">load</emphasis> (const char shaderName[], const char vertRelPath[], const char fragRelPath[], const char geomRelPath[]=nullptr)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a0128ea6c452ea2e54e348a57e2035c22"/>static <link linkend="_classShader">Shader</link> * <emphasis role="strong">useShader</emphasis> (uint32_t sh)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShader_1a3881f5e8a21711f63ef5808566353ad6"/>static void <emphasis role="strong">cleanAll</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

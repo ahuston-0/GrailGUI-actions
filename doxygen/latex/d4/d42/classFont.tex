@@ -1,0 +1,73 @@
+\hypertarget{classFont}{}\doxysection{Font Class Reference}
+\label{classFont}\index{Font@{Font}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classFont_1_1Glyph}{Glyph}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFont_a4d147920249eefb5f43ced026291e42a}\label{classFont_a4d147920249eefb5f43ced026291e42a}} 
+{\bfseries Font} (\mbox{\hyperlink{classFontFace}{Font\+Face}} $\ast$Face, FT\+\_\+\+Face ft\+Face, uint16\+\_\+t height, uint8\+\_\+t bitmap\mbox{[}$\,$\mbox{]}, uint32\+\_\+t \&sizeX, uint32\+\_\+t \&sizeY, uint32\+\_\+t \&currX, uint32\+\_\+t \&currY, uint32\+\_\+t \&row\+Size)
+\item 
+\mbox{\Hypertarget{classFont_a4fc0de5f854b0ed4aa7f2815012360be}\label{classFont_a4fc0de5f854b0ed4aa7f2815012360be}} 
+{\bfseries Font} (std\+::istream \&)
+\item 
+\mbox{\Hypertarget{classFont_ac8ef75b3df174a195b7b077e9ea65f2d}\label{classFont_ac8ef75b3df174a195b7b077e9ea65f2d}} 
+uint32\+\_\+t {\bfseries get\+Start\+Glyph} () const
+\item 
+void \mbox{\hyperlink{classFont_ab6d0d5a6921217004a5e5b560500c38a}{add\+Glyph}} (FT\+\_\+\+Face ft\+Face, std\+::unordered\+\_\+map$<$ uint32\+\_\+t, uint32\+\_\+t $>$ \&glyph\+Map, uint8\+\_\+t c, uint8\+\_\+t bitmap\mbox{[}$\,$\mbox{]}, uint32\+\_\+t \&sizeX, uint32\+\_\+t \&sizeY, uint32\+\_\+t \&currX, uint32\+\_\+t \&currY, uint32\+\_\+t \&row\+Size)
+\item 
+\mbox{\Hypertarget{classFont_a3e04d12e04ab2c31b58effca2ef451c9}\label{classFont_a3e04d12e04ab2c31b58effca2ef451c9}} 
+const \mbox{\hyperlink{classFont_1_1Glyph}{Glyph}} $\ast$ {\bfseries get\+Glyph} (uint32\+\_\+t i) const
+\item 
+\mbox{\Hypertarget{classFont_aa591df56fc407880ed81046b108752ef}\label{classFont_aa591df56fc407880ed81046b108752ef}} 
+uint16\+\_\+t {\bfseries get\+Height} () const
+\item 
+\mbox{\Hypertarget{classFont_a07b6d1db2e065b0ae5d1ad8121b9b1d3}\label{classFont_a07b6d1db2e065b0ae5d1ad8121b9b1d3}} 
+uint32\+\_\+t {\bfseries get\+Texture} () const
+\item 
+\mbox{\Hypertarget{classFont_a3c65145822e6f04076166b01b317e2ff}\label{classFont_a3c65145822e6f04076166b01b317e2ff}} 
+float {\bfseries get\+Width} (const char text\mbox{[}$\,$\mbox{]}, const uint32\+\_\+t len) const
+\item 
+\mbox{\Hypertarget{classFont_abda07c6647a19b21027313519f7b910a}\label{classFont_abda07c6647a19b21027313519f7b910a}} 
+void {\bfseries save} (std\+::ostream \&fastfont)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFont_a9324a0b1c81e199b25b00f0a9e3f97ae}\label{classFont_a9324a0b1c81e199b25b00f0a9e3f97ae}} 
+static \mbox{\hyperlink{classFont}{Font}} $\ast$ {\bfseries get\+Default} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFont_a1f31b303f41e128046a513ffdf074a9a}\label{classFont_a1f31b303f41e128046a513ffdf074a9a}} 
+uint32\+\_\+t {\bfseries max\+Width}
+\item 
+\mbox{\Hypertarget{classFont_a366ee1257fc7ec80fd7bd8934a3aef60}\label{classFont_a366ee1257fc7ec80fd7bd8934a3aef60}} 
+uint16\+\_\+t {\bfseries space\+Width}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFont_aa9627c9772feb41db6450011b1efdb92}\label{classFont_aa9627c9772feb41db6450011b1efdb92}} 
+class {\bfseries Font\+Face}
+\item 
+\mbox{\Hypertarget{classFont_aba4e9fdcb7468ee7792387e03ad7d1fd}\label{classFont_aba4e9fdcb7468ee7792387e03ad7d1fd}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&s, const \mbox{\hyperlink{classFont}{Font}} \&f)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFont_ab6d0d5a6921217004a5e5b560500c38a}\label{classFont_ab6d0d5a6921217004a5e5b560500c38a}} 
+\index{Font@{Font}!addGlyph@{addGlyph}}
+\index{addGlyph@{addGlyph}!Font@{Font}}
+\doxysubsubsection{\texorpdfstring{addGlyph()}{addGlyph()}}
+{\footnotesize\ttfamily void Font\+::add\+Glyph (\begin{DoxyParamCaption}\item[{FT\+\_\+\+Face}]{ft\+Face,  }\item[{std\+::unordered\+\_\+map$<$ uint32\+\_\+t, uint32\+\_\+t $>$ \&}]{glyph\+Map,  }\item[{uint8\+\_\+t}]{c,  }\item[{uint8\+\_\+t}]{bitmap\mbox{[}$\,$\mbox{]},  }\item[{uint32\+\_\+t \&}]{sizeX,  }\item[{uint32\+\_\+t \&}]{sizeY,  }\item[{uint32\+\_\+t \&}]{currX,  }\item[{uint32\+\_\+t \&}]{currY,  }\item[{uint32\+\_\+t \&}]{row\+Size }\end{DoxyParamCaption})}
+
+
+\begin{DoxyItemize}
+\item convert to an anti-\/aliased bitmap $\ast$/
+\end{DoxyItemize}

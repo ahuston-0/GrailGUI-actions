@@ -1,0 +1,42 @@
+.TH "FileUtil" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FileUtil
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsearchDir\fP (const char dirName[])"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static char * \fBreadComplete\fP (const char filename[])"
+.br
+.ti -1c
+.RI "static void \fBreadComplete\fP (char **p, uint32_t *len, const char filename[])"
+.br
+.ti -1c
+.RI "static bool \fBisDir\fP (const std::string &path)"
+.br
+.ti -1c
+.RI "template<typename T > static uint32_t \fBfindAll\fP (std::regex *reg, const std::string &dirName, T *handler, void(T::*f)(std::string filePath, std::string filename))"
+.br
+.ti -1c
+.RI "static void \fBbuildMapNameToFile\fP (const std::regex *pattern, std::string dirName, void(*f)(std::string name, const std::string &path))"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "static void FileUtil::buildMapNameToFile (const std::regex * pattern, std::string dirName, void(*)(std::string name, const std::string &path) f)\fC [inline]\fP, \fC [static]\fP"
+This is static because it makes no sense to load fonts over and over again into multiple browser windows when they should be sharing 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

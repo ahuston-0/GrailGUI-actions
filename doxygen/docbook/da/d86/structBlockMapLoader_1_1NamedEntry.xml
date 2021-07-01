@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structBlockMapLoader_1_1NamedEntry" xml:lang="en-US">
+<title>BlockMapLoader::NamedEntry Struct Reference</title>
+<indexterm><primary>BlockMapLoader::NamedEntry</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structBlockMapLoader_1_1NamedEntry_1a961d94b55b1dac6e86e308f7d48468f2"/>uint32_t <emphasis role="strong">nameOffset</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockMapLoader_1_1NamedEntry_1a00943f884b96b4897bcc3752b818d270"/>uint8_t <emphasis role="strong">len</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockMapLoader_1_1NamedEntry_1a9746a165029429b74babc0dc178823c0"/>uint8_t <emphasis role="strong">entityType</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockMapLoader_1_1NamedEntry_1a5d3c9efbee6239fcdac1cc6731d8f660"/>uint8_t <emphasis role="strong">type</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockMapLoader_1_1NamedEntry_1a3ca0068ddaab12b6dd9856c678a88f5f"/>uint32_t <emphasis role="strong">offset</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

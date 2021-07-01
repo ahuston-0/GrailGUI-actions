@@ -1,0 +1,35 @@
+.TH "Servlet" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Servlet
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Servlet\&.hh>\fP
+.PP
+Inherited by \fBHttpServlet\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBrequest\fP (\fBBuffer\fP &out)=0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Base class for servlet This is the common behavior between protocols such as HTTP and CSP so this is the low-level data methods\&.
+.PP
+All servlets support a request, which is a client sending a message to the server requesting data\&. In HTTP, a request is ASCII with many potential lines if input, whereas in CSP it is a lot shorter, fixed format, and binary
+.PP
+\fBAuthor\fP
+.RS 4
+: Dov Kruger 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

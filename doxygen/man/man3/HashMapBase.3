@@ -1,0 +1,103 @@
+.TH "HashMapBase" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HashMapBase
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBHashMap< uint32_t >\fP, \fBHashMap< DataType >\fP, and \fBHashMap< Val >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBgetWords\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetWordsSize\fP () const"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBfasthash1\fP (const char s[]) const"
+.br
+.ti -1c
+.RI "uint32_t \fBbytewisehash\fP (const char s[], uint32_t len) const"
+.br
+.ti -1c
+.RI "uint32_t \fBbytewisehash\fP (const char s[]) const"
+.br
+.ti -1c
+.RI "uint32_t \fBhash\fP (const char s[]) const"
+.br
+.ti -1c
+.RI "uint32_t \fBhash\fP (const char s[], uint32_t len) const"
+.br
+.ti -1c
+.RI "\fBHashMapBase\fP (uint32_t sz, uint32_t symbolSize)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBhasNoZero\fP (uint32_t v)"
+.br
+.ti -1c
+.RI "static bool \fBhasNoZero\fP (uint64_t v)"
+.br
+.ti -1c
+.RI "static bool \fBhaszero\fP (uint32_t v)"
+.br
+.ti -1c
+.RI "static bool \fBnotzero\fP (uint64_t v)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBsize\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBsymbolSize\fP"
+.br
+.ti -1c
+.RI "char * \fBsymbols\fP"
+.br
+.ti -1c
+.RI "char * \fBcurrent\fP"
+.br
+.ti -1c
+.RI "uint32_t * \fBtable\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "constexpr static int \fBr1\fP = 5"
+.br
+.ti -1c
+.RI "constexpr static int \fBr2\fP = 7"
+.br
+.ti -1c
+.RI "constexpr static int \fBr3\fP = 17"
+.br
+.ti -1c
+.RI "constexpr static int \fBr4\fP = 13"
+.br
+.ti -1c
+.RI "constexpr static int \fBr5\fP = 11"
+.br
+.ti -1c
+.RI "constexpr static int \fBr6\fP = 16"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

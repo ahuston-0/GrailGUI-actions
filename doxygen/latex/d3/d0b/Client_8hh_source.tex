@@ -1,0 +1,54 @@
+\hypertarget{Client_8hh_source}{}\doxysection{Client.\+hh}
+\label{Client_8hh_source}\index{src/csp/Client.hh@{src/csp/Client.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}csp/csp.hh"{}}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{keyword}{template}<\textcolor{keyword}{typename} SocketImpl, \textcolor{keyword}{typename} ProtocolImpl>}
+\DoxyCodeLine{\Hypertarget{Client_8hh_source_l00006}\mbox{\hyperlink{classClient}{00006}} \textcolor{keyword}{class }\mbox{\hyperlink{classClient}{Client}} \{}
+\DoxyCodeLine{00007 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00008     SocketImpl s;}
+\DoxyCodeLine{00009     ProtocolImpl p;}
+\DoxyCodeLine{00010 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011     \textcolor{comment}{/*}}
+\DoxyCodeLine{00012 \textcolor{comment}{        Create a client which is not yet connected and }}
+\DoxyCodeLine{00013 \textcolor{comment}{     */}}
+\DoxyCodeLine{00014     \mbox{\hyperlink{classClient}{Client}}() : s() \{\}}
+\DoxyCodeLine{00015     \mbox{\hyperlink{classClient}{Client}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} addr[]) : s(addr) \{\}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \textcolor{comment}{/*}}
+\DoxyCodeLine{00018 \textcolor{comment}{        Make sure this client automatically flushes buffers in the}}
+\DoxyCodeLine{00019 \textcolor{comment}{        socket and closes down everything cleanly before going away}}
+\DoxyCodeLine{00020 \textcolor{comment}{     */}}
+\DoxyCodeLine{00021     \string~\mbox{\hyperlink{classClient}{Client}}() \{\}}
+\DoxyCodeLine{00022     \mbox{\hyperlink{classClient}{Client}}(\textcolor{keyword}{const} \mbox{\hyperlink{classClient}{Client}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00023     \mbox{\hyperlink{classClient}{Client}}\& operator =(\textcolor{keyword}{const} \mbox{\hyperlink{classClient}{Client}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00024     \textcolor{keywordtype}{void} connect(\textcolor{keyword}{const} \textcolor{keywordtype}{char} addr[]) \{}
+\DoxyCodeLine{00025         s.connect(addr);}
+\DoxyCodeLine{00026     \}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \textcolor{comment}{//  void setId(UserId u) \{\}}}
+\DoxyCodeLine{00032 \textcolor{comment}{}    <T>}
+\DoxyCodeLine{\Hypertarget{Client_8hh_source_l00033}\mbox{\hyperlink{classClient_aee5ee5fb1cefb83dfa096b0813473257}{00033}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classClient_aee5ee5fb1cefb83dfa096b0813473257}{write}}(\textcolor{keyword}{const} T\& data) \{\}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{comment}{/*}}
+\DoxyCodeLine{00036 \textcolor{comment}{        flush the out buffer and terminate the connection}}
+\DoxyCodeLine{00037 \textcolor{comment}{     */}}
+\DoxyCodeLine{00038     \textcolor{keywordtype}{void} send();}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     \textcolor{comment}{/*}}
+\DoxyCodeLine{00041 \textcolor{comment}{        flush the out buffer, wait until a response is received}}
+\DoxyCodeLine{00042 \textcolor{comment}{        and then terminate the connection}}
+\DoxyCodeLine{00043 \textcolor{comment}{    */}}
+\DoxyCodeLine{00044     \textcolor{keywordtype}{void} sendAndWaitforResponse();}
+\DoxyCodeLine{00045     }
+\DoxyCodeLine{00046     \textcolor{comment}{/*}}
+\DoxyCodeLine{00047 \textcolor{comment}{        flush the out buffer, wait until a response is received}}
+\DoxyCodeLine{00048 \textcolor{comment}{        and then keep the connection open for continuous replies}}
+\DoxyCodeLine{00049 \textcolor{comment}{    */}}
+\DoxyCodeLine{00050     \textcolor{keywordtype}{void} sendAndKeepOpen();}
+\DoxyCodeLine{00051 \};}
+
+\end{DoxyCode}

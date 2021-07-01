@@ -1,0 +1,41 @@
+\hypertarget{BoxChartWidget_8hh_source}{}\doxysection{Box\+Chart\+Widget.\+hh}
+\label{BoxChartWidget_8hh_source}\index{src/opengl/BoxChartWidget.hh@{src/opengl/BoxChartWidget.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/GraphWidget.hh"{}}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{\Hypertarget{BoxChartWidget_8hh_source_l00005}\mbox{\hyperlink{classBoxChartWidget}{00005}} \textcolor{keyword}{class }\mbox{\hyperlink{classBoxChartWidget}{BoxChartWidget}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGraphWidget}{GraphWidget}} \{}
+\DoxyCodeLine{00006  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00007   std::vector<double> data;}
+\DoxyCodeLine{00008   std::vector<std::string> names;}
+\DoxyCodeLine{00009   glm::vec4 \&boxColor;}
+\DoxyCodeLine{00010   \textcolor{comment}{// glm::vec4 \&whiskerColors;}}
+\DoxyCodeLine{00011   \textcolor{comment}{// glm::vec4 rectOutlineColor;}}
+\DoxyCodeLine{00012   \textcolor{comment}{// StyledMultiShape2D *rectOutlineStyle;}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014   \textcolor{keywordtype}{double} boxWidth;}
+\DoxyCodeLine{00015   \textcolor{keywordtype}{int} pointsPerBox;}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018   \mbox{\hyperlink{classBoxChartWidget}{BoxChartWidget}}(\mbox{\hyperlink{classCanvas}{Canvas}} *c, \mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}} *m, \mbox{\hyperlink{classMultiText}{MultiText}} *t, \textcolor{keywordtype}{double} x,}
+\DoxyCodeLine{00019                  \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} w, \textcolor{keywordtype}{double} h)}
+\DoxyCodeLine{00020       : \mbox{\hyperlink{classGraphWidget}{GraphWidget}}(c, m, t, x, y, w, h),}
+\DoxyCodeLine{00021         data(std::vector<double>()),}
+\DoxyCodeLine{00022         names(std::vector<std::string>()),}
+\DoxyCodeLine{00023         boxColor(grail::blue),}
+\DoxyCodeLine{00024         boxWidth(20),}
+\DoxyCodeLine{00025         pointsPerBox(3) \{\}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027   \textcolor{keywordtype}{void} setBoxWidth(\textcolor{keywordtype}{double} width);}
+\DoxyCodeLine{00028   \textcolor{keywordtype}{void} setBoxColor(glm::vec4 \&color);}
+\DoxyCodeLine{00029   \textcolor{keywordtype}{void} setPointsPerBox(\textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{00030   \textcolor{keywordtype}{void} setData(\textcolor{keyword}{const} std::vector<double> \&data);}
+\DoxyCodeLine{00031   \textcolor{keywordtype}{void} setNames(\textcolor{keyword}{const} std::vector<std::string> \&names);}
+\DoxyCodeLine{00032   \textcolor{keywordtype}{void} createXAxis(AxisType a = AxisType::TEXT) \textcolor{keyword}{override};}
+\DoxyCodeLine{00033   \textcolor{keywordtype}{void} createYAxis(AxisType a = AxisType::LINEAR) \textcolor{keyword}{override};}
+\DoxyCodeLine{00034   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
+\DoxyCodeLine{00035 \};}
+
+\end{DoxyCode}

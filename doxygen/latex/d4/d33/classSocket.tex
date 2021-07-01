@@ -1,0 +1,59 @@
+\hypertarget{classSocket}{}\doxysection{Socket Class Reference}
+\label{classSocket}\index{Socket@{Socket}}
+Inheritance diagram for Socket\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d4/d33/classSocket}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSocket_aa1ba5ed8118c5dc133a7520298188942}\label{classSocket_aa1ba5ed8118c5dc133a7520298188942}} 
+{\bfseries Socket} (const char $\ast$addr, uint16\+\_\+t port)
+\item 
+\mbox{\Hypertarget{classSocket_a4df3811c84619bfe5376d7b5d5f0d0da}\label{classSocket_a4df3811c84619bfe5376d7b5d5f0d0da}} 
+{\bfseries Socket} (uint16\+\_\+t port, \mbox{\hyperlink{classRequest}{Request}} $\ast$req)
+\item 
+\mbox{\Hypertarget{classSocket_a8763ccbbdc7825a07c433991d1c14334}\label{classSocket_a8763ccbbdc7825a07c433991d1c14334}} 
+{\bfseries Socket} (uint16\+\_\+t port)
+\item 
+\mbox{\Hypertarget{classSocket_a1d0c03d41f3b4fbe82c5978994a0eb78}\label{classSocket_a1d0c03d41f3b4fbe82c5978994a0eb78}} 
+void {\bfseries attach} (\mbox{\hyperlink{classRequest}{Request}} $\ast$r)
+\item 
+\mbox{\Hypertarget{classSocket_ad3b1c2db18a4f96747fcb3e730a4d8d7}\label{classSocket_ad3b1c2db18a4f96747fcb3e730a4d8d7}} 
+\mbox{\hyperlink{classBuffer}{Buffer}} \& {\bfseries get\+Out} ()
+\item 
+\mbox{\Hypertarget{classSocket_a618c1e3e39d9a2db9a1dcddbf51da1e7}\label{classSocket_a618c1e3e39d9a2db9a1dcddbf51da1e7}} 
+\mbox{\hyperlink{classBuffer}{Buffer}} \& {\bfseries get\+In} ()
+\item 
+\mbox{\Hypertarget{classSocket_a5f31b9ee08fa572e62f3bba5b5a154f9}\label{classSocket_a5f31b9ee08fa572e62f3bba5b5a154f9}} 
+virtual void {\bfseries wait} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSocket_a3a34757c71f25ebb03376c1ddf579b57}\label{classSocket_a3a34757c71f25ebb03376c1ddf579b57}} 
+static void {\bfseries class\+Cleanup} ()
+\item 
+\mbox{\Hypertarget{classSocket_a9673f9abb6c268237e8f0b32aae38b26}\label{classSocket_a9673f9abb6c268237e8f0b32aae38b26}} 
+static void {\bfseries class\+Init} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSocket_a805ddeb6cc1eac196aeef0ff9786c0be}\label{classSocket_a805ddeb6cc1eac196aeef0ff9786c0be}} 
+const char $\ast$ {\bfseries address}
+\item 
+\mbox{\Hypertarget{classSocket_a643bcba92eae5360cbd97b5005f78f97}\label{classSocket_a643bcba92eae5360cbd97b5005f78f97}} 
+uint16\+\_\+t {\bfseries port}
+\item 
+\mbox{\Hypertarget{classSocket_a2e157bc00a9f54ebdef6ec0941f96190}\label{classSocket_a2e157bc00a9f54ebdef6ec0941f96190}} 
+\mbox{\hyperlink{classRequest}{Request}} $\ast$ {\bfseries req}
+\item 
+\mbox{\Hypertarget{classSocket_a419b9a2eecb0d14581b4211297b434e5}\label{classSocket_a419b9a2eecb0d14581b4211297b434e5}} 
+\mbox{\hyperlink{classBuffer}{Buffer}} {\bfseries in}
+\item 
+\mbox{\Hypertarget{classSocket_a357e43a73b4b3f16cae5c9c163ef94c6}\label{classSocket_a357e43a73b4b3f16cae5c9c163ef94c6}} 
+\mbox{\hyperlink{classBuffer}{Buffer}} {\bfseries out}
+\end{DoxyCompactItemize}

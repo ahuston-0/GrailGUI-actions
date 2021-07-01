@@ -1,0 +1,74 @@
+.TH "Page" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Page
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPage\fP (const string &inputFile)"
+.br
+.ti -1c
+.RI "\fBPage\fP (const string &staticContent, vector< \fBInsertion\fP > insertions)"
+.br
+.ti -1c
+.RI "\fBPage\fP (const string &staticFile, const string &insertFile)"
+.br
+.ti -1c
+.RI "char * \fBgetStaticPointer\fP ()"
+.br
+.ti -1c
+.RI "string \fBgetStaticContent\fP () const"
+.br
+.ti -1c
+.RI "vector< \fBInsertion\fP > \fBgetInsertions\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetSize\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetStaticSize\fP () const"
+.br
+.ti -1c
+.RI "void \fBaddDynamic\fP (uint32_t offset, DataType d)"
+.br
+.ti -1c
+.RI "void \fBaddStatic\fP (const string &t)"
+.br
+.ti -1c
+.RI "bool \fBisStatic\fP ()"
+.br
+.ti -1c
+.RI "uint32_t \fBdynamicSize\fP (DataType d)"
+.br
+.ti -1c
+.RI "\fBPage\fP (const unsigned char *text, const \fBPageLayout\fP *pageLayout, uint32_t offset)"
+.br
+.ti -1c
+.RI "void \fBaddLine\fP (uint32_t offset)"
+.br
+.ti -1c
+.RI "uint32_t \fBgetLine\fP (uint32_t line) const"
+.br
+.ti -1c
+.RI "const \fBPageLayout\fP * \fBgetLayout\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBsize\fP () const"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &s, const \fBPage\fP &p)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

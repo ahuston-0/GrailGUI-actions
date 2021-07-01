@@ -1,0 +1,26 @@
+\hypertarget{PageBuffer_8hh_source}{}\doxysection{Page\+Buffer.\+hh}
+\label{PageBuffer_8hh_source}\index{src/csp/PageBuffer.hh@{src/csp/PageBuffer.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{//}}
+\DoxyCodeLine{00002 \textcolor{comment}{// Created by Class2019 on 2/21/2019.}}
+\DoxyCodeLine{00003 \textcolor{comment}{//}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{\Hypertarget{PageBuffer_8hh_source_l00006}\mbox{\hyperlink{classpageBuffer}{00006}} \textcolor{keyword}{class }\mbox{\hyperlink{classpageBuffer}{pageBuffer}} \{}
+\DoxyCodeLine{00007 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00008     \textcolor{keywordtype}{char}* content;}
+\DoxyCodeLine{00009     uint32\_t length;}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012     \mbox{\hyperlink{classpageBuffer}{pageBuffer}}(\textcolor{keywordtype}{char}* content, uint32\_t length) : content(content), length(length) \{\}}
+\DoxyCodeLine{00013     \string~\mbox{\hyperlink{classpageBuffer}{pageBuffer}}() \{}
+\DoxyCodeLine{00014         \textcolor{keyword}{delete}[] content;}
+\DoxyCodeLine{00015     \}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \textcolor{keywordtype}{void} printPage() \{}
+\DoxyCodeLine{00018         puts(content);}
+\DoxyCodeLine{00019     \}}
+\DoxyCodeLine{00020 \};}
+
+\end{DoxyCode}

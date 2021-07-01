@@ -1,0 +1,52 @@
+\hypertarget{configcsp_8hh_source}{}\doxysection{configcsp.\+hh}
+\label{configcsp_8hh_source}\index{src/util/configcsp.hh@{src/util/configcsp.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{// Config file for CSP}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#ifndef CONFIGCSP\_HH\_}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#define CONFIGCSP\_HH\_}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "{}Config.hh"{}}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00029 \textcolor{keyword}{enum} prot = \{\textcolor{stringliteral}{"{}csp"{}}, \textcolor{stringliteral}{"{}https"{}}, \textcolor{stringliteral}{"{}http"{}}\};  \textcolor{comment}{// only protocols we'll use}}
+\DoxyCodeLine{00030 \textcolor{keyword}{enum} ip = \{\textcolor{stringliteral}{"{}ipV4"{}}, \textcolor{stringliteral}{"{}ipV6"{}}\};  \textcolor{comment}{// only IP versions we'll use at the moment}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{\Hypertarget{configcsp_8hh_source_l00032}\mbox{\hyperlink{classcsp}{00032}} \textcolor{keyword}{class }\mbox{\hyperlink{classcsp}{csp}} \{}
+\DoxyCodeLine{00033  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034   uint16\_t port;  \textcolor{comment}{// Port number to talk/listen on}}
+\DoxyCodeLine{00035   prot protocol;  \textcolor{comment}{// Specifies what protocol we're going to use}}
+\DoxyCodeLine{00036   ip ip\_ver;      \textcolor{comment}{// Version if IP we're going to use}}
+\DoxyCodeLine{00037   \textcolor{keywordtype}{string} log;     \textcolor{comment}{// The name of the log file to be generated}}
+\DoxyCodeLine{00038   \textcolor{keywordtype}{string} base;    \textcolor{comment}{// this depends on os, base for all directory}}
+\DoxyCodeLine{00039   buf buffer;}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041   \mbox{\hyperlink{classcsp}{csp}}() \{  \textcolor{comment}{// ToDo: Write the tokenizer and make the fix the x[1] thing, because}}
+\DoxyCodeLine{00042            \textcolor{comment}{// the}}
+\DoxyCodeLine{00043     ifstream reader;}
+\DoxyCodeLine{00044     \textcolor{keywordtype}{char} x[10];}
+\DoxyCodeLine{00045     \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{00046     reader.open(\textcolor{stringliteral}{"{}csp.conf"{}}, ios::in);}
+\DoxyCodeLine{00047     \textcolor{keywordflow}{while} (!reader.eof()) \{}
+\DoxyCodeLine{00048       reader >> x;}
+\DoxyCodeLine{00049       \textcolor{comment}{// split x into words}}
+\DoxyCodeLine{00050       \textcolor{keywordflow}{if} (strcmp(x, \textcolor{stringliteral}{"{}port"{}}))}
+\DoxyCodeLine{00051         port = uint16\_t(x[1]);}
+\DoxyCodeLine{00052       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(x, \textcolor{stringliteral}{"{}log"{}}))}
+\DoxyCodeLine{00053         log = x[1];}
+\DoxyCodeLine{00054       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(x, \textcolor{stringliteral}{"{}protocol"{}}))}
+\DoxyCodeLine{00055         protocol = x[1];}
+\DoxyCodeLine{00056     \}}
+\DoxyCodeLine{00057   \}}
+\DoxyCodeLine{00058 \};}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

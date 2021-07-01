@@ -1,0 +1,33 @@
+.TH "LogReader" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LogReader
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Log\&.hh>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLogReader\fP (const char filename[], const char language[])"
+.br
+.ti -1c
+.RI "bool \fBhasNext\fP (Log::Level severity)"
+.br
+.ti -1c
+.RI "bool \fBhasNext\fP (uint16_t message)"
+.br
+.ti -1c
+.RI "void \fBprint\fP (std::ostream &s)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Display a binary log in a user's preferred language 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

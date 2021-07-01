@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classString32" xml:lang="en-US">
+<title>String32 Class Reference</title>
+<indexterm><primary>String32</primary></indexterm>
+<para>Inheritance diagram for String32:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dd/ddc/classString32.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classString32_1a6d40c995682aa489f55723140f91824f"/><emphasis role="strong">String32</emphasis> (string val)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classString32_1a1b1d98e793773b2cdcbd4f3bb4353762"/>DataType <emphasis role="strong">getDataType</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classString32_1adeb564cca53986e2c9d57fba67973ec1"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classString32_1a6fe5079e640385250fb0a0de09c88996"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classString32_1a8dd82fb4236c06fabb0b2163fc8cab51"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classString32_1a30bef4e1c4a22676e02e93e6db97d1f1"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

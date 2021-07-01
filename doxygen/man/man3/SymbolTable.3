@@ -1,0 +1,44 @@
+.TH "SymbolTable" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SymbolTable
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBStruct\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSymbolTable\fP (\fBXDLCompiler\fP *c)"
+.br
+.ti -1c
+.RI "void \fBaddRoot\fP (const \fBXDLType\fP *t)"
+.br
+.ti -1c
+.RI "const \fBXDLType\fP * \fBgetRoot\fP () const"
+.br
+.ti -1c
+.RI "\fBStruct\fP * \fBaddStruct\fP (const string &name)"
+.br
+.ti -1c
+.RI "void \fBaddXDLType\fP (const std::string &name, \fBXDLType\fP *xdlType)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBBuffer\fP &out)"
+.br
+.ti -1c
+.RI "void \fBreadMeta\fP (\fBBuffer\fP &metadataBuf)"
+.br
+.ti -1c
+.RI "void \fBdisplayText\fP (\fBBuffer\fP &binaryIn, \fBBuffer\fP &asciiOut) const"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

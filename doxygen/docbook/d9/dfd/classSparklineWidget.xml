@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classSparklineWidget" xml:lang="en-US">
+<title>SparklineWidget Class Reference</title>
+<indexterm><primary>SparklineWidget</primary></indexterm>
+<para>Inheritance diagram for SparklineWidget:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d9/dfd/classSparklineWidget.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classSparklineWidget_1aad2f44900dcdb8309a60bc3d2e95e123"/><emphasis role="strong">SparklineWidget</emphasis> (<link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, float x, float y, float w, float h, const std::string &amp;title, const <link linkend="_classStyle">Style</link> *titleStyle, const <link linkend="_classStyle">Style</link> *barStyle, float minX, float maxX, float minY, float maxY, float maxMultiplier, float minMultiplier, float tickSize, float tickStart, <link linkend="_classScale">Scale</link> *yAxis, <link linkend="_classScale">Scale</link> *xAxis)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSparklineWidget_1a6d437b20de627e0654ca0db7ffd68b6b"/><emphasis role="strong">SparklineWidget</emphasis> (<link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, float x, float y, float w, float h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSparklineWidget_1a7e4a12342d701c5b733f269fe89e4f56"/><emphasis role="strong">SparklineWidget</emphasis> (<link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, float x, float y, float w, float h, const std::vector&lt; float &gt; &amp;xLocations, const std::vector&lt; float &gt; &amp;yLocations)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSparklineWidget_1a009a05bdceba4b6d98bf68ba721de92b"/>void <emphasis role="strong">setMinMaxY</emphasis> (float min, float max)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSparklineWidget_1a4e3a11a99c7965cd1b483166cd6e5fa8"/>void <emphasis role="strong">setAxisScale</emphasis> (<link linkend="_classScale">Scale</link> *yAxis)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSparklineWidget_1a7fd57e868281fcef4c4f6239f157d6cd"/>void <emphasis role="strong">setTitleStyle</emphasis> (const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSparklineWidget_1a805a07e076f16a7caf189cfc74bdfba4"/>void <emphasis role="strong">chart</emphasis> (const std::vector&lt; float &gt; &amp;yLocations, const std::vector&lt; float &gt; &amp;xLocations, glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSparklineWidget_1a82094dd77370892b61edddb1f799b283"/>void <emphasis role="strong">setTitle</emphasis> (const std::string &amp;s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSparklineWidget_1aab5424a1d469485c860d6f8952724380"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

@@ -1,0 +1,94 @@
+\hypertarget{classCSRGraph}{}\doxysection{CSRGraph$<$ Vertex\+Index\+\_\+t, Edge\+Index\+\_\+t, Weight\+\_\+t $>$ Class Template Reference}
+\label{classCSRGraph}\index{CSRGraph$<$ VertexIndex\_t, EdgeIndex\_t, Weight\_t $>$@{CSRGraph$<$ VertexIndex\_t, EdgeIndex\_t, Weight\_t $>$}}
+Inheritance diagram for CSRGraph$<$ Vertex\+Index\+\_\+t, Edge\+Index\+\_\+t, Weight\+\_\+t $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d3/dfd/classCSRGraph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCSRGraph_1_1VertexCount}{Vertex\+Count}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCSRGraph_a894ec6ae8299fec3b9663a4ad55a2ee7}\label{classCSRGraph_a894ec6ae8299fec3b9663a4ad55a2ee7}} 
+typedef void($\ast$ {\bfseries Func\+Vert}) (uint32\+\_\+t src, uint32\+\_\+t dest)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCSRGraph_a3eb8817e2ff85b5c92ef2871fea10709}\label{classCSRGraph_a3eb8817e2ff85b5c92ef2871fea10709}} 
+{\bfseries CSRGraph} (const \mbox{\hyperlink{classCSRGraph}{CSRGraph}} \&orig)=delete
+\item 
+\mbox{\Hypertarget{classCSRGraph_a05e10af6b3f8931b014cf9b87ab11b73}\label{classCSRGraph_a05e10af6b3f8931b014cf9b87ab11b73}} 
+\mbox{\hyperlink{classCSRGraph}{CSRGraph}} \& {\bfseries operator=} (const \mbox{\hyperlink{classCSRGraph}{CSRGraph}} \&orig)=delete
+\item 
+\mbox{\Hypertarget{classCSRGraph_afa04fbc4ef2d4ab909065d765ab040ba}\label{classCSRGraph_afa04fbc4ef2d4ab909065d765ab040ba}} 
+uint32\+\_\+t {\bfseries getV} () const
+\item 
+\mbox{\Hypertarget{classCSRGraph_a3a706e81a26a62f0a7e6c9c3198cde4a}\label{classCSRGraph_a3a706e81a26a62f0a7e6c9c3198cde4a}} 
+uint64\+\_\+t {\bfseries getE} () const
+\item 
+\mbox{\Hypertarget{classCSRGraph_a7e161ca1c3482133624bc723d46ff6c1}\label{classCSRGraph_a7e161ca1c3482133624bc723d46ff6c1}} 
+Weight\+\_\+t {\bfseries getW} (Vertex\+Index\+\_\+t src, Vertex\+Index\+\_\+t dest) const
+\item 
+\mbox{\Hypertarget{classCSRGraph_a0c1a5ec42ecf60ad9df7cc7b65443773}\label{classCSRGraph_a0c1a5ec42ecf60ad9df7cc7b65443773}} 
+bool {\bfseries is\+Adjacent} (Vertex\+Index\+\_\+t src, Vertex\+Index\+\_\+t dest) const
+\item 
+\mbox{\Hypertarget{classCSRGraph_af96dca57812792afc62e6c0d18d22a42}\label{classCSRGraph_af96dca57812792afc62e6c0d18d22a42}} 
+void {\bfseries get\+Edge} (Edge\+Index\+\_\+t i, Vertex\+Index\+\_\+t $\ast$v1, Vertex\+Index\+\_\+t $\ast$v2)
+\item 
+\mbox{\Hypertarget{classCSRGraph_af61f9c5bab0ee71f3f438046a0142424}\label{classCSRGraph_af61f9c5bab0ee71f3f438046a0142424}} 
+Vertex\+Index\+\_\+t {\bfseries count\+Adjacencies} (Vertex\+Index\+\_\+t v)
+\item 
+\mbox{\Hypertarget{classCSRGraph_aa789f4b6c30878bf844ec31609fbf8d2}\label{classCSRGraph_aa789f4b6c30878bf844ec31609fbf8d2}} 
+{\bfseries CSRGraph} (const char csr\+Begin\+Name\mbox{[}$\,$\mbox{]}, const char csr\+Adj\+Name\mbox{[}$\,$\mbox{]}, const char weight\+Name\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classCSRGraph_ad1a135d870d8b39456cab375f7bd3768}\label{classCSRGraph_ad1a135d870d8b39456cab375f7bd3768}} 
+void {\bfseries dfs} (Vertex\+Index\+\_\+t v, Func\+Vert f)
+\item 
+\mbox{\Hypertarget{classCSRGraph_aaa827595c26ef534a1c3601550fd8030}\label{classCSRGraph_aaa827595c26ef534a1c3601550fd8030}} 
+void {\bfseries bfs} (uint32\+\_\+t v, Func\+Vert f)
+\item 
+\mbox{\Hypertarget{classCSRGraph_ac922ec570e6055ab139fafec4e52c9d9}\label{classCSRGraph_ac922ec570e6055ab139fafec4e52c9d9}} 
+uint32\+\_\+t $\ast$ {\bfseries compute\+Histogram} () const
+\item 
+\mbox{\Hypertarget{classCSRGraph_a8b41d6354564533d334f7f61bea57474}\label{classCSRGraph_a8b41d6354564533d334f7f61bea57474}} 
+void {\bfseries print\+Histogram} () const
+\item 
+\mbox{\Hypertarget{classCSRGraph_a3d91b61f43f96c63a7b1a6d4245c53f6}\label{classCSRGraph_a3d91b61f43f96c63a7b1a6d4245c53f6}} 
+const Vertex\+Index\+\_\+t $\ast$ {\bfseries group} ()
+\item 
+\mbox{\Hypertarget{classCSRGraph_a70b9ebbfea66c887f2d8cf01134b54c1}\label{classCSRGraph_a70b9ebbfea66c887f2d8cf01134b54c1}} 
+void {\bfseries cluster} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCSRGraph_adab5bba31b3889fba788c29a50fd6cb8}\label{classCSRGraph_adab5bba31b3889fba788c29a50fd6cb8}} 
+static bool {\bfseries sort\+Desc\+Count} (const \mbox{\hyperlink{structCSRGraph_1_1VertexCount}{Vertex\+Count}} \&a, const \mbox{\hyperlink{structCSRGraph_1_1VertexCount}{Vertex\+Count}} \&b)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCSRGraph_a537aa611129f51e8564818c52d82f9d9}\label{classCSRGraph_a537aa611129f51e8564818c52d82f9d9}} 
+Vertex\+Index\+\_\+t {\bfseries start\+Index\+Len}
+\item 
+\mbox{\Hypertarget{classCSRGraph_ae399f0f883bed709ccca61a6440be169}\label{classCSRGraph_ae399f0f883bed709ccca61a6440be169}} 
+Edge\+Index\+\_\+t {\bfseries adj\+Len}
+\item 
+\mbox{\Hypertarget{classCSRGraph_ac460f09e3bac30c936cede872fc13b9d}\label{classCSRGraph_ac460f09e3bac30c936cede872fc13b9d}} 
+Edge\+Index\+\_\+t {\bfseries weight\+Len}
+\item 
+\mbox{\Hypertarget{classCSRGraph_a21c085fb092aa28145c527b0fe2a91b1}\label{classCSRGraph_a21c085fb092aa28145c527b0fe2a91b1}} 
+Edge\+Index\+\_\+t $\ast$ {\bfseries start\+Index}
+\item 
+\mbox{\Hypertarget{classCSRGraph_adc288460dd32df81ae14453b45414f7d}\label{classCSRGraph_adc288460dd32df81ae14453b45414f7d}} 
+Vertex\+Index\+\_\+t $\ast$ {\bfseries adjacency}
+\item 
+\mbox{\Hypertarget{classCSRGraph_a123833c4c148b2b1abea961a39095574}\label{classCSRGraph_a123833c4c148b2b1abea961a39095574}} 
+Weight\+\_\+t $\ast$ {\bfseries weight}
+\end{DoxyCompactItemize}

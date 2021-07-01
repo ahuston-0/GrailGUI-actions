@@ -1,0 +1,306 @@
+\hypertarget{classStyledMultiShape2D}{}\doxysection{Styled\+Multi\+Shape2D Class Reference}
+\label{classStyledMultiShape2D}\index{StyledMultiShape2D@{StyledMultiShape2D}}
+Inheritance diagram for Styled\+Multi\+Shape2D\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{d4/d61/classStyledMultiShape2D}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a32bbf2651dcb6a5d157f6cbf2d28394f}\label{classStyledMultiShape2D_a32bbf2651dcb6a5d157f6cbf2d28394f}} 
+{\bfseries Styled\+Multi\+Shape2D} (\mbox{\hyperlink{classCanvas}{Canvas}} $\ast$parent, const \mbox{\hyperlink{classStyle}{Style}} $\ast$s, float angle=0, float x=0, float y=0, uint32\+\_\+t vert\+Count=1024, uint32\+\_\+t solid\+Ind\+Count=1024, uint32\+\_\+t line\+Ind\+Count=1024, uint32\+\_\+t point\+Ind\+Count=1024)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a0c1baf11a8fba49833c608899e78b4a1}\label{classStyledMultiShape2D_a0c1baf11a8fba49833c608899e78b4a1}} 
+uint32\+\_\+t {\bfseries add\+Sector} (float x, float y, float x\+Rad, float y\+Rad, float from\+Angle, float to\+Angle, float angle\+Inc, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_ad5bf5979d0924b7832dbfee7328c80a5}\label{classStyledMultiShape2D_ad5bf5979d0924b7832dbfee7328c80a5}} 
+void {\bfseries add\+Color} (const glm\+::vec4 \&rgb)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_ad37f5c3b566849b6ac44582331ca5edd}\label{classStyledMultiShape2D_ad37f5c3b566849b6ac44582331ca5edd}} 
+void {\bfseries add\+Color} (float r, float g, float b)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_af3ab21834e69440829d829a3498fa24e}\label{classStyledMultiShape2D_af3ab21834e69440829d829a3498fa24e}} 
+void {\bfseries set\+Colors} (float cols\mbox{[}$\,$\mbox{]}, uint32\+\_\+t size)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a0dd3b40660e75b9e17978edfcb53f8ac}\label{classStyledMultiShape2D_a0dd3b40660e75b9e17978edfcb53f8ac}} 
+void {\bfseries set\+Colors} (std\+::vector$<$ float $>$ \&cols)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a7e925dbf7288626f3983f8eddca6094a}\label{classStyledMultiShape2D_a7e925dbf7288626f3983f8eddca6094a}} 
+void {\bfseries add\+Styled\+Point} (float x, float y, const glm\+::vec4 \&rgb)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_ac8bac9a75db902c77983f0ddb680dd71}\label{classStyledMultiShape2D_ac8bac9a75db902c77983f0ddb680dd71}} 
+void {\bfseries clear} ()
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a1286c7749cfe3170364ed3ab3f062ff0}\label{classStyledMultiShape2D_a1286c7749cfe3170364ed3ab3f062ff0}} 
+void {\bfseries init} () override
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a38f4770925cd78c5d6328742398ae32a}\label{classStyledMultiShape2D_a38f4770925cd78c5d6328742398ae32a}} 
+void {\bfseries render} () override
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a5ab965ecba27df2981812677f0204af1}\label{classStyledMultiShape2D_a5ab965ecba27df2981812677f0204af1}} 
+void {\bfseries update\+Colors} (const uint64\+\_\+t pos, const float r, const float g, const float b)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a5f8e460160dbb55b685615733941b425}\label{classStyledMultiShape2D_a5f8e460160dbb55b685615733941b425}} 
+void {\bfseries update\+Points} ()
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a10b6c578ea391f36c3d0383bfb1722f9}\label{classStyledMultiShape2D_a10b6c578ea391f36c3d0383bfb1722f9}} 
+void {\bfseries update\+Indices} ()
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a690256ed7b57196cc3968fc4f03daae7}\label{classStyledMultiShape2D_a690256ed7b57196cc3968fc4f03daae7}} 
+void {\bfseries fill\+Rectangle} (float x, float y, float w, float h, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_ae0fd407d0ec7815547c052826237f289}\label{classStyledMultiShape2D_ae0fd407d0ec7815547c052826237f289}} 
+void {\bfseries fill\+Round\+Rect} (float x, float y, float w, float h, float rx, float ry, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a9ac42b3627e6d71515745424c9b1a234}\label{classStyledMultiShape2D_a9ac42b3627e6d71515745424c9b1a234}} 
+void {\bfseries fill\+Triangle} (float x1, float y1, float x2, float y2, float x3, float y3, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a797ba1c39df2d4b5b65bdf9e68e7f43b}\label{classStyledMultiShape2D_a797ba1c39df2d4b5b65bdf9e68e7f43b}} 
+void {\bfseries fill\+Polygon} (float x, float y, float x\+Rad, float y\+Rad, float n, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_aa51f7a533ba88d86c554cdf39640a1ad}\label{classStyledMultiShape2D_aa51f7a533ba88d86c554cdf39640a1ad}} 
+void {\bfseries fill\+Circle} (float x, float y, float rad, float angle\+Inc, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a935a60f195217f6d4cf115cd2e1526ae}\label{classStyledMultiShape2D_a935a60f195217f6d4cf115cd2e1526ae}} 
+void {\bfseries fill\+Ellipse} (float x, float y, float x\+Rad, float y\+Rad, float angle\+Inc, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a26f13a9d82b12f37e69f642ed663fdac}\label{classStyledMultiShape2D_a26f13a9d82b12f37e69f642ed663fdac}} 
+void {\bfseries draw\+Rectangle} (float x, float y, float w, float h, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a717b1a1732ea598ed63623fb27612e77}\label{classStyledMultiShape2D_a717b1a1732ea598ed63623fb27612e77}} 
+void {\bfseries draw\+Round\+Rect} (float x, float y, float w, float h, float rx, float ry, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a271013ae75714dc3d35574848393b807}\label{classStyledMultiShape2D_a271013ae75714dc3d35574848393b807}} 
+void {\bfseries draw\+Triangle} (float x1, float y1, float x2, float y2, float x3, float y3, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_aa2f250ebc85d4329dad0e87e57ab60c2}\label{classStyledMultiShape2D_aa2f250ebc85d4329dad0e87e57ab60c2}} 
+void {\bfseries draw\+Polygon} (const std\+::vector$<$ float $>$ \&v, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_aed4815eba8d7dce2001e2d050227c2a8}\label{classStyledMultiShape2D_aed4815eba8d7dce2001e2d050227c2a8}} 
+void {\bfseries draw\+Polygon} (float x, float y, float x\+Rad, float y\+Rad, float n, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_abb952d3abcb6e8e8cebed0edf1cba76b}\label{classStyledMultiShape2D_abb952d3abcb6e8e8cebed0edf1cba76b}} 
+void {\bfseries draw\+Complete\+Polygon} (float x, float y, float x\+Rad, float y\+Rad, float n, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a1057d459a9db774e3781ac70dc9f101a}\label{classStyledMultiShape2D_a1057d459a9db774e3781ac70dc9f101a}} 
+void {\bfseries draw\+Circle} (float x, float y, float rad, float angle\+Inc, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a95de6268120cde38651aaeff3ecba5d7}\label{classStyledMultiShape2D_a95de6268120cde38651aaeff3ecba5d7}} 
+void {\bfseries draw\+Ellipse} (float x, float y, float x\+Rad, float y\+Rad, float angle\+Inc, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a017a78f23bf4e6ace8c0c17779ddf4a3}\label{classStyledMultiShape2D_a017a78f23bf4e6ace8c0c17779ddf4a3}} 
+void {\bfseries draw\+Line} (float x1, float y1, float x2, float y2, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a01ea98c5552b846ffe7026e54768fcd1}\label{classStyledMultiShape2D_a01ea98c5552b846ffe7026e54768fcd1}} 
+void {\bfseries draw\+Polyline} (const float xy\mbox{[}$\,$\mbox{]}, uint32\+\_\+t n, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a121fc8f0319dd9a67e65a90a04e6ee9f}\label{classStyledMultiShape2D_a121fc8f0319dd9a67e65a90a04e6ee9f}} 
+void {\bfseries fill\+Polyline} (const float xy\mbox{[}$\,$\mbox{]}, uint32\+\_\+t n, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a59cd4ce48555c8834488b49a84339e96}\label{classStyledMultiShape2D_a59cd4ce48555c8834488b49a84339e96}} 
+void {\bfseries draw\+Polygon} (const float xy\mbox{[}$\,$\mbox{]}, uint32\+\_\+t n, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_ab81a4ffe585c66c74458b37baa11b558}\label{classStyledMultiShape2D_ab81a4ffe585c66c74458b37baa11b558}} 
+void {\bfseries fill\+Polygon} (const float xy\mbox{[}$\,$\mbox{]}, uint32\+\_\+t n, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_ac2aefa646d4c656a2a83e136b768ac5f}\label{classStyledMultiShape2D_ac2aefa646d4c656a2a83e136b768ac5f}} 
+void {\bfseries bezier\+Segment} (const \mbox{\hyperlink{classBezier}{Bezier}} $\ast$b)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_ade5cf7678c54045639b694c6847c80b9}\label{classStyledMultiShape2D_ade5cf7678c54045639b694c6847c80b9}} 
+void {\bfseries bezier\+Segment\+By\+Points} (float p1x, float p1y, float p2x, float p2y, float p3x, float p3y, float p4x, float p4y, int n, bool end, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a541eac563762933262141f5b69f633dd}\label{classStyledMultiShape2D_a541eac563762933262141f5b69f633dd}} 
+void {\bfseries spline} (const std\+::vector$<$ double $>$ \&points, int n, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a33399e383da5a47118e643f94868dcbe}\label{classStyledMultiShape2D_a33399e383da5a47118e643f94868dcbe}} 
+void {\bfseries draw\+Grid} (float x0, float y0, float w, float h, uint32\+\_\+t num\+Horiz, uint32\+\_\+t num\+Vert, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_ad50490a32ce0f700ec260dc8d1778c93}\label{classStyledMultiShape2D_ad50490a32ce0f700ec260dc8d1778c93}} 
+void {\bfseries fill\+Grid} (float x0, float y0, float w, float h, uint32\+\_\+t num\+Horiz, uint32\+\_\+t num\+Vert, const glm\+::vec4 \&lc, const glm\+::vec4 \&bc)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_aea8722443fa195f762e69745a15897b6}\label{classStyledMultiShape2D_aea8722443fa195f762e69745a15897b6}} 
+void {\bfseries draw\+Tri\+Grid} (float x, float y, float s, uint32\+\_\+t triangles\+Per\+Side, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a0edf4cf7ca21541d86ebf40d658d4041}\label{classStyledMultiShape2D_a0edf4cf7ca21541d86ebf40d658d4041}} 
+void {\bfseries draw\+Hex\+Grid} (float x, float y, float w, float h, uint32\+\_\+t num\+Horiz\+Hexagons, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_ab9b54076676c4e6390ce67fa12ee865d}\label{classStyledMultiShape2D_ab9b54076676c4e6390ce67fa12ee865d}} 
+void {\bfseries rectangle\+Points} (float x, float y, float w, float h, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a9966f5b4c39d80e27b389dd0315a9a43}\label{classStyledMultiShape2D_a9966f5b4c39d80e27b389dd0315a9a43}} 
+void {\bfseries round\+Rect\+Points} (float x, float y, float w, float h, float rx, float ry, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a147b89f6aeacb3535989af70157f34ba}\label{classStyledMultiShape2D_a147b89f6aeacb3535989af70157f34ba}} 
+void {\bfseries triangle\+Points} (float x1, float y1, float x2, float y2, float x3, float y3, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_aaf81e38a35aacbfa9078516093643be0}\label{classStyledMultiShape2D_aaf81e38a35aacbfa9078516093643be0}} 
+void {\bfseries polygon\+Points} (float x, float y, float x\+Rad, float y\+Rad, float n, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a0c4080d6512e3cc768a837076d525c94}\label{classStyledMultiShape2D_a0c4080d6512e3cc768a837076d525c94}} 
+void {\bfseries circle\+Points} (float x, float y, float rad, float angle\+Inc, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a8d9b2272b5d304011aa2ea9d2670a1fb}\label{classStyledMultiShape2D_a8d9b2272b5d304011aa2ea9d2670a1fb}} 
+void {\bfseries ellipse\+Points} (float x, float y, float x\+Rad, float y\+Rad, float angle\+Inc, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_abc10a14d753f149f1aed4361ee5804e7}\label{classStyledMultiShape2D_abc10a14d753f149f1aed4361ee5804e7}} 
+void {\bfseries dump} ()
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a32bbf2651dcb6a5d157f6cbf2d28394f}\label{classStyledMultiShape2D_a32bbf2651dcb6a5d157f6cbf2d28394f}} 
+{\bfseries Styled\+Multi\+Shape2D} (\mbox{\hyperlink{classCanvas}{Canvas}} $\ast$parent, const \mbox{\hyperlink{classStyle}{Style}} $\ast$s, float angle=0, float x=0, float y=0, uint32\+\_\+t vert\+Count=1024, uint32\+\_\+t solid\+Ind\+Count=1024, uint32\+\_\+t line\+Ind\+Count=1024, uint32\+\_\+t point\+Ind\+Count=1024)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a0c1baf11a8fba49833c608899e78b4a1}\label{classStyledMultiShape2D_a0c1baf11a8fba49833c608899e78b4a1}} 
+uint32\+\_\+t {\bfseries add\+Sector} (float x, float y, float x\+Rad, float y\+Rad, float from\+Angle, float to\+Angle, float angle\+Inc, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_ad5bf5979d0924b7832dbfee7328c80a5}\label{classStyledMultiShape2D_ad5bf5979d0924b7832dbfee7328c80a5}} 
+void {\bfseries add\+Color} (const glm\+::vec4 \&rgb)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_ad37f5c3b566849b6ac44582331ca5edd}\label{classStyledMultiShape2D_ad37f5c3b566849b6ac44582331ca5edd}} 
+void {\bfseries add\+Color} (float r, float g, float b)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_af3ab21834e69440829d829a3498fa24e}\label{classStyledMultiShape2D_af3ab21834e69440829d829a3498fa24e}} 
+void {\bfseries set\+Colors} (float cols\mbox{[}$\,$\mbox{]}, uint32\+\_\+t size)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a0dd3b40660e75b9e17978edfcb53f8ac}\label{classStyledMultiShape2D_a0dd3b40660e75b9e17978edfcb53f8ac}} 
+void {\bfseries set\+Colors} (std\+::vector$<$ float $>$ \&cols)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a7e925dbf7288626f3983f8eddca6094a}\label{classStyledMultiShape2D_a7e925dbf7288626f3983f8eddca6094a}} 
+void {\bfseries add\+Styled\+Point} (float x, float y, const glm\+::vec4 \&rgb)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_ac8bac9a75db902c77983f0ddb680dd71}\label{classStyledMultiShape2D_ac8bac9a75db902c77983f0ddb680dd71}} 
+void {\bfseries clear} ()
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a1286c7749cfe3170364ed3ab3f062ff0}\label{classStyledMultiShape2D_a1286c7749cfe3170364ed3ab3f062ff0}} 
+void {\bfseries init} () override
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a38f4770925cd78c5d6328742398ae32a}\label{classStyledMultiShape2D_a38f4770925cd78c5d6328742398ae32a}} 
+void {\bfseries render} () override
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a5ab965ecba27df2981812677f0204af1}\label{classStyledMultiShape2D_a5ab965ecba27df2981812677f0204af1}} 
+void {\bfseries update\+Colors} (const uint64\+\_\+t pos, const float r, const float g, const float b)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a5f8e460160dbb55b685615733941b425}\label{classStyledMultiShape2D_a5f8e460160dbb55b685615733941b425}} 
+void {\bfseries update\+Points} ()
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a10b6c578ea391f36c3d0383bfb1722f9}\label{classStyledMultiShape2D_a10b6c578ea391f36c3d0383bfb1722f9}} 
+void {\bfseries update\+Indices} ()
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a690256ed7b57196cc3968fc4f03daae7}\label{classStyledMultiShape2D_a690256ed7b57196cc3968fc4f03daae7}} 
+void {\bfseries fill\+Rectangle} (float x, float y, float w, float h, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_ae0fd407d0ec7815547c052826237f289}\label{classStyledMultiShape2D_ae0fd407d0ec7815547c052826237f289}} 
+void {\bfseries fill\+Round\+Rect} (float x, float y, float w, float h, float rx, float ry, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a9ac42b3627e6d71515745424c9b1a234}\label{classStyledMultiShape2D_a9ac42b3627e6d71515745424c9b1a234}} 
+void {\bfseries fill\+Triangle} (float x1, float y1, float x2, float y2, float x3, float y3, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a797ba1c39df2d4b5b65bdf9e68e7f43b}\label{classStyledMultiShape2D_a797ba1c39df2d4b5b65bdf9e68e7f43b}} 
+void {\bfseries fill\+Polygon} (float x, float y, float x\+Rad, float y\+Rad, float n, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_aa51f7a533ba88d86c554cdf39640a1ad}\label{classStyledMultiShape2D_aa51f7a533ba88d86c554cdf39640a1ad}} 
+void {\bfseries fill\+Circle} (float x, float y, float rad, float angle\+Inc, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a935a60f195217f6d4cf115cd2e1526ae}\label{classStyledMultiShape2D_a935a60f195217f6d4cf115cd2e1526ae}} 
+void {\bfseries fill\+Ellipse} (float x, float y, float x\+Rad, float y\+Rad, float angle\+Inc, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a26f13a9d82b12f37e69f642ed663fdac}\label{classStyledMultiShape2D_a26f13a9d82b12f37e69f642ed663fdac}} 
+void {\bfseries draw\+Rectangle} (float x, float y, float w, float h, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a717b1a1732ea598ed63623fb27612e77}\label{classStyledMultiShape2D_a717b1a1732ea598ed63623fb27612e77}} 
+void {\bfseries draw\+Round\+Rect} (float x, float y, float w, float h, float rx, float ry, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a271013ae75714dc3d35574848393b807}\label{classStyledMultiShape2D_a271013ae75714dc3d35574848393b807}} 
+void {\bfseries draw\+Triangle} (float x1, float y1, float x2, float y2, float x3, float y3, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_aa2f250ebc85d4329dad0e87e57ab60c2}\label{classStyledMultiShape2D_aa2f250ebc85d4329dad0e87e57ab60c2}} 
+void {\bfseries draw\+Polygon} (const std\+::vector$<$ float $>$ \&v, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_aed4815eba8d7dce2001e2d050227c2a8}\label{classStyledMultiShape2D_aed4815eba8d7dce2001e2d050227c2a8}} 
+void {\bfseries draw\+Polygon} (float x, float y, float x\+Rad, float y\+Rad, float n, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_abb952d3abcb6e8e8cebed0edf1cba76b}\label{classStyledMultiShape2D_abb952d3abcb6e8e8cebed0edf1cba76b}} 
+void {\bfseries draw\+Complete\+Polygon} (float x, float y, float x\+Rad, float y\+Rad, float n, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a1057d459a9db774e3781ac70dc9f101a}\label{classStyledMultiShape2D_a1057d459a9db774e3781ac70dc9f101a}} 
+void {\bfseries draw\+Circle} (float x, float y, float rad, float angle\+Inc, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a95de6268120cde38651aaeff3ecba5d7}\label{classStyledMultiShape2D_a95de6268120cde38651aaeff3ecba5d7}} 
+void {\bfseries draw\+Ellipse} (float x, float y, float x\+Rad, float y\+Rad, float angle\+Inc, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a017a78f23bf4e6ace8c0c17779ddf4a3}\label{classStyledMultiShape2D_a017a78f23bf4e6ace8c0c17779ddf4a3}} 
+void {\bfseries draw\+Line} (float x1, float y1, float x2, float y2, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a01ea98c5552b846ffe7026e54768fcd1}\label{classStyledMultiShape2D_a01ea98c5552b846ffe7026e54768fcd1}} 
+void {\bfseries draw\+Polyline} (const float xy\mbox{[}$\,$\mbox{]}, uint32\+\_\+t n, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a121fc8f0319dd9a67e65a90a04e6ee9f}\label{classStyledMultiShape2D_a121fc8f0319dd9a67e65a90a04e6ee9f}} 
+void {\bfseries fill\+Polyline} (const float xy\mbox{[}$\,$\mbox{]}, uint32\+\_\+t n, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a59cd4ce48555c8834488b49a84339e96}\label{classStyledMultiShape2D_a59cd4ce48555c8834488b49a84339e96}} 
+void {\bfseries draw\+Polygon} (const float xy\mbox{[}$\,$\mbox{]}, uint32\+\_\+t n, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_ab81a4ffe585c66c74458b37baa11b558}\label{classStyledMultiShape2D_ab81a4ffe585c66c74458b37baa11b558}} 
+void {\bfseries fill\+Polygon} (const float xy\mbox{[}$\,$\mbox{]}, uint32\+\_\+t n, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_ac2aefa646d4c656a2a83e136b768ac5f}\label{classStyledMultiShape2D_ac2aefa646d4c656a2a83e136b768ac5f}} 
+void {\bfseries bezier\+Segment} (const \mbox{\hyperlink{classBezier}{Bezier}} $\ast$b)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_ade5cf7678c54045639b694c6847c80b9}\label{classStyledMultiShape2D_ade5cf7678c54045639b694c6847c80b9}} 
+void {\bfseries bezier\+Segment\+By\+Points} (float p1x, float p1y, float p2x, float p2y, float p3x, float p3y, float p4x, float p4y, int n, bool end, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a541eac563762933262141f5b69f633dd}\label{classStyledMultiShape2D_a541eac563762933262141f5b69f633dd}} 
+void {\bfseries spline} (const std\+::vector$<$ double $>$ \&points, int n, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a33399e383da5a47118e643f94868dcbe}\label{classStyledMultiShape2D_a33399e383da5a47118e643f94868dcbe}} 
+void {\bfseries draw\+Grid} (float x0, float y0, float w, float h, uint32\+\_\+t num\+Horiz, uint32\+\_\+t num\+Vert, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_ad50490a32ce0f700ec260dc8d1778c93}\label{classStyledMultiShape2D_ad50490a32ce0f700ec260dc8d1778c93}} 
+void {\bfseries fill\+Grid} (float x0, float y0, float w, float h, uint32\+\_\+t num\+Horiz, uint32\+\_\+t num\+Vert, const glm\+::vec4 \&lc, const glm\+::vec4 \&bc)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_aea8722443fa195f762e69745a15897b6}\label{classStyledMultiShape2D_aea8722443fa195f762e69745a15897b6}} 
+void {\bfseries draw\+Tri\+Grid} (float x, float y, float s, uint32\+\_\+t triangles\+Per\+Side, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a0edf4cf7ca21541d86ebf40d658d4041}\label{classStyledMultiShape2D_a0edf4cf7ca21541d86ebf40d658d4041}} 
+void {\bfseries draw\+Hex\+Grid} (float x, float y, float w, float h, uint32\+\_\+t num\+Horiz\+Hexagons, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a15414572cf451a5acc951291c8db0de3}\label{classStyledMultiShape2D_a15414572cf451a5acc951291c8db0de3}} 
+void {\bfseries draw\+Circle\+Marker} (float x, float y, float size, glm\+::vec4 \&color)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a7c0936ec3f4273256c6e8330235e3c38}\label{classStyledMultiShape2D_a7c0936ec3f4273256c6e8330235e3c38}} 
+void {\bfseries draw\+Triangle\+Marker} (float x, float y, float size, glm\+::vec4 \&color)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a99a8e1190b2ef9a42f786b000a4a18e1}\label{classStyledMultiShape2D_a99a8e1190b2ef9a42f786b000a4a18e1}} 
+void {\bfseries draw\+Square\+Marker} (float x, float y, float size, glm\+::vec4 \&color)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a0dcba06352d09be7149e51baefac0e62}\label{classStyledMultiShape2D_a0dcba06352d09be7149e51baefac0e62}} 
+void {\bfseries draw\+Pentagon\+Marker} (float x, float y, float size, glm\+::vec4 \&color)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_aaaf4b78e6399337e87bfed5ba0b18b23}\label{classStyledMultiShape2D_aaaf4b78e6399337e87bfed5ba0b18b23}} 
+void {\bfseries draw\+Hexagon\+Marker} (float x, float y, float size, glm\+::vec4 \&color)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a0682c8ccfce4a8564dd3e54ae6c217f0}\label{classStyledMultiShape2D_a0682c8ccfce4a8564dd3e54ae6c217f0}} 
+void {\bfseries draw\+Cross\+Marker} (float x, float y, float size, glm\+::vec4 \&color)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_ab9b54076676c4e6390ce67fa12ee865d}\label{classStyledMultiShape2D_ab9b54076676c4e6390ce67fa12ee865d}} 
+void {\bfseries rectangle\+Points} (float x, float y, float w, float h, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a9966f5b4c39d80e27b389dd0315a9a43}\label{classStyledMultiShape2D_a9966f5b4c39d80e27b389dd0315a9a43}} 
+void {\bfseries round\+Rect\+Points} (float x, float y, float w, float h, float rx, float ry, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a147b89f6aeacb3535989af70157f34ba}\label{classStyledMultiShape2D_a147b89f6aeacb3535989af70157f34ba}} 
+void {\bfseries triangle\+Points} (float x1, float y1, float x2, float y2, float x3, float y3, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_aaf81e38a35aacbfa9078516093643be0}\label{classStyledMultiShape2D_aaf81e38a35aacbfa9078516093643be0}} 
+void {\bfseries polygon\+Points} (float x, float y, float x\+Rad, float y\+Rad, float n, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a0c4080d6512e3cc768a837076d525c94}\label{classStyledMultiShape2D_a0c4080d6512e3cc768a837076d525c94}} 
+void {\bfseries circle\+Points} (float x, float y, float rad, float angle\+Inc, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_a8d9b2272b5d304011aa2ea9d2670a1fb}\label{classStyledMultiShape2D_a8d9b2272b5d304011aa2ea9d2670a1fb}} 
+void {\bfseries ellipse\+Points} (float x, float y, float x\+Rad, float y\+Rad, float angle\+Inc, const glm\+::vec4 \&c)
+\item 
+\mbox{\Hypertarget{classStyledMultiShape2D_abc10a14d753f149f1aed4361ee5804e7}\label{classStyledMultiShape2D_abc10a14d753f149f1aed4361ee5804e7}} 
+void {\bfseries dump} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}

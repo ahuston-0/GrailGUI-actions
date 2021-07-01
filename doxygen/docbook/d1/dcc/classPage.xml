@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPage" xml:lang="en-US">
+<title>Page Class Reference</title>
+<indexterm><primary>Page</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classPage_1aeaf833080d10435da92153d8d7c3c9ba"/><emphasis role="strong">Page</emphasis> (const string &amp;inputFile)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPage_1ab9b73a378248573705719d7771df9d56"/><emphasis role="strong">Page</emphasis> (const string &amp;staticContent, vector&lt; <link linkend="_classInsertion">Insertion</link> &gt; insertions)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPage_1acb84e973974a94ea19b92dd032d97910"/><emphasis role="strong">Page</emphasis> (const string &amp;staticFile, const string &amp;insertFile)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPage_1ab269f34537be1e2563a0f65641c80107"/>char * <emphasis role="strong">getStaticPointer</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPage_1abc2fb4806f0541e48cdf20a03bdd47e0"/>string <emphasis role="strong">getStaticContent</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPage_1afe143fadf563c9f07fe846de81af011c"/>vector&lt; <link linkend="_classInsertion">Insertion</link> &gt; <emphasis role="strong">getInsertions</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPage_1ad1976f7013a57228b2197e8feb2c95f8"/>uint32_t <emphasis role="strong">getSize</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPage_1a2173b871af5a7ace2f714dabf593973b"/>uint32_t <emphasis role="strong">getStaticSize</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPage_1a9dafa3ae60c91e62f6bdb7fe343598f3"/>void <emphasis role="strong">addDynamic</emphasis> (uint32_t offset, DataType d)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPage_1a871f42a05670e8bf2b419b3a9be287e2"/>void <emphasis role="strong">addStatic</emphasis> (const string &amp;t)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPage_1a35cb8309d5cec63635826242041431de"/>bool <emphasis role="strong">isStatic</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPage_1ac93b45cb23cc1d67e0febbd6cea9974a"/>uint32_t <emphasis role="strong">dynamicSize</emphasis> (DataType d)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPage_1a9acc4abb896a95c671091fa4827e77c6"/><emphasis role="strong">Page</emphasis> (const unsigned char *text, const <link linkend="_classPageLayout">PageLayout</link> *pageLayout, uint32_t offset)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPage_1a6384d8c2234308fca9befc0e2e3c31b3"/>void <emphasis role="strong">addLine</emphasis> (uint32_t offset)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPage_1ab315ecdf6b2e12a784e51ca9324365a2"/>uint32_t <emphasis role="strong">getLine</emphasis> (uint32_t line) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPage_1a4ca5e096e93d12323c73187b79f203f8"/>const <link linkend="_classPageLayout">PageLayout</link> * <emphasis role="strong">getLayout</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPage_1a46056533f7d6852e9ffc14f8eb87b475"/>uint32_t <emphasis role="strong">size</emphasis> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classPage_1a5883f7e1f207a5cf0bc689398194276e"/>ostream &amp; <emphasis role="strong">operator&lt;&lt;</emphasis> (ostream &amp;s, const <link linkend="_classPage">Page</link> &amp;p)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

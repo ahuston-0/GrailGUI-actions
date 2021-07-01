@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classI128" xml:lang="en-US">
+<title>I128 Class Reference</title>
+<indexterm><primary>I128</primary></indexterm>
+<para>Inheritance diagram for I128:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../df/d94/classI128.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classI128_1ad0b0c76be15907d88fe5345e201939ed"/><emphasis role="strong">I128</emphasis> (int64_t a, uint64_t b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classI128_1a76f71247c2b2409c0ec78b567b4721c1"/><emphasis role="strong">I128</emphasis> (int64_t b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classI128_1a6db3f423125a9eb6d84b24ba38da3771"/>DataType <emphasis role="strong">getDataType</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classI128_1a44886bd87a7aa4363710f5cfc15fdf69"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classI128_1a29e32e51f373529248d5769c90874a97"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classI128_1ad87e98d1547f936516476c847407fde8"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classI128_1a25e29ab95a1b1ad227e0b025a43b3295"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classI128_1a23c5c2fd4eaac96a5dfb8304553bb27c"/>bool <emphasis role="strong">operator==</emphasis> (const <link linkend="_classI128">I128</link> &amp;a, const <link linkend="_classI128">I128</link> &amp;b)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

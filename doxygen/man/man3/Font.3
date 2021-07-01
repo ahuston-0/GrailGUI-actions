@@ -1,0 +1,85 @@
+.TH "Font" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Font
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBGlyph\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFont\fP (\fBFontFace\fP *Face, FT_Face ftFace, uint16_t height, uint8_t bitmap[], uint32_t &sizeX, uint32_t &sizeY, uint32_t &currX, uint32_t &currY, uint32_t &rowSize)"
+.br
+.ti -1c
+.RI "\fBFont\fP (std::istream &)"
+.br
+.ti -1c
+.RI "uint32_t \fBgetStartGlyph\fP () const"
+.br
+.ti -1c
+.RI "void \fBaddGlyph\fP (FT_Face ftFace, std::unordered_map< uint32_t, uint32_t > &glyphMap, uint8_t c, uint8_t bitmap[], uint32_t &sizeX, uint32_t &sizeY, uint32_t &currX, uint32_t &currY, uint32_t &rowSize)"
+.br
+.ti -1c
+.RI "const \fBGlyph\fP * \fBgetGlyph\fP (uint32_t i) const"
+.br
+.ti -1c
+.RI "uint16_t \fBgetHeight\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetTexture\fP () const"
+.br
+.ti -1c
+.RI "float \fBgetWidth\fP (const char text[], const uint32_t len) const"
+.br
+.ti -1c
+.RI "void \fBsave\fP (std::ostream &fastfont)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFont\fP * \fBgetDefault\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBmaxWidth\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBspaceWidth\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBFontFace\fP"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &s, const \fBFont\fP &f)"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "void Font::addGlyph (FT_Face ftFace, std::unordered_map< uint32_t, uint32_t > & glyphMap, uint8_t c, uint8_t bitmap[], uint32_t & sizeX, uint32_t & sizeY, uint32_t & currX, uint32_t & currY, uint32_t & rowSize)"
+
+.IP "\(bu" 2
+convert to an anti-aliased bitmap */
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

@@ -1,0 +1,32 @@
+\hypertarget{Calendar_8hh_source}{}\doxysection{Calendar.\+hh}
+\label{Calendar_8hh_source}\index{src/xp/Calendar.hh@{src/xp/Calendar.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include "{}util/Date.hh"{}}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{keyword}{class }\mbox{\hyperlink{classCalendar}{Calendar}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}}("{}Calendar"{}) \{}
+\DoxyCodeLine{00005 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00006     std::string name;                \textcolor{comment}{// name of this calendar}}
+\DoxyCodeLine{00007     \mbox{\hyperlink{classDate}{Date}} start;}
+\DoxyCodeLine{00008     uint32\_t weekendDays : 7;}
+\DoxyCodeLine{00009     std::vector<uint16\_t> yearStart; \textcolor{comment}{// Index into the holiday table for each year in the calendar}}
+\DoxyCodeLine{00010     std::vector<uint8\_t> holidays;   \textcolor{comment}{// offset for each holiday in a given year}}
+\DoxyCodeLine{00011 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012     \mbox{\hyperlink{classCalendar}{Calendar}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]);}
+\DoxyCodeLine{00013     \mbox{\hyperlink{classCalendar}{Calendar}}(\textcolor{keyword}{const} std::string\& name}
+\DoxyCodeLine{00014     \textcolor{keywordtype}{void} save(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00015     \textcolor{keywordtype}{void} setHoliday(\mbox{\hyperlink{classDate}{Date}} d);}
+\DoxyCodeLine{00016     \textcolor{keywordtype}{void} setHoliday(\mbox{\hyperlink{classDate}{Date}} from, \mbox{\hyperlink{classDate}{Date}} to);}
+\DoxyCodeLine{00017     \textcolor{keywordtype}{void} setRepeatingHoliday(uint32\_t yearStart, uint32\_t yearEnd,}
+\DoxyCodeLine{00018                                                      uint32\_t month, uint32\_t day);}
+\DoxyCodeLine{00019     \textcolor{keywordtype}{bool} isHoliday(\mbox{\hyperlink{classDate}{Date}} d) \textcolor{keyword}{const};}
+\DoxyCodeLine{00020     }
+\DoxyCodeLine{00021     \mbox{\hyperlink{classDate}{Date}} addBusinessDays(\mbox{\hyperlink{classDate}{Date}} d, int32\_t delta) \textcolor{keyword}{const};}
+\DoxyCodeLine{00022     int32\_t businessDaysBetween(\mbox{\hyperlink{classDate}{Date}} d1, \mbox{\hyperlink{classDate}{Date}} d2) \textcolor{keyword}{const};}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024     \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& b);}
+\DoxyCodeLine{00025     \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& b);}
+\DoxyCodeLine{00026 \};}
+
+\end{DoxyCode}

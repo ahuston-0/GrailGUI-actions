@@ -1,0 +1,41 @@
+.TH "XDLRequest" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XDLRequest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBRequest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBXDLRequest\fP (const char filename[])"
+.br
+.ti -1c
+.RI "\fBXDLRequest\fP (const \fBXDLRequest\fP &r)=delete"
+.br
+.ti -1c
+.RI "\fBXDLRequest\fP & \fBoperator=\fP (const \fBXDLRequest\fP &r)=delete"
+.br
+.ti -1c
+.RI "void \fBaddPage\fP (const char metaDataFilename[], const char filename[])"
+.br
+.ti -1c
+.RI "void \fBaddPage\fP (const char filename[])"
+.br
+.ti -1c
+.RI "void \fBhandle\fP (int fd) override"
+.br
+.ti -1c
+.RI "void \fBhandle\fP (int sckt, const char *command) override"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

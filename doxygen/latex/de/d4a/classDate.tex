@@ -1,0 +1,78 @@
+\hypertarget{classDate}{}\doxysection{Date Class Reference}
+\label{classDate}\index{Date@{Date}}
+Inheritance diagram for Date\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{de/d4a/classDate}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDate_a125f102dd493a18fb487c29a3f92be57}\label{classDate_a125f102dd493a18fb487c29a3f92be57}} 
+{\bfseries Date} (\mbox{\hyperlink{classJulianDate}{Julian\+Date}} jd)
+\item 
+\mbox{\Hypertarget{classDate_ac2e9ce4299615e0c3a1a28559fe6b183}\label{classDate_ac2e9ce4299615e0c3a1a28559fe6b183}} 
+{\bfseries operator Julian\+Date} () const
+\item 
+\mbox{\Hypertarget{classDate_a475b098420df0ba881163f4bb57b1d6e}\label{classDate_a475b098420df0ba881163f4bb57b1d6e}} 
+{\bfseries Date} (int32\+\_\+t year, uint32\+\_\+t month, uint32\+\_\+t day)
+\item 
+\mbox{\Hypertarget{classDate_ad5e16006830ffd50869be47eb6ffa3f5}\label{classDate_ad5e16006830ffd50869be47eb6ffa3f5}} 
+\mbox{\hyperlink{classDate}{Date}} {\bfseries operator+} (int32\+\_\+t days) const
+\item 
+\mbox{\Hypertarget{classDate_a90e0c91f7f944b35f7ac6ee4689cc706}\label{classDate_a90e0c91f7f944b35f7ac6ee4689cc706}} 
+\mbox{\hyperlink{classDate}{Date}} {\bfseries operator-\/} (int32\+\_\+t days) const
+\item 
+\mbox{\Hypertarget{classDate_a165e48287345a3d9b9380ff75417e6db}\label{classDate_a165e48287345a3d9b9380ff75417e6db}} 
+\mbox{\hyperlink{classDate}{Date}} {\bfseries operator+=} (int32\+\_\+t days)
+\item 
+\mbox{\Hypertarget{classDate_ac525a81e7b956eb9a2363fc8eab14ac8}\label{classDate_ac525a81e7b956eb9a2363fc8eab14ac8}} 
+\mbox{\hyperlink{classDate}{Date}} {\bfseries operator-\/=} (int32\+\_\+t days)
+\item 
+\mbox{\Hypertarget{classDate_a9f79a574d2be973cd2b334e551c3ddac}\label{classDate_a9f79a574d2be973cd2b334e551c3ddac}} 
+bool {\bfseries operator==} (\mbox{\hyperlink{classDate}{Date}} d) const
+\item 
+\mbox{\Hypertarget{classDate_a57608244d4a2134a986009c7b740b238}\label{classDate_a57608244d4a2134a986009c7b740b238}} 
+int32\+\_\+t {\bfseries get\+Year} () const
+\item 
+\mbox{\Hypertarget{classDate_a71f0df2fb33a169be6f5c594aa155150}\label{classDate_a71f0df2fb33a169be6f5c594aa155150}} 
+uint32\+\_\+t {\bfseries get\+Month} () const
+\item 
+\mbox{\Hypertarget{classDate_accf05200f2349b15cf88058ecc21dd73}\label{classDate_accf05200f2349b15cf88058ecc21dd73}} 
+uint32\+\_\+t {\bfseries get\+Day} () const
+\item 
+\mbox{\Hypertarget{classDate_a23ddbf8dae22315661df1a27d44d8be8}\label{classDate_a23ddbf8dae22315661df1a27d44d8be8}} 
+{\bfseries Date} (int32\+\_\+t year, uint8\+\_\+t month, uint8\+\_\+t day)
+\item 
+\mbox{\Hypertarget{classDate_a57608244d4a2134a986009c7b740b238}\label{classDate_a57608244d4a2134a986009c7b740b238}} 
+int32\+\_\+t {\bfseries get\+Year} () const
+\item 
+\mbox{\Hypertarget{classDate_a71f0df2fb33a169be6f5c594aa155150}\label{classDate_a71f0df2fb33a169be6f5c594aa155150}} 
+uint32\+\_\+t {\bfseries get\+Month} () const
+\item 
+\mbox{\Hypertarget{classDate_accf05200f2349b15cf88058ecc21dd73}\label{classDate_accf05200f2349b15cf88058ecc21dd73}} 
+uint32\+\_\+t {\bfseries get\+Day} () const
+\item 
+\mbox{\Hypertarget{classDate_abbc85f9e01b0fd5ad04014f123c07ef0}\label{classDate_abbc85f9e01b0fd5ad04014f123c07ef0}} 
+Data\+Type {\bfseries get\+Data\+Type} () const
+\item 
+\mbox{\Hypertarget{classDate_add69e2f9d6c9c98333b30713ef9623a6}\label{classDate_add69e2f9d6c9c98333b30713ef9623a6}} 
+uint32\+\_\+t {\bfseries size} () const override
+\item 
+\mbox{\Hypertarget{classDate_a655ba8e0f9507ea24b8ecf5724a95306}\label{classDate_a655ba8e0f9507ea24b8ecf5724a95306}} 
+void {\bfseries write} (\mbox{\hyperlink{classBuffer}{Buffer}} \&buf) const override
+\item 
+\mbox{\Hypertarget{classDate_af317291407fb5abf8e36d5d78c326305}\label{classDate_af317291407fb5abf8e36d5d78c326305}} 
+void {\bfseries display} (\mbox{\hyperlink{classBuffer}{Buffer}} \&binary\+In, \mbox{\hyperlink{classBuffer}{Buffer}} \&ascii\+Out) const
+\item 
+\mbox{\Hypertarget{classDate_aa17080a97fe33821e74d9cf6cf28bcf8}\label{classDate_aa17080a97fe33821e74d9cf6cf28bcf8}} 
+void {\bfseries format} (\mbox{\hyperlink{classBuffer}{Buffer}} \&binary\+In, \mbox{\hyperlink{classBuffer}{Buffer}} \&ascii\+Out, const char fmt\mbox{[}$\,$\mbox{]}) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDate_a5724b8eda99022ff6e8c0306455af847}\label{classDate_a5724b8eda99022ff6e8c0306455af847}} 
+int32\+\_\+t {\bfseries operator-\/} (\mbox{\hyperlink{classDate}{Date}} d1, \mbox{\hyperlink{classDate}{Date}} d2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}

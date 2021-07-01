@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classConfig" xml:lang="en-US">
+<title>Config Class Reference</title>
+<indexterm><primary>Config</primary></indexterm>
+<para>Inheritance diagram for Config:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d9/df9/classConfig.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classConfig_1a186c5e7914a55602e79e5cfbc3ea592d"/>enum class <emphasis role="strong">Type</emphasis> { 
+<emphasis role="strong">U16</emphasis>
+, <emphasis role="strong">U32</emphasis>
+, <emphasis role="strong">U64</emphasis>
+, <emphasis role="strong">I16</emphasis>
+, 
+<emphasis role="strong">I32</emphasis>
+, <emphasis role="strong">I64</emphasis>
+, <emphasis role="strong">F64</emphasis>
+, <emphasis role="strong">F32</emphasis>
+, 
+<emphasis role="strong">BOOL</emphasis>
+, <emphasis role="strong">STRING</emphasis>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classConfig_1a4b87c7f37165573e585590465258e36a"/>void <emphasis role="strong">load</emphasis> (const string &amp;filename)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classConfig_1add19437c9b362f7a34171bf843c4accc"/>void <emphasis role="strong">save</emphasis> (const string &amp;filename)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classConfig_1a1b6d255b60bf70e8a236af7326ab0a4f"/>template&lt;typename T &gt; </para><para>void <emphasis role="strong">set</emphasis> (const string &amp;name, T val)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classConfig_1a367e50786eea93f41acc2b63a5169511"/>uint16_t <emphasis role="strong">getUInt16</emphasis> (const string &amp;name) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classConfig_1af335fcea8050cf4b104b0d897e9b4c75"/>uint32_t <emphasis role="strong">getUInt32</emphasis> (const string &amp;name) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classConfig_1aafa56302e54d6082a0c6403868dd91e4"/>uint64_t <emphasis role="strong">getUInt64</emphasis> (const string &amp;name) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classConfig_1ac2797226a9b3e10dfd022bfd8e1eaf5d"/>int16_t <emphasis role="strong">getInt16</emphasis> (const string &amp;name) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classConfig_1ab7f61e5728aefed0c2ce2af202b8090d"/>int32_t <emphasis role="strong">getInt32</emphasis> (const string &amp;name) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classConfig_1ac11458ab7d8459e992fccc7633be36e5"/>int64_t <emphasis role="strong">getInt64</emphasis> (const string &amp;name) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classConfig_1a607b2c1382e9cc54033619c66e2b30ef"/>bool <emphasis role="strong">getBool</emphasis> (const string &amp;name) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classConfig_1a36144302aae80d2daddf0b0014ecd788"/>double <emphasis role="strong">getDouble</emphasis> (const string &amp;name) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classConfig_1af1018e55292474c5bb91eb7a42ec7232"/>string <emphasis role="strong">getString</emphasis> (const string &amp;name) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classConfig_1a8139b62f58ad8f72698a64b5309dedd4"/>void <emphasis role="strong">mandatory</emphasis> (int count...)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classConfig_1a9e3ae6c91040e5694ac3ecb47ec99405"/>void <emphasis role="strong">optional</emphasis> (int count...)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

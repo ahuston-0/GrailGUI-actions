@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classRenderer" xml:lang="en-US">
+<title>Renderer Class Reference</title>
+<indexterm><primary>Renderer</primary></indexterm>
+<para>Inheritance diagram for Renderer:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d1/d52/classRenderer.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classRenderer_1a8f7e6b4dfd6208e5ef132c4c3308a793"/>enum <emphasis role="strong">Dir</emphasis> { <emphasis role="strong">UP</emphasis>
+, <emphasis role="strong">DOWN</emphasis>
+, <emphasis role="strong">LEFT</emphasis>
+, <emphasis role="strong">RIGHT</emphasis>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classRenderer_1aa591ddf2c36236ed2d0b154a1d3f799a"/>virtual void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;in, MultiShape2d *m, <link linkend="_classMultiText">MultiText</link> *t, float x0, float y0, float *w, float *h) const =0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRenderer_1a87b433637045311ea3aa5c0189bf4a14"/>void <emphasis role="strong">update</emphasis> (Dir)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

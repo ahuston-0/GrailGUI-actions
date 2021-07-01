@@ -1,0 +1,104 @@
+\hypertarget{classCanvas}{}\doxysection{Canvas Class Reference}
+\label{classCanvas}\index{Canvas@{Canvas}}
+Inheritance diagram for Canvas\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d5/d70/classCanvas}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCanvas_ac7b69d9b56d9c8bb224ed187d9f32da0}\label{classCanvas_ac7b69d9b56d9c8bb224ed187d9f32da0}} 
+{\bfseries Canvas} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w, const \mbox{\hyperlink{classStyle}{Style}} $\ast$style, uint32\+\_\+t vpX, uint32\+\_\+t vpY, uint32\+\_\+t vpW, uint32\+\_\+t vpH, uint32\+\_\+t pX, uint32\+\_\+t pY)
+\item 
+\mbox{\Hypertarget{classCanvas_a40ef5dc8e120f26a50149687c4ef7f15}\label{classCanvas_a40ef5dc8e120f26a50149687c4ef7f15}} 
+{\bfseries Canvas} (const \mbox{\hyperlink{classCanvas}{Canvas}} \&orig)=delete
+\item 
+\mbox{\Hypertarget{classCanvas_ab001c6bf893f5e6d01ecf620cb11a801}\label{classCanvas_ab001c6bf893f5e6d01ecf620cb11a801}} 
+\mbox{\hyperlink{classCanvas}{Canvas}} \& {\bfseries operator=} (const \mbox{\hyperlink{classCanvas}{Canvas}} \&orig)=delete
+\item 
+\mbox{\Hypertarget{classCanvas_ad031d7eaf01b713d0ed70a778a3b7548}\label{classCanvas_ad031d7eaf01b713d0ed70a778a3b7548}} 
+uint32\+\_\+t {\bfseries get\+Width} () const
+\item 
+\mbox{\Hypertarget{classCanvas_a8928f381ed7567a2e77d873268bdc7e9}\label{classCanvas_a8928f381ed7567a2e77d873268bdc7e9}} 
+uint32\+\_\+t {\bfseries get\+Height} () const
+\item 
+\mbox{\Hypertarget{classCanvas_a765206cf77e881cf62c57fba4f6bbb53}\label{classCanvas_a765206cf77e881cf62c57fba4f6bbb53}} 
+glm\+::mat4 $\ast$ {\bfseries get\+Projection} ()
+\item 
+\mbox{\Hypertarget{classCanvas_a42a74739a13148c6b8754e3133671117}\label{classCanvas_a42a74739a13148c6b8754e3133671117}} 
+void {\bfseries set\+Projection} (const glm\+::mat4 \&proj)
+\item 
+\mbox{\Hypertarget{classCanvas_af62c532360cdef7fb330254f2d1e83b2}\label{classCanvas_af62c532360cdef7fb330254f2d1e83b2}} 
+void {\bfseries set\+Ortho\+Projection} (float x\+Left, float x\+Right, float y\+Bottom, float y\+Top)
+\item 
+\mbox{\Hypertarget{classCanvas_a35329fcfe48306a367afaa53715814d5}\label{classCanvas_a35329fcfe48306a367afaa53715814d5}} 
+\mbox{\hyperlink{classCamera}{Camera}} $\ast$ {\bfseries set\+Look\+At\+Projection} (float eyeX, float eyeY, float eyeZ, float look\+AtX, float look\+AtY, float look\+AtZ, float upX, float upY, float upZ)
+\item 
+\mbox{\Hypertarget{classCanvas_a1e707a2d3922bd82b6e65a7fdf9f2b6b}\label{classCanvas_a1e707a2d3922bd82b6e65a7fdf9f2b6b}} 
+void {\bfseries reset\+Projection} ()
+\item 
+\mbox{\Hypertarget{classCanvas_ae963f6bc75f592fa4086e9f3bd22bc53}\label{classCanvas_ae963f6bc75f592fa4086e9f3bd22bc53}} 
+{\footnotesize template$<$typename S $>$ }\\S $\ast$ {\bfseries add\+Layer} (S $\ast$shape)
+\item 
+\mbox{\Hypertarget{classCanvas_a53eeaf9e9e2777af6764fc4dd0191556}\label{classCanvas_a53eeaf9e9e2777af6764fc4dd0191556}} 
+\mbox{\hyperlink{classShape}{Shape}} $\ast$ {\bfseries get\+Layer} (uint32\+\_\+t i)
+\item 
+\mbox{\Hypertarget{classCanvas_a26dbbb834c56e2f1dafce81535646a35}\label{classCanvas_a26dbbb834c56e2f1dafce81535646a35}} 
+void {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{classCanvas_a8966011056d8204bac0e2da96902e368}\label{classCanvas_a8966011056d8204bac0e2da96902e368}} 
+void {\bfseries process\+\_\+input} (Inputs $\ast$in, float dt)
+\item 
+\mbox{\Hypertarget{classCanvas_aff5d4342a42ac55bbb9a62444e3f0e60}\label{classCanvas_aff5d4342a42ac55bbb9a62444e3f0e60}} 
+void {\bfseries update} ()
+\item 
+\mbox{\Hypertarget{classCanvas_a460cc390cb820daaa0e9b33ed77b351f}\label{classCanvas_a460cc390cb820daaa0e9b33ed77b351f}} 
+const \mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries get\+Style} () const
+\item 
+\mbox{\Hypertarget{classCanvas_a47b2f0b05d0aaeb93029e28cb2228746}\label{classCanvas_a47b2f0b05d0aaeb93029e28cb2228746}} 
+void {\bfseries render} ()
+\item 
+\mbox{\Hypertarget{classCanvas_aad0e44e3a609b03234b3ee8a401e9c35}\label{classCanvas_aad0e44e3a609b03234b3ee8a401e9c35}} 
+void {\bfseries cleanup} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCanvas_a1d6c5e940d566760a559593b64a74ef2}\label{classCanvas_a1d6c5e940d566760a559593b64a74ef2}} 
+\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$ {\bfseries w}
+\item 
+\mbox{\Hypertarget{classCanvas_a3ff5caef02d312438ad2537df3b942fc}\label{classCanvas_a3ff5caef02d312438ad2537df3b942fc}} 
+std\+::vector$<$ \mbox{\hyperlink{classShape}{Shape}} $\ast$ $>$ {\bfseries layers}
+\item 
+\mbox{\Hypertarget{classCanvas_a10e1c4346633db4012b6dbcfc05ea85c}\label{classCanvas_a10e1c4346633db4012b6dbcfc05ea85c}} 
+uint32\+\_\+t {\bfseries vpX}
+\item 
+\mbox{\Hypertarget{classCanvas_a9d8a0a7896b50b1e309b98ee167c8a8d}\label{classCanvas_a9d8a0a7896b50b1e309b98ee167c8a8d}} 
+uint32\+\_\+t {\bfseries vpY}
+\item 
+\mbox{\Hypertarget{classCanvas_a2c4bc4fcb1d10f87b86f9022f2930ce6}\label{classCanvas_a2c4bc4fcb1d10f87b86f9022f2930ce6}} 
+uint32\+\_\+t {\bfseries vpW}
+\item 
+\mbox{\Hypertarget{classCanvas_a5c3335421efa2997946bd3182d814327}\label{classCanvas_a5c3335421efa2997946bd3182d814327}} 
+uint32\+\_\+t {\bfseries vpH}
+\item 
+\mbox{\Hypertarget{classCanvas_a3e8f143ce3aee96a03841058578ce1bb}\label{classCanvas_a3e8f143ce3aee96a03841058578ce1bb}} 
+uint32\+\_\+t {\bfseries pX}
+\item 
+\mbox{\Hypertarget{classCanvas_af146eb5a40eadb83cc076aa983aa3ebf}\label{classCanvas_af146eb5a40eadb83cc076aa983aa3ebf}} 
+uint32\+\_\+t {\bfseries pY}
+\item 
+\mbox{\Hypertarget{classCanvas_a4df177b2647203836f50f6d70a529097}\label{classCanvas_a4df177b2647203836f50f6d70a529097}} 
+glm\+::mat4 {\bfseries projection}
+\item 
+\mbox{\Hypertarget{classCanvas_accc8dddf5e8ac1d5d360091c41e3c5ca}\label{classCanvas_accc8dddf5e8ac1d5d360091c41e3c5ca}} 
+glm\+::mat4 {\bfseries original\+Projection}
+\item 
+\mbox{\Hypertarget{classCanvas_acba7c8885c32722ba89b86468bef6ec1}\label{classCanvas_acba7c8885c32722ba89b86468bef6ec1}} 
+const \mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries style}
+\item 
+\mbox{\Hypertarget{classCanvas_a0b027ad3f5963080ac8c8cd58d94a929}\label{classCanvas_a0b027ad3f5963080ac8c8cd58d94a929}} 
+\mbox{\hyperlink{classCamera}{Camera}} $\ast$ {\bfseries cam}
+\end{DoxyCompactItemize}

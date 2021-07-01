@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structBlockMapLoader_1_1Segment" xml:lang="en-US">
+<title>BlockMapLoader::Segment Struct Reference</title>
+<indexterm><primary>BlockMapLoader::Segment</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structBlockMapLoader_1_1Segment_1acd8d751a02e56e7412308585e4ab2a70"/>uint32_t <emphasis role="strong">numPoints</emphasis>: 24</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockMapLoader_1_1Segment_1a62102a89c2e9c684c0d65b0d871b7c66"/>uint32_t <emphasis role="strong">type</emphasis>: 8</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

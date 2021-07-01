@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classString64" xml:lang="en-US">
+<title>String64 Class Reference</title>
+<indexterm><primary>String64</primary></indexterm>
+<para>Inheritance diagram for String64:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d3/d88/classString64.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classString64_1aef88d1ce488c7aad98223067208cd349"/><emphasis role="strong">String64</emphasis> (string val)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classString64_1a1a6311e76cdbff43d6247e0933189b52"/>DataType <emphasis role="strong">getDataType</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classString64_1aab52f804a7828dc8eac7700fb9f6aabb"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classString64_1a1441f04b93cf07b52e8837772fa24646"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classString64_1a61688803c9dfa1e3e1a374f52899dd55"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classString64_1a9fbe89fd1cad0be644f634ff61134954"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

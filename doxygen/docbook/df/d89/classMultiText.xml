@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classMultiText" xml:lang="en-US">
+<title>MultiText Class Reference</title>
+<indexterm><primary>MultiText</primary></indexterm>
+<para>Inheritance diagram for MultiText:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../df/d89/classMultiText.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classMultiText_1afeae60ec82f1bc2eedfd36d07667ab7d"/><emphasis role="strong">MultiText</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, const <link linkend="_classStyle">Style</link> *style)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a5d0b5d97f1ecbbe3dc4909aea4572536"/><emphasis role="strong">MultiText</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, const <link linkend="_classStyle">Style</link> *style, uint32_t size)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a0e70456686f93af34646bc196bd2ab89"/>void <emphasis role="strong">addChar</emphasis> (float x, float y, const <link linkend="_classFont">Font</link> *f, const unsigned char c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a1102f05e9d52f866c7eb485a0ac3ed40"/>void <emphasis role="strong">addChar</emphasis> (float x, float y, const <link linkend="_classFont">Font</link> *f, const uint16_t c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1ad49e9e94c5f3cd21d57cb7a8289773d4"/>void <emphasis role="strong">add</emphasis> (float x, float y, const char s[], uint32_t len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a583b70b5641297337974cfea94427a50"/>void <emphasis role="strong">add</emphasis> (float x, float y, const <link linkend="_classFont">Font</link> *f, const char s[], uint32_t len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a4012a5824d87f4c03be5074a1a6d2175"/>void <emphasis role="strong">add</emphasis> (float x, float y, uint32_t v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a30a4c088e6912a14876579f2478df8aa"/>void <emphasis role="strong">add</emphasis> (float x, float y, const <link linkend="_classFont">Font</link> *f, uint32_t v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a9985f930bf6b41278becfe1538a6f72d"/>void <emphasis role="strong">addHex</emphasis> (float x, float y, const <link linkend="_classFont">Font</link> *f, uint32_t v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a4519ca307f48689c153d2f63f66e4f5e"/>void <emphasis role="strong">addHex8</emphasis> (float x, float y, const <link linkend="_classFont">Font</link> *f, uint32_t v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a4485472553016b8ff7d4e444a6fd3f57"/>void <emphasis role="strong">add</emphasis> (float x, float y, const <link linkend="_classFont">Font</link> *f, int32_t v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1ac0031ff95e9788fab1177f48815b42d9"/>void <emphasis role="strong">add</emphasis> (float x, float y, float v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1aaf59ec19ea64b4ed81090cc355c79b0d"/>void <emphasis role="strong">add</emphasis> (float x, float y, const <link linkend="_classFont">Font</link> *f, float v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1addaf0dbbf6fb866bf10141fec40422cc"/>void <emphasis role="strong">add</emphasis> (float x, float y, double v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1ac7a6ee1fcbfb087f72d0e18e07353b73"/>void <emphasis role="strong">add</emphasis> (float x, float y, const <link linkend="_classFont">Font</link> *f, double v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a5550380aff00eedafd8d875e9d56512f"/>void <emphasis role="strong">add</emphasis> (float x, float y, const <link linkend="_classFont">Font</link> *f, double v, int fieldWidth, int precision)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a3262884e78c116aa74412c5e3626bb9c"/>void <emphasis role="strong">addCentered</emphasis> (float x, float, const <link linkend="_classFont">Font</link> *f, double v, int fieldWidth, int precision)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1ae3e4422c6b0cb7929c08861220defee3"/>void <emphasis role="strong">addCentered</emphasis> (float x, float y, const <link linkend="_classFont">Font</link> *f, const char s[], uint32_t len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a014518f5ad56a7a522b1ee2edf1f375a"/>void <emphasis role="strong">checkAdd</emphasis> (float &amp;x, float &amp;y, const <link linkend="_classFont">Font</link> *f, const unsigned char c, float endMargin, float rowSize, float startOverMargin)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a03eebcb667b2941c428943dc3ac8e3fb"/>uint32_t <emphasis role="strong">findFirstOverMargin</emphasis> (float x, const <link linkend="_classFont">Font</link> *f, const char s[], uint32_t len, float rightMargin)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a1a107780bf45633b85fc7c79d6d284c8"/>void <emphasis role="strong">clear</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a08e78fbce4d1b5560c532ef4fab0cd53"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1acfa2c295c721e2e00bd6e3f0bc8788af"/>void <emphasis role="strong">process_input</emphasis> (Inputs *in, float dt)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1aca1fdf25793905effe0b626298f8890a"/>const <link linkend="_classStyle">Style</link> * <emphasis role="strong">getStyle</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1aa7541db9217b18705a482d7e01a70897"/>void <emphasis role="strong">update</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1ae361a90b42ca48142732461747a4f6cc"/>void <emphasis role="strong">render</emphasis> () override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classMultiText_1a063baa09e362988edfae88db01c3ab44"/>void <emphasis role="strong">addPoint</emphasis> (float x, float y, float u, float v)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classMultiText_1a6cf3657b748e498aefeaf826c10400ff"/>uint32_t <emphasis role="strong">textureId</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a5b3bc2964cd8176c27cc52affd5928f8"/>const <link linkend="_classStyle">Style</link> * <emphasis role="strong">style</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a6a591ec0158748898b5c036aab01afc8"/>std::vector&lt; float &gt; <emphasis role="strong">vert</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a2dfc675a63a2218836419df8f1060d53"/>float <emphasis role="strong">velX</emphasis> = 1</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiText_1a6a81fe664bba3e49ab0dad8c71c0848e"/>float <emphasis role="strong">velY</emphasis> = 1</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

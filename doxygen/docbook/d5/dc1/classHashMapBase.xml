@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classHashMapBase" xml:lang="en-US">
+<title>HashMapBase Class Reference</title>
+<indexterm><primary>HashMapBase</primary></indexterm>
+<para>Inheritance diagram for HashMapBase:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d5/dc1/classHashMapBase.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classHashMapBase_1a308b082fca44ccb75442256889f16a97"/>const char * <emphasis role="strong">getWords</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMapBase_1a80e5f120a7b5442843ce04cb512de5e0"/>uint32_t <emphasis role="strong">getWordsSize</emphasis> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classHashMapBase_1a709b66a0e243af1b4a0ba43b75a9b79c"/>uint32_t <emphasis role="strong">fasthash1</emphasis> (const char s[]) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMapBase_1a03c375f206fec6b83eeeb98dcc499439"/>uint32_t <emphasis role="strong">bytewisehash</emphasis> (const char s[], uint32_t len) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMapBase_1aece2429e286264efa8a19f32589977df"/>uint32_t <emphasis role="strong">bytewisehash</emphasis> (const char s[]) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMapBase_1a4b47f5e5e84840a9bfbf376a9f9fbc9e"/>uint32_t <emphasis role="strong">hash</emphasis> (const char s[]) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMapBase_1aae436c4053481063862228bf33a1fc65"/>uint32_t <emphasis role="strong">hash</emphasis> (const char s[], uint32_t len) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMapBase_1a7f78de8c43cb02cadf62eb36fb0a60a6"/><emphasis role="strong">HashMapBase</emphasis> (uint32_t sz, uint32_t symbolSize)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classHashMapBase_1a29a49f871e6091f3fbe05f211b181e20"/>static bool <emphasis role="strong">hasNoZero</emphasis> (uint32_t v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMapBase_1a7c5a678c6239f0a01a52e0620e30f4a0"/>static bool <emphasis role="strong">hasNoZero</emphasis> (uint64_t v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMapBase_1a45dbc36bd44217fd7a1f7a87ff62f81c"/>static bool <emphasis role="strong">haszero</emphasis> (uint32_t v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMapBase_1ab4e918c3ca5d2b18d96db2d76d83381f"/>static bool <emphasis role="strong">notzero</emphasis> (uint64_t v)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classHashMapBase_1af5b8e298951f2a8b6cbd1423f829f9e8"/>uint32_t <emphasis role="strong">size</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMapBase_1aaf5b6a1faf53ca58030fd4fbff7f1b9b"/>uint32_t <emphasis role="strong">symbolSize</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMapBase_1a1a9f05c5b0029aba73c92556bb06b9de"/>char * <emphasis role="strong">symbols</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMapBase_1ae49118be0634fa36e9a50eaa6879b614"/>char * <emphasis role="strong">current</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMapBase_1a2fa9bbd007ea498fc693a9d270091b45"/>uint32_t * <emphasis role="strong">table</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classHashMapBase_1a644d7ee4283cadf0dafa9cce5ac1334f"/>constexpr static int <emphasis role="strong">r1</emphasis> = 5</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMapBase_1af0a7d9ff45a9f54e47c7ed3f6610d053"/>constexpr static int <emphasis role="strong">r2</emphasis> = 7</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMapBase_1a62ceb1f3fb89afd038ca990d099cd8ff"/>constexpr static int <emphasis role="strong">r3</emphasis> = 17</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMapBase_1ab87753319cc0d4fe3943ff21e01e7b07"/>constexpr static int <emphasis role="strong">r4</emphasis> = 13</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMapBase_1a48932c7e7a062da3edbaaf290bf8cba6"/>constexpr static int <emphasis role="strong">r5</emphasis> = 11</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMapBase_1a0e289bae3957b2358d4757ffdc821806"/>constexpr static int <emphasis role="strong">r6</emphasis> = 16</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

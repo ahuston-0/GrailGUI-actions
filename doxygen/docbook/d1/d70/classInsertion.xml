@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classInsertion" xml:lang="en-US">
+<title>Insertion Class Reference</title>
+<indexterm><primary>Insertion</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classInsertion_1ae8bf72b88656a47b098a9ef8dba7c251"/><emphasis role="strong">Insertion</emphasis> (uint32_t offset, DataType d)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classInsertion_1ab488765cf6ebee0a1ea6fe20b650ef2e"/>const uint32_t <emphasis role="strong">offset</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classInsertion_1a2ff213bff2536b19554d94352dc9ab7f"/>const DataType <emphasis role="strong">d</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

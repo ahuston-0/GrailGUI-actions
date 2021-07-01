@@ -1,0 +1,240 @@
+\hypertarget{CSRGraph_8hh_source}{}\doxysection{CSRGraph.\+hh}
+\label{CSRGraph_8hh_source}\index{src/visualcs/CSRGraph.hh@{src/visualcs/CSRGraph.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <limits>}}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <sys/stat.h>}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}visualcs/Graph.hh"{}}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include "{}util/Ex.hh"{}}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include "{}util/wtime.h"{}}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "{}util/Stack.hh"{}}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <queue>} \textcolor{comment}{// we don't have a queue, so use STL}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{keyword}{template}<\textcolor{keyword}{typename} VertexIndex\_t, \textcolor{keyword}{typename} EdgeIndex\_t, \textcolor{keyword}{typename} Weight\_t>}
+\DoxyCodeLine{\Hypertarget{CSRGraph_8hh_source_l00016}\mbox{\hyperlink{classCSRGraph}{00016}} \textcolor{keyword}{class }\mbox{\hyperlink{classCSRGraph}{CSRGraph}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGraph}{Graph}} \{}
+\DoxyCodeLine{00017 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018   \textcolor{keyword}{static} \textcolor{keyword}{inline} off\_t fsize(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *filename) \{}
+\DoxyCodeLine{00019     \textcolor{keyword}{struct }stat st; }
+\DoxyCodeLine{00020     \textcolor{keywordflow}{if} (stat(filename, \&st) == 0)}
+\DoxyCodeLine{00021       \textcolor{keywordflow}{return} st.st\_size;}
+\DoxyCodeLine{00022     \textcolor{keywordflow}{return} -\/1; }
+\DoxyCodeLine{00023   \}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025 \textcolor{comment}{/*}}
+\DoxyCodeLine{00026 \textcolor{comment}{  not using this yet. We can't figure out a convenient way to share the code between}}
+\DoxyCodeLine{00027 \textcolor{comment}{  the three vectors, so it's cut and past in the load file for now}}
+\DoxyCodeLine{00028 \textcolor{comment}{ */}}
+\DoxyCodeLine{00029   \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00030   \textcolor{keywordtype}{void} loadCSRFile(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[], uint64\_t fileLen) \{}
+\DoxyCodeLine{00031     FILE* file = fopen(filename, \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{00032     \textcolor{keywordflow}{if} (file == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00033       \textcolor{keywordflow}{throw} \mbox{\hyperlink{classEx}{Ex}}(\_\_FILE\_\_, \_\_LINE\_\_, \textcolor{stringliteral}{"{}Can't open"{}});}
+\DoxyCodeLine{00034     T *csrVec = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036     \textcolor{keywordflow}{if}(posix\_memalign((\textcolor{keywordtype}{void} **)\&csrVec, getpagesize(), \textcolor{keyword}{sizeof}(T)*(fileLen+1)))}
+\DoxyCodeLine{00037       \textcolor{keywordflow}{throw} \mbox{\hyperlink{classEx}{Ex}}(\_\_FILE\_\_, \_\_LINE\_\_, \textcolor{stringliteral}{"{}posix\_memalign"{}});}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     \textcolor{keywordtype}{size\_t} ret=fread(csrVec, \textcolor{keyword}{sizeof}(T), fileLen, file);}
+\DoxyCodeLine{00040     assert(ret == fileLen);}
+\DoxyCodeLine{00041     fclose(file);}
+\DoxyCodeLine{00042 \textcolor{preprocessor}{\#if 0}}
+\DoxyCodeLine{00043     adjLen = csrVec[vert\_count];}
+\DoxyCodeLine{00044     std::cout << \textcolor{stringliteral}{"{}Expected edge count: "{}} << csrVec[vert\_count] << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00045     assert(tmp\_beg\_pos[vert\_count]>0);}
+\DoxyCodeLine{00046 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00047   \}}
+\DoxyCodeLine{00048 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049   VertexIndex\_t startIndexLen; \textcolor{comment}{// this is actually the number of vertices (V) the actual length = +1}}
+\DoxyCodeLine{00050   EdgeIndex\_t adjLen; \textcolor{comment}{// the number of edges in the graph}}
+\DoxyCodeLine{00051   EdgeIndex\_t weightLen; \textcolor{comment}{// this should be the same as the number of edges}}
+\DoxyCodeLine{00052   EdgeIndex\_t* startIndex;}
+\DoxyCodeLine{00053   VertexIndex\_t* adjacency;}
+\DoxyCodeLine{00054   Weight\_t* weight;}
+\DoxyCodeLine{00055   \mbox{\hyperlink{classCSRGraph}{CSRGraph}}() : \mbox{\hyperlink{classGraph}{Graph}}(), startIndexLen(0), adjLen(0), weightLen(0),}
+\DoxyCodeLine{00056                startIndex(\textcolor{keyword}{nullptr}), adjacency(\textcolor{keyword}{nullptr}), weight(\textcolor{keyword}{nullptr}) \{\}}
+\DoxyCodeLine{00057     \string~\mbox{\hyperlink{classCSRGraph}{CSRGraph}}()\{}
+\DoxyCodeLine{00058     \textcolor{comment}{//TODO: add matching deallocate, is this free or something else?}}
+\DoxyCodeLine{00059   \}}
+\DoxyCodeLine{00060   \mbox{\hyperlink{classCSRGraph}{CSRGraph}}(\textcolor{keyword}{const} \mbox{\hyperlink{classCSRGraph}{CSRGraph}}\& orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00061   \mbox{\hyperlink{classCSRGraph}{CSRGraph}}\& operator =(\textcolor{keyword}{const} \mbox{\hyperlink{classCSRGraph}{CSRGraph}}\& orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063   uint32\_t getV()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} startIndexLen; \}}
+\DoxyCodeLine{00064   uint64\_t getE()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} adjLen; \}}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066   Weight\_t getW(VertexIndex\_t src, VertexIndex\_t dest)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00067     \textcolor{keywordflow}{return} 0; \textcolor{comment}{// TODO: make this work}}
+\DoxyCodeLine{00068   \}}
+\DoxyCodeLine{00069   \textcolor{keywordtype}{bool} isAdjacent(VertexIndex\_t src, VertexIndex\_t dest)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00070     \textcolor{keywordflow}{for} (EdgeIndex\_t i  = startIndex[src]; i < startIndex[src+1]; i++)}
+\DoxyCodeLine{00071       \textcolor{keywordflow}{if} (adjacency[i] == dest)}
+\DoxyCodeLine{00072         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00073     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00074   \}}
+\DoxyCodeLine{00075   }
+\DoxyCodeLine{00076   \textcolor{keywordtype}{void} getEdge(EdgeIndex\_t i, VertexIndex\_t* v1, VertexIndex\_t* v2) \{}
+\DoxyCodeLine{00077      }
+\DoxyCodeLine{00078   \}}
+\DoxyCodeLine{00079   VertexIndex\_t countAdjacencies(VertexIndex\_t v) \{}
+\DoxyCodeLine{00080     \textcolor{keywordflow}{return} startIndex[v+1] -\/ startIndex[v];}
+\DoxyCodeLine{00081   \}}
+\DoxyCodeLine{00082   }
+\DoxyCodeLine{00083   \mbox{\hyperlink{classCSRGraph}{CSRGraph}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} csrBeginName[], \textcolor{keyword}{const} \textcolor{keywordtype}{char} csrAdjName[], \textcolor{keyword}{const} \textcolor{keywordtype}{char} weightName[]) \{}
+\DoxyCodeLine{00084     \textcolor{keywordtype}{double} tm = wtime();}
+\DoxyCodeLine{00085     FILE *file = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00086     \textcolor{keywordtype}{size\_t} ret;}
+\DoxyCodeLine{00087     }
+\DoxyCodeLine{00088     startIndexLen = fsize(csrBeginName) / \textcolor{keyword}{sizeof}(EdgeIndex\_t) -\/ 1; \textcolor{comment}{// one extra index for last one}}
+\DoxyCodeLine{00089     adjLen = fsize(csrAdjName) / \textcolor{keyword}{sizeof}(VertexIndex\_t);}
+\DoxyCodeLine{00090    }
+\DoxyCodeLine{00091     \textcolor{comment}{// Read CSR starting Index}}
+\DoxyCodeLine{00092     file = fopen(csrBeginName, \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{00093     \textcolor{keywordflow}{if} (file == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00094       \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"{}fopen fail csrbegin"{}};}
+\DoxyCodeLine{00095       \textcolor{comment}{//      throw Ex(\_\_FILE\_\_, \_\_LINE\_\_, "{}Can't open"{});}}
+\DoxyCodeLine{00096     startIndex = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00097     }
+\DoxyCodeLine{00098     \textcolor{comment}{//if(posix\_memalign((void **)\&startIndex, getpagesize(), sizeof(EdgeIndex\_t)*(startIndexLen+1)))}}
+\DoxyCodeLine{00099     startIndex = \textcolor{keyword}{new} EdgeIndex\_t[startIndexLen+1];}
+\DoxyCodeLine{00100       \textcolor{comment}{//throw "{}posix memalign"{};}}
+\DoxyCodeLine{00101       \textcolor{comment}{//      throw Ex2(\_\_FILE\_\_, \_\_LINE\_\_, "{}posix\_memalign"{});}}
+\DoxyCodeLine{00102 }
+\DoxyCodeLine{00103     ret = fread(startIndex, \textcolor{keyword}{sizeof}(EdgeIndex\_t), startIndexLen+1, file);}
+\DoxyCodeLine{00104     assert(ret == startIndexLen+1);}
+\DoxyCodeLine{00105     fclose(file);}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107     assert(adjLen == startIndex[startIndexLen]);}
+\DoxyCodeLine{00108     std::cout << \textcolor{stringliteral}{"{}Expected edge count: "{}} << adjLen << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110     \textcolor{comment}{// Read adjacency list}}
+\DoxyCodeLine{00111     file = fopen(csrAdjName, \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{00112     \textcolor{keywordflow}{if} (file == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00113       \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"{}fopen fail adj"{}};}
+\DoxyCodeLine{00114       \textcolor{comment}{//      throw Ex(\_\_FILE\_\_, \_\_LINE\_\_, "{}Can't open"{});}}
+\DoxyCodeLine{00115     adjacency = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00116     }
+\DoxyCodeLine{00117     \textcolor{comment}{//if(posix\_memalign((void **)\&adjacency, getpagesize(), sizeof(VertexIndex\_t)*(adjLen)))}}
+\DoxyCodeLine{00118     adjacency = \textcolor{keyword}{new} VertexIndex\_t[adjLen];}
+\DoxyCodeLine{00119       \textcolor{comment}{//throw "{}fopen fail memalign"{};}}
+\DoxyCodeLine{00120       \textcolor{comment}{//      throw Ex(\_\_FILE\_\_, \_\_LINE\_\_, "{}posix\_memalign"{});}}
+\DoxyCodeLine{00121 }
+\DoxyCodeLine{00122     ret = fread(adjacency, \textcolor{keyword}{sizeof}(VertexIndex\_t), adjLen, file);}
+\DoxyCodeLine{00123     assert(ret == adjLen);}
+\DoxyCodeLine{00124     fclose(file);}
+\DoxyCodeLine{00125     V = startIndexLen;}
+\DoxyCodeLine{00126     E = adjLen;}
+\DoxyCodeLine{00127 }
+\DoxyCodeLine{00128     std::cout<<\textcolor{stringliteral}{"{}Graph load (success): "{}} << startIndexLen <<\textcolor{stringliteral}{"{} verts, "{}}}
+\DoxyCodeLine{00129         <<adjLen << \textcolor{stringliteral}{"{} edges "{}} << wtime()-\/tm << \textcolor{stringliteral}{"{} second(s)\(\backslash\)n"{}};    }
+\DoxyCodeLine{00130   \}}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132   \textcolor{keyword}{typedef} void (*FuncVert)(uint32\_t src, uint32\_t dest);}
+\DoxyCodeLine{00133   \textcolor{comment}{/*}}
+\DoxyCodeLine{00134 \textcolor{comment}{    }}
+\DoxyCodeLine{00135 \textcolor{comment}{   */}}
+\DoxyCodeLine{00136   \textcolor{keywordtype}{void} dfs(VertexIndex\_t v, FuncVert f) \{}
+\DoxyCodeLine{00137     \textcolor{keywordtype}{bool} visited[getV()] = \{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00138     \mbox{\hyperlink{classStack}{Stack<VertexIndex\_t>}} toVisit(getV());}
+\DoxyCodeLine{00139     toVisit.push(v);}
+\DoxyCodeLine{00140     visited[v] = \textcolor{keyword}{true};}
+\DoxyCodeLine{00141     f(v,v);}
+\DoxyCodeLine{00142     \textcolor{keywordflow}{while} (!toVisit.isEmpty()) \{}
+\DoxyCodeLine{00143       VertexIndex\_t src = toVisit.pop();}
+\DoxyCodeLine{00144       \textcolor{keywordflow}{for} (EdgeIndex\_t i = startIndex[src]; i < startIndex[src+1]; i++) \{}
+\DoxyCodeLine{00145         VertexIndex\_t dest = adjacency[i];}
+\DoxyCodeLine{00146         \textcolor{keywordflow}{if} (!visited[dest]) \{}
+\DoxyCodeLine{00147           toVisit.push(dest);}
+\DoxyCodeLine{00148           visited[dest] = \textcolor{keyword}{true};}
+\DoxyCodeLine{00149           \textcolor{comment}{//update the graph}}
+\DoxyCodeLine{00150           f(src,dest);}
+\DoxyCodeLine{00151         \}}
+\DoxyCodeLine{00152       \}}
+\DoxyCodeLine{00153     \}}
+\DoxyCodeLine{00154   \}}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156   \textcolor{comment}{/*}}
+\DoxyCodeLine{00157 \textcolor{comment}{    }}
+\DoxyCodeLine{00158 \textcolor{comment}{   */}}
+\DoxyCodeLine{00159   \textcolor{keywordtype}{void} bfs(uint32\_t v, FuncVert f) \{}
+\DoxyCodeLine{00160     \textcolor{keywordtype}{bool} visited[getV()] = \{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00161     std::queue<VertexIndex\_t> toVisit;}
+\DoxyCodeLine{00162     toVisit.enqueue(v);}
+\DoxyCodeLine{00163     visited[v] = \textcolor{keyword}{true};}
+\DoxyCodeLine{00164     f(v, v);}
+\DoxyCodeLine{00165     \textcolor{keywordflow}{while} (!toVisit.empty()) \{}
+\DoxyCodeLine{00166       VertexIndex\_t src = toVisit.dequeue();}
+\DoxyCodeLine{00167       \textcolor{keywordflow}{for} (EdgeIndex\_t i = startIndex[src]; i < startIndex[src+1]; i++) \{}
+\DoxyCodeLine{00168         VertexIndex\_t dest = adjacency[i];}
+\DoxyCodeLine{00169         \textcolor{keywordflow}{if} (!visited[dest]) \{}
+\DoxyCodeLine{00170           toVisit.enqueue(dest);}
+\DoxyCodeLine{00171           visited[dest] = \textcolor{keyword}{true};}
+\DoxyCodeLine{00172           \textcolor{comment}{//update the graph}}
+\DoxyCodeLine{00173           f(src,dest);}
+\DoxyCodeLine{00174         \}}
+\DoxyCodeLine{00175       \}}
+\DoxyCodeLine{00176     \}}
+\DoxyCodeLine{00177   \}}
+\DoxyCodeLine{00178   uint32\_t* computeHistogram()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00179     uint32\_t* hist = \textcolor{keyword}{new} uint32\_t[getV()] = \{0\};}
+\DoxyCodeLine{00180     \textcolor{keywordflow}{for} (VertexIndex\_t v = 0; v < getV(); v++)}
+\DoxyCodeLine{00181       hist[countAdjacencies(v)]++;}
+\DoxyCodeLine{00182     \textcolor{keywordflow}{return} hist;}
+\DoxyCodeLine{00183   \}}
+\DoxyCodeLine{00184 }
+\DoxyCodeLine{00185   \textcolor{keywordtype}{void} printHistogram()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00186     uint32\_t hist = computeHistogram();}
+\DoxyCodeLine{00187     \textcolor{keywordflow}{for} (VertexIndex\_t i = 0; i < getV(); i++)}
+\DoxyCodeLine{00188       \textcolor{keywordflow}{if} (hist[i] != 0) \{}
+\DoxyCodeLine{00189         std::cout << i << \textcolor{stringliteral}{"{}: "{}} << hist[i] << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00190       \}}
+\DoxyCodeLine{00191     \textcolor{keyword}{delete} [] hist;}
+\DoxyCodeLine{00192   \}}
+\DoxyCodeLine{00193 }
+\DoxyCodeLine{\Hypertarget{CSRGraph_8hh_source_l00194}\mbox{\hyperlink{structCSRGraph_1_1VertexCount}{00194}}   \textcolor{keyword}{struct }\mbox{\hyperlink{structCSRGraph_1_1VertexCount}{VertexCount}} \{}
+\DoxyCodeLine{00195     VertexIndex\_t v;}
+\DoxyCodeLine{00196     VertexIndex\_t countAdj;}
+\DoxyCodeLine{00197     \mbox{\hyperlink{structCSRGraph_1_1VertexCount}{VertexCount}}() : v(0), countAdj(0) \{\}}
+\DoxyCodeLine{00198     \mbox{\hyperlink{structCSRGraph_1_1VertexCount}{VertexCount}}(VertexIndex\_t v, VertexIndex\_t countAdj) : v(v), countAdj(countAdj) \{\}}
+\DoxyCodeLine{00199   \};}
+\DoxyCodeLine{00200   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} sortDescCount(\textcolor{keyword}{const} \mbox{\hyperlink{structCSRGraph_1_1VertexCount}{VertexCount}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{structCSRGraph_1_1VertexCount}{VertexCount}}\& b) \{}
+\DoxyCodeLine{00201     \textcolor{keywordflow}{return} a.countAdj > b.countAdj;}
+\DoxyCodeLine{00202   \}}
+\DoxyCodeLine{00203   \textcolor{keyword}{const} VertexIndex\_t* group() \{}
+\DoxyCodeLine{00204     VertexIndex\_t V = getV();}
+\DoxyCodeLine{00205     VertexCount* v = \textcolor{keyword}{new} VertexCount[V];}
+\DoxyCodeLine{00206 }
+\DoxyCodeLine{00207     \textcolor{keywordflow}{for} (VertexIndex\_t i = 0; i < V; i++)}
+\DoxyCodeLine{00208       v[i] = VertexCount(i, countAdjacencies(i));}
+\DoxyCodeLine{00209       }
+\DoxyCodeLine{00210     std::sort(v, v+V, sortDescCount);}
+\DoxyCodeLine{00211     VertexIndex\_t* vertices = \textcolor{keyword}{new} VertexIndex\_t[V];}
+\DoxyCodeLine{00212     \textcolor{keywordflow}{for} (VertexIndex\_t i = 0; i < V; i++)}
+\DoxyCodeLine{00213       vertices[i] = v[i].v;}
+\DoxyCodeLine{00214     \textcolor{keyword}{delete} [] v;}
+\DoxyCodeLine{00215     }
+\DoxyCodeLine{00216     \textcolor{keywordflow}{return} vertices;}
+\DoxyCodeLine{00217   \}}
+\DoxyCodeLine{00218 }
+\DoxyCodeLine{00219 }
+\DoxyCodeLine{00220   \textcolor{keywordtype}{void} cluster() \{}
+\DoxyCodeLine{00221     constexpr \textcolor{keywordtype}{int} n = 4;}
+\DoxyCodeLine{00222     uint32\_t V = getV();}
+\DoxyCodeLine{00223     uint32\_t avg = V / (n*n);}
+\DoxyCodeLine{00224     std::vector<VertexIndex\_t> grid[n][n];}
+\DoxyCodeLine{00225     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; i++)}
+\DoxyCodeLine{00226       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < n; j++)}
+\DoxyCodeLine{00227         grid[i][j].reserve(avg);}
+\DoxyCodeLine{00228     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < V; i++) \{}
+\DoxyCodeLine{00229       }
+\DoxyCodeLine{00230     \}}
+\DoxyCodeLine{00231   \}}
+\DoxyCodeLine{00232     }
+\DoxyCodeLine{00233 \};}
+\DoxyCodeLine{00234 }
+
+\end{DoxyCode}

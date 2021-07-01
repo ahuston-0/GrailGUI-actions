@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structBlockMapLoader_1_1NamedEntities" xml:lang="en-US">
+<title>BlockMapLoader::NamedEntities Struct Reference</title>
+<indexterm><primary>BlockMapLoader::NamedEntities</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structBlockMapLoader_1_1NamedEntities_1a3dd1f16a19bd5282694a6cf4f792516b"/>uint32_t <emphasis role="strong">numNames</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockMapLoader_1_1NamedEntities_1ac34b1eb3b5f38b4207342a3c2fd5d534"/>uint32_t <emphasis role="strong">nameSizes</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockMapLoader_1_1NamedEntities_1a76e48e37099e354fb3522acadd68aec4"/><link linkend="_structBlockMapLoader_1_1NamedEntry">NamedEntry</link> <emphasis role="strong">entry</emphasis> []</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

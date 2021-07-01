@@ -1,0 +1,45 @@
+\hypertarget{LineGraphWidget_8hh_source}{}\doxysection{Line\+Graph\+Widget.\+hh}
+\label{LineGraphWidget_8hh_source}\index{src/opengl/LineGraphWidget.hh@{src/opengl/LineGraphWidget.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/GraphWidget.hh"{}}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{\Hypertarget{LineGraphWidget_8hh_source_l00005}\mbox{\hyperlink{classLineGraphWidget}{00005}} \textcolor{keyword}{class }\mbox{\hyperlink{classLineGraphWidget}{LineGraphWidget}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGraphWidget}{GraphWidget}} \{}
+\DoxyCodeLine{00006  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00007   std::vector<double> xPoints;}
+\DoxyCodeLine{00008   std::vector<double> yPoints;}
+\DoxyCodeLine{00009   glm::vec4 \&pointColor;}
+\DoxyCodeLine{00010   \textcolor{keywordtype}{double} pointSize;}
+\DoxyCodeLine{00011   \textcolor{comment}{// floats used here because its what StyledMultiShape wants}}
+\DoxyCodeLine{00012   void (\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}::*markerFunction)(float, float, float, glm::vec4 \&);}
+\DoxyCodeLine{00013   std::unordered\_map<char, void (\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}::*)(float, float, float,}
+\DoxyCodeLine{00014                                                         glm::vec4 \&)>}
+\DoxyCodeLine{00015       map;}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018   \mbox{\hyperlink{classLineGraphWidget}{LineGraphWidget}}(\mbox{\hyperlink{classCanvas}{Canvas}} *c, \mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}} *m, \mbox{\hyperlink{classMultiText}{MultiText}} *t, \textcolor{keywordtype}{double} x,}
+\DoxyCodeLine{00019                   \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} w, \textcolor{keywordtype}{double} h)}
+\DoxyCodeLine{00020       : \mbox{\hyperlink{classGraphWidget}{GraphWidget}}(c, m, t, x, y, w, h),}
+\DoxyCodeLine{00021         xPoints(std::vector<double>()),}
+\DoxyCodeLine{00022         yPoints(std::vector<double>()),}
+\DoxyCodeLine{00023         pointColor(grail::blue),}
+\DoxyCodeLine{00024         pointSize(4),}
+\DoxyCodeLine{00025         markerFunction(\&StyledMultiShape2D::drawCircleMarker) \{}
+\DoxyCodeLine{00026     map[\textcolor{charliteral}{'o'}] = \&StyledMultiShape2D::drawCircleMarker;}
+\DoxyCodeLine{00027     map[\textcolor{charliteral}{'s'}] = \&StyledMultiShape2D::drawSquareMarker;}
+\DoxyCodeLine{00028     map[\textcolor{charliteral}{'h'}] = \&StyledMultiShape2D::drawHexagonMarker;}
+\DoxyCodeLine{00029     map[\textcolor{charliteral}{'t'}] = \&StyledMultiShape2D::drawTriangleMarker;}
+\DoxyCodeLine{00030     map[\textcolor{charliteral}{'p'}] = \&StyledMultiShape2D::drawPentagonMarker;}
+\DoxyCodeLine{00031     map[\textcolor{charliteral}{'c'}] = \&StyledMultiShape2D::drawCrossMarker;}
+\DoxyCodeLine{00032   \}}
+\DoxyCodeLine{00033   \textcolor{keywordtype}{void} setPointFormat(\textcolor{keywordtype}{char} pt, \textcolor{keywordtype}{double} size, glm::vec4 \&color);}
+\DoxyCodeLine{00034   \textcolor{keywordtype}{void} setXPoints(\textcolor{keyword}{const} std::vector<double> \&xPoints);}
+\DoxyCodeLine{00035   \textcolor{keywordtype}{void} setYPoints(\textcolor{keyword}{const} std::vector<double> \&yPoints);}
+\DoxyCodeLine{00036   \textcolor{keywordtype}{void} createXAxis(AxisType a) \textcolor{keyword}{override};}
+\DoxyCodeLine{00037   \textcolor{keywordtype}{void} createYAxis(AxisType a) \textcolor{keyword}{override};}
+\DoxyCodeLine{00038   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
+\DoxyCodeLine{00039 \};}
+
+\end{DoxyCode}

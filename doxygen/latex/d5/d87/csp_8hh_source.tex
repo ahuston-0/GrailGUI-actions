@@ -1,0 +1,27 @@
+\hypertarget{csp_8hh_source}{}\doxysection{csp.\+hh}
+\label{csp_8hh_source}\index{src/csp/csp.hh@{src/csp/csp.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}opengl/Errcode.hh"{}}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}util/Ex.hh"{}}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include "{}util/Log.hh"{}}}
+\DoxyCodeLine{00009 \textcolor{keyword}{extern} \mbox{\hyperlink{classLog}{Log}} srvlog;}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#ifdef \_\_linux\_\_}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#define readBinFlags O\_RDONLY}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#elif \_WIN32}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#define readBinFlags O\_RDONLY | O\_BINARY}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#ifdef \_\_linux\_\_}}
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#define writeBinFlags O\_WRONLY}}
+\DoxyCodeLine{00019 \textcolor{preprocessor}{\#elif \_WIN32}}
+\DoxyCodeLine{00020 \textcolor{preprocessor}{\#define writeBinFlags O\_WRONLY | O\_BINARY}}
+\DoxyCodeLine{00021 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

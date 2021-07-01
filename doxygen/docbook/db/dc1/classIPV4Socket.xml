@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classIPV4Socket" xml:lang="en-US">
+<title>IPV4Socket Class Reference</title>
+<indexterm><primary>IPV4Socket</primary></indexterm>
+<para>Inheritance diagram for IPV4Socket:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../db/dc1/classIPV4Socket.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classIPV4Socket_1af47ad106527dca5ea723704d97d87d53"/><emphasis role="strong">IPV4Socket</emphasis> (const char *addr, uint16_t port)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classIPV4Socket_1a25218f9c9dd9ae5b458fe083f15d34b8"/><emphasis role="strong">IPV4Socket</emphasis> (uint16_t port)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classIPV4Socket_1af9559090f01c8d150cd4221dd22dc280"/>void <emphasis role="strong">listenOnPort</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classIPV4Socket_1a1e106039ee3f5913c8af586718b20eb7"/>void <emphasis role="strong">wait</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classIPV4Socket_1a8ec0d8a723171829a8ab4bff7e2376a0"/>void <emphasis role="strong">send</emphasis> (const char *command)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classIPV4Socket_1ac6fb45bd2a496091398b222645936d0e"/>void <emphasis role="strong">send</emphasis> (uint32_t reqn)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classIPV4Socket_1a0f7d9a48a05d3151a6352e605d025975"/>static int <emphasis role="strong">send</emphasis> (socket_t sckt, const char *buf, int size, int flags)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classIPV4Socket_1a71d3cb9562550b21576b2dc364c2c9ea"/>static int <emphasis role="strong">recv</emphasis> (socket_t sckt, const char *buf, int size, int flags)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

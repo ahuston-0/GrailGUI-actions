@@ -1,0 +1,42 @@
+.TH "HTTPRequest" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HTTPRequest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBRequest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHTTPRequest\fP (const char *ReqType)"
+.br
+.ti -1c
+.RI "void \fBhandle\fP (int sckt) override"
+.br
+.ti -1c
+.RI "void \fBhandle\fP (int sckt, const char *command) override"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const std::string \fBPOST\fP = 'POST'"
+.br
+.ti -1c
+.RI "static const std::string \fBGET\fP = 'GET'"
+.br
+.ti -1c
+.RI "static const std::string \fBUNIMPLEMENTED\fP = '???'"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

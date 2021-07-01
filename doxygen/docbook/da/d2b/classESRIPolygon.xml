@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classESRIPolygon" xml:lang="en-US">
+<title>ESRIPolygon Class Reference</title>
+<indexterm><primary>ESRIPolygon</primary></indexterm>
+<para>Inheritance diagram for ESRIPolygon:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../da/d2b/classESRIPolygon.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classESRIPolygon_1ae1acef6724cca8299caf991f8cb365d1"/><emphasis role="strong">ESRIPolygon</emphasis> (SHPObject *shapePtr)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classESRIPolygon_1a2147f448b4d25c85c260599334b54729"/>std::vector&lt; <link linkend="_classESRIPoint">ESRIPoint</link> &gt; <emphasis role="strong">getPoints</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

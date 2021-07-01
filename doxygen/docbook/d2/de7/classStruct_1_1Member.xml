@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classStruct_1_1Member" xml:lang="en-US">
+<title>Struct::Member Class Reference</title>
+<indexterm><primary>Struct::Member</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classStruct_1_1Member_1a4d3a19a937ea6ff036e473c34a0e31bd"/><emphasis role="strong">Member</emphasis> (uint32_t nameOffset, uint32_t nameLen, const <link linkend="_classXDLType">XDLType</link> *type)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classStruct_1_1Member_1a3507ff903beee0466b4705c0c5334cde"/>uint32_t <emphasis role="strong">nameOffset</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1_1Member_1abf062b1ec542c46687507136b0b3cbb7"/>uint32_t <emphasis role="strong">nameLen</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStruct_1_1Member_1a01c76d3579407066d52fe5a425e9d5a9"/>const <link linkend="_classXDLType">XDLType</link> * <emphasis role="strong">type</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

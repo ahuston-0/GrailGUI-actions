@@ -1,0 +1,45 @@
+\hypertarget{classLog}{}\doxysection{Log Class Reference}
+\label{classLog}\index{Log@{Log}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLog_afb5d4c945d835d194a295461d752531e}\label{classLog_afb5d4c945d835d194a295461d752531e}} 
+enum class {\bfseries Level} \{ \newline
+{\bfseries LOGINFO}
+, {\bfseries LOGDEBUG}
+, {\bfseries LOGWARN}
+, {\bfseries LOGERROR}
+, \newline
+{\bfseries LOGCRITICAL}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLog_af82ea3730da3fc2100ea3453bdfe2b0b}\label{classLog_af82ea3730da3fc2100ea3453bdfe2b0b}} 
+void {\bfseries set\+Log\+File} (const char filename\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classLog_a77a5ea2349e792117824fa245e9dc602}\label{classLog_a77a5ea2349e792117824fa245e9dc602}} 
+void {\bfseries set\+Level} (Level L)
+\item 
+\mbox{\Hypertarget{classLog_a79c88bc14e523ae5a13540f7869d903c}\label{classLog_a79c88bc14e523ae5a13540f7869d903c}} 
+void {\bfseries log} (Level severity, uint16\+\_\+t message)
+\item 
+\mbox{\Hypertarget{classLog_a9ac82fc63f0998d5a59afffbde8ce82f}\label{classLog_a9ac82fc63f0998d5a59afffbde8ce82f}} 
+void {\bfseries log} (Level severity, uint16\+\_\+t message, uint32\+\_\+t param)
+\item 
+\mbox{\Hypertarget{classLog_a3f5098b44fd13a1ad5e228a4816ea230}\label{classLog_a3f5098b44fd13a1ad5e228a4816ea230}} 
+void {\bfseries log} (Level severity, uint16\+\_\+t message, uint32\+\_\+t param1, uint32\+\_\+t param2)
+\item 
+\mbox{\Hypertarget{classLog_aa03d8e2fdd60d3c751e1aa258ab28e04}\label{classLog_aa03d8e2fdd60d3c751e1aa258ab28e04}} 
+void {\bfseries log} (Level severity, uint16\+\_\+t message, const std\+::string \&name)
+\item 
+\mbox{\Hypertarget{classLog_a656b7c3eb034ebf92e7e896b1ca23310}\label{classLog_a656b7c3eb034ebf92e7e896b1ca23310}} 
+void {\bfseries warn} (Errcode message)
+\item 
+\mbox{\Hypertarget{classLog_aa45e31ba6aac4752baca4226426529cd}\label{classLog_aa45e31ba6aac4752baca4226426529cd}} 
+void {\bfseries error} (Errcode message)
+\item 
+\mbox{\Hypertarget{classLog_a46efde5b05e0b87f55a31f9b43aef3f4}\label{classLog_a46efde5b05e0b87f55a31f9b43aef3f4}} 
+void {\bfseries critical} (Errcode message)
+\end{DoxyCompactItemize}

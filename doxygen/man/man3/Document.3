@@ -1,0 +1,40 @@
+.TH "Document" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Document
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDocument\fP (const \fBPageLayout\fP &layout)"
+.br
+.ti -1c
+.RI "\fBDocument\fP (const \fBDocument\fP &orig)=delete"
+.br
+.ti -1c
+.RI "\fBDocument\fP & \fBoperator=\fP (const \fBDocument\fP &orig)=delete"
+.br
+.ti -1c
+.RI "const unsigned char * \fBgetText\fP () const"
+.br
+.ti -1c
+.RI "const \fBPage\fP * \fBgetPage\fP (uint32_t p) const"
+.br
+.ti -1c
+.RI "const \fBPageLayout\fP * \fBgetLayout\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetPageCount\fP () const"
+.br
+.ti -1c
+.RI "void \fBappendFile\fP (const \fBPageLayout\fP &layout, const char filename[])"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

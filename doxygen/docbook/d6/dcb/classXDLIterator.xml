@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classXDLIterator" xml:lang="en-US">
+<title>XDLIterator Class Reference</title>
+<indexterm><primary>XDLIterator</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classXDLIterator_1a369e6374f283789130bbefae9b6fd2f8"/>void <emphasis role="strong">advance</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classXDLIterator_1ace19f89e1bbf53d9f79318b750c94d03"/>void <emphasis role="strong">advance</emphasis> (uint32_t d)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classXDLIterator_1a66fe9b5e98b2cb6102a9e116ea3a705d"/>uint32_t <emphasis role="strong">getPos</emphasis> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

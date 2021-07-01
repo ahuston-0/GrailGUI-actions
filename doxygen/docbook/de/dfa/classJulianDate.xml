@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classJulianDate" xml:lang="en-US">
+<title>JulianDate Class Reference</title>
+<indexterm><primary>JulianDate</primary></indexterm>
+<para>Inheritance diagram for JulianDate:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../de/dfa/classJulianDate.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classJulianDate_1a8b2dbca4e29bb01347f6a71bbab2e6c6"/><emphasis role="strong">JulianDate</emphasis> (int32_t year, uint32_t month, uint32_t day, uint32_t hour=0, uint32_t min=0, uint32_t second=0)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1a2a5c38a3bc110102fcde75efedb58262"/><link linkend="_classJulianDate">JulianDate</link> <emphasis role="strong">operator+</emphasis> (double days) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1ae8304e86b3f0fb89d2164a46cb59d00d"/><link linkend="_classJulianDate">JulianDate</link> <emphasis role="strong">operator-</emphasis> (double days) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1a4a22974603a9630f1f52447166ed31c5"/><link linkend="_classJulianDate">JulianDate</link> <emphasis role="strong">operator+=</emphasis> (double days)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1a7dde8ccf42b6a3ca4df37e862d023457"/><link linkend="_classJulianDate">JulianDate</link> <emphasis role="strong">operator-=</emphasis> (double days)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1a853541beadf0aa9b212ac28505127a4a"/>bool <emphasis role="strong">operator==</emphasis> (<link linkend="_classJulianDate">JulianDate</link> orig)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1ac5fc3f3e4ce526a13d69182da611a0dc"/><emphasis role="strong">operator double</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1a23388539ceabdf2f2a6c55f83918cff2"/>int32_t <emphasis role="strong">getYear</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1a5cf5e6167250516b53cc58a93724d2d0"/>uint32_t <emphasis role="strong">getMonth</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1ae2e0a55266ffb0ffb9fcbc7a112673c1"/>uint32_t <emphasis role="strong">getDay</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1aa8a42cac67ac9a0dfb92cc45832d5bc1"/>uint32_t <emphasis role="strong">getHour</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1aea6395ca720cecc3c6a5cd56d21cc881"/>uint32_t <emphasis role="strong">getMinute</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1aea0e207821339ea9530f257326c6b338"/>double <emphasis role="strong">getSecond</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1aea1cd49fb6f9cb0bd57748824bf3263f"/>void <emphasis role="strong">format</emphasis> (char dest[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1a2897550c5740deb6ff7030f1fa54d50f"/>double <emphasis role="strong">getJulDate</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1a82011f2d8458394a026ebc7a7f6cef46"/>void <emphasis role="strong">extract</emphasis> (int32_t *year, uint32_t *mm, uint32_t *dd, uint32_t *hh, uint32_t *min, uint32_t *ss)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1acb25ed14aae7980f36dbbd177e76d6e8"/><emphasis role="strong">JulianDate</emphasis> (int32_t year, uint8_t month, uint8_t day, uint8_t hour, uint8_t min, uint8_t sec)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1a23388539ceabdf2f2a6c55f83918cff2"/>int32_t <emphasis role="strong">getYear</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1a5cf5e6167250516b53cc58a93724d2d0"/>uint32_t <emphasis role="strong">getMonth</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1ae2e0a55266ffb0ffb9fcbc7a112673c1"/>uint32_t <emphasis role="strong">getDay</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1aa8a42cac67ac9a0dfb92cc45832d5bc1"/>uint32_t <emphasis role="strong">getHour</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1ab47ac8f1257faa1b14f20ae0ae0952d7"/>uint32_t <emphasis role="strong">getMin</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1aea0e207821339ea9530f257326c6b338"/>double <emphasis role="strong">getSecond</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1a7cab6a9e9b770da1eedf917198f55066"/>DataType <emphasis role="strong">getDataType</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1aaa2b849abfcde4204d95d1572edd587f"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1aa79463f59df5dce97c990425e4823bf4"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1ac80c9d91571828d2db626353657d9ddd"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1aa38cc69658f9b79440507d60a81b55d4"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classJulianDate_1ab7b60c8b65ea96cc905a3a532e799bc8"/>static bool <emphasis role="strong">isLeap</emphasis> (uint32_t year)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classJulianDate_1aac6753ad81626e17a1aaed9c960b7bbf"/>static const double <emphasis role="strong">epoch</emphasis> = 2000</para>
+</listitem>
+            <listitem><para>static const uint16_t <emphasis role="strong">daysUpTo</emphasis> [12]</para>
+</listitem>
+            <listitem><para>static const uint16_t <emphasis role="strong">daysInMonth</emphasis> [12]</para>
+</listitem>
+            <listitem><para>static const char * <emphasis role="strong">monthAbbr</emphasis> [12]</para>
+</listitem>
+            <listitem><para>static const char * <emphasis role="strong">monthNames</emphasis> [12]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classJulianDate_1a5c20e50ee6f56cce1d09b501c7a6225e"/>class <emphasis role="strong">Date</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1a8a6469cecc552e2a0d2ea03807065b85"/>double <emphasis role="strong">operator-</emphasis> (<link linkend="_classJulianDate">JulianDate</link> a, <link linkend="_classJulianDate">JulianDate</link> b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classJulianDate_1a2b8037ec1bf4b105578cabf5a62ba591"/>std::ostream &amp; <emphasis role="strong">operator&lt;&lt;</emphasis> (std::ostream &amp;s, const <link linkend="_classJulianDate">JulianDate</link> &amp;jd)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classJulianDate_1a6b24972af7dbaece8507006b06d65a01"/>    <section>
+    <title>daysInMonth</title>
+<indexterm><primary>daysInMonth</primary><secondary>JulianDate</secondary></indexterm>
+<indexterm><primary>JulianDate</primary><secondary>daysInMonth</secondary></indexterm>
+<para><computeroutput>const uint16_t JulianDate::daysInMonth<computeroutput>[static]</computeroutput></computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting>=&#32;{
+&#32;&#32;&#32;&#32;31,&#32;&#32;
+&#32;&#32;&#32;&#32;28,&#32;&#32;
+&#32;&#32;&#32;&#32;31,&#32;&#32;
+&#32;&#32;&#32;&#32;30,&#32;&#32;
+&#32;&#32;&#32;&#32;31,&#32;&#32;
+&#32;&#32;&#32;&#32;30,&#32;&#32;
+&#32;&#32;&#32;&#32;31,&#32;&#32;
+&#32;&#32;&#32;&#32;31,&#32;&#32;
+&#32;&#32;&#32;&#32;30,&#32;&#32;
+&#32;&#32;&#32;&#32;31,&#32;&#32;
+&#32;&#32;&#32;&#32;30,&#32;&#32;
+&#32;&#32;&#32;&#32;31&#32;&#32;&#32;
+}
+</programlisting>    </section><anchor xml:id="_classJulianDate_1abfda2556d79a1117e6168de66ad10bfc"/>    <section>
+    <title>daysUpTo</title>
+<indexterm><primary>daysUpTo</primary><secondary>JulianDate</secondary></indexterm>
+<indexterm><primary>JulianDate</primary><secondary>daysUpTo</secondary></indexterm>
+<para><computeroutput>const uint16_t JulianDate::daysUpTo<computeroutput>[static]</computeroutput></computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting>=&#32;{
+&#32;&#32;&#32;&#32;0,&#32;&#32;&#32;&#32;
+&#32;&#32;&#32;&#32;31,&#32;&#32;&#32;
+&#32;&#32;&#32;&#32;59,&#32;&#32;&#32;
+&#32;&#32;&#32;&#32;90,&#32;&#32;&#32;
+&#32;&#32;&#32;&#32;120,&#32;&#32;
+&#32;&#32;&#32;&#32;151,&#32;&#32;
+&#32;&#32;&#32;&#32;181,&#32;&#32;
+&#32;&#32;&#32;&#32;212,&#32;&#32;
+&#32;&#32;&#32;&#32;243,&#32;&#32;
+&#32;&#32;&#32;&#32;273,&#32;&#32;
+&#32;&#32;&#32;&#32;304,&#32;&#32;
+&#32;&#32;&#32;&#32;334&#32;&#32;&#32;
+}
+</programlisting>    </section><anchor xml:id="_classJulianDate_1adc3b9da4073bd4c68b4efe943614d7af"/>    <section>
+    <title>monthAbbr</title>
+<indexterm><primary>monthAbbr</primary><secondary>JulianDate</secondary></indexterm>
+<indexterm><primary>JulianDate</primary><secondary>monthAbbr</secondary></indexterm>
+<para><computeroutput>const char * JulianDate::monthAbbr<computeroutput>[static]</computeroutput></computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting>=&#32;{<emphasis role="stringliteral">&quot;Jan&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;Feb&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;Mar&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;Apr&quot;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;May&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;Jun&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;Jul&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;Aug&quot;</emphasis>,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;Sep&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;Oct&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;Nov&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;Dec&quot;</emphasis>}
+</programlisting>    </section><anchor xml:id="_classJulianDate_1a0363f5b5a735abeb1cb211257857c139"/>    <section>
+    <title>monthNames</title>
+<indexterm><primary>monthNames</primary><secondary>JulianDate</secondary></indexterm>
+<indexterm><primary>JulianDate</primary><secondary>monthNames</secondary></indexterm>
+<para><computeroutput>const char * JulianDate::monthNames<computeroutput>[static]</computeroutput></computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting>=&#32;{
+&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;January&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;February&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;March&quot;</emphasis>,&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;April&quot;</emphasis>,&#32;&#32;&#32;<emphasis role="stringliteral">&quot;May&quot;</emphasis>,&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;June&quot;</emphasis>,
+&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;July&quot;</emphasis>,&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;August&quot;</emphasis>,&#32;&#32;&#32;<emphasis role="stringliteral">&quot;September&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;October&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;November&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;December&quot;</emphasis>}
+</programlisting></section>
+</section>
+</section>

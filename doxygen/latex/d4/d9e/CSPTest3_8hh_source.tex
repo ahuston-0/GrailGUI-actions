@@ -1,0 +1,28 @@
+\hypertarget{CSPTest3_8hh_source}{}\doxysection{CSPTest3.\+hh}
+\label{CSPTest3_8hh_source}\index{src/csp/cspservlet/CSPTest3.hh@{src/csp/cspservlet/CSPTest3.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{//}}
+\DoxyCodeLine{00002 \textcolor{comment}{// Created by dkruger on 11/01/17.}}
+\DoxyCodeLine{00003 \textcolor{comment}{//}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <csp/CSPServlet.hh>}}
+\DoxyCodeLine{00007 \textcolor{comment}{//\#include "{}csp/HttpServlet.hh"{}}}
+\DoxyCodeLine{00008 \textcolor{comment}{//\#include "{}csp/HTTPRequest.hh"{}}}
+\DoxyCodeLine{\Hypertarget{CSPTest3_8hh_source_l00009}\mbox{\hyperlink{classCSPTest3}{00009}} \textcolor{keyword}{class }\mbox{\hyperlink{classCSPTest3}{CSPTest3}} : \textcolor{keyword}{public} \mbox{\hyperlink{classCSPServlet}{CSPServlet}} \{}
+\DoxyCodeLine{00010 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013     \mbox{\hyperlink{classCSPTest3}{CSPTest3}}() \{\}}
+\DoxyCodeLine{00014     \string~\mbox{\hyperlink{classCSPTest3}{CSPTest3}}() \{\}}
+\DoxyCodeLine{00015     \textcolor{keywordtype}{void} request(\mbox{\hyperlink{classCSPRequest}{CSPRequest}}\& r) \{}
+\DoxyCodeLine{00016         cout<<\textcolor{stringliteral}{"{}Test3 is loaded\(\backslash\)n"{}};}
+\DoxyCodeLine{00017         \mbox{\hyperlink{classBuffer}{Buffer}}\& out = r.getOut();}
+\DoxyCodeLine{00018         \textcolor{keywordtype}{string} first = \textcolor{stringliteral}{"{}Dov"{}};}
+\DoxyCodeLine{00019         \textcolor{keywordtype}{string} last = \textcolor{stringliteral}{"{}Kruger"{}};}
+\DoxyCodeLine{00020         out << first << last;}
+\DoxyCodeLine{00021     \}}
+\DoxyCodeLine{00022 \};}
+
+\end{DoxyCode}

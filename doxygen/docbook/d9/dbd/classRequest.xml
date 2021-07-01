@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classRequest" xml:lang="en-US">
+<title>Request Class Reference</title>
+<indexterm><primary>Request</primary></indexterm>
+<para>Inheritance diagram for Request:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d9/dbd/classRequest.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classRequest_1aa465bd15d69641a078e518eeb18d45c8"/>virtual void <emphasis role="strong">handle</emphasis> (int sckt)=0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRequest_1acc1f3992467cf0585ea0ca4ed8635f64"/>virtual void <emphasis role="strong">handle</emphasis> (int sckt, const char *command)=0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRequest_1a4939a936bd419aa6497bff5db1625dd4"/><link linkend="_classBuffer">Buffer</link> &amp; <emphasis role="strong">getOut</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRequest_1a43490064eff0cd764dd8a4e7a3fa23d9"/><link linkend="_classBuffer">Buffer</link> &amp; <emphasis role="strong">getIn</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classRequest_1a646f410c37d825a98f7708b4af7ff3c8"/><link linkend="_classBuffer">Buffer</link> <emphasis role="strong">in</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRequest_1aa690132ebe8a8baa5d7ad0e06338adab"/><link linkend="_classBuffer">Buffer</link> <emphasis role="strong">out</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

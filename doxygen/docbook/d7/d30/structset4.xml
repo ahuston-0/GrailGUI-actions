@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structset4" xml:lang="en-US">
+<title>set4 Struct Reference</title>
+<indexterm><primary>set4</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structset4_1a03c23e66fa6aafaad8d365fdef0c27c8"/>uint8_t <emphasis role="strong">a</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structset4_1aa4e4fd477236d8dc72066f1f8d0015a1"/>uint16_t <emphasis role="strong">b</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structset4_1a01f447e4cd3f248679703d0bc7054755"/>uint32_t <emphasis role="strong">c</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structset4_1af18f59a21ec6eabab2c3e9e7affd0b60"/>uint64_t <emphasis role="strong">d</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structset4_1a1441787c8be2fad9aced62044686ebd7"/>int8_t <emphasis role="strong">e</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structset4_1aa70f0f2858e40860fd6693fef66ece1a"/>int16_t <emphasis role="strong">f</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structset4_1a12aa80142bdc55223784eb80eacf773f"/>int32_t <emphasis role="strong">g</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structset4_1a0095aeac2c054e00d26ae3ae67eaabba"/>int64_t <emphasis role="strong">h</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structset4_1a847211d9bf0297180e477e02a4262a86"/>float <emphasis role="strong">i</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structset4_1a179b695c2b8724b548ae20a3838f93e5"/>double <emphasis role="strong">j</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

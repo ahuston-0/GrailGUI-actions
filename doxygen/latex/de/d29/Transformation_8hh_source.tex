@@ -1,0 +1,95 @@
+\hypertarget{Transformation_8hh_source}{}\doxysection{Transformation.\+hh}
+\label{Transformation_8hh_source}\index{src/opengl/util/Transformation.hh@{src/opengl/util/Transformation.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{comment}{// GLM}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <glm/gtc/matrix\_transform.hpp>}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{comment}{/*}}
+\DoxyCodeLine{00009 \textcolor{comment}{  wrap a glm::Mat4 and provide all the methods to cleanly transform}}
+\DoxyCodeLine{00010 \textcolor{comment}{  https://open.gl/transformations}}
+\DoxyCodeLine{00011 \textcolor{comment}{*/}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{\Hypertarget{Transformation_8hh_source_l00013}\mbox{\hyperlink{classTransformation}{00013}} \textcolor{keyword}{class }\mbox{\hyperlink{classTransformation}{Transformation}} \{}
+\DoxyCodeLine{00014  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015   glm::mat4 transform;}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018   \textcolor{comment}{// TODO: easy access constant unit vectors}}
+\DoxyCodeLine{00019   \textcolor{comment}{// const static glm::vec3 X = \{1, 0, 0\};}}
+\DoxyCodeLine{00020   \textcolor{comment}{// const static glm::vec3 Y = \{0, 1, 0\};}}
+\DoxyCodeLine{00021   \textcolor{comment}{// const static glm::vec3 Z = \{0, 0, 1\};}}
+\DoxyCodeLine{00022   \textcolor{comment}{/*}}
+\DoxyCodeLine{00023 \textcolor{comment}{    By default create the identity matrix}}
+\DoxyCodeLine{00024 \textcolor{comment}{    1 0 0 0   x}}
+\DoxyCodeLine{00025 \textcolor{comment}{    0 1 0 0   y}}
+\DoxyCodeLine{00026 \textcolor{comment}{    0 0 1 0   z}}
+\DoxyCodeLine{00027 \textcolor{comment}{    0 0 0 1   1}}
+\DoxyCodeLine{00028 \textcolor{comment}{  */}}
+\DoxyCodeLine{00029   \mbox{\hyperlink{classTransformation}{Transformation}}() \{ transform = glm::mat4(1.0f); \}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031   \textcolor{keywordtype}{void} ident() \{ transform = glm::mat4(1.0f); \}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033   \textcolor{comment}{/*}}
+\DoxyCodeLine{00034 \textcolor{comment}{  m  m  m  m}}
+\DoxyCodeLine{00035 \textcolor{comment}{  m  m  m  m}}
+\DoxyCodeLine{00036 \textcolor{comment}{  m  m  m  m}}
+\DoxyCodeLine{00037 \textcolor{comment}{  +x +y +z 0}}
+\DoxyCodeLine{00038 \textcolor{comment}{  */}}
+\DoxyCodeLine{00039   \textcolor{keywordtype}{void} translate(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z) \{}
+\DoxyCodeLine{00040     transform = glm::translate(transform, glm::vec3(x, y, z));}
+\DoxyCodeLine{00041   \}}
+\DoxyCodeLine{00042   \textcolor{comment}{/*}}
+\DoxyCodeLine{00043 \textcolor{comment}{      By default create the identity matrix}}
+\DoxyCodeLine{00044 \textcolor{comment}{      3 0 0 0    x    3x}}
+\DoxyCodeLine{00045 \textcolor{comment}{      0 1 0 0  * y =  0x+1y+0z}}
+\DoxyCodeLine{00046 \textcolor{comment}{      0 0 2 0    z    0x+0y+2z}}
+\DoxyCodeLine{00047 \textcolor{comment}{      0 0 0 1    1}}
+\DoxyCodeLine{00048 \textcolor{comment}{    */}}
+\DoxyCodeLine{00049   \textcolor{keywordtype}{void} scale(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z) \{}
+\DoxyCodeLine{00050     transform = glm::scale(transform, glm::vec3(x, y, z));}
+\DoxyCodeLine{00051   \}}
+\DoxyCodeLine{00052   \textcolor{keywordtype}{void} scale(\textcolor{keywordtype}{float} s) \{}
+\DoxyCodeLine{00053     transform = transform = glm::scale(transform, glm::vec3(s, s, s));}
+\DoxyCodeLine{00054   \}}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056   \textcolor{comment}{/* start with an identity matrix and set to pure rotation as a convenience}}
+\DoxyCodeLine{00057 \textcolor{comment}{  function}}
+\DoxyCodeLine{00058 \textcolor{comment}{  TODO: make this faster by just writing the right numbers? Not a priority}}
+\DoxyCodeLine{00059 \textcolor{comment}{     a b c 0}}
+\DoxyCodeLine{00060 \textcolor{comment}{     d e f 0}}
+\DoxyCodeLine{00061 \textcolor{comment}{     g h i 0}}
+\DoxyCodeLine{00062 \textcolor{comment}{     0 0 0 1}}
+\DoxyCodeLine{00063 \textcolor{comment}{  */}}
+\DoxyCodeLine{00064   \textcolor{keywordtype}{void} setRotate(\textcolor{keywordtype}{float} angleRad, \textcolor{keywordtype}{float} xAxis, \textcolor{keywordtype}{float} yAxis, \textcolor{keywordtype}{float} zAxis) \{}
+\DoxyCodeLine{00065     transform =}
+\DoxyCodeLine{00066         glm::rotate(glm::mat4(1.0f), angleRad, glm::vec3(xAxis, yAxis, zAxis));}
+\DoxyCodeLine{00067   \}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069   \textcolor{keywordtype}{void} rotate(\textcolor{keywordtype}{float} angleRad, \textcolor{keywordtype}{float} xAxis, \textcolor{keywordtype}{float} yAxis, \textcolor{keywordtype}{float} zAxis) \{}
+\DoxyCodeLine{00070     transform =}
+\DoxyCodeLine{00071         glm::rotate(transform, angleRad, glm::vec3(xAxis, yAxis, zAxis));}
+\DoxyCodeLine{00072   \}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074   \textcolor{keywordtype}{void} rotateZ(\textcolor{keywordtype}{float} angleRad) \{}
+\DoxyCodeLine{00075     transform = glm::rotate(transform, angleRad, glm::vec3(0, 0, 1));}
+\DoxyCodeLine{00076   \}}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078   \textcolor{keyword}{const} glm::mat4\& getTransform()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} transform; \}}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080   \textcolor{keyword}{friend} std::ostream\& operator<<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classTransformation}{Transformation}}\& t) \{}
+\DoxyCodeLine{00081     \textcolor{comment}{// TODO: I suspect we are printing the matrix transposed}}
+\DoxyCodeLine{00082     \textcolor{keyword}{const} \textcolor{keywordtype}{float}* m = \&t.transform[0][0];}
+\DoxyCodeLine{00083     \textcolor{keywordflow}{return} s << m[0] << \textcolor{charliteral}{'\(\backslash\)t'} << m[1] << \textcolor{charliteral}{'\(\backslash\)t'} << m[2] << \textcolor{charliteral}{'\(\backslash\)t'} << m[3] << \textcolor{charliteral}{'\(\backslash\)n'}}
+\DoxyCodeLine{00084              << m[4] << \textcolor{charliteral}{'\(\backslash\)t'} << m[5] << \textcolor{charliteral}{'\(\backslash\)t'} << m[6] << \textcolor{charliteral}{'\(\backslash\)t'} << m[7] << \textcolor{charliteral}{'\(\backslash\)n'}}
+\DoxyCodeLine{00085              << m[8] << \textcolor{charliteral}{'\(\backslash\)t'} << m[9] << \textcolor{charliteral}{'\(\backslash\)t'} << m[10] << \textcolor{charliteral}{'\(\backslash\)t'} << m[11] << \textcolor{charliteral}{'\(\backslash\)n'}}
+\DoxyCodeLine{00086              << m[12] << \textcolor{charliteral}{'\(\backslash\)t'} << m[13] << \textcolor{charliteral}{'\(\backslash\)t'} << m[14] << \textcolor{charliteral}{'\(\backslash\)t'} << m[15]}
+\DoxyCodeLine{00087              << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00088   \}}
+\DoxyCodeLine{00089 \};}
+
+\end{DoxyCode}

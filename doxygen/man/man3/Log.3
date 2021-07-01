@@ -1,0 +1,50 @@
+.TH "Log" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Log
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum class \fBLevel\fP { \fBLOGINFO\fP, \fBLOGDEBUG\fP, \fBLOGWARN\fP, \fBLOGERROR\fP, \fBLOGCRITICAL\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetLogFile\fP (const char filename[])"
+.br
+.ti -1c
+.RI "void \fBsetLevel\fP (Level L)"
+.br
+.ti -1c
+.RI "void \fBlog\fP (Level severity, uint16_t message)"
+.br
+.ti -1c
+.RI "void \fBlog\fP (Level severity, uint16_t message, uint32_t param)"
+.br
+.ti -1c
+.RI "void \fBlog\fP (Level severity, uint16_t message, uint32_t param1, uint32_t param2)"
+.br
+.ti -1c
+.RI "void \fBlog\fP (Level severity, uint16_t message, const std::string &name)"
+.br
+.ti -1c
+.RI "void \fBwarn\fP (Errcode message)"
+.br
+.ti -1c
+.RI "void \fBerror\fP (Errcode message)"
+.br
+.ti -1c
+.RI "void \fBcritical\fP (Errcode message)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

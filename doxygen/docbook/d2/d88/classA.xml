@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classA" xml:lang="en-US">
+<title>A Class Reference</title>
+<indexterm><primary>A</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classA_1a76b76b4078cc187690853106e0b1e504"/>void <emphasis role="strong">doit</emphasis> (const char filename[])</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structset3" xml:lang="en-US">
+<title>set3 Struct Reference</title>
+<indexterm><primary>set3</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structset3_1a977295f58700f9eaec3d4a8592ff592e"/>string <emphasis role="strong">first</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structset3_1a396fa621c4213d2ce795918d251bb2a8"/>string <emphasis role="strong">last</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

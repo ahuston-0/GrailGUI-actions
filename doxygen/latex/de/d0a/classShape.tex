@@ -1,0 +1,56 @@
+\hypertarget{classShape}{}\doxysection{Shape Class Reference}
+\label{classShape}\index{Shape@{Shape}}
+Inheritance diagram for Shape\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{de/d0a/classShape}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classShape_a08b9172b44deb176c779ff63a85a8df9}\label{classShape_a08b9172b44deb176c779ff63a85a8df9}} 
+{\bfseries Shape} (\mbox{\hyperlink{classCanvas}{Canvas}} $\ast$parent)
+\item 
+\mbox{\Hypertarget{classShape_a163146f97271442ef8c17741b8468af3}\label{classShape_a163146f97271442ef8c17741b8468af3}} 
+virtual void {\bfseries init} ()=0
+\item 
+\mbox{\Hypertarget{classShape_acee740bc241bf0d5c6ad6d1e12f92194}\label{classShape_acee740bc241bf0d5c6ad6d1e12f92194}} 
+virtual void {\bfseries process\+\_\+input} (Inputs $\ast$in, float dt)
+\item 
+\mbox{\Hypertarget{classShape_a303c47b13b9339dc021e040bbba72651}\label{classShape_a303c47b13b9339dc021e040bbba72651}} 
+virtual void {\bfseries update} ()=0
+\item 
+\mbox{\Hypertarget{classShape_a58c3f2d920f99ce37ed814099506ba21}\label{classShape_a58c3f2d920f99ce37ed814099506ba21}} 
+virtual void {\bfseries render} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classShape_a49f9dbd865f0522279248da339a7d853}\label{classShape_a49f9dbd865f0522279248da339a7d853}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries gen} (uint32\+\_\+t \&vb, std\+::vector$<$ T $>$ \&list)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classShape_a9c13bbb7ae3b985103cc88c4d4d8de88}\label{classShape_a9c13bbb7ae3b985103cc88c4d4d8de88}} 
+uint32\+\_\+t {\bfseries vao}
+\item 
+\mbox{\Hypertarget{classShape_a4099aa04ca840d4f8c827b353721a2e4}\label{classShape_a4099aa04ca840d4f8c827b353721a2e4}} 
+uint32\+\_\+t {\bfseries vbo}
+\item 
+\mbox{\Hypertarget{classShape_a887841422ed5de0928e8544451cece97}\label{classShape_a887841422ed5de0928e8544451cece97}} 
+uint32\+\_\+t {\bfseries sbo}
+\item 
+\mbox{\Hypertarget{classShape_abb1522b4e1ed1c8a4f4006d538b3a113}\label{classShape_abb1522b4e1ed1c8a4f4006d538b3a113}} 
+uint32\+\_\+t {\bfseries lbo}
+\item 
+\mbox{\Hypertarget{classShape_a31d228c8699230b0f736f2cd3178847e}\label{classShape_a31d228c8699230b0f736f2cd3178847e}} 
+uint32\+\_\+t {\bfseries pbo}
+\item 
+\mbox{\Hypertarget{classShape_a26ca2cc41740f48db35aab26b92ad35e}\label{classShape_a26ca2cc41740f48db35aab26b92ad35e}} 
+uint32\+\_\+t {\bfseries cbo}
+\item 
+\mbox{\Hypertarget{classShape_a8ff0baf06929492d5ca01658986540ae}\label{classShape_a8ff0baf06929492d5ca01658986540ae}} 
+\mbox{\hyperlink{classCanvas}{Canvas}} $\ast$ {\bfseries parent\+Canvas}
+\end{DoxyCompactItemize}

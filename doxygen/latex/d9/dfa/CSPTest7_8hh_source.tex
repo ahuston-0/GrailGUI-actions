@@ -1,0 +1,59 @@
+\hypertarget{CSPTest7_8hh_source}{}\doxysection{CSPTest7.\+hh}
+\label{CSPTest7_8hh_source}\index{src/csp/cspservlet/CSPTest7.hh@{src/csp/cspservlet/CSPTest7.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{//}}
+\DoxyCodeLine{00002 \textcolor{comment}{// Created by dkruger on 11/01/17.}}
+\DoxyCodeLine{00003 \textcolor{comment}{//}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <csp/CSPServlet.hh>}}
+\DoxyCodeLine{00007 \textcolor{comment}{//\#include "{}csp/HttpServlet.hh"{}}}
+\DoxyCodeLine{00008 \textcolor{comment}{//\#include "{}csp/HTTPRequest.hh"{}}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include "{}util/List1.hh"{}}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "{}csp/cspservlet/Student.hh"{}}}
+\DoxyCodeLine{\Hypertarget{CSPTest7_8hh_source_l00011}\mbox{\hyperlink{classCSPTest7}{00011}} \textcolor{keyword}{class }\mbox{\hyperlink{classCSPTest7}{CSPTest7}} : \textcolor{keyword}{public} \mbox{\hyperlink{classCSPServlet}{CSPServlet}} \{}
+\DoxyCodeLine{00012 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013     \mbox{\hyperlink{classCSPTest7}{CSPTest7}}() \{\}}
+\DoxyCodeLine{00014     \string~\mbox{\hyperlink{classCSPTest7}{CSPTest7}}() \{\}}
+\DoxyCodeLine{00015     \textcolor{keywordtype}{void} request(\mbox{\hyperlink{classCSPRequest}{CSPRequest}}\& r) \{}
+\DoxyCodeLine{00016         \textcolor{comment}{/*}}
+\DoxyCodeLine{00017 \textcolor{comment}{         Buffer\& out = r.getOut();}}
+\DoxyCodeLine{00018 \textcolor{comment}{        List1<uint32\_t> mylist;}}
+\DoxyCodeLine{00019 \textcolor{comment}{        for (int i = 0; i < 15; i++)\{}}
+\DoxyCodeLine{00020 \textcolor{comment}{            mylist.add(i);}}
+\DoxyCodeLine{00021 \textcolor{comment}{        \}}}
+\DoxyCodeLine{00022 \textcolor{comment}{        //out << mylist;}}
+\DoxyCodeLine{00023 \textcolor{comment}{        out.writeList(mylist);}}
+\DoxyCodeLine{00024 \textcolor{comment}{         */}}
+\DoxyCodeLine{00025         \textcolor{comment}{/*}}
+\DoxyCodeLine{00026 \textcolor{comment}{        Buffer\& out = r.getOut();}}
+\DoxyCodeLine{00027 \textcolor{comment}{        List1<Student> mylist;}}
+\DoxyCodeLine{00028 \textcolor{comment}{        mylist.add(Student("{}Ivan"{}, "{}Valiaev"{}, 12345))}}
+\DoxyCodeLine{00029 \textcolor{comment}{        out << mylist;}}
+\DoxyCodeLine{00030 \textcolor{comment}{         */}}
+\DoxyCodeLine{00031         cout<<\textcolor{stringliteral}{"{}Test7 is loaded\(\backslash\)n"{}};}
+\DoxyCodeLine{00032         \textcolor{comment}{//Buffer\& out = r.getOut();}}
+\DoxyCodeLine{00033         \mbox{\hyperlink{classStudent}{Student}} test1 = \mbox{\hyperlink{classStudent}{Student}}(\textcolor{stringliteral}{"{}John"{}}, \textcolor{stringliteral}{"{}Smith"{}},12345);}
+\DoxyCodeLine{00034         \mbox{\hyperlink{classStudent}{Student}} test2 = \mbox{\hyperlink{classStudent}{Student}}(\textcolor{stringliteral}{"{}Bobby"{}}, \textcolor{stringliteral}{"{}Tables"{}},54321);}
+\DoxyCodeLine{00035         cout<<\textcolor{stringliteral}{"{}test1: "{}}<<test1.getFirst()<<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00036         cout<<\textcolor{stringliteral}{"{}test2: "{}}<<test2.getFirst()<<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00037         cout<<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00038         \mbox{\hyperlink{classList1}{List1<Student>}} mylist;}
+\DoxyCodeLine{00039         mylist.add(test1);}
+\DoxyCodeLine{00040         \textcolor{comment}{//cout<<"{}item1: "{}<<mylist.getData(0).getFirst()<<"{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00041         mylist.add(test2);}
+\DoxyCodeLine{00042         cout<<\textcolor{stringliteral}{"{}item1: "{}}<<mylist.getData(0).getFirst()<<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00043         cout<<\textcolor{stringliteral}{"{}item1: "{}}<<mylist.getData(0).getLast()<<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00044         cout<<\textcolor{stringliteral}{"{}item1: "{}}<<(int)mylist.getData(0).getID()<<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00045         cout<<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00046         cout<<\textcolor{stringliteral}{"{}item2: "{}}<<mylist.getData(1).getFirst()<<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00047         cout<<\textcolor{stringliteral}{"{}item2: "{}}<<mylist.getData(1).getLast()<<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00048         cout<<\textcolor{stringliteral}{"{}item2: "{}}<<(int)mylist.getData(1).getID()<<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050         \mbox{\hyperlink{classBuffer}{Buffer}}\& out = r.getOut();}
+\DoxyCodeLine{00051         out.writeList(mylist);}
+\DoxyCodeLine{00052     \}}
+\DoxyCodeLine{00053 \};}
+
+\end{DoxyCode}

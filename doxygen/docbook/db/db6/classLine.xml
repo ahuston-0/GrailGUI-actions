@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classLine" xml:lang="en-US">
+<title>Line Class Reference</title>
+<indexterm><primary>Line</primary></indexterm>
+<para>Inheritance diagram for Line:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../db/db6/classLine.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classLine_1ae976492ddca0c34d7d11ec856f3b9b20"/><emphasis role="strong">Line</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, float x1, float y1, float x2, float y2, <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classLine_1a0bc35fe5d4564bb08085b8d547e75569"/>void <emphasis role="strong">initIndices</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classLine_1a96abaed66c444d9b6a4b656d0af2fcc1"/>void <emphasis role="strong">render</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

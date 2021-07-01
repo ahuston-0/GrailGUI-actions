@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classSphere" xml:lang="en-US">
+<title>Sphere Class Reference</title>
+<indexterm><primary>Sphere</primary></indexterm>
+<para>Inheritance diagram for Sphere:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../de/d9d/classSphere.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classSphere_1aa135c8fc056519012d63e86490733628"/><emphasis role="strong">Sphere</emphasis> (uint32_t latRes, uint32_t lonRes)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSphere_1a7d1c7f61e686a1796ddb2960042ecc05"/>void <emphasis role="strong">init</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSphere_1a7bfddefb8f1e3579ab7218e13bb0cd98"/>void <emphasis role="strong">render</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSphere_1a08a9f37312cdc248442a34c93f0db197"/>void <emphasis role="strong">cleanup</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

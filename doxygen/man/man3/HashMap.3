@@ -1,0 +1,80 @@
+.TH "HashMap< Val >" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HashMap< Val >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBHashMapBase\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBConstIterator\fP"
+.br
+.ti -1c
+.RI "class \fBIterator\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHashMap\fP (uint32_t sz, uint32_t symbolSize=1024 *1024)"
+.br
+.ti -1c
+.RI "\fBHashMap\fP (const \fBHashMap\fP &orig)=delete"
+.br
+.ti -1c
+.RI "\fBHashMap\fP & \fBoperator=\fP (const \fBHashMap\fP &orig)=delete"
+.br
+.ti -1c
+.RI "void \fBcheckGrow\fP ()"
+.br
+.ti -1c
+.RI "void \fBadd\fP (const char s[], const Val &v)"
+.br
+.ti -1c
+.RI "Val \fBadd\fP (const char s[], uint32_t len, const Val &v)"
+.br
+.ti -1c
+.RI "bool \fBget\fP (const char s[], Val *v) const"
+.br
+.ti -1c
+.RI "Val * \fBget\fP (const char s[])"
+.br
+.ti -1c
+.RI "const Val * \fBget\fP (const char s[]) const"
+.br
+.ti -1c
+.RI "Val * \fBget\fP (const char *s, uint32_t len)"
+.br
+.ti -1c
+.RI "uint64_t \fBhist\fP () const"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "friend \fBIterator\fP"
+.br
+.ti -1c
+.RI "friend \fBConstIterator\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &s, const \fBHashMap\fP &h)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

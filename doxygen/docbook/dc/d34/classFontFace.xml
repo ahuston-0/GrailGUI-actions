@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classFontFace" xml:lang="en-US">
+<title>FontFace Class Reference</title>
+<indexterm><primary>FontFace</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classFontFace_1a315a309f78830887b0b2483733fd950f"/>uint32_t <emphasis role="strong">getTexture</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFontFace_1a8c83df5c742cbb262fc0faabf798e789"/><emphasis role="strong">FontFace</emphasis> (FT_Library ft, const std::string &amp;faceName, const std::string &amp;facePath, uint32_t minFontSize, uint32_t inc, uint32_t maxFontSize, uint8_t bitmap[], uint32_t &amp;sizeX, uint32_t &amp;sizeY, uint32_t &amp;currX, uint32_t &amp;currY, uint32_t &amp;rowSize)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFontFace_1a51041278630b22d1ee510388a53ff9e9"/>const <link linkend="_classFont">Font</link> * <emphasis role="strong">getFont</emphasis> (uint32_t size, int weight) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classFontFace_1a2fd915af8d4ea9f8538b6dc6526bb69e"/>static void <emphasis role="strong">initAll</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFontFace_1a72252b56a86a7f9ef512bf836f1ded95"/>static void <emphasis role="strong">addFontName</emphasis> (std::string name, const std::string &amp;path)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFontFace_1ac7fff14e46d58393810bafa4122301f5"/>static void <emphasis role="strong">emptyFaces</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFontFace_1ac06bfcf1abef31b14b3b3732c68d07eb"/>static const <link linkend="_classFontFace">FontFace</link> * <emphasis role="strong">getFace</emphasis> (int i)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFontFace_1ad93464d34e6b32f94af22bbd9ebb7acb"/>static const <link linkend="_classFont">Font</link> * <emphasis role="strong">get</emphasis> (const char faceName[], uint32_t size, uint32_t boldness)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classFontFace_1a06e79369640e81809c21f46718a2cb7d"/>uint32_t <emphasis role="strong">maxWidthIndex</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classFontFace_1ac990696c3eb67cb334ed9a57f9688c46"/>static FT_Library <emphasis role="strong">ftLib</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFontFace_1ad4d5df22df4b63aedb5fec70d7379623"/>static constexpr char <emphasis role="strong">TIMES</emphasis> [] = &quot;Times&quot;</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFontFace_1ab5b78940b93f2076fc0ec892a13c08aa"/>static constexpr char <emphasis role="strong">HELVETICA</emphasis> [] = &quot;Helvetica&quot;</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFontFace_1a44ae201f128170a6b86d0f233aa3c695"/>static constexpr char <emphasis role="strong">COURIER</emphasis> [] = &quot;Courier&quot;</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFontFace_1af300480e1480ee56b0c582766bd5d775"/>static constexpr uint32_t <emphasis role="strong">NORMAL</emphasis> = 1</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFontFace_1a2e73a10af27e132cf42c9795fb6b93c4"/>static constexpr uint32_t <emphasis role="strong">BOLD</emphasis> = 9</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classFontFace_1ad564b94b59dc295de3dfc4415d95cca8"/>class <emphasis role="strong">Font</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

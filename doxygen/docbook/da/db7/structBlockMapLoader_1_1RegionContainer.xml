@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structBlockMapLoader_1_1RegionContainer" xml:lang="en-US">
+<title>BlockMapLoader::RegionContainer Struct Reference</title>
+<indexterm><primary>BlockMapLoader::RegionContainer</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structBlockMapLoader_1_1RegionContainer_1abffbc5ff5113241519a0f253a5336d25"/>uint32_t <emphasis role="strong">startRegion</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockMapLoader_1_1RegionContainer_1ad84067d73ba82896fcc64c5b7c980128"/>uint32_t <emphasis role="strong">endRegion</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockMapLoader_1_1RegionContainer_1ad6404105dbebb563c0fad875bbac84e0"/><link linkend="_structBlockMapLoader_1_1BoundRect">BoundRect</link> <emphasis role="strong">bounds</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

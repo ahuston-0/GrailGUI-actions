@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classCSPServlet" xml:lang="en-US">
+<title>CSPServlet Class Reference</title>
+<indexterm><primary>CSPServlet</primary></indexterm>
+<para>Inheritance diagram for CSPServlet:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d8/dbc/classCSPServlet.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCSPServlet_1a90fe0cd43fc04465271e97b1a9cc2e65"/>void <emphasis role="strong">request</emphasis> (<link linkend="_classRequest">Request</link> &amp;r)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSPServlet_1ac9f376a303a77d46adb94833aa66586f"/>virtual void <emphasis role="strong">request</emphasis> (<link linkend="_classCSPRequest">CSPRequest</link> &amp;r)=0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCSPServlet_1a4c46e2f1443b75efe86acb18eeb811e1"/>static int <emphasis role="strong">add</emphasis> (<link linkend="_classCSPServlet">CSPServlet</link> *s)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCSPServlet_1a573f1bc02c72e6da982b532db649dad6"/>class <emphasis role="strong">CSPRequest</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

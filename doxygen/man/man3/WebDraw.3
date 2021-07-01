@@ -1,0 +1,140 @@
+.TH "WebDraw" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WebDraw
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMultiShape2D\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWebDraw\fP (uint32_t vertCount=1024, uint32_t solidIndCount=1024, uint32_t lineIndCount=1024, uint32_t pointIndCount=1024)"
+.br
+.ti -1c
+.RI "uint32_t \fBaddSector\fP (float x, float y, float xRad, float yRad, float fromAngle, float toAngle, float angleInc, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBaddColor\fP (const glm::vec4 &rgb)"
+.br
+.ti -1c
+.RI "void \fBaddColor\fP (float r, float g, float b)"
+.br
+.ti -1c
+.RI "void \fBsetColors\fP (float cols[], uint32_t size)"
+.br
+.ti -1c
+.RI "void \fBsetColors\fP (std::vector< float > &cols)"
+.br
+.ti -1c
+.RI "void \fBaddStyledPoint\fP (float x, float y, const glm::vec4 &rgb)"
+.br
+.ti -1c
+.RI "void \fBinit\fP () override"
+.br
+.ti -1c
+.RI "void \fBrender\fP () override"
+.br
+.ti -1c
+.RI "void \fBupdateColors\fP (const uint64_t pos, const float r, const float g, const float b)"
+.br
+.ti -1c
+.RI "void \fBfillRectangle\fP (float x, float y, float w, float h, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBfillRoundRect\fP (float x, float y, float w, float h, float rx, float ry, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBfillTriangle\fP (float x1, float y1, float x2, float y2, float x3, float y3, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBfillPolygon\fP (float x, float y, float xRad, float yRad, float n, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBfillCircle\fP (float x, float y, float rad, float angleInc, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBfillEllipse\fP (float x, float y, float xRad, float yRad, float angleInc, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBdrawRectangle\fP (float x, float y, float w, float h, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBdrawRoundRect\fP (float x, float y, float w, float h, float rx, float ry, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBdrawTriangle\fP (float x1, float y1, float x2, float y2, float x3, float y3, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBdrawPolygon\fP (float x, float y, float xRad, float yRad, float n, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBdrawCompletePolygon\fP (float x, float y, float xRad, float yRad, float n, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBdrawCircle\fP (float x, float y, float rad, float angleInc, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBdrawEllipse\fP (float x, float y, float xRad, float yRad, float angleInc, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBdrawLine\fP (float x1, float y1, float x2, float y2, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBdrawArc\fP (float x, float y, float r, float ang1, float ang2)"
+.br
+.ti -1c
+.RI "void \fBdrawCubic\fP (float xy[], uint32_t length, uint32_t numSegments)"
+.br
+.ti -1c
+.RI "void \fBrectanglePoints\fP (float x, float y, float w, float h, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBroundRectPoints\fP (float x, float y, float w, float h, float rx, float ry, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBtrianglePoints\fP (float x1, float y1, float x2, float y2, float x3, float y3, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBpolygonPoints\fP (float x, float y, float xRad, float yRad, float n, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBcirclePoints\fP (float x, float y, float rad, float angleInc, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBellipsePoints\fP (float x, float y, float xRad, float yRad, float angleInc, const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBdrawImage\fP (float x, float y, float w, float h, uint32_t textureId, float u1, float v1, float u2, float v2)"
+.br
+.ti -1c
+.RI "void \fBdrawImage\fP (float x, float y, float w, float h, uint32_t textureId)"
+.br
+.ti -1c
+.RI "void \fBdrawText\fP (float x, float y, \fBStyle\fP *s, const char text[], uint32_t len)"
+.br
+.ti -1c
+.RI "void \fBdrawText\fP (float x, float y, \fBStyle\fP *s, uint32_t baseChar, const char text[], uint32_t len)"
+.br
+.ti -1c
+.RI "void \fBdrawText\fP (float x, float y, \fBStyle\fP *s, const uint16_t text[], uint32_t len)"
+.br
+.ti -1c
+.RI "float \fBgetTextWidth\fP (\fBStyle\fP *s, const char text[], uint32_t len) const"
+.br
+.ti -1c
+.RI "float \fBgetTextHeight\fP (\fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBaddText\fP (\fBWebCursor\fP *cursor, \fBStyle\fP *s, const char text[], uint32_t len)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

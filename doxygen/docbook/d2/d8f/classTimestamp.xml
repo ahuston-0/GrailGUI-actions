@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classTimestamp" xml:lang="en-US">
+<title>Timestamp Class Reference</title>
+<indexterm><primary>Timestamp</primary></indexterm>
+<para>Inheritance diagram for Timestamp:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d2/d8f/classTimestamp.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classTimestamp_1a2e4c110f2fdb22fa73eb323b0272973f"/><emphasis role="strong">Timestamp</emphasis> (uint64_t v=0)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTimestamp_1a93dd06e2604b33adf4a0efecceb1ee8c"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;b) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTimestamp_1acc1ad8cc36ff1e1fb6dd9f44bcc2332a"/>void <emphasis role="strong">writeMeta</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTimestamp_1a042058667861080f549c1a4038196a39"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTimestamp_1a801edd87e1e3b66f3a9c2c4e790081cd"/>DataType <emphasis role="strong">getDataType</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTimestamp_1aeb4cd06a002c786a0e094de31919449d"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTimestamp_1ab7213fb4ab3da7d7d39ccfd1e98c50b0"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

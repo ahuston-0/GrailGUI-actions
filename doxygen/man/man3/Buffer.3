@@ -1,0 +1,269 @@
+.TH "Buffer" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Buffer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BinBuffer\&.hh>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBuffer\fP (int initialSize)"
+.br
+.ti -1c
+.RI "\fBBuffer\fP (size_t initialSize, bool writing)"
+.br
+.ti -1c
+.RI "\fBBuffer\fP (const char filename[], size_t initialSize)"
+.br
+.ti -1c
+.RI "\fBBuffer\fP (const char filename[], size_t initialSize, const char *)"
+.br
+.ti -1c
+.RI "\fBBuffer\fP (const \fBBuffer\fP &c)=delete"
+.br
+.ti -1c
+.RI "void \fBoperator=\fP (const \fBBuffer\fP &orig)=delete"
+.br
+.ti -1c
+.RI "void \fBattachWrite\fP (int sockfd)"
+.br
+.ti -1c
+.RI "void \fBattachRead\fP (int sockfd)"
+.br
+.ti -1c
+.RI "void \fBdisplayText\fP (ostream &s) const"
+.br
+.ti -1c
+.RI "void \fBdisplayRawRead\fP () const"
+.br
+.ti -1c
+.RI "void \fBdisplayRaw\fP () const"
+.br
+.ti -1c
+.RI "void \fBdisplayHTTPRaw\fP ()"
+.br
+.ti -1c
+.RI "void \fBflush\fP ()"
+.br
+.ti -1c
+.RI "void \fBreadNext\fP ()"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (const string &s)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (const char *s, uint32_t len)"
+.br
+.ti -1c
+.RI "void \fBappendU8\fP (uint8_t)"
+.br
+.ti -1c
+.RI "void \fBappendU16\fP (uint16_t)"
+.br
+.ti -1c
+.RI "void \fBappendU32\fP (uint32_t)"
+.br
+.ti -1c
+.RI "void \fBappendU64\fP (uint64_t)"
+.br
+.ti -1c
+.RI "void \fBappendI8\fP (int8_t)"
+.br
+.ti -1c
+.RI "void \fBappendI16\fP (int16_t)"
+.br
+.ti -1c
+.RI "void \fBappendI32\fP (int32_t)"
+.br
+.ti -1c
+.RI "void \fBappendI64\fP (int64_t)"
+.br
+.ti -1c
+.RI "void \fBappendF32\fP (float)"
+.br
+.ti -1c
+.RI "void \fBappendF64\fP (double)"
+.br
+.ti -1c
+.RI "void \fBappend\fP (const char *v)"
+.br
+.ti -1c
+.RI "void \fBappend\fP (const char *v, uint32_t len)"
+.br
+.ti -1c
+.RI "uint32_t \fBparseU32\fP ()"
+.br
+.ti -1c
+.RI "double \fBparseF64\fP ()"
+.br
+.ti -1c
+.RI "float \fBparseF32\fP ()"
+.br
+.ti -1c
+.RI "bool \fBparseRegex\fP (const regex &r, const char *&start, int &len)"
+.br
+.ti -1c
+.RI "bool \fBparseToken\fP (const string &match)"
+.br
+.ti -1c
+.RI "bool \fBgetUrl\fP (const char *&ptr, uint32_t &len)"
+.br
+.ti -1c
+.RI "bool \fBgetHTTPVersion\fP (const char *&ptr, uint32_t &len)"
+.br
+.ti -1c
+.RI "bool \fBgetHost\fP (const char *&ptr, uint32_t &len)"
+.br
+.ti -1c
+.RI "void \fBpointToStart\fP ()"
+.br
+.ti -1c
+.RI "bool \fBgetNextTokenWithSpace\fP (const char *&ptr, const uint32_t &len)"
+.br
+.ti -1c
+.RI "string \fBreadString8\fP ()"
+.br
+.ti -1c
+.RI "string \fBreadString16\fP ()"
+.br
+.ti -1c
+.RI "string \fBreadString32\fP ()"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (DataType t)"
+.br
+.ti -1c
+.RI "DataType \fBreadType\fP ()"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (DataType t, const char *name)"
+.br
+.ti -1c
+.RI "template<typename T > void \fBwrite\fP (T v)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBXDLRaw\fP &v)"
+.br
+.ti -1c
+.RI "void \fBspecialWrite\fP (const char *buf, const uint32_t len)"
+.br
+.ti -1c
+.RI "template<typename T > void \fBwriteList\fP (\fBList1\fP< T > &list)"
+.br
+.ti -1c
+.RI "void \fBwriteStudent\fP (\fBStudent\fP v)"
+.br
+.ti -1c
+.RI "void \fBwriteList\fP (\fBList1\fP< \fBStudent\fP > &list)"
+.br
+.ti -1c
+.RI "void \fBcheckSpace\fP (size_t sz)"
+.br
+.ti -1c
+.RI "void \fBfastCheckSpace\fP (size_t sz)"
+.br
+.ti -1c
+.RI "template<typename T > void \fBcheckArraySpace\fP (T v[], size_t n)"
+.br
+.ti -1c
+.RI "template<typename T > void \fBcheckVectorSpace\fP (const vector< T > &v)"
+.br
+.ti -1c
+.RI "template<typename T > \fBBuffer\fP & \fBoperator<<\fP (T v)"
+.br
+.ti -1c
+.RI "int8_t \fB_readI8\fP ()"
+.br
+.ti -1c
+.RI "int16_t \fB_readI16\fP ()"
+.br
+.ti -1c
+.RI "int32_t \fB_readI32\fP ()"
+.br
+.ti -1c
+.RI "int64_t \fB_readI64\fP ()"
+.br
+.ti -1c
+.RI "int8_t \fBreadI8\fP ()"
+.br
+.ti -1c
+.RI "int16_t \fBreadI16\fP ()"
+.br
+.ti -1c
+.RI "int32_t \fBreadI32\fP ()"
+.br
+.ti -1c
+.RI "int64_t \fBreadI64\fP ()"
+.br
+.ti -1c
+.RI "uint8_t \fB_readU8\fP ()"
+.br
+.ti -1c
+.RI "uint16_t \fB_readU16\fP ()"
+.br
+.ti -1c
+.RI "uint32_t \fB_readU32\fP ()"
+.br
+.ti -1c
+.RI "uint64_t \fB_readU64\fP ()"
+.br
+.ti -1c
+.RI "float \fB_readF32\fP ()"
+.br
+.ti -1c
+.RI "double \fB_readF64\fP ()"
+.br
+.ti -1c
+.RI "uint8_t \fBreadU8\fP ()"
+.br
+.ti -1c
+.RI "uint16_t \fBreadU16\fP ()"
+.br
+.ti -1c
+.RI "uint32_t \fBreadU32\fP ()"
+.br
+.ti -1c
+.RI "uint64_t \fBreadU64\fP ()"
+.br
+.ti -1c
+.RI "float \fBreadF32\fP ()"
+.br
+.ti -1c
+.RI "double \fBreadF64\fP ()"
+.br
+.ti -1c
+.RI "template<typename T > T \fB_read\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBA\fP binary high-speed buffer to support writing objects portably to a binary stream so it can be read back in (persistence) 
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Buffer::getNextTokenWithSpace (const char *& ptr, const uint32_t & len)"
+extract the next space-delimited value from the buffer if return true, this means ptr is pointing to the text, len = the length of the token (until the next space) and the current pointer advances past the token 
+.SS "template<typename T > void Buffer::write (T v)\fC [inline]\fP"
+write is the fast write that does not check for buffer overrun\&. Use only when checking size of a large block
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP the tpe of the integer to write 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIv\fP the value 
+.RE
+.PP
+
+.SS "void Buffer::write (\fBXDLRaw\fP & v)"
+Special case for \fBXDLRaw\fP which will write out a complete block of bytes directly without copying 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

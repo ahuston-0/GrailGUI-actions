@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classInputEvent" xml:lang="en-US">
+<title>InputEvent Class Reference</title>
+<indexterm><primary>InputEvent</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classInputEvent_1ab92318088bad0727b25dce4c2675a3e9"/><emphasis role="strong">InputEvent</emphasis> (uint16_t userid, uint16_t input, uint16_t mods, uint16_t x, uint16_t y)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classInputEvent_1a8c539d0b013c46b5d8ecb44e7a69753f"/>const uint16_t <emphasis role="strong">userid</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classInputEvent_1a4f2632c4cd790d858b2bc3401718212c"/>const uint16_t <emphasis role="strong">input</emphasis>: 12</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classInputEvent_1af79f3527476b7d140b9a80089f929604"/>const uint16_t <emphasis role="strong">mods</emphasis>: 4</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classInputEvent_1a0d0d789fb03014a5053a0bfe68e3cf62"/>const uint16_t <emphasis role="strong">x</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classInputEvent_1a632a0a612d0f07d11f6f6857e306c109"/>const uint16_t <emphasis role="strong">y</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

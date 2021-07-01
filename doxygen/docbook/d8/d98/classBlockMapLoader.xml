@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classBlockMapLoader" xml:lang="en-US">
+<title>BlockMapLoader Class Reference</title>
+<indexterm><primary>BlockMapLoader</primary></indexterm>
+<para>Inheritance diagram for BlockMapLoader:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d8/d98/classBlockMapLoader.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structBlockMapLoader_1_1BlockMapHeader">BlockMapHeader</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structBlockMapLoader_1_1BoundRect">BoundRect</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structBlockMapLoader_1_1NamedEntities">NamedEntities</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structBlockMapLoader_1_1NamedEntry">NamedEntry</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structBlockMapLoader_1_1Region">Region</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structBlockMapLoader_1_1RegionContainer">RegionContainer</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structBlockMapLoader_1_1Segment">Segment</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a5da771a4442727c8faf71b0973079cf9"/>enum class <emphasis role="strong">EntityType</emphasis> { <emphasis role="strong">REGION_CONTAINER</emphasis>
+, <emphasis role="strong">REGION</emphasis>
+, <emphasis role="strong">SEGMENT</emphasis>
+, <emphasis role="strong">POINT</emphasis>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a8a54fdf0c262f8ecf138ea9145421ca6"/>void <emphasis role="strong">init</emphasis> (const uint64_t *mem, uint64_t size)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a805f90d90c3ce2929ab09815c2dd1660"/>void <emphasis role="strong">init</emphasis> (uint32_t numLists, uint32_t numPoints)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a34582ec978adadcec0b3389827908d76"/><emphasis role="strong">BlockMapLoader</emphasis> (const char filename[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a848245f51456ff13b2156f7217d72ecc"/><emphasis role="strong">BlockMapLoader</emphasis> (const char filename[], const char[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a54a5e579fd1632075ef72b796bf353ca"/>const <link linkend="_structBlockMapLoader_1_1Region">Region</link> * <emphasis role="strong">getRegions</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a72dd016bdc29de402fe0d6600620f332"/>const <link linkend="_structBlockMapLoader_1_1Segment">Segment</link> * <emphasis role="strong">getSegments</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a33f7fc3eb9810c0e0ecd1490b301561e"/>void <emphasis role="strong">save</emphasis> (const char filename[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a0ebd9fc6a06d5b59562cc74a83cc67fa"/>void <emphasis role="strong">filterX</emphasis> (double xMin, double xMax)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a685a8724fdb5a2f210528c7939c8f6fe"/>void <emphasis role="strong">filterY</emphasis> (double yMin, double yMax)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a3d33c2b5cef37652877c914945cb011b"/>void <emphasis role="strong">filter</emphasis> (double xMin, double xMax, double yMin, double yMax)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a0430c8c209d8550edf0dd771e99a79e7"/>void <emphasis role="strong">methodPolygon</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a1f83a731fed78bd8a6487cdc7a76bf0f"/>void <emphasis role="strong">methodPolyline</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1ad36ab7b0bf16cf327d583cc2614e6c3f"/>uint64_t <emphasis role="strong">sum</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a82b679b3dc9aee32f165caf00c968636"/>void <emphasis role="strong">deltaEncode</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a24ebeab7a9621fcdd5b1c64b0b0e9b10"/>void <emphasis role="strong">deltaUnEncode</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1aafd3e30160473fbca18f709541d1c433"/>void <emphasis role="strong">dumpSegment</emphasis> (uint32_t seg)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a160439778b7685518498a326dd74ce39"/>uint32_t <emphasis role="strong">getNumRegionContainers</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a160e132a50ef8efdb066921ecb0c9f2e"/>const <link linkend="_structBlockMapLoader_1_1BlockMapHeader">BlockMapHeader</link> * <emphasis role="strong">getBlockMapHeader</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a681e9a6cb2c9681997652a2af1b2329f"/>uint32_t <emphasis role="strong">getNumRegions</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a145cd1b340770658f65793cf87fc124c"/>uint32_t <emphasis role="strong">getNumSegments</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1acb575b1867dfd873496df71af19f6349"/>uint32_t <emphasis role="strong">getNumPoints</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a1023522cd602886d038c635016b2fa30"/>const float * <emphasis role="strong">getXPoints</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a019bf827cb615c85fcb25002048652ab"/>const float * <emphasis role="strong">getYPoints</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1aa9b2b8d375be28a93aab082a42b752c1"/>const <link linkend="_structBlockMapLoader_1_1Segment">Segment</link> &amp; <emphasis role="strong">getSegment</emphasis> (uint32_t i)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a2ae3a999127271fde26fe3ca655ce356"/>static <link linkend="_classBlockMapLoader">BlockMapLoader</link> <emphasis role="strong">loadCompressed</emphasis> (const char filename[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockMapLoader_1a8debe5ad89c7a5ced6c1179d58a6caf7"/>static void <emphasis role="strong">diff</emphasis> (const <link linkend="_classBlockMapLoader">BlockMapLoader</link> &amp;a, const <link linkend="_classBlockMapLoader">BlockMapLoader</link> &amp;b)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

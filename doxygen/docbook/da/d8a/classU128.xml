@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classU128" xml:lang="en-US">
+<title>U128 Class Reference</title>
+<indexterm><primary>U128</primary></indexterm>
+<para>Inheritance diagram for U128:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../da/d8a/classU128.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classU128_1a355613b036770c4efb374d66f922cdf0"/><emphasis role="strong">U128</emphasis> (uint64_t a=0, uint64_t b=0)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU128_1a04d1b3dbb699d6ea1bdb39331d248c14"/>DataType <emphasis role="strong">getDataType</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU128_1ab43da42a94ea8bde549e8df72fb3a6bc"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU128_1ace58c119305ed2ec651a5f155a9851f0"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU128_1af759a1dc0c55aa2dd4834e2e92eeafdd"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU128_1ae1b01a6267b51b8f82e28de58b58c210"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classU128_1a594c5aca14bb05aac076344fd62d2b3c"/>bool <emphasis role="strong">operator==</emphasis> (const <link linkend="_classU128">U128</link> &amp;a, const <link linkend="_classU128">U128</link> &amp;b)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

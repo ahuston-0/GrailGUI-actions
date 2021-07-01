@@ -1,0 +1,272 @@
+\hypertarget{classBuffer}{}\doxysection{Buffer Class Reference}
+\label{classBuffer}\index{Buffer@{Buffer}}
+
+
+{\ttfamily \#include $<$Bin\+Buffer.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBuffer_a6bdd21a4e63d8bd1a05051e46fa72ec4}\label{classBuffer_a6bdd21a4e63d8bd1a05051e46fa72ec4}} 
+{\bfseries Buffer} (int initial\+Size)
+\item 
+\mbox{\Hypertarget{classBuffer_a13510d7f0aea6988cd87292ff0c49458}\label{classBuffer_a13510d7f0aea6988cd87292ff0c49458}} 
+{\bfseries Buffer} (size\+\_\+t initial\+Size, bool writing)
+\item 
+\mbox{\Hypertarget{classBuffer_ac965c5c3be682362a0761be687c56745}\label{classBuffer_ac965c5c3be682362a0761be687c56745}} 
+{\bfseries Buffer} (const char filename\mbox{[}$\,$\mbox{]}, size\+\_\+t initial\+Size)
+\item 
+\mbox{\Hypertarget{classBuffer_abe918d73641f3529541a7e87f0eaa95b}\label{classBuffer_abe918d73641f3529541a7e87f0eaa95b}} 
+{\bfseries Buffer} (const char filename\mbox{[}$\,$\mbox{]}, size\+\_\+t initial\+Size, const char $\ast$)
+\item 
+\mbox{\Hypertarget{classBuffer_a8833c8868db70abca8d0a0d1436474cc}\label{classBuffer_a8833c8868db70abca8d0a0d1436474cc}} 
+{\bfseries Buffer} (const \mbox{\hyperlink{classBuffer}{Buffer}} \&c)=delete
+\item 
+\mbox{\Hypertarget{classBuffer_a4b62d57a3ba10a8e0d25143a309b19b0}\label{classBuffer_a4b62d57a3ba10a8e0d25143a309b19b0}} 
+void {\bfseries operator=} (const \mbox{\hyperlink{classBuffer}{Buffer}} \&orig)=delete
+\item 
+\mbox{\Hypertarget{classBuffer_afc9c90bd7cb565da1069e79812d6b58f}\label{classBuffer_afc9c90bd7cb565da1069e79812d6b58f}} 
+void {\bfseries attach\+Write} (int sockfd)
+\item 
+\mbox{\Hypertarget{classBuffer_a4ddffb4ccb9823f02510c95d2a0c7392}\label{classBuffer_a4ddffb4ccb9823f02510c95d2a0c7392}} 
+void {\bfseries attach\+Read} (int sockfd)
+\item 
+\mbox{\Hypertarget{classBuffer_a2876b00a134989698e976f3c8caba204}\label{classBuffer_a2876b00a134989698e976f3c8caba204}} 
+void {\bfseries display\+Text} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classBuffer_a542cd907823ea88951104b055e582b3f}\label{classBuffer_a542cd907823ea88951104b055e582b3f}} 
+void {\bfseries display\+Raw\+Read} () const
+\item 
+\mbox{\Hypertarget{classBuffer_a21498286a99a5f5cea8905ef50a59af2}\label{classBuffer_a21498286a99a5f5cea8905ef50a59af2}} 
+void {\bfseries display\+Raw} () const
+\item 
+\mbox{\Hypertarget{classBuffer_a92a4ead977e8ba4d82c654741fad930b}\label{classBuffer_a92a4ead977e8ba4d82c654741fad930b}} 
+void {\bfseries display\+HTTPRaw} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a2ecff57de43b2b57b10686a436225a8f}\label{classBuffer_a2ecff57de43b2b57b10686a436225a8f}} 
+void {\bfseries flush} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a930c6b291b31c2809d41cf60a47a6189}\label{classBuffer_a930c6b291b31c2809d41cf60a47a6189}} 
+void {\bfseries read\+Next} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a0836d074f4fffa4d76c57da5f9be9212}\label{classBuffer_a0836d074f4fffa4d76c57da5f9be9212}} 
+void {\bfseries write} (const string \&s)
+\item 
+\mbox{\Hypertarget{classBuffer_a8ed7860f7132703ee284e9e2c105216f}\label{classBuffer_a8ed7860f7132703ee284e9e2c105216f}} 
+void {\bfseries write} (const char $\ast$s, uint32\+\_\+t len)
+\item 
+\mbox{\Hypertarget{classBuffer_a4958ea41e5b529fdaa7b631a5f77c6d3}\label{classBuffer_a4958ea41e5b529fdaa7b631a5f77c6d3}} 
+void {\bfseries append\+U8} (uint8\+\_\+t)
+\item 
+\mbox{\Hypertarget{classBuffer_a0be3173ed3ed9dbe33eaa1caf4341302}\label{classBuffer_a0be3173ed3ed9dbe33eaa1caf4341302}} 
+void {\bfseries append\+U16} (uint16\+\_\+t)
+\item 
+\mbox{\Hypertarget{classBuffer_a5aa041256abfcd3b6abe8559906f4267}\label{classBuffer_a5aa041256abfcd3b6abe8559906f4267}} 
+void {\bfseries append\+U32} (uint32\+\_\+t)
+\item 
+\mbox{\Hypertarget{classBuffer_acf808bddbc785c71e38d07232cc297a5}\label{classBuffer_acf808bddbc785c71e38d07232cc297a5}} 
+void {\bfseries append\+U64} (uint64\+\_\+t)
+\item 
+\mbox{\Hypertarget{classBuffer_a517d766960c9152a6cf46cf6f5bc713f}\label{classBuffer_a517d766960c9152a6cf46cf6f5bc713f}} 
+void {\bfseries append\+I8} (int8\+\_\+t)
+\item 
+\mbox{\Hypertarget{classBuffer_a45ade9f2b258be190045566c5d05f14f}\label{classBuffer_a45ade9f2b258be190045566c5d05f14f}} 
+void {\bfseries append\+I16} (int16\+\_\+t)
+\item 
+\mbox{\Hypertarget{classBuffer_aa0e32c6794f679f1ceea25f7d34bbda0}\label{classBuffer_aa0e32c6794f679f1ceea25f7d34bbda0}} 
+void {\bfseries append\+I32} (int32\+\_\+t)
+\item 
+\mbox{\Hypertarget{classBuffer_a174cebb1280c13d27b9b1fe95e0b890e}\label{classBuffer_a174cebb1280c13d27b9b1fe95e0b890e}} 
+void {\bfseries append\+I64} (int64\+\_\+t)
+\item 
+\mbox{\Hypertarget{classBuffer_a756540b5e306ba15ee8d719f9360285e}\label{classBuffer_a756540b5e306ba15ee8d719f9360285e}} 
+void {\bfseries append\+F32} (float)
+\item 
+\mbox{\Hypertarget{classBuffer_a7def22b57f0e36a371654a1569a8b14b}\label{classBuffer_a7def22b57f0e36a371654a1569a8b14b}} 
+void {\bfseries append\+F64} (double)
+\item 
+\mbox{\Hypertarget{classBuffer_afe7a0bfe35fde9aa75ddb26cee304ced}\label{classBuffer_afe7a0bfe35fde9aa75ddb26cee304ced}} 
+void {\bfseries append} (const char $\ast$v)
+\item 
+\mbox{\Hypertarget{classBuffer_a2098e7358fb2a51b99a164f151f478ec}\label{classBuffer_a2098e7358fb2a51b99a164f151f478ec}} 
+void {\bfseries append} (const char $\ast$v, uint32\+\_\+t len)
+\item 
+\mbox{\Hypertarget{classBuffer_a8a45e06a48082bd6b6234d17fadfee46}\label{classBuffer_a8a45e06a48082bd6b6234d17fadfee46}} 
+uint32\+\_\+t {\bfseries parse\+U32} ()
+\item 
+\mbox{\Hypertarget{classBuffer_acd6c5a8a9acc1e71ca0d6b4e2fc600f4}\label{classBuffer_acd6c5a8a9acc1e71ca0d6b4e2fc600f4}} 
+double {\bfseries parse\+F64} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a4ec7410631f6ae24eb8f9a3def241647}\label{classBuffer_a4ec7410631f6ae24eb8f9a3def241647}} 
+float {\bfseries parse\+F32} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a899d1eb36d0064a1a3b072c8ca3eb13d}\label{classBuffer_a899d1eb36d0064a1a3b072c8ca3eb13d}} 
+bool {\bfseries parse\+Regex} (const regex \&r, const char $\ast$\&start, int \&len)
+\item 
+\mbox{\Hypertarget{classBuffer_a732e1d8da4008e6215f56646e5131009}\label{classBuffer_a732e1d8da4008e6215f56646e5131009}} 
+bool {\bfseries parse\+Token} (const string \&match)
+\item 
+\mbox{\Hypertarget{classBuffer_a01fa71a2107c1e597273d4d485d134ac}\label{classBuffer_a01fa71a2107c1e597273d4d485d134ac}} 
+bool {\bfseries get\+Url} (const char $\ast$\&ptr, uint32\+\_\+t \&len)
+\item 
+\mbox{\Hypertarget{classBuffer_a1078b200c60a10d9be855669c39c46a4}\label{classBuffer_a1078b200c60a10d9be855669c39c46a4}} 
+bool {\bfseries get\+HTTPVersion} (const char $\ast$\&ptr, uint32\+\_\+t \&len)
+\item 
+\mbox{\Hypertarget{classBuffer_ab25f4d09519374e5d2930692815b5039}\label{classBuffer_ab25f4d09519374e5d2930692815b5039}} 
+bool {\bfseries get\+Host} (const char $\ast$\&ptr, uint32\+\_\+t \&len)
+\item 
+\mbox{\Hypertarget{classBuffer_a539b09cf61e048731a746f9b368bb9f7}\label{classBuffer_a539b09cf61e048731a746f9b368bb9f7}} 
+void {\bfseries point\+To\+Start} ()
+\item 
+bool \mbox{\hyperlink{classBuffer_a20c6bffaa62a17b6da17bd0534bda8b2}{get\+Next\+Token\+With\+Space}} (const char $\ast$\&ptr, const uint32\+\_\+t \&len)
+\item 
+\mbox{\Hypertarget{classBuffer_a492d09730834addbfe622c20a43f7e60}\label{classBuffer_a492d09730834addbfe622c20a43f7e60}} 
+string {\bfseries read\+String8} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a1bab60d861e0b2684db62150c5d5cfd0}\label{classBuffer_a1bab60d861e0b2684db62150c5d5cfd0}} 
+string {\bfseries read\+String16} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a26f624f33c04f62a385f2eaed4f87f1a}\label{classBuffer_a26f624f33c04f62a385f2eaed4f87f1a}} 
+string {\bfseries read\+String32} ()
+\item 
+\mbox{\Hypertarget{classBuffer_aa0f1739acf992c962237fe5ab3fb808a}\label{classBuffer_aa0f1739acf992c962237fe5ab3fb808a}} 
+void {\bfseries write} (Data\+Type t)
+\item 
+\mbox{\Hypertarget{classBuffer_a8ce00f24a4d6a1ff224dacc9ddcf723e}\label{classBuffer_a8ce00f24a4d6a1ff224dacc9ddcf723e}} 
+Data\+Type {\bfseries read\+Type} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a18b276ddbcfd1847a192b2750f3a9ebd}\label{classBuffer_a18b276ddbcfd1847a192b2750f3a9ebd}} 
+void {\bfseries write} (Data\+Type t, const char $\ast$name)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classBuffer_a63aed180baa43f1304aad55015dcd238}{write}} (T v)
+\item 
+void \mbox{\hyperlink{classBuffer_a22161daa69b94f661de8ad2f5986cc2b}{write}} (\mbox{\hyperlink{classXDLRaw}{XDLRaw}} \&v)
+\item 
+\mbox{\Hypertarget{classBuffer_aab81e711916c4f3edf50cf047d9bcf4b}\label{classBuffer_aab81e711916c4f3edf50cf047d9bcf4b}} 
+void {\bfseries special\+Write} (const char $\ast$buf, const uint32\+\_\+t len)
+\item 
+\mbox{\Hypertarget{classBuffer_ac4e50093ccec0873a05be30b42ac0d98}\label{classBuffer_ac4e50093ccec0873a05be30b42ac0d98}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries write\+List} (\mbox{\hyperlink{classList1}{List1}}$<$ T $>$ \&list)
+\item 
+\mbox{\Hypertarget{classBuffer_af743d447d386fbd1cb6c1078378777dd}\label{classBuffer_af743d447d386fbd1cb6c1078378777dd}} 
+void {\bfseries write\+Student} (\mbox{\hyperlink{classStudent}{Student}} v)
+\item 
+\mbox{\Hypertarget{classBuffer_a07fb975257c7816d444d45a9489c32b0}\label{classBuffer_a07fb975257c7816d444d45a9489c32b0}} 
+void {\bfseries write\+List} (\mbox{\hyperlink{classList1}{List1}}$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ \&list)
+\item 
+\mbox{\Hypertarget{classBuffer_a98949e879fa45570dc0948c66e4eea45}\label{classBuffer_a98949e879fa45570dc0948c66e4eea45}} 
+void {\bfseries check\+Space} (size\+\_\+t sz)
+\item 
+\mbox{\Hypertarget{classBuffer_a5967996421502f06ae7fc38e2d75085f}\label{classBuffer_a5967996421502f06ae7fc38e2d75085f}} 
+void {\bfseries fast\+Check\+Space} (size\+\_\+t sz)
+\item 
+\mbox{\Hypertarget{classBuffer_ad2bbdc55cdf9c170a967360fc2330458}\label{classBuffer_ad2bbdc55cdf9c170a967360fc2330458}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries check\+Array\+Space} (T v\mbox{[}$\,$\mbox{]}, size\+\_\+t n)
+\item 
+\mbox{\Hypertarget{classBuffer_a3e51ae9b99819c14def3601cdfc4fafa}\label{classBuffer_a3e51ae9b99819c14def3601cdfc4fafa}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries check\+Vector\+Space} (const vector$<$ T $>$ \&v)
+\item 
+\mbox{\Hypertarget{classBuffer_a9130644496e1b9843cd1f57041215d39}\label{classBuffer_a9130644496e1b9843cd1f57041215d39}} 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classBuffer}{Buffer}} \& {\bfseries operator$<$$<$} (T v)
+\item 
+\mbox{\Hypertarget{classBuffer_a8d14950d97d12bb1627941bdb166cc64}\label{classBuffer_a8d14950d97d12bb1627941bdb166cc64}} 
+int8\+\_\+t {\bfseries \+\_\+read\+I8} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a2c65175516106009f32811b720abeed0}\label{classBuffer_a2c65175516106009f32811b720abeed0}} 
+int16\+\_\+t {\bfseries \+\_\+read\+I16} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a4a7b87321c9263097842320a0e1701b6}\label{classBuffer_a4a7b87321c9263097842320a0e1701b6}} 
+int32\+\_\+t {\bfseries \+\_\+read\+I32} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a8a4053015bd2cd1a7a645e5b85d7986a}\label{classBuffer_a8a4053015bd2cd1a7a645e5b85d7986a}} 
+int64\+\_\+t {\bfseries \+\_\+read\+I64} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a287c66a1845ce858d36821257861d035}\label{classBuffer_a287c66a1845ce858d36821257861d035}} 
+int8\+\_\+t {\bfseries read\+I8} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a95fd81e78adf450c20a6a14f25dba9ea}\label{classBuffer_a95fd81e78adf450c20a6a14f25dba9ea}} 
+int16\+\_\+t {\bfseries read\+I16} ()
+\item 
+\mbox{\Hypertarget{classBuffer_ad3e1b0de5da04d4f3dd31b5759245881}\label{classBuffer_ad3e1b0de5da04d4f3dd31b5759245881}} 
+int32\+\_\+t {\bfseries read\+I32} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a63628536ea12fd7262f0e4face0bedd2}\label{classBuffer_a63628536ea12fd7262f0e4face0bedd2}} 
+int64\+\_\+t {\bfseries read\+I64} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a948b94ddfb4f1e8e9c553cd58ac1bc72}\label{classBuffer_a948b94ddfb4f1e8e9c553cd58ac1bc72}} 
+uint8\+\_\+t {\bfseries \+\_\+read\+U8} ()
+\item 
+\mbox{\Hypertarget{classBuffer_ab5307415c17cb09d8a4cdc3cbd11a973}\label{classBuffer_ab5307415c17cb09d8a4cdc3cbd11a973}} 
+uint16\+\_\+t {\bfseries \+\_\+read\+U16} ()
+\item 
+\mbox{\Hypertarget{classBuffer_ac885de4c012721fc66b4d9d45eeb1bc8}\label{classBuffer_ac885de4c012721fc66b4d9d45eeb1bc8}} 
+uint32\+\_\+t {\bfseries \+\_\+read\+U32} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a9faca73bdfd8b3a1f8f28acfd77e9212}\label{classBuffer_a9faca73bdfd8b3a1f8f28acfd77e9212}} 
+uint64\+\_\+t {\bfseries \+\_\+read\+U64} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a78fbb28e8854151ef62d2e914a74b8ba}\label{classBuffer_a78fbb28e8854151ef62d2e914a74b8ba}} 
+float {\bfseries \+\_\+read\+F32} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a5fc2a63b4adb7d80d0abeaf6fe31c0bf}\label{classBuffer_a5fc2a63b4adb7d80d0abeaf6fe31c0bf}} 
+double {\bfseries \+\_\+read\+F64} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a04eabea80f9d5d60151927752e1b97a7}\label{classBuffer_a04eabea80f9d5d60151927752e1b97a7}} 
+uint8\+\_\+t {\bfseries read\+U8} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a7321e150f1251b652fd2eb56d9927435}\label{classBuffer_a7321e150f1251b652fd2eb56d9927435}} 
+uint16\+\_\+t {\bfseries read\+U16} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a28baad47315d0fb6ae6f341cbdfc7322}\label{classBuffer_a28baad47315d0fb6ae6f341cbdfc7322}} 
+uint32\+\_\+t {\bfseries read\+U32} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a9e188604efaab9681703256a6563ca01}\label{classBuffer_a9e188604efaab9681703256a6563ca01}} 
+uint64\+\_\+t {\bfseries read\+U64} ()
+\item 
+\mbox{\Hypertarget{classBuffer_ad04c5fc4cf2f875872ce905cb98b6926}\label{classBuffer_ad04c5fc4cf2f875872ce905cb98b6926}} 
+float {\bfseries read\+F32} ()
+\item 
+\mbox{\Hypertarget{classBuffer_af68c32752d879b471cfb4b311b6afa9e}\label{classBuffer_af68c32752d879b471cfb4b311b6afa9e}} 
+double {\bfseries read\+F64} ()
+\item 
+\mbox{\Hypertarget{classBuffer_a706c0b590014f3ab06d30ef5c5ed81bc}\label{classBuffer_a706c0b590014f3ab06d30ef5c5ed81bc}} 
+{\footnotesize template$<$typename T $>$ }\\T {\bfseries \+\_\+read} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classA}{A}} binary high-\/speed buffer to support writing objects portably to a binary stream so it can be read back in (persistence) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBuffer_a20c6bffaa62a17b6da17bd0534bda8b2}\label{classBuffer_a20c6bffaa62a17b6da17bd0534bda8b2}} 
+\index{Buffer@{Buffer}!getNextTokenWithSpace@{getNextTokenWithSpace}}
+\index{getNextTokenWithSpace@{getNextTokenWithSpace}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{getNextTokenWithSpace()}{getNextTokenWithSpace()}}
+{\footnotesize\ttfamily bool Buffer\+::get\+Next\+Token\+With\+Space (\begin{DoxyParamCaption}\item[{const char $\ast$\&}]{ptr,  }\item[{const uint32\+\_\+t \&}]{len }\end{DoxyParamCaption})}
+
+extract the next space-\/delimited value from the buffer if return true, this means ptr is pointing to the text, len = the length of the token (until the next space) and the current pointer advances past the token \mbox{\Hypertarget{classBuffer_a63aed180baa43f1304aad55015dcd238}\label{classBuffer_a63aed180baa43f1304aad55015dcd238}} 
+\index{Buffer@{Buffer}!write@{write}}
+\index{write@{write}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Buffer\+::write (\begin{DoxyParamCaption}\item[{T}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+write is the fast write that does not check for buffer overrun. Use only when checking size of a large block
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the tpe of the integer to write \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em v} & the value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBuffer_a22161daa69b94f661de8ad2f5986cc2b}\label{classBuffer_a22161daa69b94f661de8ad2f5986cc2b}} 
+\index{Buffer@{Buffer}!write@{write}}
+\index{write@{write}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Buffer\+::write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classXDLRaw}{XDLRaw}} \&}]{v }\end{DoxyParamCaption})}
+
+Special case for \mbox{\hyperlink{classXDLRaw}{XDLRaw}} which will write out a complete block of bytes directly without copying 

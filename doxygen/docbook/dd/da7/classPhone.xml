@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPhone" xml:lang="en-US">
+<title>Phone Class Reference</title>
+<indexterm><primary>Phone</primary></indexterm>
+<para>Inheritance diagram for Phone:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dd/da7/classPhone.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classPhone_1aaaf91e113a21dc41d0f4246d49f58f81"/><emphasis role="strong">Phone</emphasis> (uint64_t v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPhone_1a67b147ccd8de36929103b701e091c471"/>void <emphasis role="strong">writeMeta</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;b) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPhone_1a99f99a47e00860908eb5ce78012de1eb"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPhone_1aa6466f4dfc7ca3fd09e1f94eebb41806"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

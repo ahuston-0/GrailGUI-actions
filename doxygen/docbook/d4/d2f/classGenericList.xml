@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classGenericList" xml:lang="en-US">
+<title>GenericList Class Reference</title>
+<indexterm><primary>GenericList</primary></indexterm>
+<para>Inheritance diagram for GenericList:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d4/d2f/classGenericList.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classGenericList_1a7c0aabbf967821a985a157fbb00de2af"/><emphasis role="strong">GenericList</emphasis> (const std::string &amp;name, uint32_t size, const std::string &amp;listType)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGenericList_1a8ec0c51387829260ebca22bb87cb505f"/>DataType <emphasis role="strong">getDataType</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGenericList_1a45a41eb016aa576316974a5db6ae577d"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGenericList_1af52e49c3cc69ee61dd823521f4d05378"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGenericList_1a47c812137cfdd049cccf855589ffe5ee"/>void <emphasis role="strong">writeMeta</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGenericList_1a2148e444faa1aacc015e3170d58126f0"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGenericList_1aab3eddaa576301e1a6e9364b9db4fd3e"/><link linkend="_classXDLIterator">XDLIterator</link> * <emphasis role="strong">createIterator</emphasis> () override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classSymbolTable" xml:lang="en-US">
+<title>SymbolTable Class Reference</title>
+<indexterm><primary>SymbolTable</primary></indexterm>
+<para>Inheritance diagram for SymbolTable:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../df/dd1/classSymbolTable.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classSymbolTable_1ab99b3fd63b8b135c1d8fd18a12e97a5d"/><emphasis role="strong">SymbolTable</emphasis> (<link linkend="_classXDLCompiler">XDLCompiler</link> *c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSymbolTable_1a05635381abb5e0216238e4fc1f5821e9"/>void <emphasis role="strong">addRoot</emphasis> (const <link linkend="_classXDLType">XDLType</link> *t)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSymbolTable_1a49053d23e0e09fe7440b8f66df344d1b"/>const <link linkend="_classXDLType">XDLType</link> * <emphasis role="strong">getRoot</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSymbolTable_1a9c0f2bc0e26a1225dfb16fe45765ad1c"/><link linkend="_classStruct">Struct</link> * <emphasis role="strong">addStruct</emphasis> (const string &amp;name)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSymbolTable_1afda96d1c883731d26c1416202799e594"/>void <emphasis role="strong">addXDLType</emphasis> (const std::string &amp;name, <link linkend="_classXDLType">XDLType</link> *xdlType)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSymbolTable_1a6dd6d93689befe7cc2212c71a33f711c"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;out)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSymbolTable_1a7eef568451319e9a7a4c235ba5d544bb"/>void <emphasis role="strong">readMeta</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;metadataBuf)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSymbolTable_1aad5e5c70cb839b3415bedc7fd299c892"/>void <emphasis role="strong">displayText</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

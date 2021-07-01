@@ -1,0 +1,62 @@
+\hypertarget{Date_8hh_source}{}\doxysection{Date.\+hh}
+\label{Date_8hh_source}\index{src/util/Date.hh@{src/util/Date.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/Errcode.hh"{}}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}util/Ex.hh"{}}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}util/JulianDate.hh"{}}}
+\DoxyCodeLine{00006 \textcolor{comment}{/*}}
+\DoxyCodeLine{00007 \textcolor{comment}{        @author Dov Kruger 2019-\/06-\/06}}
+\DoxyCodeLine{00008 \textcolor{comment}{}}
+\DoxyCodeLine{00009 \textcolor{comment}{        Represent a date as a 32-\/bit integer for business purposes}}
+\DoxyCodeLine{00010 \textcolor{comment}{        This representation is smaller than JulianDate and is only intended for}}
+\DoxyCodeLine{00011 \textcolor{comment}{        integer days for scheduling purposes, ie calendars and the like.}}
+\DoxyCodeLine{00012 \textcolor{comment}{        Because the internal date is signed, it can represent dates +/-\/ 2}}
+\DoxyCodeLine{00013 \textcolor{comment}{   billion days from the Epoch. I am going to set the epoch for both JulianDate}}
+\DoxyCodeLine{00014 \textcolor{comment}{   and this to January 1, 2000. So we have a looming issue: the Y5755424}}
+\DoxyCodeLine{00015 \textcolor{comment}{   problem.  Start planning now...}}
+\DoxyCodeLine{00016 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{Date_8hh_source_l00017}\mbox{\hyperlink{classDate}{00017}} \textcolor{keyword}{class }\mbox{\hyperlink{classDate}{Date}} \{}
+\DoxyCodeLine{00018  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019   int32\_t date;}
+\DoxyCodeLine{00020   \textcolor{keyword}{static} int32\_t epochYear;}
+\DoxyCodeLine{00021   \mbox{\hyperlink{classDate}{Date}}(int32\_t d) : date(d) \{\}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024   \mbox{\hyperlink{classDate}{Date}}(\mbox{\hyperlink{classJulianDate}{JulianDate}} jd) : date(uint32\_t(\textcolor{keywordtype}{double}(jd))) \{\}}
+\DoxyCodeLine{00025   \textcolor{keyword}{operator} \mbox{\hyperlink{classJulianDate}{JulianDate}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classJulianDate}{JulianDate}}(date); \}}
+\DoxyCodeLine{00026   \mbox{\hyperlink{classDate}{Date}}(int32\_t year, uint32\_t month, uint32\_t day) \{}
+\DoxyCodeLine{00027     \textcolor{keywordflow}{if} (month < 1 || month > 12 || day < 1 ||}
+\DoxyCodeLine{00028         day > JulianDate::daysInMonth[day]) \{}
+\DoxyCodeLine{00029       \textcolor{keywordflow}{throw} Ex1(Errcode::BAD\_DATE);}
+\DoxyCodeLine{00030     \}}
+\DoxyCodeLine{00031     int32\_t dY = year -\/ epochYear;}
+\DoxyCodeLine{00032     int32\_t leapYears = dY / 4 -\/ dY / 100 + dY / 400;  \textcolor{comment}{// is this true}}
+\DoxyCodeLine{00033     date = dY * 365 + leapYears + JulianDate::daysUpTo[month -\/ 1] + day;}
+\DoxyCodeLine{00034   \}}
+\DoxyCodeLine{00035   \mbox{\hyperlink{classDate}{Date}} operator+(int32\_t days)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classDate}{Date}}(date + days); \}}
+\DoxyCodeLine{00036   \textcolor{keyword}{friend} int32\_t operator-\/(\mbox{\hyperlink{classDate}{Date}} d1, \mbox{\hyperlink{classDate}{Date}} d2) \{ \textcolor{keywordflow}{return} d1.date -\/ d2.date; \}}
+\DoxyCodeLine{00037   \mbox{\hyperlink{classDate}{Date}} operator-\/(int32\_t days)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classDate}{Date}}(date -\/ days); \}}
+\DoxyCodeLine{00038   \mbox{\hyperlink{classDate}{Date}} operator+=(int32\_t days) \{}
+\DoxyCodeLine{00039     date += days;}
+\DoxyCodeLine{00040     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00041   \}}
+\DoxyCodeLine{00042   \mbox{\hyperlink{classDate}{Date}} operator-\/=(int32\_t days) \{}
+\DoxyCodeLine{00043     date -\/= days;}
+\DoxyCodeLine{00044     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00045   \}}
+\DoxyCodeLine{00046   \textcolor{keywordtype}{bool} operator==(\mbox{\hyperlink{classDate}{Date}} d)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} date == d.date; \}}
+\DoxyCodeLine{00047   \textcolor{comment}{// TODO: implement date extraction math}}
+\DoxyCodeLine{00048   int32\_t getYear()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00049     int32\_t dy = int32\_t(date / 365.2425);}
+\DoxyCodeLine{00050     \textcolor{keywordflow}{return} 2000 + dy;}
+\DoxyCodeLine{00051   \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053   uint32\_t getMonth()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} 0; \}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055   uint32\_t getDay()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} 0; \}}
+\DoxyCodeLine{00056 \};}
+
+\end{DoxyCode}

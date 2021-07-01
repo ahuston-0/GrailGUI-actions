@@ -1,0 +1,76 @@
+.TH "AudioPlayer" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AudioPlayer
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAudioPlayer\fP (const \fBAudioPlayer\fP &orig)=delete"
+.br
+.ti -1c
+.RI "\fBAudioPlayer\fP & \fBoperator=\fP (const \fBAudioPlayer\fP &orig)=delete"
+.br
+.ti -1c
+.RI "void \fBnewContext\fP (std::string name)"
+.br
+.ti -1c
+.RI "void \fBsetCurrentContext\fP (std::string name)"
+.br
+.ti -1c
+.RI "void \fBaddFile\fP (std::string filePath)"
+.br
+.ti -1c
+.RI "void \fBaddPlaylist\fP (std::string filePath, bool append=false)"
+.br
+.ti -1c
+.RI "void \fBsetVolume\fP (int volume)"
+.br
+.ti -1c
+.RI "void \fBseekLocation\fP (std::string time, std::string type='relative')"
+.br
+.ti -1c
+.RI "void \fBrevertSeek\fP ()"
+.br
+.ti -1c
+.RI "void \fBplaylistNext\fP ()"
+.br
+.ti -1c
+.RI "void \fBplaylistPrev\fP ()"
+.br
+.ti -1c
+.RI "void \fBplaylistPlayIndex\fP (int index)"
+.br
+.ti -1c
+.RI "void \fBplaylistClear\fP ()"
+.br
+.ti -1c
+.RI "void \fBplaylistRemoveIndex\fP (int index)"
+.br
+.ti -1c
+.RI "void \fBplaylistMove\fP (int index1, int index2)"
+.br
+.ti -1c
+.RI "void \fBplaylistShuffle\fP ()"
+.br
+.ti -1c
+.RI "void \fBtogglePause\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetPlaying\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetPaused\fP ()"
+.br
+.ti -1c
+.RI "void \fBprintCurrentTime\fP ()"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

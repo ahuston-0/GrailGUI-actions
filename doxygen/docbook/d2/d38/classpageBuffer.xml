@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classpageBuffer" xml:lang="en-US">
+<title>pageBuffer Class Reference</title>
+<indexterm><primary>pageBuffer</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classpageBuffer_1a99468f54009a27061d673180f931809d"/><emphasis role="strong">pageBuffer</emphasis> (char *content, uint32_t length)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classpageBuffer_1a4a6951750d239c32c7bebaf5db6127e4"/>void <emphasis role="strong">printPage</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

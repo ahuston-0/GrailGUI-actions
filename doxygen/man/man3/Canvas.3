@@ -1,0 +1,112 @@
+.TH "Canvas" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Canvas
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBMainCanvas\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCanvas\fP (\fBGLWin\fP *w, const \fBStyle\fP *style, uint32_t vpX, uint32_t vpY, uint32_t vpW, uint32_t vpH, uint32_t pX, uint32_t pY)"
+.br
+.ti -1c
+.RI "\fBCanvas\fP (const \fBCanvas\fP &orig)=delete"
+.br
+.ti -1c
+.RI "\fBCanvas\fP & \fBoperator=\fP (const \fBCanvas\fP &orig)=delete"
+.br
+.ti -1c
+.RI "uint32_t \fBgetWidth\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetHeight\fP () const"
+.br
+.ti -1c
+.RI "glm::mat4 * \fBgetProjection\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetProjection\fP (const glm::mat4 &proj)"
+.br
+.ti -1c
+.RI "void \fBsetOrthoProjection\fP (float xLeft, float xRight, float yBottom, float yTop)"
+.br
+.ti -1c
+.RI "\fBCamera\fP * \fBsetLookAtProjection\fP (float eyeX, float eyeY, float eyeZ, float lookAtX, float lookAtY, float lookAtZ, float upX, float upY, float upZ)"
+.br
+.ti -1c
+.RI "void \fBresetProjection\fP ()"
+.br
+.ti -1c
+.RI "template<typename S > S * \fBaddLayer\fP (S *shape)"
+.br
+.ti -1c
+.RI "\fBShape\fP * \fBgetLayer\fP (uint32_t i)"
+.br
+.ti -1c
+.RI "void \fBinit\fP ()"
+.br
+.ti -1c
+.RI "void \fBprocess_input\fP (Inputs *in, float dt)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "const \fBStyle\fP * \fBgetStyle\fP () const"
+.br
+.ti -1c
+.RI "void \fBrender\fP ()"
+.br
+.ti -1c
+.RI "void \fBcleanup\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBGLWin\fP * \fBw\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBShape\fP * > \fBlayers\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBvpX\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBvpY\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBvpW\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBvpH\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBpX\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBpY\fP"
+.br
+.ti -1c
+.RI "glm::mat4 \fBprojection\fP"
+.br
+.ti -1c
+.RI "glm::mat4 \fBoriginalProjection\fP"
+.br
+.ti -1c
+.RI "const \fBStyle\fP * \fBstyle\fP"
+.br
+.ti -1c
+.RI "\fBCamera\fP * \fBcam\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

@@ -1,0 +1,65 @@
+\hypertarget{classFontFace}{}\doxysection{Font\+Face Class Reference}
+\label{classFontFace}\index{FontFace@{FontFace}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFontFace_a315a309f78830887b0b2483733fd950f}\label{classFontFace_a315a309f78830887b0b2483733fd950f}} 
+uint32\+\_\+t {\bfseries get\+Texture} () const
+\item 
+\mbox{\Hypertarget{classFontFace_a8c83df5c742cbb262fc0faabf798e789}\label{classFontFace_a8c83df5c742cbb262fc0faabf798e789}} 
+{\bfseries Font\+Face} (FT\+\_\+\+Library ft, const std\+::string \&face\+Name, const std\+::string \&face\+Path, uint32\+\_\+t min\+Font\+Size, uint32\+\_\+t inc, uint32\+\_\+t max\+Font\+Size, uint8\+\_\+t bitmap\mbox{[}$\,$\mbox{]}, uint32\+\_\+t \&sizeX, uint32\+\_\+t \&sizeY, uint32\+\_\+t \&currX, uint32\+\_\+t \&currY, uint32\+\_\+t \&row\+Size)
+\item 
+\mbox{\Hypertarget{classFontFace_a51041278630b22d1ee510388a53ff9e9}\label{classFontFace_a51041278630b22d1ee510388a53ff9e9}} 
+const \mbox{\hyperlink{classFont}{Font}} $\ast$ {\bfseries get\+Font} (uint32\+\_\+t size, int weight) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFontFace_a2fd915af8d4ea9f8538b6dc6526bb69e}\label{classFontFace_a2fd915af8d4ea9f8538b6dc6526bb69e}} 
+static void {\bfseries init\+All} ()
+\item 
+\mbox{\Hypertarget{classFontFace_a72252b56a86a7f9ef512bf836f1ded95}\label{classFontFace_a72252b56a86a7f9ef512bf836f1ded95}} 
+static void {\bfseries add\+Font\+Name} (std\+::string name, const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{classFontFace_ac7fff14e46d58393810bafa4122301f5}\label{classFontFace_ac7fff14e46d58393810bafa4122301f5}} 
+static void {\bfseries empty\+Faces} ()
+\item 
+\mbox{\Hypertarget{classFontFace_ac06bfcf1abef31b14b3b3732c68d07eb}\label{classFontFace_ac06bfcf1abef31b14b3b3732c68d07eb}} 
+static const \mbox{\hyperlink{classFontFace}{Font\+Face}} $\ast$ {\bfseries get\+Face} (int i)
+\item 
+\mbox{\Hypertarget{classFontFace_ad93464d34e6b32f94af22bbd9ebb7acb}\label{classFontFace_ad93464d34e6b32f94af22bbd9ebb7acb}} 
+static const \mbox{\hyperlink{classFont}{Font}} $\ast$ {\bfseries get} (const char face\+Name\mbox{[}$\,$\mbox{]}, uint32\+\_\+t size, uint32\+\_\+t boldness)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFontFace_a06e79369640e81809c21f46718a2cb7d}\label{classFontFace_a06e79369640e81809c21f46718a2cb7d}} 
+uint32\+\_\+t {\bfseries max\+Width\+Index}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFontFace_ac990696c3eb67cb334ed9a57f9688c46}\label{classFontFace_ac990696c3eb67cb334ed9a57f9688c46}} 
+static FT\+\_\+\+Library {\bfseries ft\+Lib}
+\item 
+\mbox{\Hypertarget{classFontFace_ad4d5df22df4b63aedb5fec70d7379623}\label{classFontFace_ad4d5df22df4b63aedb5fec70d7379623}} 
+static constexpr char {\bfseries TIMES} \mbox{[}$\,$\mbox{]} = \char`\"{}Times\char`\"{}
+\item 
+\mbox{\Hypertarget{classFontFace_ab5b78940b93f2076fc0ec892a13c08aa}\label{classFontFace_ab5b78940b93f2076fc0ec892a13c08aa}} 
+static constexpr char {\bfseries HELVETICA} \mbox{[}$\,$\mbox{]} = \char`\"{}Helvetica\char`\"{}
+\item 
+\mbox{\Hypertarget{classFontFace_a44ae201f128170a6b86d0f233aa3c695}\label{classFontFace_a44ae201f128170a6b86d0f233aa3c695}} 
+static constexpr char {\bfseries COURIER} \mbox{[}$\,$\mbox{]} = \char`\"{}Courier\char`\"{}
+\item 
+\mbox{\Hypertarget{classFontFace_af300480e1480ee56b0c582766bd5d775}\label{classFontFace_af300480e1480ee56b0c582766bd5d775}} 
+static constexpr uint32\+\_\+t {\bfseries NORMAL} = 1
+\item 
+\mbox{\Hypertarget{classFontFace_a2e73a10af27e132cf42c9795fb6b93c4}\label{classFontFace_a2e73a10af27e132cf42c9795fb6b93c4}} 
+static constexpr uint32\+\_\+t {\bfseries BOLD} = 9
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFontFace_ad564b94b59dc295de3dfc4415d95cca8}\label{classFontFace_ad564b94b59dc295de3dfc4415d95cca8}} 
+class {\bfseries Font}
+\end{DoxyCompactItemize}

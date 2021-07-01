@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPrefs" xml:lang="en-US">
+<title>Prefs Class Reference</title>
+<indexterm><primary>Prefs</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classPrefs_1ad8f677e65f6907d9b3bc8a12ab6809ba"/>void <emphasis role="strong">load</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPrefs_1ad80754cec6e06fde9257f3f35c60da8a"/>void <emphasis role="strong">save</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPrefs_1a08f9270685d891ea0565c9f6f7aeb5fb"/>std::string <emphasis role="strong">getConfDir</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPrefs_1a71ad488be28cac2cdc41f805001971c6"/>std::string <emphasis role="strong">getFontDir</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPrefs_1a0d8c8d1c2b2aff7e789a27586b6c8a57"/>std::string <emphasis role="strong">getShaderDir</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPrefs_1a390f463547ae0790be7ac07697e42e13"/>uint32_t <emphasis role="strong">getPreferredX</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPrefs_1a5a51a57332c32456013167e820cdc7b3"/>uint32_t <emphasis role="strong">getPreferredY</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPrefs_1a23c91a17eadef3050ee40644e36bd00b"/>uint32_t <emphasis role="strong">getPreferredWidth</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPrefs_1a02c948c540c762f26e581bdf743a4cd3"/>uint32_t <emphasis role="strong">getPreferredHeight</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPrefs_1a2fa70bc7078a56906b617a4dcc5afb21"/>bool <emphasis role="strong">getFastLoadShaders</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPrefs_1a5ad44fbac18e232ba3e5a2b665f3aac9"/>void <emphasis role="strong">setFastLoadShaders</emphasis> (uint32_t fmt)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classPrefs_1aec418e99cf30d7a0b7ab6db72d5cd27f"/>bool <emphasis role="strong">trySavingShader</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

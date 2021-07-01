@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classAxisWidget" xml:lang="en-US">
+<title>AxisWidget Class Reference</title>
+<indexterm><primary>AxisWidget</primary></indexterm>
+<para>Inheritance diagram for AxisWidget:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d5/dfb/classAxisWidget.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structAxisWidget_1_1Format">Format</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classAxisWidget_1ae1e5ff825e694647f9326e6cd23fff6b"/><emphasis role="strong">AxisWidget</emphasis> (<link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, double x, double y, double w, double h, double minBound=0, double maxBound=0, double tickInterval=1, double tickDrawSize=5, bool showTicks=true, bool isVert=false, std::string axisTitle=&quot;&quot;, const glm::vec4 &amp;axisColor=grail::black, const glm::vec4 &amp;tickColor=grail::black, int tickFormatWidth=2, int tickFormatPrecision=2, double bottomOffset=0)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1a0b099129b34c6eb10570785da7113e7d"/>void <emphasis role="strong">setTickDrawSize</emphasis> (double i)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1ae9cbabe2d79e57a8655c28343414526e"/>void <emphasis role="strong">setShowTicks</emphasis> (bool b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1aa5019f6ac3c097ea24f33d4ee6c9511f"/>void <emphasis role="strong">setIsVert</emphasis> (bool b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1a9e8c0d60dc1a51385f6380d6fdd3e958"/>void <emphasis role="strong">setTitle</emphasis> (std::string text)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1ad1b3869932341b900feaa5a56595d1d7"/>void <emphasis role="strong">setAxisColor</emphasis> (const glm::vec4 &amp;color)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1ad1786e68095f2c2805135fcefd2feda3"/>void <emphasis role="strong">setTickColor</emphasis> (const glm::vec4 &amp;color)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1a7598b46d243f44267150e373228222c8"/>void <emphasis role="strong">setTickFormat</emphasis> (int width, int precision)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1a2e663ee49e27b7746965dc6be8b5d9fa"/>double <emphasis role="strong">getTickInterval</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1a8867c86705a4e15cfdcc8983060debfc"/>double <emphasis role="strong">getMinBound</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1a178d975c8c12eaf340cb8525224c268a"/>double <emphasis role="strong">getMaxBound</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1a2548ba0f7270eb0e76422457709875a6"/>virtual void <emphasis role="strong">setBounds</emphasis> (double minBound, double maxBound)=0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1a8a347103a02fc172491ca4c86ec7454b"/>virtual void <emphasis role="strong">setTickInterval</emphasis> (double tickInterval)=0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1a47a28aa8ed69a044eef3cf5db63ac457"/>virtual void <emphasis role="strong">setTickLabels</emphasis> (std::vector&lt; std::string &gt; tickLabels)=0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classAxisWidget_1a7c642bdfb96e61be780edd09699f0cd9"/>void <emphasis role="strong">addAxisTitle</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classAxisWidget_1a4b593f89443f1c0860f4fbb42ca9b523"/>double <emphasis role="strong">minBound</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1aa30300e9f31b0aeed76caccacd3edd98"/>double <emphasis role="strong">maxBound</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1a51965d71e19f1b2e667f6984d68550e9"/>double <emphasis role="strong">tickInterval</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1ad61bf8cd374790a85947c315bcd85bd8"/>double <emphasis role="strong">tickDrawSize</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1ac527b3d76764a52e8680b90ed9671069"/><link linkend="_structAxisWidget_1_1Format">Format</link> <emphasis role="strong">tickFormat</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1a78a6e502121119e10f9142c4ebf0ed34"/>bool <emphasis role="strong">showTicks</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1a9c2bab4086df4dc3aca5549dd1fd4b96"/>bool <emphasis role="strong">isVert</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1a767d91ba7fe62845c01758a7a0a3b63c"/>std::string <emphasis role="strong">axisTitle</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1a9622ade71c295761c6198242197503bb"/>glm::vec4 <emphasis role="strong">axisColor</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1a2df0782a455bd843085500883d1ecdad"/>glm::vec4 <emphasis role="strong">tickColor</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAxisWidget_1a204b519ae0d195785d2c22db6c4532ef"/>double <emphasis role="strong">bottomOffset</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,68 @@
+.TH "Socket" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Socket
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBIPV4Socket\fP, and \fBUDPV4Socket\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSocket\fP (const char *addr, uint16_t port)"
+.br
+.ti -1c
+.RI "\fBSocket\fP (uint16_t port, \fBRequest\fP *req)"
+.br
+.ti -1c
+.RI "\fBSocket\fP (uint16_t port)"
+.br
+.ti -1c
+.RI "void \fBattach\fP (\fBRequest\fP *r)"
+.br
+.ti -1c
+.RI "\fBBuffer\fP & \fBgetOut\fP ()"
+.br
+.ti -1c
+.RI "\fBBuffer\fP & \fBgetIn\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBwait\fP ()=0"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBclassCleanup\fP ()"
+.br
+.ti -1c
+.RI "static void \fBclassInit\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBaddress\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBport\fP"
+.br
+.ti -1c
+.RI "\fBRequest\fP * \fBreq\fP"
+.br
+.ti -1c
+.RI "\fBBuffer\fP \fBin\fP"
+.br
+.ti -1c
+.RI "\fBBuffer\fP \fBout\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

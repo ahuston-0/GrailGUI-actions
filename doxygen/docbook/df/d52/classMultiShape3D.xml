@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classMultiShape3D" xml:lang="en-US">
+<title>MultiShape3D Class Reference</title>
+<indexterm><primary>MultiShape3D</primary></indexterm>
+<para>Inheritance diagram for MultiShape3D:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../df/d52/classMultiShape3D.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classMultiShape3D_1a36c1582ed627b7f654f13a0ad0e808d0"/><emphasis role="strong">MultiShape3D</emphasis> (<link linkend="_classCanvas">Canvas</link> *canv, <link linkend="_classCamera">Camera</link> *c, const std::vector&lt; const char * &gt; &amp;textureFiles, <link linkend="_classTransformation">Transformation</link> *t, uint32_t elemPerVert=3, uint32_t vertCount=1024, uint32_t solidIndCount=1024, uint32_t lineIndCount=1024, uint32_t pointIndCount=1024, uint32_t colorIndCount=1024)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape3D_1a97aafe9d6c867a7d35ffe0ca1f0b18e5"/><emphasis role="strong">MultiShape3D</emphasis> (<link linkend="_classCanvas">Canvas</link> *canv, <link linkend="_classCamera">Camera</link> *c, const char textureFile[], <link linkend="_classTransformation">Transformation</link> *t, uint32_t elemPerVert=3, uint32_t vertCount=1024, uint32_t solidIndCount=1024, uint32_t lineIndCount=1024, uint32_t pointIndCount=1024, uint32_t colorIndCount=1024)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape3D_1a6d6e11b4c37d80e4ade6fab1d1c658bc"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape3D_1a3596632d271b9afe21f02fea26223b44"/>void <emphasis role="strong">render</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape3D_1abe5e7045d7887fa29b6761374b8ba401"/>void <emphasis role="strong">genFastRectPrism</emphasis> (float x, float y, float z, uint32_t width, uint32_t length, uint32_t height, uint32_t texIndex, TexCoordVector &amp;texCoords)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape3D_1af0f05e766efdbab04431b620d4185aee"/>void <emphasis role="strong">genFastCube</emphasis> (float x, float y, float z, uint32_t length, uint32_t texIndex, TexCoordVector &amp;texCoords)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape3D_1a8565f77df4aa8f2f1424060bcb53198a"/>void <emphasis role="strong">genRectPrism</emphasis> (float x, float y, float z, uint32_t width, uint32_t length, uint32_t height, uint32_t texIndex, TexCoordVector &amp;texCoords)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape3D_1ae7e494544d4dcb7da45ca8ac08b4b6f3"/>void <emphasis role="strong">genCube</emphasis> (float x, float y, float z, uint32_t length, uint32_t texIndex, TexCoordVector &amp;texCoords)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape3D_1af396d02b52269d44683c935cab979586"/>void <emphasis role="strong">genOBJModel</emphasis> (const char *filePath, std::vector&lt; uint32_t &gt; &amp;texIndices, float xOffset=0, float yOffset=0, float zOffset=0)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape3D_1a598bfb004fbd6344cb919e5f4c098ed5"/>void <emphasis role="strong">genOBJModel</emphasis> (const char *filePath)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classMultiShape3D_1a4d7289127f159ff3b99ee922de0872e7"/>uint32_t <emphasis role="strong">elemPerVert</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structBlockMapLoader_1_1Region" xml:lang="en-US">
+<title>BlockMapLoader::Region Struct Reference</title>
+<indexterm><primary>BlockMapLoader::Region</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structBlockMapLoader_1_1Region_1a6d8398471678fd0bb653df8c082924d9"/>uint32_t <emphasis role="strong">segmentStart</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockMapLoader_1_1Region_1afcd4c34da443e1d29d0b1907aeefb172"/>uint32_t <emphasis role="strong">startPoints</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockMapLoader_1_1Region_1ad987f031506d0486a304d2a50defa592"/><link linkend="_structBlockMapLoader_1_1BoundRect">BoundRect</link> <emphasis role="strong">bounds</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockMapLoader_1_1Region_1af4d003d35c42d61924c3f337d2843161"/>double <emphasis role="strong">baseX</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockMapLoader_1_1Region_1aabcc1fa9f1e32e4f00e10ca0aa9bbbe1"/>double <emphasis role="strong">baseY</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

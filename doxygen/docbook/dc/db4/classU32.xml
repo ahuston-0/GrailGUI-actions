@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classU32" xml:lang="en-US">
+<title>U32 Class Reference</title>
+<indexterm><primary>U32</primary></indexterm>
+<para>Inheritance diagram for U32:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dc/db4/classU32.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classU32_1af35d2f5edba669af12739837eda87f3e"/><emphasis role="strong">U32</emphasis> (uint32_t val=0)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU32_1adacbc8069f53bd91cba7b27237682125"/>DataType <emphasis role="strong">getDataType</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU32_1a6c223cfaf0434a077c1af981d1556c3c"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU32_1a72b6e0b98b912c912bf3a8e72a6e83f5"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU32_1ac9168818ec3a5f7ab9dfdd08c670cab5"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU32_1a5a41078e94851005e98bd092358ad3f0"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classU32_1a827bbdd2db8d56149c44db93697e8e7b"/>bool <emphasis role="strong">operator==</emphasis> (const <link linkend="_classU32">U32</link> &amp;a, const <link linkend="_classU32">U32</link> &amp;b)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classBenchmark" xml:lang="en-US">
+<title>Benchmark Class Reference</title>
+<indexterm><primary>Benchmark</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classBenchmark_1a23087b23c9d918836f0cab057c9f6d7a"/>uint64_t <emphasis role="strong">elapsed</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBenchmark_1a7b4af5d507d31572b3648bb09de9b78b"/>void <emphasis role="strong">start</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBenchmark_1ad04b5a0597085a7f3b68c9b4a17223e0"/>void <emphasis role="strong">end</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classBenchmark_1a0abeca84711b7d44640a68a5582a7700"/>static void <emphasis role="strong">benchmark</emphasis> (void(*Func)())</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBenchmark_1ac81a234205b3bfdb1db0e0e17a489a78"/>static void <emphasis role="strong">benchmark</emphasis> (void(*Func)(int), int n)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classBenchmark_1abd127a7c087d8f765a61a22509efe56d"/>std::ostream &amp; <emphasis role="strong">operator&lt;&lt;</emphasis> (std::ostream &amp;s, const <link linkend="_classBenchmark">Benchmark</link> &amp;b)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classSector" xml:lang="en-US">
+<title>Sector Class Reference</title>
+<indexterm><primary>Sector</primary></indexterm>
+<para>Inheritance diagram for Sector:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d1/d3b/classSector.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classSector_1ac7a4cdf18b1ad68b7c72a83e27505716"/><emphasis role="strong">Sector</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, float x, float y, float xRad, float yRad, float fromAngle, float toAngle, float angleInc, <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSector_1a9c651470af801420b7e74db2fb25666b"/>void <emphasis role="strong">initIndices</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSector_1a1a37d2ec2933ddfbde22070143e12b56"/>void <emphasis role="strong">render</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

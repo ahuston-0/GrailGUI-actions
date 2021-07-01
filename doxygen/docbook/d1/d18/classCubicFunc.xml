@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classCubicFunc" xml:lang="en-US">
+<title>CubicFunc Class Reference</title>
+<indexterm><primary>CubicFunc</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCubicFunc_1ac710e11c853421c26da04b142d6c598f"/>double <emphasis role="strong">arcLength</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCubicFunc_1a2a47a099e7dbfe5c5225c16b532b7153"/>double <emphasis role="strong">segmentLength</emphasis> (int i) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCubicFunc_1a7fd34a2e2f6c7594491bb78e59093e40"/>double <emphasis role="strong">deriv</emphasis> (int i, double t) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

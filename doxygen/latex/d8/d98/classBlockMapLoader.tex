@@ -1,0 +1,120 @@
+\hypertarget{classBlockMapLoader}{}\doxysection{Block\+Map\+Loader Class Reference}
+\label{classBlockMapLoader}\index{BlockMapLoader@{BlockMapLoader}}
+Inheritance diagram for Block\+Map\+Loader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d8/d98/classBlockMapLoader}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structBlockMapLoader_1_1BlockMapHeader}{Block\+Map\+Header}}
+\item 
+struct \mbox{\hyperlink{structBlockMapLoader_1_1BoundRect}{Bound\+Rect}}
+\item 
+struct \mbox{\hyperlink{structBlockMapLoader_1_1NamedEntities}{Named\+Entities}}
+\item 
+struct \mbox{\hyperlink{structBlockMapLoader_1_1NamedEntry}{Named\+Entry}}
+\item 
+struct \mbox{\hyperlink{structBlockMapLoader_1_1Region}{Region}}
+\item 
+struct \mbox{\hyperlink{structBlockMapLoader_1_1RegionContainer}{Region\+Container}}
+\item 
+struct \mbox{\hyperlink{structBlockMapLoader_1_1Segment}{Segment}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a5da771a4442727c8faf71b0973079cf9}\label{classBlockMapLoader_a5da771a4442727c8faf71b0973079cf9}} 
+enum class {\bfseries Entity\+Type} \{ {\bfseries REGION\+\_\+\+CONTAINER}
+, {\bfseries REGION}
+, {\bfseries SEGMENT}
+, {\bfseries POINT}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a8a54fdf0c262f8ecf138ea9145421ca6}\label{classBlockMapLoader_a8a54fdf0c262f8ecf138ea9145421ca6}} 
+void {\bfseries init} (const uint64\+\_\+t $\ast$mem, uint64\+\_\+t size)
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a805f90d90c3ce2929ab09815c2dd1660}\label{classBlockMapLoader_a805f90d90c3ce2929ab09815c2dd1660}} 
+void {\bfseries init} (uint32\+\_\+t num\+Lists, uint32\+\_\+t num\+Points)
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a34582ec978adadcec0b3389827908d76}\label{classBlockMapLoader_a34582ec978adadcec0b3389827908d76}} 
+{\bfseries Block\+Map\+Loader} (const char filename\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a848245f51456ff13b2156f7217d72ecc}\label{classBlockMapLoader_a848245f51456ff13b2156f7217d72ecc}} 
+{\bfseries Block\+Map\+Loader} (const char filename\mbox{[}$\,$\mbox{]}, const char\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a54a5e579fd1632075ef72b796bf353ca}\label{classBlockMapLoader_a54a5e579fd1632075ef72b796bf353ca}} 
+const \mbox{\hyperlink{structBlockMapLoader_1_1Region}{Region}} $\ast$ {\bfseries get\+Regions} () const
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a72dd016bdc29de402fe0d6600620f332}\label{classBlockMapLoader_a72dd016bdc29de402fe0d6600620f332}} 
+const \mbox{\hyperlink{structBlockMapLoader_1_1Segment}{Segment}} $\ast$ {\bfseries get\+Segments} () const
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a33f7fc3eb9810c0e0ecd1490b301561e}\label{classBlockMapLoader_a33f7fc3eb9810c0e0ecd1490b301561e}} 
+void {\bfseries save} (const char filename\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a0ebd9fc6a06d5b59562cc74a83cc67fa}\label{classBlockMapLoader_a0ebd9fc6a06d5b59562cc74a83cc67fa}} 
+void {\bfseries filterX} (double x\+Min, double x\+Max)
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a685a8724fdb5a2f210528c7939c8f6fe}\label{classBlockMapLoader_a685a8724fdb5a2f210528c7939c8f6fe}} 
+void {\bfseries filterY} (double y\+Min, double y\+Max)
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a3d33c2b5cef37652877c914945cb011b}\label{classBlockMapLoader_a3d33c2b5cef37652877c914945cb011b}} 
+void {\bfseries filter} (double x\+Min, double x\+Max, double y\+Min, double y\+Max)
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a0430c8c209d8550edf0dd771e99a79e7}\label{classBlockMapLoader_a0430c8c209d8550edf0dd771e99a79e7}} 
+void {\bfseries method\+Polygon} ()
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a1f83a731fed78bd8a6487cdc7a76bf0f}\label{classBlockMapLoader_a1f83a731fed78bd8a6487cdc7a76bf0f}} 
+void {\bfseries method\+Polyline} ()
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_ad36ab7b0bf16cf327d583cc2614e6c3f}\label{classBlockMapLoader_ad36ab7b0bf16cf327d583cc2614e6c3f}} 
+uint64\+\_\+t {\bfseries sum} () const
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a82b679b3dc9aee32f165caf00c968636}\label{classBlockMapLoader_a82b679b3dc9aee32f165caf00c968636}} 
+void {\bfseries delta\+Encode} ()
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a24ebeab7a9621fcdd5b1c64b0b0e9b10}\label{classBlockMapLoader_a24ebeab7a9621fcdd5b1c64b0b0e9b10}} 
+void {\bfseries delta\+Un\+Encode} ()
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_aafd3e30160473fbca18f709541d1c433}\label{classBlockMapLoader_aafd3e30160473fbca18f709541d1c433}} 
+void {\bfseries dump\+Segment} (uint32\+\_\+t seg)
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a160439778b7685518498a326dd74ce39}\label{classBlockMapLoader_a160439778b7685518498a326dd74ce39}} 
+uint32\+\_\+t {\bfseries get\+Num\+Region\+Containers} () const
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a160e132a50ef8efdb066921ecb0c9f2e}\label{classBlockMapLoader_a160e132a50ef8efdb066921ecb0c9f2e}} 
+const \mbox{\hyperlink{structBlockMapLoader_1_1BlockMapHeader}{Block\+Map\+Header}} $\ast$ {\bfseries get\+Block\+Map\+Header} () const
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a681e9a6cb2c9681997652a2af1b2329f}\label{classBlockMapLoader_a681e9a6cb2c9681997652a2af1b2329f}} 
+uint32\+\_\+t {\bfseries get\+Num\+Regions} () const
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a145cd1b340770658f65793cf87fc124c}\label{classBlockMapLoader_a145cd1b340770658f65793cf87fc124c}} 
+uint32\+\_\+t {\bfseries get\+Num\+Segments} () const
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_acb575b1867dfd873496df71af19f6349}\label{classBlockMapLoader_acb575b1867dfd873496df71af19f6349}} 
+uint32\+\_\+t {\bfseries get\+Num\+Points} () const
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a1023522cd602886d038c635016b2fa30}\label{classBlockMapLoader_a1023522cd602886d038c635016b2fa30}} 
+const float $\ast$ {\bfseries get\+XPoints} () const
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a019bf827cb615c85fcb25002048652ab}\label{classBlockMapLoader_a019bf827cb615c85fcb25002048652ab}} 
+const float $\ast$ {\bfseries get\+YPoints} () const
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_aa9b2b8d375be28a93aab082a42b752c1}\label{classBlockMapLoader_aa9b2b8d375be28a93aab082a42b752c1}} 
+const \mbox{\hyperlink{structBlockMapLoader_1_1Segment}{Segment}} \& {\bfseries get\+Segment} (uint32\+\_\+t i)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a2ae3a999127271fde26fe3ca655ce356}\label{classBlockMapLoader_a2ae3a999127271fde26fe3ca655ce356}} 
+static \mbox{\hyperlink{classBlockMapLoader}{Block\+Map\+Loader}} {\bfseries load\+Compressed} (const char filename\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classBlockMapLoader_a8debe5ad89c7a5ced6c1179d58a6caf7}\label{classBlockMapLoader_a8debe5ad89c7a5ced6c1179d58a6caf7}} 
+static void {\bfseries diff} (const \mbox{\hyperlink{classBlockMapLoader}{Block\+Map\+Loader}} \&a, const \mbox{\hyperlink{classBlockMapLoader}{Block\+Map\+Loader}} \&b)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}

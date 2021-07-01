@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classEllipse" xml:lang="en-US">
+<title>Ellipse Class Reference</title>
+<indexterm><primary>Ellipse</primary></indexterm>
+<para>Inheritance diagram for Ellipse:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../db/dc7/classEllipse.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classEllipse_1a11c3c15f04a96e2e0cda4a21721b6225"/><emphasis role="strong">Ellipse</emphasis> (float x, float y, float xRad, float yRad, float angleInc, <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

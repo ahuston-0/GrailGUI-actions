@@ -1,0 +1,36 @@
+\hypertarget{CSPTest4_8hh_source}{}\doxysection{CSPTest4.\+hh}
+\label{CSPTest4_8hh_source}\index{src/csp/cspservlet/CSPTest4.hh@{src/csp/cspservlet/CSPTest4.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{//}}
+\DoxyCodeLine{00002 \textcolor{comment}{// Created by dkruger on 11/01/17.}}
+\DoxyCodeLine{00003 \textcolor{comment}{//}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <csp/CSPServlet.hh>}}
+\DoxyCodeLine{00007 \textcolor{comment}{//\#include "{}csp/HttpServlet.hh"{}}}
+\DoxyCodeLine{00008 \textcolor{comment}{//\#include "{}csp/HTTPRequest.hh"{}}}
+\DoxyCodeLine{\Hypertarget{CSPTest4_8hh_source_l00009}\mbox{\hyperlink{classCSPTest4}{00009}} \textcolor{keyword}{class }\mbox{\hyperlink{classCSPTest4}{CSPTest4}} : \textcolor{keyword}{public} \mbox{\hyperlink{classCSPServlet}{CSPServlet}} \{}
+\DoxyCodeLine{00010 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013     \mbox{\hyperlink{classCSPTest4}{CSPTest4}}() \{\}}
+\DoxyCodeLine{00014     \string~\mbox{\hyperlink{classCSPTest4}{CSPTest4}}() \{\}}
+\DoxyCodeLine{00015     \textcolor{keywordtype}{void} request(\mbox{\hyperlink{classCSPRequest}{CSPRequest}}\& r) \{}
+\DoxyCodeLine{00016         \mbox{\hyperlink{classBuffer}{Buffer}}\& out = r.getOut();}
+\DoxyCodeLine{00017                 uint8\_t a = 1;}
+\DoxyCodeLine{00018                 uint16\_t b = 2;}
+\DoxyCodeLine{00019                 uint32\_t c = 3;}
+\DoxyCodeLine{00020                 uint64\_t d = 12345678901234567;}
+\DoxyCodeLine{00021                 int8\_t e = -\/1;}
+\DoxyCodeLine{00022                 int16\_t f = -\/2;}
+\DoxyCodeLine{00023                 int32\_t g = -\/3;}
+\DoxyCodeLine{00024                 int64\_t h = -\/12345678901234567;}
+\DoxyCodeLine{00025                 \textcolor{keywordtype}{float} i = 1.234567;}
+\DoxyCodeLine{00026                 \textcolor{keywordtype}{double} j = 1.23456789012345;}
+\DoxyCodeLine{00027                 \textcolor{keywordtype}{string} s = \textcolor{stringliteral}{"{}This is a test string."{}};}
+\DoxyCodeLine{00028                 out << a << b << c << d << e << f << g << h << i << j << s;}
+\DoxyCodeLine{00029     \}}
+\DoxyCodeLine{00030 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,128 @@
+\hypertarget{FileUtil_8hh_source}{}\doxysection{File\+Util.\+hh}
+\label{FileUtil_8hh_source}\index{src/util/FileUtil.hh@{src/util/FileUtil.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <dirent.h>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <fcntl.h>}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <sys/stat.h>}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <sys/types.h>}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <regex>}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "{}opengl/Errcode.hh"{}}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "{}util/Ex.hh"{}}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{\Hypertarget{FileUtil_8hh_source_l00016}\mbox{\hyperlink{classFileUtil}{00016}} \textcolor{keyword}{class }\mbox{\hyperlink{classFileUtil}{FileUtil}} \{}
+\DoxyCodeLine{00017  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018   \textcolor{keyword}{static} \textcolor{keywordtype}{char}* readComplete(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]) \{}
+\DoxyCodeLine{00019     \textcolor{keywordtype}{int} fh = open(filename, O\_RDONLY);}
+\DoxyCodeLine{00020     \textcolor{keywordflow}{if} (fh < 0) \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00021     \textcolor{keyword}{struct }stat info;}
+\DoxyCodeLine{00022     fstat(fh, \&info);}
+\DoxyCodeLine{00023     \textcolor{keyword}{const} uint32\_t size = info.st\_size;}
+\DoxyCodeLine{00024     \textcolor{keywordtype}{char}* buf = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[size];}
+\DoxyCodeLine{00025     uint32\_t bytesRead = read(fh, buf, size);}
+\DoxyCodeLine{00026     \textcolor{keywordflow}{if} (bytesRead < size) \{}
+\DoxyCodeLine{00027       \textcolor{keyword}{delete}[] buf;}
+\DoxyCodeLine{00028       \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00029     \}}
+\DoxyCodeLine{00030     \textcolor{keywordflow}{return} buf;}
+\DoxyCodeLine{00031   \}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033   \textcolor{keyword}{static} \textcolor{keywordtype}{void} readComplete(\textcolor{keywordtype}{char}** p, uint32\_t* len, \textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]) \{}
+\DoxyCodeLine{00034     \textcolor{keywordtype}{int} fh = open(filename, O\_RDONLY);}
+\DoxyCodeLine{00035     \textcolor{keywordflow}{if} (fh < 0) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00036     \textcolor{keyword}{struct }stat info;}
+\DoxyCodeLine{00037     fstat(fh, \&info);}
+\DoxyCodeLine{00038     \textcolor{keyword}{const} uint32\_t size = info.st\_size;}
+\DoxyCodeLine{00039     \textcolor{keywordtype}{char}* buf = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[size];}
+\DoxyCodeLine{00040     uint32\_t bytesRead = read(fh, buf, size);}
+\DoxyCodeLine{00041     \textcolor{keywordflow}{if} (bytesRead < size) \{}
+\DoxyCodeLine{00042       \textcolor{keyword}{delete}[] buf;}
+\DoxyCodeLine{00043       \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00044     \}}
+\DoxyCodeLine{00045     *p = buf;}
+\DoxyCodeLine{00046     *len = size;}
+\DoxyCodeLine{00047   \}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} isDir(\textcolor{keyword}{const} std::string\& path) \{}
+\DoxyCodeLine{00050     \textcolor{keyword}{struct }stat statbuf;}
+\DoxyCodeLine{00051     \textcolor{keywordflow}{if} (stat(path.c\_str(), \&statbuf) != 0) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00052     \textcolor{keywordflow}{return} S\_ISDIR(statbuf.st\_mode);}
+\DoxyCodeLine{00053   \}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00056   \textcolor{keyword}{static} uint32\_t findAll(std::regex* reg, \textcolor{keyword}{const} std::string\& dirName,}
+\DoxyCodeLine{00057                           T* handler,}
+\DoxyCodeLine{00058                           \textcolor{keywordtype}{void} (T::*f)(std::string filePath,}
+\DoxyCodeLine{00059                                        std::string filename)) \{}
+\DoxyCodeLine{00060     DIR* dir = opendir(dirName.c\_str());}
+\DoxyCodeLine{00061     \textcolor{keywordflow}{if} (dir == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{throw} Ex2(Errcode::DIR\_NOT\_FOUND, dirName);}
+\DoxyCodeLine{00062     \textcolor{keyword}{struct }dirent* e;}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     uint32\_t countCalls = 0;}
+\DoxyCodeLine{00065     std::cmatch s;}
+\DoxyCodeLine{00066     \textcolor{keywordflow}{while} ((e = readdir(dir)) != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{00067       \textcolor{keywordflow}{if} (strcmp(e-\/>d\_name, \textcolor{stringliteral}{"{}."{}}) == 0 || strcmp(e-\/>d\_name, \textcolor{stringliteral}{"{}.."{}}) == 0) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069       \textcolor{keywordflow}{if} (isDir(dirName + e-\/>d\_name)) \{}
+\DoxyCodeLine{00070         findAll(reg, (dirName + e-\/>d\_name + \textcolor{stringliteral}{"{}/"{}}).c\_str(), handler, f);}
+\DoxyCodeLine{00071         countCalls++;}
+\DoxyCodeLine{00072         \textcolor{comment}{// TODO: Remove, countCalls does not properly count depth of found}}
+\DoxyCodeLine{00073         \textcolor{comment}{// folders}}
+\DoxyCodeLine{00074       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (std::regex\_search(e-\/>d\_name, s, *reg)) \{}
+\DoxyCodeLine{00075         (handler-\/>*f)(dirName + e-\/>d\_name, e-\/>d\_name);}
+\DoxyCodeLine{00076       \}}
+\DoxyCodeLine{00077     \}}
+\DoxyCodeLine{00078     closedir(dir);}
+\DoxyCodeLine{00079     \textcolor{keywordflow}{return} countCalls;}
+\DoxyCodeLine{00080   \}}
+\DoxyCodeLine{\Hypertarget{FileUtil_8hh_source_l00083}\mbox{\hyperlink{classFileUtil_aae4374e77c0e04b76817a1049ba16076}{00083}}   \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classFileUtil_aae4374e77c0e04b76817a1049ba16076}{buildMapNameToFile}}(\textcolor{keyword}{const} std::regex* pattern, std::string dirName,}
+\DoxyCodeLine{00084                                  \textcolor{keywordtype}{void} (*f)(std::string name,}
+\DoxyCodeLine{00085                                            \textcolor{keyword}{const} std::string\& path)) \{}
+\DoxyCodeLine{00086     DIR* dir = opendir(dirName.c\_str());}
+\DoxyCodeLine{00087     \textcolor{keywordflow}{if} (dir == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{throw} Ex2(Errcode::DIR\_NOT\_FOUND, dirName);}
+\DoxyCodeLine{00088     \textcolor{keyword}{struct }dirent* e;}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090     std::cmatch s;}
+\DoxyCodeLine{00091     \textcolor{keywordflow}{while} ((e = readdir(dir)) != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{00092       \textcolor{keywordflow}{if} (strcmp(e-\/>d\_name, \textcolor{stringliteral}{"{}."{}}) == 0 || strcmp(e-\/>d\_name, \textcolor{stringliteral}{"{}.."{}}) == 0) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094       \textcolor{keywordflow}{if} (isDir(dirName + e-\/>d\_name)) \{}
+\DoxyCodeLine{00095         \mbox{\hyperlink{classFileUtil_aae4374e77c0e04b76817a1049ba16076}{buildMapNameToFile}}(pattern, (dirName + e-\/>d\_name + \textcolor{stringliteral}{"{}/"{}}).c\_str(), f);}
+\DoxyCodeLine{00096       \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (std::regex\_search(e-\/>d\_name, s, *pattern)) \{}
+\DoxyCodeLine{00097         f(dirName + e-\/>d\_name, e-\/>d\_name);}
+\DoxyCodeLine{00098       \}}
+\DoxyCodeLine{00099     \}}
+\DoxyCodeLine{00100     closedir(dir);}
+\DoxyCodeLine{00101   \}}
+\DoxyCodeLine{00102   \textcolor{comment}{// TODO: Finish creating the method declaration and then implement.}}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104 \textcolor{preprocessor}{\#if 0}}
+\DoxyCodeLine{00105     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00106     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} find(\textcolor{keyword}{const} std::string\& dir, \textcolor{keywordtype}{void} (*f)(\textcolor{keyword}{const} std::string\& filename)) \{}
+\DoxyCodeLine{00107         \textcolor{keyword}{struct }dirent* e;}
+\DoxyCodeLine{00108         }
+\DoxyCodeLine{00109         \textcolor{keywordflow}{while} ((e = readdir(dir)) != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{00110             cout << e-\/>d\_name << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00111         \}}
+\DoxyCodeLine{00112     \}}
+\DoxyCodeLine{00113 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115   \textcolor{keywordtype}{void} searchDir(\textcolor{keyword}{const} \textcolor{keywordtype}{char} dirName[]) \{}
+\DoxyCodeLine{00116     DIR* dir = opendir(dirName);}
+\DoxyCodeLine{00117     \textcolor{keywordflow}{if} (dir == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{throw} Ex2(Errcode::DIR\_NOT\_FOUND, dirName);}
+\DoxyCodeLine{00118     \textcolor{keyword}{struct }dirent* e;}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120     \textcolor{keywordflow}{while} ((e = readdir(dir)) != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{00121       std::cout << e-\/>d\_name << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00122     \}}
+\DoxyCodeLine{00123   \}}
+\DoxyCodeLine{00124 \};}
+
+\end{DoxyCode}

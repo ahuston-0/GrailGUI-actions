@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classFont_1_1Glyph" xml:lang="en-US">
+<title>Font::Glyph Class Reference</title>
+<indexterm><primary>Font::Glyph</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classFont_1_1Glyph_1a789a616a5eb0240dd89531de4016b484"/><emphasis role="strong">Glyph</emphasis> (float advance, float bearingX, float bearingY, float sizeX, float sizeY, float u0, float u1, float v1, float v0)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classFont_1_1Glyph_1aa08f4ccef0b77a077b81caaed3599198"/>float <emphasis role="strong">advance</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFont_1_1Glyph_1a5532f6f7b9de139d86291eedfa919d78"/>float <emphasis role="strong">bearingX</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFont_1_1Glyph_1abae052cf2388fb93248d9daea8453149"/>float <emphasis role="strong">bearingY</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFont_1_1Glyph_1aa510c45eea2696213d384f5b216d745a"/>float <emphasis role="strong">sizeX</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFont_1_1Glyph_1a7a3b7602747ae9230d1cd30e4ffb552b"/>float <emphasis role="strong">sizeY</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFont_1_1Glyph_1abfe5927c354000b4de16a7b6d23d7d96"/>float <emphasis role="strong">u0</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFont_1_1Glyph_1adb0a696951d5ac8470c9e319d15e01a1"/>float <emphasis role="strong">u1</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFont_1_1Glyph_1a63c17f7ea364f3d3bf5ce4dd4d5370d0"/>float <emphasis role="strong">v1</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFont_1_1Glyph_1a092df2d84e042244fc6f50cddb00a79f"/>float <emphasis role="strong">v0</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classFont_1_1Glyph_1a3803c5fa912d5cc4a2cf4eb750609830"/>std::ostream &amp; <emphasis role="strong">operator&lt;&lt;</emphasis> (std::ostream &amp;s, const <link linkend="_classFont_1_1Glyph">Font::Glyph</link> &amp;g)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

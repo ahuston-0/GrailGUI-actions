@@ -1,0 +1,20 @@
+\hypertarget{InputEvent_8hh_source}{}\doxysection{Input\+Event.\+hh}
+\label{InputEvent_8hh_source}\index{src/opengl/InputEvent.hh@{src/opengl/InputEvent.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{\Hypertarget{InputEvent_8hh_source_l00003}\mbox{\hyperlink{classInputEvent}{00003}} \textcolor{keyword}{class }\mbox{\hyperlink{classInputEvent}{InputEvent}} \{}
+\DoxyCodeLine{00004  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00005   \textcolor{keyword}{const} uint16\_t userid;  \textcolor{comment}{// id of the user who created this input}}
+\DoxyCodeLine{00006   \textcolor{keyword}{const} uint16\_t input : 12; \textcolor{comment}{// 12 bits reserved to button or key that created the event}}
+\DoxyCodeLine{00007   \textcolor{keyword}{const} uint16\_t mods : 4; \textcolor{comment}{// 4 modifier buttons (SHIFT, ALT, CTRL, WTF)}}
+\DoxyCodeLine{00008   \textcolor{keyword}{const} uint16\_t x,y;       \textcolor{comment}{//coordinates are 16 bit for quite a bit of headroom! 64k pixels}}
+\DoxyCodeLine{00009  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010   \mbox{\hyperlink{classInputEvent}{InputEvent}}(uint16\_t userid, uint16\_t input, uint16\_t mods, uint16\_t x, uint16\_t y) }
+\DoxyCodeLine{00011   : userid(userid), input(input), mods(mods), x(x), y(y) \{}
+\DoxyCodeLine{00012   \}}
+\DoxyCodeLine{00013   }
+\DoxyCodeLine{00014 \};}
+
+\end{DoxyCode}

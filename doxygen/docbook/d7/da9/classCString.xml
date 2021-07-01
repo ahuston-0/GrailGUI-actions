@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classCString" xml:lang="en-US">
+<title>CString Class Reference</title>
+<indexterm><primary>CString</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCString_1a1a76579c3c6b828337dbb9f23140ab1c"/><emphasis role="strong">CString</emphasis> (const char msg[], uint32_t len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCString_1a598c17db1bae24fea96de8e42bfbb1b2"/><emphasis role="strong">CString</emphasis> (const <link linkend="_classCString">CString</link> &amp;orig)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCString_1a3f2d7b1008f5b80f7605142907783a5e"/><link linkend="_classCString">CString</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classCString">CString</link> &amp;orig)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCString_1a22add0479bf8283e07c75732bab60e80"/><emphasis role="strong">CString</emphasis> (<link linkend="_classCString">CString</link> &amp;&amp;orig)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCString_1a906fd2520110452fafd8a83a51b8af40"/>char <emphasis role="strong">operator[]</emphasis> (uint32_t i) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCString_1ab559a91cb9b63b71d90c64c388181c3b"/>char &amp; <emphasis role="strong">operator[]</emphasis> (uint32_t i)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCString_1a7e07cdb369ff997de6966dfe80bf47d9"/>uint32_t <emphasis role="strong">len</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCString_1a5aec0bca71a017087ee2551e65d4fe10"/>char * <emphasis role="strong">str</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCString_1ada64cee0b63f789d6e32a923b3547195"/>std::ostream &amp; <emphasis role="strong">operator&lt;&lt;</emphasis> (std::ostream &amp;s, const <link linkend="_classCString">CString</link> &amp;str)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

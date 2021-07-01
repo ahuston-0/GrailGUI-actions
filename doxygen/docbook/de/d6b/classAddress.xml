@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classAddress" xml:lang="en-US">
+<title>Address Class Reference</title>
+<indexterm><primary>Address</primary></indexterm>
+<para>Inheritance diagram for Address:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../de/d6b/classAddress.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classAddress_1a97fb075a84df9b83687da211cd3e3ca5"/><emphasis role="strong">Address</emphasis> (const std::string &amp;s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAddress_1a17aa2827966d4e00bfd6a2303d8d6f18"/>void <emphasis role="strong">writeMeta</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;b) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAddress_1a3f4f5d4ba4c31c2a0de86e172f105bba"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classAddress_1a4e6049659a8532b5f83bf1c1dff4012e"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

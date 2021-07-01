@@ -1,0 +1,67 @@
+.TH "Config" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Config
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBCSPConfig\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum class \fBType\fP { \fBU16\fP, \fBU32\fP, \fBU64\fP, \fBI16\fP, \fBI32\fP, \fBI64\fP, \fBF64\fP, \fBF32\fP, \fBBOOL\fP, \fBSTRING\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBload\fP (const string &filename)"
+.br
+.ti -1c
+.RI "void \fBsave\fP (const string &filename)"
+.br
+.ti -1c
+.RI "template<typename T > void \fBset\fP (const string &name, T val)"
+.br
+.ti -1c
+.RI "uint16_t \fBgetUInt16\fP (const string &name) const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetUInt32\fP (const string &name) const"
+.br
+.ti -1c
+.RI "uint64_t \fBgetUInt64\fP (const string &name) const"
+.br
+.ti -1c
+.RI "int16_t \fBgetInt16\fP (const string &name) const"
+.br
+.ti -1c
+.RI "int32_t \fBgetInt32\fP (const string &name) const"
+.br
+.ti -1c
+.RI "int64_t \fBgetInt64\fP (const string &name) const"
+.br
+.ti -1c
+.RI "bool \fBgetBool\fP (const string &name) const"
+.br
+.ti -1c
+.RI "double \fBgetDouble\fP (const string &name) const"
+.br
+.ti -1c
+.RI "string \fBgetString\fP (const string &name) const"
+.br
+.ti -1c
+.RI "void \fBmandatory\fP (int count\&.\&.\&.)"
+.br
+.ti -1c
+.RI "void \fBoptional\fP (int count\&.\&.\&.)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

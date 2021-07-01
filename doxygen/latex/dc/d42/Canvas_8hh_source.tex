@@ -1,0 +1,127 @@
+\hypertarget{Canvas_8hh_source}{}\doxysection{Canvas.\+hh}
+\label{Canvas_8hh_source}\index{src/opengl/Canvas.hh@{src/opengl/Canvas.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}opengl/GLWin.hh"{}}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}opengl/Shape.hh"{}}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{keyword}{class }\mbox{\hyperlink{classCamera}{Camera}};}
+\DoxyCodeLine{00009 \textcolor{keyword}{class }\mbox{\hyperlink{classStyle}{Style}};}
+\DoxyCodeLine{\Hypertarget{Canvas_8hh_source_l00010}\mbox{\hyperlink{classCanvas}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{classCanvas}{Canvas}} \{}
+\DoxyCodeLine{00011  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00012   \mbox{\hyperlink{classGLWin}{GLWin}}* w;}
+\DoxyCodeLine{00013   std::vector<Shape*> layers;}
+\DoxyCodeLine{00014   uint32\_t vpX, vpY, vpW, vpH;  \textcolor{comment}{// viewport}}
+\DoxyCodeLine{00015   uint32\_t pX, pY;              \textcolor{comment}{// projection}}
+\DoxyCodeLine{00016   glm::mat4 projection;         \textcolor{comment}{// the projection currently used}}
+\DoxyCodeLine{00017   glm::mat4}
+\DoxyCodeLine{00018       originalProjection;  \textcolor{comment}{// keep safe so you can reset to the original view}}
+\DoxyCodeLine{00019   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* style;}
+\DoxyCodeLine{00020   \mbox{\hyperlink{classCamera}{Camera}}* cam;}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023   \mbox{\hyperlink{classCanvas}{Canvas}}(\mbox{\hyperlink{classGLWin}{GLWin}}* w, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* style, uint32\_t vpX, uint32\_t vpY, uint32\_t vpW,}
+\DoxyCodeLine{00024          uint32\_t vpH, uint32\_t pX, uint32\_t pY)}
+\DoxyCodeLine{00025       :  \textcolor{comment}{// viewport, projection}}
+\DoxyCodeLine{00026         w(w),}
+\DoxyCodeLine{00027         style(style),}
+\DoxyCodeLine{00028         vpX(vpX),}
+\DoxyCodeLine{00029         vpY(vpY),}
+\DoxyCodeLine{00030         vpW(vpW),}
+\DoxyCodeLine{00031         vpH(vpH),}
+\DoxyCodeLine{00032         pX(pX),}
+\DoxyCodeLine{00033         pY(pY) \{}
+\DoxyCodeLine{00034     projection =}
+\DoxyCodeLine{00035         glm::ortho(0.0f, \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pX), \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pY), 0.0f);}
+\DoxyCodeLine{00036     originalProjection = projection;}
+\DoxyCodeLine{00037     \textcolor{comment}{//    projection = glm::scale(projection, glm::vec3(16, -\/16, 1));}}
+\DoxyCodeLine{00038     \textcolor{comment}{//    projection = glm::translate(projection, glm::vec3(180, -\/90, 0));}}
+\DoxyCodeLine{00039   \}}
+\DoxyCodeLine{00040   \string~\mbox{\hyperlink{classCanvas}{Canvas}}();}
+\DoxyCodeLine{00041   \mbox{\hyperlink{classCanvas}{Canvas}}(\textcolor{keyword}{const} \mbox{\hyperlink{classCanvas}{Canvas}}\& orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00042   \mbox{\hyperlink{classCanvas}{Canvas}}\& operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classCanvas}{Canvas}}\& orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00043   uint32\_t getWidth()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} vpW; \}}
+\DoxyCodeLine{00044   uint32\_t getHeight()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} vpH; \}}
+\DoxyCodeLine{00045   glm::mat4* getProjection() \{ \textcolor{keywordflow}{return} \&projection; \}}
+\DoxyCodeLine{00046   \textcolor{keywordtype}{void} setProjection(\textcolor{keyword}{const} glm::mat4\& proj) \{ projection = proj; \}}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048   \textcolor{keywordtype}{void} setOrthoProjection(\textcolor{keywordtype}{float} xLeft, \textcolor{keywordtype}{float} xRight, \textcolor{keywordtype}{float} yBottom,}
+\DoxyCodeLine{00049                           \textcolor{keywordtype}{float} yTop) \{}
+\DoxyCodeLine{00050     projection = glm::ortho(xLeft, xRight, yBottom, yTop);}
+\DoxyCodeLine{00051   \}}
+\DoxyCodeLine{00052   \mbox{\hyperlink{classCamera}{Camera}}* setLookAtProjection(\textcolor{keywordtype}{float} eyeX, \textcolor{keywordtype}{float} eyeY, \textcolor{keywordtype}{float} eyeZ, \textcolor{keywordtype}{float} lookAtX,}
+\DoxyCodeLine{00053                               \textcolor{keywordtype}{float} lookAtY, \textcolor{keywordtype}{float} lookAtZ, \textcolor{keywordtype}{float} upX,}
+\DoxyCodeLine{00054                               \textcolor{keywordtype}{float} upY, \textcolor{keywordtype}{float} upZ);}
+\DoxyCodeLine{00055   \textcolor{keywordtype}{void} resetProjection() \{ projection = originalProjection; \}}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057   \textcolor{comment}{// Add layer pointer and return its index}}
+\DoxyCodeLine{00058   \textcolor{keyword}{template} <\textcolor{keyword}{typename} S>}
+\DoxyCodeLine{00059   S* addLayer(S* shape) \{}
+\DoxyCodeLine{00060     layers.push\_back(shape);}
+\DoxyCodeLine{00061     \textcolor{keywordflow}{return} shape;}
+\DoxyCodeLine{00062   \}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064   \mbox{\hyperlink{classShape}{Shape}}* getLayer(uint32\_t i) \{}
+\DoxyCodeLine{00065     \textcolor{keywordflow}{if} (i < layers.size()) \textcolor{keywordflow}{return} layers[i];}
+\DoxyCodeLine{00066     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00067   \}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069   \textcolor{keywordtype}{void} init() \{}
+\DoxyCodeLine{00070     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < layers.size(); i++) \{}
+\DoxyCodeLine{00071       layers[i]-\/>init();}
+\DoxyCodeLine{00072     \}}
+\DoxyCodeLine{00073   \}}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075   \textcolor{keywordtype}{void} process\_input(Inputs* in, \textcolor{keywordtype}{float} dt) \{}
+\DoxyCodeLine{00076     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < layers.size(); i++) \{}
+\DoxyCodeLine{00077       layers[i]-\/>process\_input(in, dt);}
+\DoxyCodeLine{00078     \}}
+\DoxyCodeLine{00079   \}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081   \textcolor{keywordtype}{void} update() \{}
+\DoxyCodeLine{00082     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < layers.size(); i++) \{}
+\DoxyCodeLine{00083       layers[i]-\/>update();}
+\DoxyCodeLine{00084     \}}
+\DoxyCodeLine{00085   \}}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* getStyle()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} style; \}}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089   \textcolor{keywordtype}{void} render();}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091   \textcolor{keywordtype}{void} cleanup();}
+\DoxyCodeLine{00092 \};}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094 \textcolor{keyword}{class }\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}};}
+\DoxyCodeLine{00095 \textcolor{keyword}{class }\mbox{\hyperlink{classMultiText}{MultiText}};}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{\Hypertarget{Canvas_8hh_source_l00097}\mbox{\hyperlink{classMainCanvas}{00097}} \textcolor{keyword}{class }\mbox{\hyperlink{classMainCanvas}{MainCanvas}} : \textcolor{keyword}{public} \mbox{\hyperlink{classCanvas}{Canvas}} \{}
+\DoxyCodeLine{00098  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00099   \mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}* gui;}
+\DoxyCodeLine{00100   \mbox{\hyperlink{classMultiText}{MultiText}}* guiText;}
+\DoxyCodeLine{00101   \mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}* menu;}
+\DoxyCodeLine{00102   \mbox{\hyperlink{classMultiText}{MultiText}}* menuText;}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00105   \mbox{\hyperlink{classMainCanvas}{MainCanvas}}(\mbox{\hyperlink{classGLWin}{GLWin}}* parent);}
+\DoxyCodeLine{00106   \string~\mbox{\hyperlink{classMainCanvas}{MainCanvas}}();}
+\DoxyCodeLine{00107   \mbox{\hyperlink{classMainCanvas}{MainCanvas}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMainCanvas}{MainCanvas}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00108   \mbox{\hyperlink{classMainCanvas}{MainCanvas}}\& operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classMainCanvas}{MainCanvas}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00109   \mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}* getGui() \{ \textcolor{keywordflow}{return} gui; \}}
+\DoxyCodeLine{00110   \mbox{\hyperlink{classMultiText}{MultiText}}* getGuiText() \{ \textcolor{keywordflow}{return} guiText; \}}
+\DoxyCodeLine{00111   \mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}* getMenu() \{ \textcolor{keywordflow}{return} menu; \}}
+\DoxyCodeLine{00112   \mbox{\hyperlink{classMultiText}{MultiText}}* getMenuText() \{ \textcolor{keywordflow}{return} menuText; \}}
+\DoxyCodeLine{00113 }
+\DoxyCodeLine{00114   \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{00115   \textcolor{keywordtype}{void} render();}
+\DoxyCodeLine{00116   \textcolor{keywordtype}{void} cleanup();}
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00118   \textcolor{keywordtype}{void} addButton(\textcolor{keyword}{const} \textcolor{keywordtype}{char} text[], \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h);}
+\DoxyCodeLine{00119   \textcolor{keywordtype}{void} addLabel(\textcolor{keyword}{const} \textcolor{keywordtype}{char} text[], \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h);}
+\DoxyCodeLine{00120   \textcolor{keywordtype}{void} addMenu(\textcolor{keyword}{const} std::string menu[], uint32\_t numStrings, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y);}
+\DoxyCodeLine{00121 \};}
+
+\end{DoxyCode}

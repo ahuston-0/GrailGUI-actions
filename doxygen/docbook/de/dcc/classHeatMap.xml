@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classHeatMap" xml:lang="en-US">
+<title>HeatMap Class Reference</title>
+<indexterm><primary>HeatMap</primary></indexterm>
+<para>Inheritance diagram for HeatMap:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../de/dcc/classHeatMap.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classHeatMap_1a5aade02607e557e5f41520ec83198895"/><emphasis role="strong">HeatMap</emphasis> (uint32_t w, uint32_t h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHeatMap_1a38ed20ac819ce9f42ced3b1bfe966608"/>void <emphasis role="strong">add</emphasis> (float x1, float y1, float v1, float x2, float y2, float v2, float x3, float y3, float v3, float x4, float y4, float v4)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHeatMap_1a2a588cb40f7a0ac1618abb374ff76dc5"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHeatMap_1a3b417a4250c91145ab59cc3989032b5d"/>void <emphasis role="strong">render</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHeatMap_1a92d0e080e223012b1e5aa6bd8615fd23"/>void <emphasis role="strong">update</emphasis> () override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

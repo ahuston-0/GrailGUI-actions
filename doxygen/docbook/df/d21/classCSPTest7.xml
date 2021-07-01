@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classCSPTest7" xml:lang="en-US">
+<title>CSPTest7 Class Reference</title>
+<indexterm><primary>CSPTest7</primary></indexterm>
+<para>Inheritance diagram for CSPTest7:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../df/d21/classCSPTest7.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCSPTest7_1abe58b67cd91143b5c680bd9184c0ba63"/>void <emphasis role="strong">request</emphasis> (<link linkend="_classCSPRequest">CSPRequest</link> &amp;r)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

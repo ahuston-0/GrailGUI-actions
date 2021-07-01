@@ -1,0 +1,53 @@
+.TH "DynArray< T >" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DynArray< T >
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDynArray\fP (uint32_t capacity)"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "\fBDynArray\fP (const \fBDynArray\fP &orig)"
+.br
+.ti -1c
+.RI "\fBDynArray\fP & \fBoperator=\fP (const \fBDynArray\fP &orig)=delete"
+.br
+.ti -1c
+.RI "void \fBadd\fP (const T &v)"
+.br
+.ti -1c
+.RI "T \fBremoveEnd\fP ()"
+.br
+.ti -1c
+.RI "const T & \fBoperator[]\fP (uint32_t i) const"
+.br
+.ti -1c
+.RI "T & \fBoperator[]\fP (uint32_t i)"
+.br
+.ti -1c
+.RI "uint32_t \fBsize\fP () const"
+.br
+.ti -1c
+.RI "const T & \fBlast\fP () const"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &s, const \fBDynArray\fP &d)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

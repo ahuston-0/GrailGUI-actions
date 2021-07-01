@@ -1,0 +1,90 @@
+\hypertarget{Bezier_8hh_source}{}\doxysection{Bezier.\+hh}
+\label{Bezier_8hh_source}\index{src/opengl/Bezier.hh@{src/opengl/Bezier.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{keyword}{class }\mbox{\hyperlink{classStyle}{Style}};}
+\DoxyCodeLine{\Hypertarget{Bezier_8hh_source_l00006}\mbox{\hyperlink{classBezier}{00006}} \textcolor{keyword}{class }\mbox{\hyperlink{classBezier}{Bezier}}\{}
+\DoxyCodeLine{00007 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00008     \textcolor{keywordtype}{float} p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y,}
+\DoxyCodeLine{00009           ax,  ay,  bx,  by,  cx,  cy,  dx,  dy;}
+\DoxyCodeLine{00010     \textcolor{keywordtype}{int} n;}
+\DoxyCodeLine{00011     \textcolor{keywordtype}{double} dt;}
+\DoxyCodeLine{00012     \textcolor{keywordtype}{bool} end;}
+\DoxyCodeLine{00013     \textcolor{keyword}{const} glm::vec4\& c;}
+\DoxyCodeLine{00014 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015     \mbox{\hyperlink{classBezier}{Bezier}}(\textcolor{keywordtype}{float} ax, \textcolor{keywordtype}{float} bx, \textcolor{keywordtype}{float} cx, \textcolor{keywordtype}{float} dx,}
+\DoxyCodeLine{00016            \textcolor{keywordtype}{float} ay, \textcolor{keywordtype}{float} by, \textcolor{keywordtype}{float} cy, \textcolor{keywordtype}{float} dy, \textcolor{keywordtype}{int} n, \textcolor{keywordtype}{bool} end, \textcolor{keyword}{const} glm::vec4\& c = \{0,0,0,1\}) :}
+\DoxyCodeLine{00017            ax(ax), bx(bx), cx(cx), dx(dx), ay(ay), by(by),}
+\DoxyCodeLine{00018            cy(cy), dy(dy), n(n), dt(1.0/n), end(end), c(c)\{}
+\DoxyCodeLine{00019         p1x = dx;                           p1y = dy;}
+\DoxyCodeLine{00020         p2x = (cx + 3 * dx) / 3;            p2y = (cy + 3 * dy) / 3;}
+\DoxyCodeLine{00021         p3x = (bx -\/ 3 * p1x + 6 * p2x) / 3; p3y = (by -\/ 3 * p1y + 6 * p2y) / 3;}
+\DoxyCodeLine{00022         p4x = ax + p1x -\/ 3 * p2x + 3 * p3x; p4y = ay + p1y -\/ 3 * p2y + 3 * p3y;}
+\DoxyCodeLine{00023     \}}
+\DoxyCodeLine{00024     \textcolor{keywordtype}{float} getax()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00025         \textcolor{keywordflow}{return} ax;}
+\DoxyCodeLine{00026     \}}
+\DoxyCodeLine{00027     \textcolor{keywordtype}{float} getay()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00028         \textcolor{keywordflow}{return} ay;}
+\DoxyCodeLine{00029     \}}
+\DoxyCodeLine{00030     \textcolor{keywordtype}{float} getbx()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00031         \textcolor{keywordflow}{return} bx;}
+\DoxyCodeLine{00032     \}}
+\DoxyCodeLine{00033     \textcolor{keywordtype}{float} getby()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00034         \textcolor{keywordflow}{return} by;}
+\DoxyCodeLine{00035     \}}
+\DoxyCodeLine{00036     \textcolor{keywordtype}{float} getcx()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00037         \textcolor{keywordflow}{return} cx;}
+\DoxyCodeLine{00038     \}}
+\DoxyCodeLine{00039     \textcolor{keywordtype}{float} getcy()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00040         \textcolor{keywordflow}{return} cy;}
+\DoxyCodeLine{00041     \}}
+\DoxyCodeLine{00042     \textcolor{keywordtype}{float} getdx()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00043         \textcolor{keywordflow}{return} dx;}
+\DoxyCodeLine{00044     \}}
+\DoxyCodeLine{00045     \textcolor{keywordtype}{float} getdy()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00046         \textcolor{keywordflow}{return} dy;}
+\DoxyCodeLine{00047     \}}
+\DoxyCodeLine{00048     \textcolor{keywordtype}{float} getp1x()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00049         \textcolor{keywordflow}{return} p1x;}
+\DoxyCodeLine{00050     \}}
+\DoxyCodeLine{00051     \textcolor{keywordtype}{float} getp1y()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00052         \textcolor{keywordflow}{return} p1y;}
+\DoxyCodeLine{00053     \}}
+\DoxyCodeLine{00054     \textcolor{keywordtype}{float} getp2x()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00055         \textcolor{keywordflow}{return} p2x;}
+\DoxyCodeLine{00056     \}}
+\DoxyCodeLine{00057     \textcolor{keywordtype}{float} getp2y()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00058         \textcolor{keywordflow}{return} p2y;}
+\DoxyCodeLine{00059     \}}
+\DoxyCodeLine{00060     \textcolor{keywordtype}{float} getp3x()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00061         \textcolor{keywordflow}{return} p3x;}
+\DoxyCodeLine{00062     \}}
+\DoxyCodeLine{00063     \textcolor{keywordtype}{float} getp3y()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00064         \textcolor{keywordflow}{return} p3y;}
+\DoxyCodeLine{00065     \}}
+\DoxyCodeLine{00066     \textcolor{keywordtype}{float} getp4x()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00067         \textcolor{keywordflow}{return} p4x;}
+\DoxyCodeLine{00068     \}}
+\DoxyCodeLine{00069     \textcolor{keywordtype}{float} getp4y()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00070         \textcolor{keywordflow}{return} p4y;}
+\DoxyCodeLine{00071     \}}
+\DoxyCodeLine{00072     \textcolor{keywordtype}{int} getn()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00073         \textcolor{keywordflow}{return} n;}
+\DoxyCodeLine{00074     \}}
+\DoxyCodeLine{00075     \textcolor{keywordtype}{double} getdt()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00076         \textcolor{keywordflow}{return} dt;}
+\DoxyCodeLine{00077     \}}
+\DoxyCodeLine{00078     \textcolor{keywordtype}{bool} getEnd()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00079         \textcolor{keywordflow}{return} end;}
+\DoxyCodeLine{00080     \}}
+\DoxyCodeLine{00081     glm::vec4 getColor()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00082         \textcolor{keywordflow}{return} c;}
+\DoxyCodeLine{00083     \}}
+\DoxyCodeLine{00084 \};}
+
+\end{DoxyCode}

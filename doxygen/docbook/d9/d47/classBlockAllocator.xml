@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classBlockAllocator" xml:lang="en-US">
+<title>BlockAllocator&lt; blockSize &gt; Class Template Reference</title>
+<indexterm><primary>BlockAllocator&lt; blockSize &gt;</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classBlockAllocator_1ad0698c799d76bb2d55f81301efb644d6"/><emphasis role="strong">BlockAllocator</emphasis> (uint32_t size)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBlockAllocator_1a6696589d1f9c894f91e9c51e47bb49e4"/>void * <emphasis role="strong">alloc</emphasis> (uint32_t size)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

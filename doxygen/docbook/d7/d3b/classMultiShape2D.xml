@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classMultiShape2D" xml:lang="en-US">
+<title>MultiShape2D Class Reference</title>
+<indexterm><primary>MultiShape2D</primary></indexterm>
+<para>Inheritance diagram for MultiShape2D:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d7/d3b/classMultiShape2D.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1af6df7fa2307168a582b2789d4fff69d8"/>void <emphasis role="strong">drawPoint</emphasis> (float x, float y)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a12ae8c768d36cbf76532dae6aa899f0c"/><emphasis role="strong">MultiShape2D</emphasis> (<link linkend="_classCanvas">Canvas</link> *parent, const <link linkend="_classStyle">Style</link> *s, uint32_t vertCount=1024, uint32_t solidIndCount=1024, uint32_t lineIndCount=1024, uint32_t pointIndCount=1024, uint32_t elemPerVert=2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1adcaae18e333454cd4cb10d13962665f4"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1acaf75debd09484c243c7fb58c9508e6a"/>void <emphasis role="strong">render</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a4f2b583e85aefc6e524d38656c2c558a"/>void <emphasis role="strong">fillRectangle</emphasis> (float x, float y, float w, float h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a244b8bacf09ca979612c66b53d2ae88d"/>void <emphasis role="strong">fillRoundRect</emphasis> (float x, float y, float w, float h, float rx, float ry)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a655938ed4993728ddacbc219cf20c164"/>void <emphasis role="strong">fillTriangle</emphasis> (float x1, float y1, float x2, float y2, float x3, float y3)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a027fda5e0e25c770e599fc3802d1489f"/>void <emphasis role="strong">fillPolygon</emphasis> (float x, float y, float xRad, float yRad, float n)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1ab44f29ee42e6f6f7f6629602b47a1549"/>void <emphasis role="strong">fillCircle</emphasis> (float x, float y, float rad, float angleInc)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1ac5b72e8941f9ecde7de1858589af479e"/>void <emphasis role="strong">fillEllipse</emphasis> (float x, float y, float xRad, float yRad, float angleInc)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1af04e0de601b051ecaad680df7b259951"/>void <emphasis role="strong">drawRectangle</emphasis> (float x, float y, float w, float h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a56b61a9ba3b0a591ed85336ba8f00ce6"/>void <emphasis role="strong">drawRoundRect</emphasis> (float x, float y, float w, float h, float rx, float ry)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a92edf2298a825074d604e9ab2fe497af"/>void <emphasis role="strong">drawTriangle</emphasis> (float x1, float y1, float x2, float y2, float x3, float y3)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a7bfb943dfe0517f994c7160fea8d1edd"/>void <emphasis role="strong">drawPolygon</emphasis> (float x, float y, float xRad, float yRad, float n)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a4506c0be702638841148866d0b81c963"/>void <emphasis role="strong">drawCompletePolygon</emphasis> (float x, float y, float xRad, float yRad, float n)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1adf4b07799e8c73b37da589f26dec5326"/>void <emphasis role="strong">drawCircle</emphasis> (float x, float y, float rad, float angleInc)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a2894873007f5bdeb596c94418aec5611"/>void <emphasis role="strong">drawEllipse</emphasis> (float x, float y, float xRad, float yRad, float angleInc)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a9a82bfbf81303ca07656944f61d7e2dd"/>void <emphasis role="strong">drawLine</emphasis> (float x1, float y1, float x2, float y2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1afe89a857192dd5f6fbad9c086bddbef6"/>void <emphasis role="strong">bezierSegment</emphasis> (const <link linkend="_classBezier">Bezier</link> *b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a4b491be12e4ec282589229f20ecba77b"/>void <emphasis role="strong">bezierSegmentByPoints</emphasis> (float p1x, float p1y, float p2x, float p2y, float p3x, float p3y, float p4x, float p4y, int n, bool end)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a5710ac16354189cfea85714f453aff9d"/>void <emphasis role="strong">endBezierSegment</emphasis> (const <link linkend="_classBezier">Bezier</link> *b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1afda8e87bf7abcdc09bd8d36624226711"/>void <emphasis role="strong">spline</emphasis> (const std::vector&lt; double &gt; &amp;points, int n)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a0618ba8e1e5169bce875ff0062b503dc"/>void <emphasis role="strong">rectanglePoints</emphasis> (float x, float y, float w, float h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a44b652f3e2908160a399337274388e80"/>void <emphasis role="strong">roundRectPoints</emphasis> (float x, float y, float w, float h, float rx, float ry)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a8a43d78ab1487bbfc3812a225b354b8a"/>void <emphasis role="strong">trianglePoints</emphasis> (float x1, float y1, float x2, float y2, float x3, float y3)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1ad1effcc8cc8c834119a01045a0ebaea3"/>void <emphasis role="strong">polygonPoints</emphasis> (float x, float y, float xRad, float yRad, float n)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1afb9722adf527db7e28d162183c154c8e"/>void <emphasis role="strong">circlePoints</emphasis> (float x, float y, float rad, float angleInc)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1ac1de7049c5b3fc0c0809d36f332f68e6"/>void <emphasis role="strong">ellipsePoints</emphasis> (float x, float y, float xRad, float yRad, float angleInc)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a955b938e9a5c961a0aeaf6920015fa53"/>const <link linkend="_classStyle">Style</link> * <emphasis role="strong">getStyle</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a95e1e11cc4228d8f79c6a5f958513a49"/>void <emphasis role="strong">sAddTriIndices</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a76593c0bd90eefd161ecdca0f374338d"/>void <emphasis role="strong">sAddQuadIndices</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1ac04e787cf795d36ed9bbcef89dd8030e"/>void <emphasis role="strong">sAddSectorIndices</emphasis> (uint32_t centerIndex, uint32_t indexCount)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1ae9e89d3aab8911346af7b46b2352aa9a"/>void <emphasis role="strong">lAddTriIndices</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a6bd76bed5f5fdfc1227f06905787ead2"/>void <emphasis role="strong">lAddQuadIndices</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1acce275f2fab4603d14d72bff4a656059"/>void <emphasis role="strong">lAddSectorIndices</emphasis> (uint32_t centerIndex, uint32_t indexCount)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a8863c5649ea59a8464fd9c9246911907"/>void <emphasis role="strong">pAddTriIndices</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a435145a1da6c59c1c6252b12d1825d4b"/>void <emphasis role="strong">pAddQuadIndices</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a4040e741d64ede4dc39187b390d9b5b6"/>void <emphasis role="strong">pAddSectorIndices</emphasis> (uint32_t centerIndex, uint32_t indexCount)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1afd3bd2eb89bc0db5dac66fb10d566f8a"/>uint32_t <emphasis role="strong">addSector</emphasis> (float x, float y, float xRad, float yRad, float fromAngle, float toAngle, float angleInc)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a53e9d3b515217402452aa1f83bc2e7ab"/>uint32_t <emphasis role="strong">getPointIndex</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1a03bc34025fa20aa22142e48e93e76d7a"/>void <emphasis role="strong">addLine</emphasis> (float x1, float y1, float x2, float y2)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1abb97e7b7d6daab97faca9bdc75e4f5a7"/>const <link linkend="_classStyle">Style</link> * <emphasis role="strong">style</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape2D_1ab4adf1c132bbe9c04a611f3b15e84db0"/>uint32_t <emphasis role="strong">elemPerVert</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

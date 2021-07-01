@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classDate" xml:lang="en-US">
+<title>Date Class Reference</title>
+<indexterm><primary>Date</primary></indexterm>
+<para>Inheritance diagram for Date:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../de/d4a/classDate.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classDate_1a125f102dd493a18fb487c29a3f92be57"/><emphasis role="strong">Date</emphasis> (<link linkend="_classJulianDate">JulianDate</link> jd)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1ac2e9ce4299615e0c3a1a28559fe6b183"/><emphasis role="strong">operator JulianDate</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1a475b098420df0ba881163f4bb57b1d6e"/><emphasis role="strong">Date</emphasis> (int32_t year, uint32_t month, uint32_t day)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1ad5e16006830ffd50869be47eb6ffa3f5"/><link linkend="_classDate">Date</link> <emphasis role="strong">operator+</emphasis> (int32_t days) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1a90e0c91f7f944b35f7ac6ee4689cc706"/><link linkend="_classDate">Date</link> <emphasis role="strong">operator-</emphasis> (int32_t days) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1a165e48287345a3d9b9380ff75417e6db"/><link linkend="_classDate">Date</link> <emphasis role="strong">operator+=</emphasis> (int32_t days)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1ac525a81e7b956eb9a2363fc8eab14ac8"/><link linkend="_classDate">Date</link> <emphasis role="strong">operator-=</emphasis> (int32_t days)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1a9f79a574d2be973cd2b334e551c3ddac"/>bool <emphasis role="strong">operator==</emphasis> (<link linkend="_classDate">Date</link> d) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1a57608244d4a2134a986009c7b740b238"/>int32_t <emphasis role="strong">getYear</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1a71f0df2fb33a169be6f5c594aa155150"/>uint32_t <emphasis role="strong">getMonth</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1accf05200f2349b15cf88058ecc21dd73"/>uint32_t <emphasis role="strong">getDay</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1a23ddbf8dae22315661df1a27d44d8be8"/><emphasis role="strong">Date</emphasis> (int32_t year, uint8_t month, uint8_t day)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1a57608244d4a2134a986009c7b740b238"/>int32_t <emphasis role="strong">getYear</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1a71f0df2fb33a169be6f5c594aa155150"/>uint32_t <emphasis role="strong">getMonth</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1accf05200f2349b15cf88058ecc21dd73"/>uint32_t <emphasis role="strong">getDay</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1abbc85f9e01b0fd5ad04014f123c07ef0"/>DataType <emphasis role="strong">getDataType</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1add69e2f9d6c9c98333b30713ef9623a6"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1a655ba8e0f9507ea24b8ecf5724a95306"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1af317291407fb5abf8e36d5d78c326305"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDate_1aa17080a97fe33821e74d9cf6cf28bcf8"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classDate_1a5724b8eda99022ff6e8c0306455af847"/>int32_t <emphasis role="strong">operator-</emphasis> (<link linkend="_classDate">Date</link> d1, <link linkend="_classDate">Date</link> d2)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

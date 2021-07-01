@@ -1,0 +1,92 @@
+\hypertarget{classShape2D}{}\doxysection{Shape2D Class Reference}
+\label{classShape2D}\index{Shape2D@{Shape2D}}
+Inheritance diagram for Shape2D\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{d5/db1/classShape2D}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classShape2D_a8fdf1f512d46026bee2aec9c87b5ae5f}\label{classShape2D_a8fdf1f512d46026bee2aec9c87b5ae5f}} 
+{\bfseries Shape2D} (\mbox{\hyperlink{classCanvas}{Canvas}} $\ast$c, float x, float y, \mbox{\hyperlink{classStyle}{Style}} $\ast$style, \mbox{\hyperlink{classTransformation}{Transformation}} $\ast$transform=new \mbox{\hyperlink{classTransformation}{Transformation}}())
+\item 
+\mbox{\Hypertarget{classShape2D_a95ee0e415aca073bf6361d72047d35d0}\label{classShape2D_a95ee0e415aca073bf6361d72047d35d0}} 
+void {\bfseries add\+Point} (float x, float y)
+\item 
+\mbox{\Hypertarget{classShape2D_af227e5e31b9a69efddf83a4b40917d73}\label{classShape2D_af227e5e31b9a69efddf83a4b40917d73}} 
+void {\bfseries add\+Color} (float r, float g, float b)
+\item 
+\mbox{\Hypertarget{classShape2D_af8c0cae87742dbb1eaf37c0b6e639904}\label{classShape2D_af8c0cae87742dbb1eaf37c0b6e639904}} 
+void {\bfseries set\+Colors} (float cols\mbox{[}$\,$\mbox{]}, uint32\+\_\+t size)
+\item 
+\mbox{\Hypertarget{classShape2D_a769d727f96fa98cc0ff4d41fae270bcb}\label{classShape2D_a769d727f96fa98cc0ff4d41fae270bcb}} 
+void {\bfseries set\+Colors} (std\+::vector$<$ float $>$ cols)
+\item 
+\mbox{\Hypertarget{classShape2D_acbf2150cf857d15ac64911f4a0e96b05}\label{classShape2D_acbf2150cf857d15ac64911f4a0e96b05}} 
+std\+::vector$<$ float $>$ {\bfseries get\+Vertices} ()
+\item 
+\mbox{\Hypertarget{classShape2D_a4c12e0bc440fb9ff8aeac9bc863c7af8}\label{classShape2D_a4c12e0bc440fb9ff8aeac9bc863c7af8}} 
+uint32\+\_\+t {\bfseries get\+Size} ()
+\item 
+\mbox{\Hypertarget{classShape2D_a2d48b0e27b7649690c3b27b527dee31c}\label{classShape2D_a2d48b0e27b7649690c3b27b527dee31c}} 
+\mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries get\+Style} ()
+\item 
+\mbox{\Hypertarget{classShape2D_a6c07e8e1a179c520f7cb4436c5d50ae6}\label{classShape2D_a6c07e8e1a179c520f7cb4436c5d50ae6}} 
+\mbox{\hyperlink{classTransformation}{Transformation}} $\ast$ {\bfseries get\+Transformation} ()
+\item 
+\mbox{\Hypertarget{classShape2D_a0d0fb6e9bec138a2a05913e4f7043154}\label{classShape2D_a0d0fb6e9bec138a2a05913e4f7043154}} 
+void {\bfseries set\+Transform} (\mbox{\hyperlink{classTransformation}{Transformation}} $\ast$t)
+\item 
+\mbox{\Hypertarget{classShape2D_a04dfa67a7e58d20653b185cdc6e8dc72}\label{classShape2D_a04dfa67a7e58d20653b185cdc6e8dc72}} 
+virtual void {\bfseries init} () override
+\item 
+\mbox{\Hypertarget{classShape2D_a1cc96845f73ccb9de6ddbae47b7a5293}\label{classShape2D_a1cc96845f73ccb9de6ddbae47b7a5293}} 
+virtual void {\bfseries process\+\_\+input} (Inputs $\ast$in, float dt) override
+\item 
+\mbox{\Hypertarget{classShape2D_a4bdf0664f4c02c6512775b53f55efcf1}\label{classShape2D_a4bdf0664f4c02c6512775b53f55efcf1}} 
+virtual void {\bfseries update} () override
+\item 
+\mbox{\Hypertarget{classShape2D_acbdf6e7feab30f888baec4663ae54f7b}\label{classShape2D_acbdf6e7feab30f888baec4663ae54f7b}} 
+virtual void {\bfseries render} ()=0
+\item 
+\mbox{\Hypertarget{classShape2D_ae9d0c11aa29da4bb022bbc63d632d22e}\label{classShape2D_ae9d0c11aa29da4bb022bbc63d632d22e}} 
+void {\bfseries init\+Indices} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classShape2D_a271d58fd7deddcb5ecccd4ec9bb39718}\label{classShape2D_a271d58fd7deddcb5ecccd4ec9bb39718}} 
+void {\bfseries apply\+Transform} (\mbox{\hyperlink{classShader}{Shader}} $\ast$s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classShape2D_a934c77b6a8cd5982176c385f98a14d17}\label{classShape2D_a934c77b6a8cd5982176c385f98a14d17}} 
+float {\bfseries x}
+\item 
+\mbox{\Hypertarget{classShape2D_a0e9416774b84b1cd787d2e6a761f3cfe}\label{classShape2D_a0e9416774b84b1cd787d2e6a761f3cfe}} 
+float {\bfseries y}
+\item 
+\mbox{\Hypertarget{classShape2D_aa5197b6dd3f375081303b9bc30eb616d}\label{classShape2D_aa5197b6dd3f375081303b9bc30eb616d}} 
+std\+::vector$<$ float $>$ {\bfseries vertices}
+\item 
+\mbox{\Hypertarget{classShape2D_a11c9ac8075f534cee4e60edc84c3ac6b}\label{classShape2D_a11c9ac8075f534cee4e60edc84c3ac6b}} 
+std\+::vector$<$ float $>$ {\bfseries colors}
+\item 
+\mbox{\Hypertarget{classShape2D_a827a5749cb7493392f353a5bc4e689f6}\label{classShape2D_a827a5749cb7493392f353a5bc4e689f6}} 
+std\+::vector$<$ uint32\+\_\+t $>$ {\bfseries solid\+Indices}
+\item 
+\mbox{\Hypertarget{classShape2D_ace10d7c9ef44741e2dae1d10e765002d}\label{classShape2D_ace10d7c9ef44741e2dae1d10e765002d}} 
+std\+::vector$<$ uint32\+\_\+t $>$ {\bfseries line\+Indices}
+\item 
+\mbox{\Hypertarget{classShape2D_a1141d683e176f3cb9ee2a75404321630}\label{classShape2D_a1141d683e176f3cb9ee2a75404321630}} 
+std\+::vector$<$ uint32\+\_\+t $>$ {\bfseries point\+Indices}
+\item 
+\mbox{\Hypertarget{classShape2D_a84d7dbb7500e5c85c2749ca263d1f6c3}\label{classShape2D_a84d7dbb7500e5c85c2749ca263d1f6c3}} 
+\mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries style}
+\item 
+\mbox{\Hypertarget{classShape2D_a44dffdf8bf43de6d2e1adc1b8ae89996}\label{classShape2D_a44dffdf8bf43de6d2e1adc1b8ae89996}} 
+\mbox{\hyperlink{classTransformation}{Transformation}} $\ast$ {\bfseries transform}
+\end{DoxyCompactItemize}

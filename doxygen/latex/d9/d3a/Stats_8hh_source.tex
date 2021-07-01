@@ -1,0 +1,211 @@
+\hypertarget{Stats_8hh_source}{}\doxysection{Stats.\+hh}
+\label{Stats_8hh_source}\index{src/xp/Stats.hh@{src/xp/Stats.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{Stats_8hh_source_l00012}\mbox{\hyperlink{classStats1D}{00012}} \textcolor{keyword}{class }\mbox{\hyperlink{classStats1D}{Stats1D}} \{}
+\DoxyCodeLine{00013  \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Stats_8hh_source_l00014}\mbox{\hyperlink{structStats1D_1_1Summary}{00014}}   \textcolor{keyword}{struct }\mbox{\hyperlink{structStats1D_1_1Summary}{Summary}} \{}
+\DoxyCodeLine{00015     \textcolor{keywordtype}{double} min, max, q1, q3, median;}
+\DoxyCodeLine{00016   \};}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019   T* array;}
+\DoxyCodeLine{00020   std::vector<T> sorted\_array;}
+\DoxyCodeLine{00021   uint32\_t size;}
+\DoxyCodeLine{00022   \textcolor{keywordtype}{bool} sorted;}
+\DoxyCodeLine{00023   std::unique\_ptr<double> mean, stddev, variance;}
+\DoxyCodeLine{00024   std::unique\_ptr<T> iqr;}
+\DoxyCodeLine{00025   std::vector<T> modes;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027   std::unique\_ptr<struct Summary> fivenum;}
+\DoxyCodeLine{00028   uint32\_t getMedian(uint32\_t left, uint32\_t right);}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031   \mbox{\hyperlink{classStats1D}{Stats1D}}() = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00032   \mbox{\hyperlink{classStats1D}{Stats1D}}(T* array, uint32\_t size, \textcolor{keywordtype}{bool} sorted = \textcolor{keyword}{false});}
+\DoxyCodeLine{00033   \textcolor{keywordtype}{void} updateArray(T* newArray, uint32\_t newSize, \textcolor{keywordtype}{bool} sorted = \textcolor{keyword}{false});}
+\DoxyCodeLine{00034   \textcolor{keywordtype}{double} getMean();}
+\DoxyCodeLine{00035   std::vector<T> getModes();}
+\DoxyCodeLine{00036   T getIQR();}
+\DoxyCodeLine{00037   \textcolor{keyword}{struct }\mbox{\hyperlink{structStats1D_1_1Summary}{Summary}} getSummary();}
+\DoxyCodeLine{00038   \textcolor{keywordtype}{double} getStdDev();}
+\DoxyCodeLine{00039   \textcolor{keywordtype}{double} getVariance();}
+\DoxyCodeLine{00040   \textcolor{keywordtype}{double} getQuantile(\textcolor{keywordtype}{double} percentile);}
+\DoxyCodeLine{00041   \textcolor{keyword}{template} <\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{00042   \textcolor{keyword}{friend} std::ostream\& operator<<(std::ostream\& os, \mbox{\hyperlink{classStats1D}{Stats1D<U>}}\& stats);}
+\DoxyCodeLine{00043 \};}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00060 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{Stats_8hh_source_l00061}\mbox{\hyperlink{classStats1D_a41c5ea69b3c10f2d81a37daa22bf69b2}{00061}} \mbox{\hyperlink{classStats1D}{Stats1D<T>::Stats1D}}(T* array, uint32\_t size, \textcolor{keywordtype}{bool} sorted)}
+\DoxyCodeLine{00062     : array(array), size(size) \{}
+\DoxyCodeLine{00063   sorted\_array = vector<T>(array, (array + size));}
+\DoxyCodeLine{00064   \textcolor{keywordflow}{if} (!sorted) \{}
+\DoxyCodeLine{00065     sort(sorted\_array.begin(), sorted\_array.end());}
+\DoxyCodeLine{00066     sorted = \textcolor{keyword}{true};}
+\DoxyCodeLine{00067   \}}
+\DoxyCodeLine{00068 \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00078 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{Stats_8hh_source_l00079}\mbox{\hyperlink{classStats1D_a01485e9087a47de410873e7036a25103}{00079}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classStats1D_a01485e9087a47de410873e7036a25103}{Stats1D<T>::updateArray}}(T* newArray, uint32\_t newSize, \textcolor{keywordtype}{bool} sorted) \{}
+\DoxyCodeLine{00080   this-\/>array = array;}
+\DoxyCodeLine{00081   this-\/>size = size;}
+\DoxyCodeLine{00082   this-\/>sorted = sorted;}
+\DoxyCodeLine{00083   \textcolor{keywordflow}{if} (!sorted) \{}
+\DoxyCodeLine{00084     sort(sorted\_array.begin(), sorted\_array.end());}
+\DoxyCodeLine{00085     sorted = \textcolor{keyword}{true};}
+\DoxyCodeLine{00086   \}}
+\DoxyCodeLine{00087 \}}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00100 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{Stats_8hh_source_l00101}\mbox{\hyperlink{classStats1D_ab3b7cfd6058625ed131b218c03c02db2}{00101}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classStats1D_ab3b7cfd6058625ed131b218c03c02db2}{Stats1D<T>::getMean}}() \{}
+\DoxyCodeLine{00102   \textcolor{keywordflow}{if} (mean) \textcolor{keywordflow}{return} *mean;}
+\DoxyCodeLine{00103   \textcolor{keywordtype}{double} mean\_tmp = 0;}
+\DoxyCodeLine{00104   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < size; i++) \{}
+\DoxyCodeLine{00105     mean\_tmp += array[i];}
+\DoxyCodeLine{00106   \}}
+\DoxyCodeLine{00107   mean\_tmp /= size;}
+\DoxyCodeLine{00108 }
+\DoxyCodeLine{00109   mean = make\_unique<double>(mean\_tmp);}
+\DoxyCodeLine{00110   \textcolor{keywordflow}{return} *mean;}
+\DoxyCodeLine{00111 \}}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00124 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{Stats_8hh_source_l00125}\mbox{\hyperlink{classStats1D_a45ba7369a7b206a13d696a1ae09088ed}{00125}} vector<T> \mbox{\hyperlink{classStats1D_a45ba7369a7b206a13d696a1ae09088ed}{Stats1D<T>::getModes}}() \{}
+\DoxyCodeLine{00126   \textcolor{keywordflow}{if} (modes.size() != 0 || size == 0) \textcolor{keywordflow}{return} modes;}
+\DoxyCodeLine{00127   \textcolor{keywordflow}{if} (!sorted) \{}
+\DoxyCodeLine{00128     sort(sorted\_array.begin(), sorted\_array.end());}
+\DoxyCodeLine{00129     sorted = !sorted;}
+\DoxyCodeLine{00130   \}}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132   T curMode;}
+\DoxyCodeLine{00133   uint32\_t curOcc, maxOcc;}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < size; i++) \{}
+\DoxyCodeLine{00136     curOcc = (curMode == array[i]) ? (++curOcc) : curOcc;}
+\DoxyCodeLine{00137     \textcolor{keywordflow}{if} (maxOcc < curOcc \&\& curOcc != 1) \{}
+\DoxyCodeLine{00138       maxOcc = curOcc;}
+\DoxyCodeLine{00139       curMode = array[i];}
+\DoxyCodeLine{00140       modes.clear();}
+\DoxyCodeLine{00141       modes.push\_back(array[i]);}
+\DoxyCodeLine{00142     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (maxOcc == curOcc) \{}
+\DoxyCodeLine{00143       modes.push\_back(array[i]);}
+\DoxyCodeLine{00144     \}}
+\DoxyCodeLine{00145   \}}
+\DoxyCodeLine{00146 }
+\DoxyCodeLine{00147   \textcolor{keywordflow}{return} modes;}
+\DoxyCodeLine{00148 \}}
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00160 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{Stats_8hh_source_l00161}\mbox{\hyperlink{classStats1D_ae87ce391ec43fcf4f071d786b6e41dae}{00161}} T \mbox{\hyperlink{classStats1D_ae87ce391ec43fcf4f071d786b6e41dae}{Stats1D<T>::getIQR}}() \{}
+\DoxyCodeLine{00162   \textcolor{keywordflow}{if} (iqr) \textcolor{keywordflow}{return} *iqr.get();}
+\DoxyCodeLine{00163   \textcolor{keywordflow}{if} (!sorted) \{}
+\DoxyCodeLine{00164     sort(sorted\_array.begin(), sorted\_array.end());}
+\DoxyCodeLine{00165     sorted = !sorted;}
+\DoxyCodeLine{00166   \}}
+\DoxyCodeLine{00167   \mbox{\hyperlink{classStats1D_a2efbfaca016e548a9fe970ae854bc82d}{Stats1D<T>::getSummary}}();}
+\DoxyCodeLine{00168   \textcolor{keyword}{struct }\mbox{\hyperlink{structStats1D_1_1Summary}{Summary}} fn = *fivenum.get();}
+\DoxyCodeLine{00169   iqr = make\_unique<T>(fn.q3 -\/ fn.q1);}
+\DoxyCodeLine{00170   \textcolor{keywordflow}{return} *iqr.get();}
+\DoxyCodeLine{00171 \}}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00183 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00184 \textcolor{keyword}{struct }\mbox{\hyperlink{classStats1D}{Stats1D}}<T>::Summary \mbox{\hyperlink{classStats1D}{Stats1D}}<T>\mbox{\hyperlink{classStats1D_a2efbfaca016e548a9fe970ae854bc82d}{::getSummary}}() \{}
+\DoxyCodeLine{00185   \textcolor{keywordflow}{if} (fivenum) \textcolor{keywordflow}{return} *fivenum.get();}
+\DoxyCodeLine{00186   \textcolor{keywordflow}{if} (!sorted) \{}
+\DoxyCodeLine{00187     sort(sorted\_array.begin(), sorted\_array.end());}
+\DoxyCodeLine{00188     sorted = !sorted;}
+\DoxyCodeLine{00189   \}}
+\DoxyCodeLine{00190   \textcolor{keyword}{struct }Summary fn;}
+\DoxyCodeLine{00191   fn.min = sorted\_array[0];}
+\DoxyCodeLine{00192   fn.max = sorted\_array[size -\/ 1];}
+\DoxyCodeLine{00193 }
+\DoxyCodeLine{00194   \textcolor{comment}{// double q1\_ind = .25 * size;}}
+\DoxyCodeLine{00195   \textcolor{comment}{// double mid\_ind = .5 * size;}}
+\DoxyCodeLine{00196   \textcolor{comment}{// double q3\_ind = .75 * size;}}
+\DoxyCodeLine{00197   \textcolor{comment}{// double epsilon = 1 / 10000;}}
+\DoxyCodeLine{00198   \textcolor{comment}{// if (fmod(q1\_ind, 1) > epsilon)}}
+\DoxyCodeLine{00199   \textcolor{comment}{//   fn.q1 = (array[static\_cast<uint32\_t>(floor(q1\_ind))] +}}
+\DoxyCodeLine{00200   \textcolor{comment}{//            array[static\_cast<uint32\_t>(ceil(q1\_ind))]) /}}
+\DoxyCodeLine{00201   \textcolor{comment}{//           2.0;}}
+\DoxyCodeLine{00202   \textcolor{comment}{// else}}
+\DoxyCodeLine{00203   \textcolor{comment}{//   fn.q1 = array[static\_cast<uint32\_t>(q1\_ind)];}}
+\DoxyCodeLine{00204 }
+\DoxyCodeLine{00205   \textcolor{comment}{// if (fmod(mid\_ind, 1) > epsilon)}}
+\DoxyCodeLine{00206   \textcolor{comment}{//   fn.median = (array[static\_cast<uint32\_t>(floor(mid\_ind))] +}}
+\DoxyCodeLine{00207   \textcolor{comment}{//                array[static\_cast<uint32\_t>(ceil(mid\_ind))]) /}}
+\DoxyCodeLine{00208   \textcolor{comment}{//               2.0;}}
+\DoxyCodeLine{00209   \textcolor{comment}{// else}}
+\DoxyCodeLine{00210   \textcolor{comment}{//   fn.median = array[static\_cast<uint32\_t>(mid\_ind)];}}
+\DoxyCodeLine{00211 }
+\DoxyCodeLine{00212   \textcolor{comment}{// if (fmod(q3\_ind, 1) > epsilon)}}
+\DoxyCodeLine{00213   \textcolor{comment}{//   fn.q3 = (array[static\_cast<uint32\_t>(floor(q3\_ind))] +}}
+\DoxyCodeLine{00214   \textcolor{comment}{//            array[static\_cast<uint32\_t>(ceil(q3\_ind))]) /}}
+\DoxyCodeLine{00215   \textcolor{comment}{//           2.0;}}
+\DoxyCodeLine{00216   \textcolor{comment}{// else}}
+\DoxyCodeLine{00217   \textcolor{comment}{//   fn.q3 = array[static\_cast<uint32\_t>(q3\_ind)];}}
+\DoxyCodeLine{00218 }
+\DoxyCodeLine{00219   fn.q1 = \mbox{\hyperlink{classStats1D_ae116d4fdc3994b47742a265e097bc54b}{getQuantile}}(.25);}
+\DoxyCodeLine{00220   fn.median = \mbox{\hyperlink{classStats1D_ae116d4fdc3994b47742a265e097bc54b}{getQuantile}}(.50);}
+\DoxyCodeLine{00221   fn.q3 = \mbox{\hyperlink{classStats1D_ae116d4fdc3994b47742a265e097bc54b}{getQuantile}}(.75);}
+\DoxyCodeLine{00222 }
+\DoxyCodeLine{00223   fivenum = make\_unique<struct Summary>(fn);}
+\DoxyCodeLine{00224   \textcolor{keywordflow}{return} *fivenum.get();}
+\DoxyCodeLine{00225 \}}
+\DoxyCodeLine{00226 }
+\DoxyCodeLine{00237 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{Stats_8hh_source_l00238}\mbox{\hyperlink{classStats1D_a140451b77c198677c2cc24c3bbe5c0e6}{00238}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classStats1D_a140451b77c198677c2cc24c3bbe5c0e6}{Stats1D<T>::getStdDev}}() \{}
+\DoxyCodeLine{00239   \textcolor{keywordflow}{if} (stddev) \textcolor{keywordflow}{return} *stddev.get();}
+\DoxyCodeLine{00240   stddev = make\_unique<double>(sqrt(getVariance()));}
+\DoxyCodeLine{00241   \textcolor{keywordflow}{return} *stddev.get();}
+\DoxyCodeLine{00242 \}}
+\DoxyCodeLine{00243 }
+\DoxyCodeLine{00254 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{Stats_8hh_source_l00255}\mbox{\hyperlink{classStats1D_a3a69d2cbb665886f149f5454e103990d}{00255}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classStats1D_a3a69d2cbb665886f149f5454e103990d}{Stats1D<T>::getVariance}}() \{}
+\DoxyCodeLine{00256   \textcolor{keywordflow}{if} (variance) \textcolor{keywordflow}{return} *variance.get();}
+\DoxyCodeLine{00257   \textcolor{keywordtype}{double} mean\_tmp = getMean();}
+\DoxyCodeLine{00258   \textcolor{keywordtype}{double} sum = 0;}
+\DoxyCodeLine{00259   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < size; i++) \{}
+\DoxyCodeLine{00260     sum += pow(array[i] -\/ mean\_tmp, 2);}
+\DoxyCodeLine{00261   \}}
+\DoxyCodeLine{00262   variance = make\_unique<double>(sum / (size -\/ 1));}
+\DoxyCodeLine{00263   \textcolor{keywordflow}{return} *variance.get();}
+\DoxyCodeLine{00264 \}}
+\DoxyCodeLine{00265 }
+\DoxyCodeLine{00277 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{Stats_8hh_source_l00278}\mbox{\hyperlink{classStats1D_ae116d4fdc3994b47742a265e097bc54b}{00278}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classStats1D_ae116d4fdc3994b47742a265e097bc54b}{Stats1D<T>::getQuantile}}(\textcolor{keywordtype}{double} percentile) \{}
+\DoxyCodeLine{00279   \textcolor{keywordtype}{double} h = (sorted\_array.size() -\/ 1) * percentile;}
+\DoxyCodeLine{00280   \textcolor{keywordflow}{return} sorted\_array[floor(h)] +}
+\DoxyCodeLine{00281          (h -\/ floor(h)) * (sorted\_array[ceil(h)] -\/ sorted\_array[floor(h)]);}
+\DoxyCodeLine{00282 \}}
+\DoxyCodeLine{00283 }
+\DoxyCodeLine{00284 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00285 ostream\& operator<<(ostream\& os, \mbox{\hyperlink{classStats1D}{Stats1D<T>}}\& stats) \{}
+\DoxyCodeLine{00286   \textcolor{keyword}{struct }\mbox{\hyperlink{classStats1D}{Stats1D}}<T>::Summary fivenum = stats.\mbox{\hyperlink{classStats1D_a2efbfaca016e548a9fe970ae854bc82d}{getSummary}}();}
+\DoxyCodeLine{00287   os << "{}\# Points: "{} << stats.sorted\_array.size()}
+\DoxyCodeLine{00288      << "{}\(\backslash\)nMean: "{} << stats.getMean() << "{}\(\backslash\)nStdDev: "{} << stats.getStdDev()}
+\DoxyCodeLine{00289      << "{}\(\backslash\)nVariance: "{} << stats.getVariance()}
+\DoxyCodeLine{00290      << "{}\(\backslash\)nFive Number Summary:\(\backslash\)n\(\backslash\)tMinimum: "{} << fivenum.min}
+\DoxyCodeLine{00291      << "{}\(\backslash\)n\(\backslash\)tFirst Quartile: "{} << fivenum.q1 << "{}\(\backslash\)n\(\backslash\)tMedian: "{} << fivenum.median}
+\DoxyCodeLine{00292      << "{}\(\backslash\)n\(\backslash\)tThird Quartile: "{} << fivenum.q3 << "{}\(\backslash\)n\(\backslash\)tMaximum: "{} << fivenum.max}
+\DoxyCodeLine{00293      << "{}\(\backslash\)nIQR:"{} << stats.getIQR() << "{}\(\backslash\)nModes: ["{};}
+\DoxyCodeLine{00294 }
+\DoxyCodeLine{00295   vector<T> modes = stats.getModes();}
+\DoxyCodeLine{00296   for (const auto\& i : modes) \{}
+\DoxyCodeLine{00297     os << i << "{}, "{};}
+\DoxyCodeLine{00298   \}}
+\DoxyCodeLine{00299   os << "{}]"{};}
+\DoxyCodeLine{00300   return os;}
+\DoxyCodeLine{00301 \}}
+
+\end{DoxyCode}

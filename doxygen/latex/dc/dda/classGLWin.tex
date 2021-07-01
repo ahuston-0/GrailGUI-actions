@@ -1,0 +1,426 @@
+\hypertarget{classGLWin}{}\doxysection{GLWin Class Reference}
+\label{classGLWin}\index{GLWin@{GLWin}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGLWin_a4fcd7f2dbc2680e0836af60d2d51b3e4}\label{classGLWin_a4fcd7f2dbc2680e0836af60d2d51b3e4}} 
+enum {\bfseries Inputs} \{ \newline
+{\bfseries INSERT} = 260
+, {\bfseries DEL} = 261
+, {\bfseries RARROW} = 262
+, {\bfseries LARROW} = 263
+, \newline
+{\bfseries UPARROW} = 265
+, {\bfseries DOWNARROW} = 264
+, {\bfseries PAGEUP} = 266
+, {\bfseries PAGEDOWN} = 267
+, \newline
+{\bfseries F1} = 290
+, {\bfseries F2} = 291
+, {\bfseries F3} = 292
+, {\bfseries F4} = 293
+, \newline
+{\bfseries F5} = 294
+, {\bfseries F6} = 295
+, {\bfseries F7} = 296
+, {\bfseries F8} = 297
+, \newline
+{\bfseries F9} = 298
+, {\bfseries F10} = 299
+, {\bfseries F11} = 300
+, {\bfseries F12} = 301
+, \newline
+{\bfseries WHEELUP} = 401
+, {\bfseries WHEELDOWN} = 399
+, {\bfseries MOUSE0} = 0
+, {\bfseries MOUSE1} = 1
+, \newline
+{\bfseries MOUSE2} = 2
+, {\bfseries MOUSE3} = 3
+, {\bfseries MOUSE4} = 4
+, {\bfseries PRESS} = 8
+, \newline
+{\bfseries RELEASE} = 0
+, {\bfseries CTRL} = 512
+, {\bfseries SHIFT} = 1024
+, {\bfseries ALT} = 2048
+ \}
+\item 
+\mbox{\Hypertarget{classGLWin_a73f1af9a6f835761e248a3afea6dbcdc}\label{classGLWin_a73f1af9a6f835761e248a3afea6dbcdc}} 
+enum class {\bfseries Security} \{ {\bfseries SAFE}
+, {\bfseries RESTRICTED}
+, {\bfseries ASK}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGLWin_a7f728376d24a2d888b3f6d72b20ab66c}\label{classGLWin_a7f728376d24a2d888b3f6d72b20ab66c}} 
+float {\bfseries get\+Time} () const
+\item 
+\mbox{\Hypertarget{classGLWin_ac4ae111fb21d74f83195232e7a54b5b4}\label{classGLWin_ac4ae111fb21d74f83195232e7a54b5b4}} 
+uint32\+\_\+t {\bfseries lookup\+Action} (const char action\+Name\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classGLWin_a6700a392492c68ae6b053676a23589d3}\label{classGLWin_a6700a392492c68ae6b053676a23589d3}} 
+void {\bfseries set\+Event} (uint32\+\_\+t e, uint32\+\_\+t a)
+\item 
+\mbox{\Hypertarget{classGLWin_a019dc737e7c3a4f207d312c8cc00e369}\label{classGLWin_a019dc737e7c3a4f207d312c8cc00e369}} 
+void {\bfseries set\+Event} (uint32\+\_\+t key, uint32\+\_\+t mod, uint32\+\_\+t a)
+\item 
+\mbox{\Hypertarget{classGLWin_a56d7f8279976ddb9db9405d15e5d0625}\label{classGLWin_a56d7f8279976ddb9db9405d15e5d0625}} 
+void {\bfseries set\+Action} (uint32\+\_\+t a, Action action)
+\item 
+\mbox{\Hypertarget{classGLWin_a380a612654a626fdedee2a6db5de73c4}\label{classGLWin_a380a612654a626fdedee2a6db5de73c4}} 
+void {\bfseries load\+Bindings} ()
+\item 
+\mbox{\Hypertarget{classGLWin_adf97b7eeebc5adb1fd89c845f9e12ab7}\label{classGLWin_adf97b7eeebc5adb1fd89c845f9e12ab7}} 
+uint32\+\_\+t {\bfseries internal\+Register\+Action} (const char name\mbox{[}$\,$\mbox{]}, Security s, Action action)
+\item 
+\mbox{\Hypertarget{classGLWin_a8ae3216277e01b816a1adc5661408ccc}\label{classGLWin_a8ae3216277e01b816a1adc5661408ccc}} 
+void {\bfseries bind} (uint32\+\_\+t input, const char action\+Name\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classGLWin_a47e807be1d73b6219234213e48aa51d9}\label{classGLWin_a47e807be1d73b6219234213e48aa51d9}} 
+void {\bfseries bind} (const char input\+Cmd\mbox{[}$\,$\mbox{]}, const char action\+Name\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classGLWin_a96ad3f5eed843411215f3d404545ea50}\label{classGLWin_a96ad3f5eed843411215f3d404545ea50}} 
+double {\bfseries time} () const
+\item 
+\mbox{\Hypertarget{classGLWin_a8ccd77f0bc1d2efa60273052ccc5ef0a}\label{classGLWin_a8ccd77f0bc1d2efa60273052ccc5ef0a}} 
+void {\bfseries set\+Dt} (double delta)
+\item 
+\mbox{\Hypertarget{classGLWin_ac738d46868acc7dcd0b6053fa32cd32a}\label{classGLWin_ac738d46868acc7dcd0b6053fa32cd32a}} 
+{\bfseries GLWin} (uint32\+\_\+t bg\+Color=0x000000\+FF, uint32\+\_\+t fg\+Color=0x\+FFFFFFFF, const char title\mbox{[}$\,$\mbox{]}=nullptr, uint32\+\_\+t exit\+After=0)
+\item 
+\mbox{\Hypertarget{classGLWin_ad8599df8c900729fc46c726e8d8e3693}\label{classGLWin_ad8599df8c900729fc46c726e8d8e3693}} 
+\mbox{\hyperlink{classGLWin_ad8599df8c900729fc46c726e8d8e3693}{GLWin}} (uint32\+\_\+t w, uint32\+\_\+t h, uint32\+\_\+t bg\+Color, uint32\+\_\+t fg\+Color, const char title\mbox{[}$\,$\mbox{]}, uint32\+\_\+t exit\+After=0)
+\begin{DoxyCompactList}\small\item\em need to call set\+Size, start\+Window manually \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGLWin_ad5f6dbdf25e27c0faf1cb988f422a74f}\label{classGLWin_ad5f6dbdf25e27c0faf1cb988f422a74f}} 
+\mbox{\hyperlink{classTab}{Tab}} $\ast$ {\bfseries current\+Tab} ()
+\item 
+\mbox{\Hypertarget{classGLWin_a022fb7852382f08cc16a1fe5d3246c97}\label{classGLWin_a022fb7852382f08cc16a1fe5d3246c97}} 
+void {\bfseries set\+Size} (uint32\+\_\+t w, uint32\+\_\+t h)
+\item 
+\mbox{\Hypertarget{classGLWin_a58a6d0883dcb87171fd1ae8929fd0824}\label{classGLWin_a58a6d0883dcb87171fd1ae8929fd0824}} 
+uint32\+\_\+t {\bfseries get\+Width} () const
+\item 
+\mbox{\Hypertarget{classGLWin_a4e11ebcfef3e4c759934b7c5fddb5432}\label{classGLWin_a4e11ebcfef3e4c759934b7c5fddb5432}} 
+uint32\+\_\+t {\bfseries get\+Height} () const
+\item 
+\mbox{\Hypertarget{classGLWin_a73de7daa281746d0c7ab6b68442e7f5e}\label{classGLWin_a73de7daa281746d0c7ab6b68442e7f5e}} 
+virtual void {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{classGLWin_a30472cf05bc192017d8e2226dc67449b}\label{classGLWin_a30472cf05bc192017d8e2226dc67449b}} 
+void {\bfseries start\+Window} ()
+\item 
+\mbox{\Hypertarget{classGLWin_a70030bfa5ea46f9f2ea9180a301e20fe}\label{classGLWin_a70030bfa5ea46f9f2ea9180a301e20fe}} 
+virtual void {\bfseries render} ()
+\item 
+\mbox{\Hypertarget{classGLWin_a586554d802974f0b1c40f36bcd876bf9}\label{classGLWin_a586554d802974f0b1c40f36bcd876bf9}} 
+void {\bfseries add\+Font\+Path} (std\+::string path, std\+::string name)
+\item 
+\mbox{\Hypertarget{classGLWin_a272ae5e4412fe8dd2716da8d95ffa974}\label{classGLWin_a272ae5e4412fe8dd2716da8d95ffa974}} 
+virtual void {\bfseries update} ()
+\item 
+\mbox{\Hypertarget{classGLWin_a5047c4a71d9933a189b770c39b492f61}\label{classGLWin_a5047c4a71d9933a189b770c39b492f61}} 
+virtual void {\bfseries cleanup} ()
+\item 
+\mbox{\Hypertarget{classGLWin_ac1a624a590e5858865c5c9c364b1b06b}\label{classGLWin_ac1a624a590e5858865c5c9c364b1b06b}} 
+void {\bfseries reset\+Anim} ()
+\item 
+\mbox{\Hypertarget{classGLWin_a7c64d9e710f5bfe2b012913df7c40d67}\label{classGLWin_a7c64d9e710f5bfe2b012913df7c40d67}} 
+void {\bfseries set\+Time} (float t)
+\item 
+\mbox{\Hypertarget{classGLWin_ac6c622381b5dc631186e4519872b1e28}\label{classGLWin_ac6c622381b5dc631186e4519872b1e28}} 
+void {\bfseries tick} ()
+\item 
+\mbox{\Hypertarget{classGLWin_a8bcc37c2e3cc89efe8a784b0208994fc}\label{classGLWin_a8bcc37c2e3cc89efe8a784b0208994fc}} 
+void {\bfseries set\+End\+Time} (float t)
+\item 
+\mbox{\Hypertarget{classGLWin_a98e5733ae7f2a7eb60286ce75db660a8}\label{classGLWin_a98e5733ae7f2a7eb60286ce75db660a8}} 
+void {\bfseries set\+Desired\+Color} (const glm\+::vec3 \&c, float delta)
+\item 
+\mbox{\Hypertarget{classGLWin_a47f3a31065cb7d79cc717e741fb93225}\label{classGLWin_a47f3a31065cb7d79cc717e741fb93225}} 
+void {\bfseries random} (glm\+::vec3 \&v)
+\item 
+\mbox{\Hypertarget{classGLWin_ab1d51565c4a9b60db9ba012955d58e8c}\label{classGLWin_ab1d51565c4a9b60db9ba012955d58e8c}} 
+void {\bfseries main\+Loop} ()
+\item 
+\mbox{\Hypertarget{classGLWin_ae8b1c52aa5a656ec4d578edd22efe125}\label{classGLWin_ae8b1c52aa5a656ec4d578edd22efe125}} 
+void {\bfseries set\+Dirty} ()
+\item 
+\mbox{\Hypertarget{classGLWin_ae3f3021ccc74fa2d284ce7cf50e423a1}\label{classGLWin_ae3f3021ccc74fa2d284ce7cf50e423a1}} 
+const \mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries get\+Default\+Style} () const
+\item 
+\mbox{\Hypertarget{classGLWin_acde53d660e012038d3029dced236c059}\label{classGLWin_acde53d660e012038d3029dced236c059}} 
+const \mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries get\+Gui\+Style} () const
+\item 
+\mbox{\Hypertarget{classGLWin_accd22987a090c90b6c6d4af267d4fbb9}\label{classGLWin_accd22987a090c90b6c6d4af267d4fbb9}} 
+const \mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries get\+Gui\+Text\+Style} () const
+\item 
+\mbox{\Hypertarget{classGLWin_ad0a92e82435d42a9cd3bef3deae951a9}\label{classGLWin_ad0a92e82435d42a9cd3bef3deae951a9}} 
+const \mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries get\+Menu\+Style} () const
+\item 
+\mbox{\Hypertarget{classGLWin_ae553f407928d9f559a336d98531d6d71}\label{classGLWin_ae553f407928d9f559a336d98531d6d71}} 
+const \mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries get\+Menu\+Text\+Style} () const
+\item 
+\mbox{\Hypertarget{classGLWin_a286278218d6cd20739eb8a4deeff8e8e}\label{classGLWin_a286278218d6cd20739eb8a4deeff8e8e}} 
+const \mbox{\hyperlink{classFont}{Font}} $\ast$ {\bfseries get\+Default\+Font} () const
+\item 
+\mbox{\Hypertarget{classGLWin_ac397d7f544594ca2c00945e3e966709d}\label{classGLWin_ac397d7f544594ca2c00945e3e966709d}} 
+const \mbox{\hyperlink{classFont}{Font}} $\ast$ {\bfseries get\+Gui\+Font} () const
+\item 
+\mbox{\Hypertarget{classGLWin_afe3ed6562b36c0b6b5562ff87ddaf806}\label{classGLWin_afe3ed6562b36c0b6b5562ff87ddaf806}} 
+const \mbox{\hyperlink{classFont}{Font}} $\ast$ {\bfseries get\+Menu\+Font} () const
+\item 
+\mbox{\Hypertarget{classGLWin_a6e81a06d981cfa6413c8e5c1ce5cadac}\label{classGLWin_a6e81a06d981cfa6413c8e5c1ce5cadac}} 
+virtual void {\bfseries base\+Init} ()
+\item 
+\mbox{\Hypertarget{classGLWin_abcd585a9b00fda644e9f978813ed59d9}\label{classGLWin_abcd585a9b00fda644e9f978813ed59d9}} 
+void {\bfseries bind2\+DOrtho} ()
+\item 
+\mbox{\Hypertarget{classGLWin_a0ef899daf30ff178fe33eab33fcc4ba0}\label{classGLWin_a0ef899daf30ff178fe33eab33fcc4ba0}} 
+void {\bfseries bind3D} ()
+\item 
+\mbox{\Hypertarget{classGLWin_a2d508f5e09a9492fe423277a5ec4ad52}\label{classGLWin_a2d508f5e09a9492fe423277a5ec4ad52}} 
+void {\bfseries clear\+Selected} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_afe85b97628466af57ac8d13cd8ce5c58}\label{classGLWin_afe85b97628466af57ac8d13cd8ce5c58}} 
+double {\bfseries get\+Time} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGLWin_ad52c9ccb696c8f0feed799248595f303}\label{classGLWin_ad52c9ccb696c8f0feed799248595f303}} 
+static int {\bfseries init} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$g, uint32\+\_\+t w, uint32\+\_\+t h, uint32\+\_\+t exit\+After=0)
+\item 
+\mbox{\Hypertarget{classGLWin_a2212c4c385174fd8648c7dfda5cb536a}\label{classGLWin_a2212c4c385174fd8648c7dfda5cb536a}} 
+static int {\bfseries init} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$g, uint32\+\_\+t exit\+After=0)
+\item 
+\mbox{\Hypertarget{classGLWin_a3e80825534b55ec3889b6323527e8066}\label{classGLWin_a3e80825534b55ec3889b6323527e8066}} 
+static glm\+::mat4 $\ast$ {\bfseries get\+Projection} ()
+\item 
+\mbox{\Hypertarget{classGLWin_ad9c0404b22351a99f78507c5d59b9f95}\label{classGLWin_ad9c0404b22351a99f78507c5d59b9f95}} 
+static void {\bfseries class\+Init} ()
+\item 
+\mbox{\Hypertarget{classGLWin_abe45aab2560b1af2862febf75cf78060}\label{classGLWin_abe45aab2560b1af2862febf75cf78060}} 
+static void {\bfseries class\+Cleanup} ()
+\item 
+\mbox{\Hypertarget{classGLWin_affa1c747de4de1930c7690f3876f4688}\label{classGLWin_affa1c747de4de1930c7690f3876f4688}} 
+static void {\bfseries quit} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_ae69580bf36d7e2aec8bdc967dbda36ba}\label{classGLWin_ae69580bf36d7e2aec8bdc967dbda36ba}} 
+static void {\bfseries refresh} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a397a56f133b67ce87a0fe3285e8c5e34}\label{classGLWin_a397a56f133b67ce87a0fe3285e8c5e34}} 
+static void {\bfseries save\+Frame} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a2bb81518b3b0d3b48b2f61abe15d2bff}\label{classGLWin_a2bb81518b3b0d3b48b2f61abe15d2bff}} 
+static void {\bfseries reset\+Camera} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_ad1c435012f559ec503d177d7990cb6a4}\label{classGLWin_ad1c435012f559ec503d177d7990cb6a4}} 
+static void {\bfseries goto\+Start\+Time} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a5d696dd2bd348a141cbccc5412ea570f}\label{classGLWin_a5d696dd2bd348a141cbccc5412ea570f}} 
+static void {\bfseries goto\+End\+Time} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a06525a82e6b40e1787cf2bf10f49162a}\label{classGLWin_a06525a82e6b40e1787cf2bf10f49162a}} 
+static void {\bfseries speed\+Time} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a8eb2c2364df641302aabf16022dbeb95}\label{classGLWin_a8eb2c2364df641302aabf16022dbeb95}} 
+static void {\bfseries slow\+Time} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a5700a7fc05c96c02039af5b2f991c881}\label{classGLWin_a5700a7fc05c96c02039af5b2f991c881}} 
+static void {\bfseries reset\+Time\+Dilation} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a45a3a2e61e3c79043641a1e40660aa7f}\label{classGLWin_a45a3a2e61e3c79043641a1e40660aa7f}} 
+static void {\bfseries reset\+Projection3D} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_acbf248b592a19e2d4b50f45c88c8e7e6}\label{classGLWin_acbf248b592a19e2d4b50f45c88c8e7e6}} 
+static void {\bfseries zoom\+Out3D} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a367d8aceaea382b466de4ab9f621b361}\label{classGLWin_a367d8aceaea382b466de4ab9f621b361}} 
+static void {\bfseries zoom\+In3D} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a416d4eb992721e80ba54b3523753c645}\label{classGLWin_a416d4eb992721e80ba54b3523753c645}} 
+static void {\bfseries pan\+Right3D} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a085ef29bca8d39c95997ce46adba8d93}\label{classGLWin_a085ef29bca8d39c95997ce46adba8d93}} 
+static void {\bfseries pan\+Left3D} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_abf4f56070baaa82033153dabfe98a34e}\label{classGLWin_abf4f56070baaa82033153dabfe98a34e}} 
+static void {\bfseries pan\+Up3D} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_af1a237a03217a7e76d47175fecbd272c}\label{classGLWin_af1a237a03217a7e76d47175fecbd272c}} 
+static void {\bfseries pan\+Down3D} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a68453ccbe330ac01831f499e639c1769}\label{classGLWin_a68453ccbe330ac01831f499e639c1769}} 
+static void {\bfseries select\+Object3D} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a95dd2576b36b7b85e98fbac323025d80}\label{classGLWin_a95dd2576b36b7b85e98fbac323025d80}} 
+static void {\bfseries add\+Select\+Object3D} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_aa49d22be8baf63fa3b51604cb27b5c69}\label{classGLWin_aa49d22be8baf63fa3b51604cb27b5c69}} 
+static void {\bfseries toggle\+Select\+Object3D} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a529862dffc442c1ef4683ca3a92f5806}\label{classGLWin_a529862dffc442c1ef4683ca3a92f5806}} 
+static void {\bfseries reset\+Projection2D} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a12c039fba6245673f41b0e13f63e98e5}\label{classGLWin_a12c039fba6245673f41b0e13f63e98e5}} 
+static void {\bfseries zoom\+Out2D} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a4e3d2061fcabe78495537df286af2a6a}\label{classGLWin_a4e3d2061fcabe78495537df286af2a6a}} 
+static void {\bfseries zoom\+In2D} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a30699d2e89c7a3b34d65e412d7b93353}\label{classGLWin_a30699d2e89c7a3b34d65e412d7b93353}} 
+static void {\bfseries pan\+Right2D} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_ab9cdf5ce9a1a81375abc042fb8c04ff3}\label{classGLWin_ab9cdf5ce9a1a81375abc042fb8c04ff3}} 
+static void {\bfseries pan\+Left2D} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a555ad6485ebcb65e18c26ee7f1593d13}\label{classGLWin_a555ad6485ebcb65e18c26ee7f1593d13}} 
+static void {\bfseries pan\+Up2D} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_afed22b9f808f2461e421ca41b2f60b97}\label{classGLWin_afed22b9f808f2461e421ca41b2f60b97}} 
+static void {\bfseries pan\+Down2D} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_af76b8ff4929eb3ada3d1e89b41faf458}\label{classGLWin_af76b8ff4929eb3ada3d1e89b41faf458}} 
+static void {\bfseries goto\+Top} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a678699374acd810961c45f6f84855921}\label{classGLWin_a678699374acd810961c45f6f84855921}} 
+static void {\bfseries goto\+Bottom} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a3c60bb0bdb65f212ad015c060627816d}\label{classGLWin_a3c60bb0bdb65f212ad015c060627816d}} 
+static void {\bfseries scroll\+Up} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a4394066a976c4f1e639f268d218445b1}\label{classGLWin_a4394066a976c4f1e639f268d218445b1}} 
+static void {\bfseries scroll\+Down} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a121b6b913ec72891275493af1131a2f5}\label{classGLWin_a121b6b913ec72891275493af1131a2f5}} 
+static void {\bfseries page\+Up} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_ae49f84d9e80ff39c897c60fd2db27502}\label{classGLWin_ae49f84d9e80ff39c897c60fd2db27502}} 
+static void {\bfseries page\+Down} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_aacf9fff8533f6a25ad3f4e2b13101ce3}\label{classGLWin_aacf9fff8533f6a25ad3f4e2b13101ce3}} 
+static void {\bfseries section\+Up} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_aceb54b78f6760b48c31c580dbeab6b98}\label{classGLWin_aceb54b78f6760b48c31c580dbeab6b98}} 
+static void {\bfseries section\+Down} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a5ee4b45e2569347c64b05c2e3e85879b}\label{classGLWin_a5ee4b45e2569347c64b05c2e3e85879b}} 
+static void {\bfseries play\+Sound} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w, const char name\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classGLWin_a2542acaa5417e83b580e3aeda9dedf67}\label{classGLWin_a2542acaa5417e83b580e3aeda9dedf67}} 
+static void {\bfseries stop\+Sound} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_accd04d7bb6fbdc5464a884956ab3b81f}\label{classGLWin_accd04d7bb6fbdc5464a884956ab3b81f}} 
+static void {\bfseries press\+On\+Widget} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\item 
+\mbox{\Hypertarget{classGLWin_a09e6655f23399c6ae0a942f3313f2e62}\label{classGLWin_a09e6655f23399c6ae0a942f3313f2e62}} 
+static void {\bfseries release\+Widget} (\mbox{\hyperlink{classGLWin}{GLWin}} $\ast$w)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGLWin_a6b22b5b769c199eaab4a9ec03ed7336d}\label{classGLWin_a6b22b5b769c199eaab4a9ec03ed7336d}} 
+double {\bfseries mouseX}
+\item 
+\mbox{\Hypertarget{classGLWin_af280734615b0669af040ea30e3612240}\label{classGLWin_af280734615b0669af040ea30e3612240}} 
+double {\bfseries mouseY}
+\item 
+\mbox{\Hypertarget{classGLWin_a59766e14e9580f323daa1eac93a133a6}\label{classGLWin_a59766e14e9580f323daa1eac93a133a6}} 
+float {\bfseries mouse\+PressX}
+\item 
+\mbox{\Hypertarget{classGLWin_a8c74cb2a3ac81e972ea250a655d8c0f6}\label{classGLWin_a8c74cb2a3ac81e972ea250a655d8c0f6}} 
+float {\bfseries mouse\+PressY}
+\item 
+\mbox{\Hypertarget{classGLWin_a43c411ccb4e5a9bcd658537fdaa58022}\label{classGLWin_a43c411ccb4e5a9bcd658537fdaa58022}} 
+bool {\bfseries drag\+Mode}
+\item 
+\mbox{\Hypertarget{classGLWin_a760b0bea7fc89e64161a055f544e60f7}\label{classGLWin_a760b0bea7fc89e64161a055f544e60f7}} 
+int {\bfseries win\+XPos}
+\item 
+\mbox{\Hypertarget{classGLWin_aa18f3ae4e71b61da3158c0b1ce977be0}\label{classGLWin_aa18f3ae4e71b61da3158c0b1ce977be0}} 
+int {\bfseries win\+YPos}
+\item 
+\mbox{\Hypertarget{classGLWin_a959210189c886b746841820f51b21781}\label{classGLWin_a959210189c886b746841820f51b21781}} 
+uint32\+\_\+t {\bfseries width}
+\item 
+\mbox{\Hypertarget{classGLWin_a11e06e6b79b42656a63e300f34a52605}\label{classGLWin_a11e06e6b79b42656a63e300f34a52605}} 
+uint32\+\_\+t {\bfseries height}
+\item 
+\mbox{\Hypertarget{classGLWin_a891a1c0f69664f8e0e75ee6eecd484dc}\label{classGLWin_a891a1c0f69664f8e0e75ee6eecd484dc}} 
+bool {\bfseries dirty}
+\item 
+\mbox{\Hypertarget{classGLWin_ade8f7ddbc2d64f97011e4410b6eecab3}\label{classGLWin_ade8f7ddbc2d64f97011e4410b6eecab3}} 
+bool {\bfseries dirty2}
+\item 
+\mbox{\Hypertarget{classGLWin_adbbe7185394c331a27a383fe79916299}\label{classGLWin_adbbe7185394c331a27a383fe79916299}} 
+bool {\bfseries focused}
+\item 
+\mbox{\Hypertarget{classGLWin_a90528e1fc8fe4505b751f46a8619a7f9}\label{classGLWin_a90528e1fc8fe4505b751f46a8619a7f9}} 
+uint32\+\_\+t {\bfseries exit\+After}
+\item 
+\mbox{\Hypertarget{classGLWin_ae66904dc55a2912a0468ad084d704254}\label{classGLWin_ae66904dc55a2912a0468ad084d704254}} 
+uint32\+\_\+t {\bfseries num\+Actions} \mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGLWin_a5a7d3577bf8f20d7900bba7d3e6ca1f3}\label{classGLWin_a5a7d3577bf8f20d7900bba7d3e6ca1f3}} 
+constexpr static uint32\+\_\+t {\bfseries COMMON\+\_\+\+SHADER} = 0
+\item 
+\mbox{\Hypertarget{classGLWin_a1742c53250091edc381d461c7ed7c00d}\label{classGLWin_a1742c53250091edc381d461c7ed7c00d}} 
+constexpr static uint32\+\_\+t {\bfseries PER\+\_\+\+VERTEX\+\_\+\+SHADER} = 1
+\item 
+\mbox{\Hypertarget{classGLWin_a1da79739a7ef0dbcd9f7201c61f87a6e}\label{classGLWin_a1da79739a7ef0dbcd9f7201c61f87a6e}} 
+constexpr static uint32\+\_\+t {\bfseries TEXT\+\_\+\+SHADER} = 2
+\item 
+\mbox{\Hypertarget{classGLWin_a77fb92568d3cb6409ea673bd31259ac8}\label{classGLWin_a77fb92568d3cb6409ea673bd31259ac8}} 
+constexpr static uint32\+\_\+t {\bfseries TEXTURE\+\_\+\+SHADER} = 3
+\item 
+\mbox{\Hypertarget{classGLWin_a43d982c3cb7a6c26361348ecddddfffb}\label{classGLWin_a43d982c3cb7a6c26361348ecddddfffb}} 
+constexpr static uint32\+\_\+t {\bfseries CURSOR\+\_\+\+SHADER} = 4
+\item 
+\mbox{\Hypertarget{classGLWin_ac7bdbed43ff4aa183bf2ae23b5817214}\label{classGLWin_ac7bdbed43ff4aa183bf2ae23b5817214}} 
+constexpr static uint32\+\_\+t {\bfseries MULTI\+\_\+\+TEXTURE\+\_\+\+SHADER} = 5
+\item 
+\mbox{\Hypertarget{classGLWin_acb01ecb1e1d573e0804fc763195d4077}\label{classGLWin_acb01ecb1e1d573e0804fc763195d4077}} 
+static std\+::string {\bfseries base\+Dir}
+\item 
+\mbox{\Hypertarget{classGLWin_ab174232198bd8233a1a5417a263b6b73}\label{classGLWin_ab174232198bd8233a1a5417a263b6b73}} 
+static uint32\+\_\+t {\bfseries input\+Map} \mbox{[}32768\mbox{]}
+\item 
+\mbox{\Hypertarget{classGLWin_a0e2d5ae1dfe88cd7bff6878685b87089}\label{classGLWin_a0e2d5ae1dfe88cd7bff6878685b87089}} 
+static Action {\bfseries action\+Map} \mbox{[}4096\mbox{]}
+\item 
+\mbox{\Hypertarget{classGLWin_ae6c1d9712b21d7660080d5349eae8641}\label{classGLWin_ae6c1d9712b21d7660080d5349eae8641}} 
+static std\+::unordered\+\_\+map$<$ std\+::string, int $>$ {\bfseries action\+Name\+Map}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGLWin_af09ca53e46a2a06bef0a0aa1bdb11555}\label{classGLWin_af09ca53e46a2a06bef0a0aa1bdb11555}} 
+\mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries default\+Style}
+\item 
+\mbox{\Hypertarget{classGLWin_a2a73ba1b9c3361d0b465c6a5e2ac2e3a}\label{classGLWin_a2a73ba1b9c3361d0b465c6a5e2ac2e3a}} 
+\mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries gui\+Style}
+\item 
+\mbox{\Hypertarget{classGLWin_ab8e79f06b554dbcb3c1ce7e623e6a7ce}\label{classGLWin_ab8e79f06b554dbcb3c1ce7e623e6a7ce}} 
+\mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries gui\+Text\+Style}
+\item 
+\mbox{\Hypertarget{classGLWin_a40fa112d89d2283781de43d3fedb041f}\label{classGLWin_a40fa112d89d2283781de43d3fedb041f}} 
+\mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries menu\+Style}
+\item 
+\mbox{\Hypertarget{classGLWin_a7443b53954732325a42983a7cffdd735}\label{classGLWin_a7443b53954732325a42983a7cffdd735}} 
+\mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries menu\+Text\+Style}
+\item 
+\mbox{\Hypertarget{classGLWin_aeef668eea7fce5495523cad91fb08b99}\label{classGLWin_aeef668eea7fce5495523cad91fb08b99}} 
+\mbox{\hyperlink{classFont}{Font}} $\ast$ {\bfseries default\+Font}
+\item 
+\mbox{\Hypertarget{classGLWin_a275d763214fda285b309ba68c7a13c46}\label{classGLWin_a275d763214fda285b309ba68c7a13c46}} 
+\mbox{\hyperlink{classFont}{Font}} $\ast$ {\bfseries gui\+Font}
+\item 
+\mbox{\Hypertarget{classGLWin_aed9be7c5980524e8bc64c727168afe2f}\label{classGLWin_aed9be7c5980524e8bc64c727168afe2f}} 
+\mbox{\hyperlink{classFont}{Font}} $\ast$ {\bfseries menu\+Font}
+\end{DoxyCompactItemize}

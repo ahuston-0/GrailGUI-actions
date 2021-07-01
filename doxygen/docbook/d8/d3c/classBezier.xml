@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classBezier" xml:lang="en-US">
+<title>Bezier Class Reference</title>
+<indexterm><primary>Bezier</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classBezier_1adfc814f65040201fc52abae5d212678d"/><emphasis role="strong">Bezier</emphasis> (float ax, float bx, float cx, float dx, float ay, float by, float cy, float dy, int n, bool end, const glm::vec4 &amp;c={0, 0, 0, 1})</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1a72f77f1816bb7754b6ea0e1873c47e7b"/>float <emphasis role="strong">getax</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1aa98c00c0655f7d48d17a2ad67d411c38"/>float <emphasis role="strong">getay</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1a19e005628d193fef74d5521e418e905c"/>float <emphasis role="strong">getbx</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1a28054fefa739a3c4c948c70073f88c5e"/>float <emphasis role="strong">getby</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1a1916aad1be5d767723348d32c260a112"/>float <emphasis role="strong">getcx</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1a8691d47614de39f69d99d7171a59ae30"/>float <emphasis role="strong">getcy</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1a431e6ebe41bb6d3b0868f2cd8b5bf174"/>float <emphasis role="strong">getdx</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1aeab1068a8767d53b1c51d8eb9a70728f"/>float <emphasis role="strong">getdy</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1ace14107337b136ed3764f0859f97340c"/>float <emphasis role="strong">getp1x</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1afb669ce54a034357ac7ff5c86d4ef8cb"/>float <emphasis role="strong">getp1y</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1a5ebbb22511630d016baba01743f95e43"/>float <emphasis role="strong">getp2x</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1acb633eac1d1017c7aefdff593c6031bd"/>float <emphasis role="strong">getp2y</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1a868afb67e795c76fdadc2043f16f9a8b"/>float <emphasis role="strong">getp3x</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1a711aabbb19858663e0836ccf8293e1e6"/>float <emphasis role="strong">getp3y</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1aa1d78e869ec29831c5ce2209d08fea69"/>float <emphasis role="strong">getp4x</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1aa24c3668457a041b3b7bde141c981a96"/>float <emphasis role="strong">getp4y</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1a680a3ae6f86d1c992474297351a5c659"/>int <emphasis role="strong">getn</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1a6fe399dae77dfe16313a863f33d6a687"/>double <emphasis role="strong">getdt</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1ad8a10f892dae14b62c002463b4cc61b2"/>bool <emphasis role="strong">getEnd</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBezier_1a2be9bdf113192417d6c84410c18a4453"/>glm::vec4 <emphasis role="strong">getColor</emphasis> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

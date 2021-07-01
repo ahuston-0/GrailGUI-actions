@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classSuperWidget2D" xml:lang="en-US">
+<title>SuperWidget2D Class Reference</title>
+<indexterm><primary>SuperWidget2D</primary></indexterm>
+<para>Inheritance diagram for SuperWidget2D:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d8/d87/classSuperWidget2D.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classSuperWidget2D_1a2967443741f5e52310ebda1db0a3eb1d"/><emphasis role="strong">SuperWidget2D</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, <link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, float x, float y, float w, float h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSuperWidget2D_1a3c32795372522c83a2dea6ebf08eeab2"/>virtual void <emphasis role="strong">init</emphasis> ()=0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classSuperWidget2D_1a076f7ecde563d8a46f4aaec16c52fe06"/><link linkend="_classCanvas">Canvas</link> * <emphasis role="strong">c</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSuperWidget2D_1a61c84a065e830d022ddfc19c5fad0bd1"/><link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> * <emphasis role="strong">m</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSuperWidget2D_1afeb2049e65368efecfff341cb44f2b10"/><link linkend="_classMultiText">MultiText</link> * <emphasis role="strong">t</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSuperWidget2D_1a4a23784b9f17c554edbba75f13fbe5c7"/>float <emphasis role="strong">x</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSuperWidget2D_1a8f2b626eb199a43d28da3abf9436b45d"/>float <emphasis role="strong">y</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSuperWidget2D_1ae8f34856aba2b87a29fd92a28a3d9742"/>float <emphasis role="strong">w</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSuperWidget2D_1ae32fb324a4fd91c302883549ab06ef60"/>float <emphasis role="strong">h</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

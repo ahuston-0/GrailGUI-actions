@@ -1,0 +1,124 @@
+\hypertarget{BlockMapLoader_8hh_source}{}\doxysection{Block\+Map\+Loader.\+hh}
+\label{BlockMapLoader_8hh_source}\index{src/data/BlockMapLoader.hh@{src/data/BlockMapLoader.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include "{}BlockLoader.hh"{}}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{\Hypertarget{BlockMapLoader_8hh_source_l00004}\mbox{\hyperlink{classBlockMapLoader}{00004}} \textcolor{keyword}{class }\mbox{\hyperlink{classBlockMapLoader}{BlockMapLoader}} : \textcolor{keyword}{public} \mbox{\hyperlink{classBlockLoader}{BlockLoader}} \{}
+\DoxyCodeLine{00005  \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{BlockMapLoader_8hh_source_l00006}\mbox{\hyperlink{structBlockMapLoader_1_1BoundRect}{00006}}   \textcolor{keyword}{struct }\mbox{\hyperlink{structBlockMapLoader_1_1BoundRect}{BoundRect}} \{}
+\DoxyCodeLine{00007     \textcolor{keywordtype}{float} xMin, xMax, yMin, yMax;}
+\DoxyCodeLine{00008   \};}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{\Hypertarget{BlockMapLoader_8hh_source_l00010}\mbox{\hyperlink{structBlockMapLoader_1_1BlockMapHeader}{00010}}   \textcolor{keyword}{struct }\mbox{\hyperlink{structBlockMapLoader_1_1BlockMapHeader}{BlockMapHeader}} \{}
+\DoxyCodeLine{00011     uint32\_t numNamedEntities;}
+\DoxyCodeLine{00012     uint32\_t numRegionContainers;}
+\DoxyCodeLine{00013     uint32\_t numRegions;}
+\DoxyCodeLine{00014     uint32\_t numSegments;}
+\DoxyCodeLine{00015     uint32\_t numPoints;}
+\DoxyCodeLine{00016     uint32\_t deltaEncoded : 1;}
+\DoxyCodeLine{00017     \mbox{\hyperlink{structBlockMapLoader_1_1BoundRect}{BoundRect}} bounds;}
+\DoxyCodeLine{00018   \};}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020   \textcolor{comment}{/*}}
+\DoxyCodeLine{00021 \textcolor{comment}{    RegionContainer represents a hierarchy where a bigger entity (like a state)}}
+\DoxyCodeLine{00022 \textcolor{comment}{    contains a number of smaller entities (like counties)}}
+\DoxyCodeLine{00023 \textcolor{comment}{    TODO: open question whether this should contain a list of regions or a}}
+\DoxyCodeLine{00024 \textcolor{comment}{    start,end and require them to be sequential. The advantage is compactness}}
+\DoxyCodeLine{00025 \textcolor{comment}{    vs. the ability to represent shared regions owned by two larger entities.}}
+\DoxyCodeLine{00026 \textcolor{comment}{}}
+\DoxyCodeLine{00027 \textcolor{comment}{    Note that the smaller approach works for a strict hierarchy like US contains}}
+\DoxyCodeLine{00028 \textcolor{comment}{    States and territories which contain counties.}}
+\DoxyCodeLine{00029 \textcolor{comment}{    TODO: Implement optional headers which will contain the Regions and}}
+\DoxyCodeLine{00030 \textcolor{comment}{    RegionContainers}}
+\DoxyCodeLine{00031 \textcolor{comment}{  */}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033   \textcolor{keyword}{enum class} EntityType \{ REGION\_CONTAINER, REGION, SEGMENT, POINT \};}
+\DoxyCodeLine{\Hypertarget{BlockMapLoader_8hh_source_l00034}\mbox{\hyperlink{structBlockMapLoader_1_1NamedEntry}{00034}}   \textcolor{keyword}{struct }\mbox{\hyperlink{structBlockMapLoader_1_1NamedEntry}{NamedEntry}} \{}
+\DoxyCodeLine{00035     uint32\_t nameOffset;  \textcolor{comment}{// starting byte of the name;}}
+\DoxyCodeLine{00036     uint8\_t len;          \textcolor{comment}{// length of the name (< 256 bytes)}}
+\DoxyCodeLine{00037     uint8\_t entityType;   \textcolor{comment}{// entity cast as 8 bit number}}
+\DoxyCodeLine{00038     uint8\_t type;         \textcolor{comment}{// feature type of name (could be used to choose font)}}
+\DoxyCodeLine{00039     uint32\_t offset;      \textcolor{comment}{// if entityType=REGION\_CONTAINER, then offset into}}
+\DoxyCodeLine{00040                           \textcolor{comment}{// regionContainers, ...}}
+\DoxyCodeLine{00041   \};}
+\DoxyCodeLine{\Hypertarget{BlockMapLoader_8hh_source_l00042}\mbox{\hyperlink{structBlockMapLoader_1_1NamedEntities}{00042}}   \textcolor{keyword}{struct }\mbox{\hyperlink{structBlockMapLoader_1_1NamedEntities}{NamedEntities}} \{}
+\DoxyCodeLine{00043     uint32\_t numNames;  \textcolor{comment}{// TODO: redundant with the number in the BlockMapHeader}}
+\DoxyCodeLine{00044     uint32\_t nameSizes;  \textcolor{comment}{// amount of memory used for all names}}
+\DoxyCodeLine{00045     \mbox{\hyperlink{structBlockMapLoader_1_1NamedEntry}{NamedEntry}} entry[];}
+\DoxyCodeLine{00046   \};}
+\DoxyCodeLine{\Hypertarget{BlockMapLoader_8hh_source_l00047}\mbox{\hyperlink{structBlockMapLoader_1_1RegionContainer}{00047}}   \textcolor{keyword}{struct }\mbox{\hyperlink{structBlockMapLoader_1_1RegionContainer}{RegionContainer}} \{}
+\DoxyCodeLine{00048     uint32\_t startRegion, endRegion;  \textcolor{comment}{// the range of regions}}
+\DoxyCodeLine{00049     \mbox{\hyperlink{structBlockMapLoader_1_1BoundRect}{BoundRect}} bounds;}
+\DoxyCodeLine{00050   \};}
+\DoxyCodeLine{00051   \textcolor{comment}{/*}}
+\DoxyCodeLine{00052 \textcolor{comment}{    A region is a local area containing a number of segments.}}
+\DoxyCodeLine{00053 \textcolor{comment}{    It has a baselocation x,y in double, and all the segments may be relative to}}
+\DoxyCodeLine{00054 \textcolor{comment}{    that. It has a range of segments that correspond to this area.}}
+\DoxyCodeLine{00055 \textcolor{comment}{  */}}
+\DoxyCodeLine{\Hypertarget{BlockMapLoader_8hh_source_l00056}\mbox{\hyperlink{structBlockMapLoader_1_1Region}{00056}}   \textcolor{keyword}{struct }\mbox{\hyperlink{structBlockMapLoader_1_1Region}{Region}} \{}
+\DoxyCodeLine{00057     uint32\_t segmentStart;  \textcolor{comment}{// first segment in this region}}
+\DoxyCodeLine{00058     uint32\_t startPoints;   \textcolor{comment}{// starting index for points so you don't have to}}
+\DoxyCodeLine{00059                             \textcolor{comment}{// start from the beginning to index them}}
+\DoxyCodeLine{00060     \mbox{\hyperlink{structBlockMapLoader_1_1BoundRect}{BoundRect}} bounds;       \textcolor{comment}{// bounding box for region}}
+\DoxyCodeLine{00061     \textcolor{keywordtype}{double} baseX, baseY;    \textcolor{comment}{// the base location in high precision}}
+\DoxyCodeLine{00062   \};}
+\DoxyCodeLine{\Hypertarget{BlockMapLoader_8hh_source_l00063}\mbox{\hyperlink{structBlockMapLoader_1_1Segment}{00063}}   \textcolor{keyword}{struct }\mbox{\hyperlink{structBlockMapLoader_1_1Segment}{Segment}} \{}
+\DoxyCodeLine{00064     uint32\_t numPoints : 24;  \textcolor{comment}{// up to 16 million points}}
+\DoxyCodeLine{00065     uint32\_t type : 8;        \textcolor{comment}{//}}
+\DoxyCodeLine{00066   \};}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00069   \mbox{\hyperlink{structBlockMapLoader_1_1BlockMapHeader}{BlockMapHeader}}* blockMapHeader;}
+\DoxyCodeLine{00070   \mbox{\hyperlink{structBlockMapLoader_1_1RegionContainer}{RegionContainer}}* regionContainers;}
+\DoxyCodeLine{00071   \mbox{\hyperlink{structBlockMapLoader_1_1Region}{Region}}* regions;}
+\DoxyCodeLine{00072   \mbox{\hyperlink{structBlockMapLoader_1_1Segment}{Segment}}* segments;}
+\DoxyCodeLine{00073   \textcolor{keywordtype}{float}* points;}
+\DoxyCodeLine{00074   \textcolor{keyword}{static} constexpr uint16\_t version = 0x0401;  \textcolor{comment}{// 0.4.0.1}}
+\DoxyCodeLine{00075   \textcolor{keyword}{typedef} void (\mbox{\hyperlink{classBlockMapLoader}{BlockMapLoader}}::*Method)();}
+\DoxyCodeLine{00076   \textcolor{keyword}{const} \textcolor{keyword}{static} Method methods[];}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00079   \textcolor{keywordtype}{void} init(\textcolor{keyword}{const} uint64\_t* mem, uint64\_t size);}
+\DoxyCodeLine{00080   \textcolor{keywordtype}{void} init(uint32\_t numLists, uint32\_t numPoints);}
+\DoxyCodeLine{00081   \textcolor{comment}{// fast load a blockmap from a .bml file}}
+\DoxyCodeLine{00082   \mbox{\hyperlink{classBlockMapLoader}{BlockMapLoader}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]);}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084   \textcolor{comment}{// load and convert an ESRI .shp to BlockMap format}}
+\DoxyCodeLine{00085   \mbox{\hyperlink{classBlockMapLoader}{BlockMapLoader}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[], \textcolor{keyword}{const} \textcolor{keywordtype}{char}[]);}
+\DoxyCodeLine{00086   \textcolor{keyword}{static} \mbox{\hyperlink{classBlockMapLoader}{BlockMapLoader}} loadCompressed(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]);}
+\DoxyCodeLine{00087   \textcolor{comment}{// TODO: const RegionContainers* getRegionContainers() const \{ return}}
+\DoxyCodeLine{00088   \textcolor{comment}{// regionContainers; \}}}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090   \textcolor{keyword}{const} \mbox{\hyperlink{structBlockMapLoader_1_1Region}{Region}}* getRegions()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} regions; \}}
+\DoxyCodeLine{00091   \textcolor{keyword}{const} Segment* getSegments()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} segments; \}}
+\DoxyCodeLine{00092   \textcolor{comment}{// save a fast blockmap file}}
+\DoxyCodeLine{00093   \textcolor{keywordtype}{void} save(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]);}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095   \textcolor{keywordtype}{void} filterX(\textcolor{keywordtype}{double} xMin, \textcolor{keywordtype}{double} xMax);}
+\DoxyCodeLine{00096   \textcolor{keywordtype}{void} filterY(\textcolor{keywordtype}{double} yMin, \textcolor{keywordtype}{double} yMax);}
+\DoxyCodeLine{00097   \textcolor{keywordtype}{void} filter(\textcolor{keywordtype}{double} xMin, \textcolor{keywordtype}{double} xMax, \textcolor{keywordtype}{double} yMin, \textcolor{keywordtype}{double} yMax);}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099   \textcolor{comment}{// methods for different types of segments}}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101   \textcolor{keywordtype}{void} methodPolygon();}
+\DoxyCodeLine{00102   \textcolor{keywordtype}{void} methodPolyline();}
+\DoxyCodeLine{00103   uint64\_t sum() \textcolor{keyword}{const};}
+\DoxyCodeLine{00104   \textcolor{keywordtype}{void} deltaEncode();}
+\DoxyCodeLine{00105   \textcolor{keywordtype}{void} deltaUnEncode();}
+\DoxyCodeLine{00106   \textcolor{keywordtype}{void} dumpSegment(uint32\_t seg);}
+\DoxyCodeLine{00107   uint32\_t getNumRegionContainers()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00108     \textcolor{keywordflow}{return} blockMapHeader-\/>numRegionContainers;}
+\DoxyCodeLine{00109   \}}
+\DoxyCodeLine{00110   \textcolor{keyword}{const} BlockMapHeader* getBlockMapHeader()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} blockMapHeader; \}}
+\DoxyCodeLine{00111   uint32\_t getNumRegions()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} blockMapHeader-\/>numRegions; \}}
+\DoxyCodeLine{00112   uint32\_t getNumSegments()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} blockMapHeader-\/>numSegments; \}}
+\DoxyCodeLine{00113   uint32\_t getNumPoints()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} blockMapHeader-\/>numPoints; \}}
+\DoxyCodeLine{00114   \textcolor{keyword}{const} \textcolor{keywordtype}{float}* getXPoints()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} points; \}}
+\DoxyCodeLine{00115   \textcolor{keyword}{const} \textcolor{keywordtype}{float}* getYPoints()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} points + blockMapHeader-\/>numPoints; \}}
+\DoxyCodeLine{00116   \textcolor{keyword}{const} Segment\& getSegment(uint32\_t i) \{ \textcolor{keywordflow}{return} segments[i]; \}}
+\DoxyCodeLine{00117   \textcolor{keyword}{static} \textcolor{keywordtype}{void} diff(\textcolor{keyword}{const} \mbox{\hyperlink{classBlockMapLoader}{BlockMapLoader}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classBlockMapLoader}{BlockMapLoader}}\& b);}
+\DoxyCodeLine{00118 \};}
+
+\end{DoxyCode}

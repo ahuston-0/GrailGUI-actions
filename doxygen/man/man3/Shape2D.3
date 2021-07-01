@@ -1,0 +1,103 @@
+.TH "Shape2D" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Shape2D
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBShape\fP\&.
+.PP
+Inherited by \fBCursor\fP, \fBLine\fP, \fBRectangle\fP, \fBSector\fP, and \fBText\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBShape2D\fP (\fBCanvas\fP *c, float x, float y, \fBStyle\fP *style, \fBTransformation\fP *transform=new \fBTransformation\fP())"
+.br
+.ti -1c
+.RI "void \fBaddPoint\fP (float x, float y)"
+.br
+.ti -1c
+.RI "void \fBaddColor\fP (float r, float g, float b)"
+.br
+.ti -1c
+.RI "void \fBsetColors\fP (float cols[], uint32_t size)"
+.br
+.ti -1c
+.RI "void \fBsetColors\fP (std::vector< float > cols)"
+.br
+.ti -1c
+.RI "std::vector< float > \fBgetVertices\fP ()"
+.br
+.ti -1c
+.RI "uint32_t \fBgetSize\fP ()"
+.br
+.ti -1c
+.RI "\fBStyle\fP * \fBgetStyle\fP ()"
+.br
+.ti -1c
+.RI "\fBTransformation\fP * \fBgetTransformation\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetTransform\fP (\fBTransformation\fP *t)"
+.br
+.ti -1c
+.RI "virtual void \fBinit\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBprocess_input\fP (Inputs *in, float dt) override"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBrender\fP ()=0"
+.br
+.ti -1c
+.RI "void \fBinitIndices\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBapplyTransform\fP (\fBShader\fP *s)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "float \fBx\fP"
+.br
+.ti -1c
+.RI "float \fBy\fP"
+.br
+.ti -1c
+.RI "std::vector< float > \fBvertices\fP"
+.br
+.ti -1c
+.RI "std::vector< float > \fBcolors\fP"
+.br
+.ti -1c
+.RI "std::vector< uint32_t > \fBsolidIndices\fP"
+.br
+.ti -1c
+.RI "std::vector< uint32_t > \fBlineIndices\fP"
+.br
+.ti -1c
+.RI "std::vector< uint32_t > \fBpointIndices\fP"
+.br
+.ti -1c
+.RI "\fBStyle\fP * \fBstyle\fP"
+.br
+.ti -1c
+.RI "\fBTransformation\fP * \fBtransform\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

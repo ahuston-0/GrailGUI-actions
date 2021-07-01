@@ -1,0 +1,46 @@
+\hypertarget{Scale_8hh_source}{}\doxysection{Scale.\+hh}
+\label{Scale_8hh_source}\index{src/opengl/Scale.hh@{src/opengl/Scale.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/MultiText.hh"{}}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}opengl/StyledMultiShape2D.hh"{}}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{\Hypertarget{Scale_8hh_source_l00006}\mbox{\hyperlink{classScale}{00006}} \textcolor{keyword}{class }\mbox{\hyperlink{classScale}{Scale}} \{}
+\DoxyCodeLine{00007  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00008   \textcolor{keywordtype}{double} scale;         \textcolor{comment}{// transform from data space to graph space (pixels)}}
+\DoxyCodeLine{00009   \textcolor{keywordtype}{double} shift;         \textcolor{comment}{// accounts for location of start of graph}}
+\DoxyCodeLine{00010   \textcolor{keywordtype}{double} min;           \textcolor{comment}{// minimum axis value}}
+\DoxyCodeLine{00011   \textcolor{keywordtype}{double} max;           \textcolor{comment}{// maximum axis value}}
+\DoxyCodeLine{00012   \textcolor{keywordtype}{double} tickInterval;  \textcolor{comment}{// distance between ticks in graph space}}
+\DoxyCodeLine{00013   \textcolor{keywordtype}{double} numInterval;   \textcolor{comment}{// TODO: distance between nums in graph space}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016   \textcolor{comment}{// Scale(double scale, double shift) : scale(scale), shift(shift) \{\}}}
+\DoxyCodeLine{00017   \mbox{\hyperlink{classScale}{Scale}}() : scale(0), shift(0) \{\}}
+\DoxyCodeLine{00018   \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} transform(\textcolor{keywordtype}{double} x) = 0;}
+\DoxyCodeLine{00019   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} init(\textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max, \textcolor{keywordtype}{double} shift,}
+\DoxyCodeLine{00020                     \textcolor{keywordtype}{double} axisSize, \textcolor{keywordtype}{double} tickInterval) = 0;}
+\DoxyCodeLine{00021   \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} next(\textcolor{keywordtype}{float} v) = 0;}
+\DoxyCodeLine{00022 \};}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{\Hypertarget{Scale_8hh_source_l00024}\mbox{\hyperlink{classLinearScale}{00024}} \textcolor{keyword}{class }\mbox{\hyperlink{classLinearScale}{LinearScale}} : \textcolor{keyword}{public} \mbox{\hyperlink{classScale}{Scale}} \{}
+\DoxyCodeLine{00025  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026   \textcolor{comment}{// LinearScale(double scale, double shift) : Scale(scale, shift) \{\}}}
+\DoxyCodeLine{00027   \textcolor{keywordtype}{float} transform(\textcolor{keywordtype}{double} x) \textcolor{keyword}{override};}
+\DoxyCodeLine{00028   \textcolor{keywordtype}{void} init(\textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max, \textcolor{keywordtype}{double} shift,}
+\DoxyCodeLine{00029             \textcolor{keywordtype}{double} axisSize, \textcolor{keywordtype}{double} tickInterval) \textcolor{keyword}{override};}
+\DoxyCodeLine{00030   \textcolor{keywordtype}{float} next(\textcolor{keywordtype}{float} v) \textcolor{keyword}{override};}
+\DoxyCodeLine{00031 \};}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{\Hypertarget{Scale_8hh_source_l00033}\mbox{\hyperlink{classLogScale}{00033}} \textcolor{keyword}{class }\mbox{\hyperlink{classLogScale}{LogScale}} : \textcolor{keyword}{public} \mbox{\hyperlink{classScale}{Scale}} \{}
+\DoxyCodeLine{00034  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035   \textcolor{comment}{// LogarithmicScale(double scale, double shift) : Scale(scale, shift) \{\}}}
+\DoxyCodeLine{00036   \textcolor{keywordtype}{float} transform(\textcolor{keywordtype}{double} x) \textcolor{keyword}{override};}
+\DoxyCodeLine{00037   \textcolor{keywordtype}{void} init(\textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max, \textcolor{keywordtype}{double} shift,}
+\DoxyCodeLine{00038             \textcolor{keywordtype}{double} axisSize, \textcolor{keywordtype}{double} tickInterval) \textcolor{keyword}{override};}
+\DoxyCodeLine{00039   \textcolor{keywordtype}{float} next(\textcolor{keywordtype}{float} v) \textcolor{keyword}{override};}
+\DoxyCodeLine{00040 \};}
+
+\end{DoxyCode}

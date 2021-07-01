@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classCSPRequest" xml:lang="en-US">
+<title>CSPRequest Class Reference</title>
+<indexterm><primary>CSPRequest</primary></indexterm>
+<para>Inheritance diagram for CSPRequest:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d1/d96/classCSPRequest.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCSPRequest_1a4c6079c78b66366f3ecc8a23c170cac2"/>void <emphasis role="strong">handle</emphasis> (int fd) override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSPRequest_1ac20c2b2ae8389f5a9d6b95ff22d40230"/>void <emphasis role="strong">handle</emphasis> (int sckt, const char *command) override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

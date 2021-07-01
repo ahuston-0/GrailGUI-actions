@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classFont" xml:lang="en-US">
+<title>Font Class Reference</title>
+<indexterm><primary>Font</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classFont_1_1Glyph">Glyph</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classFont_1a4d147920249eefb5f43ced026291e42a"/><emphasis role="strong">Font</emphasis> (<link linkend="_classFontFace">FontFace</link> *Face, FT_Face ftFace, uint16_t height, uint8_t bitmap[], uint32_t &amp;sizeX, uint32_t &amp;sizeY, uint32_t &amp;currX, uint32_t &amp;currY, uint32_t &amp;rowSize)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFont_1a4fc0de5f854b0ed4aa7f2815012360be"/><emphasis role="strong">Font</emphasis> (std::istream &amp;)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFont_1ac8ef75b3df174a195b7b077e9ea65f2d"/>uint32_t <emphasis role="strong">getStartGlyph</emphasis> () const</para>
+</listitem>
+            <listitem><para>void <link linkend="_classFont_1ab6d0d5a6921217004a5e5b560500c38a">addGlyph</link> (FT_Face ftFace, std::unordered_map&lt; uint32_t, uint32_t &gt; &amp;glyphMap, uint8_t c, uint8_t bitmap[], uint32_t &amp;sizeX, uint32_t &amp;sizeY, uint32_t &amp;currX, uint32_t &amp;currY, uint32_t &amp;rowSize)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFont_1a3e04d12e04ab2c31b58effca2ef451c9"/>const <link linkend="_classFont_1_1Glyph">Glyph</link> * <emphasis role="strong">getGlyph</emphasis> (uint32_t i) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFont_1aa591df56fc407880ed81046b108752ef"/>uint16_t <emphasis role="strong">getHeight</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFont_1a07b6d1db2e065b0ae5d1ad8121b9b1d3"/>uint32_t <emphasis role="strong">getTexture</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFont_1a3c65145822e6f04076166b01b317e2ff"/>float <emphasis role="strong">getWidth</emphasis> (const char text[], const uint32_t len) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFont_1abda07c6647a19b21027313519f7b910a"/>void <emphasis role="strong">save</emphasis> (std::ostream &amp;fastfont)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classFont_1a9324a0b1c81e199b25b00f0a9e3f97ae"/>static <link linkend="_classFont">Font</link> * <emphasis role="strong">getDefault</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classFont_1a1f31b303f41e128046a513ffdf074a9a"/>uint32_t <emphasis role="strong">maxWidth</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFont_1a366ee1257fc7ec80fd7bd8934a3aef60"/>uint16_t <emphasis role="strong">spaceWidth</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classFont_1aa9627c9772feb41db6450011b1efdb92"/>class <emphasis role="strong">FontFace</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFont_1aba4e9fdcb7468ee7792387e03ad7d1fd"/>std::ostream &amp; <emphasis role="strong">operator&lt;&lt;</emphasis> (std::ostream &amp;s, const <link linkend="_classFont">Font</link> &amp;f)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classFont_1ab6d0d5a6921217004a5e5b560500c38a"/>    <section>
+    <title>addGlyph()</title>
+<indexterm><primary>addGlyph</primary><secondary>Font</secondary></indexterm>
+<indexterm><primary>Font</primary><secondary>addGlyph</secondary></indexterm>
+<para><computeroutput>void Font::addGlyph (FT_Face ftFace, std::unordered_map&lt; uint32_t, uint32_t &gt; &amp; glyphMap, uint8_t c, uint8_t bitmap[], uint32_t &amp; sizeX, uint32_t &amp; sizeY, uint32_t &amp; currX, uint32_t &amp; currY, uint32_t &amp; rowSize)</computeroutput></para>
+<para><itemizedlist>
+<listitem>
+<para>convert to an anti-aliased bitmap *&#8205;/</para>
+</listitem></itemizedlist>
+</para>
+</section>
+</section>
+</section>

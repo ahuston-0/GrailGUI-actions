@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classServletMap" xml:lang="en-US">
+<title>ServletMap Class Reference</title>
+<indexterm><primary>ServletMap</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classServletMap_1a9d2d266d6500beba9eeac51c3d7a5c79"/><emphasis role="strong">ServletMap</emphasis> (uint32_t initialSize=32768)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classServletMap_1a7d714f7c57aa114e0c5b75bcc7a6fd4c"/>void <emphasis role="strong">add</emphasis> (const std::string &amp;name, <link linkend="_classHttpServlet">HttpServlet</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classServletMap_1a9a394adb95af4f2669b681de34f5f350"/><link linkend="_classHttpServlet">HttpServlet</link> * <emphasis role="strong">get</emphasis> (const char *s, size_t size) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

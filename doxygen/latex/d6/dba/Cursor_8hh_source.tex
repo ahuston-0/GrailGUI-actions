@@ -1,0 +1,65 @@
+\hypertarget{Cursor_8hh_source}{}\doxysection{Cursor.\+hh}
+\label{Cursor_8hh_source}\index{src/opengl/Cursor.hh@{src/opengl/Cursor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/Shape2D.hh"{}}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{keyword}{class }Inputs;}
+\DoxyCodeLine{\Hypertarget{Cursor_8hh_source_l00008}\mbox{\hyperlink{classCursor}{00008}} \textcolor{keyword}{class }\mbox{\hyperlink{classCursor}{Cursor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classShape2D}{Shape2D}} \{}
+\DoxyCodeLine{00009 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011   \textcolor{keyword}{static} std::unordered\_map<int, Cursor*> cursors;}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013   glm::mat4 transform;}
+\DoxyCodeLine{00014   \textcolor{keywordtype}{int} id;}
+\DoxyCodeLine{00015   \textcolor{keywordtype}{float} xPos, yPos;}
+\DoxyCodeLine{00016   \textcolor{keywordtype}{float} height = 20;}
+\DoxyCodeLine{00017   \textcolor{keywordtype}{float} width = 10;}
+\DoxyCodeLine{00018   \textcolor{keywordtype}{float} offset = 5;}
+\DoxyCodeLine{00019 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020   \textcolor{keyword}{static} \textcolor{keywordtype}{float} getXPos(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}) \{ \textcolor{keywordflow}{return} cursors[id]-\/>xPos; \}}
+\DoxyCodeLine{00021   \textcolor{keyword}{static} \textcolor{keywordtype}{float} getYPos(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}) \{ \textcolor{keywordflow}{return} cursors[id]-\/>yPos; \}}
+\DoxyCodeLine{00022   \mbox{\hyperlink{classCursor}{Cursor}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \mbox{\hyperlink{classStyle}{Style}}* s, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id}) : \mbox{\hyperlink{classShape2D}{Shape2D}}(x,y,s), id(\textcolor{keywordtype}{id}), xPos(x), yPos(y) \{}
+\DoxyCodeLine{00023    \textcolor{comment}{//Triangle }}
+\DoxyCodeLine{00024     addPoint(x,y);\textcolor{comment}{//Tip}}
+\DoxyCodeLine{00025     addPoint(x,y+(height*2)/3);\textcolor{comment}{//UnderTip}}
+\DoxyCodeLine{00026     addPoint(x+width,y+(height*2)/3-\/offset);\textcolor{comment}{// right triangle edge}}
+\DoxyCodeLine{00027     }
+\DoxyCodeLine{00028     \textcolor{comment}{//Rect}}
+\DoxyCodeLine{00029     addPoint(x + width/3,y+(height*2)/3-\/offset);\textcolor{comment}{//TL}}
+\DoxyCodeLine{00030     addPoint(x + width/3+5,y+height);\textcolor{comment}{//BL}}
+\DoxyCodeLine{00031     addPoint(x + (width*2)/3+5,y+height-\/3);\textcolor{comment}{//BR}}
+\DoxyCodeLine{00032     addPoint(x + (width*2)/3,y+(height*2)/3-\/offset);\textcolor{comment}{//TR}}
+\DoxyCodeLine{00033     }
+\DoxyCodeLine{00034     solidIndices.push\_back(0);}
+\DoxyCodeLine{00035     solidIndices.push\_back(1);}
+\DoxyCodeLine{00036     solidIndices.push\_back(2);}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     solidIndices.push\_back(3);}
+\DoxyCodeLine{00039     solidIndices.push\_back(4);}
+\DoxyCodeLine{00040     solidIndices.push\_back(5);}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     solidIndices.push\_back(3);}
+\DoxyCodeLine{00043     solidIndices.push\_back(5);}
+\DoxyCodeLine{00044     solidIndices.push\_back(6);}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     lineIndices.push\_back(0);}
+\DoxyCodeLine{00047     lineIndices.push\_back(1);}
+\DoxyCodeLine{00048     lineIndices.push\_back(3);}
+\DoxyCodeLine{00049     lineIndices.push\_back(4);}
+\DoxyCodeLine{00050     lineIndices.push\_back(5);}
+\DoxyCodeLine{00051     lineIndices.push\_back(6);}
+\DoxyCodeLine{00052     lineIndices.push\_back(2);}
+\DoxyCodeLine{00053     cursors[id] = \textcolor{keyword}{this};}
+\DoxyCodeLine{00054   \}}
+\DoxyCodeLine{00055   \textcolor{keywordtype}{void} initIndices() \{\}}
+\DoxyCodeLine{00056   \textcolor{keywordtype}{void} process\_input(Inputs *in,\textcolor{keywordtype}{float} dt);}
+\DoxyCodeLine{00057   \textcolor{keywordtype}{void} update();}
+\DoxyCodeLine{00058   \textcolor{keywordtype}{void} render();}
+\DoxyCodeLine{00059 \};}
+
+\end{DoxyCode}

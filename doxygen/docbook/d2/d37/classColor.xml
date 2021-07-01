@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classColor" xml:lang="en-US">
+<title>Color Class Reference</title>
+<indexterm><primary>Color</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classColor_1a6e4627389673c8b5cce81bf3eec79938"/><emphasis role="strong">Color</emphasis> (float r, float g, float b, float a)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classColor_1a2531fae56ad01ea505d3f6a82d4c9d2b"/><emphasis role="strong">operator glm::vec4</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classColor_1a7abd072b3338631ded339e073a92d6a9"/><link linkend="_classColor">Color</link> <emphasis role="strong">lighter</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classColor_1ac6c20ffe91689c7d870e0ae7d5655fdf"/><link linkend="_classColor">Color</link> <emphasis role="strong">darker</emphasis> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

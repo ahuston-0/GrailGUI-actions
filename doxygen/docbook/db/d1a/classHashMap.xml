@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classHashMap" xml:lang="en-US">
+<title>HashMap&lt; Val &gt; Class Template Reference</title>
+<indexterm><primary>HashMap&lt; Val &gt;</primary></indexterm>
+<para>Inheritance diagram for HashMap&lt; Val &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../db/d1a/classHashMap.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classHashMap_1_1ConstIterator">ConstIterator</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_classHashMap_1_1Iterator">Iterator</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classHashMap_1a6521f1b838e66f758f23f03979c084dc"/><emphasis role="strong">HashMap</emphasis> (uint32_t sz, uint32_t symbolSize=1024 *1024)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMap_1a646bc3c614f3a716b4cb515edcf9f2b6"/><emphasis role="strong">HashMap</emphasis> (const <link linkend="_classHashMap">HashMap</link> &amp;orig)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMap_1a29b5d9983be286bdfc0f9b4233be3764"/><link linkend="_classHashMap">HashMap</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classHashMap">HashMap</link> &amp;orig)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMap_1a71b08946752814e34d6ba0d5868270fe"/>void <emphasis role="strong">checkGrow</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMap_1a81d278b31598846d543e1d19ef65dcc4"/>void <emphasis role="strong">add</emphasis> (const char s[], const Val &amp;v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMap_1a2c64f2db1e7afd5974e3f6731e611286"/>Val <emphasis role="strong">add</emphasis> (const char s[], uint32_t len, const Val &amp;v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMap_1a84cf7f50163aafba995e7987755d70b8"/>bool <emphasis role="strong">get</emphasis> (const char s[], Val *v) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMap_1affa805330a9ea8bcdb7c857f5a9f0fd2"/>Val * <emphasis role="strong">get</emphasis> (const char s[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMap_1a921f9a597044462b3de2e535fcf4b2cf"/>const Val * <emphasis role="strong">get</emphasis> (const char s[]) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMap_1a9eb7655f523c42fedc9df283bd8665ac"/>Val * <emphasis role="strong">get</emphasis> (const char *s, uint32_t len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMap_1a4c995c904704895b5bc7020dbbf077b1"/>uint64_t <emphasis role="strong">hist</emphasis> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classHashMap_1ad54176a701a2a72365b31e75225780e6"/>friend <emphasis role="strong">Iterator</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHashMap_1a103e5a2773b0d2ab93425d11ae9f9feb"/>friend <emphasis role="strong">ConstIterator</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classHashMap_1a343700c4f9e8a5af225f752600af1871"/>std::ostream &amp; <emphasis role="strong">operator&lt;&lt;</emphasis> (std::ostream &amp;s, const <link linkend="_classHashMap">HashMap</link> &amp;h)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

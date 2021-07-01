@@ -1,0 +1,60 @@
+\hypertarget{Ex_8hh_source}{}\doxysection{Ex.\+hh}
+\label{Ex_8hh_source}\index{src/util/Ex.hh@{src/util/Ex.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}opengl/Errcode.hh"{}}}
+\DoxyCodeLine{00007 \textcolor{comment}{//\#include "{}util/Log.hh"{}}}
+\DoxyCodeLine{00008 \textcolor{comment}{/*}}
+\DoxyCodeLine{00009 \textcolor{comment}{    Represent an exception class that outputs a numeric error code into}}
+\DoxyCodeLine{00010 \textcolor{comment}{    a binary stream.}}
+\DoxyCodeLine{00011 \textcolor{comment}{ }}
+\DoxyCodeLine{00012 \textcolor{comment}{    To keep things simple for now, we are just writing to text. This is}}
+\DoxyCodeLine{00013 \textcolor{comment}{    slower, but we are also writing filenames, and it's not clear how we}}
+\DoxyCodeLine{00014 \textcolor{comment}{    could do that with a binary file so for now this is it.}}
+\DoxyCodeLine{00015 \textcolor{comment}{}}
+\DoxyCodeLine{00016 \textcolor{comment}{    Be sure Errcode is defined for your application}}
+\DoxyCodeLine{00017 \textcolor{comment}{*/}}
+\DoxyCodeLine{00018 \textcolor{keyword}{enum class} Errcode;}
+\DoxyCodeLine{\Hypertarget{Ex_8hh_source_l00019}\mbox{\hyperlink{classEx}{00019}} \textcolor{keyword}{class }\mbox{\hyperlink{classEx}{Ex}} \{}
+\DoxyCodeLine{00020 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename;   \textcolor{comment}{// the filename in which the error occurred}}
+\DoxyCodeLine{00022   \textcolor{keyword}{const} uint32\_t lineNum; \textcolor{comment}{// the linenumber of the file}}
+\DoxyCodeLine{00023   \textcolor{keyword}{const} std::string name;       \textcolor{comment}{// a string message, if any (nullptr if not)}}
+\DoxyCodeLine{00024   \textcolor{keywordtype}{int} param;              \textcolor{comment}{// an integer parameter, if any}}
+\DoxyCodeLine{00025   Errcode e;}
+\DoxyCodeLine{00026   \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* errNames[];}
+\DoxyCodeLine{00027 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028   \mbox{\hyperlink{classEx}{Ex}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[], uint32\_t lineNum, Errcode e,}
+\DoxyCodeLine{00029      \textcolor{keyword}{const} std::string\& name = \textcolor{stringliteral}{"{}"{}}) :}
+\DoxyCodeLine{00030     filename(filename), lineNum(lineNum), e(e), name(name) \{\}}
+\DoxyCodeLine{00031   \textcolor{keyword}{friend} std::ostream\& operator <<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classEx}{Ex}}\& e) \{}
+\DoxyCodeLine{00032     s << e.filename << \textcolor{stringliteral}{"{}: "{}} << e.lineNum <<  errNames[int(e.e)] << \textcolor{charliteral}{'\(\backslash\)t'};}
+\DoxyCodeLine{00033     \textcolor{keywordflow}{if} (e.name != \textcolor{stringliteral}{"{}"{}}) \{}
+\DoxyCodeLine{00034       s << e.name;}
+\DoxyCodeLine{00035     \}}
+\DoxyCodeLine{00036     s << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00037     \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{00038   \}}
+\DoxyCodeLine{00039 \};}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{\Hypertarget{Ex_8hh_source_l00041}\mbox{\hyperlink{classFatalEx}{00041}} \textcolor{keyword}{class }\mbox{\hyperlink{classFatalEx}{FatalEx}} : \textcolor{keyword}{public} \mbox{\hyperlink{classEx}{Ex}} \{}
+\DoxyCodeLine{00042 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044   \mbox{\hyperlink{classFatalEx}{FatalEx}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[], \textcolor{keywordtype}{int} lineNum, Errcode e,}
+\DoxyCodeLine{00045       \textcolor{keyword}{const} std::string\& name = \textcolor{stringliteral}{"{}"{}}) :}
+\DoxyCodeLine{00046     \mbox{\hyperlink{classEx}{Ex}}(filename, lineNum, e, name) \{\}}
+\DoxyCodeLine{00047 \};}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049 \textcolor{comment}{// define macros that inject source file and line number into the exception}}
+\DoxyCodeLine{00050 \textcolor{preprocessor}{\#define Ex1(e) Ex(\_\_FILE\_\_, \_\_LINE\_\_, e)}}
+\DoxyCodeLine{00051 \textcolor{preprocessor}{\#define FatalEx1(e) FatalEx(\_\_FILE\_\_, \_\_LINE\_\_, e)}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053 \textcolor{preprocessor}{\#define Ex2(e, stringparam) Ex(\_\_FILE\_\_, \_\_LINE\_\_, e, stringparam)}}
+\DoxyCodeLine{00054 \textcolor{preprocessor}{\#define FatalEx2(e, stringparam) FatalEx(\_\_FILE\_\_, \_\_LINE\_\_, e, stringparam)}}
+
+\end{DoxyCode}

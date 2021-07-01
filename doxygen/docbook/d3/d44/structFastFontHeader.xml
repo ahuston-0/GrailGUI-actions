@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structFastFontHeader" xml:lang="en-US">
+<title>FastFontHeader Struct Reference</title>
+<indexterm><primary>FastFontHeader</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structFastFontHeader_1a43a1cb7e5f9906696f11d665997f67c7"/>uint32_t <emphasis role="strong">magic</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structFastFontHeader_1aabbdb226952b09a1694a8ab5c41e0b8e"/>uint32_t <emphasis role="strong">version</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structFastFontHeader_1a87f817a80456dd465adbc24d6c2c362c"/>uint32_t <emphasis role="strong">w</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structFastFontHeader_1ae50bd7d18cebc7325b3bb672cb3167f1"/>uint32_t <emphasis role="strong">h</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structFastFontHeader_1a71f7f3332e5230d2a93ea81b152a722e"/>uint32_t <emphasis role="strong">numFaces</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structFastFontHeader_1aa1d6735709c9b1670842164e8e2b0421"/>uint32_t <emphasis role="strong">numFonts</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structFastFontHeader_1a2c63d1ab74a1bc093be9b24dc5b9c8ae"/>uint32_t <emphasis role="strong">numGlyphs</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

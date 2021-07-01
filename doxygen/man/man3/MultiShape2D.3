@@ -1,0 +1,157 @@
+.TH "MultiShape2D" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MultiShape2D
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMultiShape\fP\&.
+.PP
+Inherited by \fBStyledMultiShape2D\fP, \fBStyledMultiShape2D\fP, and \fBWebDraw\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdrawPoint\fP (float x, float y)"
+.br
+.ti -1c
+.RI "\fBMultiShape2D\fP (\fBCanvas\fP *parent, const \fBStyle\fP *s, uint32_t vertCount=1024, uint32_t solidIndCount=1024, uint32_t lineIndCount=1024, uint32_t pointIndCount=1024, uint32_t elemPerVert=2)"
+.br
+.ti -1c
+.RI "void \fBinit\fP () override"
+.br
+.ti -1c
+.RI "void \fBrender\fP () override"
+.br
+.ti -1c
+.RI "void \fBfillRectangle\fP (float x, float y, float w, float h)"
+.br
+.ti -1c
+.RI "void \fBfillRoundRect\fP (float x, float y, float w, float h, float rx, float ry)"
+.br
+.ti -1c
+.RI "void \fBfillTriangle\fP (float x1, float y1, float x2, float y2, float x3, float y3)"
+.br
+.ti -1c
+.RI "void \fBfillPolygon\fP (float x, float y, float xRad, float yRad, float n)"
+.br
+.ti -1c
+.RI "void \fBfillCircle\fP (float x, float y, float rad, float angleInc)"
+.br
+.ti -1c
+.RI "void \fBfillEllipse\fP (float x, float y, float xRad, float yRad, float angleInc)"
+.br
+.ti -1c
+.RI "void \fBdrawRectangle\fP (float x, float y, float w, float h)"
+.br
+.ti -1c
+.RI "void \fBdrawRoundRect\fP (float x, float y, float w, float h, float rx, float ry)"
+.br
+.ti -1c
+.RI "void \fBdrawTriangle\fP (float x1, float y1, float x2, float y2, float x3, float y3)"
+.br
+.ti -1c
+.RI "void \fBdrawPolygon\fP (float x, float y, float xRad, float yRad, float n)"
+.br
+.ti -1c
+.RI "void \fBdrawCompletePolygon\fP (float x, float y, float xRad, float yRad, float n)"
+.br
+.ti -1c
+.RI "void \fBdrawCircle\fP (float x, float y, float rad, float angleInc)"
+.br
+.ti -1c
+.RI "void \fBdrawEllipse\fP (float x, float y, float xRad, float yRad, float angleInc)"
+.br
+.ti -1c
+.RI "void \fBdrawLine\fP (float x1, float y1, float x2, float y2)"
+.br
+.ti -1c
+.RI "void \fBbezierSegment\fP (const \fBBezier\fP *b)"
+.br
+.ti -1c
+.RI "void \fBbezierSegmentByPoints\fP (float p1x, float p1y, float p2x, float p2y, float p3x, float p3y, float p4x, float p4y, int n, bool end)"
+.br
+.ti -1c
+.RI "void \fBendBezierSegment\fP (const \fBBezier\fP *b)"
+.br
+.ti -1c
+.RI "void \fBspline\fP (const std::vector< double > &points, int n)"
+.br
+.ti -1c
+.RI "void \fBrectanglePoints\fP (float x, float y, float w, float h)"
+.br
+.ti -1c
+.RI "void \fBroundRectPoints\fP (float x, float y, float w, float h, float rx, float ry)"
+.br
+.ti -1c
+.RI "void \fBtrianglePoints\fP (float x1, float y1, float x2, float y2, float x3, float y3)"
+.br
+.ti -1c
+.RI "void \fBpolygonPoints\fP (float x, float y, float xRad, float yRad, float n)"
+.br
+.ti -1c
+.RI "void \fBcirclePoints\fP (float x, float y, float rad, float angleInc)"
+.br
+.ti -1c
+.RI "void \fBellipsePoints\fP (float x, float y, float xRad, float yRad, float angleInc)"
+.br
+.ti -1c
+.RI "const \fBStyle\fP * \fBgetStyle\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsAddTriIndices\fP ()"
+.br
+.ti -1c
+.RI "void \fBsAddQuadIndices\fP ()"
+.br
+.ti -1c
+.RI "void \fBsAddSectorIndices\fP (uint32_t centerIndex, uint32_t indexCount)"
+.br
+.ti -1c
+.RI "void \fBlAddTriIndices\fP ()"
+.br
+.ti -1c
+.RI "void \fBlAddQuadIndices\fP ()"
+.br
+.ti -1c
+.RI "void \fBlAddSectorIndices\fP (uint32_t centerIndex, uint32_t indexCount)"
+.br
+.ti -1c
+.RI "void \fBpAddTriIndices\fP ()"
+.br
+.ti -1c
+.RI "void \fBpAddQuadIndices\fP ()"
+.br
+.ti -1c
+.RI "void \fBpAddSectorIndices\fP (uint32_t centerIndex, uint32_t indexCount)"
+.br
+.ti -1c
+.RI "uint32_t \fBaddSector\fP (float x, float y, float xRad, float yRad, float fromAngle, float toAngle, float angleInc)"
+.br
+.ti -1c
+.RI "uint32_t \fBgetPointIndex\fP () const"
+.br
+.ti -1c
+.RI "void \fBaddLine\fP (float x1, float y1, float x2, float y2)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "const \fBStyle\fP * \fBstyle\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBelemPerVert\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

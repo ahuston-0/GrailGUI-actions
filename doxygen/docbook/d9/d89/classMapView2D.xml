@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classMapView2D" xml:lang="en-US">
+<title>MapView2D Class Reference</title>
+<indexterm><primary>MapView2D</primary></indexterm>
+<para>Inheritance diagram for MapView2D:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d9/d89/classMapView2D.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classMapView2D_1abf5c81566ceca187d455bb22bda6a1d1"/>void <emphasis role="strong">setProjection</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMapView2D_1a3684454e5fb95ba0e04493f7ab42bd66"/>void <emphasis role="strong">translate</emphasis> (float percentX, float percentY)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMapView2D_1af7a36f74665d7113cba6af1725111d89"/>void <emphasis role="strong">uniformZoom</emphasis> (float s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMapView2D_1a0667511042f14fc1db040c6b48768188"/><emphasis role="strong">MapView2D</emphasis> (<link linkend="_classCanvas">Canvas</link> *parent, const <link linkend="_classStyle">Style</link> *s, <link linkend="_classBlockMapLoader">BlockMapLoader</link> *bml=nullptr)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMapView2D_1af8030d8a8c6358957bac271ee64005e4"/>glm::mat4 &amp; <emphasis role="strong">getTransform</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMapView2D_1a2f00f4c10813ff5a9240d06fff3f227d"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMapView2D_1a13524386e43073dc62c8e538759948db"/>void <emphasis role="strong">render</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMapView2D_1a3ed4ae4ff75b238394f1983f92b44082"/>void <emphasis role="strong">update</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMapView2D_1ab1f3a52236c3ef20a1e724133f6428e0"/>void <emphasis role="strong">dump</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

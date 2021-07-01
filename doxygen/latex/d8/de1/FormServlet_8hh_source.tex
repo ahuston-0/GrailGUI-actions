@@ -1,0 +1,28 @@
+\hypertarget{FormServlet_8hh_source}{}\doxysection{Form\+Servlet.\+hh}
+\label{FormServlet_8hh_source}\index{src/csp/FormServlet.hh@{src/csp/FormServlet.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include "{}csp/HttpServlet.hh"{}}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{\Hypertarget{FormServlet_8hh_source_l00003}\mbox{\hyperlink{classFormServlet}{00003}} \textcolor{keyword}{class }\mbox{\hyperlink{classFormServlet}{FormServlet}} : \textcolor{keyword}{public} \mbox{\hyperlink{classHttpServlet}{HttpServlet}} \{}
+\DoxyCodeLine{00004 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00005     \textcolor{keywordtype}{void} request(\mbox{\hyperlink{classRequest}{Request}}\& r) \{}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007         \textcolor{comment}{// this is the way it would work in CSP}}
+\DoxyCodeLine{00008         \textcolor{comment}{//      string firstName = in.readStringCheck();}}
+\DoxyCodeLine{00009         \textcolor{comment}{// string lastName =  in.readStringCheck();}}
+\DoxyCodeLine{00010         \textcolor{comment}{//int age = in.readUInt32Check();}}
+\DoxyCodeLine{00011         \textcolor{keywordtype}{string} firstName = r.getParameter(\textcolor{stringliteral}{"{}firstName"{}});}
+\DoxyCodeLine{00012         out.append(\textcolor{stringliteral}{"{}Content-\/type: text/html\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{00013         out.append(\textcolor{stringliteral}{"{}This is my servlet"{}});}
+\DoxyCodeLine{00014     out.append(2+3); \textcolor{comment}{// -\/-\/> append '5'}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#if 0}}
+\DoxyCodeLine{00017         \textcolor{keywordtype}{int} x[] = \{1, 3, 5, 7, 22, 12, 14\};}
+\DoxyCodeLine{00018         out.write(x, 7);}
+\DoxyCodeLine{00019 \textcolor{preprocessor}{        \#endif}}
+\DoxyCodeLine{00020     \}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022 \};}
+
+\end{DoxyCode}

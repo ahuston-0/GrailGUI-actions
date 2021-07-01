@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classU8" xml:lang="en-US">
+<title>U8 Class Reference</title>
+<indexterm><primary>U8</primary></indexterm>
+<para>Inheritance diagram for U8:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dd/d12/classU8.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classU8_1a926f3a866536a493fa95f47ebe0617f9"/><emphasis role="strong">U8</emphasis> (uint8_t val=0)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU8_1a02a44d95ffdd389f72ee3b52740709e7"/>DataType <emphasis role="strong">getDataType</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU8_1a152ff140d450a09b7bf23983db33b3c7"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU8_1abaf7a472e6523cbd6c27f8229ef2d8d0"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU8_1a2d924cfb088060eefbf8f4ca5bc4e2c8"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classU8_1a89d3968451408deb6c431fe9f05d43fd"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

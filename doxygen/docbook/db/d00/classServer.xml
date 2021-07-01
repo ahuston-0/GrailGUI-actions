@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classServer" xml:lang="en-US">
+<title>Server&lt; SocketImpl, HandlerImpl &gt; Class Template Reference</title>
+<indexterm><primary>Server&lt; SocketImpl, HandlerImpl &gt;</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classServer_1a63efe13289a8ba2227df87aa3000df64"/><emphasis role="strong">Server</emphasis> (int port)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

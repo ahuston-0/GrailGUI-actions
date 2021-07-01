@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classBoxChartWidget" xml:lang="en-US">
+<title>BoxChartWidget Class Reference</title>
+<indexterm><primary>BoxChartWidget</primary></indexterm>
+<para>Inheritance diagram for BoxChartWidget:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d8/d07/classBoxChartWidget.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classBoxChartWidget_1acc0e09e774746dcc8222423b13704def"/><emphasis role="strong">BoxChartWidget</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, <link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, double x, double y, double w, double h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBoxChartWidget_1a9ceb0cfdd68d7be9c54bc69de0770f29"/>void <emphasis role="strong">setBoxWidth</emphasis> (double width)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBoxChartWidget_1a396967092be528c82edac0f72953b987"/>void <emphasis role="strong">setBoxColor</emphasis> (glm::vec4 &amp;color)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBoxChartWidget_1ad2f02b920cbd6f5a7d1dad5de124f2f4"/>void <emphasis role="strong">setPointsPerBox</emphasis> (int n)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBoxChartWidget_1a069126846d0fc39d59bd99c2b813c51c"/>void <emphasis role="strong">setData</emphasis> (const std::vector&lt; double &gt; &amp;data)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBoxChartWidget_1a486d2e352fa7b75c502a2e62132c2341"/>void <emphasis role="strong">setNames</emphasis> (const std::vector&lt; std::string &gt; &amp;names)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBoxChartWidget_1a6d09a1bcdc58f86dabc69627b4bb7b85"/>void <emphasis role="strong">createXAxis</emphasis> (AxisType a=AxisType::TEXT) override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBoxChartWidget_1a3574931d7e5eb9988cf003291212947a"/>void <emphasis role="strong">createYAxis</emphasis> (AxisType a=AxisType::LINEAR) override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBoxChartWidget_1a980f10f66edef5fe742844ba6b82558e"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

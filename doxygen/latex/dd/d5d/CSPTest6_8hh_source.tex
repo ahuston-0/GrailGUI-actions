@@ -1,0 +1,44 @@
+\hypertarget{CSPTest6_8hh_source}{}\doxysection{CSPTest6.\+hh}
+\label{CSPTest6_8hh_source}\index{src/csp/cspservlet/CSPTest6.hh@{src/csp/cspservlet/CSPTest6.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{//}}
+\DoxyCodeLine{00002 \textcolor{comment}{// Created by dkruger on 11/01/17.}}
+\DoxyCodeLine{00003 \textcolor{comment}{//}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <csp/CSPServlet.hh>}}
+\DoxyCodeLine{00007 \textcolor{comment}{//\#include "{}csp/HttpServlet.hh"{}}}
+\DoxyCodeLine{00008 \textcolor{comment}{//\#include "{}csp/HTTPRequest.hh"{}}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include "{}util/List1.hh"{}}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "{}csp/cspservlet/Student.hh"{}}}
+\DoxyCodeLine{\Hypertarget{CSPTest6_8hh_source_l00011}\mbox{\hyperlink{classCSPTest6}{00011}} \textcolor{keyword}{class }\mbox{\hyperlink{classCSPTest6}{CSPTest6}} : \textcolor{keyword}{public} \mbox{\hyperlink{classCSPServlet}{CSPServlet}} \{}
+\DoxyCodeLine{00012 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015     \mbox{\hyperlink{classCSPTest6}{CSPTest6}}() \{\}}
+\DoxyCodeLine{00016     \string~\mbox{\hyperlink{classCSPTest6}{CSPTest6}}() \{\}}
+\DoxyCodeLine{00017     \textcolor{keywordtype}{void} request(\mbox{\hyperlink{classCSPRequest}{CSPRequest}}\& r) \{}
+\DoxyCodeLine{00018         \textcolor{comment}{/*}}
+\DoxyCodeLine{00019 \textcolor{comment}{         Buffer\& out = r.getOut();}}
+\DoxyCodeLine{00020 \textcolor{comment}{        List1<uint32\_t> mylist;}}
+\DoxyCodeLine{00021 \textcolor{comment}{        for (int i = 0; i < 15; i++)\{}}
+\DoxyCodeLine{00022 \textcolor{comment}{            mylist.add(i);}}
+\DoxyCodeLine{00023 \textcolor{comment}{        \}}}
+\DoxyCodeLine{00024 \textcolor{comment}{        //out << mylist;}}
+\DoxyCodeLine{00025 \textcolor{comment}{        out.writeList(mylist);}}
+\DoxyCodeLine{00026 \textcolor{comment}{         */}}
+\DoxyCodeLine{00027         \textcolor{comment}{/*}}
+\DoxyCodeLine{00028 \textcolor{comment}{        Buffer\& out = r.getOut();}}
+\DoxyCodeLine{00029 \textcolor{comment}{        List1<Student> mylist;}}
+\DoxyCodeLine{00030 \textcolor{comment}{        mylist.add(Student("{}Ivan"{}, "{}Valiaev"{}, 12345))}}
+\DoxyCodeLine{00031 \textcolor{comment}{        out << mylist;}}
+\DoxyCodeLine{00032 \textcolor{comment}{         */}}
+\DoxyCodeLine{00033         cout<<\textcolor{stringliteral}{"{}Test6 is loaded\(\backslash\)n"{}};}
+\DoxyCodeLine{00034         \mbox{\hyperlink{classBuffer}{Buffer}}\& out = r.getOut();}
+\DoxyCodeLine{00035         \mbox{\hyperlink{classStudent}{Student}} test = \mbox{\hyperlink{classStudent}{Student}}(\textcolor{stringliteral}{"{}Ivan"{}}, \textcolor{stringliteral}{"{}Valiaev"{}},12345);}
+\DoxyCodeLine{00036         out.writeStudent(test);}
+\DoxyCodeLine{00037     \}}
+\DoxyCodeLine{00038 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,50 @@
+.TH "CSPClient" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CSPClient
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCSPClient\fP (char *addr, int port)"
+.br
+.ti -1c
+.RI "\fBpageBuffer\fP \fBpageRequest\fP (uint32_t pageid)"
+.br
+.ti -1c
+.RI "void \fBtestPrint\fP (int pageid)"
+.br
+.ti -1c
+.RI "void \fBaddPage\fP (string staticData, vector< \fBInsertion\fP > &dynamic)"
+.br
+.ti -1c
+.RI "void \fBaddPage\fP (string staticData)"
+.br
+.ti -1c
+.RI "void \fBaddPage\fP (string staticFile, string offsetFile)"
+.br
+.ti -1c
+.RI "void \fBprintPageData\fP (int pageid)"
+.br
+.ti -1c
+.RI "\fBpageBuffer\fP \fBpageRequestFile\fP (uint32_t pageid)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBBuffer\fP & \fBin\fP"
+.br
+.ti -1c
+.RI "\fBBuffer\fP & \fBout\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

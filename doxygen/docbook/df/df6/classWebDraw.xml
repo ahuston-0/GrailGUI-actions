@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classWebDraw" xml:lang="en-US">
+<title>WebDraw Class Reference</title>
+<indexterm><primary>WebDraw</primary></indexterm>
+<para>Inheritance diagram for WebDraw:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../df/df6/classWebDraw.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classWebDraw_1a033e6674192ab2ab70dcef6b6123b210"/><emphasis role="strong">WebDraw</emphasis> (uint32_t vertCount=1024, uint32_t solidIndCount=1024, uint32_t lineIndCount=1024, uint32_t pointIndCount=1024)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a8d394c82db236799bcbec8cf8ba646cd"/>uint32_t <emphasis role="strong">addSector</emphasis> (float x, float y, float xRad, float yRad, float fromAngle, float toAngle, float angleInc, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a01d8dccea7bc6fdc0c3cda1fceb0119e"/>void <emphasis role="strong">addColor</emphasis> (const glm::vec4 &amp;rgb)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1ae3c08d14a52f43ad22ec6c03f53e7828"/>void <emphasis role="strong">addColor</emphasis> (float r, float g, float b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1af4fe31a564990b8b554971c0c039f70c"/>void <emphasis role="strong">setColors</emphasis> (float cols[], uint32_t size)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a8193f06afe8bfcd13695858ae3a5a3ed"/>void <emphasis role="strong">setColors</emphasis> (std::vector&lt; float &gt; &amp;cols)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a27aca05277c28a59acdfa9f3adc29d03"/>void <emphasis role="strong">addStyledPoint</emphasis> (float x, float y, const glm::vec4 &amp;rgb)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1af1273132d4dc0f530bea839e38676b84"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1afac276a31d12e11ba9016776acdb3779"/>void <emphasis role="strong">render</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a138f3a437dda0153c3a4c27c398986a9"/>void <emphasis role="strong">updateColors</emphasis> (const uint64_t pos, const float r, const float g, const float b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a8fed174927800077b7dbdc35f3ba48fd"/>void <emphasis role="strong">fillRectangle</emphasis> (float x, float y, float w, float h, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a7ebadcd5df9db61d3f8d2e5c2e98f538"/>void <emphasis role="strong">fillRoundRect</emphasis> (float x, float y, float w, float h, float rx, float ry, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a3a163c752b142c4eb7cb61942166ae71"/>void <emphasis role="strong">fillTriangle</emphasis> (float x1, float y1, float x2, float y2, float x3, float y3, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a86efe086639b981991999c575c8151bf"/>void <emphasis role="strong">fillPolygon</emphasis> (float x, float y, float xRad, float yRad, float n, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a150e5da895fe04c513ad818af3c86a2b"/>void <emphasis role="strong">fillCircle</emphasis> (float x, float y, float rad, float angleInc, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1aa4f5c1e2a63d5907369cab3d4ac2cc7a"/>void <emphasis role="strong">fillEllipse</emphasis> (float x, float y, float xRad, float yRad, float angleInc, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1af7442289c9cd07849a441a4d317054c1"/>void <emphasis role="strong">drawRectangle</emphasis> (float x, float y, float w, float h, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a37179875303cce573c96e8e997591bff"/>void <emphasis role="strong">drawRoundRect</emphasis> (float x, float y, float w, float h, float rx, float ry, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a035dcd1a5d2be4ea6ad0c3ab56314480"/>void <emphasis role="strong">drawTriangle</emphasis> (float x1, float y1, float x2, float y2, float x3, float y3, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1ab8050e97a917a40384620b7149e7afca"/>void <emphasis role="strong">drawPolygon</emphasis> (float x, float y, float xRad, float yRad, float n, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1af92b6fbb2b6872858fada5f71d83d344"/>void <emphasis role="strong">drawCompletePolygon</emphasis> (float x, float y, float xRad, float yRad, float n, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a6014667180b2b4a7e6c0012a7eef31e5"/>void <emphasis role="strong">drawCircle</emphasis> (float x, float y, float rad, float angleInc, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1ab8ecf797e1a2f0d0021ed81ef74d4312"/>void <emphasis role="strong">drawEllipse</emphasis> (float x, float y, float xRad, float yRad, float angleInc, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1aa91e421dada592924502370b0c652dfc"/>void <emphasis role="strong">drawLine</emphasis> (float x1, float y1, float x2, float y2, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a475c346b33c7d883921beb0b69707667"/>void <emphasis role="strong">drawArc</emphasis> (float x, float y, float r, float ang1, float ang2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a073a1b52f46879d590deb0ffc84cc414"/>void <emphasis role="strong">drawCubic</emphasis> (float xy[], uint32_t length, uint32_t numSegments)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a7138e56a059999daab2b116d79a1d091"/>void <emphasis role="strong">rectanglePoints</emphasis> (float x, float y, float w, float h, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a66616b67652d292ccf8812de8894e49f"/>void <emphasis role="strong">roundRectPoints</emphasis> (float x, float y, float w, float h, float rx, float ry, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a3abcf15fd699c5517edcb87dadbe542e"/>void <emphasis role="strong">trianglePoints</emphasis> (float x1, float y1, float x2, float y2, float x3, float y3, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a47912ba0894b8eb20075c62f06ee5438"/>void <emphasis role="strong">polygonPoints</emphasis> (float x, float y, float xRad, float yRad, float n, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a3e9f766bfa2f6c25b202d7f845f2eeaa"/>void <emphasis role="strong">circlePoints</emphasis> (float x, float y, float rad, float angleInc, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a895464a8b64ff37ed5155bc8a31afbd1"/>void <emphasis role="strong">ellipsePoints</emphasis> (float x, float y, float xRad, float yRad, float angleInc, const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1ac29d27e2e5bacaf44aa52a02c3f88640"/>void <emphasis role="strong">drawImage</emphasis> (float x, float y, float w, float h, uint32_t textureId, float u1, float v1, float u2, float v2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1ac5b9e601703194e28d39b18e095d8b7a"/>void <emphasis role="strong">drawImage</emphasis> (float x, float y, float w, float h, uint32_t textureId)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a83ae15ce4e35a9899bfa029ea82fded4"/>void <emphasis role="strong">drawText</emphasis> (float x, float y, <link linkend="_classStyle">Style</link> *s, const char text[], uint32_t len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a8294ec50fd485de4e1a88622b55a67e8"/>void <emphasis role="strong">drawText</emphasis> (float x, float y, <link linkend="_classStyle">Style</link> *s, uint32_t baseChar, const char text[], uint32_t len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1a2bf37b60190cd5244798d0fb6548f0d9"/>void <emphasis role="strong">drawText</emphasis> (float x, float y, <link linkend="_classStyle">Style</link> *s, const uint16_t text[], uint32_t len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1ac2eeb9eae84b55729cc941ca7c7adde3"/>float <emphasis role="strong">getTextWidth</emphasis> (<link linkend="_classStyle">Style</link> *s, const char text[], uint32_t len) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1ab44146613f185d8ecd5f00defe0eadcf"/>float <emphasis role="strong">getTextHeight</emphasis> (<link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebDraw_1adc6799857596230d1564e31ec0ef1e0c"/>void <emphasis role="strong">addText</emphasis> (<link linkend="_classWebCursor">WebCursor</link> *cursor, <link linkend="_classStyle">Style</link> *s, const char text[], uint32_t len)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

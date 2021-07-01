@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classX11Util" xml:lang="en-US">
+<title>X11Util Class Reference</title>
+<indexterm><primary>X11Util</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classX11Util_1a29aa17df5ba038643b1c515baf263f04"/>static void <emphasis role="strong">setCursor</emphasis> (float w_x, float w_y, float dx, float dy)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

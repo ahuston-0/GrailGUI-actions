@@ -1,0 +1,320 @@
+\hypertarget{GLWin_8hh_source}{}\doxysection{GLWin.\+hh}
+\label{GLWin_8hh_source}\index{src/opengl/GLWin.hh@{src/opengl/GLWin.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <glm/gtc/matrix\_transform.hpp>}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include "{}opengl/Colors.hh"{}}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "{}opengl/GLWinFonts.hh"{}}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "{}opengl/Shader.hh"{}}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "{}util/DynArray.hh"{}}}
+\DoxyCodeLine{00013 \textcolor{keyword}{class }GLFWwindow;  \textcolor{comment}{// forward declaration, simplify: include file not needed}}
+\DoxyCodeLine{00014                    \textcolor{comment}{// here}}
+\DoxyCodeLine{00015 \textcolor{keyword}{class }\mbox{\hyperlink{classGLWin}{GLWin}};}
+\DoxyCodeLine{00016 \textcolor{keyword}{typedef} void (*Action)(\mbox{\hyperlink{classGLWin}{GLWin}}*);  \textcolor{comment}{// actions are methods of the window}}
+\DoxyCodeLine{00017 \textcolor{keyword}{class }\mbox{\hyperlink{classTab}{Tab}};}
+\DoxyCodeLine{00018 \textcolor{keyword}{class }\mbox{\hyperlink{classStyle}{Style}};}
+\DoxyCodeLine{00019 \textcolor{keyword}{class }\mbox{\hyperlink{classFont}{Font}};}
+\DoxyCodeLine{\Hypertarget{GLWin_8hh_source_l00020}\mbox{\hyperlink{classGLWin}{00020}} \textcolor{keyword}{class }\mbox{\hyperlink{classGLWin}{GLWin}} \{}
+\DoxyCodeLine{00021  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00022   \mbox{\hyperlink{classStyle}{Style}}* defaultStyle;}
+\DoxyCodeLine{00023   \mbox{\hyperlink{classStyle}{Style}}* guiStyle;}
+\DoxyCodeLine{00024   \mbox{\hyperlink{classStyle}{Style}}* guiTextStyle;}
+\DoxyCodeLine{00025   \mbox{\hyperlink{classStyle}{Style}}* menuStyle;}
+\DoxyCodeLine{00026   \mbox{\hyperlink{classStyle}{Style}}* menuTextStyle;}
+\DoxyCodeLine{00027   \mbox{\hyperlink{classFont}{Font}}* defaultFont;}
+\DoxyCodeLine{00028   \mbox{\hyperlink{classFont}{Font}}* guiFont;}
+\DoxyCodeLine{00029   \mbox{\hyperlink{classFont}{Font}}* menuFont;}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032   constexpr \textcolor{keyword}{static} uint32\_t COMMON\_SHADER = 0;}
+\DoxyCodeLine{00033   constexpr \textcolor{keyword}{static} uint32\_t PER\_VERTEX\_SHADER = 1;}
+\DoxyCodeLine{00034   constexpr \textcolor{keyword}{static} uint32\_t TEXT\_SHADER = 2;}
+\DoxyCodeLine{00035   constexpr \textcolor{keyword}{static} uint32\_t TEXTURE\_SHADER = 3;}
+\DoxyCodeLine{00036   constexpr \textcolor{keyword}{static} uint32\_t CURSOR\_SHADER = 4;}
+\DoxyCodeLine{00037   constexpr \textcolor{keyword}{static} uint32\_t MULTI\_TEXTURE\_SHADER = 5;}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} hasBeenInitialized;}
+\DoxyCodeLine{00041   \textcolor{keyword}{static} std::unordered\_map<GLFWwindow*, GLWin*> winMap;}
+\DoxyCodeLine{00042   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* title;}
+\DoxyCodeLine{00043   \textcolor{keywordtype}{double} startTime;     \textcolor{comment}{// start of simulation time, default 0}}
+\DoxyCodeLine{00044   \textcolor{keywordtype}{double} endTime;       \textcolor{comment}{// end of simulation time, default 0}}
+\DoxyCodeLine{00045   \textcolor{keywordtype}{double} t;             \textcolor{comment}{// master time variable for animations}}
+\DoxyCodeLine{00046   \textcolor{keywordtype}{double} dt;            \textcolor{comment}{// delta time advanced every frame}}
+\DoxyCodeLine{00047   uint8\_t* saveBuffer;  \textcolor{comment}{// buffer used to save screenshots}}
+\DoxyCodeLine{00048   uint32\_t saveW, saveH;}
+\DoxyCodeLine{00049   uint32\_t frameNum;}
+\DoxyCodeLine{00050   \textcolor{keywordtype}{char} frameName[32];}
+\DoxyCodeLine{00051   \mbox{\hyperlink{classDynArray}{DynArray<Tab*>}} tabs;  \textcolor{comment}{// list of web pages, ie tabs}}
+\DoxyCodeLine{00052   \mbox{\hyperlink{classTab}{Tab}}* current;         \textcolor{comment}{// current (active) tab}}
+\DoxyCodeLine{00053  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054   \textcolor{keyword}{static} std::string baseDir;}
+\DoxyCodeLine{00055   \textcolor{keywordtype}{double} mouseX, mouseY;}
+\DoxyCodeLine{00056   \textcolor{keywordtype}{float} mousePressX, mousePressY;}
+\DoxyCodeLine{00057   \textcolor{keywordtype}{bool} dragMode;}
+\DoxyCodeLine{00058   \textcolor{keywordtype}{int} winXPos, winYPos;    \textcolor{comment}{// location of the top-\/left of the window in pixels}}
+\DoxyCodeLine{00059   uint32\_t width, height;  \textcolor{comment}{// width and height of the window in pixels}}
+\DoxyCodeLine{00060   \textcolor{keywordtype}{bool} dirty, dirty2;}
+\DoxyCodeLine{00061   \textcolor{keywordtype}{bool} focused;}
+\DoxyCodeLine{00062   uint32\_t exitAfter;  \textcolor{comment}{// if not zero, will terminate}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064   \textcolor{keywordtype}{float} getTime() \textcolor{keyword}{const};}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066   \textcolor{keyword}{enum} Inputs \{}
+\DoxyCodeLine{00067     INSERT = 260,}
+\DoxyCodeLine{00068     DEL = 261,}
+\DoxyCodeLine{00069     RARROW = 262,}
+\DoxyCodeLine{00070     LARROW = 263,}
+\DoxyCodeLine{00071     UPARROW = 265,}
+\DoxyCodeLine{00072     DOWNARROW = 264,}
+\DoxyCodeLine{00073     PAGEUP = 266,}
+\DoxyCodeLine{00074     PAGEDOWN = 267,}
+\DoxyCodeLine{00075     F1 = 290,}
+\DoxyCodeLine{00076     F2 = 291,}
+\DoxyCodeLine{00077     F3 = 292,}
+\DoxyCodeLine{00078     F4 = 293,}
+\DoxyCodeLine{00079     F5 = 294,}
+\DoxyCodeLine{00080     F6 = 295,}
+\DoxyCodeLine{00081     F7 = 296,}
+\DoxyCodeLine{00082     F8 = 297,}
+\DoxyCodeLine{00083     F9 = 298,}
+\DoxyCodeLine{00084     F10 = 299,}
+\DoxyCodeLine{00085     F11 = 300,}
+\DoxyCodeLine{00086     F12 = 301,}
+\DoxyCodeLine{00087     WHEELUP = 401,}
+\DoxyCodeLine{00088     WHEELDOWN = 399,}
+\DoxyCodeLine{00089     MOUSE0 = 0,}
+\DoxyCodeLine{00090     MOUSE1 = 1,}
+\DoxyCodeLine{00091     MOUSE2 = 2,}
+\DoxyCodeLine{00092     MOUSE3 = 3,}
+\DoxyCodeLine{00093     MOUSE4 = 4,}
+\DoxyCodeLine{00094     PRESS = 8,}
+\DoxyCodeLine{00095     RELEASE = 0,}
+\DoxyCodeLine{00096     CTRL = 512,}
+\DoxyCodeLine{00097     SHIFT = 1024,}
+\DoxyCodeLine{00098     ALT = 2048}
+\DoxyCodeLine{00099   \};}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101   \textcolor{comment}{/*}}
+\DoxyCodeLine{00102 \textcolor{comment}{        map input events, like pressing a key, or clicking alt-\/mouse button 1}}
+\DoxyCodeLine{00103 \textcolor{comment}{     to an action number. Actions are internally stored in a separate table}}
+\DoxyCodeLine{00104 \textcolor{comment}{     this allows defining key bindings}}
+\DoxyCodeLine{00105 \textcolor{comment}{        TODO: Later, build a more sophisticated modal input where this can}}
+\DoxyCodeLine{00106 \textcolor{comment}{     change in a mode, a second input map would override the first, allowing}}
+\DoxyCodeLine{00107 \textcolor{comment}{     different mappings for different states.}}
+\DoxyCodeLine{00108 \textcolor{comment}{  */}}
+\DoxyCodeLine{00109   \textcolor{keyword}{static} uint32\_t inputMap[32768];}
+\DoxyCodeLine{00110   \textcolor{comment}{/*}}
+\DoxyCodeLine{00111 \textcolor{comment}{        map an integer code to a function to execute}}
+\DoxyCodeLine{00112 \textcolor{comment}{        the actions are all the publicly available performance the code can DO}}
+\DoxyCodeLine{00113 \textcolor{comment}{  */}}
+\DoxyCodeLine{00114   \textcolor{keyword}{static} Action actionMap[4096];  \textcolor{comment}{// TODO: hardcoded maximum size for now}}
+\DoxyCodeLine{00115   \textcolor{keyword}{static} std::unordered\_map<std::string, int> actionNameMap;}
+\DoxyCodeLine{00116   uint32\_t lookupAction(\textcolor{keyword}{const} \textcolor{keywordtype}{char} actionName[]);}
+\DoxyCodeLine{00117   \textcolor{comment}{//    static GLWin* w;}}
+\DoxyCodeLine{00118   \textcolor{keywordtype}{void} setEvent(uint32\_t e, uint32\_t a) \{ inputMap[e] = a; \}}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120   \textcolor{keywordtype}{void} setEvent(uint32\_t key, uint32\_t mod, uint32\_t a) \{}
+\DoxyCodeLine{00121     setEvent((mod << 9) | key, a);}
+\DoxyCodeLine{00122   \}}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124   \textcolor{keywordtype}{void} setAction(uint32\_t a, Action action) \{ actionMap[a] = action; \}}
+\DoxyCodeLine{00125   \textcolor{keyword}{enum class} Security \{}
+\DoxyCodeLine{00126     SAFE,        \textcolor{comment}{// safe for a remote server to trigger this function}}
+\DoxyCodeLine{00127     RESTRICTED,  \textcolor{comment}{// only the local user can execute this function}}
+\DoxyCodeLine{00128     ASK  \textcolor{comment}{// a remote user or server may request this but it will trigger a popup}}
+\DoxyCodeLine{00129          \textcolor{comment}{// asking local user to approve}}
+\DoxyCodeLine{00130   \};}
+\DoxyCodeLine{00131   uint32\_t numActions[3];  \textcolor{comment}{// keep track of how many of each kind of operations}}
+\DoxyCodeLine{00132                            \textcolor{comment}{// there are}}
+\DoxyCodeLine{00133   \textcolor{keywordtype}{void} loadBindings();}
+\DoxyCodeLine{00134   uint32\_t internalRegisterAction(}
+\DoxyCodeLine{00135       \textcolor{keyword}{const} \textcolor{keywordtype}{char} name[], Security s,}
+\DoxyCodeLine{00136       Action action);  \textcolor{comment}{// registerAction("{}myFunc"{}, Security::RESTRICTED, myFunc)}}
+\DoxyCodeLine{00137   \textcolor{comment}{// bind an input event to an action Name. looks up offsets into arrays}}
+\DoxyCodeLine{00138   \textcolor{keywordtype}{void} bind(uint32\_t input, \textcolor{keyword}{const} \textcolor{keywordtype}{char} actionName[]);}
+\DoxyCodeLine{00139   \textcolor{keywordtype}{void} bind(\textcolor{keyword}{const} \textcolor{keywordtype}{char} inputCmd[], \textcolor{keyword}{const} \textcolor{keywordtype}{char} actionName[]);}
+\DoxyCodeLine{00140 \textcolor{preprocessor}{\#define quote(a) \#a}}
+\DoxyCodeLine{00141 \textcolor{preprocessor}{\#define registerAction(security, func) \(\backslash\)}}
+\DoxyCodeLine{00142 \textcolor{preprocessor}{  internalRegisterAction(quote(func), security, func)}}
+\DoxyCodeLine{00143 \textcolor{preprocessor}{\#define bindEvent(inp, func) \(\backslash\)}}
+\DoxyCodeLine{00144 \textcolor{preprocessor}{  setEvent(inp, internalRegisterAction(quote(func), Security::SAFE, func))}}
+\DoxyCodeLine{00145   \textcolor{comment}{// Render control}}
+\DoxyCodeLine{00146   \textcolor{comment}{//  static uint32\_t render\_done, block\_render;}}
+\DoxyCodeLine{00147   \textcolor{keywordtype}{double} time()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} t; \}}
+\DoxyCodeLine{00148   \textcolor{keywordtype}{void} setDt(\textcolor{keywordtype}{double} delta) \{ dt = delta; \}}
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00150  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00151   GLFWwindow* win;}
+\DoxyCodeLine{00152   uint32\_t bgColor, fgColor;}
+\DoxyCodeLine{00153   \mbox{\hyperlink{classDynArray}{DynArray<FontFace>}} faces;}
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{00155   \textcolor{keyword}{static} \mbox{\hyperlink{classGLWin}{GLWin}}* getWin(GLFWwindow* win) \{}
+\DoxyCodeLine{00156     std::unordered\_map<GLFWwindow*, GLWin*>::iterator i = winMap.find(win);}
+\DoxyCodeLine{00157     \textcolor{keywordflow}{if} (i == winMap.end())}
+\DoxyCodeLine{00158       \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00159     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00160       \textcolor{keywordflow}{return} i-\/>second;}
+\DoxyCodeLine{00161   \}}
+\DoxyCodeLine{00162   \textcolor{keyword}{static} \textcolor{keywordtype}{void} doit(\mbox{\hyperlink{classGLWin}{GLWin}}* w, uint32\_t input);}
+\DoxyCodeLine{00163   \textcolor{keyword}{static} \textcolor{keywordtype}{void} mouseButtonCallback(GLFWwindow* win, \textcolor{keywordtype}{int} button, \textcolor{keywordtype}{int} action,}
+\DoxyCodeLine{00164                                   \textcolor{keywordtype}{int} mods);}
+\DoxyCodeLine{00165   \textcolor{keyword}{static} \textcolor{keywordtype}{void} cursorPositionCallback(GLFWwindow* win, \textcolor{keywordtype}{double} xpos, \textcolor{keywordtype}{double} ypos);}
+\DoxyCodeLine{00166   \textcolor{keyword}{static} \textcolor{keywordtype}{void} cursorEnterCallback(GLFWwindow* win, \textcolor{keywordtype}{int} entered);}
+\DoxyCodeLine{00167   \textcolor{keyword}{static} \textcolor{keywordtype}{void} windowPositionCallback(GLFWwindow* win, \textcolor{keywordtype}{int} xpos, \textcolor{keywordtype}{int} ypos);}
+\DoxyCodeLine{00168   \textcolor{keyword}{static} \textcolor{keywordtype}{void} windowFocusCallback(GLFWwindow* win, \textcolor{keywordtype}{int} focused);}
+\DoxyCodeLine{00169   \textcolor{keyword}{static} \textcolor{keywordtype}{void} keyCallback(GLFWwindow* win, \textcolor{keywordtype}{int} key, \textcolor{keywordtype}{int} scancode, \textcolor{keywordtype}{int} action,}
+\DoxyCodeLine{00170                           \textcolor{keywordtype}{int} mods);}
+\DoxyCodeLine{00171   \textcolor{keyword}{static} \textcolor{keywordtype}{void} scrollCallback(GLFWwindow* win, \textcolor{keywordtype}{double} xoffset, \textcolor{keywordtype}{double} yoffset);}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173   \textcolor{keyword}{static} \textcolor{keywordtype}{void} windowRefreshCallback(GLFWwindow* win);}
+\DoxyCodeLine{00174   \textcolor{keyword}{static} \textcolor{keywordtype}{void} enableMouse();}
+\DoxyCodeLine{00175 }
+\DoxyCodeLine{00176   \textcolor{keyword}{static} \textcolor{keywordtype}{void} resize(GLFWwindow* win, \textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} height);}
+\DoxyCodeLine{00177   \textcolor{keywordtype}{void} processInput(GLFWwindow* win);}
+\DoxyCodeLine{00178   \textcolor{keyword}{static} glm::mat4 projection;  \textcolor{comment}{// current projection for this window}}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00180   \textcolor{comment}{/*}}
+\DoxyCodeLine{00181 \textcolor{comment}{ fontInit() and fontCleanup() are separated from the constructor/destructor into}}
+\DoxyCodeLine{00182 \textcolor{comment}{ GLWinFonts to keep all the font-\/dependent code over there. Just call fontInit()}}
+\DoxyCodeLine{00183 \textcolor{comment}{ before the action starts and fontCleanup() after the code is over.}}
+\DoxyCodeLine{00184 \textcolor{comment}{ TODO: moved fontCleanup into FaceFont, should refactor fontInit to init() in}}
+\DoxyCodeLine{00185 \textcolor{comment}{ faceFont as well.}}
+\DoxyCodeLine{00186 \textcolor{comment}{ */}}
+\DoxyCodeLine{00187 }
+\DoxyCodeLine{00188  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00189   \textcolor{comment}{// static std::unordered\_map<std::string, std::string> pathByName;}}
+\DoxyCodeLine{00190   \mbox{\hyperlink{classGLWin}{GLWin}}(uint32\_t bgColor = 0x000000FF, uint32\_t fgColor = 0xFFFFFFFF,}
+\DoxyCodeLine{00191         \textcolor{keyword}{const} \textcolor{keywordtype}{char} title[] = \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00192         uint32\_t exitAfter =}
+\DoxyCodeLine{00193             0);  \textcolor{comment}{// 0xRRGGBBaa = color (RGB, alpha =}}
+\DoxyCodeLine{00194                  \textcolor{comment}{// opacity) possible source of bugs}}
+\DoxyCodeLine{00196 \textcolor{comment}{}                 \textcolor{comment}{// exitAfter150Frames: for debugging/benchmarking purposes}}
+\DoxyCodeLine{00197   \mbox{\hyperlink{classGLWin}{GLWin}}(uint32\_t w, uint32\_t h, uint32\_t bgColor, uint32\_t fgColor,}
+\DoxyCodeLine{00198         \textcolor{keyword}{const} \textcolor{keywordtype}{char} title[],}
+\DoxyCodeLine{00199         uint32\_t exitAfter = 0);  \textcolor{comment}{// use this constructor for standalone}}
+\DoxyCodeLine{00200                                   \textcolor{comment}{// to build window (all in one)}}
+\DoxyCodeLine{00201 }
+\DoxyCodeLine{00202   \textcolor{keyword}{virtual} \string~\mbox{\hyperlink{classGLWin}{GLWin}}();}
+\DoxyCodeLine{00203   \textcolor{keyword}{static} \textcolor{keywordtype}{int} init(\mbox{\hyperlink{classGLWin}{GLWin}}* g, uint32\_t w, uint32\_t h, uint32\_t exitAfter = 0);}
+\DoxyCodeLine{00204   \textcolor{keyword}{static} \textcolor{keywordtype}{int} init(\mbox{\hyperlink{classGLWin}{GLWin}}* g, uint32\_t exitAfter = 0) \{}
+\DoxyCodeLine{00205     \textcolor{keywordflow}{return} init(g, 1024, 1024, exitAfter);}
+\DoxyCodeLine{00206   \}}
+\DoxyCodeLine{00207 }
+\DoxyCodeLine{00208   \mbox{\hyperlink{classTab}{Tab}}* currentTab() \{ \textcolor{keywordflow}{return} current; \}}
+\DoxyCodeLine{00209 }
+\DoxyCodeLine{00210   \textcolor{keywordtype}{void} setSize(uint32\_t w, uint32\_t h) \{}
+\DoxyCodeLine{00211     width = w;}
+\DoxyCodeLine{00212     height = h;}
+\DoxyCodeLine{00213   \}}
+\DoxyCodeLine{00214 }
+\DoxyCodeLine{00215   uint32\_t getWidth()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} width; \}}
+\DoxyCodeLine{00216   uint32\_t getHeight()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} height; \}}
+\DoxyCodeLine{00217 }
+\DoxyCodeLine{00218   \textcolor{keyword}{static} glm::mat4* getProjection() \{ \textcolor{keywordflow}{return} \&projection; \}}
+\DoxyCodeLine{00219   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{00220   \textcolor{keywordtype}{void} startWindow();}
+\DoxyCodeLine{00221 }
+\DoxyCodeLine{00222   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} render();}
+\DoxyCodeLine{00223   \textcolor{keywordtype}{void} addFontPath(std::string path, std::string name);}
+\DoxyCodeLine{00224 }
+\DoxyCodeLine{00225   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} update();}
+\DoxyCodeLine{00226   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} cleanup();}
+\DoxyCodeLine{00227   \textcolor{comment}{/* Manage animation with calls. Setting a time t, every time a tick happens}}
+\DoxyCodeLine{00228 \textcolor{comment}{all animation moves forward to the next time t (integer)}}
+\DoxyCodeLine{00229 \textcolor{comment}{*/}}
+\DoxyCodeLine{00230   \textcolor{keywordtype}{void} resetAnim();          \textcolor{comment}{// set t=0}}
+\DoxyCodeLine{00231   \textcolor{keywordtype}{void} setTime(\textcolor{keywordtype}{float} t);     \textcolor{comment}{// set t to any desired value}}
+\DoxyCodeLine{00232   \textcolor{keywordtype}{void} tick();               \textcolor{comment}{// move t forward}}
+\DoxyCodeLine{00233   \textcolor{keywordtype}{void} setEndTime(\textcolor{keywordtype}{float} t);  \textcolor{comment}{// define the end time. When end is reached restart}}
+\DoxyCodeLine{00234   \textcolor{keywordtype}{void} setDesiredColor(\textcolor{keyword}{const} glm::vec3\& c, \textcolor{keywordtype}{float} delta);}
+\DoxyCodeLine{00235 }
+\DoxyCodeLine{00236   \textcolor{comment}{// void setAnimation(Shape\& s, glm::mat\&) // transform s by matrix every tick}}
+\DoxyCodeLine{00237 }
+\DoxyCodeLine{00238   \textcolor{keywordtype}{void} random(glm::vec3\& v);  \textcolor{comment}{// set this vec3 to random (0..1) for each}}
+\DoxyCodeLine{00239   \textcolor{comment}{/*}}
+\DoxyCodeLine{00240 \textcolor{comment}{void loadObject(Model\& m, const char filename[]);}}
+\DoxyCodeLine{00241 \textcolor{comment}{void saveImage(Image\& m); // save screenshot}}
+\DoxyCodeLine{00242 \textcolor{comment}{Shape* pick(int x, int y); // click on (x,y) and get back frontmost shape}}
+\DoxyCodeLine{00243 \textcolor{comment}{Shape* pick(int x, int y, Shape*); // click on (x,y), get Shape behind}}
+\DoxyCodeLine{00244 \textcolor{comment}{}}
+\DoxyCodeLine{00245 \textcolor{comment}{*/}}
+\DoxyCodeLine{00246   \textcolor{keywordtype}{void} mainLoop();}
+\DoxyCodeLine{00247   \textcolor{keywordtype}{void} setDirty() \{ dirty = \textcolor{keyword}{true}; \}}
+\DoxyCodeLine{00248   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* getDefaultStyle()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} defaultStyle; \}}
+\DoxyCodeLine{00249   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* getGuiStyle()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} guiStyle; \}}
+\DoxyCodeLine{00250   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* getGuiTextStyle()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} guiTextStyle; \}}
+\DoxyCodeLine{00251   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* getMenuStyle()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} menuStyle; \}}
+\DoxyCodeLine{00252   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* getMenuTextStyle()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} menuTextStyle; \}}
+\DoxyCodeLine{00253 }
+\DoxyCodeLine{00254   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* getDefaultFont()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} defaultFont; \}}
+\DoxyCodeLine{00255   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* getGuiFont()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} guiFont; \}}
+\DoxyCodeLine{00256   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* getMenuFont()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} menuFont; \}}
+\DoxyCodeLine{00257 }
+\DoxyCodeLine{00258   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} baseInit();}
+\DoxyCodeLine{00259 }
+\DoxyCodeLine{00260   \textcolor{keyword}{static} \textcolor{keywordtype}{void} classInit();}
+\DoxyCodeLine{00261   \textcolor{keyword}{static} \textcolor{keywordtype}{void} classCleanup();}
+\DoxyCodeLine{00262 }
+\DoxyCodeLine{00263   \textcolor{keywordtype}{void} bind2DOrtho();}
+\DoxyCodeLine{00264   \textcolor{keywordtype}{void} bind3D();}
+\DoxyCodeLine{00265 }
+\DoxyCodeLine{00266   \textcolor{comment}{// build in actions}}
+\DoxyCodeLine{00267   \textcolor{keyword}{static} \textcolor{keywordtype}{void} quit(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00268   \textcolor{keyword}{static} \textcolor{keywordtype}{void} refresh(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00269   \textcolor{keyword}{static} \textcolor{keywordtype}{void} saveFrame(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00270   \textcolor{keyword}{static} \textcolor{keywordtype}{void} resetCamera(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00271 }
+\DoxyCodeLine{00272   \textcolor{keyword}{static} \textcolor{keywordtype}{void} gotoStartTime(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00273   \textcolor{keyword}{static} \textcolor{keywordtype}{void} gotoEndTime(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00274   \textcolor{keyword}{static} \textcolor{keywordtype}{void} speedTime(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00275   \textcolor{keyword}{static} \textcolor{keywordtype}{void} slowTime(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00276   \textcolor{keyword}{static} \textcolor{keywordtype}{void} resetTimeDilation(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00277 }
+\DoxyCodeLine{00278   \textcolor{keywordtype}{void} clearSelected(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00279 }
+\DoxyCodeLine{00280   \textcolor{keyword}{static} \textcolor{keywordtype}{void} resetProjection3D(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00281   \textcolor{keyword}{static} \textcolor{keywordtype}{void} zoomOut3D(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00282   \textcolor{keyword}{static} \textcolor{keywordtype}{void} zoomIn3D(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00283   \textcolor{keyword}{static} \textcolor{keywordtype}{void} panRight3D(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00284   \textcolor{keyword}{static} \textcolor{keywordtype}{void} panLeft3D(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00285   \textcolor{keyword}{static} \textcolor{keywordtype}{void} panUp3D(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00286   \textcolor{keyword}{static} \textcolor{keywordtype}{void} panDown3D(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00287   \textcolor{keyword}{static} \textcolor{keywordtype}{void} selectObject3D(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00288   \textcolor{keyword}{static} \textcolor{keywordtype}{void} addSelectObject3D(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00289   \textcolor{keyword}{static} \textcolor{keywordtype}{void} toggleSelectObject3D(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00290 }
+\DoxyCodeLine{00291   \textcolor{keyword}{static} \textcolor{keywordtype}{void} resetProjection2D(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00292   \textcolor{keyword}{static} \textcolor{keywordtype}{void} zoomOut2D(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00293   \textcolor{keyword}{static} \textcolor{keywordtype}{void} zoomIn2D(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00294   \textcolor{keyword}{static} \textcolor{keywordtype}{void} panRight2D(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00295   \textcolor{keyword}{static} \textcolor{keywordtype}{void} panLeft2D(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00296   \textcolor{keyword}{static} \textcolor{keywordtype}{void} panUp2D(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00297   \textcolor{keyword}{static} \textcolor{keywordtype}{void} panDown2D(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00298 }
+\DoxyCodeLine{00299   \textcolor{keyword}{static} \textcolor{keywordtype}{void} gotoTop(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00300   \textcolor{keyword}{static} \textcolor{keywordtype}{void} gotoBottom(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00301   \textcolor{keyword}{static} \textcolor{keywordtype}{void} scrollUp(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00302   \textcolor{keyword}{static} \textcolor{keywordtype}{void} scrollDown(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00303   \textcolor{keyword}{static} \textcolor{keywordtype}{void} pageUp(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00304   \textcolor{keyword}{static} \textcolor{keywordtype}{void} pageDown(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00305   \textcolor{keyword}{static} \textcolor{keywordtype}{void} sectionUp(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00306   \textcolor{keyword}{static} \textcolor{keywordtype}{void} sectionDown(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00307 }
+\DoxyCodeLine{00308   \textcolor{keyword}{static} \textcolor{keywordtype}{void} playSound(\mbox{\hyperlink{classGLWin}{GLWin}}* w, \textcolor{keyword}{const} \textcolor{keywordtype}{char} name[]);}
+\DoxyCodeLine{00309   \textcolor{keyword}{static} \textcolor{keywordtype}{void} stopSound(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00310 }
+\DoxyCodeLine{00311   \textcolor{keyword}{static} \textcolor{keywordtype}{void} pressOnWidget(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00312   \textcolor{keyword}{static} \textcolor{keywordtype}{void} releaseWidget(\mbox{\hyperlink{classGLWin}{GLWin}}* w);}
+\DoxyCodeLine{00313 }
+\DoxyCodeLine{00314   \textcolor{keywordtype}{double} getTime();}
+\DoxyCodeLine{00315 \};}
+
+\end{DoxyCode}

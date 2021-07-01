@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classDocView" xml:lang="en-US">
+<title>DocView Class Reference</title>
+<indexterm><primary>DocView</primary></indexterm>
+<para>Inheritance diagram for DocView:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d4/dc1/classDocView.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classDocView_1ac5ee96d7979468adb00d4edf02474523"/><emphasis role="strong">DocView</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, const <link linkend="_classStyle">Style</link> *style, const <link linkend="_classDocument">Document</link> *doc)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocView_1aff41b0646b21a146324b376e111a3ef3"/>void <emphasis role="strong">clear</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocView_1abb3262ab7e055d622d98a788884c94da"/>void <emphasis role="strong">printPageNum</emphasis> (uint32_t page)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocView_1a5499afb53a6bf660a9b6d27452657f3e"/>void <emphasis role="strong">print</emphasis> (float x, float y, const <link linkend="_classFont">Font</link> *f, uint32_t v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocView_1ae648ed361b6c6927df20831af1b5b0be"/>void <emphasis role="strong">advance</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocView_1a161324fe44e48512215722e7c15a2df0"/>void <emphasis role="strong">advance10</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocView_1a8c152c3aa45df32af7949002d41a538c"/>void <emphasis role="strong">back</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocView_1a5b369af4947650ac4533dbbab592a2a4"/>void <emphasis role="strong">top</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocView_1a61d742864566ac86225218252b606552"/>void <emphasis role="strong">bottom</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocView_1a61d5bde9e6a8bf422d75fdc95cb50743"/>void <emphasis role="strong">gotoPage</emphasis> (uint32_t pageNum)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocView_1ad0bf788b7fd3a26a2a6cf3e8801a7670"/>void <emphasis role="strong">addChar</emphasis> (const <link linkend="_classFont">Font</link> *f, uint8_t c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocView_1a25c45bdeec1ceea34a162a857c198907"/>void <emphasis role="strong">init</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocView_1a8e2c1985e4419e29d4304df70f3af252"/>void <emphasis role="strong">process_input</emphasis> (Inputs *in, float dt)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocView_1a4a51b1ef9b376ac4fc1bcaed36a71613"/>void <emphasis role="strong">update</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocView_1aeff0a2098e9c242dba1733a0e04ef12b"/>void <emphasis role="strong">render</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

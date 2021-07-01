@@ -1,0 +1,36 @@
+\hypertarget{CSPTest5_8hh_source}{}\doxysection{CSPTest5.\+hh}
+\label{CSPTest5_8hh_source}\index{src/csp/cspservlet/CSPTest5.hh@{src/csp/cspservlet/CSPTest5.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{//}}
+\DoxyCodeLine{00002 \textcolor{comment}{// Created by dkruger on 11/01/17.}}
+\DoxyCodeLine{00003 \textcolor{comment}{//}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <csp/CSPServlet.hh>}}
+\DoxyCodeLine{00007 \textcolor{comment}{//\#include "{}csp/HttpServlet.hh"{}}}
+\DoxyCodeLine{00008 \textcolor{comment}{//\#include "{}csp/HTTPRequest.hh"{}}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include "{}util/List1.hh"{}}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "{}csp/CSPRequest.hh"{}}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{\Hypertarget{CSPTest5_8hh_source_l00012}\mbox{\hyperlink{classCSPTest5}{00012}} \textcolor{keyword}{class }\mbox{\hyperlink{classCSPTest5}{CSPTest5}} : \textcolor{keyword}{public} \mbox{\hyperlink{classCSPServlet}{CSPServlet}} \{}
+\DoxyCodeLine{00013 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016     \mbox{\hyperlink{classCSPTest5}{CSPTest5}}() \{\}}
+\DoxyCodeLine{00017     \string~\mbox{\hyperlink{classCSPTest5}{CSPTest5}}() \{\}}
+\DoxyCodeLine{00018     \textcolor{keywordtype}{void} request(\mbox{\hyperlink{classCSPRequest}{CSPRequest}}\& r) \{}
+\DoxyCodeLine{00019         \mbox{\hyperlink{classBuffer}{Buffer}}\& out = r.getOut();}
+\DoxyCodeLine{00020         \mbox{\hyperlink{classList1}{List1<uint32\_t>}} mylist;}
+\DoxyCodeLine{00021         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 15; i++)\{}
+\DoxyCodeLine{00022             mylist.add(i);}
+\DoxyCodeLine{00023         \}}
+\DoxyCodeLine{00024         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 15; i++)\{}
+\DoxyCodeLine{00025             cout<<(int)mylist.getData(i)<<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00026         \}}
+\DoxyCodeLine{00027         \textcolor{comment}{//out << mylist;}}
+\DoxyCodeLine{00028         out.writeList(mylist);}
+\DoxyCodeLine{00029     \}}
+\DoxyCodeLine{00030 \};}
+
+\end{DoxyCode}

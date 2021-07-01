@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classTab" xml:lang="en-US">
+<title>Tab Class Reference</title>
+<indexterm><primary>Tab</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classTab_1a17522ec88798fe8101ac24f03e9ca35f"/><emphasis role="strong">Tab</emphasis> (<link linkend="_classGLWin">GLWin</link> *parent)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTab_1ab0ae561a22ca5b21ebf845e8e1cc9efc"/><link linkend="_classGLWin">GLWin</link> * <emphasis role="strong">getParent</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTab_1a8f9701d6b00bbb1a4b98c7f8cd237d92"/><emphasis role="strong">Tab</emphasis> (const <link linkend="_classTab">Tab</link> &amp;orig)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTab_1af3733f2bb17421225888a5856777e41e"/><link linkend="_classTab">Tab</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classTab">Tab</link> &amp;orig)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTab_1a9a8ebf29eaca35abdb14708c6a501eb4"/><link linkend="_classCanvas">Canvas</link> * <emphasis role="strong">addCanvas</emphasis> (const <link linkend="_classStyle">Style</link> *style, uint32_t vpX, uint32_t vpY, uint32_t vpW, uint32_t vpH)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTab_1ab31245af2574c063dbe0f0c80241d493"/><link linkend="_classCanvas">Canvas</link> * <emphasis role="strong">getCanvas</emphasis> (uint32_t i)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTab_1abb82e8af47d1b1fb5e099d3ed310612e"/><link linkend="_classMainCanvas">MainCanvas</link> * <emphasis role="strong">getMainCanvas</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTab_1a204a655663ce94dc149620d46b7973ee"/>void <emphasis role="strong">init</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTab_1a4ba4446f1e89f15ee0b5d52015917cef"/>void <emphasis role="strong">update</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTab_1aaf49121e6bceb49f40340ca837b7368e"/>void <emphasis role="strong">render</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTab_1a3890dd256587179b6ba0292e55892990"/>void <emphasis role="strong">cleanup</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

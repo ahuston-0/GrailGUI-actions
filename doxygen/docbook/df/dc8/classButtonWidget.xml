@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classButtonWidget" xml:lang="en-US">
+<title>ButtonWidget Class Reference</title>
+<indexterm><primary>ButtonWidget</primary></indexterm>
+<para>Inheritance diagram for ButtonWidget:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../df/dc8/classButtonWidget.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classButtonWidget_1a8b8808d8b707cd7b71bd73743ce912eb"/><emphasis role="strong">ButtonWidget</emphasis> (<link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, const std::string &amp;text, float x, float y, float w, float h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classButtonWidget_1af615179cff8c62a841a9f16768d2addd"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classButtonWidget_1a3f390fb69d7d7cadaa4e2cf7498e5bcc"/><emphasis role="strong">ButtonWidget</emphasis> (<link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, const std::string[]&amp;text, float x, float y, float w, float h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classButtonWidget_1af615179cff8c62a841a9f16768d2addd"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

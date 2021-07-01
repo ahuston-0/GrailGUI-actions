@@ -1,0 +1,57 @@
+.TH "MultiShape3D" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MultiShape3D
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMultiShape\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMultiShape3D\fP (\fBCanvas\fP *canv, \fBCamera\fP *c, const std::vector< const char * > &textureFiles, \fBTransformation\fP *t, uint32_t elemPerVert=3, uint32_t vertCount=1024, uint32_t solidIndCount=1024, uint32_t lineIndCount=1024, uint32_t pointIndCount=1024, uint32_t colorIndCount=1024)"
+.br
+.ti -1c
+.RI "\fBMultiShape3D\fP (\fBCanvas\fP *canv, \fBCamera\fP *c, const char textureFile[], \fBTransformation\fP *t, uint32_t elemPerVert=3, uint32_t vertCount=1024, uint32_t solidIndCount=1024, uint32_t lineIndCount=1024, uint32_t pointIndCount=1024, uint32_t colorIndCount=1024)"
+.br
+.ti -1c
+.RI "void \fBinit\fP () override"
+.br
+.ti -1c
+.RI "void \fBrender\fP () override"
+.br
+.ti -1c
+.RI "void \fBgenFastRectPrism\fP (float x, float y, float z, uint32_t width, uint32_t length, uint32_t height, uint32_t texIndex, TexCoordVector &texCoords)"
+.br
+.ti -1c
+.RI "void \fBgenFastCube\fP (float x, float y, float z, uint32_t length, uint32_t texIndex, TexCoordVector &texCoords)"
+.br
+.ti -1c
+.RI "void \fBgenRectPrism\fP (float x, float y, float z, uint32_t width, uint32_t length, uint32_t height, uint32_t texIndex, TexCoordVector &texCoords)"
+.br
+.ti -1c
+.RI "void \fBgenCube\fP (float x, float y, float z, uint32_t length, uint32_t texIndex, TexCoordVector &texCoords)"
+.br
+.ti -1c
+.RI "void \fBgenOBJModel\fP (const char *filePath, std::vector< uint32_t > &texIndices, float xOffset=0, float yOffset=0, float zOffset=0)"
+.br
+.ti -1c
+.RI "void \fBgenOBJModel\fP (const char *filePath)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBelemPerVert\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

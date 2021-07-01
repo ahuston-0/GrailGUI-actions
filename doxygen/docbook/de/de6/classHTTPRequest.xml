@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classHTTPRequest" xml:lang="en-US">
+<title>HTTPRequest Class Reference</title>
+<indexterm><primary>HTTPRequest</primary></indexterm>
+<para>Inheritance diagram for HTTPRequest:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../de/de6/classHTTPRequest.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classHTTPRequest_1a3fe6686b2a68075b34b96db32d5a6868"/><emphasis role="strong">HTTPRequest</emphasis> (const char *ReqType)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHTTPRequest_1ae3417162b35dd30aa84e6b687d64567d"/>void <emphasis role="strong">handle</emphasis> (int sckt) override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHTTPRequest_1a7c2362ccd3dbcf9d49cca7b448ef1356"/>void <emphasis role="strong">handle</emphasis> (int sckt, const char *command) override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classHTTPRequest_1a9037ffa50f83529f1d79770f38165c62"/>static const std::string <emphasis role="strong">POST</emphasis> = &quot;POST&quot;</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHTTPRequest_1ad21142aabb91cdf9d03e750449f22778"/>static const std::string <emphasis role="strong">GET</emphasis> = &quot;GET&quot;</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classHTTPRequest_1a2d85f353ca9f6b83fb23f65d6b533bed"/>static const std::string <emphasis role="strong">UNIMPLEMENTED</emphasis> = &quot;???&quot;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

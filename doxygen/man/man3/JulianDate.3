@@ -1,0 +1,199 @@
+.TH "JulianDate" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+JulianDate
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBXDLType\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBJulianDate\fP (int32_t year, uint32_t month, uint32_t day, uint32_t hour=0, uint32_t min=0, uint32_t second=0)"
+.br
+.ti -1c
+.RI "\fBJulianDate\fP \fBoperator+\fP (double days) const"
+.br
+.ti -1c
+.RI "\fBJulianDate\fP \fBoperator\-\fP (double days) const"
+.br
+.ti -1c
+.RI "\fBJulianDate\fP \fBoperator+=\fP (double days)"
+.br
+.ti -1c
+.RI "\fBJulianDate\fP \fBoperator\-=\fP (double days)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (\fBJulianDate\fP orig)"
+.br
+.ti -1c
+.RI "\fBoperator double\fP () const"
+.br
+.ti -1c
+.RI "int32_t \fBgetYear\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetMonth\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetDay\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetHour\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetMinute\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetSecond\fP () const"
+.br
+.ti -1c
+.RI "void \fBformat\fP (char dest[])"
+.br
+.ti -1c
+.RI "double \fBgetJulDate\fP () const"
+.br
+.ti -1c
+.RI "void \fBextract\fP (int32_t *year, uint32_t *mm, uint32_t *dd, uint32_t *hh, uint32_t *min, uint32_t *ss)"
+.br
+.ti -1c
+.RI "\fBJulianDate\fP (int32_t year, uint8_t month, uint8_t day, uint8_t hour, uint8_t min, uint8_t sec)"
+.br
+.ti -1c
+.RI "int32_t \fBgetYear\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetMonth\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetDay\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetHour\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetMin\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetSecond\fP () const"
+.br
+.ti -1c
+.RI "DataType \fBgetDataType\fP () const override"
+.br
+.ti -1c
+.RI "uint32_t \fBsize\fP () const override"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBBuffer\fP &buf) const override"
+.br
+.ti -1c
+.RI "void \fBdisplay\fP (\fBBuffer\fP &binaryIn, \fBBuffer\fP &asciiOut) const"
+.br
+.ti -1c
+.RI "void \fBformat\fP (\fBBuffer\fP &binaryIn, \fBBuffer\fP &asciiOut, const char fmt[]) const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBisLeap\fP (uint32_t year)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const double \fBepoch\fP = 2000"
+.br
+.ti -1c
+.RI "static const uint16_t \fBdaysUpTo\fP [12]"
+.br
+.ti -1c
+.RI "static const uint16_t \fBdaysInMonth\fP [12]"
+.br
+.ti -1c
+.RI "static const char * \fBmonthAbbr\fP [12]"
+.br
+.ti -1c
+.RI "static const char * \fBmonthNames\fP [12]"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBDate\fP"
+.br
+.ti -1c
+.RI "double \fBoperator\-\fP (\fBJulianDate\fP a, \fBJulianDate\fP b)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &s, const \fBJulianDate\fP &jd)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Member Data Documentation"
+.PP 
+.SS "const uint16_t JulianDate::daysInMonth\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    31,  
+    28,  
+    31,  
+    30,  
+    31,  
+    30,  
+    31,  
+    31,  
+    30,  
+    31,  
+    30,  
+    31   
+}
+.fi
+.SS "const uint16_t JulianDate::daysUpTo\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    0,    
+    31,   
+    59,   
+    90,   
+    120,  
+    151,  
+    181,  
+    212,  
+    243,  
+    273,  
+    304,  
+    334   
+}
+.fi
+.SS "const char * JulianDate::monthAbbr\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {"Jan", "Feb", "Mar", "Apr",
+                                         "May", "Jun", "Jul", "Aug",
+                                         "Sep", "Oct", "Nov", "Dec"}
+.fi
+.SS "const char * JulianDate::monthNames\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    "January", "February", "March",     "April",   "May",      "June",
+    "July",    "August",   "September", "October", "November", "December"}
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

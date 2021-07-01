@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classVec3d" xml:lang="en-US">
+<title>Vec3d Class Reference</title>
+<indexterm><primary>Vec3d</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classVec3d_1a6d85955f523c11cc8d7628b6c415ce1f"/><emphasis role="strong">Vec3d</emphasis> (double x, double y, double z)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

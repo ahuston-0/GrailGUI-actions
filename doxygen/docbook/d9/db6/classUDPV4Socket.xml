@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classUDPV4Socket" xml:lang="en-US">
+<title>UDPV4Socket Class Reference</title>
+<indexterm><primary>UDPV4Socket</primary></indexterm>
+<para>Inheritance diagram for UDPV4Socket:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d9/db6/classUDPV4Socket.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classUDPV4Socket_1a02cd2189e4e257c4865167d4924d3621"/><emphasis role="strong">UDP4Socket</emphasis> (const char *addr, uint16_t port)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classUDPV4Socket_1ae5af677bd267f8af4a8a8e8cddb6242d"/><emphasis role="strong">UDP4Socket</emphasis> (uint16_t port)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classUDPV4Socket_1a49de4670ecb3841894437963438b3174"/>void <emphasis role="strong">listenOnPort</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classUDPV4Socket_1a4204c2cec24e3805886fbb3187343ff1"/>void <emphasis role="strong">wait</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classUDPV4Socket_1a1a7401184b8d4bc55d5622cc0cac9095"/>void <emphasis role="strong">send</emphasis> (const char *buf, uint32_t len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classUDPV4Socket_1a1ce4fdd234355713e4dc8264fad139b8"/>void <emphasis role="strong">send</emphasis> (uint32_t reqn)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

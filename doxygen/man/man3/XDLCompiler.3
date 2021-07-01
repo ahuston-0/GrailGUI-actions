@@ -1,0 +1,40 @@
+.TH "XDLCompiler" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XDLCompiler
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBXDLCompiler\fP (const char filename[])"
+.br
+.ti -1c
+.RI "\fBSymbolTable\fP & \fBgetSymbolTable\fP ()"
+.br
+.ti -1c
+.RI "void \fBgenerateCode\fP ()"
+.br
+.ti -1c
+.RI "void \fBerror\fP (const std::string &msg)"
+.br
+.ti -1c
+.RI "void \fBduplicateSymbol\fP (const std::string &name)"
+.br
+.ti -1c
+.RI "void \fBundefinedSymbol\fP (const std::string &name)"
+.br
+.ti -1c
+.RI "void \fBinternalError\fP (const std::string &name)"
+.br
+.ti -1c
+.RI "void \fBwarning\fP (const std::string &msg)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

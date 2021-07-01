@@ -1,0 +1,100 @@
+\hypertarget{Shader_8hh_source}{}\doxysection{Shader.\+hh}
+\label{Shader_8hh_source}\index{src/opengl/Shader.hh@{src/opengl/Shader.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{comment}{/*}}
+\DoxyCodeLine{00004 \textcolor{comment}{ * Shader encapsulates the ugly GL API for compiling shaders.}}
+\DoxyCodeLine{00005 \textcolor{comment}{ * the private method load() loads shaders of vertex, fragment or geometry types}}
+\DoxyCodeLine{00006 \textcolor{comment}{ * The constructor links these together in a program and saves only the}}
+\DoxyCodeLine{00007 \textcolor{comment}{ * resulting linked ID. This object throws out all scratch data except for the}}
+\DoxyCodeLine{00008 \textcolor{comment}{ * program ID and what is stored on the graphics card. Author: Dov Kruger March}}
+\DoxyCodeLine{00009 \textcolor{comment}{ * 5, 2019}}
+\DoxyCodeLine{00010 \textcolor{comment}{ */}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{\Hypertarget{Shader_8hh_source_l00016}\mbox{\hyperlink{classShader}{00016}} \textcolor{keyword}{class }\mbox{\hyperlink{classShader}{Shader}} \{}
+\DoxyCodeLine{00017  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018   uint32\_t progID;}
+\DoxyCodeLine{00019   uint32\_t load(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[], uint32\_t shaderType,}
+\DoxyCodeLine{00020                 \textcolor{keyword}{const} \textcolor{keywordtype}{char} shaderTypeName[]);}
+\DoxyCodeLine{00021   \textcolor{keyword}{static} std::string shaderDir;}
+\DoxyCodeLine{00022   \textcolor{keyword}{static} std::vector<Shader> shaders;}
+\DoxyCodeLine{00023   \textcolor{keyword}{static} uint32\_t format;}
+\DoxyCodeLine{00024   \textcolor{keywordtype}{void} fastLoad(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]);}
+\DoxyCodeLine{00025   \textcolor{keywordtype}{void} save(\textcolor{keyword}{const} \textcolor{keywordtype}{char} shaderName[]);}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028   \mbox{\hyperlink{classShader}{Shader}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} shaderName[], \textcolor{keyword}{const} \textcolor{keywordtype}{char} vertexPath[],}
+\DoxyCodeLine{00029          \textcolor{keyword}{const} \textcolor{keywordtype}{char} fragmentPath[], \textcolor{keyword}{const} \textcolor{keywordtype}{char} geometryPath[] = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031   \textcolor{keyword}{static} \textcolor{keywordtype}{void} setDir(\textcolor{keyword}{const} std::string \&shaderDir) \{}
+\DoxyCodeLine{00032     Shader::shaderDir = shaderDir;}
+\DoxyCodeLine{00033   \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035   \textcolor{keyword}{static} uint32\_t load(\textcolor{keyword}{const} \textcolor{keywordtype}{char} shaderName[], \textcolor{keyword}{const} \textcolor{keywordtype}{char} vertRelPath[],}
+\DoxyCodeLine{00036                        \textcolor{keyword}{const} \textcolor{keywordtype}{char} fragRelPath[],}
+\DoxyCodeLine{00037                        \textcolor{keyword}{const} \textcolor{keywordtype}{char} geomRelPath[] = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039   \textcolor{keyword}{static} \mbox{\hyperlink{classShader}{Shader}} *useShader(uint32\_t sh);}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041   \textcolor{keyword}{static} \textcolor{keywordtype}{void} cleanAll();}
+\DoxyCodeLine{00042   \textcolor{keywordtype}{void} cleanup();}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044   \textcolor{keywordtype}{void} use() \textcolor{keyword}{const};}
+\DoxyCodeLine{00045   \textcolor{keywordtype}{void} setBool(\textcolor{keyword}{const} std::string \&name, \textcolor{keywordtype}{bool} value) \textcolor{keyword}{const};}
+\DoxyCodeLine{00046   \textcolor{keywordtype}{void} setBool(\textcolor{keyword}{const} \textcolor{keywordtype}{char} name[], \textcolor{keywordtype}{bool} value) \textcolor{keyword}{const};}
+\DoxyCodeLine{00047   \textcolor{keywordtype}{void} setBool(\textcolor{keywordtype}{int} pos, \textcolor{keywordtype}{bool} value) \textcolor{keyword}{const};}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049   \textcolor{keywordtype}{void} setInt(\textcolor{keyword}{const} std::string \&name, \textcolor{keywordtype}{int} value) \textcolor{keyword}{const};}
+\DoxyCodeLine{00050   \textcolor{keywordtype}{void} setInt(\textcolor{keyword}{const} \textcolor{keywordtype}{char} name[], \textcolor{keywordtype}{int} value) \textcolor{keyword}{const};}
+\DoxyCodeLine{00051   \textcolor{keywordtype}{void} setInt(\textcolor{keywordtype}{int} pos, \textcolor{keywordtype}{int} value) \textcolor{keyword}{const};}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053   \textcolor{keywordtype}{void} setFloat(\textcolor{keyword}{const} std::string \&name, \textcolor{keywordtype}{float} value) \textcolor{keyword}{const};}
+\DoxyCodeLine{00054   \textcolor{keywordtype}{void} setFloat(\textcolor{keyword}{const} \textcolor{keywordtype}{char} name[], \textcolor{keywordtype}{float} value) \textcolor{keyword}{const};}
+\DoxyCodeLine{00055   \textcolor{keywordtype}{void} setFloat(\textcolor{keywordtype}{int} pos, \textcolor{keywordtype}{float} value) \textcolor{keyword}{const};}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057   \textcolor{keywordtype}{void} setVec2(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} glm::vec2 \&value) \textcolor{keyword}{const};}
+\DoxyCodeLine{00058   \textcolor{keywordtype}{void} setVec2(\textcolor{keyword}{const} \textcolor{keywordtype}{char} name[], \textcolor{keyword}{const} glm::vec2 \&value) \textcolor{keyword}{const};}
+\DoxyCodeLine{00059   \textcolor{keywordtype}{void} setVec2(\textcolor{keywordtype}{int} pos, \textcolor{keyword}{const} glm::vec2 \&value) \textcolor{keyword}{const};}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061   \textcolor{keywordtype}{void} setVec2(\textcolor{keyword}{const} std::string \&name, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y) \textcolor{keyword}{const};}
+\DoxyCodeLine{00062   \textcolor{keywordtype}{void} setVec2(\textcolor{keyword}{const} \textcolor{keywordtype}{char} name[], \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y) \textcolor{keyword}{const};}
+\DoxyCodeLine{00063   \textcolor{keywordtype}{void} setVec2(\textcolor{keywordtype}{int} pos, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y) \textcolor{keyword}{const};}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065   \textcolor{keywordtype}{void} setVec3(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} glm::vec3 \&value) \textcolor{keyword}{const};}
+\DoxyCodeLine{00066   \textcolor{keywordtype}{void} setVec3(\textcolor{keyword}{const} \textcolor{keywordtype}{char} name[], \textcolor{keyword}{const} glm::vec3 \&value) \textcolor{keyword}{const};}
+\DoxyCodeLine{00067   \textcolor{keywordtype}{void} setVec3(\textcolor{keywordtype}{int} pos, \textcolor{keyword}{const} glm::vec3 \&value) \textcolor{keyword}{const};}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069   \textcolor{keywordtype}{void} setVec3(\textcolor{keyword}{const} std::string \&name, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z) \textcolor{keyword}{const};}
+\DoxyCodeLine{00070   \textcolor{keywordtype}{void} setVec3(\textcolor{keyword}{const} \textcolor{keywordtype}{char} name[], \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z) \textcolor{keyword}{const};}
+\DoxyCodeLine{00071   \textcolor{keywordtype}{void} setVec3(\textcolor{keywordtype}{int} pos, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z) \textcolor{keyword}{const};}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073   \textcolor{keywordtype}{void} setVec4(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} glm::vec4 \&value) \textcolor{keyword}{const};}
+\DoxyCodeLine{00074   \textcolor{keywordtype}{void} setVec4(\textcolor{keyword}{const} \textcolor{keywordtype}{char} name[], \textcolor{keyword}{const} glm::vec4 \&value) \textcolor{keyword}{const};}
+\DoxyCodeLine{00075   \textcolor{keywordtype}{void} setVec4(\textcolor{keywordtype}{int} pos, \textcolor{keyword}{const} glm::vec4 \&value) \textcolor{keyword}{const};}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077   \textcolor{keywordtype}{void} setVec4(\textcolor{keyword}{const} std::string \&name, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z, \textcolor{keywordtype}{float} w);}
+\DoxyCodeLine{00078   \textcolor{keywordtype}{void} setVec4(\textcolor{keyword}{const} \textcolor{keywordtype}{char} name[], \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z, \textcolor{keywordtype}{float} w);}
+\DoxyCodeLine{00079   \textcolor{keywordtype}{void} setVec4(\textcolor{keywordtype}{int} pos, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z, \textcolor{keywordtype}{float} w);}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081   \textcolor{keywordtype}{void} setMat2(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} glm::mat2 \&mat) \textcolor{keyword}{const};}
+\DoxyCodeLine{00082   \textcolor{keywordtype}{void} setMat2(\textcolor{keyword}{const} \textcolor{keywordtype}{char} name[], \textcolor{keyword}{const} glm::mat2 \&mat) \textcolor{keyword}{const};}
+\DoxyCodeLine{00083   \textcolor{keywordtype}{void} setMat2(\textcolor{keywordtype}{int} pos, \textcolor{keyword}{const} glm::mat2 \&mat) \textcolor{keyword}{const};}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085   \textcolor{keywordtype}{void} setMat3(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} glm::mat3 \&mat) \textcolor{keyword}{const};}
+\DoxyCodeLine{00086   \textcolor{keywordtype}{void} setMat3(\textcolor{keyword}{const} \textcolor{keywordtype}{char} name[], \textcolor{keyword}{const} glm::mat3 \&mat) \textcolor{keyword}{const};}
+\DoxyCodeLine{00087   \textcolor{keywordtype}{void} setMat3(\textcolor{keywordtype}{int} pos, \textcolor{keyword}{const} glm::mat3 \&mat) \textcolor{keyword}{const};}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089   \textcolor{keywordtype}{void} setMat4(\textcolor{keyword}{const} std::string \&name, \textcolor{keyword}{const} glm::mat4 \&mat) \textcolor{keyword}{const};}
+\DoxyCodeLine{00090   \textcolor{keywordtype}{void} setMat4(\textcolor{keyword}{const} \textcolor{keywordtype}{char} name[], \textcolor{keyword}{const} glm::mat4 \&mat) \textcolor{keyword}{const};}
+\DoxyCodeLine{00091   \textcolor{keywordtype}{void} setMat4(\textcolor{keywordtype}{int} pos, \textcolor{keyword}{const} glm::mat4 \&mat) \textcolor{keyword}{const};}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093   uint32\_t getID()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} progID; \}}
+\DoxyCodeLine{00094 \};}
+
+\end{DoxyCode}

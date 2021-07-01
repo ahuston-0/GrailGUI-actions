@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structBlockLoader_1_1SecurityHeaderV1" xml:lang="en-US">
+<title>BlockLoader::SecurityHeaderV1 Struct Reference</title>
+<indexterm><primary>BlockLoader::SecurityHeaderV1</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structBlockLoader_1_1SecurityHeaderV1_1ac52784f7125b349ec304fb4e3f32d118"/>uint8_t <emphasis role="strong">hash</emphasis> [32]</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockLoader_1_1SecurityHeaderV1_1af441fd8ead20a98c10182a12188f6d18"/>uint8_t <emphasis role="strong">hash2</emphasis> [32]</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockLoader_1_1SecurityHeaderV1_1a4d57fa0fdf1c2dd29a2b15f98e7582a9"/>uint8_t <emphasis role="strong">sigid</emphasis> [32]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

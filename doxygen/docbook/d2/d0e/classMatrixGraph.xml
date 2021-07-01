@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classMatrixGraph" xml:lang="en-US">
+<title>MatrixGraph Class Reference</title>
+<indexterm><primary>MatrixGraph</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classMatrixGraph_1a7824404c4ddeb3365f12e31cb3320aca"/><emphasis role="strong">MatrixGraph</emphasis> (int V)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMatrixGraph_1a3e547dbed71c52bb3ea9af0d4f11ea3b"/><emphasis role="strong">MatrixGraph</emphasis> (const <link linkend="_classMatrixGraph">MatrixGraph</link> &amp;orig)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMatrixGraph_1af23041d659ca43c374f465f645df01c3"/><link linkend="_classMatrixGraph">MatrixGraph</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classMatrixGraph">MatrixGraph</link> &amp;orig)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMatrixGraph_1a35a822277f954ef636a5480c728510aa"/>uint32_t <emphasis role="strong">getV</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMatrixGraph_1a564609fb21f1027fe40b3d732e04cf1c"/>uint32_t <emphasis role="strong">getE</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMatrixGraph_1afbccfb026ce233f386ce34f39aff5842"/>double <emphasis role="strong">getW</emphasis> (uint32_t from, uint32_t to) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMatrixGraph_1a7b8e149466f18c2c4653c745440d3f35"/>void <emphasis role="strong">setW</emphasis> (uint32_t from, uint32_t to, double v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMatrixGraph_1aeffc81fe82f2afcfaf01235691357e8c"/>double <emphasis role="strong">operator()</emphasis> (int from, int to) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMatrixGraph_1ac0b266f307d17ec68827e7c48a585a59"/>double &amp; <emphasis role="strong">operator()</emphasis> (int from, int to)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMatrixGraph_1add45193340b1c3a8b39e656a2d7c641a"/>void <emphasis role="strong">dfs</emphasis> (int v)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classMatrixGraph_1a17b6be7972e6c8e7c299110bdc597a8c"/>constexpr static double <emphasis role="strong">INF</emphasis> = std::numeric_limits&lt;double&gt;::infinity()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classMatrixGraph_1ac02b7091c5c5c4469d48f1eefd1f74bf"/>std::istream &amp; <emphasis role="strong">operator&gt;&gt;</emphasis> (std::istream &amp;s, <link linkend="_classMatrixGraph">MatrixGraph</link> &amp;g)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

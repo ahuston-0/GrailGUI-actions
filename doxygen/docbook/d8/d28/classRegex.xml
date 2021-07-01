@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classRegex" xml:lang="en-US">
+<title>Regex Class Reference</title>
+<indexterm><primary>Regex</primary></indexterm>
+<para>Inheritance diagram for Regex:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d8/d28/classRegex.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classRegex_1a670f8ee1cdd92507f4bbcd7b4c0a65c5"/><emphasis role="strong">Regex</emphasis> (const std::string &amp;name, const std::string &amp;exp)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRegex_1a1f5b0a7bdff9ad9c0ecc16a2c2f857dc"/>bool <emphasis role="strong">match</emphasis> (const std::string &amp;text) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRegex_1afc6dd4aed551234391ad9d799c42f085"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRegex_1a25b8b87e2ff19a397b1fdc3277cd0eb8"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRegex_1aa4c6a6f1f6cf8985ac28f686616a70dd"/>void <emphasis role="strong">writeMeta</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRegex_1ae3a960305e3238ebba1dd416ed7855f5"/>DataType <emphasis role="strong">getDataType</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRegex_1ac48cbde95892b9447ef92d4298d45680"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRegex_1ac8a2723bd25c23c12462446c57943e9e"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structBlockLoader_1_1Info" xml:lang="en-US">
+<title>BlockLoader::Info Struct Reference</title>
+<indexterm><primary>BlockLoader::Info</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structBlockLoader_1_1Info_1abd35204dda56ef4f6485becdad49b908"/>uint64_t <emphasis role="strong">bytes</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockLoader_1_1Info_1a3dd566e394c56cff8f7529fc09c63eaa"/>Type <emphasis role="strong">t</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockLoader_1_1Info_1ae93469fc1839c26d7850b2c166bdc59c"/>uint32_t <emphasis role="strong">version</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

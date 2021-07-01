@@ -1,0 +1,34 @@
+\hypertarget{CSPServlet_8hh_source}{}\doxysection{CSPServlet.\+hh}
+\label{CSPServlet_8hh_source}\index{src/csp/CSPServlet.hh@{src/csp/CSPServlet.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}csp/Servlet.hh"{}}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}csp/Request.hh"{}}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{keyword}{class }\mbox{\hyperlink{classCSPRequest}{CSPRequest}};}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{\Hypertarget{CSPServlet_8hh_source_l00010}\mbox{\hyperlink{classCSPServlet}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{classCSPServlet}{CSPServlet}} \{}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013     \textcolor{keyword}{static} std::vector<CSPServlet*> servlets ;}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016     \string~\mbox{\hyperlink{classCSPServlet}{CSPServlet}}();}
+\DoxyCodeLine{00017     \mbox{\hyperlink{classCSPServlet}{CSPServlet}}() \{\}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019     \textcolor{keywordtype}{void} request(\mbox{\hyperlink{classRequest}{Request}}\& r) \{}
+\DoxyCodeLine{00020         request((\mbox{\hyperlink{classCSPRequest}{CSPRequest}}\&)r);}
+\DoxyCodeLine{00021     \}}
+\DoxyCodeLine{00022     \textcolor{keyword}{static} \textcolor{keywordtype}{int} add(\mbox{\hyperlink{classCSPServlet}{CSPServlet}}* s) \{ servlets.push\_back(s); \textcolor{keywordflow}{return} servlets.size()-\/1; \}}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} request(\mbox{\hyperlink{classCSPRequest}{CSPRequest}}\& r) = 0;}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classCSPRequest}{CSPRequest}};}
+\DoxyCodeLine{00027 \};}
+\DoxyCodeLine{00028 }
+
+\end{DoxyCode}

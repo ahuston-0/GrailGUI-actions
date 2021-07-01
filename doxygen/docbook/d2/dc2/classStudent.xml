@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classStudent" xml:lang="en-US">
+<title>Student Class Reference</title>
+<indexterm><primary>Student</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classStudent_1a1a8705ca20a5220ae1fd05791ec66380"/><emphasis role="strong">Student</emphasis> (const std::string &amp;first, const std::string &amp;last, uint16_t id)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStudent_1a317064ea68de0415f92ac6e0c0008bb3"/>uint32_t <emphasis role="strong">serializeSize</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStudent_1ae2e199f012b6f292d229e29d1d5f0e53"/>std::string const <emphasis role="strong">getFirst</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStudent_1a3dcab9dbcee1422ea723a027533378ae"/>std::string const <emphasis role="strong">getLast</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStudent_1a7cf0acb064076e5d3308d1955fa69fba"/>uint32_t const <emphasis role="strong">getID</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStudent_1af6c48fe6eac7acd608316abdac7d61e0"/>char * <emphasis role="strong">write</emphasis> (char *p)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

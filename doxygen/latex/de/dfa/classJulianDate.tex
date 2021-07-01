@@ -1,0 +1,205 @@
+\hypertarget{classJulianDate}{}\doxysection{Julian\+Date Class Reference}
+\label{classJulianDate}\index{JulianDate@{JulianDate}}
+Inheritance diagram for Julian\+Date\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{de/dfa/classJulianDate}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJulianDate_a8b2dbca4e29bb01347f6a71bbab2e6c6}\label{classJulianDate_a8b2dbca4e29bb01347f6a71bbab2e6c6}} 
+{\bfseries Julian\+Date} (int32\+\_\+t year, uint32\+\_\+t month, uint32\+\_\+t day, uint32\+\_\+t hour=0, uint32\+\_\+t min=0, uint32\+\_\+t second=0)
+\item 
+\mbox{\Hypertarget{classJulianDate_a2a5c38a3bc110102fcde75efedb58262}\label{classJulianDate_a2a5c38a3bc110102fcde75efedb58262}} 
+\mbox{\hyperlink{classJulianDate}{Julian\+Date}} {\bfseries operator+} (double days) const
+\item 
+\mbox{\Hypertarget{classJulianDate_ae8304e86b3f0fb89d2164a46cb59d00d}\label{classJulianDate_ae8304e86b3f0fb89d2164a46cb59d00d}} 
+\mbox{\hyperlink{classJulianDate}{Julian\+Date}} {\bfseries operator-\/} (double days) const
+\item 
+\mbox{\Hypertarget{classJulianDate_a4a22974603a9630f1f52447166ed31c5}\label{classJulianDate_a4a22974603a9630f1f52447166ed31c5}} 
+\mbox{\hyperlink{classJulianDate}{Julian\+Date}} {\bfseries operator+=} (double days)
+\item 
+\mbox{\Hypertarget{classJulianDate_a7dde8ccf42b6a3ca4df37e862d023457}\label{classJulianDate_a7dde8ccf42b6a3ca4df37e862d023457}} 
+\mbox{\hyperlink{classJulianDate}{Julian\+Date}} {\bfseries operator-\/=} (double days)
+\item 
+\mbox{\Hypertarget{classJulianDate_a853541beadf0aa9b212ac28505127a4a}\label{classJulianDate_a853541beadf0aa9b212ac28505127a4a}} 
+bool {\bfseries operator==} (\mbox{\hyperlink{classJulianDate}{Julian\+Date}} orig)
+\item 
+\mbox{\Hypertarget{classJulianDate_ac5fc3f3e4ce526a13d69182da611a0dc}\label{classJulianDate_ac5fc3f3e4ce526a13d69182da611a0dc}} 
+{\bfseries operator double} () const
+\item 
+\mbox{\Hypertarget{classJulianDate_a23388539ceabdf2f2a6c55f83918cff2}\label{classJulianDate_a23388539ceabdf2f2a6c55f83918cff2}} 
+int32\+\_\+t {\bfseries get\+Year} () const
+\item 
+\mbox{\Hypertarget{classJulianDate_a5cf5e6167250516b53cc58a93724d2d0}\label{classJulianDate_a5cf5e6167250516b53cc58a93724d2d0}} 
+uint32\+\_\+t {\bfseries get\+Month} () const
+\item 
+\mbox{\Hypertarget{classJulianDate_ae2e0a55266ffb0ffb9fcbc7a112673c1}\label{classJulianDate_ae2e0a55266ffb0ffb9fcbc7a112673c1}} 
+uint32\+\_\+t {\bfseries get\+Day} () const
+\item 
+\mbox{\Hypertarget{classJulianDate_aa8a42cac67ac9a0dfb92cc45832d5bc1}\label{classJulianDate_aa8a42cac67ac9a0dfb92cc45832d5bc1}} 
+uint32\+\_\+t {\bfseries get\+Hour} () const
+\item 
+\mbox{\Hypertarget{classJulianDate_aea6395ca720cecc3c6a5cd56d21cc881}\label{classJulianDate_aea6395ca720cecc3c6a5cd56d21cc881}} 
+uint32\+\_\+t {\bfseries get\+Minute} () const
+\item 
+\mbox{\Hypertarget{classJulianDate_aea0e207821339ea9530f257326c6b338}\label{classJulianDate_aea0e207821339ea9530f257326c6b338}} 
+double {\bfseries get\+Second} () const
+\item 
+\mbox{\Hypertarget{classJulianDate_aea1cd49fb6f9cb0bd57748824bf3263f}\label{classJulianDate_aea1cd49fb6f9cb0bd57748824bf3263f}} 
+void {\bfseries format} (char dest\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classJulianDate_a2897550c5740deb6ff7030f1fa54d50f}\label{classJulianDate_a2897550c5740deb6ff7030f1fa54d50f}} 
+double {\bfseries get\+Jul\+Date} () const
+\item 
+\mbox{\Hypertarget{classJulianDate_a82011f2d8458394a026ebc7a7f6cef46}\label{classJulianDate_a82011f2d8458394a026ebc7a7f6cef46}} 
+void {\bfseries extract} (int32\+\_\+t $\ast$year, uint32\+\_\+t $\ast$mm, uint32\+\_\+t $\ast$dd, uint32\+\_\+t $\ast$hh, uint32\+\_\+t $\ast$min, uint32\+\_\+t $\ast$ss)
+\item 
+\mbox{\Hypertarget{classJulianDate_acb25ed14aae7980f36dbbd177e76d6e8}\label{classJulianDate_acb25ed14aae7980f36dbbd177e76d6e8}} 
+{\bfseries Julian\+Date} (int32\+\_\+t year, uint8\+\_\+t month, uint8\+\_\+t day, uint8\+\_\+t hour, uint8\+\_\+t min, uint8\+\_\+t sec)
+\item 
+\mbox{\Hypertarget{classJulianDate_a23388539ceabdf2f2a6c55f83918cff2}\label{classJulianDate_a23388539ceabdf2f2a6c55f83918cff2}} 
+int32\+\_\+t {\bfseries get\+Year} () const
+\item 
+\mbox{\Hypertarget{classJulianDate_a5cf5e6167250516b53cc58a93724d2d0}\label{classJulianDate_a5cf5e6167250516b53cc58a93724d2d0}} 
+uint32\+\_\+t {\bfseries get\+Month} () const
+\item 
+\mbox{\Hypertarget{classJulianDate_ae2e0a55266ffb0ffb9fcbc7a112673c1}\label{classJulianDate_ae2e0a55266ffb0ffb9fcbc7a112673c1}} 
+uint32\+\_\+t {\bfseries get\+Day} () const
+\item 
+\mbox{\Hypertarget{classJulianDate_aa8a42cac67ac9a0dfb92cc45832d5bc1}\label{classJulianDate_aa8a42cac67ac9a0dfb92cc45832d5bc1}} 
+uint32\+\_\+t {\bfseries get\+Hour} () const
+\item 
+\mbox{\Hypertarget{classJulianDate_ab47ac8f1257faa1b14f20ae0ae0952d7}\label{classJulianDate_ab47ac8f1257faa1b14f20ae0ae0952d7}} 
+uint32\+\_\+t {\bfseries get\+Min} () const
+\item 
+\mbox{\Hypertarget{classJulianDate_aea0e207821339ea9530f257326c6b338}\label{classJulianDate_aea0e207821339ea9530f257326c6b338}} 
+double {\bfseries get\+Second} () const
+\item 
+\mbox{\Hypertarget{classJulianDate_a7cab6a9e9b770da1eedf917198f55066}\label{classJulianDate_a7cab6a9e9b770da1eedf917198f55066}} 
+Data\+Type {\bfseries get\+Data\+Type} () const override
+\item 
+\mbox{\Hypertarget{classJulianDate_aaa2b849abfcde4204d95d1572edd587f}\label{classJulianDate_aaa2b849abfcde4204d95d1572edd587f}} 
+uint32\+\_\+t {\bfseries size} () const override
+\item 
+\mbox{\Hypertarget{classJulianDate_aa79463f59df5dce97c990425e4823bf4}\label{classJulianDate_aa79463f59df5dce97c990425e4823bf4}} 
+void {\bfseries write} (\mbox{\hyperlink{classBuffer}{Buffer}} \&buf) const override
+\item 
+\mbox{\Hypertarget{classJulianDate_ac80c9d91571828d2db626353657d9ddd}\label{classJulianDate_ac80c9d91571828d2db626353657d9ddd}} 
+void {\bfseries display} (\mbox{\hyperlink{classBuffer}{Buffer}} \&binary\+In, \mbox{\hyperlink{classBuffer}{Buffer}} \&ascii\+Out) const
+\item 
+\mbox{\Hypertarget{classJulianDate_aa38cc69658f9b79440507d60a81b55d4}\label{classJulianDate_aa38cc69658f9b79440507d60a81b55d4}} 
+void {\bfseries format} (\mbox{\hyperlink{classBuffer}{Buffer}} \&binary\+In, \mbox{\hyperlink{classBuffer}{Buffer}} \&ascii\+Out, const char fmt\mbox{[}$\,$\mbox{]}) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJulianDate_ab7b60c8b65ea96cc905a3a532e799bc8}\label{classJulianDate_ab7b60c8b65ea96cc905a3a532e799bc8}} 
+static bool {\bfseries is\+Leap} (uint32\+\_\+t year)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJulianDate_aac6753ad81626e17a1aaed9c960b7bbf}\label{classJulianDate_aac6753ad81626e17a1aaed9c960b7bbf}} 
+static const double {\bfseries epoch} = 2000
+\item 
+static const uint16\+\_\+t {\bfseries days\+Up\+To} \mbox{[}12\mbox{]}
+\item 
+static const uint16\+\_\+t {\bfseries days\+In\+Month} \mbox{[}12\mbox{]}
+\item 
+static const char $\ast$ {\bfseries month\+Abbr} \mbox{[}12\mbox{]}
+\item 
+static const char $\ast$ {\bfseries month\+Names} \mbox{[}12\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJulianDate_a5c20e50ee6f56cce1d09b501c7a6225e}\label{classJulianDate_a5c20e50ee6f56cce1d09b501c7a6225e}} 
+class {\bfseries Date}
+\item 
+\mbox{\Hypertarget{classJulianDate_a8a6469cecc552e2a0d2ea03807065b85}\label{classJulianDate_a8a6469cecc552e2a0d2ea03807065b85}} 
+double {\bfseries operator-\/} (\mbox{\hyperlink{classJulianDate}{Julian\+Date}} a, \mbox{\hyperlink{classJulianDate}{Julian\+Date}} b)
+\item 
+\mbox{\Hypertarget{classJulianDate_a2b8037ec1bf4b105578cabf5a62ba591}\label{classJulianDate_a2b8037ec1bf4b105578cabf5a62ba591}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&s, const \mbox{\hyperlink{classJulianDate}{Julian\+Date}} \&jd)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classJulianDate_a6b24972af7dbaece8507006b06d65a01}\label{classJulianDate_a6b24972af7dbaece8507006b06d65a01}} 
+\index{JulianDate@{JulianDate}!daysInMonth@{daysInMonth}}
+\index{daysInMonth@{daysInMonth}!JulianDate@{JulianDate}}
+\doxysubsubsection{\texorpdfstring{daysInMonth}{daysInMonth}}
+{\footnotesize\ttfamily const uint16\+\_\+t Julian\+Date\+::days\+In\+Month\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    31,  }
+\DoxyCodeLine{    28,  }
+\DoxyCodeLine{    31,  }
+\DoxyCodeLine{    30,  }
+\DoxyCodeLine{    31,  }
+\DoxyCodeLine{    30,  }
+\DoxyCodeLine{    31,  }
+\DoxyCodeLine{    31,  }
+\DoxyCodeLine{    30,  }
+\DoxyCodeLine{    31,  }
+\DoxyCodeLine{    30,  }
+\DoxyCodeLine{    31   }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJulianDate_abfda2556d79a1117e6168de66ad10bfc}\label{classJulianDate_abfda2556d79a1117e6168de66ad10bfc}} 
+\index{JulianDate@{JulianDate}!daysUpTo@{daysUpTo}}
+\index{daysUpTo@{daysUpTo}!JulianDate@{JulianDate}}
+\doxysubsubsection{\texorpdfstring{daysUpTo}{daysUpTo}}
+{\footnotesize\ttfamily const uint16\+\_\+t Julian\+Date\+::days\+Up\+To\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    0,    }
+\DoxyCodeLine{    31,   }
+\DoxyCodeLine{    59,   }
+\DoxyCodeLine{    90,   }
+\DoxyCodeLine{    120,  }
+\DoxyCodeLine{    151,  }
+\DoxyCodeLine{    181,  }
+\DoxyCodeLine{    212,  }
+\DoxyCodeLine{    243,  }
+\DoxyCodeLine{    273,  }
+\DoxyCodeLine{    304,  }
+\DoxyCodeLine{    334   }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJulianDate_adc3b9da4073bd4c68b4efe943614d7af}\label{classJulianDate_adc3b9da4073bd4c68b4efe943614d7af}} 
+\index{JulianDate@{JulianDate}!monthAbbr@{monthAbbr}}
+\index{monthAbbr@{monthAbbr}!JulianDate@{JulianDate}}
+\doxysubsubsection{\texorpdfstring{monthAbbr}{monthAbbr}}
+{\footnotesize\ttfamily const char $\ast$ Julian\+Date\+::month\+Abbr\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{\textcolor{stringliteral}{"{}Jan"{}}, \textcolor{stringliteral}{"{}Feb"{}}, \textcolor{stringliteral}{"{}Mar"{}}, \textcolor{stringliteral}{"{}Apr"{}},}
+\DoxyCodeLine{                                         \textcolor{stringliteral}{"{}May"{}}, \textcolor{stringliteral}{"{}Jun"{}}, \textcolor{stringliteral}{"{}Jul"{}}, \textcolor{stringliteral}{"{}Aug"{}},}
+\DoxyCodeLine{                                         \textcolor{stringliteral}{"{}Sep"{}}, \textcolor{stringliteral}{"{}Oct"{}}, \textcolor{stringliteral}{"{}Nov"{}}, \textcolor{stringliteral}{"{}Dec"{}}\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJulianDate_a0363f5b5a735abeb1cb211257857c139}\label{classJulianDate_a0363f5b5a735abeb1cb211257857c139}} 
+\index{JulianDate@{JulianDate}!monthNames@{monthNames}}
+\index{monthNames@{monthNames}!JulianDate@{JulianDate}}
+\doxysubsubsection{\texorpdfstring{monthNames}{monthNames}}
+{\footnotesize\ttfamily const char $\ast$ Julian\+Date\+::month\+Names\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}January"{}}, \textcolor{stringliteral}{"{}February"{}}, \textcolor{stringliteral}{"{}March"{}},     \textcolor{stringliteral}{"{}April"{}},   \textcolor{stringliteral}{"{}May"{}},      \textcolor{stringliteral}{"{}June"{}},}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}July"{}},    \textcolor{stringliteral}{"{}August"{}},   \textcolor{stringliteral}{"{}September"{}}, \textcolor{stringliteral}{"{}October"{}}, \textcolor{stringliteral}{"{}November"{}}, \textcolor{stringliteral}{"{}December"{}}\}}
+
+\end{DoxyCode}

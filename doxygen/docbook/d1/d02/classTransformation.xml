@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classTransformation" xml:lang="en-US">
+<title>Transformation Class Reference</title>
+<indexterm><primary>Transformation</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classTransformation_1a5e0c3f7825a53a55fef239df82ed27ff"/>void <emphasis role="strong">ident</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTransformation_1aeaa3a666d6719fc0bc894e133d0f9437"/>void <emphasis role="strong">translate</emphasis> (float x, float y, float z)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTransformation_1ab3bfd4f8a30e718d65bfd10d9156130a"/>void <emphasis role="strong">scale</emphasis> (float x, float y, float z)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTransformation_1a60d01d68866724e4b2120c1bcc14d1c7"/>void <emphasis role="strong">scale</emphasis> (float s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTransformation_1ae5b76e44ca95fd7b5f446410607c2131"/>void <emphasis role="strong">setRotate</emphasis> (float angleRad, float xAxis, float yAxis, float zAxis)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTransformation_1ade1f03197a09c5c7e30cc9cd4b7d1936"/>void <emphasis role="strong">rotate</emphasis> (float angleRad, float xAxis, float yAxis, float zAxis)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTransformation_1a8e98b7d9ce7ab6775b96eb5f01dd85a3"/>void <emphasis role="strong">rotateZ</emphasis> (float angleRad)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTransformation_1a2a5990e2e482f3538a28f634ff3a3826"/>const glm::mat4 &amp; <emphasis role="strong">getTransform</emphasis> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classTransformation_1a3e6e78b2ca7654311ed6720ae9a93367"/>std::ostream &amp; <emphasis role="strong">operator&lt;&lt;</emphasis> (std::ostream &amp;s, const <link linkend="_classTransformation">Transformation</link> &amp;t)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

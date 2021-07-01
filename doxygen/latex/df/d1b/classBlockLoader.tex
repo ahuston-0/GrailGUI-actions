@@ -1,0 +1,87 @@
+\hypertarget{classBlockLoader}{}\doxysection{Block\+Loader Class Reference}
+\label{classBlockLoader}\index{BlockLoader@{BlockLoader}}
+Inheritance diagram for Block\+Loader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{df/d1b/classBlockLoader}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structBlockLoader_1_1GeneralHeader}{General\+Header}}
+\item 
+struct \mbox{\hyperlink{structBlockLoader_1_1Info}{Info}}
+\item 
+struct \mbox{\hyperlink{structBlockLoader_1_1SecurityHeaderV0}{Security\+Header\+V0}}
+\item 
+struct \mbox{\hyperlink{structBlockLoader_1_1SecurityHeaderV1}{Security\+Header\+V1}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlockLoader_ab1230c6c97c4e0f21e3f3e2501638884}\label{classBlockLoader_ab1230c6c97c4e0f21e3f3e2501638884}} 
+enum class {\bfseries Type} \{ {\bfseries gismap}
+, {\bfseries hashmap}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlockLoader_a0caa638656dc9c3e3dc51f900602000e}\label{classBlockLoader_a0caa638656dc9c3e3dc51f900602000e}} 
+{\bfseries Block\+Loader} (const char filename\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classBlockLoader_a91d3fa8a019c6bd2de74d5603924bc05}\label{classBlockLoader_a91d3fa8a019c6bd2de74d5603924bc05}} 
+{\bfseries Block\+Loader} (const \mbox{\hyperlink{classBlockLoader}{Block\+Loader}} \&orig)=delete
+\item 
+\mbox{\Hypertarget{classBlockLoader_a60f52671d5ac767bc5dcb019255ee1d7}\label{classBlockLoader_a60f52671d5ac767bc5dcb019255ee1d7}} 
+\mbox{\hyperlink{classBlockLoader}{Block\+Loader}} \& {\bfseries operator=} (const \mbox{\hyperlink{classBlockLoader}{Block\+Loader}} \&orig)=delete
+\item 
+\mbox{\Hypertarget{classBlockLoader_a1ec7bfbda55e372fa76f1f82f718b658}\label{classBlockLoader_a1ec7bfbda55e372fa76f1f82f718b658}} 
+void {\bfseries init} (uint64\+\_\+t $\ast$mem, uint64\+\_\+t size)
+\item 
+\mbox{\Hypertarget{classBlockLoader_ab5c89c17177ebe380a26685607a30266}\label{classBlockLoader_ab5c89c17177ebe380a26685607a30266}} 
+void {\bfseries init} (uint64\+\_\+t bytes, Type t, uint32\+\_\+t version)
+\item 
+\mbox{\Hypertarget{classBlockLoader_a93bcbf54087f0f99b7c6df0a564de34a}\label{classBlockLoader_a93bcbf54087f0f99b7c6df0a564de34a}} 
+void {\bfseries read\+Block\+File} (const char filename\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classBlockLoader_a9c05c56514c0385115ff7a582556fd95}\label{classBlockLoader_a9c05c56514c0385115ff7a582556fd95}} 
+uint32\+\_\+t {\bfseries get\+Auth\+Header\+Size} () const
+\item 
+\mbox{\Hypertarget{classBlockLoader_a29f953155e0f54194278572201467bde}\label{classBlockLoader_a29f953155e0f54194278572201467bde}} 
+uint32\+\_\+t {\bfseries get\+Header\+Size} () const
+\item 
+\mbox{\Hypertarget{classBlockLoader_a3efb7c091085bce50f034ecbcd0a9e4c}\label{classBlockLoader_a3efb7c091085bce50f034ecbcd0a9e4c}} 
+bool {\bfseries authenticate} () const
+\item 
+\mbox{\Hypertarget{classBlockLoader_a844e8ae19157421a56b90cb476d5e15c}\label{classBlockLoader_a844e8ae19157421a56b90cb476d5e15c}} 
+{\bfseries Block\+Loader} (uint64\+\_\+t bytes, Type t, uint32\+\_\+t version)
+\item 
+\mbox{\Hypertarget{classBlockLoader_a9c05c56514c0385115ff7a582556fd95}\label{classBlockLoader_a9c05c56514c0385115ff7a582556fd95}} 
+uint32\+\_\+t {\bfseries get\+Auth\+Header\+Size} () const
+\item 
+\mbox{\Hypertarget{classBlockLoader_a3efb7c091085bce50f034ecbcd0a9e4c}\label{classBlockLoader_a3efb7c091085bce50f034ecbcd0a9e4c}} 
+bool {\bfseries authenticate} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlockLoader_a49a6a1b006a0406f6e1fb8e8cb24231e}\label{classBlockLoader_a49a6a1b006a0406f6e1fb8e8cb24231e}} 
+uint64\+\_\+t $\ast$ {\bfseries mem}
+\item 
+\mbox{\Hypertarget{classBlockLoader_ad46324af83350f479846f546b23d8265}\label{classBlockLoader_ad46324af83350f479846f546b23d8265}} 
+uint64\+\_\+t {\bfseries size}
+\item 
+\mbox{\Hypertarget{classBlockLoader_a63316b4534a767b2d0f1c68b22cea7c7}\label{classBlockLoader_a63316b4534a767b2d0f1c68b22cea7c7}} 
+\mbox{\hyperlink{structBlockLoader_1_1GeneralHeader}{General\+Header}} $\ast$ {\bfseries general\+Header}
+\item 
+\mbox{\Hypertarget{classBlockLoader_a374a72e9099de86d8c699ecfc88d0b5a}\label{classBlockLoader_a374a72e9099de86d8c699ecfc88d0b5a}} 
+\mbox{\hyperlink{structBlockLoader_1_1SecurityHeaderV0}{Security\+Header\+V0}} $\ast$ {\bfseries security\+Header}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlockLoader_ad0385a9e4e89f06f9cf2a84da5cd4861}\label{classBlockLoader_ad0385a9e4e89f06f9cf2a84da5cd4861}} 
+{\bfseries Block\+Loader} (const \mbox{\hyperlink{structBlockLoader_1_1Info}{Info}} \&info)
+\end{DoxyCompactItemize}

@@ -1,0 +1,37 @@
+\hypertarget{PageText_8hh_source}{}\doxysection{Page\+Text.\+hh}
+\label{PageText_8hh_source}\index{src/opengl/PageText.hh@{src/opengl/PageText.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include "{}opengl/GLWin.hh"{}}}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/Shape.hh"{}}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}opengl/GLWinFonts.hh"{}}}
+\DoxyCodeLine{00005 \textcolor{keyword}{class }\mbox{\hyperlink{classStyle}{Style}};}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{\Hypertarget{PageText_8hh_source_l00007}\mbox{\hyperlink{classPageText}{00007}} \textcolor{keyword}{class }\mbox{\hyperlink{classPageText}{PageText}} : \textcolor{keyword}{public} \mbox{\hyperlink{classShape}{Shape}} \{}
+\DoxyCodeLine{00008 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009   uint32\_t textureId;}
+\DoxyCodeLine{00010   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* style;}
+\DoxyCodeLine{00011   std::string text;}
+\DoxyCodeLine{00012   std::vector<float> vert;}
+\DoxyCodeLine{00013   \textcolor{keywordtype}{void} addPoint(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} u, \textcolor{keywordtype}{float} v)\{}
+\DoxyCodeLine{00014     vert.push\_back(x);  vert.push\_back(y);}
+\DoxyCodeLine{00015     vert.push\_back(u);  vert.push\_back(v);}
+\DoxyCodeLine{00016   \}}
+\DoxyCodeLine{00017   \textcolor{keywordtype}{float} velX = 1,velY=1;}
+\DoxyCodeLine{00018 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019   \mbox{\hyperlink{classMultiText}{MultiText}}(\textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}} * style, uint32\_t size);}
+\DoxyCodeLine{00020   \textcolor{keywordtype}{void} clear() \{ vert.clear(); \}}
+\DoxyCodeLine{00021   \textcolor{keywordtype}{void} loadText(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[], uint32\_t len);}
+\DoxyCodeLine{00022   \textcolor{keywordtype}{void} addChar(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \mbox{\hyperlink{classFont}{Font}}* f, \textcolor{keyword}{const} \textcolor{keywordtype}{char} c);}
+\DoxyCodeLine{00023   \textcolor{keywordtype}{void} add(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} \textcolor{keywordtype}{char} s[], uint32\_t len);}
+\DoxyCodeLine{00024   \textcolor{keywordtype}{void} add(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, uint32\_t v);}
+\DoxyCodeLine{00025   \textcolor{keywordtype}{void} add(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} v);}
+\DoxyCodeLine{00026   \textcolor{keywordtype}{void} add(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{double} v);}
+\DoxyCodeLine{00027   \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{00028   \textcolor{keywordtype}{void} process\_input(Inputs* in, \textcolor{keywordtype}{float} dt);}
+\DoxyCodeLine{00029   \textcolor{keywordtype}{void} update();}
+\DoxyCodeLine{00030   \textcolor{keywordtype}{void} render();}
+\DoxyCodeLine{00031 \};}
+
+\end{DoxyCode}

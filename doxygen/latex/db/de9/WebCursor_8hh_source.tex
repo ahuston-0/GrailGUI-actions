@@ -1,0 +1,96 @@
+\hypertarget{WebCursor_8hh_source}{}\doxysection{Web\+Cursor.\+hh}
+\label{WebCursor_8hh_source}\index{src/opengl/WebCursor.hh@{src/opengl/WebCursor.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/Canvas.hh"{}}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}opengl/MultiShape2D.hh"{}}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}opengl/MultiText.hh"{}}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}opengl/GLWinFonts.hh"{}}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{comment}{/*}}
+\DoxyCodeLine{00014 \textcolor{comment}{  WebCursor represents the current location within a Shape, which  can be updated}}
+\DoxyCodeLine{00015 \textcolor{comment}{  in order to stream visual objects into a rectangular region}}
+\DoxyCodeLine{00016 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{WebCursor_8hh_source_l00017}\mbox{\hyperlink{classWebCursor}{00017}} \textcolor{keyword}{class }\mbox{\hyperlink{classWebCursor}{WebCursor}} \{}
+\DoxyCodeLine{00018 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019   \mbox{\hyperlink{classCanvas}{Canvas}}* c;}
+\DoxyCodeLine{00020     \textcolor{comment}{//StyledMultiShape2D* s;}}
+\DoxyCodeLine{00021     \mbox{\hyperlink{classMultiShape2D}{MultiShape2D}}* s; }
+\DoxyCodeLine{00022     \mbox{\hyperlink{classMultiText}{MultiText}}* m;}
+\DoxyCodeLine{00023     \textcolor{keywordtype}{float} x, y;}
+\DoxyCodeLine{00024   \textcolor{keywordtype}{float} width, height;}
+\DoxyCodeLine{00025 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027   \mbox{\hyperlink{classWebCursor}{WebCursor}}(\mbox{\hyperlink{classCanvas}{Canvas}}* c, \mbox{\hyperlink{classMultiShape2D}{MultiShape2D}}* s) : }
+\DoxyCodeLine{00028     c(c), s(s)}
+\DoxyCodeLine{00029   \{}
+\DoxyCodeLine{00030       \textcolor{comment}{// start at the top left corner}}
+\DoxyCodeLine{00031       x = 0.0f;}
+\DoxyCodeLine{00032       y = 0.0f;}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034       \textcolor{comment}{// get the width and height in pixels}}
+\DoxyCodeLine{00035       \textcolor{comment}{// from the associated Shape's parent}}
+\DoxyCodeLine{00036       \textcolor{comment}{// Canvas. These represent the bounds for the}}
+\DoxyCodeLine{00037       \textcolor{comment}{// WebCursor.}}
+\DoxyCodeLine{00038       width = c-\/>getWidth();}
+\DoxyCodeLine{00039       height = c-\/>getHeight();}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041       cout << \textcolor{stringliteral}{"{}Canvas dimensions: ("{}} << width << \textcolor{stringliteral}{"{}, "{}} << height << \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043   \}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045   \mbox{\hyperlink{classWebCursor}{WebCursor}}(\mbox{\hyperlink{classCanvas}{Canvas}}* c, \mbox{\hyperlink{classMultiText}{MultiText}}* m) : }
+\DoxyCodeLine{00046     c(c), m(m)}
+\DoxyCodeLine{00047   \{}
+\DoxyCodeLine{00048       x = 0.0f;}
+\DoxyCodeLine{00049       y = 0.0f;}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051       width = c-\/>getWidth();}
+\DoxyCodeLine{00052       height = c-\/>getHeight();}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054       cout << \textcolor{stringliteral}{"{}Canvas dimensions: ("{}} << width << \textcolor{stringliteral}{"{}, "{}} << height << \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056   \}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058   \textcolor{keywordtype}{void} addText(\mbox{\hyperlink{classStyle}{Style}}* st, \textcolor{keyword}{const} \textcolor{keywordtype}{char} text[], uint32\_t len) \{}
+\DoxyCodeLine{00059     \textcolor{comment}{//for (size\_t i = 0; i < len; i++) \{}}
+\DoxyCodeLine{00060       \textcolor{comment}{//const Glyph* gly = s-\/>f-\/>getGlyph(text[i]);}}
+\DoxyCodeLine{00061       \textcolor{comment}{//cout << "{}advance:"{} << gly-\/>advance << "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063       \textcolor{comment}{// draw the glyph}}
+\DoxyCodeLine{00064       \textcolor{comment}{//Multi}}
+\DoxyCodeLine{00065       \textcolor{comment}{//Text t = t-\/>addText(x, y, st, text, len);}}
+\DoxyCodeLine{00066       \textcolor{comment}{//t.init();}}
+\DoxyCodeLine{00067       \textcolor{comment}{//t.render();}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070       \textcolor{comment}{// advance cursor}}
+\DoxyCodeLine{00071       \textcolor{comment}{//moveRight(gly-\/>advance, s-\/>f-\/>getHeight());}}
+\DoxyCodeLine{00072     \textcolor{comment}{//\}}}
+\DoxyCodeLine{00073   \};}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075     \textcolor{keywordtype}{void} moveRight(\textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h) \{}
+\DoxyCodeLine{00076         \textcolor{keywordflow}{if} (x + w > width) \{}
+\DoxyCodeLine{00077             x = 0;}
+\DoxyCodeLine{00078             y += h;}
+\DoxyCodeLine{00079         \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00080             x += w;}
+\DoxyCodeLine{00081     \}}
+\DoxyCodeLine{00082     \textcolor{keywordtype}{void} moveLeft(\textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h) \{}
+\DoxyCodeLine{00083         \textcolor{keywordflow}{if} (x < w) \{}
+\DoxyCodeLine{00084             x = width -\/ 1;}
+\DoxyCodeLine{00085             y += h;}
+\DoxyCodeLine{00086         \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00087             x -\/= w;}
+\DoxyCodeLine{00088     \}}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090 \};}
+
+\end{DoxyCode}

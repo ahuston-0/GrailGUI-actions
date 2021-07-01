@@ -1,0 +1,124 @@
+.TH "MultiText" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MultiText
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBShape\fP\&.
+.PP
+Inherited by \fBAngledMultiText\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMultiText\fP (\fBCanvas\fP *c, const \fBStyle\fP *style)"
+.br
+.ti -1c
+.RI "\fBMultiText\fP (\fBCanvas\fP *c, const \fBStyle\fP *style, uint32_t size)"
+.br
+.ti -1c
+.RI "void \fBaddChar\fP (float x, float y, const \fBFont\fP *f, const unsigned char c)"
+.br
+.ti -1c
+.RI "void \fBaddChar\fP (float x, float y, const \fBFont\fP *f, const uint16_t c)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (float x, float y, const char s[], uint32_t len)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (float x, float y, const \fBFont\fP *f, const char s[], uint32_t len)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (float x, float y, uint32_t v)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (float x, float y, const \fBFont\fP *f, uint32_t v)"
+.br
+.ti -1c
+.RI "void \fBaddHex\fP (float x, float y, const \fBFont\fP *f, uint32_t v)"
+.br
+.ti -1c
+.RI "void \fBaddHex8\fP (float x, float y, const \fBFont\fP *f, uint32_t v)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (float x, float y, const \fBFont\fP *f, int32_t v)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (float x, float y, float v)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (float x, float y, const \fBFont\fP *f, float v)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (float x, float y, double v)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (float x, float y, const \fBFont\fP *f, double v)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (float x, float y, const \fBFont\fP *f, double v, int fieldWidth, int precision)"
+.br
+.ti -1c
+.RI "void \fBaddCentered\fP (float x, float, const \fBFont\fP *f, double v, int fieldWidth, int precision)"
+.br
+.ti -1c
+.RI "void \fBaddCentered\fP (float x, float y, const \fBFont\fP *f, const char s[], uint32_t len)"
+.br
+.ti -1c
+.RI "void \fBcheckAdd\fP (float &x, float &y, const \fBFont\fP *f, const unsigned char c, float endMargin, float rowSize, float startOverMargin)"
+.br
+.ti -1c
+.RI "uint32_t \fBfindFirstOverMargin\fP (float x, const \fBFont\fP *f, const char s[], uint32_t len, float rightMargin)"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "void \fBinit\fP () override"
+.br
+.ti -1c
+.RI "void \fBprocess_input\fP (Inputs *in, float dt)"
+.br
+.ti -1c
+.RI "const \fBStyle\fP * \fBgetStyle\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate\fP () override"
+.br
+.ti -1c
+.RI "void \fBrender\fP () override"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBaddPoint\fP (float x, float y, float u, float v)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBtextureId\fP"
+.br
+.ti -1c
+.RI "const \fBStyle\fP * \fBstyle\fP"
+.br
+.ti -1c
+.RI "std::vector< float > \fBvert\fP"
+.br
+.ti -1c
+.RI "float \fBvelX\fP = 1"
+.br
+.ti -1c
+.RI "float \fBvelY\fP = 1"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

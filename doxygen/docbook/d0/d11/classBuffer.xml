@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classBuffer" xml:lang="en-US">
+<title>Buffer Class Reference</title>
+<indexterm><primary>Buffer</primary></indexterm>
+<para>
+<computeroutput>#include &lt;BinBuffer.hh&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classBuffer_1a6bdd21a4e63d8bd1a05051e46fa72ec4"/><emphasis role="strong">Buffer</emphasis> (int initialSize)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a13510d7f0aea6988cd87292ff0c49458"/><emphasis role="strong">Buffer</emphasis> (size_t initialSize, bool writing)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1ac965c5c3be682362a0761be687c56745"/><emphasis role="strong">Buffer</emphasis> (const char filename[], size_t initialSize)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1abe918d73641f3529541a7e87f0eaa95b"/><emphasis role="strong">Buffer</emphasis> (const char filename[], size_t initialSize, const char *)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a8833c8868db70abca8d0a0d1436474cc"/><emphasis role="strong">Buffer</emphasis> (const <link linkend="_classBuffer">Buffer</link> &amp;c)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a4b62d57a3ba10a8e0d25143a309b19b0"/>void <emphasis role="strong">operator=</emphasis> (const <link linkend="_classBuffer">Buffer</link> &amp;orig)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1afc9c90bd7cb565da1069e79812d6b58f"/>void <emphasis role="strong">attachWrite</emphasis> (int sockfd)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a4ddffb4ccb9823f02510c95d2a0c7392"/>void <emphasis role="strong">attachRead</emphasis> (int sockfd)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a2876b00a134989698e976f3c8caba204"/>void <emphasis role="strong">displayText</emphasis> (ostream &amp;s) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a542cd907823ea88951104b055e582b3f"/>void <emphasis role="strong">displayRawRead</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a21498286a99a5f5cea8905ef50a59af2"/>void <emphasis role="strong">displayRaw</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a92a4ead977e8ba4d82c654741fad930b"/>void <emphasis role="strong">displayHTTPRaw</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a2ecff57de43b2b57b10686a436225a8f"/>void <emphasis role="strong">flush</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a930c6b291b31c2809d41cf60a47a6189"/>void <emphasis role="strong">readNext</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a0836d074f4fffa4d76c57da5f9be9212"/>void <emphasis role="strong">write</emphasis> (const string &amp;s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a8ed7860f7132703ee284e9e2c105216f"/>void <emphasis role="strong">write</emphasis> (const char *s, uint32_t len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a4958ea41e5b529fdaa7b631a5f77c6d3"/>void <emphasis role="strong">appendU8</emphasis> (uint8_t)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a0be3173ed3ed9dbe33eaa1caf4341302"/>void <emphasis role="strong">appendU16</emphasis> (uint16_t)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a5aa041256abfcd3b6abe8559906f4267"/>void <emphasis role="strong">appendU32</emphasis> (uint32_t)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1acf808bddbc785c71e38d07232cc297a5"/>void <emphasis role="strong">appendU64</emphasis> (uint64_t)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a517d766960c9152a6cf46cf6f5bc713f"/>void <emphasis role="strong">appendI8</emphasis> (int8_t)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a45ade9f2b258be190045566c5d05f14f"/>void <emphasis role="strong">appendI16</emphasis> (int16_t)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1aa0e32c6794f679f1ceea25f7d34bbda0"/>void <emphasis role="strong">appendI32</emphasis> (int32_t)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a174cebb1280c13d27b9b1fe95e0b890e"/>void <emphasis role="strong">appendI64</emphasis> (int64_t)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a756540b5e306ba15ee8d719f9360285e"/>void <emphasis role="strong">appendF32</emphasis> (float)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a7def22b57f0e36a371654a1569a8b14b"/>void <emphasis role="strong">appendF64</emphasis> (double)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1afe7a0bfe35fde9aa75ddb26cee304ced"/>void <emphasis role="strong">append</emphasis> (const char *v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a2098e7358fb2a51b99a164f151f478ec"/>void <emphasis role="strong">append</emphasis> (const char *v, uint32_t len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a8a45e06a48082bd6b6234d17fadfee46"/>uint32_t <emphasis role="strong">parseU32</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1acd6c5a8a9acc1e71ca0d6b4e2fc600f4"/>double <emphasis role="strong">parseF64</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a4ec7410631f6ae24eb8f9a3def241647"/>float <emphasis role="strong">parseF32</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a899d1eb36d0064a1a3b072c8ca3eb13d"/>bool <emphasis role="strong">parseRegex</emphasis> (const regex &amp;r, const char *&amp;start, int &amp;len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a732e1d8da4008e6215f56646e5131009"/>bool <emphasis role="strong">parseToken</emphasis> (const string &amp;match)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a01fa71a2107c1e597273d4d485d134ac"/>bool <emphasis role="strong">getUrl</emphasis> (const char *&amp;ptr, uint32_t &amp;len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a1078b200c60a10d9be855669c39c46a4"/>bool <emphasis role="strong">getHTTPVersion</emphasis> (const char *&amp;ptr, uint32_t &amp;len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1ab25f4d09519374e5d2930692815b5039"/>bool <emphasis role="strong">getHost</emphasis> (const char *&amp;ptr, uint32_t &amp;len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a539b09cf61e048731a746f9b368bb9f7"/>void <emphasis role="strong">pointToStart</emphasis> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classBuffer_1a20c6bffaa62a17b6da17bd0534bda8b2">getNextTokenWithSpace</link> (const char *&amp;ptr, const uint32_t &amp;len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a492d09730834addbfe622c20a43f7e60"/>string <emphasis role="strong">readString8</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a1bab60d861e0b2684db62150c5d5cfd0"/>string <emphasis role="strong">readString16</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a26f624f33c04f62a385f2eaed4f87f1a"/>string <emphasis role="strong">readString32</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1aa0f1739acf992c962237fe5ab3fb808a"/>void <emphasis role="strong">write</emphasis> (DataType t)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a8ce00f24a4d6a1ff224dacc9ddcf723e"/>DataType <emphasis role="strong">readType</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a18b276ddbcfd1847a192b2750f3a9ebd"/>void <emphasis role="strong">write</emphasis> (DataType t, const char *name)</para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para>void <link linkend="_classBuffer_1a63aed180baa43f1304aad55015dcd238">write</link> (T v)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classBuffer_1a22161daa69b94f661de8ad2f5986cc2b">write</link> (<link linkend="_classXDLRaw">XDLRaw</link> &amp;v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1aab81e711916c4f3edf50cf047d9bcf4b"/>void <emphasis role="strong">specialWrite</emphasis> (const char *buf, const uint32_t len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1ac4e50093ccec0873a05be30b42ac0d98"/>template&lt;typename T &gt; </para><para>void <emphasis role="strong">writeList</emphasis> (<link linkend="_classList1">List1</link>&lt; T &gt; &amp;list)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1af743d447d386fbd1cb6c1078378777dd"/>void <emphasis role="strong">writeStudent</emphasis> (<link linkend="_classStudent">Student</link> v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a07fb975257c7816d444d45a9489c32b0"/>void <emphasis role="strong">writeList</emphasis> (<link linkend="_classList1">List1</link>&lt; <link linkend="_classStudent">Student</link> &gt; &amp;list)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a98949e879fa45570dc0948c66e4eea45"/>void <emphasis role="strong">checkSpace</emphasis> (size_t sz)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a5967996421502f06ae7fc38e2d75085f"/>void <emphasis role="strong">fastCheckSpace</emphasis> (size_t sz)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1ad2bbdc55cdf9c170a967360fc2330458"/>template&lt;typename T &gt; </para><para>void <emphasis role="strong">checkArraySpace</emphasis> (T v[], size_t n)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a3e51ae9b99819c14def3601cdfc4fafa"/>template&lt;typename T &gt; </para><para>void <emphasis role="strong">checkVectorSpace</emphasis> (const vector&lt; T &gt; &amp;v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a9130644496e1b9843cd1f57041215d39"/>template&lt;typename T &gt; </para><para><link linkend="_classBuffer">Buffer</link> &amp; <emphasis role="strong">operator&lt;&lt;</emphasis> (T v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a8d14950d97d12bb1627941bdb166cc64"/>int8_t <emphasis role="strong">_readI8</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a2c65175516106009f32811b720abeed0"/>int16_t <emphasis role="strong">_readI16</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a4a7b87321c9263097842320a0e1701b6"/>int32_t <emphasis role="strong">_readI32</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a8a4053015bd2cd1a7a645e5b85d7986a"/>int64_t <emphasis role="strong">_readI64</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a287c66a1845ce858d36821257861d035"/>int8_t <emphasis role="strong">readI8</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a95fd81e78adf450c20a6a14f25dba9ea"/>int16_t <emphasis role="strong">readI16</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1ad3e1b0de5da04d4f3dd31b5759245881"/>int32_t <emphasis role="strong">readI32</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a63628536ea12fd7262f0e4face0bedd2"/>int64_t <emphasis role="strong">readI64</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a948b94ddfb4f1e8e9c553cd58ac1bc72"/>uint8_t <emphasis role="strong">_readU8</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1ab5307415c17cb09d8a4cdc3cbd11a973"/>uint16_t <emphasis role="strong">_readU16</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1ac885de4c012721fc66b4d9d45eeb1bc8"/>uint32_t <emphasis role="strong">_readU32</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a9faca73bdfd8b3a1f8f28acfd77e9212"/>uint64_t <emphasis role="strong">_readU64</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a78fbb28e8854151ef62d2e914a74b8ba"/>float <emphasis role="strong">_readF32</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a5fc2a63b4adb7d80d0abeaf6fe31c0bf"/>double <emphasis role="strong">_readF64</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a04eabea80f9d5d60151927752e1b97a7"/>uint8_t <emphasis role="strong">readU8</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a7321e150f1251b652fd2eb56d9927435"/>uint16_t <emphasis role="strong">readU16</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a28baad47315d0fb6ae6f341cbdfc7322"/>uint32_t <emphasis role="strong">readU32</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a9e188604efaab9681703256a6563ca01"/>uint64_t <emphasis role="strong">readU64</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1ad04c5fc4cf2f875872ce905cb98b6926"/>float <emphasis role="strong">readF32</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1af68c32752d879b471cfb4b311b6afa9e"/>double <emphasis role="strong">readF64</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuffer_1a706c0b590014f3ab06d30ef5c5ed81bc"/>template&lt;typename T &gt; </para><para>T <emphasis role="strong">_read</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><link linkend="_classA">A</link> binary high-speed buffer to support writing objects portably to a binary stream so it can be read back in (persistence) </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classBuffer_1a20c6bffaa62a17b6da17bd0534bda8b2"/>    <section>
+    <title>getNextTokenWithSpace()</title>
+<indexterm><primary>getNextTokenWithSpace</primary><secondary>Buffer</secondary></indexterm>
+<indexterm><primary>Buffer</primary><secondary>getNextTokenWithSpace</secondary></indexterm>
+<para><computeroutput>bool Buffer::getNextTokenWithSpace (const char *&amp; ptr, const uint32_t &amp; len)</computeroutput></para>
+<para>extract the next space-delimited value from the buffer if return true, this means ptr is pointing to the text, len = the length of the token (until the next space) and the current pointer advances past the token </para>
+    </section><anchor xml:id="_classBuffer_1a63aed180baa43f1304aad55015dcd238"/>    <section>
+    <title>write()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>write</primary><secondary>Buffer</secondary></indexterm>
+<indexterm><primary>Buffer</primary><secondary>write</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>void Buffer::write (T v)<computeroutput>[inline]</computeroutput></computeroutput></para>
+<para>write is the fast write that does not check for buffer overrun. Use only when checking size of a large block</para>
+
+<para>
+                <formalpara>
+                    <title>
+Template Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>T</entry>
+                                <entry>
+<para>the tpe of the integer to write </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>the value </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_classBuffer_1a22161daa69b94f661de8ad2f5986cc2b"/>    <section>
+    <title>write()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>write</primary><secondary>Buffer</secondary></indexterm>
+<indexterm><primary>Buffer</primary><secondary>write</secondary></indexterm>
+<para><computeroutput>void Buffer::write (<link linkend="_classXDLRaw">XDLRaw</link> &amp; v)</computeroutput></para>
+<para>Special case for <link linkend="_classXDLRaw">XDLRaw</link> which will write out a complete block of bytes directly without copying </para>
+</section>
+</section>
+</section>

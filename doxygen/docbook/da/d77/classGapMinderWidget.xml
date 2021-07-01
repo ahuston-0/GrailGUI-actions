@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classGapMinderWidget" xml:lang="en-US">
+<title>GapMinderWidget Class Reference</title>
+<indexterm><primary>GapMinderWidget</primary></indexterm>
+<para>Inheritance diagram for GapMinderWidget:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../da/d77/classGapMinderWidget.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classGapMinderWidget_1a93f0625e68f14231cb85ddc28de9f680"/><emphasis role="strong">GapMinderWidget</emphasis> (<link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, float x, float y, float w, float h, const std::string &amp;title, const <link linkend="_classStyle">Style</link> *titleStyle, const <link linkend="_classStyle">Style</link> *barStyle, float minX, float maxX, float minY, float maxY, float maxMultiplier, float minMultiplier, float tickSize, float tickStart, <link linkend="_classScale">Scale</link> *yAxis, <link linkend="_classScale">Scale</link> *xAxis)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGapMinderWidget_1a0f30a16484a817d1114cf84f19d228d2"/><emphasis role="strong">GapMinderWidget</emphasis> (<link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, float x, float y, float w, float h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGapMinderWidget_1a3a857586c61e917adc3afd366012f81b"/><emphasis role="strong">GapMinderWidget</emphasis> (<link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, float x, float y, float w, float h, const std::vector&lt; float &gt; &amp;xLocations, const std::vector&lt; float &gt; &amp;yLocations)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGapMinderWidget_1a4d9d38db6808845ea272ae761ca8c3e7"/>void <emphasis role="strong">setMinMaxY</emphasis> (float min, float max)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGapMinderWidget_1a72373154e87841bd1ee465689c29be67"/>void <emphasis role="strong">setAxisScale</emphasis> (<link linkend="_classScale">Scale</link> *yAxis)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGapMinderWidget_1a2a43745d6de2d9c3b7459e0bf890436b"/>void <emphasis role="strong">setTitleStyle</emphasis> (const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGapMinderWidget_1a65cdb1a4d7bf909d711bc2ee00165b73"/>void <emphasis role="strong">chart</emphasis> (const std::vector&lt; float &gt; &amp;yLocations, const std::vector&lt; float &gt; &amp;xLocations, const std::vector&lt; float &gt; &amp;sizes, int rulerInterval, const std::vector&lt; glm::vec4 &gt; &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGapMinderWidget_1ab2ec9d2bd9565ca70d72bb42c5ded200"/>void <emphasis role="strong">setTitle</emphasis> (const std::string &amp;s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGapMinderWidget_1a19e68810f951c656a610d17e6fd89248"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

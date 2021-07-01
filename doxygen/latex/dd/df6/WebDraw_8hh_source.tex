@@ -1,0 +1,259 @@
+\hypertarget{WebDraw_8hh_source}{}\doxysection{Web\+Draw.\+hh}
+\label{WebDraw_8hh_source}\index{src/opengl/WebDraw.hh@{src/opengl/WebDraw.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/Canvas.hh"{}}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}opengl/primitivesV2/StyledMultiShape2D.hh"{}}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}opengl/primitivesV2/MultiShape2D.hh"{}}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}util/Buffer.hh"{}}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include "{}util/DynArray.hh"{}}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include "{}WebCursor.hh"{}}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{comment}{/*}}
+\DoxyCodeLine{00012 \textcolor{comment}{  WebDraw is a single class that manages OpenGL to draw many kinds of 2d shapes in different colors and fonts}}
+\DoxyCodeLine{00013 \textcolor{comment}{  accordingly, every method has a parameter for Style from which color and font are taken}}
+\DoxyCodeLine{00014 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{WebDraw_8hh_source_l00015}\mbox{\hyperlink{classWebDraw}{00015}} \textcolor{keyword}{class }\mbox{\hyperlink{classWebDraw}{WebDraw}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMultiShape2D}{MultiShape2D}} \{}
+\DoxyCodeLine{00016 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017   \mbox{\hyperlink{classDynArray}{DynArray<float>}} colors;}
+\DoxyCodeLine{00018   \mbox{\hyperlink{classDynArray}{DynArray<int>}} startIndices;}
+\DoxyCodeLine{00019   \mbox{\hyperlink{classDynArray}{DynArray<int>}} numIndices;}
+\DoxyCodeLine{00020   \textcolor{keywordtype}{int} currentIndex;}
+\DoxyCodeLine{00021 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022   \mbox{\hyperlink{classWebDraw}{WebDraw}}(uint32\_t vertCount=1024,}
+\DoxyCodeLine{00023                     uint32\_t solidIndCount=1024,}
+\DoxyCodeLine{00024                     uint32\_t lineIndCount=1024,}
+\DoxyCodeLine{00025                     uint32\_t pointIndCount=1024) :}
+\DoxyCodeLine{00026         \mbox{\hyperlink{classMultiShape2D}{MultiShape2D}}(s,vertCount, solidIndCount, lineIndCount, pointIndCount,5), currentIndex(0) \{}
+\DoxyCodeLine{00027     startIndices.push\_back(0);}
+\DoxyCodeLine{00028   \}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030   uint32\_t addSector(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y,}
+\DoxyCodeLine{00031                                          \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad,}
+\DoxyCodeLine{00032                                          \textcolor{keywordtype}{float} fromAngle, \textcolor{keywordtype}{float} toAngle,}
+\DoxyCodeLine{00033                                          \textcolor{keywordtype}{float} angleInc, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}} * s);}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{comment}{// add a color to the list}}
+\DoxyCodeLine{00036     \textcolor{comment}{// TODO: vec4 would contain alpha, so this should probably push that in}}
+\DoxyCodeLine{00037   \textcolor{keywordtype}{void} addColor(\textcolor{keyword}{const} glm::vec4\& rgb)\{}
+\DoxyCodeLine{00038     colors.add(rgb.r);}
+\DoxyCodeLine{00039     colors.add(rgb.g);}
+\DoxyCodeLine{00040     colors.add(rgb.b);}
+\DoxyCodeLine{00041     colors.add(rgb.a);}
+\DoxyCodeLine{00042   \}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     \textcolor{comment}{// add a color as 3 floats setting opacity to 1}}
+\DoxyCodeLine{00045   \textcolor{keywordtype}{void} addColor(\textcolor{keywordtype}{float} r, \textcolor{keywordtype}{float} g, \textcolor{keywordtype}{float} b)\{}
+\DoxyCodeLine{00046     colors.add(r);}
+\DoxyCodeLine{00047     colors.add(g);}
+\DoxyCodeLine{00048     colors.add(b);}
+\DoxyCodeLine{00049         colors.add(1); \textcolor{comment}{// full opaque}}
+\DoxyCodeLine{00050   \}}
+\DoxyCodeLine{00051     }
+\DoxyCodeLine{00052     \textcolor{comment}{//TODO: What is this? looks like adding a list of colors to the end}}
+\DoxyCodeLine{00053     \textcolor{comment}{//TODO: poorly named at the very least}}
+\DoxyCodeLine{00054     \textcolor{keywordtype}{void} setColors(\textcolor{keywordtype}{float} cols[], uint32\_t size)\{}
+\DoxyCodeLine{00055     colors.insert(colors.end(), \&cols[0], \&cols[size]);}
+\DoxyCodeLine{00056   \}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     \textcolor{comment}{//Replace the current list of colors with a new vector}}
+\DoxyCodeLine{00059     \textcolor{comment}{//TODO: this is probably not something that should be supported}}
+\DoxyCodeLine{00060   \textcolor{keywordtype}{void} setColors(std::vector<float>\& cols)\{}
+\DoxyCodeLine{00061     colors = cols;}
+\DoxyCodeLine{00062   \}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     \textcolor{comment}{// Add a 2d point, and add its color at the same time}}
+\DoxyCodeLine{00065   \textcolor{keywordtype}{void} addStyledPoint(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} glm::vec4\& rgb)\{}
+\DoxyCodeLine{00066     addPoint(x,y);}
+\DoxyCodeLine{00067     addColor(rgb);}
+\DoxyCodeLine{00068   \}}
+\DoxyCodeLine{00069     }
+\DoxyCodeLine{00070     \textcolor{comment}{// Every shape must be able to set up in advance (init)}}
+\DoxyCodeLine{00071   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073     \textcolor{comment}{/*}}
+\DoxyCodeLine{00074 \textcolor{comment}{     *Every shape must be able to draw itself}}
+\DoxyCodeLine{00075 \textcolor{comment}{     * this will draw all content in the WebDraw including}}
+\DoxyCodeLine{00076 \textcolor{comment}{     * first draw all polygons with a different color for each vertex}}
+\DoxyCodeLine{00077 \textcolor{comment}{     */}}
+\DoxyCodeLine{00078   \textcolor{keywordtype}{void} render() \textcolor{keyword}{override};}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080   \textcolor{comment}{//Update Methods (in progress)}}
+\DoxyCodeLine{00081   \textcolor{keywordtype}{void} updateColors(\textcolor{keyword}{const} uint64\_t pos, \textcolor{keyword}{const} \textcolor{keywordtype}{float} r, \textcolor{keyword}{const} \textcolor{keywordtype}{float} g, \textcolor{keyword}{const} \textcolor{keywordtype}{float} b);}
+\DoxyCodeLine{00082   }
+\DoxyCodeLine{00083   \textcolor{comment}{//Solid Primitives}}
+\DoxyCodeLine{00084   \textcolor{keywordtype}{void} fillRectangle(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00085   \textcolor{keywordtype}{void} fillRoundRect(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keywordtype}{float} rx, \textcolor{keywordtype}{float} ry, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00086   \textcolor{keywordtype}{void} fillTriangle(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2,\textcolor{keywordtype}{float} x3, \textcolor{keywordtype}{float} y3, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00087   \textcolor{keywordtype}{void} fillPolygon(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} n, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00088     \textcolor{comment}{//TODO: probably get rid of angleInc, but figure out how to control the accuracy}}
+\DoxyCodeLine{00089   \textcolor{keywordtype}{void} fillCircle(\textcolor{keywordtype}{float} x ,\textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} rad, \textcolor{keywordtype}{float} angleInc, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00090   \textcolor{keywordtype}{void} fillEllipse(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} angleInc, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092   \textcolor{comment}{//Line Primitives}}
+\DoxyCodeLine{00093   \textcolor{keywordtype}{void} drawRectangle(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00094   \textcolor{keywordtype}{void} drawRoundRect(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keywordtype}{float} rx, \textcolor{keywordtype}{float} ry, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00095   \textcolor{keywordtype}{void} drawTriangle(\textcolor{keywordtype}{float} x1,\textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2,\textcolor{keywordtype}{float} y2,}
+\DoxyCodeLine{00096                                         \textcolor{keywordtype}{float} x3, \textcolor{keywordtype}{float} y3, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00097   \textcolor{keywordtype}{void} drawPolygon(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} n, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00098   \textcolor{keywordtype}{void} drawCompletePolygon(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} n, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00099   \textcolor{keywordtype}{void} drawCircle(\textcolor{keywordtype}{float} x ,\textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} rad, \textcolor{keywordtype}{float} angleInc, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00100   \textcolor{keywordtype}{void} drawEllipse(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} angleInc, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00101   \textcolor{keywordtype}{void} drawLine(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2,\textcolor{keywordtype}{float} y2, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00102 }
+\DoxyCodeLine{00103     \textcolor{comment}{// draw a section of a circle, angles are in radians}}
+\DoxyCodeLine{00104     \textcolor{keywordtype}{void} drawArc(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} r, \textcolor{keywordtype}{float} ang1, \textcolor{keywordtype}{float} ang2);}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106   \textcolor{comment}{/*}}
+\DoxyCodeLine{00107 \textcolor{comment}{        TODO: this should support drawBezier and drawSpline}}
+\DoxyCodeLine{00108 \textcolor{comment}{        evaluate the 2d cubic where}}
+\DoxyCodeLine{00109 \textcolor{comment}{        a = xy[i], b = xy[i+1], c = xy[i+2], d = xy[i+3]}}
+\DoxyCodeLine{00110 \textcolor{comment}{    e = xy[i+4], f = xu[i+5], g = xy[i+6], h = xy[i+7]}}
+\DoxyCodeLine{00111 \textcolor{comment}{        so that}}
+\DoxyCodeLine{00112 \textcolor{comment}{}}
+\DoxyCodeLine{00113 \textcolor{comment}{        x(t) = (((a*t + b)*t + c)*t + d  (Horner's form)}}
+\DoxyCodeLine{00114 \textcolor{comment}{        y(t) = (((e*t + f)*t + g)*t + h  (Horner's form)}}
+\DoxyCodeLine{00115 \textcolor{comment}{}}
+\DoxyCodeLine{00116 \textcolor{comment}{        The vector of coefficients must still be generated. For Bezier, }}
+\DoxyCodeLine{00117 \textcolor{comment}{        this can be done directly from each 4 control points. For Splines,}}
+\DoxyCodeLine{00118 \textcolor{comment}{        this requires solving a system of linear equations}}
+\DoxyCodeLine{00119 \textcolor{comment}{        see http://mathworld.wolfram.com/Spline.html}}
+\DoxyCodeLine{00120 \textcolor{comment}{}}
+\DoxyCodeLine{00121 \textcolor{comment}{        numSegments is the number of lines to draw per cubic piece}}
+\DoxyCodeLine{00122 \textcolor{comment}{    */}}
+\DoxyCodeLine{00123     \textcolor{keywordtype}{void} drawCubic(\textcolor{keywordtype}{float} xy[], uint32\_t length, uint32\_t numSegments);}
+\DoxyCodeLine{00124 }
+\DoxyCodeLine{00125   \textcolor{comment}{//TODO: How do we take Bezier and Spline objects and generate the underlying xy[] coefficients to drive the above?}}
+\DoxyCodeLine{00126   }
+\DoxyCodeLine{00127   \textcolor{comment}{//Point Primitives}}
+\DoxyCodeLine{00128   \textcolor{keywordtype}{void} rectanglePoints(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00129   \textcolor{keywordtype}{void} roundRectPoints(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keywordtype}{float} rx, \textcolor{keywordtype}{float} ry, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00130   \textcolor{keywordtype}{void} trianglePoints(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2,\textcolor{keywordtype}{float} x3, \textcolor{keywordtype}{float} y3, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00131   \textcolor{keywordtype}{void} polygonPoints(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} n, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00132   \textcolor{keywordtype}{void} circlePoints(\textcolor{keywordtype}{float} x ,\textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} rad, \textcolor{keywordtype}{float} angleInc, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00133   \textcolor{keywordtype}{void} ellipsePoints(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} angleInc, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135 }
+\DoxyCodeLine{00136     \textcolor{comment}{// draw a rectangular region of a texture to a rectangle}}
+\DoxyCodeLine{00137     \textcolor{keywordtype}{void} drawImage(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{comment}{// location on the screen to draw}}
+\DoxyCodeLine{00138                                  \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{comment}{// size of rectangle on the screen}}
+\DoxyCodeLine{00139                                  uint32\_t textureId, \textcolor{comment}{// the texture to draw to this location}}
+\DoxyCodeLine{00140                                  \textcolor{keywordtype}{float} u1, \textcolor{keywordtype}{float} v1, \textcolor{comment}{// one corner of the texture to render}}
+\DoxyCodeLine{00141                                  \textcolor{keywordtype}{float} u2, \textcolor{keywordtype}{float} v2); \textcolor{comment}{// the other corner of the texture}}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144   \textcolor{comment}{//TODO: load texture!!! load from png, FLIF, etc.}}
+\DoxyCodeLine{00145   }
+\DoxyCodeLine{00146   \textcolor{comment}{// draw an entire rectangular text to a rectangle}}
+\DoxyCodeLine{00147     \textcolor{keywordtype}{void} drawImage(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{comment}{// location on the screen to draw}}
+\DoxyCodeLine{00148                                  \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{comment}{// size of rectangle on the screen}}
+\DoxyCodeLine{00149                                  uint32\_t textureId) \{}
+\DoxyCodeLine{00150     drawImage(x,y, w,h, textureId, 0,0, 1,1);}
+\DoxyCodeLine{00151   \}}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153     \textcolor{keywordtype}{void} drawText(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \mbox{\hyperlink{classStyle}{Style}}* s, \textcolor{keyword}{const} \textcolor{keywordtype}{char} text[], uint32\_t len);}
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{00155     \textcolor{comment}{// draw characters starting at baseChar in some character set. For example}}
+\DoxyCodeLine{00156     \textcolor{comment}{// Greek characters start at 0x3d0 in Unicode, so express relative to that.}}
+\DoxyCodeLine{00157     \textcolor{keywordtype}{void} drawText(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \mbox{\hyperlink{classStyle}{Style}}* s, uint32\_t baseChar,}
+\DoxyCodeLine{00158                                 \textcolor{keyword}{const} \textcolor{keywordtype}{char} text[], uint32\_t len);}
+\DoxyCodeLine{00159     \textcolor{comment}{//TODO: unicode characters for multibyte?}}
+\DoxyCodeLine{00160     \textcolor{keywordtype}{void} drawText(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \mbox{\hyperlink{classStyle}{Style}}* s, \textcolor{keyword}{const} uint16\_t text[], uint32\_t len);}
+\DoxyCodeLine{00161 }
+\DoxyCodeLine{00162   \textcolor{comment}{//TODO: how to support different text directions?}}
+\DoxyCodeLine{00163   \textcolor{comment}{//see: https://developer.mozilla.org/en-\/US/docs/Web/CSS/text-\/combine-\/upright}}
+\DoxyCodeLine{00164 }
+\DoxyCodeLine{00165   \textcolor{comment}{// size of text width given string (works with prop font)}}
+\DoxyCodeLine{00166   \textcolor{keywordtype}{float} getTextWidth(\mbox{\hyperlink{classStyle}{Style}}* s, \textcolor{keyword}{const} \textcolor{keywordtype}{char} text[], uint32\_t len) \textcolor{keyword}{const};}
+\DoxyCodeLine{00167   \textcolor{keywordtype}{float} getTextHeight(\mbox{\hyperlink{classStyle}{Style}}* s);}
+\DoxyCodeLine{00168   }
+\DoxyCodeLine{00169   \textcolor{comment}{// draw text at the current insert point, if it does not fit move to next line, but}}
+\DoxyCodeLine{00170   \textcolor{comment}{// if it doesn't}}
+\DoxyCodeLine{00171   \textcolor{comment}{// TODO: we need font metrics!!}}
+\DoxyCodeLine{00172     \textcolor{keywordtype}{void} addText(\mbox{\hyperlink{classWebCursor}{WebCursor}}* cursor, \mbox{\hyperlink{classStyle}{Style}}* s, \textcolor{keyword}{const} \textcolor{keywordtype}{char} text[], uint32\_t len) \{}
+\DoxyCodeLine{00173     \textcolor{comment}{//bounding box = height, need to find width}}
+\DoxyCodeLine{00174     \textcolor{comment}{//call moveRight to update cursor position based on font size and lenght of array}}
+\DoxyCodeLine{00175     cout << \textcolor{stringliteral}{"{}Adding text..\(\backslash\)n"{}};}
+\DoxyCodeLine{00176     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < len; i++) \{}
+\DoxyCodeLine{00177       Glyph* gly = s-\/>f-\/>getGlyph(text[i]);}
+\DoxyCodeLine{00178 }
+\DoxyCodeLine{00179       \textcolor{comment}{// draw the glyph}}
+\DoxyCodeLine{00180 }
+\DoxyCodeLine{00181 }
+\DoxyCodeLine{00182       \textcolor{comment}{// advance cursor}}
+\DoxyCodeLine{00183       cursor-\/>moveRight(gly-\/>advance, f-\/>getHeight());}
+\DoxyCodeLine{00184     \}}
+\DoxyCodeLine{00185   \};}
+\DoxyCodeLine{00186 }
+\DoxyCodeLine{00187 \textcolor{preprocessor}{\#if 0}}
+\DoxyCodeLine{00188   \textcolor{comment}{// add support for sequences of addText...}}
+\DoxyCodeLine{00189   \textcolor{comment}{//TODO: probably should be done using a generic REPEAT tag}}
+\DoxyCodeLine{00190   \textcolor{keywordtype}{void} addText(\mbox{\hyperlink{classWebCursor}{WebCursor}}* cursor, \mbox{\hyperlink{classStyle}{Style}}*s[], \textcolor{keyword}{const});}
+\DoxyCodeLine{00191 }
+\DoxyCodeLine{00192 }
+\DoxyCodeLine{00193   \textcolor{comment}{//TODO: can we remove all WebCursor* from the parameters, and just have a single WebCursor in the WebDraw object?}}
+\DoxyCodeLine{00194     \textcolor{keywordtype}{void} addImage(\mbox{\hyperlink{classWebCursor}{WebCursor}}* cursor, \mbox{\hyperlink{classStyle}{Style}}* s, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h,}
+\DoxyCodeLine{00195                                 uint32\_t textureId, \textcolor{keywordtype}{float} u1, \textcolor{keywordtype}{float} v1, \textcolor{keywordtype}{float} u2, \textcolor{keywordtype}{float} v2);}
+\DoxyCodeLine{00196     \textcolor{keywordtype}{void} addImage(\mbox{\hyperlink{classWebCursor}{WebCursor}}* cursor, \mbox{\hyperlink{classStyle}{Style}}* s, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h,}
+\DoxyCodeLine{00197                                 uint32\_t textureId) \{}
+\DoxyCodeLine{00198     addImage(cursor, s, w,h, textureId, 0,0, 1,1);}
+\DoxyCodeLine{00199   \}}
+\DoxyCodeLine{00200   }
+\DoxyCodeLine{00201   \textcolor{comment}{//TODO: What other drawing primitives do we put inline?}}
+\DoxyCodeLine{00202   \textcolor{comment}{//TODO: add for speed, subset of uint64\_t void drawNum(uint32\_t v);}}
+\DoxyCodeLine{00203   \textcolor{comment}{//TODO: same  void drawNum(int32\_t v);}}
+\DoxyCodeLine{00204     \textcolor{keywordtype}{void} drawNum(uint64\_t v);}
+\DoxyCodeLine{00205   \textcolor{keywordtype}{void} drawNum(int64\_t v);}
+\DoxyCodeLine{00206                \textcolor{keywordtype}{void} drawNum(int32\_t v);}
+\DoxyCodeLine{00207                \textcolor{comment}{//TODO: will work without this just a bit slower void drawNum(float v);}}
+\DoxyCodeLine{00208     \textcolor{keywordtype}{void} drawNum(\textcolor{keywordtype}{double} v);}
+\DoxyCodeLine{00209 }
+\DoxyCodeLine{00210   \textcolor{comment}{// TODO: spec out what this actually does}}
+\DoxyCodeLine{00211   \textcolor{comment}{// 1.2345678}}
+\DoxyCodeLine{00212   \textcolor{comment}{// 1.2345e+72}}
+\DoxyCodeLine{00213   \textcolor{comment}{// What to do if number is out of range?}}
+\DoxyCodeLine{00214     \textcolor{keywordtype}{void} addNum(\mbox{\hyperlink{classWebCursor}{WebCursor}}* cursor, \textcolor{keywordtype}{double} v, \textcolor{keywordtype}{int} precision);}
+\DoxyCodeLine{00215     \textcolor{keywordtype}{void} drawNum(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, uint32\_t v);}
+\DoxyCodeLine{00216     \textcolor{keywordtype}{void} drawNum(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, int32\_t v);}
+\DoxyCodeLine{00217     \textcolor{keywordtype}{void} drawNum(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, uint64\_t v);}
+\DoxyCodeLine{00218     \textcolor{keywordtype}{void} drawNum(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, uint32\_t v);}
+\DoxyCodeLine{00219     \textcolor{keywordtype}{void} drawNum(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{double} v, uint32\_t precision);}
+\DoxyCodeLine{00220     \textcolor{keywordtype}{void} drawExponential(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{double} v, \textcolor{keywordtype}{int} precision);}
+\DoxyCodeLine{00221 }
+\DoxyCodeLine{00222   \textcolor{comment}{//TODO: Think about this, it's very cool}}
+\DoxyCodeLine{00223   \textcolor{comment}{// draw number starting at x,y moving along angle ang in radians}}
+\DoxyCodeLine{00224   \textcolor{keywordtype}{void} drawNumAtAngle(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, uint64\_t v, \textcolor{keywordtype}{float} ang);}
+\DoxyCodeLine{00225   \textcolor{keywordtype}{void} drawTextAtAngle(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, uint64\_t v, \textcolor{keywordtype}{float} ang);}
+\DoxyCodeLine{00226 }
+\DoxyCodeLine{00227   \textcolor{comment}{/*}}
+\DoxyCodeLine{00228 \textcolor{comment}{    draw number starting at x,y moving along curve}}
+\DoxyCodeLine{00229 \textcolor{comment}{    CubicFunc will need arclength of each segment. }}
+\DoxyCodeLine{00230 \textcolor{comment}{    1. Compute the length of the number in digits}}
+\DoxyCodeLine{00231 \textcolor{comment}{    2. calculate the total arclength of cubic}}
+\DoxyCodeLine{00232 \textcolor{comment}{    3. set spacing accordingly}}
+\DoxyCodeLine{00233 \textcolor{comment}{}}
+\DoxyCodeLine{00234 \textcolor{comment}{    TODO: even weirder, would we like to add a function that would allow character angles following different function?}}
+\DoxyCodeLine{00235 \textcolor{comment}{  */}}
+\DoxyCodeLine{00236   \textcolor{keywordtype}{void} drawNumAlongCurve(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, uint64\_t v, \mbox{\hyperlink{classCubicFunc}{CubicFunc}}\& cubic, \textcolor{keywordtype}{bool} charAngleFollowCurve);}
+\DoxyCodeLine{00237 }
+\DoxyCodeLine{00238   \textcolor{comment}{// same for arbitrary text}}
+\DoxyCodeLine{00239   \textcolor{keywordtype}{void} drawTextAlongCurve(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} \textcolor{keywordtype}{char} text[], uint32\_t len,}
+\DoxyCodeLine{00240                           \mbox{\hyperlink{classCubicFunc}{CubicFunc}}\& cubic, \textcolor{keywordtype}{bool} charAngleFollowCurve);}
+\DoxyCodeLine{00241 }
+\DoxyCodeLine{00242   \textcolor{comment}{// TODO: no need to do right justified numbers separately if we write an efficient routine}}
+\DoxyCodeLine{00243     \textcolor{keywordtype}{void} drawNumRightJust(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, uint32\_t v);}
+\DoxyCodeLine{00244     \textcolor{keywordtype}{void} drawNumRightJust(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, int32\_t v);}
+\DoxyCodeLine{00245     \textcolor{keywordtype}{void} drawNumRightJust(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, uint64\_t v);}
+\DoxyCodeLine{00246     \textcolor{keywordtype}{void} drawNumRightJust(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, uint32\_t v);}
+\DoxyCodeLine{00247     \textcolor{keywordtype}{void} drawNumRightJust(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{double} v, uint32\_t precision);}
+\DoxyCodeLine{00248 }
+\DoxyCodeLine{00249   }
+\DoxyCodeLine{00250   \textcolor{comment}{// read from the metadata, pull whatever is specified from the data and draw}}
+\DoxyCodeLine{00251   \textcolor{keywordtype}{void} draw(\mbox{\hyperlink{classBuffer}{Buffer}}\& metadata, \mbox{\hyperlink{classBuffer}{Buffer}}\& data);}
+\DoxyCodeLine{00252 \textcolor{preprocessor}{  \#endif}}
+\DoxyCodeLine{00253 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structStats1D_1_1Summary" xml:lang="en-US">
+<title>Stats1D&lt; T &gt;::Summary Struct Reference</title>
+<indexterm><primary>Stats1D&lt; T &gt;::Summary</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structStats1D_1_1Summary_1a6d75e97608a7b1dbdd67dae89ecc8a74"/>double <emphasis role="strong">min</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structStats1D_1_1Summary_1a86ffd37a90336028f8e8be95df025648"/>double <emphasis role="strong">max</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structStats1D_1_1Summary_1a6a3aad6707055614a60ed50042f64b77"/>double <emphasis role="strong">q1</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structStats1D_1_1Summary_1ab4e5bca3a7e2ea219d55c54874414e16"/>double <emphasis role="strong">q3</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structStats1D_1_1Summary_1ab7cccc80cc93e5da8f22369a2598857f"/>double <emphasis role="strong">median</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

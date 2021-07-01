@@ -1,0 +1,47 @@
+.TH "CString" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CString
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCString\fP (const char msg[], uint32_t len)"
+.br
+.ti -1c
+.RI "\fBCString\fP (const \fBCString\fP &orig)"
+.br
+.ti -1c
+.RI "\fBCString\fP & \fBoperator=\fP (const \fBCString\fP &orig)"
+.br
+.ti -1c
+.RI "\fBCString\fP (\fBCString\fP &&orig)"
+.br
+.ti -1c
+.RI "char \fBoperator[]\fP (uint32_t i) const"
+.br
+.ti -1c
+.RI "char & \fBoperator[]\fP (uint32_t i)"
+.br
+.ti -1c
+.RI "uint32_t \fBlen\fP () const"
+.br
+.ti -1c
+.RI "char * \fBstr\fP ()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &s, const \fBCString\fP &str)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

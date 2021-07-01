@@ -1,0 +1,83 @@
+\hypertarget{Camera_8hh_source}{}\doxysection{Camera.\+hh}
+\label{Camera_8hh_source}\index{src/opengl/util/Camera.hh@{src/opengl/util/Camera.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <glm/gtx/transform.hpp>}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{\Hypertarget{Camera_8hh_source_l00006}\mbox{\hyperlink{classCamera}{00006}} \textcolor{keyword}{class }\mbox{\hyperlink{classCamera}{Camera}} \{}
+\DoxyCodeLine{00007  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00008   glm::mat4 projection;}
+\DoxyCodeLine{00009   glm::mat4 view;}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011   \textcolor{keywordtype}{int} screenWidth;}
+\DoxyCodeLine{00012   \textcolor{keywordtype}{int} screenHeight;}
+\DoxyCodeLine{00013   glm::vec3 camPos;}
+\DoxyCodeLine{00014   glm::vec3 lookingAt;}
+\DoxyCodeLine{00015   glm::vec3 upVector;}
+\DoxyCodeLine{00016   \textcolor{keywordtype}{float} fov;}
+\DoxyCodeLine{00017   \textcolor{keywordtype}{float} zNear;}
+\DoxyCodeLine{00018   \textcolor{keywordtype}{float} zFar;}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021   \mbox{\hyperlink{classCamera}{Camera}}(\textcolor{keywordtype}{int} screenWidth, \textcolor{keywordtype}{int} screenHeight,}
+\DoxyCodeLine{00022          \textcolor{keyword}{const} glm::vec3\& camPos = glm::vec3(4, 3, 5),}
+\DoxyCodeLine{00023          \textcolor{keyword}{const} glm::vec3\& lookingAt = glm::vec3(0, 0, 0),}
+\DoxyCodeLine{00024          \textcolor{keyword}{const} glm::vec3\& upVector = glm::vec3(0, 1, 0), \textcolor{keywordtype}{float} fov = 45.0f,}
+\DoxyCodeLine{00025          \textcolor{keywordtype}{float} zNear = 0.1f, \textcolor{keywordtype}{float} zFar = 100.0f)}
+\DoxyCodeLine{00026       : screenWidth(screenWidth),}
+\DoxyCodeLine{00027         screenHeight(screenHeight),}
+\DoxyCodeLine{00028         camPos(camPos),}
+\DoxyCodeLine{00029         lookingAt(lookingAt),}
+\DoxyCodeLine{00030         upVector(upVector),}
+\DoxyCodeLine{00031         fov(fov),}
+\DoxyCodeLine{00032         zNear(zNear),}
+\DoxyCodeLine{00033         zFar(zFar) \{\}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035   \textcolor{keywordtype}{void} setScreenWidth(\textcolor{keywordtype}{int} w) \{ screenWidth = w; \}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037   \textcolor{keywordtype}{void} setScreenHeight(\textcolor{keywordtype}{int} h) \{ screenHeight = h; \}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039   \textcolor{keywordtype}{void} setCamPos(\textcolor{keyword}{const} glm::vec3\& pos) \{ camPos = pos; \}}
+\DoxyCodeLine{00040   \textcolor{keywordtype}{void} translate(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z) \{}
+\DoxyCodeLine{00041     setCamPos(camPos + glm::vec3(x, y, z));}
+\DoxyCodeLine{00042   \}}
+\DoxyCodeLine{00043   \textcolor{keywordtype}{void} setLookingAt(\textcolor{keyword}{const} glm::vec3\& pos) \{ lookingAt = pos; \}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045   \textcolor{keywordtype}{void} incrCamPos(\textcolor{keyword}{const} glm::vec3\& pos) \{ camPos += pos; \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047   \textcolor{keywordtype}{void} incrLookingAt(\textcolor{keyword}{const} glm::vec3\& pos) \{ lookingAt += pos; \}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049   \textcolor{keywordtype}{void} setUpVector(\textcolor{keyword}{const} glm::vec3\& pos) \{ upVector = pos; \}}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051   \textcolor{keywordtype}{void} setFovRad(\textcolor{keywordtype}{float} r) \{ fov = r; \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053   \textcolor{keywordtype}{void} setZnear(\textcolor{keywordtype}{float} z) \{ zNear = z; \}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055   \textcolor{keywordtype}{void} setZFar(\textcolor{keywordtype}{float} z) \{ zFar = z; \}}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057   \textcolor{keywordtype}{void} zoomIn(\textcolor{keywordtype}{float} s) \{}
+\DoxyCodeLine{00058     glm::vec3 delta = (lookingAt -\/ camPos) * s;}
+\DoxyCodeLine{00059     camPos += delta;}
+\DoxyCodeLine{00060   \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062   \textcolor{keywordtype}{void} zoomIn() \{}
+\DoxyCodeLine{00063     zoomIn(0.5);}
+\DoxyCodeLine{00064   \}}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066   \textcolor{keywordtype}{void} zoomOut() \{}
+\DoxyCodeLine{00067     zoomIn(-\/0.5);}
+\DoxyCodeLine{00068   \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070 \textcolor{comment}{//TODO: make this not inline, move to c++ file, and have multiple different projections}}
+\DoxyCodeLine{00071 \textcolor{comment}{// also, keep more of the computation in the matrices, not computed on the fly each time}}
+\DoxyCodeLine{00072   \textcolor{keyword}{inline} glm::mat4 getViewProjection() \{}
+\DoxyCodeLine{00073     projection = glm::perspective(glm::radians(fov), \textcolor{keywordtype}{float}(screenWidth) / \textcolor{keywordtype}{float}(screenHeight), zNear, zFar);}
+\DoxyCodeLine{00074     view = glm::lookAt(camPos, lookingAt, upVector);}
+\DoxyCodeLine{00075     \textcolor{keywordflow}{return} projection * view;}
+\DoxyCodeLine{00076   \}}
+\DoxyCodeLine{00077 \};}
+
+\end{DoxyCode}

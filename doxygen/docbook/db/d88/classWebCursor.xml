@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classWebCursor" xml:lang="en-US">
+<title>WebCursor Class Reference</title>
+<indexterm><primary>WebCursor</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classWebCursor_1a484db87fc27725f4eb8556677a63bebf"/><emphasis role="strong">WebCursor</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, <link linkend="_classMultiShape2D">MultiShape2D</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebCursor_1a5932f2c8714e2fec15756b016112aab7"/><emphasis role="strong">WebCursor</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, <link linkend="_classMultiText">MultiText</link> *m)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebCursor_1ab4ffdf2672f230938b9e269579cab34e"/>void <emphasis role="strong">addText</emphasis> (<link linkend="_classStyle">Style</link> *st, const char text[], uint32_t len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebCursor_1ad78f202a52646e8d48732a40de8d0eaa"/>void <emphasis role="strong">moveRight</emphasis> (float w, float h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classWebCursor_1a5c93c2dff8e936ebf294e5ae2da1205c"/>void <emphasis role="strong">moveLeft</emphasis> (float w, float h)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classSocketIO" xml:lang="en-US">
+<title>SocketIO Class Reference</title>
+<indexterm><primary>SocketIO</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classSocketIO_1aead4e9179e0d5b7302e29e84f437d351"/>static int <emphasis role="strong">send</emphasis> (socket_t sckt, const char *buf, int size, int flags)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSocketIO_1a32f828c0598639446961b14394e8f806"/>static int <emphasis role="strong">recv</emphasis> (socket_t sckt, const char *buf, int size, int flags)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

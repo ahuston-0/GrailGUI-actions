@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structPoint" xml:lang="en-US">
+<title>Point Class Reference</title>
+<indexterm><primary>Point</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structPoint_1a30bc8409287de4f43e160664be834636"/><emphasis role="strong">Point</emphasis> (float x, float y)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structPoint_1ab99c56589bc8ad5fa5071387110a5bc7"/>double <emphasis role="strong">x</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structPoint_1afa38be143ae800e6ad69ce8ed4df62d8"/>double <emphasis role="strong">y</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structPoint_1a05ba3b1dfcb19430582ae953cbbfbded"/>double <emphasis role="strong">z</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structPoint_1a05dfe2dfbde813ad234b514f30e662f1"/>float <emphasis role="strong">x</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structPoint_1a6101960c8d2d4e8ea1d32c9234bbeb8d"/>float <emphasis role="strong">y</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

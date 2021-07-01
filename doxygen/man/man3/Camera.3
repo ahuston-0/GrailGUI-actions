@@ -1,0 +1,64 @@
+.TH "Camera" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Camera
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCamera\fP (int screenWidth, int screenHeight, const glm::vec3 &camPos=glm::vec3(4, 3, 5), const glm::vec3 &lookingAt=glm::vec3(0, 0, 0), const glm::vec3 &upVector=glm::vec3(0, 1, 0), float fov=45\&.0f, float zNear=0\&.1f, float zFar=100\&.0f)"
+.br
+.ti -1c
+.RI "void \fBsetScreenWidth\fP (int w)"
+.br
+.ti -1c
+.RI "void \fBsetScreenHeight\fP (int h)"
+.br
+.ti -1c
+.RI "void \fBsetCamPos\fP (const glm::vec3 &pos)"
+.br
+.ti -1c
+.RI "void \fBtranslate\fP (float x, float y, float z)"
+.br
+.ti -1c
+.RI "void \fBsetLookingAt\fP (const glm::vec3 &pos)"
+.br
+.ti -1c
+.RI "void \fBincrCamPos\fP (const glm::vec3 &pos)"
+.br
+.ti -1c
+.RI "void \fBincrLookingAt\fP (const glm::vec3 &pos)"
+.br
+.ti -1c
+.RI "void \fBsetUpVector\fP (const glm::vec3 &pos)"
+.br
+.ti -1c
+.RI "void \fBsetFovRad\fP (float r)"
+.br
+.ti -1c
+.RI "void \fBsetZnear\fP (float z)"
+.br
+.ti -1c
+.RI "void \fBsetZFar\fP (float z)"
+.br
+.ti -1c
+.RI "void \fBzoomIn\fP (float s)"
+.br
+.ti -1c
+.RI "void \fBzoomIn\fP ()"
+.br
+.ti -1c
+.RI "void \fBzoomOut\fP ()"
+.br
+.ti -1c
+.RI "glm::mat4 \fBgetViewProjection\fP ()"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

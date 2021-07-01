@@ -1,0 +1,113 @@
+.TH "AxisWidget" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AxisWidget
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBWidget2D\fP\&.
+.PP
+Inherited by \fBLinearAxisWidget\fP, \fBLogAxisWidget\fP, and \fBTextAxisWidget\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBFormat\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAxisWidget\fP (\fBStyledMultiShape2D\fP *m, \fBMultiText\fP *t, double x, double y, double w, double h, double minBound=0, double maxBound=0, double tickInterval=1, double tickDrawSize=5, bool showTicks=true, bool isVert=false, std::string axisTitle='', const glm::vec4 &axisColor=grail::black, const glm::vec4 &tickColor=grail::black, int tickFormatWidth=2, int tickFormatPrecision=2, double bottomOffset=0)"
+.br
+.ti -1c
+.RI "void \fBsetTickDrawSize\fP (double i)"
+.br
+.ti -1c
+.RI "void \fBsetShowTicks\fP (bool b)"
+.br
+.ti -1c
+.RI "void \fBsetIsVert\fP (bool b)"
+.br
+.ti -1c
+.RI "void \fBsetTitle\fP (std::string text)"
+.br
+.ti -1c
+.RI "void \fBsetAxisColor\fP (const glm::vec4 &color)"
+.br
+.ti -1c
+.RI "void \fBsetTickColor\fP (const glm::vec4 &color)"
+.br
+.ti -1c
+.RI "void \fBsetTickFormat\fP (int width, int precision)"
+.br
+.ti -1c
+.RI "double \fBgetTickInterval\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetMinBound\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetMaxBound\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBsetBounds\fP (double minBound, double maxBound)=0"
+.br
+.ti -1c
+.RI "virtual void \fBsetTickInterval\fP (double tickInterval)=0"
+.br
+.ti -1c
+.RI "virtual void \fBsetTickLabels\fP (std::vector< std::string > tickLabels)=0"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBaddAxisTitle\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBminBound\fP"
+.br
+.ti -1c
+.RI "double \fBmaxBound\fP"
+.br
+.ti -1c
+.RI "double \fBtickInterval\fP"
+.br
+.ti -1c
+.RI "double \fBtickDrawSize\fP"
+.br
+.ti -1c
+.RI "\fBFormat\fP \fBtickFormat\fP"
+.br
+.ti -1c
+.RI "bool \fBshowTicks\fP"
+.br
+.ti -1c
+.RI "bool \fBisVert\fP"
+.br
+.ti -1c
+.RI "std::string \fBaxisTitle\fP"
+.br
+.ti -1c
+.RI "glm::vec4 \fBaxisColor\fP"
+.br
+.ti -1c
+.RI "glm::vec4 \fBtickColor\fP"
+.br
+.ti -1c
+.RI "double \fBbottomOffset\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

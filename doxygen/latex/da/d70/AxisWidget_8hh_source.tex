@@ -1,0 +1,109 @@
+\hypertarget{AxisWidget_8hh_source}{}\doxysection{Axis\+Widget.\+hh}
+\label{AxisWidget_8hh_source}\index{src/opengl/AxisWidget.hh@{src/opengl/AxisWidget.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/Widget2D.hh"{}}}
+\DoxyCodeLine{00004 \textcolor{comment}{// potential includes for error handling in the future}}
+\DoxyCodeLine{00005 \textcolor{comment}{// \#include "{}util/Ex.hh"{}}}
+\DoxyCodeLine{00006 \textcolor{comment}{// \#include "{}opengl/Errcode.hh"{}}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{\Hypertarget{AxisWidget_8hh_source_l00008}\mbox{\hyperlink{classAxisWidget}{00008}} \textcolor{keyword}{class }\mbox{\hyperlink{classAxisWidget}{AxisWidget}} : \textcolor{keyword}{public} \mbox{\hyperlink{classWidget2D}{Widget2D}} \{}
+\DoxyCodeLine{00009  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{AxisWidget_8hh_source_l00010}\mbox{\hyperlink{structAxisWidget_1_1Format}{00010}}   \textcolor{keyword}{struct }\mbox{\hyperlink{structAxisWidget_1_1Format}{Format}} \{}
+\DoxyCodeLine{00011     \textcolor{keywordtype}{int} width;}
+\DoxyCodeLine{00012     \textcolor{keywordtype}{int} precision;}
+\DoxyCodeLine{00013   \};}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015   \textcolor{keywordtype}{double} minBound;        \textcolor{comment}{// minimum axis value}}
+\DoxyCodeLine{00016   \textcolor{keywordtype}{double} maxBound;        \textcolor{comment}{// maximum axis value}}
+\DoxyCodeLine{00017   \textcolor{keywordtype}{double} tickInterval;    \textcolor{comment}{// interval between ticks}}
+\DoxyCodeLine{00018   \textcolor{keywordtype}{double} tickDrawSize;    \textcolor{comment}{// vertical height of tick marks}}
+\DoxyCodeLine{00019   \mbox{\hyperlink{structAxisWidget_1_1Format}{Format}} tickFormat;      \textcolor{comment}{// how to format float values on screen}}
+\DoxyCodeLine{00020   \textcolor{keywordtype}{bool} showTicks;         \textcolor{comment}{// whether or not to show the ticks}}
+\DoxyCodeLine{00021   \textcolor{keywordtype}{bool} isVert;            \textcolor{comment}{// whether the axis will be drawn vertically}}
+\DoxyCodeLine{00022   std::string axisTitle;  \textcolor{comment}{// axis title}}
+\DoxyCodeLine{00023   glm::vec4 axisColor;    \textcolor{comment}{// color to draw the axis line}}
+\DoxyCodeLine{00024   glm::vec4 tickColor;    \textcolor{comment}{// color to draw the ticks}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026   \textcolor{keywordtype}{double} bottomOffset;}
+\DoxyCodeLine{00027   \textcolor{keywordtype}{void} addAxisTitle();}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030   \textcolor{comment}{// TODO: initialize title and other style bits to some kind of sane default}}
+\DoxyCodeLine{00031   \mbox{\hyperlink{classAxisWidget}{AxisWidget}}(\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}} *m, \mbox{\hyperlink{classMultiText}{MultiText}} *t, \textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} w,}
+\DoxyCodeLine{00032              \textcolor{keywordtype}{double} h, \textcolor{keywordtype}{double} minBound = 0, \textcolor{keywordtype}{double} maxBound = 0,}
+\DoxyCodeLine{00033              \textcolor{keywordtype}{double} tickInterval = 1, \textcolor{keywordtype}{double} tickDrawSize = 5,}
+\DoxyCodeLine{00034              \textcolor{keywordtype}{bool} showTicks = \textcolor{keyword}{true}, \textcolor{keywordtype}{bool} isVert = \textcolor{keyword}{false},}
+\DoxyCodeLine{00035              std::string axisTitle = \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00036              \textcolor{keyword}{const} glm::vec4 \&axisColor = grail::black,}
+\DoxyCodeLine{00037              \textcolor{keyword}{const} glm::vec4 \&tickColor = grail::black, \textcolor{keywordtype}{int} tickFormatWidth = 2,}
+\DoxyCodeLine{00038              \textcolor{keywordtype}{int} tickFormatPrecision = 2, \textcolor{keywordtype}{double} bottomOffset = 0);}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040   \textcolor{keywordtype}{void} setTickDrawSize(\textcolor{keywordtype}{double} i);}
+\DoxyCodeLine{00041   \textcolor{keywordtype}{void} setShowTicks(\textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{00042   \textcolor{keywordtype}{void} setIsVert(\textcolor{keywordtype}{bool} b);}
+\DoxyCodeLine{00043   \textcolor{keywordtype}{void} setTitle(std::string text);}
+\DoxyCodeLine{00044   \textcolor{keywordtype}{void} setAxisColor(\textcolor{keyword}{const} glm::vec4 \&color);}
+\DoxyCodeLine{00045   \textcolor{keywordtype}{void} setTickColor(\textcolor{keyword}{const} glm::vec4 \&color);}
+\DoxyCodeLine{00046   \textcolor{keywordtype}{void} setTickFormat(\textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} precision);}
+\DoxyCodeLine{00047   \textcolor{keywordtype}{double} getTickInterval();}
+\DoxyCodeLine{00048   \textcolor{keywordtype}{double} getMinBound();}
+\DoxyCodeLine{00049   \textcolor{keywordtype}{double} getMaxBound();}
+\DoxyCodeLine{00050   \textcolor{comment}{// these three functions are declared as purely virtual, and it will be up to}}
+\DoxyCodeLine{00051   \textcolor{comment}{// the children to implement them if they make sense, or set them to be}}
+\DoxyCodeLine{00052   \textcolor{comment}{// private so that the compiler yells at you when using a function that}}
+\DoxyCodeLine{00053   \textcolor{comment}{// doesn't make sense for that axis type}}
+\DoxyCodeLine{00054   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} setBounds(\textcolor{keywordtype}{double} minBound, \textcolor{keywordtype}{double} maxBound) = 0;}
+\DoxyCodeLine{00055   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} setTickInterval(\textcolor{keywordtype}{double} tickInterval) = 0;}
+\DoxyCodeLine{00056   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} setTickLabels(std::vector<std::string> tickLabels) = 0;}
+\DoxyCodeLine{00057 \};}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{\Hypertarget{AxisWidget_8hh_source_l00059}\mbox{\hyperlink{classLinearAxisWidget}{00059}} \textcolor{keyword}{class }\mbox{\hyperlink{classLinearAxisWidget}{LinearAxisWidget}} : \textcolor{keyword}{public} \mbox{\hyperlink{classAxisWidget}{AxisWidget}} \{}
+\DoxyCodeLine{00060   \textcolor{comment}{// it doesn't make sense for a linear axis to be able to set its tick labels,}}
+\DoxyCodeLine{00061   \textcolor{comment}{// logically they should be numbers instead of labels, so the function is set}}
+\DoxyCodeLine{00062   \textcolor{comment}{// to private so that the compiler complains if a linear axis uses it, and if}}
+\DoxyCodeLine{00063   \textcolor{comment}{// this somehow gets past the compiler then its an empty definition so no}}
+\DoxyCodeLine{00064   \textcolor{comment}{// damage can be done}}
+\DoxyCodeLine{00065   \textcolor{keyword}{using} AxisWidget::setTickLabels;}
+\DoxyCodeLine{00066   \textcolor{keywordtype}{void} setTickLabels(std::vector<std::string>)\textcolor{keyword}{ override}\{\};}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069   \mbox{\hyperlink{classLinearAxisWidget}{LinearAxisWidget}}(\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}} *m, \mbox{\hyperlink{classMultiText}{MultiText}} *t, \textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y,}
+\DoxyCodeLine{00070                    \textcolor{keywordtype}{double} w, \textcolor{keywordtype}{double} h);}
+\DoxyCodeLine{00071   \textcolor{keywordtype}{void} setBounds(\textcolor{keywordtype}{double} minBound, \textcolor{keywordtype}{double} maxBound) \textcolor{keyword}{override};}
+\DoxyCodeLine{00072   \textcolor{keywordtype}{void} setTickInterval(\textcolor{keywordtype}{double} tickInterval) \textcolor{keyword}{override};}
+\DoxyCodeLine{00073   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
+\DoxyCodeLine{00074 \};}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{\Hypertarget{AxisWidget_8hh_source_l00076}\mbox{\hyperlink{classLogAxisWidget}{00076}} \textcolor{keyword}{class }\mbox{\hyperlink{classLogAxisWidget}{LogAxisWidget}} : \textcolor{keyword}{public} \mbox{\hyperlink{classAxisWidget}{AxisWidget}} \{}
+\DoxyCodeLine{00077  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00078   \textcolor{keywordtype}{int} base, power;}
+\DoxyCodeLine{00079   \textcolor{keyword}{using} AxisWidget::setTickLabels;}
+\DoxyCodeLine{00080   \textcolor{keywordtype}{void} setTickLabels(std::vector<std::string>)\textcolor{keyword}{ override}\{\};}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00083   \mbox{\hyperlink{classLogAxisWidget}{LogAxisWidget}}(\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}} *m, \mbox{\hyperlink{classMultiText}{MultiText}} *t, \textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y,}
+\DoxyCodeLine{00084                 \textcolor{keywordtype}{double} w, \textcolor{keywordtype}{double} h);}
+\DoxyCodeLine{00085   \textcolor{keywordtype}{void} setBounds(\textcolor{keywordtype}{double} minBound, \textcolor{keywordtype}{double} maxBound) \textcolor{keyword}{override};}
+\DoxyCodeLine{00086   \textcolor{keywordtype}{void} setTickInterval(\textcolor{keywordtype}{double} tickInterval) \textcolor{keyword}{override};}
+\DoxyCodeLine{00087   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
+\DoxyCodeLine{00088 \};}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{\Hypertarget{AxisWidget_8hh_source_l00090}\mbox{\hyperlink{classTextAxisWidget}{00090}} \textcolor{keyword}{class }\mbox{\hyperlink{classTextAxisWidget}{TextAxisWidget}} : \textcolor{keyword}{public} \mbox{\hyperlink{classAxisWidget}{AxisWidget}} \{}
+\DoxyCodeLine{00091  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00092   \textcolor{keyword}{using} AxisWidget::setBounds;}
+\DoxyCodeLine{00093   \textcolor{keyword}{using} AxisWidget::setTickInterval;}
+\DoxyCodeLine{00094   \textcolor{keywordtype}{void} setBounds(\textcolor{keywordtype}{double} minBound, \textcolor{keywordtype}{double} maxBound)\textcolor{keyword}{ override}\{\};}
+\DoxyCodeLine{00095   \textcolor{keywordtype}{void} setTickInterval(\textcolor{keywordtype}{double} tickInterval)\textcolor{keyword}{ override}\{\};}
+\DoxyCodeLine{00096   std::vector<std::string> tickLabels;}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00099   \mbox{\hyperlink{classTextAxisWidget}{TextAxisWidget}}(\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}} *m, \mbox{\hyperlink{classMultiText}{MultiText}} *t, \textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y,}
+\DoxyCodeLine{00100                  \textcolor{keywordtype}{double} w, \textcolor{keywordtype}{double} h);}
+\DoxyCodeLine{00101   \textcolor{keywordtype}{void} setTickLabels(std::vector<std::string> tickLabels) \textcolor{keyword}{override};}
+\DoxyCodeLine{00102   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
+\DoxyCodeLine{00103 \};}
+
+\end{DoxyCode}

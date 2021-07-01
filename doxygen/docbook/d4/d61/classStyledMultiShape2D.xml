@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classStyledMultiShape2D" xml:lang="en-US">
+<title>StyledMultiShape2D Class Reference</title>
+<indexterm><primary>StyledMultiShape2D</primary></indexterm>
+<para>Inheritance diagram for StyledMultiShape2D:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d4/d61/classStyledMultiShape2D.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a32bbf2651dcb6a5d157f6cbf2d28394f"/><emphasis role="strong">StyledMultiShape2D</emphasis> (<link linkend="_classCanvas">Canvas</link> *parent, const <link linkend="_classStyle">Style</link> *s, float angle=0, float x=0, float y=0, uint32_t vertCount=1024, uint32_t solidIndCount=1024, uint32_t lineIndCount=1024, uint32_t pointIndCount=1024)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a0c1baf11a8fba49833c608899e78b4a1"/>uint32_t <emphasis role="strong">addSector</emphasis> (float x, float y, float xRad, float yRad, float fromAngle, float toAngle, float angleInc, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1ad5bf5979d0924b7832dbfee7328c80a5"/>void <emphasis role="strong">addColor</emphasis> (const glm::vec4 &amp;rgb)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1ad37f5c3b566849b6ac44582331ca5edd"/>void <emphasis role="strong">addColor</emphasis> (float r, float g, float b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1af3ab21834e69440829d829a3498fa24e"/>void <emphasis role="strong">setColors</emphasis> (float cols[], uint32_t size)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a0dd3b40660e75b9e17978edfcb53f8ac"/>void <emphasis role="strong">setColors</emphasis> (std::vector&lt; float &gt; &amp;cols)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a7e925dbf7288626f3983f8eddca6094a"/>void <emphasis role="strong">addStyledPoint</emphasis> (float x, float y, const glm::vec4 &amp;rgb)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1ac8bac9a75db902c77983f0ddb680dd71"/>void <emphasis role="strong">clear</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a1286c7749cfe3170364ed3ab3f062ff0"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a38f4770925cd78c5d6328742398ae32a"/>void <emphasis role="strong">render</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a5ab965ecba27df2981812677f0204af1"/>void <emphasis role="strong">updateColors</emphasis> (const uint64_t pos, const float r, const float g, const float b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a5f8e460160dbb55b685615733941b425"/>void <emphasis role="strong">updatePoints</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a10b6c578ea391f36c3d0383bfb1722f9"/>void <emphasis role="strong">updateIndices</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a690256ed7b57196cc3968fc4f03daae7"/>void <emphasis role="strong">fillRectangle</emphasis> (float x, float y, float w, float h, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1ae0fd407d0ec7815547c052826237f289"/>void <emphasis role="strong">fillRoundRect</emphasis> (float x, float y, float w, float h, float rx, float ry, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a9ac42b3627e6d71515745424c9b1a234"/>void <emphasis role="strong">fillTriangle</emphasis> (float x1, float y1, float x2, float y2, float x3, float y3, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a797ba1c39df2d4b5b65bdf9e68e7f43b"/>void <emphasis role="strong">fillPolygon</emphasis> (float x, float y, float xRad, float yRad, float n, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1aa51f7a533ba88d86c554cdf39640a1ad"/>void <emphasis role="strong">fillCircle</emphasis> (float x, float y, float rad, float angleInc, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a935a60f195217f6d4cf115cd2e1526ae"/>void <emphasis role="strong">fillEllipse</emphasis> (float x, float y, float xRad, float yRad, float angleInc, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a26f13a9d82b12f37e69f642ed663fdac"/>void <emphasis role="strong">drawRectangle</emphasis> (float x, float y, float w, float h, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a717b1a1732ea598ed63623fb27612e77"/>void <emphasis role="strong">drawRoundRect</emphasis> (float x, float y, float w, float h, float rx, float ry, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a271013ae75714dc3d35574848393b807"/>void <emphasis role="strong">drawTriangle</emphasis> (float x1, float y1, float x2, float y2, float x3, float y3, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1aa2f250ebc85d4329dad0e87e57ab60c2"/>void <emphasis role="strong">drawPolygon</emphasis> (const std::vector&lt; float &gt; &amp;v, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1aed4815eba8d7dce2001e2d050227c2a8"/>void <emphasis role="strong">drawPolygon</emphasis> (float x, float y, float xRad, float yRad, float n, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1abb952d3abcb6e8e8cebed0edf1cba76b"/>void <emphasis role="strong">drawCompletePolygon</emphasis> (float x, float y, float xRad, float yRad, float n, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a1057d459a9db774e3781ac70dc9f101a"/>void <emphasis role="strong">drawCircle</emphasis> (float x, float y, float rad, float angleInc, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a95de6268120cde38651aaeff3ecba5d7"/>void <emphasis role="strong">drawEllipse</emphasis> (float x, float y, float xRad, float yRad, float angleInc, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a017a78f23bf4e6ace8c0c17779ddf4a3"/>void <emphasis role="strong">drawLine</emphasis> (float x1, float y1, float x2, float y2, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a01ea98c5552b846ffe7026e54768fcd1"/>void <emphasis role="strong">drawPolyline</emphasis> (const float xy[], uint32_t n, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a121fc8f0319dd9a67e65a90a04e6ee9f"/>void <emphasis role="strong">fillPolyline</emphasis> (const float xy[], uint32_t n, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a59cd4ce48555c8834488b49a84339e96"/>void <emphasis role="strong">drawPolygon</emphasis> (const float xy[], uint32_t n, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1ab81a4ffe585c66c74458b37baa11b558"/>void <emphasis role="strong">fillPolygon</emphasis> (const float xy[], uint32_t n, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1ac2aefa646d4c656a2a83e136b768ac5f"/>void <emphasis role="strong">bezierSegment</emphasis> (const <link linkend="_classBezier">Bezier</link> *b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1ade5cf7678c54045639b694c6847c80b9"/>void <emphasis role="strong">bezierSegmentByPoints</emphasis> (float p1x, float p1y, float p2x, float p2y, float p3x, float p3y, float p4x, float p4y, int n, bool end, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a541eac563762933262141f5b69f633dd"/>void <emphasis role="strong">spline</emphasis> (const std::vector&lt; double &gt; &amp;points, int n, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a33399e383da5a47118e643f94868dcbe"/>void <emphasis role="strong">drawGrid</emphasis> (float x0, float y0, float w, float h, uint32_t numHoriz, uint32_t numVert, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1ad50490a32ce0f700ec260dc8d1778c93"/>void <emphasis role="strong">fillGrid</emphasis> (float x0, float y0, float w, float h, uint32_t numHoriz, uint32_t numVert, const glm::vec4 &amp;lc, const glm::vec4 &amp;bc)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1aea8722443fa195f762e69745a15897b6"/>void <emphasis role="strong">drawTriGrid</emphasis> (float x, float y, float s, uint32_t trianglesPerSide, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a0edf4cf7ca21541d86ebf40d658d4041"/>void <emphasis role="strong">drawHexGrid</emphasis> (float x, float y, float w, float h, uint32_t numHorizHexagons, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1ab9b54076676c4e6390ce67fa12ee865d"/>void <emphasis role="strong">rectanglePoints</emphasis> (float x, float y, float w, float h, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a9966f5b4c39d80e27b389dd0315a9a43"/>void <emphasis role="strong">roundRectPoints</emphasis> (float x, float y, float w, float h, float rx, float ry, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a147b89f6aeacb3535989af70157f34ba"/>void <emphasis role="strong">trianglePoints</emphasis> (float x1, float y1, float x2, float y2, float x3, float y3, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1aaf81e38a35aacbfa9078516093643be0"/>void <emphasis role="strong">polygonPoints</emphasis> (float x, float y, float xRad, float yRad, float n, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a0c4080d6512e3cc768a837076d525c94"/>void <emphasis role="strong">circlePoints</emphasis> (float x, float y, float rad, float angleInc, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a8d9b2272b5d304011aa2ea9d2670a1fb"/>void <emphasis role="strong">ellipsePoints</emphasis> (float x, float y, float xRad, float yRad, float angleInc, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1abc10a14d753f149f1aed4361ee5804e7"/>void <emphasis role="strong">dump</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a32bbf2651dcb6a5d157f6cbf2d28394f"/><emphasis role="strong">StyledMultiShape2D</emphasis> (<link linkend="_classCanvas">Canvas</link> *parent, const <link linkend="_classStyle">Style</link> *s, float angle=0, float x=0, float y=0, uint32_t vertCount=1024, uint32_t solidIndCount=1024, uint32_t lineIndCount=1024, uint32_t pointIndCount=1024)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a0c1baf11a8fba49833c608899e78b4a1"/>uint32_t <emphasis role="strong">addSector</emphasis> (float x, float y, float xRad, float yRad, float fromAngle, float toAngle, float angleInc, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1ad5bf5979d0924b7832dbfee7328c80a5"/>void <emphasis role="strong">addColor</emphasis> (const glm::vec4 &amp;rgb)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1ad37f5c3b566849b6ac44582331ca5edd"/>void <emphasis role="strong">addColor</emphasis> (float r, float g, float b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1af3ab21834e69440829d829a3498fa24e"/>void <emphasis role="strong">setColors</emphasis> (float cols[], uint32_t size)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a0dd3b40660e75b9e17978edfcb53f8ac"/>void <emphasis role="strong">setColors</emphasis> (std::vector&lt; float &gt; &amp;cols)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a7e925dbf7288626f3983f8eddca6094a"/>void <emphasis role="strong">addStyledPoint</emphasis> (float x, float y, const glm::vec4 &amp;rgb)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1ac8bac9a75db902c77983f0ddb680dd71"/>void <emphasis role="strong">clear</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a1286c7749cfe3170364ed3ab3f062ff0"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a38f4770925cd78c5d6328742398ae32a"/>void <emphasis role="strong">render</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a5ab965ecba27df2981812677f0204af1"/>void <emphasis role="strong">updateColors</emphasis> (const uint64_t pos, const float r, const float g, const float b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a5f8e460160dbb55b685615733941b425"/>void <emphasis role="strong">updatePoints</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a10b6c578ea391f36c3d0383bfb1722f9"/>void <emphasis role="strong">updateIndices</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a690256ed7b57196cc3968fc4f03daae7"/>void <emphasis role="strong">fillRectangle</emphasis> (float x, float y, float w, float h, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1ae0fd407d0ec7815547c052826237f289"/>void <emphasis role="strong">fillRoundRect</emphasis> (float x, float y, float w, float h, float rx, float ry, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a9ac42b3627e6d71515745424c9b1a234"/>void <emphasis role="strong">fillTriangle</emphasis> (float x1, float y1, float x2, float y2, float x3, float y3, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a797ba1c39df2d4b5b65bdf9e68e7f43b"/>void <emphasis role="strong">fillPolygon</emphasis> (float x, float y, float xRad, float yRad, float n, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1aa51f7a533ba88d86c554cdf39640a1ad"/>void <emphasis role="strong">fillCircle</emphasis> (float x, float y, float rad, float angleInc, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a935a60f195217f6d4cf115cd2e1526ae"/>void <emphasis role="strong">fillEllipse</emphasis> (float x, float y, float xRad, float yRad, float angleInc, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a26f13a9d82b12f37e69f642ed663fdac"/>void <emphasis role="strong">drawRectangle</emphasis> (float x, float y, float w, float h, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a717b1a1732ea598ed63623fb27612e77"/>void <emphasis role="strong">drawRoundRect</emphasis> (float x, float y, float w, float h, float rx, float ry, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a271013ae75714dc3d35574848393b807"/>void <emphasis role="strong">drawTriangle</emphasis> (float x1, float y1, float x2, float y2, float x3, float y3, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1aa2f250ebc85d4329dad0e87e57ab60c2"/>void <emphasis role="strong">drawPolygon</emphasis> (const std::vector&lt; float &gt; &amp;v, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1aed4815eba8d7dce2001e2d050227c2a8"/>void <emphasis role="strong">drawPolygon</emphasis> (float x, float y, float xRad, float yRad, float n, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1abb952d3abcb6e8e8cebed0edf1cba76b"/>void <emphasis role="strong">drawCompletePolygon</emphasis> (float x, float y, float xRad, float yRad, float n, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a1057d459a9db774e3781ac70dc9f101a"/>void <emphasis role="strong">drawCircle</emphasis> (float x, float y, float rad, float angleInc, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a95de6268120cde38651aaeff3ecba5d7"/>void <emphasis role="strong">drawEllipse</emphasis> (float x, float y, float xRad, float yRad, float angleInc, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a017a78f23bf4e6ace8c0c17779ddf4a3"/>void <emphasis role="strong">drawLine</emphasis> (float x1, float y1, float x2, float y2, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a01ea98c5552b846ffe7026e54768fcd1"/>void <emphasis role="strong">drawPolyline</emphasis> (const float xy[], uint32_t n, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a121fc8f0319dd9a67e65a90a04e6ee9f"/>void <emphasis role="strong">fillPolyline</emphasis> (const float xy[], uint32_t n, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a59cd4ce48555c8834488b49a84339e96"/>void <emphasis role="strong">drawPolygon</emphasis> (const float xy[], uint32_t n, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1ab81a4ffe585c66c74458b37baa11b558"/>void <emphasis role="strong">fillPolygon</emphasis> (const float xy[], uint32_t n, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1ac2aefa646d4c656a2a83e136b768ac5f"/>void <emphasis role="strong">bezierSegment</emphasis> (const <link linkend="_classBezier">Bezier</link> *b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1ade5cf7678c54045639b694c6847c80b9"/>void <emphasis role="strong">bezierSegmentByPoints</emphasis> (float p1x, float p1y, float p2x, float p2y, float p3x, float p3y, float p4x, float p4y, int n, bool end, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a541eac563762933262141f5b69f633dd"/>void <emphasis role="strong">spline</emphasis> (const std::vector&lt; double &gt; &amp;points, int n, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a33399e383da5a47118e643f94868dcbe"/>void <emphasis role="strong">drawGrid</emphasis> (float x0, float y0, float w, float h, uint32_t numHoriz, uint32_t numVert, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1ad50490a32ce0f700ec260dc8d1778c93"/>void <emphasis role="strong">fillGrid</emphasis> (float x0, float y0, float w, float h, uint32_t numHoriz, uint32_t numVert, const glm::vec4 &amp;lc, const glm::vec4 &amp;bc)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1aea8722443fa195f762e69745a15897b6"/>void <emphasis role="strong">drawTriGrid</emphasis> (float x, float y, float s, uint32_t trianglesPerSide, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a0edf4cf7ca21541d86ebf40d658d4041"/>void <emphasis role="strong">drawHexGrid</emphasis> (float x, float y, float w, float h, uint32_t numHorizHexagons, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a15414572cf451a5acc951291c8db0de3"/>void <emphasis role="strong">drawCircleMarker</emphasis> (float x, float y, float size, glm::vec4 &amp;color)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a7c0936ec3f4273256c6e8330235e3c38"/>void <emphasis role="strong">drawTriangleMarker</emphasis> (float x, float y, float size, glm::vec4 &amp;color)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a99a8e1190b2ef9a42f786b000a4a18e1"/>void <emphasis role="strong">drawSquareMarker</emphasis> (float x, float y, float size, glm::vec4 &amp;color)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a0dcba06352d09be7149e51baefac0e62"/>void <emphasis role="strong">drawPentagonMarker</emphasis> (float x, float y, float size, glm::vec4 &amp;color)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1aaaf4b78e6399337e87bfed5ba0b18b23"/>void <emphasis role="strong">drawHexagonMarker</emphasis> (float x, float y, float size, glm::vec4 &amp;color)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a0682c8ccfce4a8564dd3e54ae6c217f0"/>void <emphasis role="strong">drawCrossMarker</emphasis> (float x, float y, float size, glm::vec4 &amp;color)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1ab9b54076676c4e6390ce67fa12ee865d"/>void <emphasis role="strong">rectanglePoints</emphasis> (float x, float y, float w, float h, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a9966f5b4c39d80e27b389dd0315a9a43"/>void <emphasis role="strong">roundRectPoints</emphasis> (float x, float y, float w, float h, float rx, float ry, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a147b89f6aeacb3535989af70157f34ba"/>void <emphasis role="strong">trianglePoints</emphasis> (float x1, float y1, float x2, float y2, float x3, float y3, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1aaf81e38a35aacbfa9078516093643be0"/>void <emphasis role="strong">polygonPoints</emphasis> (float x, float y, float xRad, float yRad, float n, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a0c4080d6512e3cc768a837076d525c94"/>void <emphasis role="strong">circlePoints</emphasis> (float x, float y, float rad, float angleInc, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1a8d9b2272b5d304011aa2ea9d2670a1fb"/>void <emphasis role="strong">ellipsePoints</emphasis> (float x, float y, float xRad, float yRad, float angleInc, const glm::vec4 &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classStyledMultiShape2D_1abc10a14d753f149f1aed4361ee5804e7"/>void <emphasis role="strong">dump</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

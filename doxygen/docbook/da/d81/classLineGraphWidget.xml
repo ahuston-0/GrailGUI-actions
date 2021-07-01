@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classLineGraphWidget" xml:lang="en-US">
+<title>LineGraphWidget Class Reference</title>
+<indexterm><primary>LineGraphWidget</primary></indexterm>
+<para>Inheritance diagram for LineGraphWidget:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../da/d81/classLineGraphWidget.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classLineGraphWidget_1a0f3905dc45409aff6f730bfc3c25a2df"/><emphasis role="strong">LineGraphWidget</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, <link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, double x, double y, double w, double h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classLineGraphWidget_1afbfa3473f103407acea8389352083b15"/>void <emphasis role="strong">setPointFormat</emphasis> (char pt, double size, glm::vec4 &amp;color)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classLineGraphWidget_1a9988ca1aa52f7e80209dc619374313c5"/>void <emphasis role="strong">setXPoints</emphasis> (const std::vector&lt; double &gt; &amp;xPoints)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classLineGraphWidget_1af24323be6b6e4c1d8e7e78d290477d5c"/>void <emphasis role="strong">setYPoints</emphasis> (const std::vector&lt; double &gt; &amp;yPoints)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classLineGraphWidget_1a40f83632b7ca914f7a5e0f0db96ef2f5"/>void <emphasis role="strong">createXAxis</emphasis> (AxisType a) override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classLineGraphWidget_1a67da920f93770c8094d22cb90eac1ae5"/>void <emphasis role="strong">createYAxis</emphasis> (AxisType a) override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classLineGraphWidget_1a3f12208f2f678fc03bdfec01b5c09fc0"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classGraphView" xml:lang="en-US">
+<title>GraphView Class Reference</title>
+<indexterm><primary>GraphView</primary></indexterm>
+<para>Inheritance diagram for GraphView:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d8/d2a/classGraphView.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classGraphView_1a2a4b2b1805987db1e7d793bb82c37517"/><link linkend="_classCSRGraph">CSRGraph</link>&lt; uint64_t, uint64_t, float &gt; * <emphasis role="strong">getGraph</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphView_1afaa5d94b9c28d680e91bd0e6dc2935f6"/>void <emphasis role="strong">setVertexRadius</emphasis> (float vertR)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphView_1a0fb57cba0614c0a7308094e529b12d31"/>void <emphasis role="strong">addColor</emphasis> (float r, float g, float b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphView_1a349755411cea079ba480f79289c12030"/>void <emphasis role="strong">addVert</emphasis> (uint64_t v, float x, float y, uint8_t initialVertColor, <link linkend="_structPoint">Point</link> points[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphView_1a1008c2f177cf3104e1a811c88a4fa812"/>void <emphasis role="strong">addEdge</emphasis> (uint64_t i, float x1, float y1, float x2, float y2, uint8_t initialEdgeColor)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphView_1a12b91d1d39c0b8d631c9753472720667"/>void <emphasis role="strong">updateVert</emphasis> (uint64_t v, uint8_t colorVal)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphView_1a5813e1111ce14eef44b8d66447b0bd67"/>void <emphasis role="strong">updateEdge</emphasis> (uint64_t i, uint8_t colorVal)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphView_1a84056b128befa605dfbe81d9912a11e7"/><emphasis role="strong">GraphView</emphasis> (<link linkend="_classCSRGraph">CSRGraph</link>&lt; uint64_t, uint64_t, float &gt; &amp;g, <link linkend="_classCanvas">Canvas</link> *c, <link linkend="_classStyle">Style</link> *style, glm::vec4 s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphView_1a8226134a953c70da8e84b3744de495c5"/>uint64_t <emphasis role="strong">getE</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphView_1a774ef56f7295f9eab465a98d86149877"/>void <emphasis role="strong">process_input</emphasis> (Inputs *, float dt) override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphView_1ab14e6d0abfd9628a53a70824714bdd8f"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphView_1ac866a9fc223a3a97b156260b203304d3"/>void <emphasis role="strong">render</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphView_1ac5dbf40765c5e9ec67db2ce470e9a097"/>void <emphasis role="strong">update</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphView_1abc0252c5ac325c9739069d795db28985"/>void <emphasis role="strong">addEdges</emphasis> (const <link linkend="_structPoint">Point</link> vertexPos[], uint8_t initialEdgeColor)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classSocket" xml:lang="en-US">
+<title>Socket Class Reference</title>
+<indexterm><primary>Socket</primary></indexterm>
+<para>Inheritance diagram for Socket:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d4/d33/classSocket.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classSocket_1aa1ba5ed8118c5dc133a7520298188942"/><emphasis role="strong">Socket</emphasis> (const char *addr, uint16_t port)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSocket_1a4df3811c84619bfe5376d7b5d5f0d0da"/><emphasis role="strong">Socket</emphasis> (uint16_t port, <link linkend="_classRequest">Request</link> *req)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSocket_1a8763ccbbdc7825a07c433991d1c14334"/><emphasis role="strong">Socket</emphasis> (uint16_t port)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSocket_1a1d0c03d41f3b4fbe82c5978994a0eb78"/>void <emphasis role="strong">attach</emphasis> (<link linkend="_classRequest">Request</link> *r)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSocket_1ad3b1c2db18a4f96747fcb3e730a4d8d7"/><link linkend="_classBuffer">Buffer</link> &amp; <emphasis role="strong">getOut</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSocket_1a618c1e3e39d9a2db9a1dcddbf51da1e7"/><link linkend="_classBuffer">Buffer</link> &amp; <emphasis role="strong">getIn</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSocket_1a5f31b9ee08fa572e62f3bba5b5a154f9"/>virtual void <emphasis role="strong">wait</emphasis> ()=0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classSocket_1a3a34757c71f25ebb03376c1ddf579b57"/>static void <emphasis role="strong">classCleanup</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSocket_1a9673f9abb6c268237e8f0b32aae38b26"/>static void <emphasis role="strong">classInit</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classSocket_1a805ddeb6cc1eac196aeef0ff9786c0be"/>const char * <emphasis role="strong">address</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSocket_1a643bcba92eae5360cbd97b5005f78f97"/>uint16_t <emphasis role="strong">port</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSocket_1a2e157bc00a9f54ebdef6ec0941f96190"/><link linkend="_classRequest">Request</link> * <emphasis role="strong">req</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSocket_1a419b9a2eecb0d14581b4211297b434e5"/><link linkend="_classBuffer">Buffer</link> <emphasis role="strong">in</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classSocket_1a357e43a73b4b3f16cae5c9c163ef94c6"/><link linkend="_classBuffer">Buffer</link> <emphasis role="strong">out</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classBuiltinType" xml:lang="en-US">
+<title>BuiltinType Class Reference</title>
+<indexterm><primary>BuiltinType</primary></indexterm>
+<para>Inheritance diagram for BuiltinType:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../db/db6/classBuiltinType.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classBuiltinType_1ac339353a7f224f235b58c8f96961e3b9"/><emphasis role="strong">BuiltinType</emphasis> (const std::string &amp;name, const DataType &amp;t)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuiltinType_1ad621de0eb1bd2e895b089445fa089003"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuiltinType_1a69e3c68893aa517bd5bc682def7f3d9e"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuiltinType_1a169bcd6898e06fc74f4335ce6c1de0f5"/>void <emphasis role="strong">writeMeta</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuiltinType_1ad5348e0570d495fbd62c6e97a7e8cf2c"/>DataType <emphasis role="strong">getDataType</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuiltinType_1acabb9e524a8ea0b6e9481bc7d20683c1"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBuiltinType_1ae1f50d9283423d6b76f54e8290d88d71"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

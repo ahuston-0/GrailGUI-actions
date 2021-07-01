@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classcsp" xml:lang="en-US">
+<title>csp Class Reference</title>
+<indexterm><primary>csp</primary></indexterm>
+<para>
+<computeroutput>#include &lt;configcsp.hh&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classcsp_1afcbcb36f8b63ae7a90be483585fea072"/>uint16_t <emphasis role="strong">port</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classcsp_1ac70e92b022d7c08e3e8a8b95d982ff6c"/>prot <emphasis role="strong">protocol</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classcsp_1a4e9ac6685850ac264e1d0423e1a7d806"/>ip <emphasis role="strong">ip_ver</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classcsp_1a417bb88d2b8079515d7b9d7dde85ff9c"/>string <emphasis role="strong">log</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classcsp_1a4cedbdb0227dd15de3ad3a64996b0de6"/>string <emphasis role="strong">base</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classcsp_1ad0603479f0fc72fea80bf1d756bc4f0d"/>buf <emphasis role="strong">buffer</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>NEEDED: We need a hardcoded list of what all is needed in the proj</para>
+
+<para>check_correct(Hashmap map1&lt;k,v&gt;): for name in hardcoded_list: if typeOF(map1[name]) == type we need/within enum/range continue else raise error with type_name print error to log exit 1 </para>
+</section>
+</section>

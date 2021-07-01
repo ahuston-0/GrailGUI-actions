@@ -1,0 +1,26 @@
+\hypertarget{classBadType}{}\doxysection{Bad\+Type Class Reference}
+\label{classBadType}\index{BadType@{BadType}}
+
+
+{\ttfamily \#include $<$Config.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBadType_ab805a7692ccf7c40e02b100d0f724ced}\label{classBadType_ab805a7692ccf7c40e02b100d0f724ced}} 
+{\bfseries Bad\+Type} (const char filename\mbox{[}$\,$\mbox{]}, int line\+Num)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBadType_a8027fb74caf303a162807ccf25c194ef}\label{classBadType_a8027fb74caf303a162807ccf25c194ef}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&s, const \mbox{\hyperlink{classBadType}{Bad\+Type}} \&e)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represent a config file used to configure complicated applications
+
+File format supports comments starting with \# name-\/value pairs of data, with declaration of the type of names supported in the constructor so that subclsses of \mbox{\hyperlink{classConfig}{Config}} can specify the required types of each tag. In this way, the \mbox{\hyperlink{classConfig}{Config}} utility can display the line number and an error if the data is not as required
+
+TODO\+: Since \mbox{\hyperlink{classConfig}{Config}} files can be very large, and parsing is slow, it is possible to extend this model to automatically generate a binary version of the config. In this way, the config file can effectively be compiled. This is important only if the file is large so at the moment we can ignore 

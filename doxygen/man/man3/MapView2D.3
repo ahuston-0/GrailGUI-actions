@@ -1,0 +1,47 @@
+.TH "MapView2D" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MapView2D
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBShape\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetProjection\fP ()"
+.br
+.ti -1c
+.RI "void \fBtranslate\fP (float percentX, float percentY)"
+.br
+.ti -1c
+.RI "void \fBuniformZoom\fP (float s)"
+.br
+.ti -1c
+.RI "\fBMapView2D\fP (\fBCanvas\fP *parent, const \fBStyle\fP *s, \fBBlockMapLoader\fP *bml=nullptr)"
+.br
+.ti -1c
+.RI "glm::mat4 & \fBgetTransform\fP ()"
+.br
+.ti -1c
+.RI "void \fBinit\fP () override"
+.br
+.ti -1c
+.RI "void \fBrender\fP () override"
+.br
+.ti -1c
+.RI "void \fBupdate\fP () override"
+.br
+.ti -1c
+.RI "void \fBdump\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

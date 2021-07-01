@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classMainCanvas" xml:lang="en-US">
+<title>MainCanvas Class Reference</title>
+<indexterm><primary>MainCanvas</primary></indexterm>
+<para>Inheritance diagram for MainCanvas:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d7/d54/classMainCanvas.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classMainCanvas_1a31cd455f7ba328df22886ca8c2c54cc4"/><emphasis role="strong">MainCanvas</emphasis> (<link linkend="_classGLWin">GLWin</link> *parent)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMainCanvas_1a9f7621d6edd8441600cdd2f6f3228f75"/><emphasis role="strong">MainCanvas</emphasis> (const <link linkend="_classMainCanvas">MainCanvas</link> &amp;)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMainCanvas_1ac660c4bd5dac1a12aa14181403aec83f"/><link linkend="_classMainCanvas">MainCanvas</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classMainCanvas">MainCanvas</link> &amp;)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMainCanvas_1a30cf654f9c515c7e6cb05cef87893481"/><link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> * <emphasis role="strong">getGui</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMainCanvas_1a04116899ab6cb1013c5c9776bd7afadf"/><link linkend="_classMultiText">MultiText</link> * <emphasis role="strong">getGuiText</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMainCanvas_1ab1ad32b68f1d8c025b1bb33d42bc4db2"/><link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> * <emphasis role="strong">getMenu</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMainCanvas_1aa167de40c455e655a70bb70596153033"/><link linkend="_classMultiText">MultiText</link> * <emphasis role="strong">getMenuText</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMainCanvas_1a08706a90d1592f600ed2597f894e9121"/>void <emphasis role="strong">init</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMainCanvas_1ae81bdf35e96ee7824052bc9b98049d3c"/>void <emphasis role="strong">render</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMainCanvas_1af20e71edad4375f144e071d6472f3200"/>void <emphasis role="strong">cleanup</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMainCanvas_1acba6b9272d23086947b7ae003902f052"/>void <emphasis role="strong">addButton</emphasis> (const char text[], float x, float y, float w, float h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMainCanvas_1adc4df65359a01581e065ddec6899092e"/>void <emphasis role="strong">addLabel</emphasis> (const char text[], float x, float y, float w, float h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMainCanvas_1a47ea1d1437cf73d5afb131b6d27763c7"/>void <emphasis role="strong">addMenu</emphasis> (const std::string menu[], uint32_t numStrings, float x, float y)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

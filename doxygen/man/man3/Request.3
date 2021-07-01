@@ -1,0 +1,40 @@
+.TH "Request" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Request
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBCSPRequest\fP, \fBHTTPRequest\fP, and \fBXDLRequest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBhandle\fP (int sckt)=0"
+.br
+.ti -1c
+.RI "virtual void \fBhandle\fP (int sckt, const char *command)=0"
+.br
+.ti -1c
+.RI "\fBBuffer\fP & \fBgetOut\fP ()"
+.br
+.ti -1c
+.RI "\fBBuffer\fP & \fBgetIn\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBBuffer\fP \fBin\fP"
+.br
+.ti -1c
+.RI "\fBBuffer\fP \fBout\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

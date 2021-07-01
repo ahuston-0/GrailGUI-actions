@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structBlockLoader_1_1SecurityHeaderV0" xml:lang="en-US">
+<title>BlockLoader::SecurityHeaderV0 Struct Reference</title>
+<indexterm><primary>BlockLoader::SecurityHeaderV0</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structBlockLoader_1_1SecurityHeaderV0_1a925bac93b051d41ad00184bf7b637a2e"/>uint64_t <emphasis role="strong">yoho</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

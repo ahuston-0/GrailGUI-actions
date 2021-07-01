@@ -1,0 +1,49 @@
+.TH "Scale" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Scale
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBLinearScale\fP, and \fBLogScale\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual float \fBtransform\fP (double x)=0"
+.br
+.ti -1c
+.RI "virtual void \fBinit\fP (double min, double max, double shift, double axisSize, double tickInterval)=0"
+.br
+.ti -1c
+.RI "virtual float \fBnext\fP (float v)=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBscale\fP"
+.br
+.ti -1c
+.RI "double \fBshift\fP"
+.br
+.ti -1c
+.RI "double \fBmin\fP"
+.br
+.ti -1c
+.RI "double \fBmax\fP"
+.br
+.ti -1c
+.RI "double \fBtickInterval\fP"
+.br
+.ti -1c
+.RI "double \fBnumInterval\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

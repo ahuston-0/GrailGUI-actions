@@ -1,0 +1,173 @@
+\hypertarget{datatype_8hh_source}{}\doxysection{datatype.\+hh}
+\label{datatype_8hh_source}\index{src/util/datatype.hh@{src/util/datatype.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{keyword}{enum class} DataType \{}
+\DoxyCodeLine{00011     \mbox{\hyperlink{classU8}{U8}}, \textcolor{comment}{// unsigned int 0..255}}
+\DoxyCodeLine{00012     \mbox{\hyperlink{classU16}{U16}}, \textcolor{comment}{// unsigned int 0..65535}}
+\DoxyCodeLine{00013     \mbox{\hyperlink{classU24}{U24}}, \textcolor{comment}{// unsigned int 0..16*1024*1024}}
+\DoxyCodeLine{00014     \mbox{\hyperlink{classU32}{U32}}, \textcolor{comment}{// unsigned int 0..4200000000}}
+\DoxyCodeLine{00015     \mbox{\hyperlink{classU64}{U64}}, \textcolor{comment}{// 64 bits}}
+\DoxyCodeLine{00016     \mbox{\hyperlink{classU128}{U128}}, \textcolor{comment}{// 128 bits}}
+\DoxyCodeLine{00017     \mbox{\hyperlink{classU256}{U256}}, \textcolor{comment}{// 256 bits}}
+\DoxyCodeLine{00018     \mbox{\hyperlink{classI8}{I8}},  \textcolor{comment}{// unsigned int 0..255}}
+\DoxyCodeLine{00019     \mbox{\hyperlink{classI16}{I16}},  \textcolor{comment}{// unsigned int 0..65535}}
+\DoxyCodeLine{00020     \mbox{\hyperlink{classI24}{I24}},  \textcolor{comment}{// unsigned int 0..16*1024*1024}}
+\DoxyCodeLine{00021     \mbox{\hyperlink{classI32}{I32}},  \textcolor{comment}{// unsigned int 0..4200000000}}
+\DoxyCodeLine{00022     \mbox{\hyperlink{classI64}{I64}},  \textcolor{comment}{// 64 bits}}
+\DoxyCodeLine{00023     \mbox{\hyperlink{classI128}{I128}},  \textcolor{comment}{// 128 bits}}
+\DoxyCodeLine{00024     \mbox{\hyperlink{classI256}{I256}},  \textcolor{comment}{// 256 bits}}
+\DoxyCodeLine{00025     \mbox{\hyperlink{classF32}{F32}},}
+\DoxyCodeLine{00026     \mbox{\hyperlink{classF64}{F64}},}
+\DoxyCodeLine{00027     BOOL, \textcolor{comment}{// true/false, one byte but for arrays should use 1 bit}}
+\DoxyCodeLine{00028     DATE, \textcolor{comment}{// 32 bit date relative to J2000 (integer)}}
+\DoxyCodeLine{00029     JULDATE,  \textcolor{comment}{// scientific date based on double relative to J2000}}
+\DoxyCodeLine{00030     TIMESTAMP, \textcolor{comment}{// typical unix timestamp}}
+\DoxyCodeLine{00031     STRING8,  \textcolor{comment}{// string with 1 byte length 0..255 each character one byte}}
+\DoxyCodeLine{00032     STRING16,  \textcolor{comment}{// string with 2 byte length 0..65535 each character one byte}}
+\DoxyCodeLine{00033     STRING32,  \textcolor{comment}{// string with 4 byte length 0..4.2B each character 1 byte}}
+\DoxyCodeLine{00034     STRING64,  \textcolor{comment}{// string with 8 byte length 4.2B\string^2 (huge!)}}
+\DoxyCodeLine{00035     UTF8\_8,    \textcolor{comment}{// international string with 1 or 2 bytes, 1 byte size}}
+\DoxyCodeLine{00036     UTF8\_16,    \textcolor{comment}{// international string with 1 or 2 bytes, 2 byte size}}
+\DoxyCodeLine{00037     UTF8\_32,    \textcolor{comment}{// international string with 1 or 2 bytes, 4 byte size}}
+\DoxyCodeLine{00038     UTF8\_64,    \textcolor{comment}{// international string with 1 or 2 bytes, 8 byte size}}
+\DoxyCodeLine{00039     UTF16\_8,    \textcolor{comment}{// international string with 2 bytes per char, 1 byte size}}
+\DoxyCodeLine{00040     UTF16\_16,    \textcolor{comment}{// international string with 2 bytes per char, 2 byte size}}
+\DoxyCodeLine{00041     UTF16\_32,    \textcolor{comment}{// international string with 2 bytes per char, 4 byte size}}
+\DoxyCodeLine{00042     UTF16\_64,    \textcolor{comment}{// international string with 2 bytes per char, 8 byte size}}
+\DoxyCodeLine{00043   REGEX,}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     LIST8, \textcolor{comment}{// LIST with length encoded as 1 unsigned byte 0..255}}
+\DoxyCodeLine{00046     LIST16, \textcolor{comment}{// list with length encoded as 2 bytes 0 ... 65535}}
+\DoxyCodeLine{00047     LIST32, \textcolor{comment}{// list with length encoded as 4 bytes 0 ... 4.2B}}
+\DoxyCodeLine{00048     LIST64, \textcolor{comment}{// list with length encoded as 8 bytes 0 ... 2\string^64-\/1}}
+\DoxyCodeLine{00049     STRUCT8, \textcolor{comment}{// define new integer record identifier (number).  The number of records is 0..255}}
+\DoxyCodeLine{00050     STRUCT16, \textcolor{comment}{// same as record1, but can handle up to 0..65535 fields}}
+\DoxyCodeLine{00051     STRUCT32,  \textcolor{comment}{// 4 byte number of components, HUGE and probably useless, but here just in case}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053   DYNAMICLIST1, \textcolor{comment}{// list sent from dynamic source.  The number is how many sent this time, with a boolean to tell us when it is over}}
+\DoxyCodeLine{00054     DYNAMICLIST2, \textcolor{comment}{// same but with 2byte count.  This is useful for databases where it is much faster to start getting data and figure out the total later}}
+\DoxyCodeLine{00055     FUNC1, \textcolor{comment}{//defines new id of function with up to 256 instructions (no zero because a zero-\/length function is useless)}}
+\DoxyCodeLine{00056            \textcolor{comment}{//When executed can run sequence of commands, length = number of contained commands}}
+\DoxyCodeLine{00057     FUNC2, \textcolor{comment}{// same as FUNC1 with up to 65536 steps}}
+\DoxyCodeLine{00058     FUNCPARAM1, \textcolor{comment}{// takes number of parameters (up to 256) and number of steps (up to 256)}}
+\DoxyCodeLine{00059     FUNCPARAM2, \textcolor{comment}{// takes number of parameters (up to 65536) and number of steps (up to 65536)}}
+\DoxyCodeLine{00060     LOOP1,      \textcolor{comment}{// repeat n times count 0-\/255}}
+\DoxyCodeLine{00061     LOOP2,      \textcolor{comment}{// repeat n times count 0-\/65535}}
+\DoxyCodeLine{00062     LOOP4,      \textcolor{comment}{// repeat n times count 0-\/4.2B}}
+\DoxyCodeLine{00063     BITVEC8,    \textcolor{comment}{// bit vector with length 1 byte}}
+\DoxyCodeLine{00064     BITVEC16,   \textcolor{comment}{// bit vector with length 2 bytes}}
+\DoxyCodeLine{00065     BITVEC32,   \textcolor{comment}{// bit vector with length 4 bytes}}
+\DoxyCodeLine{00066     BITVEC64,   \textcolor{comment}{// bit vector with length 8 bytes}}
+\DoxyCodeLine{00067   BV32,       \textcolor{comment}{// 32 bits stored in a 4-\/byte integer}}
+\DoxyCodeLine{00068     BV64,       \textcolor{comment}{// 64 bits stored in a 8-\/byte integer}}
+\DoxyCodeLine{00069     BITFIELDS,  \textcolor{comment}{// 4-\/byte size, 1-\/byte bit size (for storing small numbers packed bitfields)}}
+\DoxyCodeLine{00070     ARITHMETIC, \textcolor{comment}{// arithmetic encoding of numbers specify range and size (each 4 bytes)}}
+\DoxyCodeLine{00071     JPEG,       \textcolor{comment}{// introducer to JPEG image embedded in stream}}
+\DoxyCodeLine{00072     JPEGLIST,   \textcolor{comment}{// 4 byte number of jpegs, followed by a single header, followed by multiple files of same size}}
+\DoxyCodeLine{00073     FLIF,       \textcolor{comment}{// advanced image format with more compression than JPEG}}
+\DoxyCodeLine{00074     FLIFLIST,   \textcolor{comment}{// 4 byte number of FLIF images, followed by a single header}}
+\DoxyCodeLine{00075     BLOB32,      \textcolor{comment}{// 4 byte length block of binary data (opaque to us)}}
+\DoxyCodeLine{00076     BLOB64,      \textcolor{comment}{// 8 byte length block of binary data}}
+\DoxyCodeLine{00077     BIGINT,}
+\DoxyCodeLine{00078   ENUM\_SIZE}
+\DoxyCodeLine{00079 \};}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081 \textcolor{keyword}{extern} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* DataTypeNames[];}
+\DoxyCodeLine{00082 \textcolor{keyword}{extern} unordered\_map<string,DataType> mapnames;}
+\DoxyCodeLine{00083 \textcolor{keyword}{extern} \textcolor{keywordtype}{void} loadmap();}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085 \textcolor{comment}{/*}}
+\DoxyCodeLine{00086 \textcolor{comment}{}}
+\DoxyCodeLine{00087 \textcolor{comment}{Examples of packet data:  All numbers shown are bytes, NOT ascii text numbers}}
+\DoxyCodeLine{00088 \textcolor{comment}{}}
+\DoxyCodeLine{00089 \textcolor{comment}{Example1: fixed data with one 64 bit unsigned integer, and one double precision number.}}
+\DoxyCodeLine{00090 \textcolor{comment}{Server sends 8 + 8 bytes, the client knows from context exactly what is expected for this page.}}
+\DoxyCodeLine{00091 \textcolor{comment}{1234567890}}
+\DoxyCodeLine{00092 \textcolor{comment}{123.456}}
+\DoxyCodeLine{00093 \textcolor{comment}{}}
+\DoxyCodeLine{00094 \textcolor{comment}{Example2: A table with 3 fixed columns: first name, last name, phone.  The client knows the data type of each column, so it is not specified, but since strings are variable, the lengths are encoded.  This example has types:}}
+\DoxyCodeLine{00095 \textcolor{comment}{string1,string1,uint8}}
+\DoxyCodeLine{00096 \textcolor{comment}{The length of the list is not known, so it is transmitted}}
+\DoxyCodeLine{00097 \textcolor{comment}{LIST1 2}}
+\DoxyCodeLine{00098 \textcolor{comment}{3Dov6Kruger2125551212}}
+\DoxyCodeLine{00099 \textcolor{comment}{8Branimir6Kruger2123331215}}
+\DoxyCodeLine{00100 \textcolor{comment}{}}
+\DoxyCodeLine{00101 \textcolor{comment}{Example3: A query goes to the server and the columns are not known in advance, so the server encodes the metadata}}
+\DoxyCodeLine{00102 \textcolor{comment}{RECORD1 5}}
+\DoxyCodeLine{00103 \textcolor{comment}{  string1}}
+\DoxyCodeLine{00104 \textcolor{comment}{  string1}}
+\DoxyCodeLine{00105 \textcolor{comment}{  string1}}
+\DoxyCodeLine{00106 \textcolor{comment}{  uint1}}
+\DoxyCodeLine{00107 \textcolor{comment}{  float4}}
+\DoxyCodeLine{00108 \textcolor{comment}{}}
+\DoxyCodeLine{00109 \textcolor{comment}{list1 1}}
+\DoxyCodeLine{00110 \textcolor{comment}{  3Dov 6Kruger 22Dov.Kruger@stevens.edu 2015551212 20.4512121}}
+\DoxyCodeLine{00111 \textcolor{comment}{}}
+\DoxyCodeLine{00112 \textcolor{comment}{Note: functions are only used in binary HTML representation.  Typically you would never need a function }}
+\DoxyCodeLine{00113 \textcolor{comment}{to send between machines, and you can always write the code longhand, without a function.}}
+\DoxyCodeLine{00114 \textcolor{comment}{Therefore, functions are an optimization to more compactly encode binary HTML when there are repetitive features.}}
+\DoxyCodeLine{00115 \textcolor{comment}{Eventually, functions may become a way to create higher-\/level entities that can create reusable packages.}}
+\DoxyCodeLine{00116 \textcolor{comment}{Probably objects will be useful as well.}}
+\DoxyCodeLine{00117 \textcolor{comment}{}}
+\DoxyCodeLine{00118 \textcolor{comment}{CSP is not a full programming language by design, but if we can build in ways to safely process data locally }}
+\DoxyCodeLine{00119 \textcolor{comment}{on the client while remaining provably safe, we can do that.}}
+\DoxyCodeLine{00120 \textcolor{comment}{}}
+\DoxyCodeLine{00121 \textcolor{comment}{FUNCPARAM1 (uint4 c1, uint4 c2, uint4 c3)}}
+\DoxyCodeLine{00122 \textcolor{comment}{ <tr class="{}foo"{}><td><\%= c1 \%></td><td><\%= c2 \%></td><td><\%= c3 \%></td></tr>}}
+\DoxyCodeLine{00123 \textcolor{comment}{}}
+\DoxyCodeLine{00124 \textcolor{comment}{FUNCPARAM1}}
+\DoxyCodeLine{00125 \textcolor{comment}{  3 7  // 3 parameters, contents 7 entities}}
+\DoxyCodeLine{00126 \textcolor{comment}{  c1 c2 c3  // 24 bytes}}
+\DoxyCodeLine{00127 \textcolor{comment}{  6 2 1  // length 6 contents TR class foo is 1 (3 bytes)}}
+\DoxyCodeLine{00128 \textcolor{comment}{    2 3 0  // contents length=2 TD class unspecified (default) (3 bytes)}}
+\DoxyCodeLine{00129 \textcolor{comment}{    PARAM 0 // c1}}
+\DoxyCodeLine{00130 \textcolor{comment}{    2 3 0  // contents length = 2 TD default class  (3 bytes)}}
+\DoxyCodeLine{00131 \textcolor{comment}{    PARAM 1}}
+\DoxyCodeLine{00132 \textcolor{comment}{    2 3 0}}
+\DoxyCodeLine{00133 \textcolor{comment}{    PARAM 2}}
+\DoxyCodeLine{00134 \textcolor{comment}{}}
+\DoxyCodeLine{00135 \textcolor{comment}{ */}}
+\DoxyCodeLine{00136 }
+\DoxyCodeLine{00137 \textcolor{comment}{/*}}
+\DoxyCodeLine{00138 \textcolor{comment}{class List1 \{}}
+\DoxyCodeLine{00139 \textcolor{comment}{private:}}
+\DoxyCodeLine{00140 \textcolor{comment}{    uint8\_t size;}}
+\DoxyCodeLine{00141 \textcolor{comment}{public:}}
+\DoxyCodeLine{00142 \textcolor{comment}{    List1(uint8\_t size) : size(size) \{\}}}
+\DoxyCodeLine{00143 \textcolor{comment}{\};}}
+\DoxyCodeLine{00144 \textcolor{comment}{*/}}
+\DoxyCodeLine{00145 }
+\DoxyCodeLine{\Hypertarget{datatype_8hh_source_l00146}\mbox{\hyperlink{classList2}{00146}} \textcolor{keyword}{class }\mbox{\hyperlink{classList2}{List2}} \{}
+\DoxyCodeLine{00147 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00148     uint16\_t size;}
+\DoxyCodeLine{00149 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00150     \mbox{\hyperlink{classList2}{List2}}(uint16\_t size) : size(size) \{\}}
+\DoxyCodeLine{00151 \};}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{\Hypertarget{datatype_8hh_source_l00153}\mbox{\hyperlink{classRecord}{00153}} \textcolor{keyword}{class }\mbox{\hyperlink{classRecord}{Record}} \{}
+\DoxyCodeLine{00154 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00155     vector<DataType> fieldTypes;}
+\DoxyCodeLine{00156 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00157     \mbox{\hyperlink{classRecord}{Record}}() \{\}}
+\DoxyCodeLine{00158     \textcolor{keywordtype}{void} add(DataType t) \{ fieldTypes.push\_back(t); \}}
+\DoxyCodeLine{00159     \textcolor{keyword}{friend} ostream\& operator <<(ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classRecord}{Record}}\& r) \{}
+\DoxyCodeLine{00160         DataType t = r.fieldTypes.size() < 256 ? DataType::STRUCT8 : (r.fieldTypes.size() < 65536 ? DataType::STRUCT16 : DataType::STRUCT32);}
+\DoxyCodeLine{00161         s << DataTypeNames[uint32\_t(t)];}
+\DoxyCodeLine{00162         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} x : r.fieldTypes) \{}
+\DoxyCodeLine{00163             s << DataTypeNames[uint32\_t(x)] << \textcolor{charliteral}{' '};}
+\DoxyCodeLine{00164         \}}
+\DoxyCodeLine{00165         \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{00166     \}}
+\DoxyCodeLine{00167 \};}
+
+\end{DoxyCode}

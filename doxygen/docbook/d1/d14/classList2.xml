@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classList2" xml:lang="en-US">
+<title>List2 Class Reference</title>
+<indexterm><primary>List2</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classList2_1a9cca796b8a29e9d86aa77b6fc17e7355"/><emphasis role="strong">List2</emphasis> (uint16_t size)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

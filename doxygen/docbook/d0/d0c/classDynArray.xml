@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classDynArray" xml:lang="en-US">
+<title>DynArray&lt; T &gt; Class Template Reference</title>
+<indexterm><primary>DynArray&lt; T &gt;</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classDynArray_1af91f35ae45509780c27d9e9eda49159e"/><emphasis role="strong">DynArray</emphasis> (uint32_t capacity)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDynArray_1a246ca492f2248fcdf72b7e1427870e79"/>void <emphasis role="strong">clear</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDynArray_1a61a30021b4ef4122cf30a38b6a1929f6"/><emphasis role="strong">DynArray</emphasis> (const <link linkend="_classDynArray">DynArray</link> &amp;orig)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDynArray_1ab27bf0f7d13465ffc51ac56229b461d9"/><link linkend="_classDynArray">DynArray</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classDynArray">DynArray</link> &amp;orig)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDynArray_1ab9dae997ea073ce2f7b2d6b6677d4825"/>void <emphasis role="strong">add</emphasis> (const T &amp;v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDynArray_1ab6101dca96c235d357613f695c38ad6c"/>T <emphasis role="strong">removeEnd</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDynArray_1a586887cb37c83ee692200c035f80bee1"/>const T &amp; <emphasis role="strong">operator[]</emphasis> (uint32_t i) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDynArray_1a694d38e03c27acedaf254b194d39d213"/>T &amp; <emphasis role="strong">operator[]</emphasis> (uint32_t i)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDynArray_1a06f08bfcc9be19ef53dbc33e00a2479b"/>uint32_t <emphasis role="strong">size</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDynArray_1a4723b5febdd8c0d100bad96ec17cce5c"/>const T &amp; <emphasis role="strong">last</emphasis> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classDynArray_1a7eee78f579b203772f2d24ec5ade4e87"/>std::ostream &amp; <emphasis role="strong">operator&lt;&lt;</emphasis> (std::ostream &amp;s, const <link linkend="_classDynArray">DynArray</link> &amp;d)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

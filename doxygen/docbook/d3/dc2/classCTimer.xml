@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classCTimer" xml:lang="en-US">
+<title>CTimer Class Reference</title>
+<indexterm><primary>CTimer</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCTimer_1a6234aac53e301116247e33254cd2f585"/>void <emphasis role="strong">reset</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCTimer_1a37966b853117e8f2ab474506110d4bc0"/>double <emphasis role="strong">elapsedSeconds</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCTimer_1ad9e59bb172adb523bbd59efef32b82cd"/>double <emphasis role="strong">elapsedMillis</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCTimer_1aace84ba985f777c76407e1e20c98a211"/>double <emphasis role="strong">elapsedMicros</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCTimer_1ace19492afb03a8a1a47d22da4befc295"/>double <emphasis role="strong">elapsedNanos</emphasis> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

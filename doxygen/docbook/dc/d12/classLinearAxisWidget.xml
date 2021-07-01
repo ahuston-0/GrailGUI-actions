@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classLinearAxisWidget" xml:lang="en-US">
+<title>LinearAxisWidget Class Reference</title>
+<indexterm><primary>LinearAxisWidget</primary></indexterm>
+<para>Inheritance diagram for LinearAxisWidget:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dc/d12/classLinearAxisWidget.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classLinearAxisWidget_1a9572d3e5fcb3bf807975ffb24d27649e"/><emphasis role="strong">LinearAxisWidget</emphasis> (<link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, double x, double y, double w, double h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classLinearAxisWidget_1a794cb1bfa4f8da359aabaabecc04172c"/>void <emphasis role="strong">setBounds</emphasis> (double minBound, double maxBound) override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classLinearAxisWidget_1a509460fc64f35ac6ef743b6349fb8125"/>void <emphasis role="strong">setTickInterval</emphasis> (double tickInterval) override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classLinearAxisWidget_1a3d78bc2d08c1a0a16756a4ad2056de82"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classRectangle" xml:lang="en-US">
+<title>Rectangle Class Reference</title>
+<indexterm><primary>Rectangle</primary></indexterm>
+<para>Inheritance diagram for Rectangle:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../de/d00/classRectangle.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classRectangle_1a2546c3d61e8936ef5a94df301118627f"/><emphasis role="strong">Rectangle</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, float x, float y, float width, float height, <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRectangle_1abf4221136603aee1830c641c39f45934"/>void <emphasis role="strong">initIndices</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRectangle_1ad3d1c3e66572c594fa81afae53630ef0"/>void <emphasis role="strong">render</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

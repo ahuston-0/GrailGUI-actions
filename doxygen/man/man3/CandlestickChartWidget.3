@@ -1,0 +1,47 @@
+.TH "CandlestickChartWidget" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CandlestickChartWidget
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBWidget2D\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCandlestickChartWidget\fP (\fBStyledMultiShape2D\fP *m, \fBMultiText\fP *t, float x, float y, float w, float h, const std::string &title, const \fBStyle\fP *titleStyle, const \fBStyle\fP *barStyle, float min, float max, float maxMultiplier, float relativeSpace, int tickThicknessStart, int tickThicknessEnd, float tickSize, float tickStart, \fBScale\fP *yAxis)"
+.br
+.ti -1c
+.RI "\fBCandlestickChartWidget\fP (\fBStyledMultiShape2D\fP *m, \fBMultiText\fP *t, float x, float y, float w, float h)"
+.br
+.ti -1c
+.RI "\fBCandlestickChartWidget\fP (\fBStyledMultiShape2D\fP *m, \fBMultiText\fP *t, float x, float y, float w, float h, const std::vector< float > &b)"
+.br
+.ti -1c
+.RI "void \fBsetMinMax\fP (float min, float max)"
+.br
+.ti -1c
+.RI "void \fBsetAxisScale\fP (\fBScale\fP *yAxis)"
+.br
+.ti -1c
+.RI "void \fBsetTitleStyle\fP (const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBchart\fP (const std::vector< float > &b, int rulerInterval, int dataPointsPerBar)"
+.br
+.ti -1c
+.RI "void \fBsetTitle\fP (const std::string &s)"
+.br
+.ti -1c
+.RI "void \fBinit\fP () override"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

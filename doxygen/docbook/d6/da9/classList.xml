@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classList" xml:lang="en-US">
+<title>List&lt; T &gt; Class Template Reference</title>
+<indexterm><primary>List&lt; T &gt;</primary></indexterm>
+<para>Inheritance diagram for List&lt; T &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d6/da9/classList.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classList_1a9ca3ad27b5b07a99d1ab1ba46209a78f"/><emphasis role="strong">List</emphasis> (uint32_t size=16)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classList_1aa2811000ce2ca166e57e2a6900bb72e3"/>DataType <emphasis role="strong">getDataType</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classList_1a1961355e61f9a90805fd3832defce56f"/>void <emphasis role="strong">add</emphasis> (const T &amp;e)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classList_1ae70ae36321e08e892c76991aa6d595c1"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classList_1ad9582c8dc66d5d972d02799dc76f0749"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classList_1a3e7289ea7eb05edf8677b57241766cc4"/>void <emphasis role="strong">writeMeta</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classList_1a587a1403049c75ab75c28f8d9cac9eb2"/>void <emphasis role="strong">read</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;buf)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classList_1ab971eb5c7bbc23781451eeb6aa0fbda1"/><link linkend="_classXDLIterator">XDLIterator</link> * <emphasis role="strong">createIterator</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classList_1ad34a2c931902c7ff64aa30578f61eed3"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classCSRGraph" xml:lang="en-US">
+<title>CSRGraph&lt; VertexIndex_t, EdgeIndex_t, Weight_t &gt; Class Template Reference</title>
+<indexterm><primary>CSRGraph&lt; VertexIndex_t, EdgeIndex_t, Weight_t &gt;</primary></indexterm>
+<para>Inheritance diagram for CSRGraph&lt; VertexIndex_t, EdgeIndex_t, Weight_t &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d3/dfd/classCSRGraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structCSRGraph_1_1VertexCount">VertexCount</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCSRGraph_1a894ec6ae8299fec3b9663a4ad55a2ee7"/>typedef void(* <emphasis role="strong">FuncVert</emphasis>) (uint32_t src, uint32_t dest)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCSRGraph_1a3eb8817e2ff85b5c92ef2871fea10709"/><emphasis role="strong">CSRGraph</emphasis> (const <link linkend="_classCSRGraph">CSRGraph</link> &amp;orig)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1a05e10af6b3f8931b014cf9b87ab11b73"/><link linkend="_classCSRGraph">CSRGraph</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classCSRGraph">CSRGraph</link> &amp;orig)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1afa04fbc4ef2d4ab909065d765ab040ba"/>uint32_t <emphasis role="strong">getV</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1a3a706e81a26a62f0a7e6c9c3198cde4a"/>uint64_t <emphasis role="strong">getE</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1a7e161ca1c3482133624bc723d46ff6c1"/>Weight_t <emphasis role="strong">getW</emphasis> (VertexIndex_t src, VertexIndex_t dest) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1a0c1a5ec42ecf60ad9df7cc7b65443773"/>bool <emphasis role="strong">isAdjacent</emphasis> (VertexIndex_t src, VertexIndex_t dest) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1af96dca57812792afc62e6c0d18d22a42"/>void <emphasis role="strong">getEdge</emphasis> (EdgeIndex_t i, VertexIndex_t *v1, VertexIndex_t *v2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1af61f9c5bab0ee71f3f438046a0142424"/>VertexIndex_t <emphasis role="strong">countAdjacencies</emphasis> (VertexIndex_t v)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1aa789f4b6c30878bf844ec31609fbf8d2"/><emphasis role="strong">CSRGraph</emphasis> (const char csrBeginName[], const char csrAdjName[], const char weightName[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1ad1a135d870d8b39456cab375f7bd3768"/>void <emphasis role="strong">dfs</emphasis> (VertexIndex_t v, FuncVert f)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1aaa827595c26ef534a1c3601550fd8030"/>void <emphasis role="strong">bfs</emphasis> (uint32_t v, FuncVert f)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1ac922ec570e6055ab139fafec4e52c9d9"/>uint32_t * <emphasis role="strong">computeHistogram</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1a8b41d6354564533d334f7f61bea57474"/>void <emphasis role="strong">printHistogram</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1a3d91b61f43f96c63a7b1a6d4245c53f6"/>const VertexIndex_t * <emphasis role="strong">group</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1a70b9ebbfea66c887f2d8cf01134b54c1"/>void <emphasis role="strong">cluster</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCSRGraph_1adab5bba31b3889fba788c29a50fd6cb8"/>static bool <emphasis role="strong">sortDescCount</emphasis> (const <link linkend="_structCSRGraph_1_1VertexCount">VertexCount</link> &amp;a, const <link linkend="_structCSRGraph_1_1VertexCount">VertexCount</link> &amp;b)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCSRGraph_1a537aa611129f51e8564818c52d82f9d9"/>VertexIndex_t <emphasis role="strong">startIndexLen</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1ae399f0f883bed709ccca61a6440be169"/>EdgeIndex_t <emphasis role="strong">adjLen</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1ac460f09e3bac30c936cede872fc13b9d"/>EdgeIndex_t <emphasis role="strong">weightLen</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1a21c085fb092aa28145c527b0fe2a91b1"/>EdgeIndex_t * <emphasis role="strong">startIndex</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1adc288460dd32df81ae14453b45414f7d"/>VertexIndex_t * <emphasis role="strong">adjacency</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCSRGraph_1a123833c4c148b2b1abea961a39095574"/>Weight_t * <emphasis role="strong">weight</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

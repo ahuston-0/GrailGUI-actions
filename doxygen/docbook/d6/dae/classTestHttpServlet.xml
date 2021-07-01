@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classTestHttpServlet" xml:lang="en-US">
+<title>TestHttpServlet Class Reference</title>
+<indexterm><primary>TestHttpServlet</primary></indexterm>
+<para>Inheritance diagram for TestHttpServlet:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d6/dae/classTestHttpServlet.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classTestHttpServlet_1a94fc42f9fb13827e9bf5df6f26a7a086"/>void <emphasis role="strong">request</emphasis> (<link linkend="_classHTTPRequest">HTTPRequest</link> &amp;req)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

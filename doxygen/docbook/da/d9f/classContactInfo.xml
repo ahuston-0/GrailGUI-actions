@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classContactInfo" xml:lang="en-US">
+<title>ContactInfo Class Reference</title>
+<indexterm><primary>ContactInfo</primary></indexterm>
+<para>Inheritance diagram for ContactInfo:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../da/d9f/classContactInfo.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classContactInfo_1a028d364f266bc05c54bc37e6628ca93b"/><emphasis role="strong">ContactInfo</emphasis> (const <link linkend="_classAddress">Address</link> &amp;address, const <link linkend="_classPhone">Phone</link> &amp;phone, const <link linkend="_classEmail">Email</link> &amp;email)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classContactInfo_1a1453530c6568fd506984d84551fc7ef0"/>DataType <emphasis role="strong">getDataType</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classContactInfo_1ad471cb86d30a1ad39ef37a3fa4816235"/>uint32_t <emphasis role="strong">size</emphasis> () const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classContactInfo_1a2afc2935812547a33bc57324b9d7bb96"/>void <emphasis role="strong">write</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;b) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classContactInfo_1a7589d982cb723c0fa30597a8118bbf4b"/>void <emphasis role="strong">writeMeta</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;b) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classContactInfo_1a888b7d4ca7aad1ad2e7cc9dd4a5aa549"/>void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classContactInfo_1a780165a93229b4c57560ae57914ab369"/>void <emphasis role="strong">format</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;binaryIn, <link linkend="_classBuffer">Buffer</link> &amp;asciiOut, const char fmt[]) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

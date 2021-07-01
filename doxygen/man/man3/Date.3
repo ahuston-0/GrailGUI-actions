@@ -1,0 +1,87 @@
+.TH "Date" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Date
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBXDLType\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDate\fP (\fBJulianDate\fP jd)"
+.br
+.ti -1c
+.RI "\fBoperator JulianDate\fP () const"
+.br
+.ti -1c
+.RI "\fBDate\fP (int32_t year, uint32_t month, uint32_t day)"
+.br
+.ti -1c
+.RI "\fBDate\fP \fBoperator+\fP (int32_t days) const"
+.br
+.ti -1c
+.RI "\fBDate\fP \fBoperator\-\fP (int32_t days) const"
+.br
+.ti -1c
+.RI "\fBDate\fP \fBoperator+=\fP (int32_t days)"
+.br
+.ti -1c
+.RI "\fBDate\fP \fBoperator\-=\fP (int32_t days)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (\fBDate\fP d) const"
+.br
+.ti -1c
+.RI "int32_t \fBgetYear\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetMonth\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetDay\fP () const"
+.br
+.ti -1c
+.RI "\fBDate\fP (int32_t year, uint8_t month, uint8_t day)"
+.br
+.ti -1c
+.RI "int32_t \fBgetYear\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetMonth\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetDay\fP () const"
+.br
+.ti -1c
+.RI "DataType \fBgetDataType\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBsize\fP () const override"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBBuffer\fP &buf) const override"
+.br
+.ti -1c
+.RI "void \fBdisplay\fP (\fBBuffer\fP &binaryIn, \fBBuffer\fP &asciiOut) const"
+.br
+.ti -1c
+.RI "void \fBformat\fP (\fBBuffer\fP &binaryIn, \fBBuffer\fP &asciiOut, const char fmt[]) const"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "int32_t \fBoperator\-\fP (\fBDate\fP d1, \fBDate\fP d2)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

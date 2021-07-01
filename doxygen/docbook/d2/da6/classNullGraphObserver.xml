@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classNullGraphObserver" xml:lang="en-US">
+<title>NullGraphObserver Class Reference</title>
+<indexterm><primary>NullGraphObserver</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classNullGraphObserver_1ab642d02e4ef406f44a62988b238020d2"/>void <emphasis role="strong">addVert</emphasis> (uint32_t index, float x, float y, uint8_t initialVertColor, std::vector&lt; <link linkend="_structPoint">Point</link> &gt; &amp;)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classNullGraphObserver_1a23723fcb22d6749e16887a58aa2a7f28"/>void <emphasis role="strong">addEdge</emphasis> (uint64_t i, float x1, float y1, float x2, float y2, uint32_t initialEdgeColor)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classNullGraphObserver_1a2c61d9f24efc487b47602ffa4e396092"/>void <emphasis role="strong">updateVert</emphasis> (uint32_t i, uint8_t colorVal)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classNullGraphObserver_1a21b031d01a3fcd48164d8b00fc5af5c6"/>void <emphasis role="strong">updateEdge</emphasis> (uint64_t j, uint8_t colorVal)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

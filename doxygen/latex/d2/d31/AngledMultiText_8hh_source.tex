@@ -1,0 +1,35 @@
+\hypertarget{AngledMultiText_8hh_source}{}\doxysection{Angled\+Multi\+Text.\+hh}
+\label{AngledMultiText_8hh_source}\index{src/opengl/AngledMultiText.hh@{src/opengl/AngledMultiText.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00004 \textcolor{comment}{//\#include <glm/gtc/matrix\_transform.hpp>}}
+\DoxyCodeLine{00005 \textcolor{comment}{//}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}opengl/MultiText.hh"{}}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{\Hypertarget{AngledMultiText_8hh_source_l00008}\mbox{\hyperlink{classAngledMultiText}{00008}} \textcolor{keyword}{class }\mbox{\hyperlink{classAngledMultiText}{AngledMultiText}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMultiText}{MultiText}} \{}
+\DoxyCodeLine{00009  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010   glm::mat4 transform;}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013   \textcolor{comment}{// TODO: allows 2d text on a 2d plane}}
+\DoxyCodeLine{00014   \mbox{\hyperlink{classAngledMultiText}{AngledMultiText}}(\mbox{\hyperlink{classCanvas}{Canvas}} *c, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}} *s, \textcolor{keywordtype}{float} angle, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y)}
+\DoxyCodeLine{00015       : \mbox{\hyperlink{classMultiText}{MultiText}}(c, s), transform(1.0f) \{}
+\DoxyCodeLine{00016     transform = glm::translate(transform, glm::vec3(x, y, 0));}
+\DoxyCodeLine{00017     transform = glm::rotate(transform, angle, glm::vec3(0, 0, -\/1));}
+\DoxyCodeLine{00018   \}}
+\DoxyCodeLine{00019   \textcolor{comment}{// void printTransform() \{}}
+\DoxyCodeLine{00020   \textcolor{comment}{//   const float *m = \&transform[0][0];}}
+\DoxyCodeLine{00021   \textcolor{comment}{//   std::cout << m[0] << '\(\backslash\)t' << m[1] << '\(\backslash\)t' << m[2] << '\(\backslash\)t' << m[3] << '\(\backslash\)n'}}
+\DoxyCodeLine{00022   \textcolor{comment}{//             << m[4] << '\(\backslash\)t' << m[5] << '\(\backslash\)t' << m[6] << '\(\backslash\)t' << m[7] << '\(\backslash\)n'}}
+\DoxyCodeLine{00023   \textcolor{comment}{//             << m[8] << '\(\backslash\)t' << m[9] << '\(\backslash\)t' << m[10] << '\(\backslash\)t' << m[11] <<}}
+\DoxyCodeLine{00024   \textcolor{comment}{//             '\(\backslash\)n'}}
+\DoxyCodeLine{00025   \textcolor{comment}{//             << m[12] << '\(\backslash\)t' << m[13] << '\(\backslash\)t' << m[14] << '\(\backslash\)t' << m[15]}}
+\DoxyCodeLine{00026   \textcolor{comment}{//             << '\(\backslash\)n';}}
+\DoxyCodeLine{00027   \textcolor{comment}{// \}}}
+\DoxyCodeLine{00028   \textcolor{keywordtype}{void} render() \textcolor{keyword}{override};}
+\DoxyCodeLine{00029 \};}
+
+\end{DoxyCode}

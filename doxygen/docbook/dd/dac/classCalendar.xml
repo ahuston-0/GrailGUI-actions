@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classCalendar" xml:lang="en-US">
+<title>Calendar Class Reference</title>
+<indexterm><primary>Calendar</primary></indexterm>
+<para>Inheritance diagram for Calendar:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dd/dac/classCalendar.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCalendar_1acb7561c696854c606f8341b2372ebb1f"/><emphasis role="strong">Calendar</emphasis> (const char filename[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCalendar_1acb7561c696854c606f8341b2372ebb1f"/><emphasis role="strong">Calendar</emphasis> (const char filename[])</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

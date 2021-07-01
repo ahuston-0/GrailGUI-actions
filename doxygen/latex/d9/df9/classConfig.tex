@@ -1,0 +1,72 @@
+\hypertarget{classConfig}{}\doxysection{Config Class Reference}
+\label{classConfig}\index{Config@{Config}}
+Inheritance diagram for Config\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d9/df9/classConfig}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConfig_a186c5e7914a55602e79e5cfbc3ea592d}\label{classConfig_a186c5e7914a55602e79e5cfbc3ea592d}} 
+enum class {\bfseries Type} \{ \newline
+{\bfseries U16}
+, {\bfseries U32}
+, {\bfseries U64}
+, {\bfseries I16}
+, \newline
+{\bfseries I32}
+, {\bfseries I64}
+, {\bfseries F64}
+, {\bfseries F32}
+, \newline
+{\bfseries BOOL}
+, {\bfseries STRING}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConfig_a4b87c7f37165573e585590465258e36a}\label{classConfig_a4b87c7f37165573e585590465258e36a}} 
+void {\bfseries load} (const string \&filename)
+\item 
+\mbox{\Hypertarget{classConfig_add19437c9b362f7a34171bf843c4accc}\label{classConfig_add19437c9b362f7a34171bf843c4accc}} 
+void {\bfseries save} (const string \&filename)
+\item 
+\mbox{\Hypertarget{classConfig_a1b6d255b60bf70e8a236af7326ab0a4f}\label{classConfig_a1b6d255b60bf70e8a236af7326ab0a4f}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries set} (const string \&name, T val)
+\item 
+\mbox{\Hypertarget{classConfig_a367e50786eea93f41acc2b63a5169511}\label{classConfig_a367e50786eea93f41acc2b63a5169511}} 
+uint16\+\_\+t {\bfseries get\+UInt16} (const string \&name) const
+\item 
+\mbox{\Hypertarget{classConfig_af335fcea8050cf4b104b0d897e9b4c75}\label{classConfig_af335fcea8050cf4b104b0d897e9b4c75}} 
+uint32\+\_\+t {\bfseries get\+UInt32} (const string \&name) const
+\item 
+\mbox{\Hypertarget{classConfig_aafa56302e54d6082a0c6403868dd91e4}\label{classConfig_aafa56302e54d6082a0c6403868dd91e4}} 
+uint64\+\_\+t {\bfseries get\+UInt64} (const string \&name) const
+\item 
+\mbox{\Hypertarget{classConfig_ac2797226a9b3e10dfd022bfd8e1eaf5d}\label{classConfig_ac2797226a9b3e10dfd022bfd8e1eaf5d}} 
+int16\+\_\+t {\bfseries get\+Int16} (const string \&name) const
+\item 
+\mbox{\Hypertarget{classConfig_ab7f61e5728aefed0c2ce2af202b8090d}\label{classConfig_ab7f61e5728aefed0c2ce2af202b8090d}} 
+int32\+\_\+t {\bfseries get\+Int32} (const string \&name) const
+\item 
+\mbox{\Hypertarget{classConfig_ac11458ab7d8459e992fccc7633be36e5}\label{classConfig_ac11458ab7d8459e992fccc7633be36e5}} 
+int64\+\_\+t {\bfseries get\+Int64} (const string \&name) const
+\item 
+\mbox{\Hypertarget{classConfig_a607b2c1382e9cc54033619c66e2b30ef}\label{classConfig_a607b2c1382e9cc54033619c66e2b30ef}} 
+bool {\bfseries get\+Bool} (const string \&name) const
+\item 
+\mbox{\Hypertarget{classConfig_a36144302aae80d2daddf0b0014ecd788}\label{classConfig_a36144302aae80d2daddf0b0014ecd788}} 
+double {\bfseries get\+Double} (const string \&name) const
+\item 
+\mbox{\Hypertarget{classConfig_af1018e55292474c5bb91eb7a42ec7232}\label{classConfig_af1018e55292474c5bb91eb7a42ec7232}} 
+string {\bfseries get\+String} (const string \&name) const
+\item 
+\mbox{\Hypertarget{classConfig_a8139b62f58ad8f72698a64b5309dedd4}\label{classConfig_a8139b62f58ad8f72698a64b5309dedd4}} 
+void {\bfseries mandatory} (int count...)
+\item 
+\mbox{\Hypertarget{classConfig_a9e3ae6c91040e5694ac3ecb47ec99405}\label{classConfig_a9e3ae6c91040e5694ac3ecb47ec99405}} 
+void {\bfseries optional} (int count...)
+\end{DoxyCompactItemize}

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classRecord" xml:lang="en-US">
+<title>Record Class Reference</title>
+<indexterm><primary>Record</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classRecord_1a4f7a95203b5fbcfeb1a5abe64a41fbee"/>void <emphasis role="strong">add</emphasis> (DataType t)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classRecord_1afa08e8b290559f703e659fd79525846d"/>ostream &amp; <emphasis role="strong">operator&lt;&lt;</emphasis> (ostream &amp;s, const <link linkend="_classRecord">Record</link> &amp;r)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

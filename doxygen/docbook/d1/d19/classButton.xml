@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classButton" xml:lang="en-US">
+<title>Button Class Reference</title>
+<indexterm><primary>Button</primary></indexterm>
+<para>Inheritance diagram for Button:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d1/d19/classButton.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classButton_1a3bcdce2e9b2a8c3cc70d804244ace7ac"/><emphasis role="strong">Button</emphasis> (float x, float y, float width, float height)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classButton_1a3bcee333474dfe20a2f30cc0b4f9dbba"/>void <emphasis role="strong">init</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classButton_1a2f9bf0d718689fb1916a9975002c19f3"/>void <emphasis role="strong">updateButton</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classButton_1add4daea65a908027aa5a1593305b9656"/>void <emphasis role="strong">render</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

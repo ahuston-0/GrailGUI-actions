@@ -1,0 +1,48 @@
+.TH "IPV4Socket" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IPV4Socket
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSocket\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIPV4Socket\fP (const char *addr, uint16_t port)"
+.br
+.ti -1c
+.RI "\fBIPV4Socket\fP (uint16_t port)"
+.br
+.ti -1c
+.RI "void \fBlistenOnPort\fP ()"
+.br
+.ti -1c
+.RI "void \fBwait\fP ()"
+.br
+.ti -1c
+.RI "void \fBsend\fP (const char *command)"
+.br
+.ti -1c
+.RI "void \fBsend\fP (uint32_t reqn)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBsend\fP (socket_t sckt, const char *buf, int size, int flags)"
+.br
+.ti -1c
+.RI "static int \fBrecv\fP (socket_t sckt, const char *buf, int size, int flags)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

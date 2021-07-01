@@ -1,0 +1,39 @@
+\hypertarget{classClient}{}\doxysection{Client$<$ Socket\+Impl, Protocol\+Impl $>$ Class Template Reference}
+\label{classClient}\index{Client$<$ SocketImpl, ProtocolImpl $>$@{Client$<$ SocketImpl, ProtocolImpl $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classClient_aaa27f5baee3e954f1bea47d6698a2ad3}\label{classClient_aaa27f5baee3e954f1bea47d6698a2ad3}} 
+{\bfseries Client} (const char addr\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classClient_a5abbdbe365f193e705896fde511f26f9}\label{classClient_a5abbdbe365f193e705896fde511f26f9}} 
+{\bfseries Client} (const \mbox{\hyperlink{classClient}{Client}} \&)=delete
+\item 
+\mbox{\Hypertarget{classClient_a0661b151691c16938a885e287eee10fd}\label{classClient_a0661b151691c16938a885e287eee10fd}} 
+\mbox{\hyperlink{classClient}{Client}} \& {\bfseries operator=} (const \mbox{\hyperlink{classClient}{Client}} \&)=delete
+\item 
+\mbox{\Hypertarget{classClient_a1c054ac1d323f62bf842e7b9ba5b99cc}\label{classClient_a1c054ac1d323f62bf842e7b9ba5b99cc}} 
+void {\bfseries connect} (const char addr\mbox{[}$\,$\mbox{]})
+\item 
+$<$ T $>$ void \mbox{\hyperlink{classClient_aee5ee5fb1cefb83dfa096b0813473257}{write}} (const T \&data)
+\item 
+\mbox{\Hypertarget{classClient_acbc5bbece87fc717e7f2619d753f9a78}\label{classClient_acbc5bbece87fc717e7f2619d753f9a78}} 
+void {\bfseries send} ()
+\item 
+\mbox{\Hypertarget{classClient_a52b5d528f6a8fcc21cf4fcd505421e60}\label{classClient_a52b5d528f6a8fcc21cf4fcd505421e60}} 
+void {\bfseries send\+And\+Waitfor\+Response} ()
+\item 
+\mbox{\Hypertarget{classClient_a9bb51938f1cf117f236804b1a7c21005}\label{classClient_a9bb51938f1cf117f236804b1a7c21005}} 
+void {\bfseries send\+And\+Keep\+Open} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classClient_aee5ee5fb1cefb83dfa096b0813473257}\label{classClient_aee5ee5fb1cefb83dfa096b0813473257}} 
+\index{Client$<$ SocketImpl, ProtocolImpl $>$@{Client$<$ SocketImpl, ProtocolImpl $>$}!write@{write}}
+\index{write@{write}!Client$<$ SocketImpl, ProtocolImpl $>$@{Client$<$ SocketImpl, ProtocolImpl $>$}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily template$<$typename Socket\+Impl , typename Protocol\+Impl $>$ \\
+$<$T$>$ void \mbox{\hyperlink{classClient}{Client}}$<$ Socket\+Impl, Protocol\+Impl $>$\+::write (\begin{DoxyParamCaption}\item[{const T \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Write data into the out buffer 

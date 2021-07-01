@@ -1,0 +1,29 @@
+\hypertarget{Server_8hh_source}{}\doxysection{Server.\+hh}
+\label{Server_8hh_source}\index{src/csp/Server.hh@{src/csp/Server.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{comment}{//}}
+\DoxyCodeLine{00002 \textcolor{comment}{// Created by dkruger on 5/16/18.}}
+\DoxyCodeLine{00003 \textcolor{comment}{//}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}csp/csp.hh"{}}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}csp/IPV4Socket.hh"{}}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}csp/HTTPRequest.hh"{}}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{keyword}{template}<\textcolor{keyword}{typename} SocketImpl, \textcolor{keyword}{typename} HandlerImpl>}
+\DoxyCodeLine{\Hypertarget{Server_8hh_source_l00010}\mbox{\hyperlink{classServer}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{classServer}{Server}} \{}
+\DoxyCodeLine{00011 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012     SocketImpl s;}
+\DoxyCodeLine{00013     HandlerImpl req;}
+\DoxyCodeLine{00014 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015     \mbox{\hyperlink{classServer}{Server}}(\textcolor{keywordtype}{int} port) : s(port) \{}
+\DoxyCodeLine{00016         s.attach(req);}
+\DoxyCodeLine{00017         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00018             s.wait();}
+\DoxyCodeLine{00019         \} \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} \mbox{\hyperlink{classEx}{Ex}}\& e) \{}
+\DoxyCodeLine{00020             cerr << e << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00021         \}}
+\DoxyCodeLine{00022     \}}
+\DoxyCodeLine{00023 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,106 @@
+.TH "XDLType" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XDLType
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBBool\fP, \fBBuiltinType\fP, \fBCompoundType\fP, \fBContactInfo\fP, \fBDate\fP, \fBEmail\fP, \fBF32\fP, \fBF64\fP, \fBGenericList\fP, \fBI128\fP, \fBI16\fP, \fBI24\fP, \fBI256\fP, \fBI32\fP, \fBI64\fP, \fBI8\fP, \fBJulianDate\fP, \fBList< T >\fP, \fBRegex\fP, \fBString16\fP, \fBString32\fP, \fBString64\fP, \fBString8\fP, \fBTimestamp\fP, \fBTypeDef\fP, \fBU128\fP, \fBU16\fP, \fBU24\fP, \fBU256\fP, \fBU32\fP, \fBU64\fP, \fBU8\fP, \fBUser\fP, and \fBXDLRaw\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBXDLType\fP (const std::string &typeName)"
+.br
+.ti -1c
+.RI "\fBXDLType\fP (DataType t)"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBBuffer\fP &b) const =0"
+.br
+.ti -1c
+.RI "virtual void \fBwriteMeta\fP (\fBBuffer\fP &buf) const"
+.br
+.ti -1c
+.RI "virtual uint32_t \fBsize\fP () const =0"
+.br
+.ti -1c
+.RI "virtual DataType \fBgetDataType\fP () const =0"
+.br
+.ti -1c
+.RI "const std::string & \fBgetTypeName\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBXDLIterator\fP * \fBcreateIterator\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBdisplay\fP (\fBBuffer\fP &binaryIn, \fBBuffer\fP &asciiOut) const"
+.br
+.ti -1c
+.RI "void \fBformat\fP (\fBBuffer\fP &binaryIn, \fBBuffer\fP &asciiOut, const char fmt[]) const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBclassInit\fP ()"
+.br
+.ti -1c
+.RI "static void \fBclassCleanup\fP ()"
+.br
+.ti -1c
+.RI "static uint32_t \fBcomputeNameOffset\fP (const std::string &typeName)"
+.br
+.ti -1c
+.RI "static uint32_t \fBcomputeNameOffset\fP (DataType t)"
+.br
+.ti -1c
+.RI "static const \fBXDLType\fP * \fBgetBuiltinType\fP (DataType dt)"
+.br
+.ti -1c
+.RI "static void \fBreadMeta\fP (\fBXDLCompiler\fP *compiler, \fBBuffer\fP &in, uint32_t count, \fBStruct\fP *s)"
+.br
+.ti -1c
+.RI "static const \fBStruct\fP * \fBread\fP (\fBBuffer\fP &in)"
+.br
+.ti -1c
+.RI "static DataType \fBreadType\fP (\fBBuffer\fP &in)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBaddType\fP (const \fBXDLType\fP *type)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBnameOffset\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const std::string \fBempty\fP = ''"
+.br
+.ti -1c
+.RI "static \fBDynArray\fP< const \fBXDLType\fP * > \fBtypes\fP"
+.br
+.ti -1c
+.RI "static \fBDynArray\fP< std::string > \fBtypeNames\fP"
+.br
+.ti -1c
+.RI "static std::unordered_map< std::string, uint32_t > \fBbyName\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

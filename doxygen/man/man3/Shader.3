@@ -1,0 +1,152 @@
+.TH "Shader" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Shader
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBShader\fP (const char shaderName[], const char vertexPath[], const char fragmentPath[], const char geometryPath[]=nullptr)"
+.br
+.ti -1c
+.RI "void \fBcleanup\fP ()"
+.br
+.ti -1c
+.RI "void \fBuse\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetBool\fP (const std::string &name, bool value) const"
+.br
+.ti -1c
+.RI "void \fBsetBool\fP (const char name[], bool value) const"
+.br
+.ti -1c
+.RI "void \fBsetBool\fP (int pos, bool value) const"
+.br
+.ti -1c
+.RI "void \fBsetInt\fP (const std::string &name, int value) const"
+.br
+.ti -1c
+.RI "void \fBsetInt\fP (const char name[], int value) const"
+.br
+.ti -1c
+.RI "void \fBsetInt\fP (int pos, int value) const"
+.br
+.ti -1c
+.RI "void \fBsetFloat\fP (const std::string &name, float value) const"
+.br
+.ti -1c
+.RI "void \fBsetFloat\fP (const char name[], float value) const"
+.br
+.ti -1c
+.RI "void \fBsetFloat\fP (int pos, float value) const"
+.br
+.ti -1c
+.RI "void \fBsetVec2\fP (const std::string &name, const glm::vec2 &value) const"
+.br
+.ti -1c
+.RI "void \fBsetVec2\fP (const char name[], const glm::vec2 &value) const"
+.br
+.ti -1c
+.RI "void \fBsetVec2\fP (int pos, const glm::vec2 &value) const"
+.br
+.ti -1c
+.RI "void \fBsetVec2\fP (const std::string &name, float x, float y) const"
+.br
+.ti -1c
+.RI "void \fBsetVec2\fP (const char name[], float x, float y) const"
+.br
+.ti -1c
+.RI "void \fBsetVec2\fP (int pos, float x, float y) const"
+.br
+.ti -1c
+.RI "void \fBsetVec3\fP (const std::string &name, const glm::vec3 &value) const"
+.br
+.ti -1c
+.RI "void \fBsetVec3\fP (const char name[], const glm::vec3 &value) const"
+.br
+.ti -1c
+.RI "void \fBsetVec3\fP (int pos, const glm::vec3 &value) const"
+.br
+.ti -1c
+.RI "void \fBsetVec3\fP (const std::string &name, float x, float y, float z) const"
+.br
+.ti -1c
+.RI "void \fBsetVec3\fP (const char name[], float x, float y, float z) const"
+.br
+.ti -1c
+.RI "void \fBsetVec3\fP (int pos, float x, float y, float z) const"
+.br
+.ti -1c
+.RI "void \fBsetVec4\fP (const std::string &name, const glm::vec4 &value) const"
+.br
+.ti -1c
+.RI "void \fBsetVec4\fP (const char name[], const glm::vec4 &value) const"
+.br
+.ti -1c
+.RI "void \fBsetVec4\fP (int pos, const glm::vec4 &value) const"
+.br
+.ti -1c
+.RI "void \fBsetVec4\fP (const std::string &name, float x, float y, float z, float w)"
+.br
+.ti -1c
+.RI "void \fBsetVec4\fP (const char name[], float x, float y, float z, float w)"
+.br
+.ti -1c
+.RI "void \fBsetVec4\fP (int pos, float x, float y, float z, float w)"
+.br
+.ti -1c
+.RI "void \fBsetMat2\fP (const std::string &name, const glm::mat2 &mat) const"
+.br
+.ti -1c
+.RI "void \fBsetMat2\fP (const char name[], const glm::mat2 &mat) const"
+.br
+.ti -1c
+.RI "void \fBsetMat2\fP (int pos, const glm::mat2 &mat) const"
+.br
+.ti -1c
+.RI "void \fBsetMat3\fP (const std::string &name, const glm::mat3 &mat) const"
+.br
+.ti -1c
+.RI "void \fBsetMat3\fP (const char name[], const glm::mat3 &mat) const"
+.br
+.ti -1c
+.RI "void \fBsetMat3\fP (int pos, const glm::mat3 &mat) const"
+.br
+.ti -1c
+.RI "void \fBsetMat4\fP (const std::string &name, const glm::mat4 &mat) const"
+.br
+.ti -1c
+.RI "void \fBsetMat4\fP (const char name[], const glm::mat4 &mat) const"
+.br
+.ti -1c
+.RI "void \fBsetMat4\fP (int pos, const glm::mat4 &mat) const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetID\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBsetDir\fP (const std::string &shaderDir)"
+.br
+.ti -1c
+.RI "static uint32_t \fBload\fP (const char shaderName[], const char vertRelPath[], const char fragRelPath[], const char geomRelPath[]=nullptr)"
+.br
+.ti -1c
+.RI "static \fBShader\fP * \fBuseShader\fP (uint32_t sh)"
+.br
+.ti -1c
+.RI "static void \fBcleanAll\fP ()"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

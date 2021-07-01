@@ -1,0 +1,63 @@
+\hypertarget{Renderer_8hh_source}{}\doxysection{Renderer.\+hh}
+\label{Renderer_8hh_source}\index{src/xdl/Renderer.hh@{src/xdl/Renderer.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include "{}opengl/Errcode.hh"{}}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include "{}xdl/std.hh"{}}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{comment}{/*}}
+\DoxyCodeLine{00005 \textcolor{comment}{    abstract class for any object that can take an XDL object and draw it}}
+\DoxyCodeLine{00006 \textcolor{comment}{    in OpenGL}}
+\DoxyCodeLine{00007 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{Renderer_8hh_source_l00008}\mbox{\hyperlink{classRenderer}{00008}} \textcolor{keyword}{class }\mbox{\hyperlink{classRenderer}{Renderer}} \{}
+\DoxyCodeLine{00009 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& in, MultiShape2d* m, \mbox{\hyperlink{classMultiText}{MultiText}}* t,}
+\DoxyCodeLine{00011                                              \textcolor{keywordtype}{float} x0, \textcolor{keywordtype}{float} y0, \textcolor{keywordtype}{float}* w, \textcolor{keywordtype}{float}* h) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{00012     \textcolor{keyword}{enum} Dir \{ UP, DOWN, LEFT, RIGHT\};}
+\DoxyCodeLine{00013     \textcolor{keywordtype}{void} update(Dir);}
+\DoxyCodeLine{00014 \};}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{\Hypertarget{Renderer_8hh_source_l00016}\mbox{\hyperlink{classU32Renderer}{00016}} \textcolor{keyword}{class }\mbox{\hyperlink{classU32Renderer}{U32Renderer}} : \textcolor{keyword}{public} \mbox{\hyperlink{classRenderer}{Renderer}} \{}
+\DoxyCodeLine{00017 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& in, MultiShape2d* m, \mbox{\hyperlink{classMultiText}{MultiText}}* t,}
+\DoxyCodeLine{00019                                              \textcolor{keywordtype}{float} x0, \textcolor{keywordtype}{float} y0, \textcolor{keywordtype}{float}* w, \textcolor{keywordtype}{float}* h) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00020 \};}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022 \textcolor{keyword}{class }\mbox{\hyperlink{classU64Renderer}{U64Renderer}} : \textcolor{keyword}{public} \mbox{\hyperlink{classRenderer}{Renderer}} \{}
+\DoxyCodeLine{00023 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& in, MultiShape2d* m, \mbox{\hyperlink{classMultiText}{MultiText}}* t,}
+\DoxyCodeLine{00025                                              \textcolor{keywordtype}{float} x0, \textcolor{keywordtype}{float} y0, \textcolor{keywordtype}{float}* w, \textcolor{keywordtype}{float}* h) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00026 \};}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028 \textcolor{keyword}{class }\mbox{\hyperlink{classF64Renderer}{F64Renderer}} : \textcolor{keyword}{public} \mbox{\hyperlink{classRenderer}{Renderer}} \{}
+\DoxyCodeLine{00029 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& in, MultiShape2d* m, \mbox{\hyperlink{classMultiText}{MultiText}}* t,}
+\DoxyCodeLine{00031                                              \textcolor{keywordtype}{float} x0, \textcolor{keywordtype}{float} y0, \textcolor{keywordtype}{float}* w, \textcolor{keywordtype}{float}* h) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00032 \};}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034 \textcolor{keyword}{class }\mbox{\hyperlink{classVerticalListRenderer}{VerticalListRenderer}} : \textcolor{keyword}{public} \mbox{\hyperlink{classRenderer}{Renderer}} \{}
+\DoxyCodeLine{00035 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& in, MultiShape2d* m, \mbox{\hyperlink{classMultiText}{MultiText}}* t,}
+\DoxyCodeLine{00037                                              \textcolor{keywordtype}{float} x0, \textcolor{keywordtype}{float} y0, \textcolor{keywordtype}{float}* w, \textcolor{keywordtype}{float}* h) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00038 \};}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040 \textcolor{keyword}{class }\mbox{\hyperlink{classObjectNameValueRenderer}{ObjectNameValueRenderer}} : \textcolor{keyword}{public} \mbox{\hyperlink{classRenderer}{Renderer}} \{}
+\DoxyCodeLine{00041 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& in, MultiShape2d* m, \mbox{\hyperlink{classMultiText}{MultiText}}* t,}
+\DoxyCodeLine{00043                                              \textcolor{keywordtype}{float} x0, \textcolor{keywordtype}{float} y0, \textcolor{keywordtype}{float}* w, \textcolor{keywordtype}{float}* h) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00044 \};}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046 \textcolor{keyword}{class }\mbox{\hyperlink{classObjectHorizontalRenderer}{ObjectHorizontalRenderer}} : \textcolor{keyword}{public} \mbox{\hyperlink{classRenderer}{Renderer}} \{}
+\DoxyCodeLine{00047 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& in, MultiShape2d* m, \mbox{\hyperlink{classMultiText}{MultiText}}* t,}
+\DoxyCodeLine{00049                                              \textcolor{keywordtype}{float} x0, \textcolor{keywordtype}{float} y0, \textcolor{keywordtype}{float}* w, \textcolor{keywordtype}{float}* h) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00050 \};}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057 }
+
+\end{DoxyCode}

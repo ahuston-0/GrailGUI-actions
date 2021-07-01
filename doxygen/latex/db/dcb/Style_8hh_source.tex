@@ -1,0 +1,77 @@
+\hypertarget{Style_8hh_source}{}\doxysection{Style.\+hh}
+\label{Style_8hh_source}\index{src/opengl/Style.hh@{src/opengl/Style.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{comment}{// temporary to fix compile issues}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}opengl/GLWinFonts.hh"{}}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{\Hypertarget{Style_8hh_source_l00008}\mbox{\hyperlink{classStyle}{00008}} \textcolor{keyword}{class }\mbox{\hyperlink{classStyle}{Style}} \{}
+\DoxyCodeLine{00009  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f;}
+\DoxyCodeLine{00011   glm::vec4 bg;}
+\DoxyCodeLine{00012   glm::vec4 fg;}
+\DoxyCodeLine{00013   \textcolor{keywordtype}{float} lineWidth;}
+\DoxyCodeLine{00014   \textcolor{keywordtype}{int} shaderIndex;}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017   \mbox{\hyperlink{classStyle}{Style}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fontFamily, \textcolor{keywordtype}{float} fontSize, \textcolor{keywordtype}{float} fontWeight, \textcolor{keywordtype}{float} bgRed,}
+\DoxyCodeLine{00018         \textcolor{keywordtype}{float} bgGreen, \textcolor{keywordtype}{float} bgBlue, \textcolor{keywordtype}{float} fgRed, \textcolor{keywordtype}{float} fgGreen, \textcolor{keywordtype}{float} fgBlue,}
+\DoxyCodeLine{00019         \textcolor{keywordtype}{int} shaderIndex = 0)}
+\DoxyCodeLine{00020       : f(lookup(fontFamily, fontSize, fontWeight)),}
+\DoxyCodeLine{00021         bg(bgRed, bgGreen, bgBlue, 1),}
+\DoxyCodeLine{00022         fg(fgRed, fgGreen, fgBlue, 1),}
+\DoxyCodeLine{00023         shaderIndex(shaderIndex),}
+\DoxyCodeLine{00024         lineWidth(1) \{\}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026   \mbox{\hyperlink{classStyle}{Style}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fontFamily, \textcolor{keywordtype}{float} fontSize, \textcolor{keywordtype}{float} fontWeight, \textcolor{keywordtype}{float} bgRed,}
+\DoxyCodeLine{00027         \textcolor{keywordtype}{float} bgGreen, \textcolor{keywordtype}{float} bgBlue, \textcolor{keywordtype}{float} bgAlpha, \textcolor{keywordtype}{float} fgRed, \textcolor{keywordtype}{float} fgGreen,}
+\DoxyCodeLine{00028         \textcolor{keywordtype}{float} fgBlue, \textcolor{keywordtype}{float} fgAlpha, \textcolor{keywordtype}{int} shaderIndex = 0)}
+\DoxyCodeLine{00029       : f(lookup(fontFamily, fontSize, fontWeight)),}
+\DoxyCodeLine{00030         bg(bgRed, bgGreen, bgBlue, bgAlpha),}
+\DoxyCodeLine{00031         fg(fgRed, fgGreen, fgBlue, fgAlpha),}
+\DoxyCodeLine{00032         shaderIndex(shaderIndex),}
+\DoxyCodeLine{00033         lineWidth(1) \{\}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035   \mbox{\hyperlink{classStyle}{Style}}(\textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* font, \textcolor{keywordtype}{float} bgRed, \textcolor{keywordtype}{float} bgGreen, \textcolor{keywordtype}{float} bgBlue, \textcolor{keywordtype}{float} fgRed,}
+\DoxyCodeLine{00036         \textcolor{keywordtype}{float} fgGreen, \textcolor{keywordtype}{float} fgBlue, \textcolor{keywordtype}{int} shaderIndex = 0)}
+\DoxyCodeLine{00037       : f(font),}
+\DoxyCodeLine{00038         bg(bgRed, bgGreen, bgBlue, 1),}
+\DoxyCodeLine{00039         fg(fgRed, fgGreen, fgBlue, 1),}
+\DoxyCodeLine{00040         shaderIndex(shaderIndex),}
+\DoxyCodeLine{00041         lineWidth(1) \{\}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043   \mbox{\hyperlink{classStyle}{Style}}(\textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* font, \textcolor{keywordtype}{float} bgRed, \textcolor{keywordtype}{float} bgGreen, \textcolor{keywordtype}{float} bgBlue,}
+\DoxyCodeLine{00044         \textcolor{keywordtype}{float} bgAlpha, \textcolor{keywordtype}{float} fgRed, \textcolor{keywordtype}{float} fgGreen, \textcolor{keywordtype}{float} fgBlue, \textcolor{keywordtype}{float} fgAlpha)}
+\DoxyCodeLine{00045       : f(font),}
+\DoxyCodeLine{00046         bg(bgRed, bgGreen, bgBlue, bgAlpha),}
+\DoxyCodeLine{00047         fg(fgRed, fgGreen, fgBlue, fgAlpha),}
+\DoxyCodeLine{00048         lineWidth(1) \{}
+\DoxyCodeLine{00049     shaderIndex = 0;}
+\DoxyCodeLine{00050   \}}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052   \mbox{\hyperlink{classStyle}{Style}}(\textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* font, \textcolor{keyword}{const} glm::vec4\& bgColor, \textcolor{keyword}{const} glm::vec4\& fgColor)}
+\DoxyCodeLine{00053       : f(font), bg(bgColor), fg(fgColor), lineWidth(1) \{\}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* lookup(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fontFamily, \textcolor{keyword}{const} \textcolor{keywordtype}{float} size,}
+\DoxyCodeLine{00056                      \textcolor{keyword}{const} \textcolor{keywordtype}{float} weight) \{}
+\DoxyCodeLine{00057     \textcolor{keywordflow}{return} FontFace::get(fontFamily, size, weight);}
+\DoxyCodeLine{00058   \}}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060   \textcolor{keywordtype}{void} apply() \{\}}
+\DoxyCodeLine{00061   \textcolor{keywordtype}{void} setShaderIndex(uint32\_t val) \{ shaderIndex = val; \}}
+\DoxyCodeLine{00062   uint32\_t getShaderIndex()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} shaderIndex; \}}
+\DoxyCodeLine{00063   uint32\_t getLineWidth()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} lineWidth; \}}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065   \textcolor{keywordtype}{void} setLineWidth(uint32\_t val) \{ lineWidth = val; \}}
+\DoxyCodeLine{00066   \textcolor{keyword}{const} glm::vec4\& getBgColor()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} bg; \}}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068   \textcolor{keyword}{const} glm::vec4\& getFgColor()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} fg; \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070   \textcolor{keyword}{static} \mbox{\hyperlink{classStyle}{Style}}* getStyle(uint8\_t a) \{ \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr}; \}}
+\DoxyCodeLine{00071 \};}
+
+\end{DoxyCode}

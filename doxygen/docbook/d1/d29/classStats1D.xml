@@ -1,0 +1,463 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classStats1D" xml:lang="en-US">
+<title>Stats1D&lt; T &gt; Class Template Reference</title>
+<indexterm><primary>Stats1D&lt; T &gt;</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structStats1D_1_1Summary">Summary</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classStats1D_1a41c5ea69b3c10f2d81a37daa22bf69b2">Stats1D</link> (T *array, uint32_t size, bool sorted=false)</para>
+
+<para>Construct a new <link linkend="_classStats1D">Stats1D</link> object of a numeric type. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classStats1D_1a01485e9087a47de410873e7036a25103">updateArray</link> (T *newArray, uint32_t newSize, bool sorted=false)</para>
+
+<para>Updates the content of the array. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classStats1D_1ab3b7cfd6058625ed131b218c03c02db2">getMean</link> ()</para>
+
+<para>Calculates mean of a numeric type. </para>
+</listitem>
+            <listitem><para>std::vector&lt; T &gt; <link linkend="_classStats1D_1a45ba7369a7b206a13d696a1ae09088ed">getModes</link> ()</para>
+
+<para>Finds the modes of a numeric type. </para>
+</listitem>
+            <listitem><para>T <link linkend="_classStats1D_1ae87ce391ec43fcf4f071d786b6e41dae">getIQR</link> ()</para>
+
+<para>Calculates the IQR of a numeric type. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_structStats1D_1_1Summary">Summary</link> <link linkend="_classStats1D_1a2efbfaca016e548a9fe970ae854bc82d">getSummary</link> ()</para>
+
+<para>Returns a struct containing the five number summary of a numeric type. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classStats1D_1a140451b77c198677c2cc24c3bbe5c0e6">getStdDev</link> ()</para>
+
+<para>Calculates the standard deviation of a numeric type. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classStats1D_1a3a69d2cbb665886f149f5454e103990d">getVariance</link> ()</para>
+
+<para>Calculates the variance of a numeric type. </para>
+</listitem>
+            <listitem><para>double <link linkend="_classStats1D_1ae116d4fdc3994b47742a265e097bc54b">getQuantile</link> (double percentile)</para>
+
+<para>getQuantile - Gets a quantile of the sorted array </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classStats1D_1a5e32644483fdcdc5b8adb889a136ddb0"/>template&lt;typename U &gt; </para><para>std::ostream &amp; <emphasis role="strong">operator&lt;&lt;</emphasis> (std::ostream &amp;os, <link linkend="_classStats1D">Stats1D</link>&lt; U &gt; &amp;stats)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classStats1D_1a41c5ea69b3c10f2d81a37daa22bf69b2"/>    <section>
+    <title>Stats1D()</title>
+<indexterm><primary>Stats1D</primary><secondary>Stats1D&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Stats1D&lt; T &gt;</primary><secondary>Stats1D</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classStats1D">Stats1D</link>&lt; T &gt;::<link linkend="_classStats1D">Stats1D</link> (T * array, uint32_t size, bool sorted = <computeroutput>false</computeroutput>
+)</computeroutput></para><para>
+
+<para>Construct a new <link linkend="_classStats1D">Stats1D</link> object of a numeric type. </para>
+</para>
+
+<para>The array may be of any numeric type and may be unsorted when it is passed into the object. The size of the array is assumed to match the size of the variable. The sorted flag defaults to false.</para>
+
+<para>If a mistake is made when creating the array, or the array is updated, use updateArray to make any necessary changes.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Template Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>T</entry>
+                                <entry>
+<para>Any numeric type </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>array</entry>
+                                <entry>
+<para><link linkend="_classA">A</link> pointer to the array to be analyzed </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>size</entry>
+                                <entry>
+<para>The size of the array to be analyzed </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>sorted</entry>
+                                <entry>
+<para><link linkend="_classA">A</link> flag indicating if the array is sorted </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classStats1D_1ae87ce391ec43fcf4f071d786b6e41dae"/>    <section>
+    <title>getIQR()</title>
+<indexterm><primary>getIQR</primary><secondary>Stats1D&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Stats1D&lt; T &gt;</primary><secondary>getIQR</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T <link linkend="_classStats1D">Stats1D</link>&lt; T &gt;::getIQR</computeroutput></para><para>
+
+<para>Calculates the IQR of a numeric type. </para>
+</para>
+
+<para>The interquartile range is the 50% range between the first and third quartile of a dataset. Together with the median of the dataset, it presents an alternative to the mean and standard deviation for finding outliers.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Template Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>T</entry>
+                                <entry>
+<para>Any numeric type </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>T The IQR of a dataset </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_classStats1D_1ab3b7cfd6058625ed131b218c03c02db2"/>    <section>
+    <title>getMean()</title>
+<indexterm><primary>getMean</primary><secondary>Stats1D&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Stats1D&lt; T &gt;</primary><secondary>getMean</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>double <link linkend="_classStats1D">Stats1D</link>&lt; T &gt;::getMean</computeroutput></para><para>
+
+<para>Calculates mean of a numeric type. </para>
+</para>
+
+<para>For a dataset without outliers or skew, the mean will represent the center of a dataset. Together with the standard deviation, it is useful for catching extreme values and describing the distribution of the data.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Template Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>T</entry>
+                                <entry>
+<para>Any numeric type </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>double The mean of a dataset </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_classStats1D_1a45ba7369a7b206a13d696a1ae09088ed"/>    <section>
+    <title>getModes()</title>
+<indexterm><primary>getModes</primary><secondary>Stats1D&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Stats1D&lt; T &gt;</primary><secondary>getModes</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>vector&lt; T &gt; <link linkend="_classStats1D">Stats1D</link>&lt; T &gt;::getModes</computeroutput></para><para>
+
+<para>Finds the modes of a numeric type. </para>
+</para>
+
+<para>The mode of a dataset is value that most frequently appears.</para>
+
+<para>This returns a vector in order to allow the possibility of multiple modes, rather than just returning one of many modes.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Template Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>T</entry>
+                                <entry>
+<para>Any numeric type </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>vector&lt;T&gt; <link linkend="_classA">A</link> vector of modes of a dataset </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_classStats1D_1ae116d4fdc3994b47742a265e097bc54b"/>    <section>
+    <title>getQuantile()</title>
+<indexterm><primary>getQuantile</primary><secondary>Stats1D&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Stats1D&lt; T &gt;</primary><secondary>getQuantile</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>double <link linkend="_classStats1D">Stats1D</link>&lt; T &gt;::getQuantile (double percentile)</computeroutput></para><para>
+
+<para>getQuantile - Gets a quantile of the sorted array </para>
+</para>
+
+<para>This looks like it implements the R-6 algorithm for finding quantiles, but it is actually R-7. Upon reviewing the relevant paper, the index functions refer to an array with a starting index of 1, but C++ is 0-indexed. As such, the added one that is expected in R-7 has been negated. (Hyndman and Fan, 1997).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>percentile</entry>
+                                <entry>
+<para>The percentile to look for </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>double The resultant quantile </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_classStats1D_1a140451b77c198677c2cc24c3bbe5c0e6"/>    <section>
+    <title>getStdDev()</title>
+<indexterm><primary>getStdDev</primary><secondary>Stats1D&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Stats1D&lt; T &gt;</primary><secondary>getStdDev</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>double <link linkend="_classStats1D">Stats1D</link>&lt; T &gt;::getStdDev</computeroutput></para><para>
+
+<para>Calculates the standard deviation of a numeric type. </para>
+</para>
+
+<para>The standard deviation of a dataset describes the spread of a data. <link linkend="_classA">A</link> higher standard deviation indicates that the data is spread further from the mean of the dataset.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Template Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>T</entry>
+                                <entry>
+<para>Any numeric type </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>double The standard deviation of a dataset </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_classStats1D_1a2efbfaca016e548a9fe970ae854bc82d"/>    <section>
+    <title>getSummary()</title>
+<indexterm><primary>getSummary</primary><secondary>Stats1D&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Stats1D&lt; T &gt;</primary><secondary>getSummary</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>struct <link linkend="_classStats1D">Stats1D</link>&lt; T &gt;::<link linkend="_structStats1D_1_1Summary">Summary</link> <link linkend="_classStats1D">Stats1D</link>&lt; T &gt;::getSummary</computeroutput></para><para>
+
+<para>Returns a struct containing the five number summary of a numeric type. </para>
+</para>
+
+<para>The five number summary contains the minimum, maximum, median, first quartile, and third quartile. These values are useful to describe the distribution of the dataset and find outliers.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Template Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>T</entry>
+                                <entry>
+<para>Any generic type </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>struct Stats1D&lt;T&gt;::Summary <link linkend="_classA">A</link> struct of the five number summary </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_classStats1D_1a3a69d2cbb665886f149f5454e103990d"/>    <section>
+    <title>getVariance()</title>
+<indexterm><primary>getVariance</primary><secondary>Stats1D&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Stats1D&lt; T &gt;</primary><secondary>getVariance</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>double <link linkend="_classStats1D">Stats1D</link>&lt; T &gt;::getVariance</computeroutput></para><para>
+
+<para>Calculates the variance of a numeric type. </para>
+</para>
+
+<para>The variance of a dataset is the square of standard deviation and is another descriptor of the spread of a dataset. Among its many uses are sampling, inference, hypothesis testing, and goodness of fit.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Template Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>T</entry>
+                                <entry>
+<para>Any numeric type </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>double The variance of a dataset </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_classStats1D_1a01485e9087a47de410873e7036a25103"/>    <section>
+    <title>updateArray()</title>
+<indexterm><primary>updateArray</primary><secondary>Stats1D&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>Stats1D&lt; T &gt;</primary><secondary>updateArray</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>void <link linkend="_classStats1D">Stats1D</link>&lt; T &gt;::updateArray (T * newArray, uint32_t newSize, bool sorted = <computeroutput>false</computeroutput>
+)</computeroutput></para><para>
+
+<para>Updates the content of the array. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Template Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>T</entry>
+                                <entry>
+<para>Any numeric type </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>newArray</entry>
+                                <entry>
+<para><link linkend="_classA">A</link> new array </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>newSize</entry>
+                                <entry>
+<para><link linkend="_classA">A</link> new size </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>sorted</entry>
+                                <entry>
+<para><link linkend="_classA">A</link> new sorted flag, defaults to the existing flag </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+</section>

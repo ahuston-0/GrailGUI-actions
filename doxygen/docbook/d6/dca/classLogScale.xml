@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classLogScale" xml:lang="en-US">
+<title>LogScale Class Reference</title>
+<indexterm><primary>LogScale</primary></indexterm>
+<para>Inheritance diagram for LogScale:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d6/dca/classLogScale.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classLogScale_1a64579f7792a988a6d94d241ebbb143d7"/>float <emphasis role="strong">transform</emphasis> (double x) override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classLogScale_1a711c40978a6be8ceb4aa51f4962fd4b5"/>void <emphasis role="strong">init</emphasis> (double min, double max, double shift, double axisSize, double tickInterval) override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classLogScale_1a31eedd59d1574d1f07e8ede5f6659e0c"/>float <emphasis role="strong">next</emphasis> (float v) override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

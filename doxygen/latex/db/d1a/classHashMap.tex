@@ -1,0 +1,67 @@
+\hypertarget{classHashMap}{}\doxysection{Hash\+Map$<$ Val $>$ Class Template Reference}
+\label{classHashMap}\index{HashMap$<$ Val $>$@{HashMap$<$ Val $>$}}
+Inheritance diagram for Hash\+Map$<$ Val $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{db/d1a/classHashMap}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classHashMap_1_1ConstIterator}{Const\+Iterator}}
+\item 
+class \mbox{\hyperlink{classHashMap_1_1Iterator}{Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHashMap_a6521f1b838e66f758f23f03979c084dc}\label{classHashMap_a6521f1b838e66f758f23f03979c084dc}} 
+{\bfseries Hash\+Map} (uint32\+\_\+t sz, uint32\+\_\+t symbol\+Size=1024 $\ast$1024)
+\item 
+\mbox{\Hypertarget{classHashMap_a646bc3c614f3a716b4cb515edcf9f2b6}\label{classHashMap_a646bc3c614f3a716b4cb515edcf9f2b6}} 
+{\bfseries Hash\+Map} (const \mbox{\hyperlink{classHashMap}{Hash\+Map}} \&orig)=delete
+\item 
+\mbox{\Hypertarget{classHashMap_a29b5d9983be286bdfc0f9b4233be3764}\label{classHashMap_a29b5d9983be286bdfc0f9b4233be3764}} 
+\mbox{\hyperlink{classHashMap}{Hash\+Map}} \& {\bfseries operator=} (const \mbox{\hyperlink{classHashMap}{Hash\+Map}} \&orig)=delete
+\item 
+\mbox{\Hypertarget{classHashMap_a71b08946752814e34d6ba0d5868270fe}\label{classHashMap_a71b08946752814e34d6ba0d5868270fe}} 
+void {\bfseries check\+Grow} ()
+\item 
+\mbox{\Hypertarget{classHashMap_a81d278b31598846d543e1d19ef65dcc4}\label{classHashMap_a81d278b31598846d543e1d19ef65dcc4}} 
+void {\bfseries add} (const char s\mbox{[}$\,$\mbox{]}, const Val \&v)
+\item 
+\mbox{\Hypertarget{classHashMap_a2c64f2db1e7afd5974e3f6731e611286}\label{classHashMap_a2c64f2db1e7afd5974e3f6731e611286}} 
+Val {\bfseries add} (const char s\mbox{[}$\,$\mbox{]}, uint32\+\_\+t len, const Val \&v)
+\item 
+\mbox{\Hypertarget{classHashMap_a84cf7f50163aafba995e7987755d70b8}\label{classHashMap_a84cf7f50163aafba995e7987755d70b8}} 
+bool {\bfseries get} (const char s\mbox{[}$\,$\mbox{]}, Val $\ast$v) const
+\item 
+\mbox{\Hypertarget{classHashMap_affa805330a9ea8bcdb7c857f5a9f0fd2}\label{classHashMap_affa805330a9ea8bcdb7c857f5a9f0fd2}} 
+Val $\ast$ {\bfseries get} (const char s\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classHashMap_a921f9a597044462b3de2e535fcf4b2cf}\label{classHashMap_a921f9a597044462b3de2e535fcf4b2cf}} 
+const Val $\ast$ {\bfseries get} (const char s\mbox{[}$\,$\mbox{]}) const
+\item 
+\mbox{\Hypertarget{classHashMap_a9eb7655f523c42fedc9df283bd8665ac}\label{classHashMap_a9eb7655f523c42fedc9df283bd8665ac}} 
+Val $\ast$ {\bfseries get} (const char $\ast$s, uint32\+\_\+t len)
+\item 
+\mbox{\Hypertarget{classHashMap_a4c995c904704895b5bc7020dbbf077b1}\label{classHashMap_a4c995c904704895b5bc7020dbbf077b1}} 
+uint64\+\_\+t {\bfseries hist} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHashMap_ad54176a701a2a72365b31e75225780e6}\label{classHashMap_ad54176a701a2a72365b31e75225780e6}} 
+friend {\bfseries Iterator}
+\item 
+\mbox{\Hypertarget{classHashMap_a103e5a2773b0d2ab93425d11ae9f9feb}\label{classHashMap_a103e5a2773b0d2ab93425d11ae9f9feb}} 
+friend {\bfseries Const\+Iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHashMap_a343700c4f9e8a5af225f752600af1871}\label{classHashMap_a343700c4f9e8a5af225f752600af1871}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&s, const \mbox{\hyperlink{classHashMap}{Hash\+Map}} \&h)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}

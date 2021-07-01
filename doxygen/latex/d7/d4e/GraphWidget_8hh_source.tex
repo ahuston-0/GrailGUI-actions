@@ -1,0 +1,50 @@
+\hypertarget{GraphWidget_8hh_source}{}\doxysection{Graph\+Widget.\+hh}
+\label{GraphWidget_8hh_source}\index{src/opengl/GraphWidget.hh@{src/opengl/GraphWidget.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}opengl/AxisWidget.hh"{}}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}opengl/SuperWidget2D.hh"{}}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{keyword}{class }\mbox{\hyperlink{classStyle}{Style}};}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{\Hypertarget{GraphWidget_8hh_source_l00011}\mbox{\hyperlink{classGraphWidget}{00011}} \textcolor{keyword}{class }\mbox{\hyperlink{classGraphWidget}{GraphWidget}} : \textcolor{keyword}{public} \mbox{\hyperlink{classSuperWidget2D}{SuperWidget2D}} \{}
+\DoxyCodeLine{00012  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013   \textcolor{keyword}{enum} AxisType \{}
+\DoxyCodeLine{00014     LINEAR,}
+\DoxyCodeLine{00015     LOGARITHMIC,}
+\DoxyCodeLine{00016     TEXT,}
+\DoxyCodeLine{00017   \};}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00020   std::string graphTitle;}
+\DoxyCodeLine{00021   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}} *xAxisTextStyle;}
+\DoxyCodeLine{00022   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}} *yAxisTextStyle;}
+\DoxyCodeLine{00023   AxisType xAxisType;}
+\DoxyCodeLine{00024   AxisType yAxisType;}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026   \textcolor{keywordtype}{void} commonRender();}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029   \mbox{\hyperlink{classAxisWidget}{AxisWidget}} *xAxis;}
+\DoxyCodeLine{00030   \mbox{\hyperlink{classAxisWidget}{AxisWidget}} *yAxis;}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032   \mbox{\hyperlink{classGraphWidget}{GraphWidget}}(\mbox{\hyperlink{classCanvas}{Canvas}} *c, \mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}} *m, \mbox{\hyperlink{classMultiText}{MultiText}} *t, \textcolor{keywordtype}{double} x,}
+\DoxyCodeLine{00033               \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} w, \textcolor{keywordtype}{double} h)}
+\DoxyCodeLine{00034       : \mbox{\hyperlink{classSuperWidget2D}{SuperWidget2D}}(c, m, t, x, y, w, h),}
+\DoxyCodeLine{00035         xAxisTextStyle(\textcolor{keyword}{new} \mbox{\hyperlink{classStyle}{Style}}(\textcolor{stringliteral}{"{}TIMES"{}}, 12, 1, 0, 0, 0, 0, 0, 0)),}
+\DoxyCodeLine{00036         yAxisTextStyle(\textcolor{keyword}{new} \mbox{\hyperlink{classStyle}{Style}}(\textcolor{stringliteral}{"{}TIMES"{}}, 12, 1, 0, 0, 0, 0, 0, 0)),}
+\DoxyCodeLine{00037         xAxis(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{00038         yAxis(\textcolor{keyword}{nullptr}) \{\}}
+\DoxyCodeLine{00039   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} createXAxis(AxisType a) = 0;}
+\DoxyCodeLine{00040   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} createYAxis(AxisType a) = 0;}
+\DoxyCodeLine{00041   \textcolor{keywordtype}{void} setGraphTitle(std::string text);}
+\DoxyCodeLine{00042   \textcolor{keywordtype}{void} setXAxisTextStyle(\textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}} *xAxisTextStyle);}
+\DoxyCodeLine{00043   \textcolor{keywordtype}{void} setYAxisTextStyle(\textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}} *yAxisTextStyle);}
+\DoxyCodeLine{00044 \};}
+
+\end{DoxyCode}

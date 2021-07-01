@@ -1,0 +1,68 @@
+\hypertarget{classStyle}{}\doxysection{Style Class Reference}
+\label{classStyle}\index{Style@{Style}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStyle_a6f029df7ed81c03a080d9dfd14b9cc31}\label{classStyle_a6f029df7ed81c03a080d9dfd14b9cc31}} 
+{\bfseries Style} (const char $\ast$font\+Family, float font\+Size, float font\+Weight, float bg\+Red, float bg\+Green, float bg\+Blue, float fg\+Red, float fg\+Green, float fg\+Blue, int shader\+Index=0)
+\item 
+\mbox{\Hypertarget{classStyle_ac1d1eb354972bc176478b8b1fd5ff813}\label{classStyle_ac1d1eb354972bc176478b8b1fd5ff813}} 
+{\bfseries Style} (const char $\ast$font\+Family, float font\+Size, float font\+Weight, float bg\+Red, float bg\+Green, float bg\+Blue, float bg\+Alpha, float fg\+Red, float fg\+Green, float fg\+Blue, float fg\+Alpha, int shader\+Index=0)
+\item 
+\mbox{\Hypertarget{classStyle_a24d51d3de11e3e6aaab8ea92ec418948}\label{classStyle_a24d51d3de11e3e6aaab8ea92ec418948}} 
+{\bfseries Style} (const \mbox{\hyperlink{classFont}{Font}} $\ast$font, float bg\+Red, float bg\+Green, float bg\+Blue, float fg\+Red, float fg\+Green, float fg\+Blue, int shader\+Index=0)
+\item 
+\mbox{\Hypertarget{classStyle_aeb4acf120d8d9ab9ec1f0be151980df0}\label{classStyle_aeb4acf120d8d9ab9ec1f0be151980df0}} 
+{\bfseries Style} (const \mbox{\hyperlink{classFont}{Font}} $\ast$font, float bg\+Red, float bg\+Green, float bg\+Blue, float bg\+Alpha, float fg\+Red, float fg\+Green, float fg\+Blue, float fg\+Alpha)
+\item 
+\mbox{\Hypertarget{classStyle_aa0d9146a22e82d2acf83b4b975c99bf7}\label{classStyle_aa0d9146a22e82d2acf83b4b975c99bf7}} 
+{\bfseries Style} (const \mbox{\hyperlink{classFont}{Font}} $\ast$font, const glm\+::vec4 \&bg\+Color, const glm\+::vec4 \&fg\+Color)
+\item 
+\mbox{\Hypertarget{classStyle_ab5f27edeb2223379cedacae845b8387a}\label{classStyle_ab5f27edeb2223379cedacae845b8387a}} 
+const \mbox{\hyperlink{classFont}{Font}} $\ast$ {\bfseries lookup} (const char $\ast$font\+Family, const float size, const float weight)
+\item 
+\mbox{\Hypertarget{classStyle_a4fbab4eaf13f9dbbc9a9bc9c58255d65}\label{classStyle_a4fbab4eaf13f9dbbc9a9bc9c58255d65}} 
+void {\bfseries apply} ()
+\item 
+\mbox{\Hypertarget{classStyle_ad64548f90845a1edd4124cae7fda5e15}\label{classStyle_ad64548f90845a1edd4124cae7fda5e15}} 
+void {\bfseries set\+Shader\+Index} (uint32\+\_\+t val)
+\item 
+\mbox{\Hypertarget{classStyle_aa2a37fc2ada7f444dbeeb85a24dc576a}\label{classStyle_aa2a37fc2ada7f444dbeeb85a24dc576a}} 
+uint32\+\_\+t {\bfseries get\+Shader\+Index} () const
+\item 
+\mbox{\Hypertarget{classStyle_a6702727526ed0fd9b565edee0ec06b6c}\label{classStyle_a6702727526ed0fd9b565edee0ec06b6c}} 
+uint32\+\_\+t {\bfseries get\+Line\+Width} () const
+\item 
+\mbox{\Hypertarget{classStyle_a9d770ee00f6ea2a50948793f9c6a7774}\label{classStyle_a9d770ee00f6ea2a50948793f9c6a7774}} 
+void {\bfseries set\+Line\+Width} (uint32\+\_\+t val)
+\item 
+\mbox{\Hypertarget{classStyle_ac8f6a6dae4bc63a8205358231efd58a8}\label{classStyle_ac8f6a6dae4bc63a8205358231efd58a8}} 
+const glm\+::vec4 \& {\bfseries get\+Bg\+Color} () const
+\item 
+\mbox{\Hypertarget{classStyle_a94094f497eba215ff44a1bf18b9545e2}\label{classStyle_a94094f497eba215ff44a1bf18b9545e2}} 
+const glm\+::vec4 \& {\bfseries get\+Fg\+Color} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStyle_ae3b9948e0b2d8eaa577caff289d2afc8}\label{classStyle_ae3b9948e0b2d8eaa577caff289d2afc8}} 
+static \mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries get\+Style} (uint8\+\_\+t a)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStyle_ac21b27e6b11be4ad4281fff48f288b84}\label{classStyle_ac21b27e6b11be4ad4281fff48f288b84}} 
+const \mbox{\hyperlink{classFont}{Font}} $\ast$ {\bfseries f}
+\item 
+\mbox{\Hypertarget{classStyle_aa13fd4aa3de050f07391ec329593dfa1}\label{classStyle_aa13fd4aa3de050f07391ec329593dfa1}} 
+glm\+::vec4 {\bfseries bg}
+\item 
+\mbox{\Hypertarget{classStyle_a3eaac1d47d5c233cd1f2a95c24713b15}\label{classStyle_a3eaac1d47d5c233cd1f2a95c24713b15}} 
+glm\+::vec4 {\bfseries fg}
+\item 
+\mbox{\Hypertarget{classStyle_ac771e0d1a6cfbbc31fd760cb075f9f18}\label{classStyle_ac771e0d1a6cfbbc31fd760cb075f9f18}} 
+float {\bfseries line\+Width}
+\item 
+\mbox{\Hypertarget{classStyle_a5c4d40e09901bce205981a4c2d4f78d5}\label{classStyle_a5c4d40e09901bce205981a4c2d4f78d5}} 
+int {\bfseries shader\+Index}
+\end{DoxyCompactItemize}

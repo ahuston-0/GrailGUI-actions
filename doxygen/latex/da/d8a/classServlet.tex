@@ -1,0 +1,28 @@
+\hypertarget{classServlet}{}\doxysection{Servlet Class Reference}
+\label{classServlet}\index{Servlet@{Servlet}}
+
+
+{\ttfamily \#include $<$Servlet.\+hh$>$}
+
+Inheritance diagram for Servlet\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{da/d8a/classServlet}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classServlet_a7618b54494ef9e24e18487184405d644}\label{classServlet_a7618b54494ef9e24e18487184405d644}} 
+virtual void {\bfseries request} (\mbox{\hyperlink{classBuffer}{Buffer}} \&out)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for servlet This is the common behavior between protocols such as HTTP and CSP so this is the low-\/level data methods.
+
+All servlets support a request, which is a client sending a message to the server requesting data. In HTTP, a request is ASCII with many potential lines if input, whereas in CSP it is a lot shorter, fixed format, and binary
+
+\begin{DoxyAuthor}{Author}
+\+: Dov Kruger 
+\end{DoxyAuthor}

@@ -1,0 +1,41 @@
+.TH "LineGraphWidget" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LineGraphWidget
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBGraphWidget\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLineGraphWidget\fP (\fBCanvas\fP *c, \fBStyledMultiShape2D\fP *m, \fBMultiText\fP *t, double x, double y, double w, double h)"
+.br
+.ti -1c
+.RI "void \fBsetPointFormat\fP (char pt, double size, glm::vec4 &color)"
+.br
+.ti -1c
+.RI "void \fBsetXPoints\fP (const std::vector< double > &xPoints)"
+.br
+.ti -1c
+.RI "void \fBsetYPoints\fP (const std::vector< double > &yPoints)"
+.br
+.ti -1c
+.RI "void \fBcreateXAxis\fP (AxisType a) override"
+.br
+.ti -1c
+.RI "void \fBcreateYAxis\fP (AxisType a) override"
+.br
+.ti -1c
+.RI "void \fBinit\fP () override"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

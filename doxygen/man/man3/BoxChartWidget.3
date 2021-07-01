@@ -1,0 +1,47 @@
+.TH "BoxChartWidget" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BoxChartWidget
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBGraphWidget\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBoxChartWidget\fP (\fBCanvas\fP *c, \fBStyledMultiShape2D\fP *m, \fBMultiText\fP *t, double x, double y, double w, double h)"
+.br
+.ti -1c
+.RI "void \fBsetBoxWidth\fP (double width)"
+.br
+.ti -1c
+.RI "void \fBsetBoxColor\fP (glm::vec4 &color)"
+.br
+.ti -1c
+.RI "void \fBsetPointsPerBox\fP (int n)"
+.br
+.ti -1c
+.RI "void \fBsetData\fP (const std::vector< double > &data)"
+.br
+.ti -1c
+.RI "void \fBsetNames\fP (const std::vector< std::string > &names)"
+.br
+.ti -1c
+.RI "void \fBcreateXAxis\fP (AxisType a=AxisType::TEXT) override"
+.br
+.ti -1c
+.RI "void \fBcreateYAxis\fP (AxisType a=AxisType::LINEAR) override"
+.br
+.ti -1c
+.RI "void \fBinit\fP () override"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

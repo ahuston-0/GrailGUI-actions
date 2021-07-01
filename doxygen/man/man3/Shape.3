@@ -1,0 +1,65 @@
+.TH "Shape" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Shape
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBColorGrid\fP, \fBDocView\fP, \fBGraphView\fP, \fBHeatMap\fP, \fBImage\fP, \fBMapView2D\fP, \fBMultiShape\fP, \fBMultiText\fP, \fBPageText\fP, \fBShape2D\fP, \fBSphere\fP, and \fBText\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBShape\fP (\fBCanvas\fP *parent)"
+.br
+.ti -1c
+.RI "virtual void \fBinit\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBprocess_input\fP (Inputs *in, float dt)"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBrender\fP ()=0"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T > void \fBgen\fP (uint32_t &vb, std::vector< T > &list)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBvao\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBvbo\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBsbo\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBlbo\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBpbo\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBcbo\fP"
+.br
+.ti -1c
+.RI "\fBCanvas\fP * \fBparentCanvas\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

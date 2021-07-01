@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classScrollbarWidget" xml:lang="en-US">
+<title>ScrollbarWidget Class Reference</title>
+<indexterm><primary>ScrollbarWidget</primary></indexterm>
+<para>Inheritance diagram for ScrollbarWidget:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d1/d23/classScrollbarWidget.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classScrollbarWidget_1ac1d65cb1d1428da3f10491924f2a7692"/><emphasis role="strong">ScrollbarWidget</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, const <link linkend="_classStyle">Style</link> *s, float x, float y, float w, float h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classScrollbarWidget_1a5cc887c4cc40e9189a435052b5ef406d"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classScrollbarWidget_1a8699a167d31c4fbe65535af36e2abde9"/>void <emphasis role="strong">render</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classScrollbarWidget_1a65cff5c82464ac64de9c23811b04bc70"/>void <emphasis role="strong">update</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classScrollbarWidget_1ad75553372d5e2fd9ab7dccb7cd9eb382"/>void <emphasis role="strong">draw</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classScrollbarWidget_1a68f1c2394e5f45e34a24a196e66fb45b"/>void <emphasis role="strong">scroll</emphasis> (float dy)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

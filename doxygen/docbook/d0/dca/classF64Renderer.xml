@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classF64Renderer" xml:lang="en-US">
+<title>F64Renderer Class Reference</title>
+<indexterm><primary>F64Renderer</primary></indexterm>
+<para>Inheritance diagram for F64Renderer:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d0/dca/classF64Renderer.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classF64Renderer_1a4a109bab2651c6ffd14bd1fa2191e852"/>virtual void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;in, MultiShape2d *m, <link linkend="_classMultiText">MultiText</link> *t, float x0, float y0, float *w, float *h) const override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classF64Renderer_1a4a109bab2651c6ffd14bd1fa2191e852"/>virtual void <emphasis role="strong">display</emphasis> (<link linkend="_classBuffer">Buffer</link> &amp;in, MultiShape2d *m, <link linkend="_classMultiText">MultiText</link> *t, float x0, float y0, float *w, float *h) const override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

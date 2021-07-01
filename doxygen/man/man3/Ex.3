@@ -1,0 +1,54 @@
+.TH "Ex" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ex
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBFatalEx\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEx\fP (const char filename[], uint32_t lineNum, Errcode e, const std::string &name='')"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBfilename\fP"
+.br
+.ti -1c
+.RI "const uint32_t \fBlineNum\fP"
+.br
+.ti -1c
+.RI "const std::string \fBname\fP"
+.br
+.ti -1c
+.RI "int \fBparam\fP"
+.br
+.ti -1c
+.RI "Errcode \fBe\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const char * \fBerrNames\fP []"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &s, const \fBEx\fP &e)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

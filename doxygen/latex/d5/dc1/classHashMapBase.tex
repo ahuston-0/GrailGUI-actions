@@ -1,0 +1,92 @@
+\hypertarget{classHashMapBase}{}\doxysection{Hash\+Map\+Base Class Reference}
+\label{classHashMapBase}\index{HashMapBase@{HashMapBase}}
+Inheritance diagram for Hash\+Map\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d5/dc1/classHashMapBase}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHashMapBase_a308b082fca44ccb75442256889f16a97}\label{classHashMapBase_a308b082fca44ccb75442256889f16a97}} 
+const char $\ast$ {\bfseries get\+Words} () const
+\item 
+\mbox{\Hypertarget{classHashMapBase_a80e5f120a7b5442843ce04cb512de5e0}\label{classHashMapBase_a80e5f120a7b5442843ce04cb512de5e0}} 
+uint32\+\_\+t {\bfseries get\+Words\+Size} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHashMapBase_a709b66a0e243af1b4a0ba43b75a9b79c}\label{classHashMapBase_a709b66a0e243af1b4a0ba43b75a9b79c}} 
+uint32\+\_\+t {\bfseries fasthash1} (const char s\mbox{[}$\,$\mbox{]}) const
+\item 
+\mbox{\Hypertarget{classHashMapBase_a03c375f206fec6b83eeeb98dcc499439}\label{classHashMapBase_a03c375f206fec6b83eeeb98dcc499439}} 
+uint32\+\_\+t {\bfseries bytewisehash} (const char s\mbox{[}$\,$\mbox{]}, uint32\+\_\+t len) const
+\item 
+\mbox{\Hypertarget{classHashMapBase_aece2429e286264efa8a19f32589977df}\label{classHashMapBase_aece2429e286264efa8a19f32589977df}} 
+uint32\+\_\+t {\bfseries bytewisehash} (const char s\mbox{[}$\,$\mbox{]}) const
+\item 
+\mbox{\Hypertarget{classHashMapBase_a4b47f5e5e84840a9bfbf376a9f9fbc9e}\label{classHashMapBase_a4b47f5e5e84840a9bfbf376a9f9fbc9e}} 
+uint32\+\_\+t {\bfseries hash} (const char s\mbox{[}$\,$\mbox{]}) const
+\item 
+\mbox{\Hypertarget{classHashMapBase_aae436c4053481063862228bf33a1fc65}\label{classHashMapBase_aae436c4053481063862228bf33a1fc65}} 
+uint32\+\_\+t {\bfseries hash} (const char s\mbox{[}$\,$\mbox{]}, uint32\+\_\+t len) const
+\item 
+\mbox{\Hypertarget{classHashMapBase_a7f78de8c43cb02cadf62eb36fb0a60a6}\label{classHashMapBase_a7f78de8c43cb02cadf62eb36fb0a60a6}} 
+{\bfseries Hash\+Map\+Base} (uint32\+\_\+t sz, uint32\+\_\+t symbol\+Size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHashMapBase_a29a49f871e6091f3fbe05f211b181e20}\label{classHashMapBase_a29a49f871e6091f3fbe05f211b181e20}} 
+static bool {\bfseries has\+No\+Zero} (uint32\+\_\+t v)
+\item 
+\mbox{\Hypertarget{classHashMapBase_a7c5a678c6239f0a01a52e0620e30f4a0}\label{classHashMapBase_a7c5a678c6239f0a01a52e0620e30f4a0}} 
+static bool {\bfseries has\+No\+Zero} (uint64\+\_\+t v)
+\item 
+\mbox{\Hypertarget{classHashMapBase_a45dbc36bd44217fd7a1f7a87ff62f81c}\label{classHashMapBase_a45dbc36bd44217fd7a1f7a87ff62f81c}} 
+static bool {\bfseries haszero} (uint32\+\_\+t v)
+\item 
+\mbox{\Hypertarget{classHashMapBase_ab4e918c3ca5d2b18d96db2d76d83381f}\label{classHashMapBase_ab4e918c3ca5d2b18d96db2d76d83381f}} 
+static bool {\bfseries notzero} (uint64\+\_\+t v)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHashMapBase_af5b8e298951f2a8b6cbd1423f829f9e8}\label{classHashMapBase_af5b8e298951f2a8b6cbd1423f829f9e8}} 
+uint32\+\_\+t {\bfseries size}
+\item 
+\mbox{\Hypertarget{classHashMapBase_aaf5b6a1faf53ca58030fd4fbff7f1b9b}\label{classHashMapBase_aaf5b6a1faf53ca58030fd4fbff7f1b9b}} 
+uint32\+\_\+t {\bfseries symbol\+Size}
+\item 
+\mbox{\Hypertarget{classHashMapBase_a1a9f05c5b0029aba73c92556bb06b9de}\label{classHashMapBase_a1a9f05c5b0029aba73c92556bb06b9de}} 
+char $\ast$ {\bfseries symbols}
+\item 
+\mbox{\Hypertarget{classHashMapBase_ae49118be0634fa36e9a50eaa6879b614}\label{classHashMapBase_ae49118be0634fa36e9a50eaa6879b614}} 
+char $\ast$ {\bfseries current}
+\item 
+\mbox{\Hypertarget{classHashMapBase_a2fa9bbd007ea498fc693a9d270091b45}\label{classHashMapBase_a2fa9bbd007ea498fc693a9d270091b45}} 
+uint32\+\_\+t $\ast$ {\bfseries table}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHashMapBase_a644d7ee4283cadf0dafa9cce5ac1334f}\label{classHashMapBase_a644d7ee4283cadf0dafa9cce5ac1334f}} 
+constexpr static int {\bfseries r1} = 5
+\item 
+\mbox{\Hypertarget{classHashMapBase_af0a7d9ff45a9f54e47c7ed3f6610d053}\label{classHashMapBase_af0a7d9ff45a9f54e47c7ed3f6610d053}} 
+constexpr static int {\bfseries r2} = 7
+\item 
+\mbox{\Hypertarget{classHashMapBase_a62ceb1f3fb89afd038ca990d099cd8ff}\label{classHashMapBase_a62ceb1f3fb89afd038ca990d099cd8ff}} 
+constexpr static int {\bfseries r3} = 17
+\item 
+\mbox{\Hypertarget{classHashMapBase_ab87753319cc0d4fe3943ff21e01e7b07}\label{classHashMapBase_ab87753319cc0d4fe3943ff21e01e7b07}} 
+constexpr static int {\bfseries r4} = 13
+\item 
+\mbox{\Hypertarget{classHashMapBase_a48932c7e7a062da3edbaaf290bf8cba6}\label{classHashMapBase_a48932c7e7a062da3edbaaf290bf8cba6}} 
+constexpr static int {\bfseries r5} = 11
+\item 
+\mbox{\Hypertarget{classHashMapBase_a0e289bae3957b2358d4757ffdc821806}\label{classHashMapBase_a0e289bae3957b2358d4757ffdc821806}} 
+constexpr static int {\bfseries r6} = 16
+\end{DoxyCompactItemize}

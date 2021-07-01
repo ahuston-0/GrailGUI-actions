@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classCanvas" xml:lang="en-US">
+<title>Canvas Class Reference</title>
+<indexterm><primary>Canvas</primary></indexterm>
+<para>Inheritance diagram for Canvas:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d5/d70/classCanvas.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCanvas_1ac7b69d9b56d9c8bb224ed187d9f32da0"/><emphasis role="strong">Canvas</emphasis> (<link linkend="_classGLWin">GLWin</link> *w, const <link linkend="_classStyle">Style</link> *style, uint32_t vpX, uint32_t vpY, uint32_t vpW, uint32_t vpH, uint32_t pX, uint32_t pY)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a40ef5dc8e120f26a50149687c4ef7f15"/><emphasis role="strong">Canvas</emphasis> (const <link linkend="_classCanvas">Canvas</link> &amp;orig)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1ab001c6bf893f5e6d01ecf620cb11a801"/><link linkend="_classCanvas">Canvas</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classCanvas">Canvas</link> &amp;orig)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1ad031d7eaf01b713d0ed70a778a3b7548"/>uint32_t <emphasis role="strong">getWidth</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a8928f381ed7567a2e77d873268bdc7e9"/>uint32_t <emphasis role="strong">getHeight</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a765206cf77e881cf62c57fba4f6bbb53"/>glm::mat4 * <emphasis role="strong">getProjection</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a42a74739a13148c6b8754e3133671117"/>void <emphasis role="strong">setProjection</emphasis> (const glm::mat4 &amp;proj)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1af62c532360cdef7fb330254f2d1e83b2"/>void <emphasis role="strong">setOrthoProjection</emphasis> (float xLeft, float xRight, float yBottom, float yTop)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a35329fcfe48306a367afaa53715814d5"/><link linkend="_classCamera">Camera</link> * <emphasis role="strong">setLookAtProjection</emphasis> (float eyeX, float eyeY, float eyeZ, float lookAtX, float lookAtY, float lookAtZ, float upX, float upY, float upZ)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a1e707a2d3922bd82b6e65a7fdf9f2b6b"/>void <emphasis role="strong">resetProjection</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1ae963f6bc75f592fa4086e9f3bd22bc53"/>template&lt;typename S &gt; </para><para>S * <emphasis role="strong">addLayer</emphasis> (S *shape)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a53eeaf9e9e2777af6764fc4dd0191556"/><link linkend="_classShape">Shape</link> * <emphasis role="strong">getLayer</emphasis> (uint32_t i)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a26dbbb834c56e2f1dafce81535646a35"/>void <emphasis role="strong">init</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a8966011056d8204bac0e2da96902e368"/>void <emphasis role="strong">process_input</emphasis> (Inputs *in, float dt)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1aff5d4342a42ac55bbb9a62444e3f0e60"/>void <emphasis role="strong">update</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a460cc390cb820daaa0e9b33ed77b351f"/>const <link linkend="_classStyle">Style</link> * <emphasis role="strong">getStyle</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a47b2f0b05d0aaeb93029e28cb2228746"/>void <emphasis role="strong">render</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1aad0e44e3a609b03234b3ee8a401e9c35"/>void <emphasis role="strong">cleanup</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCanvas_1a1d6c5e940d566760a559593b64a74ef2"/><link linkend="_classGLWin">GLWin</link> * <emphasis role="strong">w</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a3ff5caef02d312438ad2537df3b942fc"/>std::vector&lt; <link linkend="_classShape">Shape</link> * &gt; <emphasis role="strong">layers</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a10e1c4346633db4012b6dbcfc05ea85c"/>uint32_t <emphasis role="strong">vpX</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a9d8a0a7896b50b1e309b98ee167c8a8d"/>uint32_t <emphasis role="strong">vpY</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a2c4bc4fcb1d10f87b86f9022f2930ce6"/>uint32_t <emphasis role="strong">vpW</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a5c3335421efa2997946bd3182d814327"/>uint32_t <emphasis role="strong">vpH</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a3e8f143ce3aee96a03841058578ce1bb"/>uint32_t <emphasis role="strong">pX</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1af146eb5a40eadb83cc076aa983aa3ebf"/>uint32_t <emphasis role="strong">pY</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a4df177b2647203836f50f6d70a529097"/>glm::mat4 <emphasis role="strong">projection</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1accc8dddf5e8ac1d5d360091c41e3c5ca"/>glm::mat4 <emphasis role="strong">originalProjection</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1acba7c8885c32722ba89b86468bef6ec1"/>const <link linkend="_classStyle">Style</link> * <emphasis role="strong">style</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a0b027ad3f5963080ac8c8cd58d94a929"/><link linkend="_classCamera">Camera</link> * <emphasis role="strong">cam</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

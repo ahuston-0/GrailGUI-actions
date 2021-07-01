@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classDocument" xml:lang="en-US">
+<title>Document Class Reference</title>
+<indexterm><primary>Document</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classDocument_1a45c4e613bf08f6d38459db795e3fa973"/><emphasis role="strong">Document</emphasis> (const <link linkend="_classPageLayout">PageLayout</link> &amp;layout)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocument_1a9c94c75901b28073e775e2dc618b2708"/><emphasis role="strong">Document</emphasis> (const <link linkend="_classDocument">Document</link> &amp;orig)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocument_1aa243da9ea692ec4bb2e3f7aa5875eaf3"/><link linkend="_classDocument">Document</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classDocument">Document</link> &amp;orig)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocument_1a2d8b0357d335098eb088759757ccc5e3"/>const unsigned char * <emphasis role="strong">getText</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocument_1a8d6af27d2110853d7497b74566327919"/>const <link linkend="_classPage">Page</link> * <emphasis role="strong">getPage</emphasis> (uint32_t p) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocument_1a15c21187c3ae6814372bda9d56683514"/>const <link linkend="_classPageLayout">PageLayout</link> * <emphasis role="strong">getLayout</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocument_1a60906d27f3d997e9a6612cf2631a39fc"/>uint32_t <emphasis role="strong">getPageCount</emphasis> () const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDocument_1a537d3bc6cc33f8aeaa9c4b9634a78c1c"/>void <emphasis role="strong">appendFile</emphasis> (const <link linkend="_classPageLayout">PageLayout</link> &amp;layout, const char filename[])</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

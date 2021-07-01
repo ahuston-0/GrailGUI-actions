@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classShapefile" xml:lang="en-US">
+<title>Shapefile Class Reference</title>
+<indexterm><primary>Shapefile</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classShapefile_1af7d16cacca384df17237b3c3d591c427"/><emphasis role="strong">Shapefile</emphasis> (const char filename[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShapefile_1a11e6c2a46e3d8d3143dbd301d90968ab"/>void <emphasis role="strong">init</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShapefile_1a5304bf8661eb3e24e417a990ae784976"/>SHPObject * <emphasis role="strong">getShape</emphasis> (int index)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShapefile_1a09a445b2a7504c56e187aa7c19d0701c"/>std::vector&lt; SHPObject * &gt; <emphasis role="strong">getShapeVector</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShapefile_1afc6ab30898315112897da1d0d2bdc2f1"/>double * <emphasis role="strong">getMinBounds</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classShapefile_1a01a09a492fec2b63dd79e14e5017f278"/>double * <emphasis role="strong">getMaxBounds</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

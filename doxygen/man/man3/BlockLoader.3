@@ -1,0 +1,100 @@
+.TH "BlockLoader" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BlockLoader
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBBlockMapLoader\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBGeneralHeader\fP"
+.br
+.ti -1c
+.RI "struct \fBInfo\fP"
+.br
+.ti -1c
+.RI "struct \fBSecurityHeaderV0\fP"
+.br
+.ti -1c
+.RI "struct \fBSecurityHeaderV1\fP"
+.br
+.in -1c
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum class \fBType\fP { \fBgismap\fP, \fBhashmap\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBlockLoader\fP (const char filename[])"
+.br
+.ti -1c
+.RI "\fBBlockLoader\fP (const \fBBlockLoader\fP &orig)=delete"
+.br
+.ti -1c
+.RI "\fBBlockLoader\fP & \fBoperator=\fP (const \fBBlockLoader\fP &orig)=delete"
+.br
+.ti -1c
+.RI "void \fBinit\fP (uint64_t *mem, uint64_t size)"
+.br
+.ti -1c
+.RI "void \fBinit\fP (uint64_t bytes, Type t, uint32_t version)"
+.br
+.ti -1c
+.RI "void \fBreadBlockFile\fP (const char filename[])"
+.br
+.ti -1c
+.RI "uint32_t \fBgetAuthHeaderSize\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetHeaderSize\fP () const"
+.br
+.ti -1c
+.RI "bool \fBauthenticate\fP () const"
+.br
+.ti -1c
+.RI "\fBBlockLoader\fP (uint64_t bytes, Type t, uint32_t version)"
+.br
+.ti -1c
+.RI "uint32_t \fBgetAuthHeaderSize\fP () const"
+.br
+.ti -1c
+.RI "bool \fBauthenticate\fP () const"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "uint64_t * \fBmem\fP"
+.br
+.ti -1c
+.RI "uint64_t \fBsize\fP"
+.br
+.ti -1c
+.RI "\fBGeneralHeader\fP * \fBgeneralHeader\fP"
+.br
+.ti -1c
+.RI "\fBSecurityHeaderV0\fP * \fBsecurityHeader\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBlockLoader\fP (const \fBInfo\fP &info)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

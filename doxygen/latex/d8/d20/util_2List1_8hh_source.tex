@@ -1,0 +1,57 @@
+\hypertarget{util_2List1_8hh_source}{}\doxysection{List1.\+hh}
+\label{util_2List1_8hh_source}\index{src/util/List1.hh@{src/util/List1.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00005 \textcolor{keyword}{class }\mbox{\hyperlink{classList1}{List1}} \{}
+\DoxyCodeLine{00006 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00007     std::vector<T> data;}
+\DoxyCodeLine{00008 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009     \mbox{\hyperlink{classList1}{List1}}()\{\};}
+\DoxyCodeLine{00010     \mbox{\hyperlink{classList1}{List1}}(uint32\_t initialSize)\{}
+\DoxyCodeLine{00011         data.reserve(initialSize);}
+\DoxyCodeLine{00012     \}}
+\DoxyCodeLine{00013     \textcolor{comment}{//TODO: do I even need a copy constructor?}}
+\DoxyCodeLine{00014     \mbox{\hyperlink{classList1}{List1}}(\textcolor{keyword}{const} \mbox{\hyperlink{classList1}{List1}} \&orig)\{}
+\DoxyCodeLine{00015         uint32\_t used=orig.getUsed();}
+\DoxyCodeLine{00016         data.reserve(used);}
+\DoxyCodeLine{00017         \textcolor{comment}{//TODO: replace this with copy if needed}}
+\DoxyCodeLine{00018         data.assign(orig.data.begin(),orig.data.end());}
+\DoxyCodeLine{00019     \}}
+\DoxyCodeLine{00020     uint32\_t serializeSize()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00021         \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(uint32\_t) + data.size()*\textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{00022     \}}
+\DoxyCodeLine{00023     \textcolor{keywordtype}{char}* read(\textcolor{keywordtype}{char}* p) \{}
+\DoxyCodeLine{00024         uint32\_t used = *(uint32\_t*)p;}
+\DoxyCodeLine{00025         p += \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{00026         \textcolor{comment}{//data = (T*)new char[used*sizeof(T)];}}
+\DoxyCodeLine{00027         data.reserve(used);}
+\DoxyCodeLine{00028         memcpy(p, data, used * \textcolor{keyword}{sizeof}(T));}
+\DoxyCodeLine{00029         \textcolor{keywordflow}{return} p + used*\textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{00030     \}}
+\DoxyCodeLine{00031     \textcolor{keywordtype}{char}* write(\textcolor{keywordtype}{char}* p) \{}
+\DoxyCodeLine{00032         uint32\_t used = data.size();}
+\DoxyCodeLine{00033         *(uint32\_t*)p = used;}
+\DoxyCodeLine{00034         p += \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{00035         memcpy(p, \&data[0], used * \textcolor{keyword}{sizeof}(T));}
+\DoxyCodeLine{00036         \textcolor{keywordflow}{return} p + used * \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{00037     \}}
+\DoxyCodeLine{00038     \textcolor{keywordtype}{void} add(\textcolor{keyword}{const} T\& v) \{ }
+\DoxyCodeLine{00039         data.push\_back(v);}
+\DoxyCodeLine{00040     \}}
+\DoxyCodeLine{00041     uint32\_t getUsed()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00042         \textcolor{keywordflow}{return} data.size();}
+\DoxyCodeLine{00043     \}}
+\DoxyCodeLine{00044     uint32\_t getCapacity()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00045         \textcolor{keywordflow}{return} data.size();}
+\DoxyCodeLine{00046     \}}
+\DoxyCodeLine{00047     T getData (\textcolor{keywordtype}{int} i)\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00048         \textcolor{keywordflow}{return} data[i];}
+\DoxyCodeLine{00049     \}}
+\DoxyCodeLine{00050     uint32\_t size()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} data.size() * \textcolor{keyword}{sizeof}(T); \}}
+\DoxyCodeLine{00051 \};}
+
+\end{DoxyCode}

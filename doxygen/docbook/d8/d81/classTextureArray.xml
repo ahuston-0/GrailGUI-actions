@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classTextureArray" xml:lang="en-US">
+<title>TextureArray Class Reference</title>
+<indexterm><primary>TextureArray</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classTextureArray_1a64507ad62339de16c7d1ca2f8a003dfb"/><emphasis role="strong">TextureArray</emphasis> (<link linkend="_classShader">Shader</link> *shader, uint8_t allocSize=32)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTextureArray_1a53dcb0dbaf721c206b7ba1c6064d86bf"/>GLuint <emphasis role="strong">loadImage</emphasis> (const char *imagePath, uint8_t unit)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTextureArray_1a09a797ffd7b9b6c2de98c774274139c9"/>GLuint <emphasis role="strong">bindImage</emphasis> (uint8_t unit)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

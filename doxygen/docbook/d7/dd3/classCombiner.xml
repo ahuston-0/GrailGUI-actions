@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classCombiner" xml:lang="en-US">
+<title>Combiner Class Reference</title>
+<indexterm><primary>Combiner</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCombiner_1aa5fde90d18a4e68eef662e2d94d61914"/><emphasis role="strong">Combiner</emphasis> (const char staticFileName[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCombiner_1a249267f6502860b216050cb86c4052f7"/>void <emphasis role="strong">parsePage</emphasis> (int pageNum, const char dynamicFileName[])</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

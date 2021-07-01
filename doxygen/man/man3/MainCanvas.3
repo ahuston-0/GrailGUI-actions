@@ -1,0 +1,59 @@
+.TH "MainCanvas" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MainCanvas
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBCanvas\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMainCanvas\fP (\fBGLWin\fP *parent)"
+.br
+.ti -1c
+.RI "\fBMainCanvas\fP (const \fBMainCanvas\fP &)=delete"
+.br
+.ti -1c
+.RI "\fBMainCanvas\fP & \fBoperator=\fP (const \fBMainCanvas\fP &)=delete"
+.br
+.ti -1c
+.RI "\fBStyledMultiShape2D\fP * \fBgetGui\fP ()"
+.br
+.ti -1c
+.RI "\fBMultiText\fP * \fBgetGuiText\fP ()"
+.br
+.ti -1c
+.RI "\fBStyledMultiShape2D\fP * \fBgetMenu\fP ()"
+.br
+.ti -1c
+.RI "\fBMultiText\fP * \fBgetMenuText\fP ()"
+.br
+.ti -1c
+.RI "void \fBinit\fP ()"
+.br
+.ti -1c
+.RI "void \fBrender\fP ()"
+.br
+.ti -1c
+.RI "void \fBcleanup\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddButton\fP (const char text[], float x, float y, float w, float h)"
+.br
+.ti -1c
+.RI "void \fBaddLabel\fP (const char text[], float x, float y, float w, float h)"
+.br
+.ti -1c
+.RI "void \fBaddMenu\fP (const std::string menu[], uint32_t numStrings, float x, float y)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

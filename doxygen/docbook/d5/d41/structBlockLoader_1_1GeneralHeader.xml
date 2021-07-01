@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structBlockLoader_1_1GeneralHeader" xml:lang="en-US">
+<title>BlockLoader::GeneralHeader Struct Reference</title>
+<indexterm><primary>BlockLoader::GeneralHeader</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structBlockLoader_1_1GeneralHeader_1aafbd82f87719542b8323738d4390f2ef"/>uint32_t <emphasis role="strong">magic</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockLoader_1_1GeneralHeader_1a03040adbc97623dd464bf0a03791b8b1"/>uint32_t <emphasis role="strong">type</emphasis>: 16</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structBlockLoader_1_1GeneralHeader_1ab9311bf281b2954597d4f0e5a2bab554"/>uint32_t <emphasis role="strong">version</emphasis>: 16</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

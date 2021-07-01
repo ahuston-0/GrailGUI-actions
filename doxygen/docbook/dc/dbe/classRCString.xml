@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classRCString" xml:lang="en-US">
+<title>RCString Class Reference</title>
+<indexterm><primary>RCString</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classRCString_1ac3fa048e85fe8cc053d67dc71841a8d0"/><emphasis role="strong">RCString</emphasis> (const char msg[], uint32_t len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRCString_1aac5fca3d54fe54fc32e27125fa55cc14"/><emphasis role="strong">RCString</emphasis> (const char msg[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRCString_1a864c5262f4e2c24aa6dd8032f8729e20"/><emphasis role="strong">RCString</emphasis> (const <link linkend="_classRCString">RCString</link> &amp;a, const <link linkend="_classRCString">RCString</link> &amp;b, const <link linkend="_classRCString">RCString</link> &amp;c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRCString_1ae6ddd25f6693d91abc70af6623a5b4f9"/><emphasis role="strong">RCString</emphasis> (const <link linkend="_classRCString">RCString</link> &amp;orig)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRCString_1acf0fa0d60bdb738c1605888f79b09617"/><link linkend="_classRCString">RCString</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classRCString">RCString</link> &amp;orig)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRCString_1a1e3258bd192089dcf32bcc764e0963fc"/><emphasis role="strong">RCString</emphasis> (<link linkend="_classRCString">RCString</link> &amp;&amp;orig)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRCString_1acaf313802693089299817967dc0df3fc"/>char <emphasis role="strong">operator[]</emphasis> (uint32_t i) const</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRCString_1acbee7ebc7c8bece7c9b933fa832d0026"/>char &amp; <emphasis role="strong">operator[]</emphasis> (uint32_t i)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRCString_1a120d2dace7f2b34d793f0fe844c5f258"/>uint32_t <emphasis role="strong">len</emphasis> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classRCString_1af71764b10c7f107c8aba1194c6bc486a"/>static uint32_t <emphasis role="strong">setMark</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classRCString_1af490d7956130e122995a6e35e1a2e605"/>static void <emphasis role="strong">freeToMark</emphasis> (uint32_t mark)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classRCString_1ae239a0d8caa5da5d41959bcd24c5d754"/>std::ostream &amp; <emphasis role="strong">operator&lt;&lt;</emphasis> (std::ostream &amp;s, const <link linkend="_classRCString">RCString</link> &amp;str)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

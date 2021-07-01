@@ -1,0 +1,80 @@
+.TH "FontFace" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FontFace
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBgetTexture\fP () const"
+.br
+.ti -1c
+.RI "\fBFontFace\fP (FT_Library ft, const std::string &faceName, const std::string &facePath, uint32_t minFontSize, uint32_t inc, uint32_t maxFontSize, uint8_t bitmap[], uint32_t &sizeX, uint32_t &sizeY, uint32_t &currX, uint32_t &currY, uint32_t &rowSize)"
+.br
+.ti -1c
+.RI "const \fBFont\fP * \fBgetFont\fP (uint32_t size, int weight) const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBinitAll\fP ()"
+.br
+.ti -1c
+.RI "static void \fBaddFontName\fP (std::string name, const std::string &path)"
+.br
+.ti -1c
+.RI "static void \fBemptyFaces\fP ()"
+.br
+.ti -1c
+.RI "static const \fBFontFace\fP * \fBgetFace\fP (int i)"
+.br
+.ti -1c
+.RI "static const \fBFont\fP * \fBget\fP (const char faceName[], uint32_t size, uint32_t boldness)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBmaxWidthIndex\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static FT_Library \fBftLib\fP"
+.br
+.ti -1c
+.RI "static constexpr char \fBTIMES\fP [] = 'Times'"
+.br
+.ti -1c
+.RI "static constexpr char \fBHELVETICA\fP [] = 'Helvetica'"
+.br
+.ti -1c
+.RI "static constexpr char \fBCOURIER\fP [] = 'Courier'"
+.br
+.ti -1c
+.RI "static constexpr uint32_t \fBNORMAL\fP = 1"
+.br
+.ti -1c
+.RI "static constexpr uint32_t \fBBOLD\fP = 9"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBFont\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

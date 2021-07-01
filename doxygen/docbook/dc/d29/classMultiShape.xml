@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classMultiShape" xml:lang="en-US">
+<title>MultiShape Class Reference</title>
+<indexterm><primary>MultiShape</primary></indexterm>
+<para>Inheritance diagram for MultiShape:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../dc/d29/classMultiShape.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classMultiShape_1aa15e91929d010153d82595b4c944d8a2"/><emphasis role="strong">MultiShape</emphasis> (<link linkend="_classCanvas">Canvas</link> *parent, uint32_t vertCount=1024, uint32_t solidIndCount=1024, uint32_t lineIndCount=1024, uint32_t pointIndCount=1024, uint32_t colorIndCount=1024)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape_1ad4da84336c024d2e59a31d3d6cf5c2e2"/>void <emphasis role="strong">process_input</emphasis> (Inputs *in, float dt) override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape_1a558564ccfb69f5e3202cfd8006a3e68a"/>void <emphasis role="strong">update</emphasis> () override</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape_1a62f11ff8c9efcb55f6468d51ca7de19f"/>void <emphasis role="strong">addPoint</emphasis> (float x, float y)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classMultiShape_1ae0488f93375447923aa529f7ed5ba584"/>std::vector&lt; float &gt; <emphasis role="strong">vertices</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape_1ab770b80e9cf9c69a60e27667888a6a01"/>std::vector&lt; uint32_t &gt; <emphasis role="strong">solidIndices</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape_1a37c5d0aa2f7714cff1ff75bb7edba136"/>std::vector&lt; uint32_t &gt; <emphasis role="strong">lineIndices</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape_1a75ae2725b2347e10bbadec3d92a8f939"/>std::vector&lt; uint32_t &gt; <emphasis role="strong">pointIndices</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classMultiShape_1a19befa7524473aeb72c1e9ebd8b6b107"/>std::vector&lt; float &gt; <emphasis role="strong">colorIndices</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

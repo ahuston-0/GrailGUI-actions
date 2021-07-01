@@ -1,0 +1,74 @@
+\hypertarget{Shapefile_8hh_source}{}\doxysection{Shapefile.\+hh}
+\label{Shapefile_8hh_source}\index{src/opengl/Shapefile.hh@{src/opengl/Shapefile.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}libshape/shapefil.h"{}}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}opengl/Errcode.hh"{}}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include "{}util/Ex.hh"{}}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{\Hypertarget{Shapefile_8hh_source_l00010}\mbox{\hyperlink{classShapefile}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{classShapefile}{Shapefile}} \{}
+\DoxyCodeLine{00011  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012   SHPHandle shapeHandle;}
+\DoxyCodeLine{00013   \textcolor{keywordtype}{int} nEntities, nShapeType;}
+\DoxyCodeLine{00014   \textcolor{keywordtype}{double} minBounds[4], maxBounds[4];}
+\DoxyCodeLine{00015   std::vector<SHPObject*> shapeObjects;}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018   \mbox{\hyperlink{classShapefile}{Shapefile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]);}
+\DoxyCodeLine{00019   \string~\mbox{\hyperlink{classShapefile}{Shapefile}}();}
+\DoxyCodeLine{00020   \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{00021   SHPObject* getShape(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{00022   std::vector<SHPObject*> getShapeVector();}
+\DoxyCodeLine{00023   \textcolor{keywordtype}{double}* getMinBounds();}
+\DoxyCodeLine{00024   \textcolor{keywordtype}{double}* getMaxBounds();}
+\DoxyCodeLine{00025 \};}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{\Hypertarget{Shapefile_8hh_source_l00027}\mbox{\hyperlink{classESRIPoint}{00027}} \textcolor{keyword}{class }\mbox{\hyperlink{classESRIPoint}{ESRIPoint}} \{}
+\DoxyCodeLine{00028  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029   \textcolor{keywordtype}{double} x, y;}
+\DoxyCodeLine{00030   \mbox{\hyperlink{classESRIPoint}{ESRIPoint}}() : x(0), y(0)\{\};}
+\DoxyCodeLine{00031   \mbox{\hyperlink{classESRIPoint}{ESRIPoint}}(\textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y) : x(x), y(y)\{\};}
+\DoxyCodeLine{00032 \};}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{\Hypertarget{Shapefile_8hh_source_l00034}\mbox{\hyperlink{classESRIShape}{00034}} \textcolor{keyword}{class }\mbox{\hyperlink{classESRIShape}{ESRIShape}} \{}
+\DoxyCodeLine{00035  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00036   SHPObject* shapePtr;}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039   \textcolor{keywordtype}{int} shapeType;}
+\DoxyCodeLine{00040   \mbox{\hyperlink{classESRIShape}{ESRIShape}}() : shapePtr(NULL), shapeType(0)\{\};}
+\DoxyCodeLine{00041   \mbox{\hyperlink{classESRIShape}{ESRIShape}}(SHPObject* shapePtr)}
+\DoxyCodeLine{00042       : shapePtr(shapePtr), shapeType(shapePtr-\/>nSHPType)\{\};}
+\DoxyCodeLine{00043   \textcolor{keyword}{static} std::vector<std::unique\_ptr<ESRIShape>> convertSHPObjects(}
+\DoxyCodeLine{00044       \textcolor{keyword}{const} std::vector<SHPObject*>\& shapeObjects);}
+\DoxyCodeLine{00045   \textcolor{keyword}{virtual} std::vector<ESRIPoint> getPoints() = 0;}
+\DoxyCodeLine{00046 \};}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{\Hypertarget{Shapefile_8hh_source_l00048}\mbox{\hyperlink{classESRIPolygon}{00048}} \textcolor{keyword}{class }\mbox{\hyperlink{classESRIPolygon}{ESRIPolygon}} : \textcolor{keyword}{public} \mbox{\hyperlink{classESRIShape}{ESRIShape}} \{}
+\DoxyCodeLine{00049  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050   \textcolor{keywordtype}{double} boundingBox[4];}
+\DoxyCodeLine{00051   \textcolor{keywordtype}{int} numParts, numPoints;}
+\DoxyCodeLine{00052   \textcolor{keywordtype}{int}* parts;}
+\DoxyCodeLine{00053   \textcolor{keywordtype}{double} *xPoints, *yPoints;}
+\DoxyCodeLine{00054   std::vector<ESRIPoint> points;}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057   \mbox{\hyperlink{classESRIPolygon}{ESRIPolygon}}(SHPObject* shapePtr)}
+\DoxyCodeLine{00058       : \mbox{\hyperlink{classESRIShape}{ESRIShape}}(shapePtr),}
+\DoxyCodeLine{00059         boundingBox\{shapePtr-\/>dfXMin, shapePtr-\/>dfXMax, shapePtr-\/>dfYMin,}
+\DoxyCodeLine{00060                     shapePtr-\/>dfYMax\},}
+\DoxyCodeLine{00061         numParts(shapePtr-\/>nParts),}
+\DoxyCodeLine{00062         numPoints(shapePtr-\/>nVertices),}
+\DoxyCodeLine{00063         xPoints(shapePtr-\/>padfX),}
+\DoxyCodeLine{00064         yPoints(shapePtr-\/>padfY)\{\};}
+\DoxyCodeLine{00065   std::vector<ESRIPoint> getPoints();}
+\DoxyCodeLine{00066 \};}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068 \textcolor{comment}{// TODO: Implement classes for individual ESRIShapes?}}
+
+\end{DoxyCode}

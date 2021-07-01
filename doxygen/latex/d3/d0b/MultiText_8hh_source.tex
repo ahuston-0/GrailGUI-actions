@@ -1,0 +1,72 @@
+\hypertarget{MultiText_8hh_source}{}\doxysection{Multi\+Text.\+hh}
+\label{MultiText_8hh_source}\index{src/opengl/MultiText.hh@{src/opengl/MultiText.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include "{}opengl/GLWin.hh"{}}}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/GLWinFonts.hh"{}}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}opengl/Shape.hh"{}}}
+\DoxyCodeLine{00005 \textcolor{keyword}{class }\mbox{\hyperlink{classStyle}{Style}};}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{\Hypertarget{MultiText_8hh_source_l00007}\mbox{\hyperlink{classMultiText}{00007}} \textcolor{keyword}{class }\mbox{\hyperlink{classMultiText}{MultiText}} : \textcolor{keyword}{public} \mbox{\hyperlink{classShape}{Shape}} \{}
+\DoxyCodeLine{00008  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00009   uint32\_t textureId;}
+\DoxyCodeLine{00010   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* style;}
+\DoxyCodeLine{00011   std::vector<float> vert;}
+\DoxyCodeLine{00012   \textcolor{keywordtype}{void} addPoint(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} u, \textcolor{keywordtype}{float} v) \{}
+\DoxyCodeLine{00013     vert.push\_back(x);}
+\DoxyCodeLine{00014     vert.push\_back(y);}
+\DoxyCodeLine{00015     vert.push\_back(u);}
+\DoxyCodeLine{00016     vert.push\_back(v);}
+\DoxyCodeLine{00017   \}}
+\DoxyCodeLine{00018   \textcolor{keywordtype}{float} velX = 1, velY = 1;}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021   \mbox{\hyperlink{classMultiText}{MultiText}}(\mbox{\hyperlink{classCanvas}{Canvas}}* c, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* style);}
+\DoxyCodeLine{00022   \mbox{\hyperlink{classMultiText}{MultiText}}(\mbox{\hyperlink{classCanvas}{Canvas}}* c, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* style, uint32\_t size);}
+\DoxyCodeLine{00023   \string~\mbox{\hyperlink{classMultiText}{MultiText}}();}
+\DoxyCodeLine{00024   \textcolor{keywordtype}{void} addChar(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} c);}
+\DoxyCodeLine{00025   \textcolor{comment}{// a 16-\/bit unicode character like Java}}
+\DoxyCodeLine{00026   \textcolor{keywordtype}{void} addChar(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f, \textcolor{keyword}{const} uint16\_t c);}
+\DoxyCodeLine{00027   \textcolor{keywordtype}{void} add(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} \textcolor{keywordtype}{char} s[], uint32\_t len);}
+\DoxyCodeLine{00028   \textcolor{keywordtype}{void} add(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f, \textcolor{keyword}{const} \textcolor{keywordtype}{char} s[], uint32\_t len);}
+\DoxyCodeLine{00029   \textcolor{keywordtype}{void} add(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, uint32\_t v);}
+\DoxyCodeLine{00030   \textcolor{keywordtype}{void} add(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f, uint32\_t v);}
+\DoxyCodeLine{00031   \textcolor{keywordtype}{void} addHex(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f, uint32\_t v);}
+\DoxyCodeLine{00032   \textcolor{keywordtype}{void} addHex8(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f, uint32\_t v);}
+\DoxyCodeLine{00033   \textcolor{keywordtype}{void} add(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f, int32\_t v);}
+\DoxyCodeLine{00034   \textcolor{keywordtype}{void} add(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} v);}
+\DoxyCodeLine{00035   \textcolor{keywordtype}{void} add(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f, \textcolor{keywordtype}{float} v);}
+\DoxyCodeLine{00036   \textcolor{keywordtype}{void} add(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{double} v);}
+\DoxyCodeLine{00037   \textcolor{keywordtype}{void} add(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f, \textcolor{keywordtype}{double} v);}
+\DoxyCodeLine{00038   \textcolor{keywordtype}{void} add(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f, \textcolor{keywordtype}{double} v, \textcolor{keywordtype}{int} fieldWidth,}
+\DoxyCodeLine{00039            \textcolor{keywordtype}{int} precision);}
+\DoxyCodeLine{00040   \textcolor{keywordtype}{void} addCentered(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float}, \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f, \textcolor{keywordtype}{double} v,}
+\DoxyCodeLine{00041                               \textcolor{keywordtype}{int} fieldWidth, \textcolor{keywordtype}{int} precision);}
+\DoxyCodeLine{00042   \textcolor{keywordtype}{void} addCentered(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f, \textcolor{keyword}{const} \textcolor{keywordtype}{char} s[],}
+\DoxyCodeLine{00043                    uint32\_t len);}
+\DoxyCodeLine{00044   \textcolor{keywordtype}{void} checkAdd(\textcolor{keywordtype}{float}\& x, \textcolor{keywordtype}{float}\& y, \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} c,}
+\DoxyCodeLine{00045                 \textcolor{keywordtype}{float} endMargin, \textcolor{keywordtype}{float} rowSize, \textcolor{keywordtype}{float} startOverMargin);}
+\DoxyCodeLine{00046   uint32\_t findFirstOverMargin(\textcolor{keywordtype}{float} x, \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f, \textcolor{keyword}{const} \textcolor{keywordtype}{char} s[],}
+\DoxyCodeLine{00047                                uint32\_t len, \textcolor{keywordtype}{float} rightMargin);}
+\DoxyCodeLine{00048   \textcolor{keywordtype}{void} clear() \{ vert.clear(); \}}
+\DoxyCodeLine{00049   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051   \textcolor{keywordtype}{void} process\_input(Inputs* in, \textcolor{keywordtype}{float} dt) \{}
+\DoxyCodeLine{00052 \textcolor{preprocessor}{\#if 0}}
+\DoxyCodeLine{00053     \textcolor{keywordflow}{if}(x < 0 || x > GLWin::Width)\{}
+\DoxyCodeLine{00054        velX =-\/ velX;}
+\DoxyCodeLine{00055       \}   }
+\DoxyCodeLine{00056       \textcolor{keywordflow}{if}(x < 0 || x > GLWin::Height)\{}
+\DoxyCodeLine{00057         velY *= -\/1;  \textcolor{comment}{//TODO: WTF? Why would you change Y direction when you head to end of line? Seems like a bug}}
+\DoxyCodeLine{00058       \}}
+\DoxyCodeLine{00059     \textcolor{comment}{// x+=velX;}}
+\DoxyCodeLine{00060     \textcolor{comment}{// y+=velY;}}
+\DoxyCodeLine{00061 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00062   \}}
+\DoxyCodeLine{00063   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* getStyle();}
+\DoxyCodeLine{00064   \textcolor{keywordtype}{void} update() \textcolor{keyword}{override};}
+\DoxyCodeLine{00065   \textcolor{keywordtype}{void} render() \textcolor{keyword}{override};}
+\DoxyCodeLine{00066 \};}
+
+\end{DoxyCode}

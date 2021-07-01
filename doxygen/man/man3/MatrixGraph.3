@@ -1,0 +1,60 @@
+.TH "MatrixGraph" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MatrixGraph
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMatrixGraph\fP (int V)"
+.br
+.ti -1c
+.RI "\fBMatrixGraph\fP (const \fBMatrixGraph\fP &orig)=delete"
+.br
+.ti -1c
+.RI "\fBMatrixGraph\fP & \fBoperator=\fP (const \fBMatrixGraph\fP &orig)=delete"
+.br
+.ti -1c
+.RI "uint32_t \fBgetV\fP () const"
+.br
+.ti -1c
+.RI "uint32_t \fBgetE\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetW\fP (uint32_t from, uint32_t to) const"
+.br
+.ti -1c
+.RI "void \fBsetW\fP (uint32_t from, uint32_t to, double v)"
+.br
+.ti -1c
+.RI "double \fBoperator()\fP (int from, int to) const"
+.br
+.ti -1c
+.RI "double & \fBoperator()\fP (int from, int to)"
+.br
+.ti -1c
+.RI "void \fBdfs\fP (int v)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "constexpr static double \fBINF\fP = std::numeric_limits<double>::infinity()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &s, \fBMatrixGraph\fP &g)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

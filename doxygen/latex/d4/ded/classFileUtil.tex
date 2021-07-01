@@ -1,0 +1,35 @@
+\hypertarget{classFileUtil}{}\doxysection{File\+Util Class Reference}
+\label{classFileUtil}\index{FileUtil@{FileUtil}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFileUtil_a05b6d090ead5e3c2c6ea2c96b44aa81f}\label{classFileUtil_a05b6d090ead5e3c2c6ea2c96b44aa81f}} 
+void {\bfseries search\+Dir} (const char dir\+Name\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFileUtil_aaa28b49eb1fc6f0d5d10649200f25f28}\label{classFileUtil_aaa28b49eb1fc6f0d5d10649200f25f28}} 
+static char $\ast$ {\bfseries read\+Complete} (const char filename\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classFileUtil_a473604e8a31175d2b0bc1d3ebbaec1bb}\label{classFileUtil_a473604e8a31175d2b0bc1d3ebbaec1bb}} 
+static void {\bfseries read\+Complete} (char $\ast$$\ast$p, uint32\+\_\+t $\ast$len, const char filename\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classFileUtil_a3f2c1c9f172235e5babd96bd6c459955}\label{classFileUtil_a3f2c1c9f172235e5babd96bd6c459955}} 
+static bool {\bfseries is\+Dir} (const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{classFileUtil_a2ef6dc12bb1e7720bb6771dba81d78a8}\label{classFileUtil_a2ef6dc12bb1e7720bb6771dba81d78a8}} 
+{\footnotesize template$<$typename T $>$ }\\static uint32\+\_\+t {\bfseries find\+All} (std\+::regex $\ast$reg, const std\+::string \&dir\+Name, T $\ast$handler, void(T\+::$\ast$f)(std\+::string file\+Path, std\+::string filename))
+\item 
+static void \mbox{\hyperlink{classFileUtil_aae4374e77c0e04b76817a1049ba16076}{build\+Map\+Name\+To\+File}} (const std\+::regex $\ast$pattern, std\+::string dir\+Name, void($\ast$f)(std\+::string name, const std\+::string \&path))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFileUtil_aae4374e77c0e04b76817a1049ba16076}\label{classFileUtil_aae4374e77c0e04b76817a1049ba16076}} 
+\index{FileUtil@{FileUtil}!buildMapNameToFile@{buildMapNameToFile}}
+\index{buildMapNameToFile@{buildMapNameToFile}!FileUtil@{FileUtil}}
+\doxysubsubsection{\texorpdfstring{buildMapNameToFile()}{buildMapNameToFile()}}
+{\footnotesize\ttfamily static void File\+Util\+::build\+Map\+Name\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::regex $\ast$}]{pattern,  }\item[{std\+::string}]{dir\+Name,  }\item[{void($\ast$)(std\+::string name, const std\+::string \&path)}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+This is static because it makes no sense to load fonts over and over again into multiple browser windows when they should be sharing 

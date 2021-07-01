@@ -1,0 +1,56 @@
+\hypertarget{HighPerfMemAlloc_8hh_source}{}\doxysection{High\+Perf\+Mem\+Alloc.\+hh}
+\label{HighPerfMemAlloc_8hh_source}\index{src/util/HighPerfMemAlloc.hh@{src/util/HighPerfMemAlloc.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}DynArray.hh"{}}}
+\DoxyCodeLine{00004 \textcolor{keyword}{template}<u\textcolor{keywordtype}{int}32\_t blockSize>}
+\DoxyCodeLine{\Hypertarget{HighPerfMemAlloc_8hh_source_l00005}\mbox{\hyperlink{classBlockAllocator}{00005}} \textcolor{keyword}{class }\mbox{\hyperlink{classBlockAllocator}{BlockAllocator}} \{}
+\DoxyCodeLine{00006 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00007     \textcolor{keyword}{class }Block \{}
+\DoxyCodeLine{00008     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009         uint64\_t* p; \textcolor{comment}{// pointer to the block of memory}}
+\DoxyCodeLine{00010         uint32\_t offset; \textcolor{comment}{// offset to the current memory}}
+\DoxyCodeLine{00011         Block(\textcolor{keywordtype}{char}* p, uint32\_t size) : p(p), offset(0) \{\}}
+\DoxyCodeLine{00012         \string~Block() \{}
+\DoxyCodeLine{00013             \textcolor{keyword}{delete} [] p;}
+\DoxyCodeLine{00014         \}}
+\DoxyCodeLine{00015         Block(\textcolor{keyword}{const} Block\& orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00016         Block\& operator =(\textcolor{keyword}{const} Block\& orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00017         Block(Block\&\& orig) : p(orig.p), offset(orig.offset) \{}
+\DoxyCodeLine{00018             orig.p = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00019         \}}
+\DoxyCodeLine{00020     \};}
+\DoxyCodeLine{00021     \mbox{\hyperlink{classDynArray}{DynArray<Block>}} blocks;}
+\DoxyCodeLine{00022     uint64\_t* p; \textcolor{comment}{// pointer to the block of memory}}
+\DoxyCodeLine{00023     uint32\_t current; \textcolor{comment}{// offset to the current memory}}
+\DoxyCodeLine{00024 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025     \mbox{\hyperlink{classBlockAllocator}{BlockAllocator}}(uint32\_t size) : blocks(size) \{}
+\DoxyCodeLine{00026         p = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[blockSize];}
+\DoxyCodeLine{00027         current = 0;}
+\DoxyCodeLine{00028     \}}
+\DoxyCodeLine{00029     \string~\mbox{\hyperlink{classBlockAllocator}{BlockAllocator}}() \{}
+\DoxyCodeLine{00030         \textcolor{keyword}{delete} [] p; \textcolor{comment}{// delete the current pointer}}
+\DoxyCodeLine{00031     \} \textcolor{comment}{// destructor for DynArray will wipe all the old ones}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033     \textcolor{keywordtype}{void}* alloc(uint32\_t size) \{}
+\DoxyCodeLine{00034         \textcolor{keywordflow}{if} (blockSize -\/ current < size) \{}
+\DoxyCodeLine{00035             blocks.add(Block(p, size));}
+\DoxyCodeLine{00036             \textcolor{keywordflow}{if} (size > blockSize) \{}
+\DoxyCodeLine{00037                 p = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[size];}
+\DoxyCodeLine{00038                 current = 0;}
+\DoxyCodeLine{00039             \}}
+\DoxyCodeLine{00040         \}}
+\DoxyCodeLine{00041         \textcolor{keywordtype}{char}* temp = p + current;}
+\DoxyCodeLine{00042         current += size;}
+\DoxyCodeLine{00043         \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{00044     \}}
+\DoxyCodeLine{00045     }
+\DoxyCodeLine{00046 \};          }
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048 \textcolor{keywordtype}{void}* \textcolor{keyword}{operator} \textcolor{keyword}{new}(\textcolor{keywordtype}{size\_t} sz, \mbox{\hyperlink{classBlockAllocator}{BlockAllocator}}* b) \{}
+\DoxyCodeLine{00049     \textcolor{keywordflow}{return} b-\/>alloc(sz);}
+\DoxyCodeLine{00050 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,226 @@
+.TH "Stats1D< T >" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Stats1D< T >
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBSummary\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStats1D\fP (T *array, uint32_t size, bool sorted=false)"
+.br
+.RI "Construct a new \fBStats1D\fP object of a numeric type\&. "
+.ti -1c
+.RI "void \fBupdateArray\fP (T *newArray, uint32_t newSize, bool sorted=false)"
+.br
+.RI "Updates the content of the array\&. "
+.ti -1c
+.RI "double \fBgetMean\fP ()"
+.br
+.RI "Calculates mean of a numeric type\&. "
+.ti -1c
+.RI "std::vector< T > \fBgetModes\fP ()"
+.br
+.RI "Finds the modes of a numeric type\&. "
+.ti -1c
+.RI "T \fBgetIQR\fP ()"
+.br
+.RI "Calculates the IQR of a numeric type\&. "
+.ti -1c
+.RI "struct \fBSummary\fP \fBgetSummary\fP ()"
+.br
+.RI "Returns a struct containing the five number summary of a numeric type\&. "
+.ti -1c
+.RI "double \fBgetStdDev\fP ()"
+.br
+.RI "Calculates the standard deviation of a numeric type\&. "
+.ti -1c
+.RI "double \fBgetVariance\fP ()"
+.br
+.RI "Calculates the variance of a numeric type\&. "
+.ti -1c
+.RI "double \fBgetQuantile\fP (double percentile)"
+.br
+.RI "getQuantile - Gets a quantile of the sorted array "
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "template<typename U > std::ostream & \fBoperator<<\fP (std::ostream &os, \fBStats1D\fP< U > &stats)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename T > \fBStats1D\fP< T >::\fBStats1D\fP (T * array, uint32_t size, bool sorted = \fCfalse\fP)"
+
+.PP
+Construct a new \fBStats1D\fP object of a numeric type\&. The array may be of any numeric type and may be unsorted when it is passed into the object\&. The size of the array is assumed to match the size of the variable\&. The sorted flag defaults to false\&.
+.PP
+If a mistake is made when creating the array, or the array is updated, use updateArray to make any necessary changes\&.
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP Any numeric type 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIarray\fP \fBA\fP pointer to the array to be analyzed 
+.br
+\fIsize\fP The size of the array to be analyzed 
+.br
+\fIsorted\fP \fBA\fP flag indicating if the array is sorted 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T > T \fBStats1D\fP< T >::getIQR"
+
+.PP
+Calculates the IQR of a numeric type\&. The interquartile range is the 50% range between the first and third quartile of a dataset\&. Together with the median of the dataset, it presents an alternative to the mean and standard deviation for finding outliers\&.
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP Any numeric type 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+T The IQR of a dataset 
+.RE
+.PP
+
+.SS "template<typename T > double \fBStats1D\fP< T >::getMean"
+
+.PP
+Calculates mean of a numeric type\&. For a dataset without outliers or skew, the mean will represent the center of a dataset\&. Together with the standard deviation, it is useful for catching extreme values and describing the distribution of the data\&.
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP Any numeric type 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+double The mean of a dataset 
+.RE
+.PP
+
+.SS "template<typename T > vector< T > \fBStats1D\fP< T >::getModes"
+
+.PP
+Finds the modes of a numeric type\&. The mode of a dataset is value that most frequently appears\&.
+.PP
+This returns a vector in order to allow the possibility of multiple modes, rather than just returning one of many modes\&.
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP Any numeric type 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+vector<T> \fBA\fP vector of modes of a dataset 
+.RE
+.PP
+
+.SS "template<typename T > double \fBStats1D\fP< T >::getQuantile (double percentile)"
+
+.PP
+getQuantile - Gets a quantile of the sorted array This looks like it implements the R-6 algorithm for finding quantiles, but it is actually R-7\&. Upon reviewing the relevant paper, the index functions refer to an array with a starting index of 1, but C++ is 0-indexed\&. As such, the added one that is expected in R-7 has been negated\&. (Hyndman and Fan, 1997)\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIpercentile\fP The percentile to look for 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+double The resultant quantile 
+.RE
+.PP
+
+.SS "template<typename T > double \fBStats1D\fP< T >::getStdDev"
+
+.PP
+Calculates the standard deviation of a numeric type\&. The standard deviation of a dataset describes the spread of a data\&. \fBA\fP higher standard deviation indicates that the data is spread further from the mean of the dataset\&.
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP Any numeric type 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+double The standard deviation of a dataset 
+.RE
+.PP
+
+.SS "template<typename T > struct \fBStats1D\fP< T >::\fBSummary\fP \fBStats1D\fP< T >::getSummary"
+
+.PP
+Returns a struct containing the five number summary of a numeric type\&. The five number summary contains the minimum, maximum, median, first quartile, and third quartile\&. These values are useful to describe the distribution of the dataset and find outliers\&.
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP Any generic type 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+struct Stats1D<T>::Summary \fBA\fP struct of the five number summary 
+.RE
+.PP
+
+.SS "template<typename T > double \fBStats1D\fP< T >::getVariance"
+
+.PP
+Calculates the variance of a numeric type\&. The variance of a dataset is the square of standard deviation and is another descriptor of the spread of a dataset\&. Among its many uses are sampling, inference, hypothesis testing, and goodness of fit\&.
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP Any numeric type 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+double The variance of a dataset 
+.RE
+.PP
+
+.SS "template<typename T > void \fBStats1D\fP< T >::updateArray (T * newArray, uint32_t newSize, bool sorted = \fCfalse\fP)"
+
+.PP
+Updates the content of the array\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP Any numeric type 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fInewArray\fP \fBA\fP new array 
+.br
+\fInewSize\fP \fBA\fP new size 
+.br
+\fIsorted\fP \fBA\fP new sorted flag, defaults to the existing flag 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

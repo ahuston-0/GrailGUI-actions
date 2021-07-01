@@ -1,0 +1,62 @@
+\hypertarget{classPage}{}\doxysection{Page Class Reference}
+\label{classPage}\index{Page@{Page}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPage_aeaf833080d10435da92153d8d7c3c9ba}\label{classPage_aeaf833080d10435da92153d8d7c3c9ba}} 
+{\bfseries Page} (const string \&input\+File)
+\item 
+\mbox{\Hypertarget{classPage_ab9b73a378248573705719d7771df9d56}\label{classPage_ab9b73a378248573705719d7771df9d56}} 
+{\bfseries Page} (const string \&static\+Content, vector$<$ \mbox{\hyperlink{classInsertion}{Insertion}} $>$ insertions)
+\item 
+\mbox{\Hypertarget{classPage_acb84e973974a94ea19b92dd032d97910}\label{classPage_acb84e973974a94ea19b92dd032d97910}} 
+{\bfseries Page} (const string \&static\+File, const string \&insert\+File)
+\item 
+\mbox{\Hypertarget{classPage_ab269f34537be1e2563a0f65641c80107}\label{classPage_ab269f34537be1e2563a0f65641c80107}} 
+char $\ast$ {\bfseries get\+Static\+Pointer} ()
+\item 
+\mbox{\Hypertarget{classPage_abc2fb4806f0541e48cdf20a03bdd47e0}\label{classPage_abc2fb4806f0541e48cdf20a03bdd47e0}} 
+string {\bfseries get\+Static\+Content} () const
+\item 
+\mbox{\Hypertarget{classPage_afe143fadf563c9f07fe846de81af011c}\label{classPage_afe143fadf563c9f07fe846de81af011c}} 
+vector$<$ \mbox{\hyperlink{classInsertion}{Insertion}} $>$ {\bfseries get\+Insertions} () const
+\item 
+\mbox{\Hypertarget{classPage_ad1976f7013a57228b2197e8feb2c95f8}\label{classPage_ad1976f7013a57228b2197e8feb2c95f8}} 
+uint32\+\_\+t {\bfseries get\+Size} () const
+\item 
+\mbox{\Hypertarget{classPage_a2173b871af5a7ace2f714dabf593973b}\label{classPage_a2173b871af5a7ace2f714dabf593973b}} 
+uint32\+\_\+t {\bfseries get\+Static\+Size} () const
+\item 
+\mbox{\Hypertarget{classPage_a9dafa3ae60c91e62f6bdb7fe343598f3}\label{classPage_a9dafa3ae60c91e62f6bdb7fe343598f3}} 
+void {\bfseries add\+Dynamic} (uint32\+\_\+t offset, Data\+Type d)
+\item 
+\mbox{\Hypertarget{classPage_a871f42a05670e8bf2b419b3a9be287e2}\label{classPage_a871f42a05670e8bf2b419b3a9be287e2}} 
+void {\bfseries add\+Static} (const string \&t)
+\item 
+\mbox{\Hypertarget{classPage_a35cb8309d5cec63635826242041431de}\label{classPage_a35cb8309d5cec63635826242041431de}} 
+bool {\bfseries is\+Static} ()
+\item 
+\mbox{\Hypertarget{classPage_ac93b45cb23cc1d67e0febbd6cea9974a}\label{classPage_ac93b45cb23cc1d67e0febbd6cea9974a}} 
+uint32\+\_\+t {\bfseries dynamic\+Size} (Data\+Type d)
+\item 
+\mbox{\Hypertarget{classPage_a9acc4abb896a95c671091fa4827e77c6}\label{classPage_a9acc4abb896a95c671091fa4827e77c6}} 
+{\bfseries Page} (const unsigned char $\ast$text, const \mbox{\hyperlink{classPageLayout}{Page\+Layout}} $\ast$page\+Layout, uint32\+\_\+t offset)
+\item 
+\mbox{\Hypertarget{classPage_a6384d8c2234308fca9befc0e2e3c31b3}\label{classPage_a6384d8c2234308fca9befc0e2e3c31b3}} 
+void {\bfseries add\+Line} (uint32\+\_\+t offset)
+\item 
+\mbox{\Hypertarget{classPage_ab315ecdf6b2e12a784e51ca9324365a2}\label{classPage_ab315ecdf6b2e12a784e51ca9324365a2}} 
+uint32\+\_\+t {\bfseries get\+Line} (uint32\+\_\+t line) const
+\item 
+\mbox{\Hypertarget{classPage_a4ca5e096e93d12323c73187b79f203f8}\label{classPage_a4ca5e096e93d12323c73187b79f203f8}} 
+const \mbox{\hyperlink{classPageLayout}{Page\+Layout}} $\ast$ {\bfseries get\+Layout} () const
+\item 
+\mbox{\Hypertarget{classPage_a46056533f7d6852e9ffc14f8eb87b475}\label{classPage_a46056533f7d6852e9ffc14f8eb87b475}} 
+uint32\+\_\+t {\bfseries size} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPage_a5883f7e1f207a5cf0bc689398194276e}\label{classPage_a5883f7e1f207a5cf0bc689398194276e}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&s, const \mbox{\hyperlink{classPage}{Page}} \&p)
+\end{DoxyCompactItemize}

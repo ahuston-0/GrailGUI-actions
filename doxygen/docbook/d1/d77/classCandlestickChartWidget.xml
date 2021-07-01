@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classCandlestickChartWidget" xml:lang="en-US">
+<title>CandlestickChartWidget Class Reference</title>
+<indexterm><primary>CandlestickChartWidget</primary></indexterm>
+<para>Inheritance diagram for CandlestickChartWidget:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d1/d77/classCandlestickChartWidget.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classCandlestickChartWidget_1a2a3be0ed0efde2950e61d42cb0ac11ff"/><emphasis role="strong">CandlestickChartWidget</emphasis> (<link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, float x, float y, float w, float h, const std::string &amp;title, const <link linkend="_classStyle">Style</link> *titleStyle, const <link linkend="_classStyle">Style</link> *barStyle, float min, float max, float maxMultiplier, float relativeSpace, int tickThicknessStart, int tickThicknessEnd, float tickSize, float tickStart, <link linkend="_classScale">Scale</link> *yAxis)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCandlestickChartWidget_1a77eadfcd08d88a61e988ffeffd5688a9"/><emphasis role="strong">CandlestickChartWidget</emphasis> (<link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, float x, float y, float w, float h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCandlestickChartWidget_1ab3fe89238ab9364bb35a8ac7f38a2fba"/><emphasis role="strong">CandlestickChartWidget</emphasis> (<link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, float x, float y, float w, float h, const std::vector&lt; float &gt; &amp;b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCandlestickChartWidget_1af33a9c82b02f6f84790227391b653281"/>void <emphasis role="strong">setMinMax</emphasis> (float min, float max)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCandlestickChartWidget_1ab1bb030e537e3213d0cbf66a6efbb837"/>void <emphasis role="strong">setAxisScale</emphasis> (<link linkend="_classScale">Scale</link> *yAxis)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCandlestickChartWidget_1a91fae6d960a1c8f9ef3c1b9f67c845bd"/>void <emphasis role="strong">setTitleStyle</emphasis> (const <link linkend="_classStyle">Style</link> *s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCandlestickChartWidget_1a84b39bb4f85a15c213925d4a8359145a"/>void <emphasis role="strong">chart</emphasis> (const std::vector&lt; float &gt; &amp;b, int rulerInterval, int dataPointsPerBar)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCandlestickChartWidget_1ab1bde643726ab26b47893f6bf73fd50c"/>void <emphasis role="strong">setTitle</emphasis> (const std::string &amp;s)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classCandlestickChartWidget_1ad24861bbf46d349494b2e131131e72fc"/>void <emphasis role="strong">init</emphasis> () override</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>

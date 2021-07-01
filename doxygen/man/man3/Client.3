@@ -1,0 +1,44 @@
+.TH "Client< SocketImpl, ProtocolImpl >" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Client< SocketImpl, ProtocolImpl >
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBClient\fP (const char addr[])"
+.br
+.ti -1c
+.RI "\fBClient\fP (const \fBClient\fP &)=delete"
+.br
+.ti -1c
+.RI "\fBClient\fP & \fBoperator=\fP (const \fBClient\fP &)=delete"
+.br
+.ti -1c
+.RI "void \fBconnect\fP (const char addr[])"
+.br
+.ti -1c
+.RI "< T > void \fBwrite\fP (const T &data)"
+.br
+.ti -1c
+.RI "void \fBsend\fP ()"
+.br
+.ti -1c
+.RI "void \fBsendAndWaitforResponse\fP ()"
+.br
+.ti -1c
+.RI "void \fBsendAndKeepOpen\fP ()"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename SocketImpl , typename ProtocolImpl > <T> void \fBClient\fP< SocketImpl, ProtocolImpl >::write (const T & data)\fC [inline]\fP"
+Write data into the out buffer 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

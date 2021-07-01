@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classPositionDisplayer2D" xml:lang="en-US">
+<title>PositionDisplayer2D Class Reference</title>
+<indexterm><primary>PositionDisplayer2D</primary></indexterm>
+<para>Inheritance diagram for PositionDisplayer2D:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d5/d41/classPositionDisplayer2D.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classPositionDisplayer2D_1aaebbd0df498aa93831f05b87561d3393"/><emphasis role="strong">PositionDisplay2D</emphasis> (<link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, uint32_t x, uint32_t y, uint32_t w, uint32_t h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPositionDisplayer2D_1af5d5012712f18ea77561a787e8275172"/>void <emphasis role="strong">addPoint</emphasis> (float x, float y)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPositionDisplayer2D_1abcbfc0f63bc4e3040c95788e7b0a88b2"/>void <emphasis role="strong">move</emphasis> (int i, float x, float y)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classPositionDisplayer2D_1af903a8e1bafef0a2b0d4a92ce52cbab0"/>void <emphasis role="strong">init</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

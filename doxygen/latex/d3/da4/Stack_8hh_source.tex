@@ -1,0 +1,27 @@
+\hypertarget{Stack_8hh_source}{}\doxysection{Stack.\+hh}
+\label{Stack_8hh_source}\index{src/util/Stack.hh@{src/util/Stack.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}util/DynArray.hh"{}}}
+\DoxyCodeLine{00004 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{Stack_8hh_source_l00005}\mbox{\hyperlink{classStack}{00005}} \textcolor{keyword}{class }\mbox{\hyperlink{classStack}{Stack}} \{}
+\DoxyCodeLine{00006 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00007     \mbox{\hyperlink{classDynArray}{DynArray<T>}} impl;}
+\DoxyCodeLine{00008 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009     \mbox{\hyperlink{classStack}{Stack}}(uint32\_t capacity) : impl(capacity) \{\}}
+\DoxyCodeLine{00010   \textcolor{keywordtype}{void} push(\textcolor{keyword}{const} T\& v) \{ impl.add(v); \}}
+\DoxyCodeLine{00011   \textcolor{keywordtype}{bool} isEmpty()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} impl.size() == 0; \}}
+\DoxyCodeLine{00012   T peek()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00013     \textcolor{keywordflow}{return} impl.last();}
+\DoxyCodeLine{00014   \}}
+\DoxyCodeLine{00015     T pop() \{}
+\DoxyCodeLine{00016         \textcolor{keywordflow}{return} impl.removeEnd();}
+\DoxyCodeLine{00017     \}}
+\DoxyCodeLine{00018     \textcolor{keyword}{friend} std::ostream\& operator <<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classStack}{Stack}}\& stack) \{}
+\DoxyCodeLine{00019         \textcolor{keywordflow}{return} s << stack.impl;}
+\DoxyCodeLine{00020     \}}
+\DoxyCodeLine{00021 \};}
+
+\end{DoxyCode}

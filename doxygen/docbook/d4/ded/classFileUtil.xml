@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classFileUtil" xml:lang="en-US">
+<title>FileUtil Class Reference</title>
+<indexterm><primary>FileUtil</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classFileUtil_1a05b6d090ead5e3c2c6ea2c96b44aa81f"/>void <emphasis role="strong">searchDir</emphasis> (const char dirName[])</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classFileUtil_1aaa28b49eb1fc6f0d5d10649200f25f28"/>static char * <emphasis role="strong">readComplete</emphasis> (const char filename[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFileUtil_1a473604e8a31175d2b0bc1d3ebbaec1bb"/>static void <emphasis role="strong">readComplete</emphasis> (char **p, uint32_t *len, const char filename[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFileUtil_1a3f2c1c9f172235e5babd96bd6c459955"/>static bool <emphasis role="strong">isDir</emphasis> (const std::string &amp;path)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classFileUtil_1a2ef6dc12bb1e7720bb6771dba81d78a8"/>template&lt;typename T &gt; </para><para>static uint32_t <emphasis role="strong">findAll</emphasis> (std::regex *reg, const std::string &amp;dirName, T *handler, void(T::*f)(std::string filePath, std::string filename))</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classFileUtil_1aae4374e77c0e04b76817a1049ba16076">buildMapNameToFile</link> (const std::regex *pattern, std::string dirName, void(*f)(std::string name, const std::string &amp;path))</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classFileUtil_1aae4374e77c0e04b76817a1049ba16076"/>    <section>
+    <title>buildMapNameToFile()</title>
+<indexterm><primary>buildMapNameToFile</primary><secondary>FileUtil</secondary></indexterm>
+<indexterm><primary>FileUtil</primary><secondary>buildMapNameToFile</secondary></indexterm>
+<para><computeroutput>static void FileUtil::buildMapNameToFile (const std::regex * pattern, std::string dirName, void(*)(std::string name, const std::string &amp;path) f)<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para>
+<para>This is static because it makes no sense to load fonts over and over again into multiple browser windows when they should be sharing </para>
+</section>
+</section>
+</section>

@@ -1,0 +1,43 @@
+\hypertarget{IPV4Socket_8hh_source}{}\doxysection{IPV4\+Socket.\+hh}
+\label{IPV4Socket_8hh_source}\index{src/csp/IPV4Socket.hh@{src/csp/IPV4Socket.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}csp/Request.hh"{}}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}csp/Socket.hh"{}}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include "{}csp/SocketIO.hh"{}}}
+\DoxyCodeLine{00009 \textcolor{comment}{/*}}
+\DoxyCodeLine{00010 \textcolor{comment}{    IPV4Socket represents a socket connection that is portable between all platforms.}}
+\DoxyCodeLine{00011 \textcolor{comment}{    The code must all be encapsulated in IPV4Socket.cc and hides any implementation details}}
+\DoxyCodeLine{00012 \textcolor{comment}{    This implementation uses TCP/IP sockets.}}
+\DoxyCodeLine{00013 \textcolor{comment}{    Eventually a corresponding class UDP4Socket will be written for faster Datagrams without}}
+\DoxyCodeLine{00014 \textcolor{comment}{    acknowledgement and a guaranteed delivery system will have to be written on top of that.}}
+\DoxyCodeLine{00015 \textcolor{comment}{    Header files are being moved to .cc so external code does not have to deal with the }}
+\DoxyCodeLine{00016 \textcolor{comment}{    large includes as well as the system specific nature of those includes}}
+\DoxyCodeLine{00017 \textcolor{comment}{}}
+\DoxyCodeLine{00018 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{IPV4Socket_8hh_source_l00019}\mbox{\hyperlink{classIPV4Socket}{00019}} \textcolor{keyword}{class }\mbox{\hyperlink{classIPV4Socket}{IPV4Socket}} : \textcolor{keyword}{public} \mbox{\hyperlink{classSocket}{Socket}} \{}
+\DoxyCodeLine{00020  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021   socket\_t sckt;}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024   \mbox{\hyperlink{classIPV4Socket}{IPV4Socket}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* addr, uint16\_t port);  \textcolor{comment}{//Client}}
+\DoxyCodeLine{00025   \mbox{\hyperlink{classIPV4Socket}{IPV4Socket}}(uint16\_t port);                    \textcolor{comment}{// Server}}
+\DoxyCodeLine{00026   \string~\mbox{\hyperlink{classIPV4Socket}{IPV4Socket}}() \{}
+\DoxyCodeLine{00027     close(sckt);}
+\DoxyCodeLine{00028   \}}
+\DoxyCodeLine{00029   \textcolor{keywordtype}{void} listenOnPort();}
+\DoxyCodeLine{00030   \textcolor{comment}{//    void send(const char data[], size\_t bytes);}}
+\DoxyCodeLine{00031   \textcolor{comment}{//    size\_t receive(char data[], size\_t bytes);}}
+\DoxyCodeLine{00032   \textcolor{keywordtype}{void} wait();}
+\DoxyCodeLine{00033   \textcolor{keywordtype}{void} send(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* command);  \textcolor{comment}{// For HTTP}}
+\DoxyCodeLine{00034   \textcolor{keywordtype}{void} send(uint32\_t reqn);        \textcolor{comment}{// For CSP}}
+\DoxyCodeLine{00035   \textcolor{keyword}{static} \textcolor{keywordtype}{int} send(socket\_t sckt, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* buf, \textcolor{keywordtype}{int} size, \textcolor{keywordtype}{int} flags);}
+\DoxyCodeLine{00036   \textcolor{keyword}{static} \textcolor{keywordtype}{int} recv(socket\_t sckt, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* buf, \textcolor{keywordtype}{int} size, \textcolor{keywordtype}{int} flags);}
+\DoxyCodeLine{00037 \};}
+
+\end{DoxyCode}
