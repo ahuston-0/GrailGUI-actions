@@ -29,15 +29,15 @@ jobs:
         with:
           working-directory: '.'
           doxyfile-path: './docs/doxygen/Doxyfile'
+          enable-latex: true
       
-      - uses: EndBug/add-and-commit@v7
+      # Deploy updated documentation files onto gh-pages branch
+      - name: "Publish documentation"
+        uses: peaceiris/actions-gh-pages@v3.6.4
         with:
-          author_name: Alice Huston
-          author_email: shuston@stevens.com
-          message: 'Committing doxygen and clang-format changes'
-          branch: docs
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: "./docs"
+          publish_branch: gh-pages
       # Runs a single command using the runners shell
       # - name: Run a one-line script
       #  run: echo Hello, world!
