@@ -26,7 +26,7 @@ jobs:
           working-directory: '.'
           doxyfile-path: './docs/doxygen/doxygen.conf'
       
-      - uses: EndBug/add-and-commit@v4
+      - uses: EndBug/add-and-commit@v7
         with:
           author_name: Alice Huston
           author_email: shuston@stevens.com
