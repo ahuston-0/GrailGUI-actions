@@ -177,8 +177,8 @@ void MultiShape3D::genOBJModel(const char filePath[]) {
 // 													double
 // x,
 // double y, double z,
-// const Transform* t) { 	double xt,yt,zt; 	t->transform(x,y,z, xt, yt,
-// zt); 	addVert(vert, xt, yt, zt); 	return vert.size() - 1;
+// const Transform* t) { 	double xt,yt,zt; 	t->transform(x,y,z, xt,
+// yt, zt); 	addVert(vert, xt, yt, zt); 	return vert.size() - 1;
 // }
 
 // void MultiShape3D::genSphere(std::vector<float>& vert,
