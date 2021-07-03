@@ -101,25 +101,24 @@ class MultiShape3D : public MultiShape {
   ~MultiShape3D();
 
   // static uint32_t addTransformedVert(std::vector<float>& vert,
-  // 									double x, double y,
-  // double
-  // z, 									const Transform*
-  // t);
+  // 									double x, double
+  // y, double
+  // z, 									const
+  // Transform* t);
 
   // static void genSphere(std::vector<float>& vert,
   // 											std::vector<uint32_t>&
-  // ind, 											uint32_t latRes, uint32_t lonRes,
-  // const Transform* t); static void genCylinder(std::vector<float>& vert,
-  // std::vector<uint32_t>& ind,
-  // uint32_t
-  // lonRes, 												const Transform* t); static
-  // void cube(std::vector<float>& vert, const Transform* t); static void
-  // tetrahedron(std::vector<float>& vert, const Transform* t); static void
-  // dodecahedron(std::vector<float>& vert, const Transform* t); static void
-  // icosahedron(std::vector<float>& vert,const Transform* t); void
-  // textureSphere(double r, uint32_t resLat, uint32_t resLon, int imgTexture);
-  // void wireframeSphere(double r, uint32_t resLat, uint32_t resLon); void
-  // pointSphere(double r, uint32_t resLat, uint32_t resLon);
+  // ind, 											uint32_t latRes, uint32_t
+  // lonRes, const Transform* t); static void genCylinder(std::vector<float>&
+  // vert, std::vector<uint32_t>& ind, uint32_t lonRes,
+  // const Transform* t); static void cube(std::vector<float>& vert, const
+  // Transform* t); static void tetrahedron(std::vector<float>& vert, const
+  // Transform* t); static void dodecahedron(std::vector<float>& vert, const
+  // Transform* t); static void icosahedron(std::vector<float>& vert,const
+  // Transform* t); void textureSphere(double r, uint32_t resLat, uint32_t
+  // resLon, int imgTexture); void wireframeSphere(double r, uint32_t resLat,
+  // uint32_t resLon); void pointSphere(double r, uint32_t resLat, uint32_t
+  // resLon);
 
   // void textureCylinder(double r, double h, uint32_t resLon, int imgTexture);
   // void wireframeCylinder(double r, double h, uint32_t resLon);

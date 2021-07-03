@@ -60,7 +60,7 @@ enum class DataType {
   FUNC1,  // defines new id of function with up to 256 instructions (no zero
           // because a zero-length function is useless) When executed can run
           // sequence of commands, length = number of contained commands
-  FUNC2,       // same as FUNC1 with up to 65536 steps
+  FUNC2,  // same as FUNC1 with up to 65536 steps
   FUNCPARAM1,  // takes number of parameters (up to 256) and number of steps (up
                // to 256)
   FUNCPARAM2,  // takes number of parameters (up to 65536) and number of steps

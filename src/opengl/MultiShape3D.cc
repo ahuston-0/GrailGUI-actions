@@ -174,16 +174,18 @@ void MultiShape3D::genOBJModel(const char filePath[]) {
 }
 
 // inline uint32_t MultiShape3D::addTransformedVert(std::vector<float>& vert,
-// 													double x,
-// double y, double z, 													const Transform* t) { 	double xt,yt,zt;
-// 	t->transform(x,y,z, xt, yt, zt);
-// 	addVert(vert, xt, yt, zt);
-// 	return vert.size() - 1;
+// 													double
+// x,
+// double y, double z,
+// const Transform* t) { 	double xt,yt,zt; 	t->transform(x,y,z, xt, yt,
+// zt); 	addVert(vert, xt, yt, zt); 	return vert.size() - 1;
 // }
 
 // void MultiShape3D::genSphere(std::vector<float>& vert,
 // 														 std::vector<uint32_t>&
-// ind, 														 uint32_t latRes, uint32_t lonRes, 														 const Transform* t) {
+// ind,
+// uint32_t latRes, uint32_t lonRes,
+// const Transform* t) {
 // 	// first compute a broad band around the sphere excluding the poles
 // 	final double dphi = PI<double> / latRes; // vertically only +90 to -90
 // degrees 	double phi = -PI<double> / 2 + dphi;
@@ -196,8 +198,8 @@ void MultiShape3D::genOBJModel(const char filePath[]) {
 // 		final double dtheta = PI2<double> / lonRes;
 // 		for (int i = 0; i < lonRes; ++i, theta += dtheta) {
 // 			double x = r2 * cos(theta), y = r2 * sin(theta);
-// 			addTransformedVert(vert, x, y, z, t); // transform and add
-// each vertex
+// 			addTransformedVert(vert, x, y, z, t); // transform and
+// add each vertex
 // 		}
 // 	}
 // 	const uint32_t S = addTransformedVert(vert, 0,0,-1, t); // south pole
@@ -225,7 +227,8 @@ void MultiShape3D::genOBJModel(const char filePath[]) {
 // }
 // void MultiShape3D::genCylinder(vector<float>& vert,
 // 															 vector<uint32_t>&
-// ind, 															 uint32_t lonRes, Transform* t) { 	double theta = 0, dt =
+// ind,
+// uint32_t lonRes, Transform* t) { 	double theta = 0, dt =
 // PI2<double>/lonRes; 	double x = 0, y = 0, z = 0; 	double xt, yt, zt;
 // 	addTransformedVert(vert, x, y, z);
 // 	for (uint32_t i = 0; i < lonRes; ++i, theta += dt) {
@@ -239,7 +242,8 @@ void MultiShape3D::genOBJModel(const char filePath[]) {
 // 	addSquare(ind, i, 1, 1+lonRes, i+lonRes);
 // 	// south pole
 // 	const uint32_t S = addTransformedVert(vert, 0,0,-1);	// south pole,
-// transformed 																				 const uint32_t S = addVert(vert, xy,yt,zt);
+// transformed
+// const uint32_t S = addVert(vert, xy,yt,zt);
 // 	// South facing endcap
 // 	for (uint32_t i = 1; i < lonRes; ++i)
 // 		addTri(ind, i-1, i, S);
@@ -356,7 +360,8 @@ void MultiShape3D::render() {
 
 // void MultiShape3D::textureSphere(double r,
 // 																 uint32_t
-// resLat, uint32_t resLon, 																 int imgTexture) {
+// resLat, uint32_t resLon,
+// int imgTexture) {
 
 // }
 
