@@ -30,7 +30,7 @@ fi
 if [ -f "build.ninja" ]; then
 	ninja
 else
-	cmake -GNinja -DCMAKE_BUILD_TYPE=DEBUG --trace --debug-output .. || cat C:/Users/travis/build/ahuston-0/GrailGUI-actions/build/CMakeFiles/CMakeOutput.log
+	cmake -S . -GNinja -DCMAKE_BUILD_TYPE=DEBUG --trace --debug-output .. 
 	ninja
 fi
 
