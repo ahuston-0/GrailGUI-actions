@@ -90,26 +90,27 @@ $(document).ready(function(){initNavTree('dc/d4c/Server_8hh_source.html','../../
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by dkruger on 5/16/18.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;csp/csp.hh&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;csp/HTTPRequest.hh&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;csp/IPV4Socket.hh&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;csp/HTTPRequest.hh&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;csp/csp.hh&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> SocketImpl, <span class="keyword">typename</span> HandlerImpl&gt;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> SocketImpl, <span class="keyword">typename</span> HandlerImpl&gt;</div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d00/classServer.html">Server</a> {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    SocketImpl s;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    HandlerImpl req;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../db/d00/classServer.html">Server</a>(<span class="keywordtype">int</span> port) : s(port) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        s.attach(req);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            s.wait();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="../../d1/d0a/classEx.html">Ex</a>&amp; e) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            cerr &lt;&lt; e &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  SocketImpl s;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  HandlerImpl req;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="../../db/d00/classServer.html">Server</a>(<span class="keywordtype">int</span> port) : s(port) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    s.attach(req);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      s.wait();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="../../d1/d0a/classEx.html">Ex</a>&amp; e) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      cerr &lt;&lt; e &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
-<div class="ttc" id="aclassEx_html"><div class="ttname"><a href="../../d1/d0a/classEx.html">Ex</a></div><div class="ttdef"><b>Definition:</b> Ex.hh:19</div></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="ttc" id="aclassEx_html"><div class="ttname"><a href="../../d1/d0a/classEx.html">Ex</a></div><div class="ttdef"><b>Definition:</b> Ex.hh:20</div></div>
 <div class="ttc" id="aclassServer_html"><div class="ttname"><a href="../../db/d00/classServer.html">Server</a></div><div class="ttdef"><b>Definition:</b> Server.hh:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

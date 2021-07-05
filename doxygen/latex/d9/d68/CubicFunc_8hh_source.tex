@@ -4,18 +4,19 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{00002 \textcolor{preprocessor}{\#include "{}util/DynArray.hh"{}}}
-\DoxyCodeLine{00003 \textcolor{comment}{//TODO: Write a truly generic arbitrary function instead of cubic?}}
+\DoxyCodeLine{00003 \textcolor{comment}{// TODO: Write a truly generic arbitrary function instead of cubic?}}
 \DoxyCodeLine{\Hypertarget{CubicFunc_8hh_source_l00004}\mbox{\hyperlink{classCubicFunc}{00004}} \textcolor{keyword}{class }\mbox{\hyperlink{classCubicFunc}{CubicFunc}} \{}
-\DoxyCodeLine{00005 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00006   \mbox{\hyperlink{classDynArray}{DynArray<float>}} coef; \textcolor{comment}{// coefficients for bezier and spline segments}}
-\DoxyCodeLine{00007 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00008   \textcolor{keywordtype}{double} arcLength() \textcolor{keyword}{const};          \textcolor{comment}{// return length of this function}}
-\DoxyCodeLine{00009   \textcolor{keywordtype}{double} segmentLength(\textcolor{keywordtype}{int} i) \textcolor{keyword}{const}; \textcolor{comment}{// return length of 1 segment}}
+\DoxyCodeLine{00005  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00006   \mbox{\hyperlink{classDynArray}{DynArray<float>}} coef;  \textcolor{comment}{// coefficients for bezier and spline segments}}
+\DoxyCodeLine{00007  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008   \textcolor{keywordtype}{double} arcLength() \textcolor{keyword}{const};           \textcolor{comment}{// return length of this function}}
+\DoxyCodeLine{00009   \textcolor{keywordtype}{double} segmentLength(\textcolor{keywordtype}{int} i) \textcolor{keyword}{const};  \textcolor{comment}{// return length of 1 segment}}
 \DoxyCodeLine{00010   \textcolor{keywordtype}{double} deriv(\textcolor{keywordtype}{int} i, \textcolor{keywordtype}{double} t)\textcolor{keyword}{ const }\{}
 \DoxyCodeLine{00011     \textcolor{keyword}{const} \textcolor{keywordtype}{int} seg = i * 8;}
-\DoxyCodeLine{00012     \textcolor{keywordtype}{float} a = coef[seg], b = coef[seg+1], c = coef[seg+2], d = coef[seg+3];}
-\DoxyCodeLine{00013     \textcolor{keywordtype}{double} x = (((a * t + b) * t + c)* t + d;}
-\DoxyCodeLine{00014   \}}
-\DoxyCodeLine{00015 \};}
+\DoxyCodeLine{00012     \textcolor{keywordtype}{float} a = coef[seg], b = coef[seg + 1], c = coef[seg + 2],}
+\DoxyCodeLine{00013           d = coef[seg + 3];}
+\DoxyCodeLine{00014     \textcolor{keywordtype}{double} x = (((a * t + b) * t + c)* t + d;}
+\DoxyCodeLine{00015   \}}
+\DoxyCodeLine{00016 \};}
 
 \end{DoxyCode}

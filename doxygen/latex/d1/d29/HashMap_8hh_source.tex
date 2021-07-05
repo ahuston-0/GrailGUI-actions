@@ -6,252 +6,254 @@
 \DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <iostream>}}
 \DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <utility>}}
 \DoxyCodeLine{\Hypertarget{HashMap_8hh_source_l00004}\mbox{\hyperlink{classHashMapBase}{00004}} \textcolor{keyword}{class }\mbox{\hyperlink{classHashMapBase}{HashMapBase}} \{}
-\DoxyCodeLine{00005 \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00006     uint32\_t size;}
+\DoxyCodeLine{00005  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00006   uint32\_t size;}
 \DoxyCodeLine{00007   uint32\_t symbolSize;}
-\DoxyCodeLine{00008     \textcolor{keywordtype}{char}* symbols;}
-\DoxyCodeLine{00009     \textcolor{keywordtype}{char}* current;}
-\DoxyCodeLine{00010     uint32\_t* table;}
-\DoxyCodeLine{00011     constexpr \textcolor{keyword}{static} \textcolor{keywordtype}{int} r1 = 5, r2 = 7, r3 = 17, r4 = 13, r5 = 11, r6 = 16; \textcolor{comment}{// rotate values}}
-\DoxyCodeLine{00012 }
-\DoxyCodeLine{00013     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} hasNoZero(uint32\_t v) \{}
-\DoxyCodeLine{00014         \textcolor{keywordflow}{return} (v \& 0xff) \&\& (v \& 0xff00) \&\& (v \& 0xff0000) \&\& (v \& 0xff000000);}
-\DoxyCodeLine{00015     \}}
-\DoxyCodeLine{00016     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} hasNoZero(uint64\_t v) \{}
-\DoxyCodeLine{00017         \textcolor{keywordflow}{return} hasNoZero(uint32\_t(v >> 32)) \&\& hasNoZero(uint32\_t(v));}
-\DoxyCodeLine{00018     \}}
-\DoxyCodeLine{00019 }
-\DoxyCodeLine{00020     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} haszero(uint32\_t v) \{}
-\DoxyCodeLine{00021         constexpr uint32\_t MASK = 0x7F7F7F7FU;}
-\DoxyCodeLine{00022         \textcolor{keywordflow}{return} \string~(((v \& MASK) + MASK) | v) | MASK;}
-\DoxyCodeLine{00023     \}}
-\DoxyCodeLine{00024     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} notzero(uint64\_t v) \{}
-\DoxyCodeLine{00025         constexpr uint64\_t MASK = 0x7F7F7F7F7F7F7F7FULL;}
-\DoxyCodeLine{00026         \textcolor{keywordflow}{return} \string~(((v \& MASK) + MASK) | v) | MASK;}
-\DoxyCodeLine{00027     \}}
-\DoxyCodeLine{00028 }
-\DoxyCodeLine{00029   uint32\_t fasthash1(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00030   uint32\_t bytewisehash(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[], uint32\_t len) \textcolor{keyword}{const};}
-\DoxyCodeLine{00031   uint32\_t bytewisehash(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00032     uint32\_t hash(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[])\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00033         \textcolor{keywordflow}{return} bytewisehash(s);}
-\DoxyCodeLine{00034     \}}
-\DoxyCodeLine{00035     uint32\_t hash(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[], uint32\_t len)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00036         \textcolor{keywordflow}{return} bytewisehash(s, len);}
-\DoxyCodeLine{00037     \}}
-\DoxyCodeLine{00038   \mbox{\hyperlink{classHashMapBase}{HashMapBase}}(uint32\_t sz, uint32\_t symbolSize) :}
-\DoxyCodeLine{00039     size(sz), symbolSize(symbolSize), table(\textcolor{keyword}{new} uint32\_t[sz]) \{}
-\DoxyCodeLine{00040     size-\/-\/;}
-\DoxyCodeLine{00041         symbols = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[symbolSize];}
-\DoxyCodeLine{00042   \}}
-\DoxyCodeLine{00043 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00044     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* getWords()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} symbols; \}}
-\DoxyCodeLine{00045     uint32\_t getWordsSize()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} current -\/ symbols; \}}
+\DoxyCodeLine{00008   \textcolor{keywordtype}{char}* symbols;}
+\DoxyCodeLine{00009   \textcolor{keywordtype}{char}* current;}
+\DoxyCodeLine{00010   uint32\_t* table;}
+\DoxyCodeLine{00011   constexpr \textcolor{keyword}{static} \textcolor{keywordtype}{int} r1 = 5, r2 = 7, r3 = 17, r4 = 13, r5 = 11,}
+\DoxyCodeLine{00012                        r6 = 16;  \textcolor{comment}{// rotate values}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} hasNoZero(uint32\_t v) \{}
+\DoxyCodeLine{00015     \textcolor{keywordflow}{return} (v \& 0xff) \&\& (v \& 0xff00) \&\& (v \& 0xff0000) \&\& (v \& 0xff000000);}
+\DoxyCodeLine{00016   \}}
+\DoxyCodeLine{00017   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} hasNoZero(uint64\_t v) \{}
+\DoxyCodeLine{00018     \textcolor{keywordflow}{return} hasNoZero(uint32\_t(v >> 32)) \&\& hasNoZero(uint32\_t(v));}
+\DoxyCodeLine{00019   \}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} haszero(uint32\_t v) \{}
+\DoxyCodeLine{00022     constexpr uint32\_t MASK = 0x7F7F7F7FU;}
+\DoxyCodeLine{00023     \textcolor{keywordflow}{return} \string~(((v \& MASK) + MASK) | v) | MASK;}
+\DoxyCodeLine{00024   \}}
+\DoxyCodeLine{00025   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} notzero(uint64\_t v) \{}
+\DoxyCodeLine{00026     constexpr uint64\_t MASK = 0x7F7F7F7F7F7F7F7FULL;}
+\DoxyCodeLine{00027     \textcolor{keywordflow}{return} \string~(((v \& MASK) + MASK) | v) | MASK;}
+\DoxyCodeLine{00028   \}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030   uint32\_t fasthash1(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00031   uint32\_t bytewisehash(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[], uint32\_t len) \textcolor{keyword}{const};}
+\DoxyCodeLine{00032   uint32\_t bytewisehash(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00033   uint32\_t hash(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[])\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} bytewisehash(s); \}}
+\DoxyCodeLine{00034   uint32\_t hash(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[], uint32\_t len)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00035     \textcolor{keywordflow}{return} bytewisehash(s, len);}
+\DoxyCodeLine{00036   \}}
+\DoxyCodeLine{00037   \mbox{\hyperlink{classHashMapBase}{HashMapBase}}(uint32\_t sz, uint32\_t symbolSize)}
+\DoxyCodeLine{00038       : size(sz), symbolSize(symbolSize), table(\textcolor{keyword}{new} uint32\_t[sz]) \{}
+\DoxyCodeLine{00039     size-\/-\/;}
+\DoxyCodeLine{00040     symbols = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[symbolSize];}
+\DoxyCodeLine{00041   \}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* getWords()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} symbols; \}}
+\DoxyCodeLine{00045   uint32\_t getWordsSize()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} current -\/ symbols; \}}
 \DoxyCodeLine{00046 \};}
 \DoxyCodeLine{00047 }
-\DoxyCodeLine{00048 \textcolor{keyword}{template}<\textcolor{keyword}{typename} Val>}
+\DoxyCodeLine{00048 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Val>}
 \DoxyCodeLine{\Hypertarget{HashMap_8hh_source_l00049}\mbox{\hyperlink{classHashMap}{00049}} \textcolor{keyword}{class }\mbox{\hyperlink{classHashMap}{HashMap}} : \textcolor{keyword}{public} \mbox{\hyperlink{classHashMapBase}{HashMapBase}} \{}
-\DoxyCodeLine{00050     \textcolor{keyword}{class }Node \{}
-\DoxyCodeLine{00051     \textcolor{keyword}{public}:}
-\DoxyCodeLine{00052         uint32\_t offset;}
-\DoxyCodeLine{00053         uint32\_t next; \textcolor{comment}{// relative pointer (offset into nodes)}}
-\DoxyCodeLine{00054         Val val;}
-\DoxyCodeLine{00055         Node() \{\} \textcolor{comment}{// this is so the empty block can be initialized without doing anything}}
-\DoxyCodeLine{00056         Node(uint32\_t offset, uint32\_t next, Val v) : offset(offset), next(next), val(v)  \{\}}
-\DoxyCodeLine{00057     \};}
-\DoxyCodeLine{00058     uint32\_t nodeSize; \textcolor{comment}{// how many nodes are preallocated}}
-\DoxyCodeLine{00059     uint32\_t nodeCount; \textcolor{comment}{// how many nodes are currently used}}
-\DoxyCodeLine{00060     Node* nodes;}
-\DoxyCodeLine{00061 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00062     \mbox{\hyperlink{classHashMap}{HashMap}}(uint32\_t sz, uint32\_t symbolSize = 1024*1024) :}
-\DoxyCodeLine{00063     \mbox{\hyperlink{classHashMapBase}{HashMapBase}}(sz, symbolSize), nodeSize(sz/2+2), nodes(\textcolor{keyword}{new} Node[sz/2+2])   \{}
-\DoxyCodeLine{00064 }
-\DoxyCodeLine{00065         current = symbols;}
-\DoxyCodeLine{00066         nodeCount = 1; \textcolor{comment}{// zero is null}}
-\DoxyCodeLine{00067         }
-\DoxyCodeLine{00068         \textcolor{keywordflow}{for} (uint32\_t i = 0; i <= size; i++)}
-\DoxyCodeLine{00069             table[i] = 0; \textcolor{comment}{// 0 means empty, at the moment the first node is unused}}
-\DoxyCodeLine{00070     \}}
-\DoxyCodeLine{00071     \string~\mbox{\hyperlink{classHashMap}{HashMap}}() \{}
-\DoxyCodeLine{00072         \textcolor{keyword}{delete} [] nodes;}
-\DoxyCodeLine{00073         \textcolor{keyword}{delete} [] symbols;}
-\DoxyCodeLine{00074         \textcolor{keyword}{delete} [] table;}
-\DoxyCodeLine{00075     \}}
-\DoxyCodeLine{00076     \mbox{\hyperlink{classHashMap}{HashMap}}(\textcolor{keyword}{const} \mbox{\hyperlink{classHashMap}{HashMap}}\& orig) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{00077     \mbox{\hyperlink{classHashMap}{HashMap}}\& operator =(\textcolor{keyword}{const} \mbox{\hyperlink{classHashMap}{HashMap}}\& orig) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{00078 }
-\DoxyCodeLine{00079     \textcolor{keywordtype}{void} checkGrow() \{}
-\DoxyCodeLine{00080         \textcolor{keywordflow}{if} (nodeCount*2 <= size)}
-\DoxyCodeLine{00081             \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00082         \textcolor{keyword}{const} Node* old = nodes;}
-\DoxyCodeLine{00083         nodes = \textcolor{keyword}{new} Node[nodeSize*2];\textcolor{comment}{//TODO: need placement new}}
-\DoxyCodeLine{00084         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < nodeSize; i++)}
-\DoxyCodeLine{00085           nodes[i] = std::move(old[i]); \textcolor{comment}{// TODO: this is broken for objects Val without default constructor}}
-\DoxyCodeLine{00086         nodeSize *= 2;}
-\DoxyCodeLine{00087         \textcolor{keyword}{delete} [] (\textcolor{keywordtype}{char}*)old; \textcolor{comment}{// get rid of the old block of memory}}
-\DoxyCodeLine{00088         uint32\_t* oldTable = table;}
-\DoxyCodeLine{00089         uint32\_t oldSize = size;}
-\DoxyCodeLine{00090         table = \textcolor{keyword}{new} uint32\_t[size = size*2|1]; \textcolor{comment}{// new size = power of 2 -\/ 1}}
-\DoxyCodeLine{00091         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < size; i++)}
-\DoxyCodeLine{00092           \textcolor{keywordflow}{if} (table[i] != 0) \{}
-\DoxyCodeLine{00093                 uint32\_t index = hash(symbols+nodes[oldTable[i]].offset); \textcolor{comment}{// find out new hash value of symbol}}
-\DoxyCodeLine{00094                 table[index] = oldTable[i];}
-\DoxyCodeLine{00095             \}}
-\DoxyCodeLine{00096         \textcolor{keyword}{delete} [] oldTable;}
-\DoxyCodeLine{00097     \textcolor{comment}{//TODO: grow the symbol table too}}
-\DoxyCodeLine{00098         std::cerr << \textcolor{stringliteral}{"{}HashMap growing size="{}} << size << \textcolor{stringliteral}{"{} "{}} << nodeSize << \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00099     \}}
-\DoxyCodeLine{00100 }
-\DoxyCodeLine{00101   \textcolor{keywordtype}{void} add(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[], \textcolor{keyword}{const} Val\& v) \{}
-\DoxyCodeLine{00102         uint32\_t index = hash(s);}
-\DoxyCodeLine{00103         \textcolor{keywordflow}{for} (uint32\_t p = table[index]; p != 0; p = nodes[p].next) \{    }
-\DoxyCodeLine{00104             \textcolor{keyword}{const} \textcolor{keywordtype}{char}* w = symbols + nodes[p].offset;}
-\DoxyCodeLine{00105             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; *w == s[i]; i++)}
-\DoxyCodeLine{00106                 \textcolor{keywordflow}{if} (*w == \textcolor{charliteral}{'\(\backslash\)0'}) \{}
-\DoxyCodeLine{00107                     nodes[p].val = v;}
-\DoxyCodeLine{00108                     \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00109                 \}}
-\DoxyCodeLine{00110         \}}
-\DoxyCodeLine{00111         checkGrow();}
-\DoxyCodeLine{00112         }
-\DoxyCodeLine{00113         \textcolor{keywordtype}{int} i;}
-\DoxyCodeLine{00114         \textcolor{keywordflow}{for} (i = 0; s[i] != \textcolor{charliteral}{'\(\backslash\)0'}; i++)}
-\DoxyCodeLine{00115             current[i] = s[i];}
-\DoxyCodeLine{00116         current[i] = \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00117         nodes[nodeCount] = Node(current-\/symbols, table[index], v);}
-\DoxyCodeLine{00118         table[index] = nodeCount;}
-\DoxyCodeLine{00119         current += i+1;}
-\DoxyCodeLine{00120         nodeCount++;}
-\DoxyCodeLine{00121     \}}
-\DoxyCodeLine{00122   Val add(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[], uint32\_t len, \textcolor{keyword}{const} Val\& v) \{}
-\DoxyCodeLine{00123         uint32\_t index = hash(s, len);}
-\DoxyCodeLine{00124         \textcolor{keywordflow}{for} (uint32\_t p = table[index]; p != 0; p = nodes[p].next) \{}
-\DoxyCodeLine{00125             \textcolor{keyword}{const} \textcolor{keywordtype}{char}* w = symbols + nodes[p].offset;}
-\DoxyCodeLine{00126             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; *w == s[i] \&\& i < len; i++)}
-\DoxyCodeLine{00127                 \textcolor{keywordflow}{if} (*w == \textcolor{charliteral}{'\(\backslash\)0'}) \{}
-\DoxyCodeLine{00128                     \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"{}Error, this should not happen"{}};}
-\DoxyCodeLine{00129                 \}}
-\DoxyCodeLine{00130         \}}
-\DoxyCodeLine{00131         checkGrow();}
-\DoxyCodeLine{00132 }
-\DoxyCodeLine{00133         \textcolor{keywordtype}{int} i;}
-\DoxyCodeLine{00134         \textcolor{keywordflow}{for} (i = 0; i < len; i++)}
-\DoxyCodeLine{00135             current[i] = s[i];}
-\DoxyCodeLine{00136         current[i] = \textcolor{charliteral}{'\(\backslash\)0'};}
-\DoxyCodeLine{00137         nodes[nodeCount] = Node(current-\/symbols, table[index], v);}
-\DoxyCodeLine{00138         table[index] = nodeCount;}
-\DoxyCodeLine{00139         current += i+1;}
-\DoxyCodeLine{00140         nodeCount++;}
-\DoxyCodeLine{00141         \textcolor{keywordflow}{return} v;}
-\DoxyCodeLine{00142     \}}
-\DoxyCodeLine{00143 }
-\DoxyCodeLine{00144     \textcolor{keywordtype}{bool} get(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[], Val* v)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00145         uint32\_t index = hash(s);}
-\DoxyCodeLine{00146         \textcolor{keywordflow}{for} (uint32\_t p = table[index]; p != 0; p = nodes[p].next) \{}
-\DoxyCodeLine{00147             \textcolor{keyword}{const} \textcolor{keywordtype}{char}* w = symbols + nodes[p].offset;}
-\DoxyCodeLine{00148             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; *w == s[i]; w++, i++)}
-\DoxyCodeLine{00149                 \textcolor{keywordflow}{if} (*w == \textcolor{charliteral}{'\(\backslash\)0'}) \{}
-\DoxyCodeLine{00150                     *v = nodes[p].val;}
-\DoxyCodeLine{00151                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{00152                 \}}
-\DoxyCodeLine{00153         \}}
-\DoxyCodeLine{00154         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{00155     \}}
-\DoxyCodeLine{00156 }
-\DoxyCodeLine{00157     Val* get(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[]) \{}
-\DoxyCodeLine{00158         uint32\_t index = hash(s);}
-\DoxyCodeLine{00159         \textcolor{keywordflow}{for} (uint32\_t p = table[index]; p != 0; p = nodes[p].next) \{}
-\DoxyCodeLine{00160             \textcolor{keyword}{const} \textcolor{keywordtype}{char}* w = symbols + nodes[p].offset;}
-\DoxyCodeLine{00161             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; *w == s[i]; w++, i++)}
-\DoxyCodeLine{00162                 \textcolor{keywordflow}{if} (*w == \textcolor{charliteral}{'\(\backslash\)0'}) \{}
-\DoxyCodeLine{00163                     \textcolor{keywordflow}{return} \&nodes[p].val;}
-\DoxyCodeLine{00164                 \}}
-\DoxyCodeLine{00165         \}}
-\DoxyCodeLine{00166         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00167     \}}
-\DoxyCodeLine{00168 }
-\DoxyCodeLine{00169   \textcolor{keyword}{const} Val* get(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[])\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00170         uint32\_t index = hash(s);}
-\DoxyCodeLine{00171         \textcolor{keywordflow}{for} (uint32\_t p = table[index]; p != 0; p = nodes[p].next) \{}
-\DoxyCodeLine{00172             \textcolor{keyword}{const} \textcolor{keywordtype}{char}* w = symbols + nodes[p].offset;}
-\DoxyCodeLine{00173             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; *w == s[i]; w++, i++)}
-\DoxyCodeLine{00174                 \textcolor{keywordflow}{if} (*w == \textcolor{charliteral}{'\(\backslash\)0'}) \{}
-\DoxyCodeLine{00175                     \textcolor{keywordflow}{return} \&nodes[p].val;}
-\DoxyCodeLine{00176                 \}}
-\DoxyCodeLine{00177         \}}
-\DoxyCodeLine{00178         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00179     \}}
-\DoxyCodeLine{00180 }
-\DoxyCodeLine{00181   Val* get(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* s, uint32\_t len) \{}
-\DoxyCodeLine{00182         uint32\_t index = hash(s);}
-\DoxyCodeLine{00183         \textcolor{keywordflow}{for} (uint32\_t p = table[index]; p != 0; p = nodes[p].next) \{}
-\DoxyCodeLine{00184             \textcolor{keyword}{const} \textcolor{keywordtype}{char}* w = symbols + nodes[p].offset;}
-\DoxyCodeLine{00185             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; *w == s[i]; w++, i++)}
-\DoxyCodeLine{00186         \textcolor{keywordflow}{if} (i == len)}
-\DoxyCodeLine{00187                     \textcolor{keywordflow}{return} \&nodes[p].val;}
-\DoxyCodeLine{00188     \}}
-\DoxyCodeLine{00189         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00190     \}}
-\DoxyCodeLine{00191 }
-\DoxyCodeLine{00192     uint64\_t hist()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00193         constexpr \textcolor{keywordtype}{int} histsize = 20;}
-\DoxyCodeLine{00194         \textcolor{keywordtype}{int} h[histsize] = \{0\};}
-\DoxyCodeLine{00195         \textcolor{keywordflow}{for} (uint32\_t i = 0; i <= size; i++) \{}
-\DoxyCodeLine{00196             uint32\_t count = 0;}
-\DoxyCodeLine{00197             \textcolor{keywordflow}{for} (uint32\_t p = table[i]; p != 0; p = nodes[p].next)}
-\DoxyCodeLine{00198                 count++;}
-\DoxyCodeLine{00199             \textcolor{keywordflow}{if} (count >= histsize-\/1)}
-\DoxyCodeLine{00200                 h[histsize-\/1]++;}
-\DoxyCodeLine{00201             \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00202                 h[count]++;}
-\DoxyCodeLine{00203         \}}
-\DoxyCodeLine{00204         uint64\_t totalQuality = h[1];}
-\DoxyCodeLine{00205         \textcolor{keywordflow}{for} (uint64\_t i = 2; i < histsize; i++)}
-\DoxyCodeLine{00206             totalQuality += i * h[i];}
-\DoxyCodeLine{00207         std::cout << \textcolor{stringliteral}{"{}Total Quality="{}} << totalQuality << \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00208         \textcolor{keyword}{const} \textcolor{keywordtype}{bool} verbose = \textcolor{keyword}{true};}
-\DoxyCodeLine{00209         \textcolor{keywordflow}{if} (verbose) \{}
-\DoxyCodeLine{00210             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < histsize; i++) \{}
-\DoxyCodeLine{00211                 \textcolor{keywordflow}{if} (h[i] != 0)}
-\DoxyCodeLine{00212                     std::cout << i << \textcolor{charliteral}{'\(\backslash\)t'} << h[i] << \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00213             \}}
-\DoxyCodeLine{00214         \}}
-\DoxyCodeLine{00215         \textcolor{keywordflow}{return} totalQuality;}
-\DoxyCodeLine{00216     \}}
-\DoxyCodeLine{00217     \textcolor{keyword}{friend} std::ostream\& operator <<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classHashMap}{HashMap}}\& h) \{}
-\DoxyCodeLine{00218         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i <= h.size; i++) \{}
-\DoxyCodeLine{00219             s << \textcolor{stringliteral}{"{}bin "{}} << i << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{00220             \textcolor{keywordflow}{for} (uint32\_t p = h.table[i]; p != 0; p = h.nodes[p].next)}
-\DoxyCodeLine{00221                 s << h.symbols + h.nodes[p].offset << \textcolor{charliteral}{'\(\backslash\)t'};}
-\DoxyCodeLine{00222             s << \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{00223         \}}
-\DoxyCodeLine{00224         \textcolor{keywordflow}{return} s;}
-\DoxyCodeLine{00225     \}}
-\DoxyCodeLine{00226   }
+\DoxyCodeLine{00050   \textcolor{keyword}{class }Node \{}
+\DoxyCodeLine{00051    \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052     uint32\_t offset;}
+\DoxyCodeLine{00053     uint32\_t next;  \textcolor{comment}{// relative pointer (offset into nodes)}}
+\DoxyCodeLine{00054     Val val;}
+\DoxyCodeLine{00055     Node() \{}
+\DoxyCodeLine{00056     \}  \textcolor{comment}{// this is so the empty block can be initialized without doing anything}}
+\DoxyCodeLine{00057     Node(uint32\_t offset, uint32\_t next, Val v)}
+\DoxyCodeLine{00058         : offset(offset), next(next), val(v) \{\}}
+\DoxyCodeLine{00059   \};}
+\DoxyCodeLine{00060   uint32\_t nodeSize;   \textcolor{comment}{// how many nodes are preallocated}}
+\DoxyCodeLine{00061   uint32\_t nodeCount;  \textcolor{comment}{// how many nodes are currently used}}
+\DoxyCodeLine{00062   Node* nodes;}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00065   \mbox{\hyperlink{classHashMap}{HashMap}}(uint32\_t sz, uint32\_t symbolSize = 1024 * 1024)}
+\DoxyCodeLine{00066       : \mbox{\hyperlink{classHashMapBase}{HashMapBase}}(sz, symbolSize),}
+\DoxyCodeLine{00067         nodeSize(sz / 2 + 2),}
+\DoxyCodeLine{00068         nodes(\textcolor{keyword}{new} Node[sz / 2 + 2]) \{}
+\DoxyCodeLine{00069     current = symbols;}
+\DoxyCodeLine{00070     nodeCount = 1;  \textcolor{comment}{// zero is null}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072     \textcolor{keywordflow}{for} (uint32\_t i = 0; i <= size; i++)}
+\DoxyCodeLine{00073       table[i] = 0;  \textcolor{comment}{// 0 means empty, at the moment the first node is unused}}
+\DoxyCodeLine{00074   \}}
+\DoxyCodeLine{00075   \string~\mbox{\hyperlink{classHashMap}{HashMap}}() \{}
+\DoxyCodeLine{00076     \textcolor{keyword}{delete}[] nodes;}
+\DoxyCodeLine{00077     \textcolor{keyword}{delete}[] symbols;}
+\DoxyCodeLine{00078     \textcolor{keyword}{delete}[] table;}
+\DoxyCodeLine{00079   \}}
+\DoxyCodeLine{00080   \mbox{\hyperlink{classHashMap}{HashMap}}(\textcolor{keyword}{const} \mbox{\hyperlink{classHashMap}{HashMap}}\& orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00081   \mbox{\hyperlink{classHashMap}{HashMap}}\& operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classHashMap}{HashMap}}\& orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083   \textcolor{keywordtype}{void} checkGrow() \{}
+\DoxyCodeLine{00084     \textcolor{keywordflow}{if} (nodeCount * 2 <= size) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00085     \textcolor{keyword}{const} Node* old = nodes;}
+\DoxyCodeLine{00086     nodes = \textcolor{keyword}{new} Node[nodeSize * 2];  \textcolor{comment}{// TODO: need placement new}}
+\DoxyCodeLine{00087     \textcolor{keywordflow}{for} (uint32\_t i = 0; i < nodeSize; i++)}
+\DoxyCodeLine{00088       nodes[i] = std::move(old[i]);  \textcolor{comment}{// TODO: this is broken for objects Val}}
+\DoxyCodeLine{00089                                      \textcolor{comment}{// without default constructor}}
+\DoxyCodeLine{00090     nodeSize *= 2;}
+\DoxyCodeLine{00091     \textcolor{keyword}{delete}[](\textcolor{keywordtype}{char}*) old;  \textcolor{comment}{// get rid of the old block of memory}}
+\DoxyCodeLine{00092     uint32\_t* oldTable = table;}
+\DoxyCodeLine{00093     uint32\_t oldSize = size;}
+\DoxyCodeLine{00094     table = \textcolor{keyword}{new} uint32\_t[size = size * 2 | 1];  \textcolor{comment}{// new size = power of 2 -\/ 1}}
+\DoxyCodeLine{00095     \textcolor{keywordflow}{for} (uint32\_t i = 0; i < size; i++)}
+\DoxyCodeLine{00096       \textcolor{keywordflow}{if} (table[i] != 0) \{}
+\DoxyCodeLine{00097         uint32\_t index = hash(}
+\DoxyCodeLine{00098             symbols +}
+\DoxyCodeLine{00099             nodes[oldTable[i]].offset);  \textcolor{comment}{// find out new hash value of symbol}}
+\DoxyCodeLine{00100         table[index] = oldTable[i];}
+\DoxyCodeLine{00101       \}}
+\DoxyCodeLine{00102     \textcolor{keyword}{delete}[] oldTable;}
+\DoxyCodeLine{00103     \textcolor{comment}{// TODO: grow the symbol table too}}
+\DoxyCodeLine{00104     std::cerr << \textcolor{stringliteral}{"{}HashMap growing size="{}} << size << \textcolor{stringliteral}{"{} "{}} << nodeSize << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00105   \}}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107   \textcolor{keywordtype}{void} add(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[], \textcolor{keyword}{const} Val\& v) \{}
+\DoxyCodeLine{00108     uint32\_t index = hash(s);}
+\DoxyCodeLine{00109     \textcolor{keywordflow}{for} (uint32\_t p = table[index]; p != 0; p = nodes[p].next) \{}
+\DoxyCodeLine{00110       \textcolor{keyword}{const} \textcolor{keywordtype}{char}* w = symbols + nodes[p].offset;}
+\DoxyCodeLine{00111       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; *w == s[i]; i++)}
+\DoxyCodeLine{00112         \textcolor{keywordflow}{if} (*w == \textcolor{charliteral}{'\(\backslash\)0'}) \{}
+\DoxyCodeLine{00113           nodes[p].val = v;}
+\DoxyCodeLine{00114           \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00115         \}}
+\DoxyCodeLine{00116     \}}
+\DoxyCodeLine{00117     checkGrow();}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00119     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{00120     \textcolor{keywordflow}{for} (i = 0; s[i] != \textcolor{charliteral}{'\(\backslash\)0'}; i++) current[i] = s[i];}
+\DoxyCodeLine{00121     current[i] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00122     nodes[nodeCount] = Node(current -\/ symbols, table[index], v);}
+\DoxyCodeLine{00123     table[index] = nodeCount;}
+\DoxyCodeLine{00124     current += i + 1;}
+\DoxyCodeLine{00125     nodeCount++;}
+\DoxyCodeLine{00126   \}}
+\DoxyCodeLine{00127   Val add(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[], uint32\_t len, \textcolor{keyword}{const} Val\& v) \{}
+\DoxyCodeLine{00128     uint32\_t index = hash(s, len);}
+\DoxyCodeLine{00129     \textcolor{keywordflow}{for} (uint32\_t p = table[index]; p != 0; p = nodes[p].next) \{}
+\DoxyCodeLine{00130       \textcolor{keyword}{const} \textcolor{keywordtype}{char}* w = symbols + nodes[p].offset;}
+\DoxyCodeLine{00131       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; *w == s[i] \&\& i < len; i++)}
+\DoxyCodeLine{00132         \textcolor{keywordflow}{if} (*w == \textcolor{charliteral}{'\(\backslash\)0'}) \{}
+\DoxyCodeLine{00133           \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"{}Error, this should not happen"{}};}
+\DoxyCodeLine{00134         \}}
+\DoxyCodeLine{00135     \}}
+\DoxyCodeLine{00136     checkGrow();}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{00139     \textcolor{keywordflow}{for} (i = 0; i < len; i++) current[i] = s[i];}
+\DoxyCodeLine{00140     current[i] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00141     nodes[nodeCount] = Node(current -\/ symbols, table[index], v);}
+\DoxyCodeLine{00142     table[index] = nodeCount;}
+\DoxyCodeLine{00143     current += i + 1;}
+\DoxyCodeLine{00144     nodeCount++;}
+\DoxyCodeLine{00145     \textcolor{keywordflow}{return} v;}
+\DoxyCodeLine{00146   \}}
+\DoxyCodeLine{00147 }
+\DoxyCodeLine{00148   \textcolor{keywordtype}{bool} get(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[], Val* v)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00149     uint32\_t index = hash(s);}
+\DoxyCodeLine{00150     \textcolor{keywordflow}{for} (uint32\_t p = table[index]; p != 0; p = nodes[p].next) \{}
+\DoxyCodeLine{00151       \textcolor{keyword}{const} \textcolor{keywordtype}{char}* w = symbols + nodes[p].offset;}
+\DoxyCodeLine{00152       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; *w == s[i]; w++, i++)}
+\DoxyCodeLine{00153         \textcolor{keywordflow}{if} (*w == \textcolor{charliteral}{'\(\backslash\)0'}) \{}
+\DoxyCodeLine{00154           *v = nodes[p].val;}
+\DoxyCodeLine{00155           \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00156         \}}
+\DoxyCodeLine{00157     \}}
+\DoxyCodeLine{00158     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00159   \}}
+\DoxyCodeLine{00160 }
+\DoxyCodeLine{00161   Val* get(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[]) \{}
+\DoxyCodeLine{00162     uint32\_t index = hash(s);}
+\DoxyCodeLine{00163     \textcolor{keywordflow}{for} (uint32\_t p = table[index]; p != 0; p = nodes[p].next) \{}
+\DoxyCodeLine{00164       \textcolor{keyword}{const} \textcolor{keywordtype}{char}* w = symbols + nodes[p].offset;}
+\DoxyCodeLine{00165       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; *w == s[i]; w++, i++)}
+\DoxyCodeLine{00166         \textcolor{keywordflow}{if} (*w == \textcolor{charliteral}{'\(\backslash\)0'}) \{}
+\DoxyCodeLine{00167           \textcolor{keywordflow}{return} \&nodes[p].val;}
+\DoxyCodeLine{00168         \}}
+\DoxyCodeLine{00169     \}}
+\DoxyCodeLine{00170     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00171   \}}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173   \textcolor{keyword}{const} Val* get(\textcolor{keyword}{const} \textcolor{keywordtype}{char} s[])\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00174     uint32\_t index = hash(s);}
+\DoxyCodeLine{00175     \textcolor{keywordflow}{for} (uint32\_t p = table[index]; p != 0; p = nodes[p].next) \{}
+\DoxyCodeLine{00176       \textcolor{keyword}{const} \textcolor{keywordtype}{char}* w = symbols + nodes[p].offset;}
+\DoxyCodeLine{00177       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; *w == s[i]; w++, i++)}
+\DoxyCodeLine{00178         \textcolor{keywordflow}{if} (*w == \textcolor{charliteral}{'\(\backslash\)0'}) \{}
+\DoxyCodeLine{00179           \textcolor{keywordflow}{return} \&nodes[p].val;}
+\DoxyCodeLine{00180         \}}
+\DoxyCodeLine{00181     \}}
+\DoxyCodeLine{00182     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00183   \}}
+\DoxyCodeLine{00184 }
+\DoxyCodeLine{00185   Val* get(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* s, uint32\_t len) \{}
+\DoxyCodeLine{00186     uint32\_t index = hash(s);}
+\DoxyCodeLine{00187     \textcolor{keywordflow}{for} (uint32\_t p = table[index]; p != 0; p = nodes[p].next) \{}
+\DoxyCodeLine{00188       \textcolor{keyword}{const} \textcolor{keywordtype}{char}* w = symbols + nodes[p].offset;}
+\DoxyCodeLine{00189       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; *w == s[i]; w++, i++)}
+\DoxyCodeLine{00190         \textcolor{keywordflow}{if} (i == len) \textcolor{keywordflow}{return} \&nodes[p].val;}
+\DoxyCodeLine{00191     \}}
+\DoxyCodeLine{00192     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00193   \}}
+\DoxyCodeLine{00194 }
+\DoxyCodeLine{00195   uint64\_t hist()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00196     constexpr \textcolor{keywordtype}{int} histsize = 20;}
+\DoxyCodeLine{00197     \textcolor{keywordtype}{int} h[histsize] = \{0\};}
+\DoxyCodeLine{00198     \textcolor{keywordflow}{for} (uint32\_t i = 0; i <= size; i++) \{}
+\DoxyCodeLine{00199       uint32\_t count = 0;}
+\DoxyCodeLine{00200       \textcolor{keywordflow}{for} (uint32\_t p = table[i]; p != 0; p = nodes[p].next) count++;}
+\DoxyCodeLine{00201       \textcolor{keywordflow}{if} (count >= histsize -\/ 1)}
+\DoxyCodeLine{00202         h[histsize -\/ 1]++;}
+\DoxyCodeLine{00203       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00204         h[count]++;}
+\DoxyCodeLine{00205     \}}
+\DoxyCodeLine{00206     uint64\_t totalQuality = h[1];}
+\DoxyCodeLine{00207     \textcolor{keywordflow}{for} (uint64\_t i = 2; i < histsize; i++) totalQuality += i * h[i];}
+\DoxyCodeLine{00208     std::cout << \textcolor{stringliteral}{"{}Total Quality="{}} << totalQuality << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00209     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} verbose = \textcolor{keyword}{true};}
+\DoxyCodeLine{00210     \textcolor{keywordflow}{if} (verbose) \{}
+\DoxyCodeLine{00211       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < histsize; i++) \{}
+\DoxyCodeLine{00212         \textcolor{keywordflow}{if} (h[i] != 0) std::cout << i << \textcolor{charliteral}{'\(\backslash\)t'} << h[i] << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00213       \}}
+\DoxyCodeLine{00214     \}}
+\DoxyCodeLine{00215     \textcolor{keywordflow}{return} totalQuality;}
+\DoxyCodeLine{00216   \}}
+\DoxyCodeLine{00217   \textcolor{keyword}{friend} std::ostream\& operator<<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classHashMap}{HashMap}}\& h) \{}
+\DoxyCodeLine{00218     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i <= h.size; i++) \{}
+\DoxyCodeLine{00219       s << \textcolor{stringliteral}{"{}bin "{}} << i << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00220       \textcolor{keywordflow}{for} (uint32\_t p = h.table[i]; p != 0; p = h.nodes[p].next)}
+\DoxyCodeLine{00221         s << h.symbols + h.nodes[p].offset << \textcolor{charliteral}{'\(\backslash\)t'};}
+\DoxyCodeLine{00222       s << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00223     \}}
+\DoxyCodeLine{00224     \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{00225   \}}
+\DoxyCodeLine{00226 }
 \DoxyCodeLine{\Hypertarget{HashMap_8hh_source_l00227}\mbox{\hyperlink{classHashMap_1_1Iterator}{00227}}   \textcolor{keyword}{class }\mbox{\hyperlink{classHashMap_1_1Iterator}{Iterator}} \{}
-\DoxyCodeLine{00228   \textcolor{keyword}{private}:}
+\DoxyCodeLine{00228    \textcolor{keyword}{private}:}
 \DoxyCodeLine{00229     \mbox{\hyperlink{classHashMap}{HashMap}}* m;}
 \DoxyCodeLine{00230     uint32\_t current;}
-\DoxyCodeLine{00231   \textcolor{keyword}{public}:}
-\DoxyCodeLine{00232     \mbox{\hyperlink{classHashMap_1_1Iterator}{Iterator}}(\textcolor{keyword}{const} \mbox{\hyperlink{classHashMap}{HashMap}}\& list) : m(\&list), current(1) \{\}}
-\DoxyCodeLine{00233     \textcolor{keywordtype}{bool} operator !()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} current < m-\/>nodeCount; \}}
-\DoxyCodeLine{00234     \textcolor{keywordtype}{void} operator ++() \{ ++current; \}}
-\DoxyCodeLine{00235     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* key()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m-\/>symbols[m-\/>nodes[current].offset]; \}}
-\DoxyCodeLine{00236     Val* value() \{ \textcolor{keywordflow}{return} m-\/>nodes[current].val; \}}
-\DoxyCodeLine{00237   \};}
-\DoxyCodeLine{\Hypertarget{HashMap_8hh_source_l00238}\mbox{\hyperlink{classHashMap_1_1ConstIterator}{00238}}   \textcolor{keyword}{class }\mbox{\hyperlink{classHashMap_1_1ConstIterator}{ConstIterator}} \{}
-\DoxyCodeLine{00239   \textcolor{keyword}{private}:}
-\DoxyCodeLine{00240     \textcolor{keyword}{const} \mbox{\hyperlink{classHashMap}{HashMap}}* m;}
-\DoxyCodeLine{00241     uint32\_t current;}
-\DoxyCodeLine{00242   \textcolor{keyword}{public}:}
-\DoxyCodeLine{00243     \mbox{\hyperlink{classHashMap_1_1ConstIterator}{ConstIterator}}(\textcolor{keyword}{const} \mbox{\hyperlink{classHashMap}{HashMap}}\& list) : m(\&list), current(1) \{\}}
-\DoxyCodeLine{00244     \textcolor{keywordtype}{bool} operator !()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} current < m-\/>nodeCount; \}}
-\DoxyCodeLine{00245     \textcolor{keywordtype}{void} operator ++() \{ ++current; \}}
-\DoxyCodeLine{00246     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* key()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m-\/>symbols + m-\/>nodes[current].offset; \}}
-\DoxyCodeLine{00247     \textcolor{keyword}{const} Val* value()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \&m-\/>nodes[current].val; \}}
-\DoxyCodeLine{00248   \};}
-\DoxyCodeLine{00249     \textcolor{keyword}{friend} \mbox{\hyperlink{classHashMap_1_1Iterator}{Iterator}};}
-\DoxyCodeLine{00250     \textcolor{keyword}{friend} \mbox{\hyperlink{classHashMap_1_1ConstIterator}{ConstIterator}};}
-\DoxyCodeLine{00251 \};}
+\DoxyCodeLine{00231 }
+\DoxyCodeLine{00232    \textcolor{keyword}{public}:}
+\DoxyCodeLine{00233     \mbox{\hyperlink{classHashMap_1_1Iterator}{Iterator}}(\textcolor{keyword}{const} \mbox{\hyperlink{classHashMap}{HashMap}}\& list) : m(\&list), current(1) \{\}}
+\DoxyCodeLine{00234     \textcolor{keywordtype}{bool} operator!()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} current < m-\/>nodeCount; \}}
+\DoxyCodeLine{00235     \textcolor{keywordtype}{void} operator++() \{ ++current; \}}
+\DoxyCodeLine{00236     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* key()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m-\/>symbols[m-\/>nodes[current].offset]; \}}
+\DoxyCodeLine{00237     Val* value() \{ \textcolor{keywordflow}{return} m-\/>nodes[current].val; \}}
+\DoxyCodeLine{00238   \};}
+\DoxyCodeLine{\Hypertarget{HashMap_8hh_source_l00239}\mbox{\hyperlink{classHashMap_1_1ConstIterator}{00239}}   \textcolor{keyword}{class }\mbox{\hyperlink{classHashMap_1_1ConstIterator}{ConstIterator}} \{}
+\DoxyCodeLine{00240    \textcolor{keyword}{private}:}
+\DoxyCodeLine{00241     \textcolor{keyword}{const} \mbox{\hyperlink{classHashMap}{HashMap}}* m;}
+\DoxyCodeLine{00242     uint32\_t current;}
+\DoxyCodeLine{00243 }
+\DoxyCodeLine{00244    \textcolor{keyword}{public}:}
+\DoxyCodeLine{00245     \mbox{\hyperlink{classHashMap_1_1ConstIterator}{ConstIterator}}(\textcolor{keyword}{const} \mbox{\hyperlink{classHashMap}{HashMap}}\& list) : m(\&list), current(1) \{\}}
+\DoxyCodeLine{00246     \textcolor{keywordtype}{bool} operator!()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} current < m-\/>nodeCount; \}}
+\DoxyCodeLine{00247     \textcolor{keywordtype}{void} operator++() \{ ++current; \}}
+\DoxyCodeLine{00248     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* key()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m-\/>symbols + m-\/>nodes[current].offset; \}}
+\DoxyCodeLine{00249     \textcolor{keyword}{const} Val* value()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \&m-\/>nodes[current].val; \}}
+\DoxyCodeLine{00250   \};}
+\DoxyCodeLine{00251   \textcolor{keyword}{friend} \mbox{\hyperlink{classHashMap_1_1Iterator}{Iterator}};}
+\DoxyCodeLine{00252   \textcolor{keyword}{friend} \mbox{\hyperlink{classHashMap_1_1ConstIterator}{ConstIterator}};}
+\DoxyCodeLine{00253 \};}
 
 \end{DoxyCode}

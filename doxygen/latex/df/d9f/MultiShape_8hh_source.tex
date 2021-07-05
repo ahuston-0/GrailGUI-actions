@@ -5,32 +5,35 @@
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{00002 }
 \DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}opengl/Shape\_impl.cc"{}}}
-\DoxyCodeLine{00005 }
-\DoxyCodeLine{\Hypertarget{MultiShape_8hh_source_l00006}\mbox{\hyperlink{classMultiShape}{00006}} \textcolor{keyword}{class }\mbox{\hyperlink{classMultiShape}{MultiShape}} : \textcolor{keyword}{public} \mbox{\hyperlink{classShape}{Shape}} \{}
-\DoxyCodeLine{00007 \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00008   std::vector<float> vertices;}
-\DoxyCodeLine{00009   std::vector<uint32\_t> solidIndices;}
-\DoxyCodeLine{00010   std::vector<uint32\_t> lineIndices;}
-\DoxyCodeLine{00011   std::vector<uint32\_t> pointIndices;}
-\DoxyCodeLine{00012   std::vector<float> colorIndices;}
-\DoxyCodeLine{00013 }
-\DoxyCodeLine{00014 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00015   \mbox{\hyperlink{classMultiShape}{MultiShape}}(\mbox{\hyperlink{classCanvas}{Canvas}}* parent, uint32\_t vertCount = 1024, uint32\_t solidIndCount = 1024,  uint32\_t lineIndCount = 1024, }
-\DoxyCodeLine{00016               uint32\_t pointIndCount = 1024, uint32\_t colorIndCount = 1024) : \mbox{\hyperlink{classShape}{Shape}}(parent) \{}
-\DoxyCodeLine{00017     vertices.reserve(vertCount*2);}
-\DoxyCodeLine{00018     solidIndices.reserve(solidIndCount);}
-\DoxyCodeLine{00019     lineIndices.reserve(lineIndCount);}
-\DoxyCodeLine{00020     pointIndices.reserve(pointIndCount);}
-\DoxyCodeLine{00021     colorIndices.reserve(colorIndCount);}
-\DoxyCodeLine{00022   \}}
-\DoxyCodeLine{00023   \string~\mbox{\hyperlink{classMultiShape}{MultiShape}}();}
-\DoxyCodeLine{00024   \textcolor{keywordtype}{void} process\_input(Inputs* in,\textcolor{keywordtype}{float} dt) \textcolor{keyword}{override};}
-\DoxyCodeLine{00025   \textcolor{keywordtype}{void} update() \textcolor{keyword}{override};}
-\DoxyCodeLine{00026   \textcolor{keywordtype}{void} addPoint(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y)\{}
-\DoxyCodeLine{00027     vertices.push\_back(x);}
-\DoxyCodeLine{00028     vertices.push\_back(y);}
-\DoxyCodeLine{00029   \}}
-\DoxyCodeLine{00030 \};}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}opengl/Shape\_impl.cc"{}}}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{\Hypertarget{MultiShape_8hh_source_l00007}\mbox{\hyperlink{classMultiShape}{00007}} \textcolor{keyword}{class }\mbox{\hyperlink{classMultiShape}{MultiShape}} : \textcolor{keyword}{public} \mbox{\hyperlink{classShape}{Shape}} \{}
+\DoxyCodeLine{00008  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00009   std::vector<float> vertices;}
+\DoxyCodeLine{00010   std::vector<uint32\_t> solidIndices;}
+\DoxyCodeLine{00011   std::vector<uint32\_t> lineIndices;}
+\DoxyCodeLine{00012   std::vector<uint32\_t> pointIndices;}
+\DoxyCodeLine{00013   std::vector<float> colorIndices;}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016   \mbox{\hyperlink{classMultiShape}{MultiShape}}(\mbox{\hyperlink{classCanvas}{Canvas}}* parent, uint32\_t vertCount = 1024,}
+\DoxyCodeLine{00017              uint32\_t solidIndCount = 1024, uint32\_t lineIndCount = 1024,}
+\DoxyCodeLine{00018              uint32\_t pointIndCount = 1024, uint32\_t colorIndCount = 1024)}
+\DoxyCodeLine{00019       : \mbox{\hyperlink{classShape}{Shape}}(parent) \{}
+\DoxyCodeLine{00020     vertices.reserve(vertCount * 2);}
+\DoxyCodeLine{00021     solidIndices.reserve(solidIndCount);}
+\DoxyCodeLine{00022     lineIndices.reserve(lineIndCount);}
+\DoxyCodeLine{00023     pointIndices.reserve(pointIndCount);}
+\DoxyCodeLine{00024     colorIndices.reserve(colorIndCount);}
+\DoxyCodeLine{00025   \}}
+\DoxyCodeLine{00026   \string~\mbox{\hyperlink{classMultiShape}{MultiShape}}();}
+\DoxyCodeLine{00027   \textcolor{keywordtype}{void} process\_input(Inputs* in, \textcolor{keywordtype}{float} dt) \textcolor{keyword}{override};}
+\DoxyCodeLine{00028   \textcolor{keywordtype}{void} update() \textcolor{keyword}{override};}
+\DoxyCodeLine{00029   \textcolor{keywordtype}{void} addPoint(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y) \{}
+\DoxyCodeLine{00030     vertices.push\_back(x);}
+\DoxyCodeLine{00031     vertices.push\_back(y);}
+\DoxyCodeLine{00032   \}}
+\DoxyCodeLine{00033 \};}
 
 \end{DoxyCode}

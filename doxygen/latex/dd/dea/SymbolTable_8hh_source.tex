@@ -19,22 +19,23 @@
 \DoxyCodeLine{\Hypertarget{SymbolTable_8hh_source_l00015}\mbox{\hyperlink{classSymbolTable}{00015}} \textcolor{keyword}{class }\mbox{\hyperlink{classSymbolTable}{SymbolTable}} : \textcolor{keyword}{public} \mbox{\hyperlink{classStruct}{Struct}} \{}
 \DoxyCodeLine{00016  \textcolor{keyword}{private}:}
 \DoxyCodeLine{00017   uint32\_t root;}
-\DoxyCodeLine{00018  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00019   \mbox{\hyperlink{classSymbolTable}{SymbolTable}}(\mbox{\hyperlink{classXDLCompiler}{XDLCompiler}}* c);}
-\DoxyCodeLine{00020 }
-\DoxyCodeLine{00021   \textcolor{keywordtype}{void} addRoot(\textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* t);}
-\DoxyCodeLine{00022 }
-\DoxyCodeLine{00023   \textcolor{comment}{// this is a hack, root happens to be = the number after all enums...}}
-\DoxyCodeLine{00024   \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* getRoot()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} members[root].type; \}}
-\DoxyCodeLine{00025   \mbox{\hyperlink{classStruct}{Struct}}* addStruct(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name);}
-\DoxyCodeLine{00026   \textcolor{keywordtype}{void} addXDLType(\textcolor{keyword}{const} std::string\& name, \mbox{\hyperlink{classXDLType}{XDLType}}* xdlType);}
-\DoxyCodeLine{00027   \textcolor{comment}{//void writeMeta(Buffer\& metadataBuf) override;}}
-\DoxyCodeLine{00028   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& out);}
-\DoxyCodeLine{00029   \textcolor{comment}{// read in metadata from buffer and return pointer to the type being added to}}
-\DoxyCodeLine{00030   \textcolor{comment}{// the symbol table}}
-\DoxyCodeLine{00031   \textcolor{keywordtype}{void} readMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& metadataBuf);}
-\DoxyCodeLine{00032   \textcolor{comment}{// dump a specific type as text}}
-\DoxyCodeLine{00033   \textcolor{keywordtype}{void} displayText(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00034 \};}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020   \mbox{\hyperlink{classSymbolTable}{SymbolTable}}(\mbox{\hyperlink{classXDLCompiler}{XDLCompiler}}* c);}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022   \textcolor{keywordtype}{void} addRoot(\textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* t);}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024   \textcolor{comment}{// this is a hack, root happens to be = the number after all enums...}}
+\DoxyCodeLine{00025   \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* getRoot()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} members[root].type; \}}
+\DoxyCodeLine{00026   \mbox{\hyperlink{classStruct}{Struct}}* addStruct(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name);}
+\DoxyCodeLine{00027   \textcolor{keywordtype}{void} addXDLType(\textcolor{keyword}{const} std::string\& name, \mbox{\hyperlink{classXDLType}{XDLType}}* xdlType);}
+\DoxyCodeLine{00028   \textcolor{comment}{// void writeMeta(Buffer\& metadataBuf) override;}}
+\DoxyCodeLine{00029   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& out);}
+\DoxyCodeLine{00030   \textcolor{comment}{// read in metadata from buffer and return pointer to the type being added to}}
+\DoxyCodeLine{00031   \textcolor{comment}{// the symbol table}}
+\DoxyCodeLine{00032   \textcolor{keywordtype}{void} readMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& metadataBuf);}
+\DoxyCodeLine{00033   \textcolor{comment}{// dump a specific type as text}}
+\DoxyCodeLine{00034   \textcolor{keywordtype}{void} displayText(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00035 \};}
 
 \end{DoxyCode}

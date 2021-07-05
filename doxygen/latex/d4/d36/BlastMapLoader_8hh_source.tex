@@ -16,63 +16,68 @@
 \DoxyCodeLine{00012     uint32\_t version;  \textcolor{comment}{// version}}
 \DoxyCodeLine{00013   \};}
 \DoxyCodeLine{\Hypertarget{BlastMapLoader_8hh_source_l00014}\mbox{\hyperlink{structBlockLoader_1_1SecurityHeaderV1}{00014}}   \textcolor{keyword}{struct }\mbox{\hyperlink{structBlockLoader_1_1SecurityHeaderV1}{SecurityHeaderV1}} \{}
-\DoxyCodeLine{00015     uint8\_t hash[32];   \textcolor{comment}{// SHA256 hash signed by author}}
-\DoxyCodeLine{00016     uint8\_t hash2[32];  \textcolor{comment}{// SHA256 hash of alternate region in data signed by author}}
-\DoxyCodeLine{00017     uint8\_t sigid[32];  \textcolor{comment}{// id of author}}
-\DoxyCodeLine{00018   \};}
-\DoxyCodeLine{00019 }
-\DoxyCodeLine{00020   \textcolor{comment}{// get the size of the SecurityHeader for any BlockLoader}}
-\DoxyCodeLine{00021   uint32\_t getAuthHeaderSize() \textcolor{keyword}{const};}
-\DoxyCodeLine{00022   \textcolor{keywordtype}{bool} authenticate() \textcolor{keyword}{const};}
-\DoxyCodeLine{00023 \};}
-\DoxyCodeLine{00024 }
-\DoxyCodeLine{00025 \textcolor{keyword}{class }\mbox{\hyperlink{classBlockMapLoader}{BlockMapLoader}} : \textcolor{keyword}{public} \mbox{\hyperlink{classBlockLoader}{BlockLoader}}, \textcolor{keyword}{public} \mbox{\hyperlink{classESRIShape}{ESRIShape}} \{}
-\DoxyCodeLine{00026  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00027   \textcolor{keyword}{struct }SpecificHeader \{}
-\DoxyCodeLine{00028     uint32\_t numLists;}
-\DoxyCodeLine{00029     uint32\_t unused;}
-\DoxyCodeLine{00030   \};}
-\DoxyCodeLine{00031   \textcolor{keyword}{struct }Segment \{}
-\DoxyCodeLine{00032     uint32\_t numPoints;}
-\DoxyCodeLine{00033     uint32\_t type : 8;}
-\DoxyCodeLine{00034     uint32\_t unused : 8;}
-\DoxyCodeLine{00035     \textcolor{keywordtype}{double} baseLocX, baseLocY;}
-\DoxyCodeLine{00036   \};}
-\DoxyCodeLine{00037 }
-\DoxyCodeLine{00038  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00039   SpecificHeader* specificHeader;}
-\DoxyCodeLine{00040   Segment* segments;}
-\DoxyCodeLine{00041   \textcolor{keyword}{const} \textcolor{keywordtype}{float}* points;}
-\DoxyCodeLine{00042 }
-\DoxyCodeLine{00043  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00044   \mbox{\hyperlink{classBlockMapLoader}{BlockMapLoader}}(uint32\_t numLists, uint32\_t numPoints) \{}
-\DoxyCodeLine{00045     uint32\_t headerWords = ((\textcolor{keyword}{sizeof}(Header) + numLists * \textcolor{keyword}{sizeof}(Segment)) + 7) / 8;}
-\DoxyCodeLine{00046     uint32\_t size = (headerWords + numPoints) * 8;}
-\DoxyCodeLine{00047     mem = std::make\_unique<uint64\_t[headerWords + numPoints]>;}
-\DoxyCodeLine{00048     head = (Header*)mem;                                 \textcolor{comment}{// header is the first chunk of bytes}}
-\DoxyCodeLine{00049     segments = (Segment*)((\textcolor{keywordtype}{char}*)mem + \textcolor{keyword}{sizeof}(Header));  \textcolor{comment}{// list of segments is next}}
-\DoxyCodeLine{00050     points = (\textcolor{keywordtype}{float}*)((\textcolor{keywordtype}{char}*)mem + \textcolor{keyword}{sizeof}(Header) + numPoints * \textcolor{keyword}{sizeof}(Segment));}
-\DoxyCodeLine{00051 }
-\DoxyCodeLine{00052     \textcolor{comment}{// load in all points from ESRI}}
-\DoxyCodeLine{00053 }
-\DoxyCodeLine{00054     \textcolor{keywordtype}{int} fh = open(\textcolor{stringliteral}{"{}uscounties.bml"{}}, writeBinFlags);}
-\DoxyCodeLine{00055     write(fh, (\textcolor{keywordtype}{char}*)mem, size);}
-\DoxyCodeLine{00056     close(fh);}
-\DoxyCodeLine{00057     \textcolor{comment}{// byte-\/endian-\/ness matters! You cannot write this in on an Intel and read in on Sparc}}
-\DoxyCodeLine{00058 }
-\DoxyCodeLine{00059     \textcolor{comment}{// if you have to worry about endianness}}
-\DoxyCodeLine{00060     \textcolor{comment}{// float: b1 b2 b3 b4 uint32\_t:   b1 b2 b3 b4   b4 b3 b2 b1 b4 b3 b2 b1}}
-\DoxyCodeLine{00061     \textcolor{comment}{// uint64\_t:   b1 b2 b3 b4 b5 b6 b7 b8 -\/-\/> b8 b7 b6 b5 b4 b3 b2 b1}}
-\DoxyCodeLine{00062   \}}
+\DoxyCodeLine{00015     uint8\_t hash[32];  \textcolor{comment}{// SHA256 hash signed by author}}
+\DoxyCodeLine{00016     uint8\_t}
+\DoxyCodeLine{00017         hash2[32];  \textcolor{comment}{// SHA256 hash of alternate region in data signed by author}}
+\DoxyCodeLine{00018     uint8\_t sigid[32];  \textcolor{comment}{// id of author}}
+\DoxyCodeLine{00019   \};}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021   \textcolor{comment}{// get the size of the SecurityHeader for any BlockLoader}}
+\DoxyCodeLine{00022   uint32\_t getAuthHeaderSize() \textcolor{keyword}{const};}
+\DoxyCodeLine{00023   \textcolor{keywordtype}{bool} authenticate() \textcolor{keyword}{const};}
+\DoxyCodeLine{00024 \};}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026 \textcolor{keyword}{class }\mbox{\hyperlink{classBlockMapLoader}{BlockMapLoader}} : \textcolor{keyword}{public} \mbox{\hyperlink{classBlockLoader}{BlockLoader}}, \textcolor{keyword}{public} \mbox{\hyperlink{classESRIShape}{ESRIShape}} \{}
+\DoxyCodeLine{00027  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028   \textcolor{keyword}{struct }SpecificHeader \{}
+\DoxyCodeLine{00029     uint32\_t numLists;}
+\DoxyCodeLine{00030     uint32\_t unused;}
+\DoxyCodeLine{00031   \};}
+\DoxyCodeLine{00032   \textcolor{keyword}{struct }Segment \{}
+\DoxyCodeLine{00033     uint32\_t numPoints;}
+\DoxyCodeLine{00034     uint32\_t type : 8;}
+\DoxyCodeLine{00035     uint32\_t unused : 8;}
+\DoxyCodeLine{00036     \textcolor{keywordtype}{double} baseLocX, baseLocY;}
+\DoxyCodeLine{00037   \};}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040   SpecificHeader* specificHeader;}
+\DoxyCodeLine{00041   Segment* segments;}
+\DoxyCodeLine{00042   \textcolor{keyword}{const} \textcolor{keywordtype}{float}* points;}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045   \mbox{\hyperlink{classBlockMapLoader}{BlockMapLoader}}(uint32\_t numLists, uint32\_t numPoints) \{}
+\DoxyCodeLine{00046     uint32\_t headerWords =}
+\DoxyCodeLine{00047         ((\textcolor{keyword}{sizeof}(Header) + numLists * \textcolor{keyword}{sizeof}(Segment)) + 7) / 8;}
+\DoxyCodeLine{00048     uint32\_t size = (headerWords + numPoints) * 8;}
+\DoxyCodeLine{00049     mem = std::make\_unique<uint64\_t[headerWords + numPoints]>;}
+\DoxyCodeLine{00050     head = (Header*)mem;  \textcolor{comment}{// header is the first chunk of bytes}}
+\DoxyCodeLine{00051     segments =}
+\DoxyCodeLine{00052         (Segment*)((\textcolor{keywordtype}{char}*)mem + \textcolor{keyword}{sizeof}(Header));  \textcolor{comment}{// list of segments is next}}
+\DoxyCodeLine{00053     points =}
+\DoxyCodeLine{00054         (\textcolor{keywordtype}{float}*)((\textcolor{keywordtype}{char}*)mem + \textcolor{keyword}{sizeof}(Header) + numPoints * \textcolor{keyword}{sizeof}(Segment));}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     \textcolor{comment}{// load in all points from ESRI}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     \textcolor{keywordtype}{int} fh = open(\textcolor{stringliteral}{"{}uscounties.bml"{}}, writeBinFlags);}
+\DoxyCodeLine{00059     write(fh, (\textcolor{keywordtype}{char}*)mem, size);}
+\DoxyCodeLine{00060     close(fh);}
+\DoxyCodeLine{00061     \textcolor{comment}{// byte-\/endian-\/ness matters! You cannot write this in on an Intel and read}}
+\DoxyCodeLine{00062     \textcolor{comment}{// in on Sparc}}
 \DoxyCodeLine{00063 }
-\DoxyCodeLine{00064   \mbox{\hyperlink{classBlockMapLoader}{BlockMapLoader}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]) \{}
-\DoxyCodeLine{00065     \textcolor{keywordtype}{int} fh = open(\textcolor{stringliteral}{"{}uscounties.bml"{}}, writeBinFlags);}
-\DoxyCodeLine{00066     st\_stat s;}
-\DoxyCodeLine{00067     stat(fh, \&s);}
-\DoxyCodeLine{00068     mem = \textcolor{keyword}{new} uint64\_t[s.st\_size / 8];}
-\DoxyCodeLine{00069     read(fh, (\textcolor{keywordtype}{char}*)mem, size);}
-\DoxyCodeLine{00070     close(fh);}
-\DoxyCodeLine{00071     \textcolor{comment}{// floats are now completely loaded, ready to draw!}}
-\DoxyCodeLine{00072   \}}
+\DoxyCodeLine{00064     \textcolor{comment}{// if you have to worry about endianness}}
+\DoxyCodeLine{00065     \textcolor{comment}{// float: b1 b2 b3 b4 uint32\_t:   b1 b2 b3 b4   b4 b3 b2 b1 b4 b3 b2 b1}}
+\DoxyCodeLine{00066     \textcolor{comment}{// uint64\_t:   b1 b2 b3 b4 b5 b6 b7 b8 -\/-\/> b8 b7 b6 b5 b4 b3 b2 b1}}
+\DoxyCodeLine{00067   \}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069   \mbox{\hyperlink{classBlockMapLoader}{BlockMapLoader}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]) \{}
+\DoxyCodeLine{00070     \textcolor{keywordtype}{int} fh = open(\textcolor{stringliteral}{"{}uscounties.bml"{}}, writeBinFlags);}
+\DoxyCodeLine{00071     st\_stat s;}
+\DoxyCodeLine{00072     stat(fh, \&s);}
+\DoxyCodeLine{00073     mem = \textcolor{keyword}{new} uint64\_t[s.st\_size / 8];}
+\DoxyCodeLine{00074     read(fh, (\textcolor{keywordtype}{char}*)mem, size);}
+\DoxyCodeLine{00075     close(fh);}
+\DoxyCodeLine{00076     \textcolor{comment}{// floats are now completely loaded, ready to draw!}}
+\DoxyCodeLine{00077   \}}
 
 \end{DoxyCode}

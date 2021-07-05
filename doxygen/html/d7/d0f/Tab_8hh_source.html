@@ -89,52 +89,50 @@ $(document).ready(function(){initNavTree('d7/d0f/Tab_8hh_source.html','../../');
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;opengl/Canvas.hh&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;util/DynArray.hh&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">TODO: Add border and other kinds of style info.</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">This could go into several classes related by inheritance in some way.</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">We have to decide how much style we want to support. We&#39;re not doing css3,</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">but we could do more than just font and color.  Perhaps borders? Patterns?</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">Background pictures?</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">Predefine an array of images so they can be referred at runtime with an int</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/dda/classGLWin.html">GLWin</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d89/classMultiText.html">MultiText</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../de/d9c/classTab.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/d9c/classTab.html">Tab</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="../../d0/d0c/classDynArray.html">DynArray&lt;Canvas*&gt;</a> canvases;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="../../d0/d0c/classDynArray.html">DynArray&lt;Style*&gt;</a> styles;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="../../d7/d54/classMainCanvas.html">MainCanvas</a> mainCanvas; <span class="comment">//special canvas for drawing GUI and menus</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// For anything custom, you should use your own objects, not use these</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="../../dc/dda/classGLWin.html">GLWin</a>* parent;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="../../de/d9c/classTab.html">Tab</a>(<a class="code" href="../../dc/dda/classGLWin.html">GLWin</a>* parent);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  ~<a class="code" href="../../de/d9c/classTab.html">Tab</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="../../dc/dda/classGLWin.html">GLWin</a>* getParent()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> parent; }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="comment">//copying a tab is not supported. What would it mean?</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../de/d9c/classTab.html">Tab</a>(<span class="keyword">const</span> <a class="code" href="../../de/d9c/classTab.html">Tab</a>&amp; orig) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="../../de/d9c/classTab.html">Tab</a>&amp; operator =(<span class="keyword">const</span> <a class="code" href="../../de/d9c/classTab.html">Tab</a>&amp; orig) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="../../d5/d70/classCanvas.html">Canvas</a>* addCanvas</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    (<span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a>* style, uint32_t vpX, uint32_t vpY, uint32_t vpW, uint32_t vpH);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="../../d5/d70/classCanvas.html">Canvas</a>* getCanvas(uint32_t i){</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> canvases[i];</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  }</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;opengl/Canvas.hh&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;util/DynArray.hh&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">TODO: Add border and other kinds of style info.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">This could go into several classes related by inheritance in some way.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">We have to decide how much style we want to support. We&#39;re not doing css3,</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">but we could do more than just font and color.  Perhaps borders? Patterns?</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">Background pictures?</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">Predefine an array of images so they can be referred at runtime with an int</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/dda/classGLWin.html">GLWin</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d89/classMultiText.html">MultiText</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../de/d9c/classTab.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/d9c/classTab.html">Tab</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="../../d0/d0c/classDynArray.html">DynArray&lt;Canvas*&gt;</a> canvases;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="../../d0/d0c/classDynArray.html">DynArray&lt;Style*&gt;</a> styles;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="../../d7/d54/classMainCanvas.html">MainCanvas</a> mainCanvas;  <span class="comment">// special canvas for drawing GUI and menus</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="comment">// For anything custom, you should use your own objects, not use these</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="../../dc/dda/classGLWin.html">GLWin</a>* parent;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="../../de/d9c/classTab.html">Tab</a>(<a class="code" href="../../dc/dda/classGLWin.html">GLWin</a>* parent);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  ~<a class="code" href="../../de/d9c/classTab.html">Tab</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="../../dc/dda/classGLWin.html">GLWin</a>* getParent()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> parent; }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">// copying a tab is not supported. What would it mean?</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="../../de/d9c/classTab.html">Tab</a>(<span class="keyword">const</span> <a class="code" href="../../de/d9c/classTab.html">Tab</a>&amp; orig) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="../../de/d9c/classTab.html">Tab</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="../../de/d9c/classTab.html">Tab</a>&amp; orig) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="../../d5/d70/classCanvas.html">Canvas</a>* addCanvas(<span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a>* style, uint32_t vpX, uint32_t vpY,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    uint32_t vpW, uint32_t vpH);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="../../d5/d70/classCanvas.html">Canvas</a>* getCanvas(uint32_t i) { <span class="keywordflow">return</span> canvases[i]; }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="../../d7/d54/classMainCanvas.html">MainCanvas</a>* getMainCanvas(){</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> &amp;mainCanvas;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span> init();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">void</span> update();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> render();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> cleanup();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="../../d7/d54/classMainCanvas.html">MainCanvas</a>* getMainCanvas() { <span class="keywordflow">return</span> &amp;mainCanvas; }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> init();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span> update();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span> render();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">void</span> cleanup();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
 <div class="ttc" id="aclassCanvas_html"><div class="ttname"><a href="../../d5/d70/classCanvas.html">Canvas</a></div><div class="ttdef"><b>Definition:</b> Canvas.hh:10</div></div>
 <div class="ttc" id="aclassDynArray_html"><div class="ttname"><a href="../../d0/d0c/classDynArray.html">DynArray&lt; Canvas * &gt;</a></div></div>
 <div class="ttc" id="aclassGLWin_html"><div class="ttname"><a href="../../dc/dda/classGLWin.html">GLWin</a></div><div class="ttdef"><b>Definition:</b> GLWin.hh:20</div></div>
@@ -142,7 +140,7 @@ $(document).ready(function(){initNavTree('d7/d0f/Tab_8hh_source.html','../../');
 <div class="ttc" id="aclassMultiText_html"><div class="ttname"><a href="../../df/d89/classMultiText.html">MultiText</a></div><div class="ttdef"><b>Definition:</b> MultiText.hh:7</div></div>
 <div class="ttc" id="aclassStyle_html"><div class="ttname"><a href="../../d2/dff/classStyle.html">Style</a></div><div class="ttdef"><b>Definition:</b> Style.hh:8</div></div>
 <div class="ttc" id="aclassStyledMultiShape2D_html"><div class="ttname"><a href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a></div><div class="ttdef"><b>Definition:</b> MapViewer.hh:8</div></div>
-<div class="ttc" id="aclassTab_html"><div class="ttname"><a href="../../de/d9c/classTab.html">Tab</a></div><div class="ttdef"><b>Definition:</b> Tab.hh:18</div></div>
+<div class="ttc" id="aclassTab_html"><div class="ttname"><a href="../../de/d9c/classTab.html">Tab</a></div><div class="ttdef"><b>Definition:</b> Tab.hh:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

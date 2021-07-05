@@ -4,68 +4,63 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{00002 }
-\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <memory.h>}}
-\DoxyCodeLine{00005 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{\Hypertarget{DynArray_8hh_source_l00006}\mbox{\hyperlink{classDynArray}{00006}} \textcolor{keyword}{class }\mbox{\hyperlink{classDynArray}{DynArray}} \{}
-\DoxyCodeLine{00007 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00008     uint32\_t capacity;}
-\DoxyCodeLine{00009     uint32\_t size\_;}
-\DoxyCodeLine{00010     T* data;}
-\DoxyCodeLine{00011     \textcolor{keywordtype}{void}* \textcolor{keyword}{operator} \textcolor{keyword}{new}(\textcolor{keywordtype}{size\_t} sz, T* place) \{}
-\DoxyCodeLine{00012         \textcolor{keywordflow}{return} place;}
-\DoxyCodeLine{00013     \}}
-\DoxyCodeLine{00014     \textcolor{keywordtype}{void} checkGrow() \{}
-\DoxyCodeLine{00015         \textcolor{keywordflow}{if} (size\_ >= capacity) \{}
-\DoxyCodeLine{00016             T* old = data;}
-\DoxyCodeLine{00017             data = (T*)malloc(\textcolor{keyword}{sizeof}(T) * (capacity = capacity*2+1));}
-\DoxyCodeLine{00018             memcpy(data, old, size\_ * \textcolor{keyword}{sizeof}(T));}
-\DoxyCodeLine{00019             \textcolor{keyword}{delete} [] (\textcolor{keywordtype}{char}*)old;}
-\DoxyCodeLine{00020         \}}
-\DoxyCodeLine{00021     \}}
-\DoxyCodeLine{00022 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00023     \mbox{\hyperlink{classDynArray}{DynArray}}(uint32\_t capacity) : capacity(capacity), size\_(0),}
-\DoxyCodeLine{00024                                                                 data((T*)malloc(capacity * \textcolor{keyword}{sizeof}(T))) \{\}}
-\DoxyCodeLine{00025     \string~\mbox{\hyperlink{classDynArray}{DynArray}}() \{}
-\DoxyCodeLine{00026         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < size\_; i++)}
-\DoxyCodeLine{00027             data[i].\string~T();}
-\DoxyCodeLine{00028         free(data);}
-\DoxyCodeLine{00029     \}}
-\DoxyCodeLine{00030   \textcolor{keywordtype}{void} clear() \{}
-\DoxyCodeLine{00031         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < size\_; i++)}
-\DoxyCodeLine{00032             data[i].\string~T();}
-\DoxyCodeLine{00033         size\_ = 0;}
-\DoxyCodeLine{00034     \}}
-\DoxyCodeLine{00035     \mbox{\hyperlink{classDynArray}{DynArray}}(\textcolor{keyword}{const} \mbox{\hyperlink{classDynArray}{DynArray}}\& orig) :}
-\DoxyCodeLine{00036         capacity(orig.capacity), size\_(orig.size\_),}
-\DoxyCodeLine{00037         data((T*)\textcolor{keyword}{new} \textcolor{keywordtype}{char}[\textcolor{keyword}{sizeof}(T) * orig.capacity]) \{}
-\DoxyCodeLine{00038     \textcolor{keywordflow}{for} (uint32\_t i = 0; i < size\_; i++)}
-\DoxyCodeLine{00039       \textcolor{keyword}{new}(data+i) T(orig.data[i]);}
-\DoxyCodeLine{00040   \}}
-\DoxyCodeLine{00041   }
-\DoxyCodeLine{00042     \mbox{\hyperlink{classDynArray}{DynArray}}\& operator =(\textcolor{keyword}{const} \mbox{\hyperlink{classDynArray}{DynArray}}\& orig) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{00043   \textcolor{keywordtype}{void} add(\textcolor{keyword}{const} T\& v) \{}
-\DoxyCodeLine{00044         checkGrow();}
-\DoxyCodeLine{00045         \textcolor{keyword}{new}(data+size\_++) T(v);}
-\DoxyCodeLine{00046     \}}
-\DoxyCodeLine{00047 }
-\DoxyCodeLine{00048   T removeEnd() \{}
-\DoxyCodeLine{00049         size\_-\/-\/;}
-\DoxyCodeLine{00050         T copy = data[size\_];}
-\DoxyCodeLine{00051         data[size\_].\string~T();}
-\DoxyCodeLine{00052         \textcolor{keywordflow}{return} copy;}
-\DoxyCodeLine{00053     \}}
-\DoxyCodeLine{00054     \textcolor{keyword}{const} T\& operator [](uint32\_t i)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} data[i]; \}}
-\DoxyCodeLine{00055     T\& operator [](uint32\_t i) \{ \textcolor{keywordflow}{return} data[i]; \}}
-\DoxyCodeLine{00056     uint32\_t size()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} size\_; \}}
-\DoxyCodeLine{00057   \textcolor{keyword}{const} T\& last()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00058     \textcolor{keywordflow}{return} data[size\_ -\/ 1];}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <memory.h>}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00006 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{DynArray_8hh_source_l00007}\mbox{\hyperlink{classDynArray}{00007}} \textcolor{keyword}{class }\mbox{\hyperlink{classDynArray}{DynArray}} \{}
+\DoxyCodeLine{00008  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009   uint32\_t capacity;}
+\DoxyCodeLine{00010   uint32\_t size\_;}
+\DoxyCodeLine{00011   T* data;}
+\DoxyCodeLine{00012   \textcolor{keywordtype}{void}* \textcolor{keyword}{operator} \textcolor{keyword}{new}(\textcolor{keywordtype}{size\_t} sz, T* place) \{ \textcolor{keywordflow}{return} place; \}}
+\DoxyCodeLine{00013   \textcolor{keywordtype}{void} checkGrow() \{}
+\DoxyCodeLine{00014     \textcolor{keywordflow}{if} (size\_ >= capacity) \{}
+\DoxyCodeLine{00015       T* old = data;}
+\DoxyCodeLine{00016       data = (T*)malloc(\textcolor{keyword}{sizeof}(T) * (capacity = capacity * 2 + 1));}
+\DoxyCodeLine{00017       memcpy(data, old, size\_ * \textcolor{keyword}{sizeof}(T));}
+\DoxyCodeLine{00018       \textcolor{keyword}{delete}[](\textcolor{keywordtype}{char}*) old;}
+\DoxyCodeLine{00019     \}}
+\DoxyCodeLine{00020   \}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023   \mbox{\hyperlink{classDynArray}{DynArray}}(uint32\_t capacity)}
+\DoxyCodeLine{00024       : capacity(capacity), size\_(0), data((T*)malloc(capacity * \textcolor{keyword}{sizeof}(T))) \{\}}
+\DoxyCodeLine{00025   \string~\mbox{\hyperlink{classDynArray}{DynArray}}() \{}
+\DoxyCodeLine{00026     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < size\_; i++) data[i].\string~T();}
+\DoxyCodeLine{00027     free(data);}
+\DoxyCodeLine{00028   \}}
+\DoxyCodeLine{00029   \textcolor{keywordtype}{void} clear() \{}
+\DoxyCodeLine{00030     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < size\_; i++) data[i].\string~T();}
+\DoxyCodeLine{00031     size\_ = 0;}
+\DoxyCodeLine{00032   \}}
+\DoxyCodeLine{00033   \mbox{\hyperlink{classDynArray}{DynArray}}(\textcolor{keyword}{const} \mbox{\hyperlink{classDynArray}{DynArray}}\& orig)}
+\DoxyCodeLine{00034       : capacity(orig.capacity),}
+\DoxyCodeLine{00035         size\_(orig.size\_),}
+\DoxyCodeLine{00036         data((T*)\textcolor{keyword}{new} \textcolor{keywordtype}{char}[\textcolor{keyword}{sizeof}(T) * orig.capacity]) \{}
+\DoxyCodeLine{00037     \textcolor{keywordflow}{for} (uint32\_t i = 0; i < size\_; i++) \textcolor{keyword}{new} (data + i) T(orig.data[i]);}
+\DoxyCodeLine{00038   \}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040   \mbox{\hyperlink{classDynArray}{DynArray}}\& operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classDynArray}{DynArray}}\& orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00041   \textcolor{keywordtype}{void} add(\textcolor{keyword}{const} T\& v) \{}
+\DoxyCodeLine{00042     checkGrow();}
+\DoxyCodeLine{00043     \textcolor{keyword}{new} (data + size\_++) T(v);}
+\DoxyCodeLine{00044   \}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046   T removeEnd() \{}
+\DoxyCodeLine{00047     size\_-\/-\/;}
+\DoxyCodeLine{00048     T copy = data[size\_];}
+\DoxyCodeLine{00049     data[size\_].\string~T();}
+\DoxyCodeLine{00050     \textcolor{keywordflow}{return} copy;}
+\DoxyCodeLine{00051   \}}
+\DoxyCodeLine{00052   \textcolor{keyword}{const} T\& operator[](uint32\_t i)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} data[i]; \}}
+\DoxyCodeLine{00053   T\& operator[](uint32\_t i) \{ \textcolor{keywordflow}{return} data[i]; \}}
+\DoxyCodeLine{00054   uint32\_t size()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} size\_; \}}
+\DoxyCodeLine{00055   \textcolor{keyword}{const} T\& last()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} data[size\_ -\/ 1]; \}}
+\DoxyCodeLine{00056   \textcolor{keyword}{friend} std::ostream\& operator<<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classDynArray}{DynArray}}\& d) \{}
+\DoxyCodeLine{00057     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < d.size\_; i++) s << d.data[i] << \textcolor{charliteral}{' '};}
+\DoxyCodeLine{00058     \textcolor{keywordflow}{return} s;}
 \DoxyCodeLine{00059   \}}
-\DoxyCodeLine{00060     \textcolor{keyword}{friend} std::ostream\& operator <<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classDynArray}{DynArray}}\& d) \{}
-\DoxyCodeLine{00061         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < d.size\_; i++)}
-\DoxyCodeLine{00062             s << d.data[i] << \textcolor{charliteral}{' '};}
-\DoxyCodeLine{00063         \textcolor{keywordflow}{return} s;}
-\DoxyCodeLine{00064     \}}
-\DoxyCodeLine{00065 \};}
+\DoxyCodeLine{00060 \};}
 
 \end{DoxyCode}

@@ -88,35 +88,35 @@ $(document).ready(function(){initNavTree('d0/d42/ColorGrid_8hh_source.html','../
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;opengl/Shape.hh&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;opengl/Shape.hh&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../d6/d18/classColorGrid.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d6/d18/classColorGrid.html">ColorGrid</a> : <span class="keyword">public</span> <a class="code" href="../../de/d0a/classShape.html">Shape</a> {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    std::vector&lt;float&gt; vertices;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    std::vector&lt;uint32_t&gt; indices;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    std::vector&lt;float&gt; colors;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    uint32_t numPoints;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="../../d6/d18/classColorGrid.html">ColorGrid</a>(uint32_t xsize, uint32_t ysize) {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        numPoints = xsize * ysize;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        uint32_t triCount = (xsize-1)*(ysize-1)*2;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        vertices.reserve(xsize*ysize*5);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        indices.reserve(triCount * 5);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        colors.reserve(triCount*3);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  ~<a class="code" href="../../d6/d18/classColorGrid.html">ColorGrid</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="comment">// override Shape methods to draw us</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">void</span> init() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">void</span> render() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> addGrid(<span class="keywordtype">float</span> x0, <span class="keywordtype">float</span> y0, <span class="keywordtype">float</span> dx, <span class="keywordtype">float</span> dy);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> addRectangle(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> w, <span class="keywordtype">float</span> h);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  std::vector&lt;float&gt; vertices;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  std::vector&lt;uint32_t&gt; indices;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  std::vector&lt;float&gt; colors;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  uint32_t numPoints;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="../../d6/d18/classColorGrid.html">ColorGrid</a>(uint32_t xsize, uint32_t ysize) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    numPoints = xsize * ysize;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    uint32_t triCount = (xsize - 1) * (ysize - 1) * 2;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    vertices.reserve(xsize * ysize * 5);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    indices.reserve(triCount * 5);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    colors.reserve(triCount * 3);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  ~<a class="code" href="../../d6/d18/classColorGrid.html">ColorGrid</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="comment">// override Shape methods to draw us</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">void</span> init() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">void</span> render() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> addGrid(<span class="keywordtype">float</span> x0, <span class="keywordtype">float</span> y0, <span class="keywordtype">float</span> dx, <span class="keywordtype">float</span> dy);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">void</span> addRectangle(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> w, <span class="keywordtype">float</span> h);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
 <div class="ttc" id="aclassColorGrid_html"><div class="ttname"><a href="../../d6/d18/classColorGrid.html">ColorGrid</a></div><div class="ttdef"><b>Definition:</b> ColorGrid.hh:7</div></div>
-<div class="ttc" id="aclassShape_html"><div class="ttname"><a href="../../de/d0a/classShape.html">Shape</a></div><div class="ttdef"><b>Definition:</b> Shape.hh:15</div></div>
+<div class="ttc" id="aclassShape_html"><div class="ttname"><a href="../../de/d0a/classShape.html">Shape</a></div><div class="ttdef"><b>Definition:</b> Shape.hh:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

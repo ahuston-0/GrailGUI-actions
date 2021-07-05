@@ -4,66 +4,77 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{00002 }
-\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/StyledMultiShape2D.hh"{}}}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <algorithm>}}
 \DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
-\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}opengl/GLMath.hh"{}}}
-\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}visualcs/MatrixGraph.hh"{}}}
-\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}visualcs/CSRGraph.hh"{}}}
-\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include "{}opengl/Canvas.hh"{}}}
-\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <algorithm>}}
-\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{00011 }
-\DoxyCodeLine{00012 \textcolor{keyword}{class }\mbox{\hyperlink{structPoint}{Point}} \{}
-\DoxyCodeLine{00013 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00014   \textcolor{keywordtype}{float} x,y;}
-\DoxyCodeLine{00015   \mbox{\hyperlink{structPoint}{Point}}() \{\}}
-\DoxyCodeLine{00016   \mbox{\hyperlink{structPoint}{Point}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y) : x(x), y(y) \{\}}
-\DoxyCodeLine{00017 \};}
-\DoxyCodeLine{00018 }
-\DoxyCodeLine{\Hypertarget{GraphView_8hh_source_l00019}\mbox{\hyperlink{classGraphView}{00019}} \textcolor{keyword}{class }\mbox{\hyperlink{classGraphView}{GraphView}} : \textcolor{keyword}{public} \mbox{\hyperlink{classShape}{Shape}} \{}
-\DoxyCodeLine{00020 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00021   uint32\_t pointsPerCircle;}
-\DoxyCodeLine{00022   std::vector<float> vals; \textcolor{comment}{// values which are used to color the graph}}
-\DoxyCodeLine{00023   std::vector<glm::vec4> colorMap;}
-\DoxyCodeLine{00024   \mbox{\hyperlink{classCSRGraph}{CSRGraph<uint64\_t, uint64\_t, float>}}* g;}
-\DoxyCodeLine{00025   \mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}} mVertices;}
-\DoxyCodeLine{00026   \mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}} mEdges;}
-\DoxyCodeLine{00027   \textcolor{keywordtype}{float} vertR;}
-\DoxyCodeLine{00028     glm::vec4 defaultStyle;}
-\DoxyCodeLine{00029   \mbox{\hyperlink{classCanvas}{Canvas}} *c;}
-\DoxyCodeLine{00030   \textcolor{keyword}{const} uint64\_t* vertices;}
-\DoxyCodeLine{00031 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00032   \mbox{\hyperlink{classCSRGraph}{CSRGraph<uint64\_t, uint64\_t, float>}}* getGraph() \{ \textcolor{keywordflow}{return} g; \}}
-\DoxyCodeLine{00033   \textcolor{keywordtype}{void} setVertexRadius(\textcolor{keywordtype}{float} vertR) \{}
-\DoxyCodeLine{00034     this-\/>vertR = vertR;}
-\DoxyCodeLine{00035   \}}
-\DoxyCodeLine{00036   \textcolor{keywordtype}{void} addColor(\textcolor{keywordtype}{float} r, \textcolor{keywordtype}{float} g, \textcolor{keywordtype}{float} b) \{ colorMap.push\_back(glm::vec4(r, g, b, 0)); \}}
-\DoxyCodeLine{00037   \textcolor{keywordtype}{void} addVert(uint64\_t v, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, uint8\_t initialVertColor, \mbox{\hyperlink{structPoint}{Point}} points[]); \textcolor{comment}{// each vertex starts with color value 0}}
-\DoxyCodeLine{00038   \textcolor{keywordtype}{void} addEdge(uint64\_t i, \textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2, uint8\_t initialEdgeColor);}
-\DoxyCodeLine{00039   \textcolor{keywordtype}{void} updateVert(uint64\_t v, uint8\_t colorVal); \textcolor{comment}{// change the color of each point of vert with colorMap[colorVal]}}
-\DoxyCodeLine{00040   \textcolor{keywordtype}{void} updateEdge(uint64\_t i, uint8\_t colorVal); \textcolor{comment}{// change the color of the line colorMap[colorVal]}}
-\DoxyCodeLine{00041   \mbox{\hyperlink{classGraphView}{GraphView}}(\mbox{\hyperlink{classCSRGraph}{CSRGraph<uint64\_t, uint64\_t, float>}}\& g, \mbox{\hyperlink{classCanvas}{Canvas}} *c, \mbox{\hyperlink{classStyle}{Style}}* style, glm::vec4 s) : mVertices(style), mEdges(style), g(\&g), defaultStyle(s), c(c) \{}
-\DoxyCodeLine{00042     c-\/>addLayer(\&mEdges);}
-\DoxyCodeLine{00043     c-\/>addLayer(\&mVertices);}
-\DoxyCodeLine{00044     vertices = g.group();}
-\DoxyCodeLine{00045   \}}
-\DoxyCodeLine{00046   uint64\_t getE()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} g-\/>adjLen; \}}
-\DoxyCodeLine{00047   \textcolor{comment}{// override Shape methods to draw us}}
-\DoxyCodeLine{00048   \textcolor{keywordtype}{void} process\_input(Inputs*, \textcolor{keywordtype}{float} dt) \textcolor{keyword}{override};}
-\DoxyCodeLine{00049   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
-\DoxyCodeLine{00050   \textcolor{keywordtype}{void} render() \textcolor{keyword}{override};}
-\DoxyCodeLine{00051   \textcolor{keywordtype}{void} update() \textcolor{keyword}{override};}
-\DoxyCodeLine{00052   }
-\DoxyCodeLine{00053   \textcolor{keywordtype}{void} addEdges(\textcolor{keyword}{const} \mbox{\hyperlink{structPoint}{Point}} vertexPos[], uint8\_t initialEdgeColor);}
-\DoxyCodeLine{00054 \};}
-\DoxyCodeLine{00055 }
-\DoxyCodeLine{00056 \textcolor{keywordtype}{void} circleLayout(\mbox{\hyperlink{classGraphView}{GraphView}}* gv, \textcolor{keywordtype}{float} xc, \textcolor{keywordtype}{float} yc, \textcolor{keywordtype}{float} r,}
-\DoxyCodeLine{00057     uint64\_t V, uint8\_t initialVertexColor, uint8\_t initialEdgeColor);}
-\DoxyCodeLine{00058 \textcolor{keywordtype}{void} multiCircleLayout(\mbox{\hyperlink{classGraphView}{GraphView}}* gv, \textcolor{keywordtype}{float} xc, \textcolor{keywordtype}{float} yc, \textcolor{keywordtype}{float} rinner, \textcolor{keywordtype}{float} ringSpace,}
-\DoxyCodeLine{00059                  uint32\_t numRings, uint64\_t V, uint8\_t initialVertexColor, uint8\_t initialEdgeColor);}
-\DoxyCodeLine{00060 \textcolor{keywordtype}{void} gridLayout(\mbox{\hyperlink{classGraphView}{GraphView}}* gv, \textcolor{keywordtype}{float} x0, \textcolor{keywordtype}{float} y0, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h,}
-\DoxyCodeLine{00061           uint32\_t numRows, uint32\_t numCols, uint64\_t V,}
-\DoxyCodeLine{00062           uint8\_t initialVertexColor, uint8\_t initialEdgeColor);}
-\DoxyCodeLine{00063 \textcolor{keywordtype}{void} bipartiteLayout(\mbox{\hyperlink{classGraphView}{GraphView}}\& gv, \textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} x2);}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}opengl/Canvas.hh"{}}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include "{}opengl/GLMath.hh"{}}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include "{}opengl/StyledMultiShape2D.hh"{}}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "{}visualcs/CSRGraph.hh"{}}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "{}visualcs/MatrixGraph.hh"{}}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{keyword}{class }\mbox{\hyperlink{structPoint}{Point}} \{}
+\DoxyCodeLine{00014  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015   \textcolor{keywordtype}{float} x, y;}
+\DoxyCodeLine{00016   \mbox{\hyperlink{structPoint}{Point}}() \{\}}
+\DoxyCodeLine{00017   \mbox{\hyperlink{structPoint}{Point}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y) : x(x), y(y) \{\}}
+\DoxyCodeLine{00018 \};}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{\Hypertarget{GraphView_8hh_source_l00020}\mbox{\hyperlink{classGraphView}{00020}} \textcolor{keyword}{class }\mbox{\hyperlink{classGraphView}{GraphView}} : \textcolor{keyword}{public} \mbox{\hyperlink{classShape}{Shape}} \{}
+\DoxyCodeLine{00021  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022   uint32\_t pointsPerCircle;}
+\DoxyCodeLine{00023   std::vector<float> vals;  \textcolor{comment}{// values which are used to color the graph}}
+\DoxyCodeLine{00024   std::vector<glm::vec4> colorMap;}
+\DoxyCodeLine{00025   \mbox{\hyperlink{classCSRGraph}{CSRGraph<uint64\_t, uint64\_t, float>}}* g;}
+\DoxyCodeLine{00026   \mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}} mVertices;}
+\DoxyCodeLine{00027   \mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}} mEdges;}
+\DoxyCodeLine{00028   \textcolor{keywordtype}{float} vertR;}
+\DoxyCodeLine{00029   glm::vec4 defaultStyle;}
+\DoxyCodeLine{00030   \mbox{\hyperlink{classCanvas}{Canvas}}* c;}
+\DoxyCodeLine{00031   \textcolor{keyword}{const} uint64\_t* vertices;}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034   \mbox{\hyperlink{classCSRGraph}{CSRGraph<uint64\_t, uint64\_t, float>}}* getGraph() \{ \textcolor{keywordflow}{return} g; \}}
+\DoxyCodeLine{00035   \textcolor{keywordtype}{void} setVertexRadius(\textcolor{keywordtype}{float} vertR) \{ this-\/>vertR = vertR; \}}
+\DoxyCodeLine{00036   \textcolor{keywordtype}{void} addColor(\textcolor{keywordtype}{float} r, \textcolor{keywordtype}{float} g, \textcolor{keywordtype}{float} b) \{}
+\DoxyCodeLine{00037     colorMap.push\_back(glm::vec4(r, g, b, 0));}
+\DoxyCodeLine{00038   \}}
+\DoxyCodeLine{00039   \textcolor{keywordtype}{void} addVert(uint64\_t v, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, uint8\_t initialVertColor,}
+\DoxyCodeLine{00040                \mbox{\hyperlink{structPoint}{Point}} points[]);  \textcolor{comment}{// each vertex starts with color value 0}}
+\DoxyCodeLine{00041   \textcolor{keywordtype}{void} addEdge(uint64\_t i, \textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2,}
+\DoxyCodeLine{00042                uint8\_t initialEdgeColor);}
+\DoxyCodeLine{00043   \textcolor{keywordtype}{void} updateVert(uint64\_t v,}
+\DoxyCodeLine{00044                   uint8\_t colorVal);  \textcolor{comment}{// change the color of each point of vert}}
+\DoxyCodeLine{00045                                       \textcolor{comment}{// with colorMap[colorVal]}}
+\DoxyCodeLine{00046   \textcolor{keywordtype}{void} updateEdge(}
+\DoxyCodeLine{00047       uint64\_t i,}
+\DoxyCodeLine{00048       uint8\_t colorVal);  \textcolor{comment}{// change the color of the line colorMap[colorVal]}}
+\DoxyCodeLine{00049   \mbox{\hyperlink{classGraphView}{GraphView}}(\mbox{\hyperlink{classCSRGraph}{CSRGraph<uint64\_t, uint64\_t, float>}}\& g, \mbox{\hyperlink{classCanvas}{Canvas}}* c, \mbox{\hyperlink{classStyle}{Style}}* style,}
+\DoxyCodeLine{00050             glm::vec4 s)}
+\DoxyCodeLine{00051       : mVertices(style), mEdges(style), g(\&g), defaultStyle(s), c(c) \{}
+\DoxyCodeLine{00052     c-\/>addLayer(\&mEdges);}
+\DoxyCodeLine{00053     c-\/>addLayer(\&mVertices);}
+\DoxyCodeLine{00054     vertices = g.group();}
+\DoxyCodeLine{00055   \}}
+\DoxyCodeLine{00056   uint64\_t getE()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} g-\/>adjLen; \}}
+\DoxyCodeLine{00057   \textcolor{comment}{// override Shape methods to draw us}}
+\DoxyCodeLine{00058   \textcolor{keywordtype}{void} process\_input(Inputs*, \textcolor{keywordtype}{float} dt) \textcolor{keyword}{override};}
+\DoxyCodeLine{00059   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
+\DoxyCodeLine{00060   \textcolor{keywordtype}{void} render() \textcolor{keyword}{override};}
+\DoxyCodeLine{00061   \textcolor{keywordtype}{void} update() \textcolor{keyword}{override};}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063   \textcolor{keywordtype}{void} addEdges(\textcolor{keyword}{const} \mbox{\hyperlink{structPoint}{Point}} vertexPos[], uint8\_t initialEdgeColor);}
+\DoxyCodeLine{00064 \};}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066 \textcolor{keywordtype}{void} circleLayout(\mbox{\hyperlink{classGraphView}{GraphView}}* gv, \textcolor{keywordtype}{float} xc, \textcolor{keywordtype}{float} yc, \textcolor{keywordtype}{float} r, uint64\_t V,}
+\DoxyCodeLine{00067                   uint8\_t initialVertexColor, uint8\_t initialEdgeColor);}
+\DoxyCodeLine{00068 \textcolor{keywordtype}{void} multiCircleLayout(\mbox{\hyperlink{classGraphView}{GraphView}}* gv, \textcolor{keywordtype}{float} xc, \textcolor{keywordtype}{float} yc, \textcolor{keywordtype}{float} rinner,}
+\DoxyCodeLine{00069                        \textcolor{keywordtype}{float} ringSpace, uint32\_t numRings, uint64\_t V,}
+\DoxyCodeLine{00070                        uint8\_t initialVertexColor, uint8\_t initialEdgeColor);}
+\DoxyCodeLine{00071 \textcolor{keywordtype}{void} gridLayout(\mbox{\hyperlink{classGraphView}{GraphView}}* gv, \textcolor{keywordtype}{float} x0, \textcolor{keywordtype}{float} y0, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h,}
+\DoxyCodeLine{00072                 uint32\_t numRows, uint32\_t numCols, uint64\_t V,}
+\DoxyCodeLine{00073                 uint8\_t initialVertexColor, uint8\_t initialEdgeColor);}
+\DoxyCodeLine{00074 \textcolor{keywordtype}{void} bipartiteLayout(\mbox{\hyperlink{classGraphView}{GraphView}}\& gv, \textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} x2);}
 
 \end{DoxyCode}

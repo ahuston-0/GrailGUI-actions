@@ -7,32 +7,36 @@
 \DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
 \DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <glm/gtx/transform.hpp>}}
 \DoxyCodeLine{00005 }
-\DoxyCodeLine{\Hypertarget{MultiTransformation_8hh_source_l00006}\mbox{\hyperlink{classMultiTransform}{00006}} \textcolor{keyword}{class }\mbox{\hyperlink{classMultiTransform}{MultiTransform}}\{}
-\DoxyCodeLine{00007 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00008     glm::vec3 pos;}
-\DoxyCodeLine{00009     glm::vec3 rot;}
-\DoxyCodeLine{00010     glm::vec3 scale;}
+\DoxyCodeLine{\Hypertarget{MultiTransformation_8hh_source_l00006}\mbox{\hyperlink{classMultiTransform}{00006}} \textcolor{keyword}{class }\mbox{\hyperlink{classMultiTransform}{MultiTransform}} \{}
+\DoxyCodeLine{00007  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00008   glm::vec3 pos;}
+\DoxyCodeLine{00009   glm::vec3 rot;}
+\DoxyCodeLine{00010   glm::vec3 scale;}
 \DoxyCodeLine{00011 }
-\DoxyCodeLine{00012 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00013     \mbox{\hyperlink{classMultiTransform}{MultiTransform}}(\textcolor{keyword}{const} glm::vec3\& pos=glm::vec3(1,1,1), \textcolor{keyword}{const} glm::vec3\& rot=glm::vec3(1,1,1),}
-\DoxyCodeLine{00014                 \textcolor{keyword}{const} glm::vec3\& scale=glm::vec3(1,1,1)) : pos(pos), rot(rot), scale(scale) \{\}}
-\DoxyCodeLine{00015 }
-\DoxyCodeLine{00016     \textcolor{keywordtype}{void} setPos(\textcolor{keyword}{const} glm::vec3 \&v)\{ pos = v; \}    }
+\DoxyCodeLine{00012  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013   \mbox{\hyperlink{classMultiTransform}{MultiTransform}}(\textcolor{keyword}{const} glm::vec3 \&pos = glm::vec3(1, 1, 1),}
+\DoxyCodeLine{00014                  \textcolor{keyword}{const} glm::vec3 \&rot = glm::vec3(1, 1, 1),}
+\DoxyCodeLine{00015                  \textcolor{keyword}{const} glm::vec3 \&scale = glm::vec3(1, 1, 1))}
+\DoxyCodeLine{00016       : pos(pos), rot(rot), scale(scale) \{\}}
 \DoxyCodeLine{00017 }
-\DoxyCodeLine{00018     \textcolor{keywordtype}{void} setRot(\textcolor{keyword}{const} glm::vec3 \&v)\{ rot = v; \}     }
+\DoxyCodeLine{00018   \textcolor{keywordtype}{void} setPos(\textcolor{keyword}{const} glm::vec3 \&v) \{ pos = v; \}}
 \DoxyCodeLine{00019 }
-\DoxyCodeLine{00020     \textcolor{keywordtype}{void} setScale(\textcolor{keyword}{const} glm::vec3 \&v)\{ scale = v; \}}
+\DoxyCodeLine{00020   \textcolor{keywordtype}{void} setRot(\textcolor{keyword}{const} glm::vec3 \&v) \{ rot = v; \}}
 \DoxyCodeLine{00021 }
-\DoxyCodeLine{00022     \textcolor{keywordtype}{void} incrPos(\textcolor{keyword}{const} glm::vec3 \&v)\{ pos += v; \}    }
+\DoxyCodeLine{00022   \textcolor{keywordtype}{void} setScale(\textcolor{keyword}{const} glm::vec3 \&v) \{ scale = v; \}}
 \DoxyCodeLine{00023 }
-\DoxyCodeLine{00024     \textcolor{keywordtype}{void} incrRot(\textcolor{keyword}{const} glm::vec3 \&v)\{ rot += v; \}     }
+\DoxyCodeLine{00024   \textcolor{keywordtype}{void} incrPos(\textcolor{keyword}{const} glm::vec3 \&v) \{ pos += v; \}}
 \DoxyCodeLine{00025 }
-\DoxyCodeLine{00026     \textcolor{keywordtype}{void} incrScale(\textcolor{keyword}{const} glm::vec3 \&v)\{ scale += v; \}          }
-\DoxyCodeLine{00027     }
-\DoxyCodeLine{00028     \textcolor{keyword}{inline} glm::mat4 getModel() \{}
-\DoxyCodeLine{00029         glm::mat4 rotAll =  glm::rotate(rot.x, glm::vec3(1,0,0))*glm::rotate(rot.y, glm::vec3(0,1,0))*glm::rotate(rot.z, glm::vec3(0,0,1));}
-\DoxyCodeLine{00030         \textcolor{keywordflow}{return} glm::translate(pos)*rotAll*glm::scale(scale);}
-\DoxyCodeLine{00031     \}}
-\DoxyCodeLine{00032 \};}
+\DoxyCodeLine{00026   \textcolor{keywordtype}{void} incrRot(\textcolor{keyword}{const} glm::vec3 \&v) \{ rot += v; \}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028   \textcolor{keywordtype}{void} incrScale(\textcolor{keyword}{const} glm::vec3 \&v) \{ scale += v; \}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030   \textcolor{keyword}{inline} glm::mat4 getModel() \{}
+\DoxyCodeLine{00031     glm::mat4 rotAll = glm::rotate(rot.x, glm::vec3(1, 0, 0)) *}
+\DoxyCodeLine{00032                        glm::rotate(rot.y, glm::vec3(0, 1, 0)) *}
+\DoxyCodeLine{00033                        glm::rotate(rot.z, glm::vec3(0, 0, 1));}
+\DoxyCodeLine{00034     \textcolor{keywordflow}{return} glm::translate(pos) * rotAll * glm::scale(scale);}
+\DoxyCodeLine{00035   \}}
+\DoxyCodeLine{00036 \};}
 
 \end{DoxyCode}

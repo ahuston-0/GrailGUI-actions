@@ -7,17 +7,13 @@
 \DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <vector>}}
 \DoxyCodeLine{00004 }
 \DoxyCodeLine{\Hypertarget{CSVParser_8hh_source_l00005}\mbox{\hyperlink{classCSVParser}{00005}} \textcolor{keyword}{class }\mbox{\hyperlink{classCSVParser}{CSVParser}} \{}
-\DoxyCodeLine{00006 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00007   \textcolor{keyword}{enum class} CSVState \{}
-\DoxyCodeLine{00008     UnquotedField,}
-\DoxyCodeLine{00009     QuotedField,}
-\DoxyCodeLine{00010     QuotedQuote}
-\DoxyCodeLine{00011   \};}
-\DoxyCodeLine{00012 }
-\DoxyCodeLine{00013   \textcolor{keyword}{static} std::vector<std::string> readCSVRow(\textcolor{keyword}{const} std::string \&row);}
-\DoxyCodeLine{00014 }
-\DoxyCodeLine{00015 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00017   \textcolor{keyword}{static} std::vector<std::vector<std::string>> \mbox{\hyperlink{classCSVParser_a9712f3972d50c07f0e2e0b9ae2b9ad20}{readCSV}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]);}
-\DoxyCodeLine{00018 \};}
+\DoxyCodeLine{00006  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00007   \textcolor{keyword}{enum class} CSVState \{ UnquotedField, QuotedField, QuotedQuote \};}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009   \textcolor{keyword}{static} std::vector<std::string> readCSVRow(\textcolor{keyword}{const} std::string \&row);}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013   \textcolor{keyword}{static} std::vector<std::vector<std::string>> \mbox{\hyperlink{classCSVParser_a9712f3972d50c07f0e2e0b9ae2b9ad20}{readCSV}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]);}
+\DoxyCodeLine{00014 \};}
 
 \end{DoxyCode}

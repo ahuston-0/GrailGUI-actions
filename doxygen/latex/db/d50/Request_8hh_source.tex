@@ -3,25 +3,27 @@
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <cstdlib>}}
-\DoxyCodeLine{00009 \textcolor{comment}{//\#include "{}csp/Socket.hh"{}}}
-\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "{}util/Buffer.hh"{}}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{00010 \textcolor{comment}{//\#include "{}csp/Socket.hh"{}}}
 \DoxyCodeLine{00011 \textcolor{preprocessor}{\#include <string>}}
 \DoxyCodeLine{00012 }
-\DoxyCodeLine{00013 constexpr \textcolor{keywordtype}{size\_t} BUFSIZE = 32768;}
-\DoxyCodeLine{00014 \textcolor{comment}{//TODO csp18summer:remove out/in, "{}this"{} in/out could be replaced by socket's in/out}}
-\DoxyCodeLine{00015 \textcolor{comment}{//remove in,out,getOut,getIn, change handle(int fd) to handle(int fd, Buffer \&in, Buffer \&out)}}
-\DoxyCodeLine{\Hypertarget{Request_8hh_source_l00016}\mbox{\hyperlink{classRequest}{00016}} \textcolor{keyword}{class }\mbox{\hyperlink{classRequest}{Request}} \{}
-\DoxyCodeLine{00017 \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00018     \mbox{\hyperlink{classBuffer}{Buffer}} in, out;}
-\DoxyCodeLine{00019 }
-\DoxyCodeLine{00020 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00021     \mbox{\hyperlink{classRequest}{Request}}() : in(BUFSIZE, \textcolor{keyword}{false}), out(BUFSIZE, \textcolor{keyword}{true}) \{\}}
-\DoxyCodeLine{00022     \textcolor{keyword}{virtual} \string~\mbox{\hyperlink{classRequest}{Request}}() = 0;}
-\DoxyCodeLine{00023     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} handle(\textcolor{keywordtype}{int} sckt) = 0;}
-\DoxyCodeLine{00024     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} handle(\textcolor{keywordtype}{int} sckt, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* command) = 0;}
-\DoxyCodeLine{00025     \mbox{\hyperlink{classBuffer}{Buffer}}\& getOut() \{\textcolor{keywordflow}{return} out;\}}
-\DoxyCodeLine{00026     \mbox{\hyperlink{classBuffer}{Buffer}}\& getIn() \{\textcolor{keywordflow}{return} in;\}}
-\DoxyCodeLine{00027 \};}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "{}util/Buffer.hh"{}}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 constexpr \textcolor{keywordtype}{size\_t} BUFSIZE = 32768;}
+\DoxyCodeLine{00016 \textcolor{comment}{// TODO csp18summer:remove out/in, "{}this"{} in/out could be replaced by socket's}}
+\DoxyCodeLine{00017 \textcolor{comment}{// in/out remove in,out,getOut,getIn, change handle(int fd) to handle(int fd,}}
+\DoxyCodeLine{00018 \textcolor{comment}{// Buffer \&in, Buffer \&out)}}
+\DoxyCodeLine{\Hypertarget{Request_8hh_source_l00019}\mbox{\hyperlink{classRequest}{00019}} \textcolor{keyword}{class }\mbox{\hyperlink{classRequest}{Request}} \{}
+\DoxyCodeLine{00020  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00021   \mbox{\hyperlink{classBuffer}{Buffer}} in, out;}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024   \mbox{\hyperlink{classRequest}{Request}}() : in(BUFSIZE, \textcolor{keyword}{false}), out(BUFSIZE, \textcolor{keyword}{true}) \{\}}
+\DoxyCodeLine{00025   \textcolor{keyword}{virtual} \string~\mbox{\hyperlink{classRequest}{Request}}() = 0;}
+\DoxyCodeLine{00026   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} handle(\textcolor{keywordtype}{int} sckt) = 0;}
+\DoxyCodeLine{00027   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} handle(\textcolor{keywordtype}{int} sckt, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* command) = 0;}
+\DoxyCodeLine{00028   \mbox{\hyperlink{classBuffer}{Buffer}}\& getOut() \{ \textcolor{keywordflow}{return} out; \}}
+\DoxyCodeLine{00029   \mbox{\hyperlink{classBuffer}{Buffer}}\& getIn() \{ \textcolor{keywordflow}{return} in; \}}
+\DoxyCodeLine{00030 \};}
 
 \end{DoxyCode}

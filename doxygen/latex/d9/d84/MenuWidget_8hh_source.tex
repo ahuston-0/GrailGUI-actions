@@ -2,16 +2,19 @@
 \label{MenuWidget_8hh_source}\index{src/opengl/MenuWidget.hh@{src/opengl/MenuWidget.hh}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include "{}opengl/Widget2D.hh"{}}}
-\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{00003 }
-\DoxyCodeLine{00004 \textcolor{keyword}{class }\mbox{\hyperlink{classButtonWidget}{ButtonWidget}} : \textcolor{keyword}{public} \mbox{\hyperlink{classWidget2D}{Widget2D}} \{}
-\DoxyCodeLine{00005 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00006   std::string[] text;}
-\DoxyCodeLine{00007 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00008   \mbox{\hyperlink{classButtonWidget}{ButtonWidget}}(\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}* m, \mbox{\hyperlink{classMultiText}{MultiText}}* t, \textcolor{keyword}{const} std::string[]\& text,}
-\DoxyCodeLine{00009                \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h) : \mbox{\hyperlink{classWidget2D}{Widget2D}}(m,t, x, y, w, h), text(text) \{\}}
-\DoxyCodeLine{00010   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
-\DoxyCodeLine{00011 \};}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/Widget2D.hh"{}}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{keyword}{class }\mbox{\hyperlink{classButtonWidget}{ButtonWidget}} : \textcolor{keyword}{public} \mbox{\hyperlink{classWidget2D}{Widget2D}} \{}
+\DoxyCodeLine{00006  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00007   std::string[] text;}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010   \mbox{\hyperlink{classButtonWidget}{ButtonWidget}}(\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}* m, \mbox{\hyperlink{classMultiText}{MultiText}}* t, \textcolor{keyword}{const} std::string[] \& text,}
+\DoxyCodeLine{00011                \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h)}
+\DoxyCodeLine{00012       : \mbox{\hyperlink{classWidget2D}{Widget2D}}(m, t, x, y, w, h), text(text) \{\}}
+\DoxyCodeLine{00013   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
+\DoxyCodeLine{00014 \};}
 
 \end{DoxyCode}

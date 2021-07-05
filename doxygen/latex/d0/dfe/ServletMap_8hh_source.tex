@@ -4,79 +4,76 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{00002 }
-\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "{}csp/HttpServlet.hh"{}}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include <string>}}
 \DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{00015 }
-\DoxyCodeLine{00016 \textcolor{keyword}{const} std::string EMPTYSTRING(\textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00017 }
-\DoxyCodeLine{\Hypertarget{ServletMap_8hh_source_l00018}\mbox{\hyperlink{classServletMap}{00018}} \textcolor{keyword}{class }\mbox{\hyperlink{classServletMap}{ServletMap}} \{}
-\DoxyCodeLine{00019 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00020     \textcolor{keyword}{struct }Node \{}
-\DoxyCodeLine{00021         std::string name;}
-\DoxyCodeLine{00022         \mbox{\hyperlink{classHttpServlet}{HttpServlet}}* s;}
-\DoxyCodeLine{00023         Node(\textcolor{keyword}{const} std::string\& name, \mbox{\hyperlink{classHttpServlet}{HttpServlet}}* s) : name(name), s(s) \{\}}
-\DoxyCodeLine{00024     \};}
-\DoxyCodeLine{00025     std::vector<Node> table;}
-\DoxyCodeLine{00026     \textcolor{keywordtype}{size\_t} used;}
-\DoxyCodeLine{00027     \textcolor{keywordtype}{size\_t} hash(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* s, \textcolor{keywordtype}{size\_t} size)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00028         \textcolor{keywordtype}{size\_t} hashVal = size * 31;     }
-\DoxyCodeLine{00029         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < size; i++)}
-\DoxyCodeLine{00030             hashVal = (hashVal * 1023007001) + s[i] + (hashVal >> 17);}
-\DoxyCodeLine{00031 \textcolor{preprocessor}{\#if 0}}
-\DoxyCodeLine{00032         \textcolor{keywordflow}{for} ( ; size > \textcolor{keyword}{sizeof}(uint64\_t); size -\/= \textcolor{keyword}{sizeof}(uint64\_t))}
-\DoxyCodeLine{00033             hashVal = hashVal * (1 + 1024 + (1 << 17)) + *(uint64\_t*)s + hashVal >> 13;}
-\DoxyCodeLine{00034 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00035         \textcolor{keywordflow}{return} hashVal \% table.size();}
-\DoxyCodeLine{00036     \}}
-\DoxyCodeLine{00037 }
-\DoxyCodeLine{00038     \textcolor{keywordtype}{bool} compare(\textcolor{keyword}{const} std::string\& name, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* n, \textcolor{keywordtype}{size\_t} len)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00039         \textcolor{keywordflow}{if} (name.size() != len)}
-\DoxyCodeLine{00040             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{00041         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < len; ++i)}
-\DoxyCodeLine{00042             \textcolor{keywordflow}{if} (name[i] != n[i])}
-\DoxyCodeLine{00043                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{00044         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{00045     \}}
-\DoxyCodeLine{00046 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00047 }
-\DoxyCodeLine{00048     \mbox{\hyperlink{classServletMap}{ServletMap}}(uint32\_t initialSize = 32768) : used(0) \{}
-\DoxyCodeLine{00049         table.reserve(initialSize);}
-\DoxyCodeLine{00050         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < initialSize; i++)}
-\DoxyCodeLine{00051             table.push\_back(Node(\textcolor{stringliteral}{"{}"{}}, \textcolor{keyword}{nullptr}));}
-\DoxyCodeLine{00052     \}}
-\DoxyCodeLine{00053     }
-\DoxyCodeLine{00054     \textcolor{keywordtype}{void} add(\textcolor{keyword}{const} std::string\& name, \mbox{\hyperlink{classHttpServlet}{HttpServlet}}* s) \{}
-\DoxyCodeLine{00055         \textcolor{keywordtype}{size\_t} i = hash(name.c\_str(), name.size());}
-\DoxyCodeLine{00056 }
-\DoxyCodeLine{00057         \textcolor{keywordflow}{while} (!compare(table[i].name, name.c\_str(), name.size())) \{}
-\DoxyCodeLine{00058             \textcolor{keywordflow}{if} (table[i].name == \textcolor{stringliteral}{"{}"{}}) \{}
-\DoxyCodeLine{00059                 table[i].name.reserve(name.size());}
-\DoxyCodeLine{00060                 table[i].name = name;}
-\DoxyCodeLine{00061                 table[i].s = s;}
-\DoxyCodeLine{00062                 used++;}
-\DoxyCodeLine{00063                 \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00064             \}}
-\DoxyCodeLine{00065             i = i + 1;}
-\DoxyCodeLine{00066             \textcolor{keywordflow}{if} (i >= table.size())}
-\DoxyCodeLine{00067                 i = 0;}
-\DoxyCodeLine{00068         \}           }
-\DoxyCodeLine{00069     \}}
-\DoxyCodeLine{00070 }
-\DoxyCodeLine{00071     \mbox{\hyperlink{classHttpServlet}{HttpServlet}}* get(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* s, \textcolor{keywordtype}{size\_t} size)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00072         \textcolor{keywordtype}{size\_t} i = hash(s, size);}
-\DoxyCodeLine{00073         \textcolor{keywordflow}{while} (table[i].name != EMPTYSTRING)\{}
-\DoxyCodeLine{00074             \textcolor{keywordflow}{if} (compare(table[i].name, s, size)) \{}
-\DoxyCodeLine{00075                 \textcolor{keywordflow}{return} table[i].s;}
-\DoxyCodeLine{00076             \}}
-\DoxyCodeLine{00077             i = i + 1;}
-\DoxyCodeLine{00078             \textcolor{keywordflow}{if} (i >= table.size()) \{}
-\DoxyCodeLine{00079                 i = 0;}
-\DoxyCodeLine{00080             \}}
-\DoxyCodeLine{00081         \}}
-\DoxyCodeLine{00082         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00083     \}}
-\DoxyCodeLine{00084 \};}
-\DoxyCodeLine{00085                 }
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include "{}csp/HttpServlet.hh"{}}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{keyword}{const} std::string EMPTYSTRING(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{\Hypertarget{ServletMap_8hh_source_l00019}\mbox{\hyperlink{classServletMap}{00019}} \textcolor{keyword}{class }\mbox{\hyperlink{classServletMap}{ServletMap}} \{}
+\DoxyCodeLine{00020  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021   \textcolor{keyword}{struct }Node \{}
+\DoxyCodeLine{00022     std::string name;}
+\DoxyCodeLine{00023     \mbox{\hyperlink{classHttpServlet}{HttpServlet}}* s;}
+\DoxyCodeLine{00024     Node(\textcolor{keyword}{const} std::string\& name, \mbox{\hyperlink{classHttpServlet}{HttpServlet}}* s) : name(name), s(s) \{\}}
+\DoxyCodeLine{00025   \};}
+\DoxyCodeLine{00026   std::vector<Node> table;}
+\DoxyCodeLine{00027   \textcolor{keywordtype}{size\_t} used;}
+\DoxyCodeLine{00028   \textcolor{keywordtype}{size\_t} hash(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* s, \textcolor{keywordtype}{size\_t} size)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00029     \textcolor{keywordtype}{size\_t} hashVal = size * 31;}
+\DoxyCodeLine{00030     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < size; i++)}
+\DoxyCodeLine{00031       hashVal = (hashVal * 1023007001) + s[i] + (hashVal >> 17);}
+\DoxyCodeLine{00032 \textcolor{preprocessor}{\#if 0}}
+\DoxyCodeLine{00033         \textcolor{keywordflow}{for} ( ; size > \textcolor{keyword}{sizeof}(uint64\_t); size -\/= \textcolor{keyword}{sizeof}(uint64\_t))}
+\DoxyCodeLine{00034             hashVal = hashVal * (1 + 1024 + (1 << 17)) + *(uint64\_t*)s + hashVal >> 13;}
+\DoxyCodeLine{00035 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036     \textcolor{keywordflow}{return} hashVal \% table.size();}
+\DoxyCodeLine{00037   \}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039   \textcolor{keywordtype}{bool} compare(\textcolor{keyword}{const} std::string\& name, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* n, \textcolor{keywordtype}{size\_t} len)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00040     \textcolor{keywordflow}{if} (name.size() != len) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00041     \textcolor{keywordflow}{for} (uint32\_t i = 0; i < len; ++i)}
+\DoxyCodeLine{00042       \textcolor{keywordflow}{if} (name[i] != n[i]) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00043     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00044   \}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047   \mbox{\hyperlink{classServletMap}{ServletMap}}(uint32\_t initialSize = 32768) : used(0) \{}
+\DoxyCodeLine{00048     table.reserve(initialSize);}
+\DoxyCodeLine{00049     \textcolor{keywordflow}{for} (uint32\_t i = 0; i < initialSize; i++)}
+\DoxyCodeLine{00050       table.push\_back(Node(\textcolor{stringliteral}{"{}"{}}, \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00051   \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053   \textcolor{keywordtype}{void} add(\textcolor{keyword}{const} std::string\& name, \mbox{\hyperlink{classHttpServlet}{HttpServlet}}* s) \{}
+\DoxyCodeLine{00054     \textcolor{keywordtype}{size\_t} i = hash(name.c\_str(), name.size());}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     \textcolor{keywordflow}{while} (!compare(table[i].name, name.c\_str(), name.size())) \{}
+\DoxyCodeLine{00057       \textcolor{keywordflow}{if} (table[i].name == \textcolor{stringliteral}{"{}"{}}) \{}
+\DoxyCodeLine{00058         table[i].name.reserve(name.size());}
+\DoxyCodeLine{00059         table[i].name = name;}
+\DoxyCodeLine{00060         table[i].s = s;}
+\DoxyCodeLine{00061         used++;}
+\DoxyCodeLine{00062         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00063       \}}
+\DoxyCodeLine{00064       i = i + 1;}
+\DoxyCodeLine{00065       \textcolor{keywordflow}{if} (i >= table.size()) i = 0;}
+\DoxyCodeLine{00066     \}}
+\DoxyCodeLine{00067   \}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069   \mbox{\hyperlink{classHttpServlet}{HttpServlet}}* get(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* s, \textcolor{keywordtype}{size\_t} size)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00070     \textcolor{keywordtype}{size\_t} i = hash(s, size);}
+\DoxyCodeLine{00071     \textcolor{keywordflow}{while} (table[i].name != EMPTYSTRING) \{}
+\DoxyCodeLine{00072       \textcolor{keywordflow}{if} (compare(table[i].name, s, size)) \{}
+\DoxyCodeLine{00073         \textcolor{keywordflow}{return} table[i].s;}
+\DoxyCodeLine{00074       \}}
+\DoxyCodeLine{00075       i = i + 1;}
+\DoxyCodeLine{00076       \textcolor{keywordflow}{if} (i >= table.size()) \{}
+\DoxyCodeLine{00077         i = 0;}
+\DoxyCodeLine{00078       \}}
+\DoxyCodeLine{00079     \}}
+\DoxyCodeLine{00080     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00081   \}}
+\DoxyCodeLine{00082 \};}
 
 \end{DoxyCode}

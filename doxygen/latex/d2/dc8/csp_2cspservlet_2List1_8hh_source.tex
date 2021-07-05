@@ -4,39 +4,34 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{00002 }
-\DoxyCodeLine{00003 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00003 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
 \DoxyCodeLine{\Hypertarget{csp_2cspservlet_2List1_8hh_source_l00004}\mbox{\hyperlink{classList1}{00004}} \textcolor{keyword}{class }\mbox{\hyperlink{classList1}{List1}} \{}
-\DoxyCodeLine{00005 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00006     uint8\_t capacity;}
-\DoxyCodeLine{00007     uint8\_t used;}
-\DoxyCodeLine{00008     T* data;}
-\DoxyCodeLine{00009     \textcolor{keywordtype}{void} checkGrow() \{}
-\DoxyCodeLine{00010         \textcolor{keywordflow}{if} (used < capacity)}
-\DoxyCodeLine{00011             \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00012         \textcolor{keywordtype}{void}* old = data;}
-\DoxyCodeLine{00013         uint32\_t newCapacity = 2*capacity;}
-\DoxyCodeLine{00014         \textcolor{keywordflow}{if} (newCapacity > 255)}
-\DoxyCodeLine{00015             newCapacity = 255;}
-\DoxyCodeLine{00016         \textcolor{comment}{//TODO: how to fail if you max out the list?}}
-\DoxyCodeLine{00017         \textcolor{keyword}{const}   uint32\_t numBytes = newCapacity*\textcolor{keyword}{sizeof}(T); }
-\DoxyCodeLine{00018         \textcolor{keywordtype}{void}* newdata = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[numBytes];}
-\DoxyCodeLine{00019         data = (T*)newData;}
-\DoxyCodeLine{00020         memcpy(data, old, newCapacity}
-\DoxyCodeLine{00021         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < used; ++i)}
-\DoxyCodeLine{00022             data[i] = old[i];}
-\DoxyCodeLine{00023         \textcolor{keyword}{delete} [] old;}
-\DoxyCodeLine{00024     \}}
-\DoxyCodeLine{00025 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00026     \mbox{\hyperlink{classList1}{List1}}(uint8\_t initialSize) : capacity(initialSize), used(0), data(\textcolor{keyword}{new} T[initialSize]) \{\}}
-\DoxyCodeLine{00027     \string~\mbox{\hyperlink{classList1}{List1}}() \{}
-\DoxyCodeLine{00028         \textcolor{keyword}{delete} [] data;}
-\DoxyCodeLine{00029     \}}
-\DoxyCodeLine{00030     \mbox{\hyperlink{classList1}{List1}}(\textcolor{keyword}{const} \mbox{\hyperlink{classList}{List}}\& orig) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{00031     \mbox{\hyperlink{classList1}{List1}}\& operator =(\textcolor{keyword}{const} \mbox{\hyperlink{classList}{List}}\& orig) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{00032     \textcolor{keywordtype}{void} addEnd(\textcolor{keyword}{const} T\& v) \{}
-\DoxyCodeLine{00033         checkGrow();}
-\DoxyCodeLine{00034     \}}
-\DoxyCodeLine{00035 \};}
-\DoxyCodeLine{00036     }
+\DoxyCodeLine{00005  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00006   uint8\_t capacity;}
+\DoxyCodeLine{00007   uint8\_t used;}
+\DoxyCodeLine{00008   T* data;}
+\DoxyCodeLine{00009   \textcolor{keywordtype}{void} checkGrow() \{}
+\DoxyCodeLine{00010     \textcolor{keywordflow}{if} (used < capacity) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00011     \textcolor{keywordtype}{void}* old = data;}
+\DoxyCodeLine{00012     uint32\_t newCapacity = 2 * capacity;}
+\DoxyCodeLine{00013     \textcolor{keywordflow}{if} (newCapacity > 255) newCapacity = 255;}
+\DoxyCodeLine{00014     \textcolor{comment}{// TODO: how to fail if you max out the list?}}
+\DoxyCodeLine{00015     \textcolor{keyword}{const} uint32\_t numBytes = newCapacity * \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{00016     \textcolor{keywordtype}{void}* newdata = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[numBytes];}
+\DoxyCodeLine{00017     data = (T*)newData;}
+\DoxyCodeLine{00018                 memcpy(data, old, newCapacity}
+\DoxyCodeLine{00019         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < used; ++i)}
+\DoxyCodeLine{00020             data[i] = old[i];}
+\DoxyCodeLine{00021         \textcolor{keyword}{delete} [] old;}
+\DoxyCodeLine{00022   \}}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025   \mbox{\hyperlink{classList1}{List1}}(uint8\_t initialSize)}
+\DoxyCodeLine{00026       : capacity(initialSize), used(0), data(\textcolor{keyword}{new} T[initialSize]) \{\}}
+\DoxyCodeLine{00027   \string~\mbox{\hyperlink{classList1}{List1}}() \{ \textcolor{keyword}{delete}[] data; \}}
+\DoxyCodeLine{00028   \mbox{\hyperlink{classList1}{List1}}(\textcolor{keyword}{const} \mbox{\hyperlink{classList}{List}}\& orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00029   \mbox{\hyperlink{classList1}{List1}}\& operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classList}{List}}\& orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00030   \textcolor{keywordtype}{void} addEnd(\textcolor{keyword}{const} T\& v) \{ checkGrow(); \}}
+\DoxyCodeLine{00031 \};}
 
 \end{DoxyCode}

@@ -4,26 +4,25 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{00002 }
-\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}Socket.hh"{}}}
-\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}csp/Request.hh"{}}}
-\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <cstdint>}}
-\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{00007 }
-\DoxyCodeLine{\Hypertarget{UDP4_8hh_source_l00008}\mbox{\hyperlink{classUDPV4Socket}{00008}} \textcolor{keyword}{class }\mbox{\hyperlink{classUDPV4Socket}{UDPV4Socket}} : \textcolor{keyword}{public} \mbox{\hyperlink{classSocket}{Socket}} \{}
-\DoxyCodeLine{00009 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00010     \textcolor{keywordtype}{int} sckt;}
-\DoxyCodeLine{00011 }
-\DoxyCodeLine{00012 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00013   UDP4Socket(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* addr, uint16\_t port); \textcolor{comment}{//Client}}
-\DoxyCodeLine{00014     UDP4Socket(uint16\_t port); \textcolor{comment}{// Server}}
-\DoxyCodeLine{00015   \string~\mbox{\hyperlink{classIPV4Socket}{IPV4Socket}}()\{}
-\DoxyCodeLine{00016     close(sckt);}
-\DoxyCodeLine{00017   \}}
-\DoxyCodeLine{00018     \textcolor{keywordtype}{void} listenOnPort();}
-\DoxyCodeLine{00019     \textcolor{keywordtype}{void} wait();}
-\DoxyCodeLine{00020     \textcolor{keywordtype}{void} send(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* buf, uint32\_t len);}
-\DoxyCodeLine{00021   \textcolor{comment}{//  void ack(BadPackets p);}}
-\DoxyCodeLine{00022     \textcolor{keywordtype}{void} send(uint32\_t reqn); \textcolor{comment}{// For CSP}}
-\DoxyCodeLine{00023 \};}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}Socket.hh"{}}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}csp/Request.hh"{}}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{\Hypertarget{UDP4_8hh_source_l00009}\mbox{\hyperlink{classUDPV4Socket}{00009}} \textcolor{keyword}{class }\mbox{\hyperlink{classUDPV4Socket}{UDPV4Socket}} : \textcolor{keyword}{public} \mbox{\hyperlink{classSocket}{Socket}} \{}
+\DoxyCodeLine{00010  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011   \textcolor{keywordtype}{int} sckt;}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014   UDP4Socket(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* addr, uint16\_t port);  \textcolor{comment}{// Client}}
+\DoxyCodeLine{00015   UDP4Socket(uint16\_t port);                    \textcolor{comment}{// Server}}
+\DoxyCodeLine{00016   \string~\mbox{\hyperlink{classIPV4Socket}{IPV4Socket}}() \{ close(sckt); \}}
+\DoxyCodeLine{00017   \textcolor{keywordtype}{void} listenOnPort();}
+\DoxyCodeLine{00018   \textcolor{keywordtype}{void} wait();}
+\DoxyCodeLine{00019   \textcolor{keywordtype}{void} send(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* buf, uint32\_t len);}
+\DoxyCodeLine{00020   \textcolor{comment}{//  void ack(BadPackets p);}}
+\DoxyCodeLine{00021   \textcolor{keywordtype}{void} send(uint32\_t reqn);  \textcolor{comment}{// For CSP}}
+\DoxyCodeLine{00022 \};}
 
 \end{DoxyCode}

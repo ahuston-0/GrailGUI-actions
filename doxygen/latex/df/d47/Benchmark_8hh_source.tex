@@ -3,25 +3,27 @@
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <cstdint>}}
-\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <time.h>}}
-\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{00005 }
-\DoxyCodeLine{\Hypertarget{Benchmark_8hh_source_l00006}\mbox{\hyperlink{classBenchmark}{00006}} \textcolor{keyword}{class }\mbox{\hyperlink{classBenchmark}{Benchmark}} \{}
-\DoxyCodeLine{00007 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00008     uint64\_t elapsedUserTime, elapsedSystemTime, elapsedWallTime, elapsedClockTicks;}
-\DoxyCodeLine{00009     \textcolor{keywordtype}{int} BENCHCLOCKS\_PER\_SEC;}
-\DoxyCodeLine{00010     \textcolor{comment}{// struct tms startCPUTimes;}}
-\DoxyCodeLine{00011     \textcolor{comment}{// struct tms startWallTime;}}
-\DoxyCodeLine{00012 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00013     \mbox{\hyperlink{classBenchmark}{Benchmark}}();}
-\DoxyCodeLine{00014     \textcolor{comment}{// measure how long it takes to execute a function}}
-\DoxyCodeLine{00015     \textcolor{keyword}{static} \textcolor{keywordtype}{void} benchmark(\textcolor{keywordtype}{void} (*Func)() );}
-\DoxyCodeLine{00016     \textcolor{keyword}{static} \textcolor{keywordtype}{void} benchmark(\textcolor{keywordtype}{void} (*Func)(\textcolor{keywordtype}{int}), \textcolor{keywordtype}{int} n );}
-\DoxyCodeLine{00017     uint64\_t elapsed() \textcolor{keyword}{const};}
-\DoxyCodeLine{00018     \textcolor{keywordtype}{void} start();}
-\DoxyCodeLine{00019     \textcolor{keywordtype}{void} end();}
-\DoxyCodeLine{00020     \textcolor{keyword}{friend} std::ostream\& operator <<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classBenchmark}{Benchmark}}\& b);}
-\DoxyCodeLine{00021 \};}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{\Hypertarget{Benchmark_8hh_source_l00007}\mbox{\hyperlink{classBenchmark}{00007}} \textcolor{keyword}{class }\mbox{\hyperlink{classBenchmark}{Benchmark}} \{}
+\DoxyCodeLine{00008  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009   uint64\_t elapsedUserTime, elapsedSystemTime, elapsedWallTime,}
+\DoxyCodeLine{00010       elapsedClockTicks;}
+\DoxyCodeLine{00011   \textcolor{keywordtype}{int} BENCHCLOCKS\_PER\_SEC;}
+\DoxyCodeLine{00012   \textcolor{comment}{// struct tms startCPUTimes;}}
+\DoxyCodeLine{00013   \textcolor{comment}{// struct tms startWallTime;}}
+\DoxyCodeLine{00014  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015   \mbox{\hyperlink{classBenchmark}{Benchmark}}();}
+\DoxyCodeLine{00016   \textcolor{comment}{// measure how long it takes to execute a function}}
+\DoxyCodeLine{00017   \textcolor{keyword}{static} \textcolor{keywordtype}{void} benchmark(\textcolor{keywordtype}{void} (*Func)());}
+\DoxyCodeLine{00018   \textcolor{keyword}{static} \textcolor{keywordtype}{void} benchmark(\textcolor{keywordtype}{void} (*Func)(\textcolor{keywordtype}{int}), \textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{00019   uint64\_t elapsed() \textcolor{keyword}{const};}
+\DoxyCodeLine{00020   \textcolor{keywordtype}{void} start();}
+\DoxyCodeLine{00021   \textcolor{keywordtype}{void} end();}
+\DoxyCodeLine{00022   \textcolor{keyword}{friend} std::ostream\& operator<<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classBenchmark}{Benchmark}}\& b);}
+\DoxyCodeLine{00023 \};}
 
 \end{DoxyCode}

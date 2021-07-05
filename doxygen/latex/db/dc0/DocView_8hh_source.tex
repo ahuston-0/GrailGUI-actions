@@ -3,80 +3,80 @@
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include "{}opengl/GLWin.hh"{}}}
-\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/Shape.hh"{}}}
-\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}opengl/GLWinFonts.hh"{}}}
-\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}opengl/Document.hh"{}}}
-\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}opengl/StyledMultiShape2D.hh"{}}}
-\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}opengl/MultiText.hh"{}}}
-\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include "{}opengl/Image.hh"{}}}
-\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{00010 \textcolor{keyword}{class }\mbox{\hyperlink{classStyle}{Style}};}
-\DoxyCodeLine{00011 \textcolor{keyword}{class }\mbox{\hyperlink{classCanvas}{Canvas}};}
-\DoxyCodeLine{00012 }
-\DoxyCodeLine{\Hypertarget{DocView_8hh_source_l00013}\mbox{\hyperlink{classDocView}{00013}} \textcolor{keyword}{class }\mbox{\hyperlink{classDocView}{DocView}} : \textcolor{keyword}{public} \mbox{\hyperlink{classShape}{Shape}} \{}
-\DoxyCodeLine{00014 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00015   \textcolor{keyword}{const} \mbox{\hyperlink{classDocument}{Document}}* doc;  \textcolor{comment}{// the underlying document}}
-\DoxyCodeLine{00016   \mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}* m; \textcolor{comment}{// multishape for drawing 2d shapes in the background}}
-\DoxyCodeLine{00017   \textcolor{comment}{//Image img;            // image rendering for this document in front of multishape}}
-\DoxyCodeLine{00018   \mbox{\hyperlink{classMultiText}{MultiText}}* t;          \textcolor{comment}{// text rendering for this document on top of other two}}
-\DoxyCodeLine{00019   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* style;}
-\DoxyCodeLine{00020   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* titleFont;}
-\DoxyCodeLine{00021   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* pageNumFont;}
-\DoxyCodeLine{00022   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* normalFont;}
-\DoxyCodeLine{00023   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* h1Font;}
-\DoxyCodeLine{00024   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* h2Font;}
-\DoxyCodeLine{00025   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* h3Font;}
-\DoxyCodeLine{00026   }
-\DoxyCodeLine{00027   std::vector<float> vert;}
-\DoxyCodeLine{00028   uint32\_t pageNum;}
-\DoxyCodeLine{00029     \textcolor{keywordtype}{float} x,y;}
-\DoxyCodeLine{00030   \textcolor{keywordtype}{float} rowSize; \textcolor{comment}{// the size of the current row. If there are different fonts, the size of the biggest + desired spacing}}
-\DoxyCodeLine{00031     }
-\DoxyCodeLine{00032 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00033   \mbox{\hyperlink{classDocView}{DocView}}(\mbox{\hyperlink{classCanvas}{Canvas}}* c, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}} * style, \textcolor{keyword}{const} \mbox{\hyperlink{classDocument}{Document}}* doc);}
-\DoxyCodeLine{00034   \string~\mbox{\hyperlink{classDocView}{DocView}}();}
-\DoxyCodeLine{00035   \textcolor{keywordtype}{void} clear() \{ }
-\DoxyCodeLine{00036     m-\/>clear();}
-\DoxyCodeLine{00037     \textcolor{comment}{//img.clear(); //clear all the images}}
-\DoxyCodeLine{00038     t-\/>clear(); \textcolor{comment}{// clear all text}}
-\DoxyCodeLine{00039   \}}
-\DoxyCodeLine{00040   \textcolor{keywordtype}{void} printPageNum(uint32\_t page);}
-\DoxyCodeLine{00041   \textcolor{keywordtype}{void} print(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f, uint32\_t v);}
-\DoxyCodeLine{00042 }
-\DoxyCodeLine{00043   \textcolor{keywordtype}{void} advance() \{}
-\DoxyCodeLine{00044         \textcolor{keywordflow}{if} (pageNum < doc-\/>getPageCount()-\/1)}
-\DoxyCodeLine{00045             pageNum++;}
-\DoxyCodeLine{00046         update();}
-\DoxyCodeLine{00047   \}}
-\DoxyCodeLine{00048   \textcolor{keywordtype}{void} advance10() \{}
-\DoxyCodeLine{00049     pageNum+= 10;}
-\DoxyCodeLine{00050     \textcolor{keywordflow}{if} (pageNum >= doc-\/>getPageCount()) \{}
-\DoxyCodeLine{00051       pageNum = 0;}
-\DoxyCodeLine{00052         \}}
-\DoxyCodeLine{00053         update();}
-\DoxyCodeLine{00054   \}}
-\DoxyCodeLine{00055 }
-\DoxyCodeLine{00056   \textcolor{keywordtype}{void} back() \{}
-\DoxyCodeLine{00057         \textcolor{keywordflow}{if} (pageNum > 0)}
-\DoxyCodeLine{00058             pageNum-\/-\/;}
-\DoxyCodeLine{00059         update();}
-\DoxyCodeLine{00060   \}}
-\DoxyCodeLine{00061     \textcolor{keywordtype}{void} top() \{}
-\DoxyCodeLine{00062         pageNum = 0;}
-\DoxyCodeLine{00063         update();}
-\DoxyCodeLine{00064     \}}
-\DoxyCodeLine{00065     \textcolor{keywordtype}{void} bottom() \{}
-\DoxyCodeLine{00066         pageNum = 0;}
-\DoxyCodeLine{00067         update();}
-\DoxyCodeLine{00068     \}}
-\DoxyCodeLine{00069 }
-\DoxyCodeLine{00070   \textcolor{keywordtype}{void} gotoPage(uint32\_t pageNum) \{}
-\DoxyCodeLine{00071     \textcolor{keywordflow}{if} (pageNum >= doc-\/>getPageCount())}
-\DoxyCodeLine{00072       \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}opengl/Document.hh"{}}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}opengl/GLWin.hh"{}}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}opengl/GLWinFonts.hh"{}}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}opengl/Image.hh"{}}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include "{}opengl/MultiText.hh"{}}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include "{}opengl/Shape.hh"{}}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "{}opengl/StyledMultiShape2D.hh"{}}}
+\DoxyCodeLine{00011 \textcolor{keyword}{class }\mbox{\hyperlink{classStyle}{Style}};}
+\DoxyCodeLine{00012 \textcolor{keyword}{class }\mbox{\hyperlink{classCanvas}{Canvas}};}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{\Hypertarget{DocView_8hh_source_l00014}\mbox{\hyperlink{classDocView}{00014}} \textcolor{keyword}{class }\mbox{\hyperlink{classDocView}{DocView}} : \textcolor{keyword}{public} \mbox{\hyperlink{classShape}{Shape}} \{}
+\DoxyCodeLine{00015  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016   \textcolor{keyword}{const} \mbox{\hyperlink{classDocument}{Document}}* doc;    \textcolor{comment}{// the underlying document}}
+\DoxyCodeLine{00017   \mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}* m;  \textcolor{comment}{// multishape for drawing 2d shapes in the background}}
+\DoxyCodeLine{00018   \textcolor{comment}{// Image img;            // image rendering for this document in front of}}
+\DoxyCodeLine{00019   \textcolor{comment}{// multishape}}
+\DoxyCodeLine{00020   \mbox{\hyperlink{classMultiText}{MultiText}}* t;  \textcolor{comment}{// text rendering for this document on top of other two}}
+\DoxyCodeLine{00021   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* style;}
+\DoxyCodeLine{00022   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* titleFont;}
+\DoxyCodeLine{00023   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* pageNumFont;}
+\DoxyCodeLine{00024   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* normalFont;}
+\DoxyCodeLine{00025   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* h1Font;}
+\DoxyCodeLine{00026   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* h2Font;}
+\DoxyCodeLine{00027   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* h3Font;}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029   std::vector<float> vert;}
+\DoxyCodeLine{00030   uint32\_t pageNum;}
+\DoxyCodeLine{00031   \textcolor{keywordtype}{float} x, y;}
+\DoxyCodeLine{00032   \textcolor{keywordtype}{float} rowSize;  \textcolor{comment}{// the size of the current row. If there are different fonts,}}
+\DoxyCodeLine{00033                   \textcolor{comment}{// the size of the biggest + desired spacing}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036   \mbox{\hyperlink{classDocView}{DocView}}(\mbox{\hyperlink{classCanvas}{Canvas}}* c, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* style, \textcolor{keyword}{const} \mbox{\hyperlink{classDocument}{Document}}* doc);}
+\DoxyCodeLine{00037   \string~\mbox{\hyperlink{classDocView}{DocView}}();}
+\DoxyCodeLine{00038   \textcolor{keywordtype}{void} clear() \{}
+\DoxyCodeLine{00039     m-\/>clear();}
+\DoxyCodeLine{00040     \textcolor{comment}{// img.clear(); //clear all the images}}
+\DoxyCodeLine{00041     t-\/>clear();  \textcolor{comment}{// clear all text}}
+\DoxyCodeLine{00042   \}}
+\DoxyCodeLine{00043   \textcolor{keywordtype}{void} printPageNum(uint32\_t page);}
+\DoxyCodeLine{00044   \textcolor{keywordtype}{void} print(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f, uint32\_t v);}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046   \textcolor{keywordtype}{void} advance() \{}
+\DoxyCodeLine{00047     \textcolor{keywordflow}{if} (pageNum < doc-\/>getPageCount() -\/ 1) pageNum++;}
+\DoxyCodeLine{00048     update();}
+\DoxyCodeLine{00049   \}}
+\DoxyCodeLine{00050   \textcolor{keywordtype}{void} advance10() \{}
+\DoxyCodeLine{00051     pageNum += 10;}
+\DoxyCodeLine{00052     \textcolor{keywordflow}{if} (pageNum >= doc-\/>getPageCount()) \{}
+\DoxyCodeLine{00053       pageNum = 0;}
+\DoxyCodeLine{00054     \}}
+\DoxyCodeLine{00055     update();}
+\DoxyCodeLine{00056   \}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058   \textcolor{keywordtype}{void} back() \{}
+\DoxyCodeLine{00059     \textcolor{keywordflow}{if} (pageNum > 0) pageNum-\/-\/;}
+\DoxyCodeLine{00060     update();}
+\DoxyCodeLine{00061   \}}
+\DoxyCodeLine{00062   \textcolor{keywordtype}{void} top() \{}
+\DoxyCodeLine{00063     pageNum = 0;}
+\DoxyCodeLine{00064     update();}
+\DoxyCodeLine{00065   \}}
+\DoxyCodeLine{00066   \textcolor{keywordtype}{void} bottom() \{}
+\DoxyCodeLine{00067     pageNum = 0;}
+\DoxyCodeLine{00068     update();}
+\DoxyCodeLine{00069   \}}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071   \textcolor{keywordtype}{void} gotoPage(uint32\_t pageNum) \{}
+\DoxyCodeLine{00072     \textcolor{keywordflow}{if} (pageNum >= doc-\/>getPageCount()) \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00073     this-\/>pageNum = pageNum;}
 \DoxyCodeLine{00074   \}}
-\DoxyCodeLine{00075     }
+\DoxyCodeLine{00075 }
 \DoxyCodeLine{00076   \textcolor{keywordtype}{void} addChar(\textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f, uint8\_t c);}
 \DoxyCodeLine{00077   \textcolor{keywordtype}{void} init();}
 \DoxyCodeLine{00078   \textcolor{keywordtype}{void} process\_input(Inputs* in, \textcolor{keywordtype}{float} dt);}

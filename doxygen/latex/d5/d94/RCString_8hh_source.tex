@@ -4,79 +4,72 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <memory.h>}}
-\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00003 }
 \DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <algorithm>}}
-\DoxyCodeLine{00005 \textcolor{comment}{/*}}
-\DoxyCodeLine{00006 \textcolor{comment}{    relative pointer, constant-\/size string, light weight}}
-\DoxyCodeLine{00007 \textcolor{comment}{    Allocate a single static 4Gb chunk of memory in address space}}
-\DoxyCodeLine{00008 \textcolor{comment}{    and allocate out of that}}
-\DoxyCodeLine{00009 \textcolor{comment}{    Individual memory is not collected, the policy is free to mark}}
-\DoxyCodeLine{00010 \textcolor{comment}{    This is ideal for situations where a lot of strings are allocated, and then}}
-\DoxyCodeLine{00011 \textcolor{comment}{    deallocated all at the same time.}}
-\DoxyCodeLine{00012 \textcolor{comment}{}}
-\DoxyCodeLine{00013 \textcolor{comment}{    This code uses a global pool, so allocation and deallocation is }}
-\DoxyCodeLine{00014 \textcolor{comment}{    NOT thread safe. As a result, it is BRUTALLY FAST.}}
-\DoxyCodeLine{00015 \textcolor{comment}{*/}}
-\DoxyCodeLine{\Hypertarget{RCString_8hh_source_l00016}\mbox{\hyperlink{classRCString}{00016}} \textcolor{keyword}{class }\mbox{\hyperlink{classRCString}{RCString}} \{}
-\DoxyCodeLine{00017 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00018     \textcolor{keyword}{static} \textcolor{keywordtype}{char}* pool;}
-\DoxyCodeLine{00019     \textcolor{keyword}{static} uint32\_t current;}
-\DoxyCodeLine{00020     uint32\_t len\_;            \textcolor{comment}{// length of this string}}
-\DoxyCodeLine{00021     uint32\_t p;               \textcolor{comment}{// relative pointer into pool}}
-\DoxyCodeLine{00022 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00023     \textcolor{comment}{// remember where allocator is up to right now}}
-\DoxyCodeLine{00024     \textcolor{keyword}{static} uint32\_t setMark() \{ \textcolor{keywordflow}{return} current; \}}
-\DoxyCodeLine{00025 }
-\DoxyCodeLine{00026     \textcolor{comment}{// free all memory going back to mark}}
-\DoxyCodeLine{00027     \textcolor{keyword}{static} \textcolor{keywordtype}{void} freeToMark(uint32\_t mark) \{ current = mark; \}}
-\DoxyCodeLine{00028     }
-\DoxyCodeLine{00029     \mbox{\hyperlink{classRCString}{RCString}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} msg[], uint32\_t len) : len\_(len), p(current) \{}
-\DoxyCodeLine{00030         current += len;}
-\DoxyCodeLine{00031         memcpy(pool + p, msg, len);}
-\DoxyCodeLine{00032     \}}
-\DoxyCodeLine{00033     \mbox{\hyperlink{classRCString}{RCString}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} msg[]) : p(current) \{}
-\DoxyCodeLine{00034         \textcolor{keywordtype}{int} i;}
-\DoxyCodeLine{00035         \textcolor{keywordflow}{for} (i = 0; msg[i] != \textcolor{charliteral}{'\(\backslash\)0'}; i++)}
-\DoxyCodeLine{00036             pool[current++] = msg[i];}
-\DoxyCodeLine{00037         len\_ = i;}
-\DoxyCodeLine{00038     \}}
-\DoxyCodeLine{00039     \string~\mbox{\hyperlink{classRCString}{RCString}}() \{ \}}
-\DoxyCodeLine{00040     \mbox{\hyperlink{classRCString}{RCString}}(\textcolor{keyword}{const} \mbox{\hyperlink{classRCString}{RCString}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classRCString}{RCString}}\& b, \textcolor{keyword}{const} \mbox{\hyperlink{classRCString}{RCString}}\& c)}
-\DoxyCodeLine{00041         : len\_(a.len\_+b.len\_+c.len\_), p(current) \{}
-\DoxyCodeLine{00042         memcpy(pool+current, pool+a.p, a.len\_);}
-\DoxyCodeLine{00043         current += a.len\_;}
-\DoxyCodeLine{00044         memcpy(pool+current, pool+b.p, b.len\_);}
-\DoxyCodeLine{00045         current += b.len\_;}
-\DoxyCodeLine{00046         memcpy(pool+current, pool+c.p, c.len\_);}
-\DoxyCodeLine{00047         current += c.len\_;}
-\DoxyCodeLine{00048     \}}
-\DoxyCodeLine{00049     \mbox{\hyperlink{classRCString}{RCString}}(\textcolor{keyword}{const} \mbox{\hyperlink{classRCString}{RCString}}\& orig) : len\_(orig.len\_), p(current) \{}
-\DoxyCodeLine{00050         current += len\_;}
-\DoxyCodeLine{00051         memcpy(pool+p, pool+orig.p, len\_);}
-\DoxyCodeLine{00052     \}}
-\DoxyCodeLine{00053     \mbox{\hyperlink{classRCString}{RCString}}\& operator =(\textcolor{keyword}{const} \mbox{\hyperlink{classRCString}{RCString}}\& orig) \{}
-\DoxyCodeLine{00054         \mbox{\hyperlink{classRCString}{RCString}} copy(orig);}
-\DoxyCodeLine{00055         std::swap(p, copy.p);}
-\DoxyCodeLine{00056         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{00057     \}}
-\DoxyCodeLine{00058     \mbox{\hyperlink{classRCString}{RCString}}(\mbox{\hyperlink{classRCString}{RCString}}\&\& orig) : len\_(orig.len\_) \{}
-\DoxyCodeLine{00059         std::swap(p, orig.p);}
-\DoxyCodeLine{00060     \}}
-\DoxyCodeLine{00061     }
-\DoxyCodeLine{00062     \textcolor{keywordtype}{char} operator[](uint32\_t i)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00063         \textcolor{keywordflow}{return} pool[p+i];}
-\DoxyCodeLine{00064     \}}
-\DoxyCodeLine{00065     \textcolor{keywordtype}{char}\& operator[](uint32\_t i) \{}
-\DoxyCodeLine{00066         \textcolor{keywordflow}{return} pool[p+i];}
-\DoxyCodeLine{00067     \}}
-\DoxyCodeLine{00068 }
-\DoxyCodeLine{00069     uint32\_t len()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} len\_; \}}
-\DoxyCodeLine{00070     }
-\DoxyCodeLine{00071     \textcolor{keyword}{friend} std::ostream\& operator <<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classRCString}{RCString}}\& str) \{}
-\DoxyCodeLine{00072         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < str.len\_; i++)}
-\DoxyCodeLine{00073             s << RCString::pool[str.p+i];}
-\DoxyCodeLine{00074         \textcolor{keywordflow}{return} s;}
-\DoxyCodeLine{00075     \}}
-\DoxyCodeLine{00076 \};}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00006 \textcolor{comment}{/*}}
+\DoxyCodeLine{00007 \textcolor{comment}{        relative pointer, constant-\/size string, light weight}}
+\DoxyCodeLine{00008 \textcolor{comment}{        Allocate a single static 4Gb chunk of memory in address space}}
+\DoxyCodeLine{00009 \textcolor{comment}{        and allocate out of that}}
+\DoxyCodeLine{00010 \textcolor{comment}{        Individual memory is not collected, the policy is free to mark}}
+\DoxyCodeLine{00011 \textcolor{comment}{        This is ideal for situations where a lot of strings are allocated, and}}
+\DoxyCodeLine{00012 \textcolor{comment}{   then deallocated all at the same time.}}
+\DoxyCodeLine{00013 \textcolor{comment}{}}
+\DoxyCodeLine{00014 \textcolor{comment}{        This code uses a global pool, so allocation and deallocation is}}
+\DoxyCodeLine{00015 \textcolor{comment}{        NOT thread safe. As a result, it is BRUTALLY FAST.}}
+\DoxyCodeLine{00016 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{RCString_8hh_source_l00017}\mbox{\hyperlink{classRCString}{00017}} \textcolor{keyword}{class }\mbox{\hyperlink{classRCString}{RCString}} \{}
+\DoxyCodeLine{00018  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019   \textcolor{keyword}{static} \textcolor{keywordtype}{char}* pool;}
+\DoxyCodeLine{00020   \textcolor{keyword}{static} uint32\_t current;}
+\DoxyCodeLine{00021   uint32\_t len\_;  \textcolor{comment}{// length of this string}}
+\DoxyCodeLine{00022   uint32\_t p;     \textcolor{comment}{// relative pointer into pool}}
+\DoxyCodeLine{00023  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024   \textcolor{comment}{// remember where allocator is up to right now}}
+\DoxyCodeLine{00025   \textcolor{keyword}{static} uint32\_t setMark() \{ \textcolor{keywordflow}{return} current; \}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027   \textcolor{comment}{// free all memory going back to mark}}
+\DoxyCodeLine{00028   \textcolor{keyword}{static} \textcolor{keywordtype}{void} freeToMark(uint32\_t mark) \{ current = mark; \}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030   \mbox{\hyperlink{classRCString}{RCString}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} msg[], uint32\_t len) : len\_(len), p(current) \{}
+\DoxyCodeLine{00031     current += len;}
+\DoxyCodeLine{00032     memcpy(pool + p, msg, len);}
+\DoxyCodeLine{00033   \}}
+\DoxyCodeLine{00034   \mbox{\hyperlink{classRCString}{RCString}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} msg[]) : p(current) \{}
+\DoxyCodeLine{00035     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{00036     \textcolor{keywordflow}{for} (i = 0; msg[i] != \textcolor{charliteral}{'\(\backslash\)0'}; i++) pool[current++] = msg[i];}
+\DoxyCodeLine{00037     len\_ = i;}
+\DoxyCodeLine{00038   \}}
+\DoxyCodeLine{00039   \string~\mbox{\hyperlink{classRCString}{RCString}}() \{\}}
+\DoxyCodeLine{00040   \mbox{\hyperlink{classRCString}{RCString}}(\textcolor{keyword}{const} \mbox{\hyperlink{classRCString}{RCString}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classRCString}{RCString}}\& b, \textcolor{keyword}{const} \mbox{\hyperlink{classRCString}{RCString}}\& c)}
+\DoxyCodeLine{00041       : len\_(a.len\_ + b.len\_ + c.len\_), p(current) \{}
+\DoxyCodeLine{00042     memcpy(pool + current, pool + a.p, a.len\_);}
+\DoxyCodeLine{00043     current += a.len\_;}
+\DoxyCodeLine{00044     memcpy(pool + current, pool + b.p, b.len\_);}
+\DoxyCodeLine{00045     current += b.len\_;}
+\DoxyCodeLine{00046     memcpy(pool + current, pool + c.p, c.len\_);}
+\DoxyCodeLine{00047     current += c.len\_;}
+\DoxyCodeLine{00048   \}}
+\DoxyCodeLine{00049   \mbox{\hyperlink{classRCString}{RCString}}(\textcolor{keyword}{const} \mbox{\hyperlink{classRCString}{RCString}}\& orig) : len\_(orig.len\_), p(current) \{}
+\DoxyCodeLine{00050     current += len\_;}
+\DoxyCodeLine{00051     memcpy(pool + p, pool + orig.p, len\_);}
+\DoxyCodeLine{00052   \}}
+\DoxyCodeLine{00053   \mbox{\hyperlink{classRCString}{RCString}}\& operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classRCString}{RCString}}\& orig) \{}
+\DoxyCodeLine{00054     \mbox{\hyperlink{classRCString}{RCString}} copy(orig);}
+\DoxyCodeLine{00055     std::swap(p, copy.p);}
+\DoxyCodeLine{00056     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00057   \}}
+\DoxyCodeLine{00058   \mbox{\hyperlink{classRCString}{RCString}}(\mbox{\hyperlink{classRCString}{RCString}}\&\& orig) : len\_(orig.len\_) \{ std::swap(p, orig.p); \}}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060   \textcolor{keywordtype}{char} operator[](uint32\_t i)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} pool[p + i]; \}}
+\DoxyCodeLine{00061   \textcolor{keywordtype}{char}\& operator[](uint32\_t i) \{ \textcolor{keywordflow}{return} pool[p + i]; \}}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063   uint32\_t len()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} len\_; \}}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065   \textcolor{keyword}{friend} std::ostream\& operator<<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classRCString}{RCString}}\& str) \{}
+\DoxyCodeLine{00066     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < str.len\_; i++) s << RCString::pool[str.p + i];}
+\DoxyCodeLine{00067     \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{00068   \}}
+\DoxyCodeLine{00069 \};}
 
 \end{DoxyCode}

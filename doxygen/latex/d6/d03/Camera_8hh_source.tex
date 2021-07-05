@@ -63,18 +63,18 @@
 \DoxyCodeLine{00059     camPos += delta;}
 \DoxyCodeLine{00060   \}}
 \DoxyCodeLine{00061 }
-\DoxyCodeLine{00062   \textcolor{keywordtype}{void} zoomIn() \{}
-\DoxyCodeLine{00063     zoomIn(0.5);}
-\DoxyCodeLine{00064   \}}
+\DoxyCodeLine{00062   \textcolor{keywordtype}{void} zoomIn() \{ zoomIn(0.5); \}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064   \textcolor{keywordtype}{void} zoomOut() \{ zoomIn(-\/0.5); \}}
 \DoxyCodeLine{00065 }
-\DoxyCodeLine{00066   \textcolor{keywordtype}{void} zoomOut() \{}
-\DoxyCodeLine{00067     zoomIn(-\/0.5);}
-\DoxyCodeLine{00068   \}}
-\DoxyCodeLine{00069 }
-\DoxyCodeLine{00070 \textcolor{comment}{//TODO: make this not inline, move to c++ file, and have multiple different projections}}
-\DoxyCodeLine{00071 \textcolor{comment}{// also, keep more of the computation in the matrices, not computed on the fly each time}}
-\DoxyCodeLine{00072   \textcolor{keyword}{inline} glm::mat4 getViewProjection() \{}
-\DoxyCodeLine{00073     projection = glm::perspective(glm::radians(fov), \textcolor{keywordtype}{float}(screenWidth) / \textcolor{keywordtype}{float}(screenHeight), zNear, zFar);}
+\DoxyCodeLine{00066   \textcolor{comment}{// TODO: make this not inline, move to c++ file, and have multiple different}}
+\DoxyCodeLine{00067   \textcolor{comment}{// projections}}
+\DoxyCodeLine{00068   \textcolor{comment}{// also, keep more of the computation in the matrices, not computed on the fly}}
+\DoxyCodeLine{00069   \textcolor{comment}{// each time}}
+\DoxyCodeLine{00070   \textcolor{keyword}{inline} glm::mat4 getViewProjection() \{}
+\DoxyCodeLine{00071     projection =}
+\DoxyCodeLine{00072         glm::perspective(glm::radians(fov),}
+\DoxyCodeLine{00073                          \textcolor{keywordtype}{float}(screenWidth) / \textcolor{keywordtype}{float}(screenHeight), zNear, zFar);}
 \DoxyCodeLine{00074     view = glm::lookAt(camPos, lookingAt, upVector);}
 \DoxyCodeLine{00075     \textcolor{keywordflow}{return} projection * view;}
 \DoxyCodeLine{00076   \}}

@@ -6,38 +6,36 @@
 \DoxyCodeLine{00002 }
 \DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <string>}}
 \DoxyCodeLine{\Hypertarget{Prefs_8hh_source_l00004}\mbox{\hyperlink{classPrefs}{00004}} \textcolor{keyword}{class }\mbox{\hyperlink{classPrefs}{Prefs}} \{}
-\DoxyCodeLine{00005 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00006     std::string baseDir;                           \textcolor{comment}{// location of all grail files}}
-\DoxyCodeLine{00007     uint32\_t preferredWidth, preferredHeight; \textcolor{comment}{// desired window size}}
-\DoxyCodeLine{00008     uint32\_t preferredX, preferredY;          \textcolor{comment}{// desired window location}}
-\DoxyCodeLine{00009     \textcolor{keywordtype}{bool} allowMaximize;              \textcolor{comment}{// allow a web page to maximize the window?}}
-\DoxyCodeLine{00010     std::string logPath;                      \textcolor{comment}{// path of the log file}}
-\DoxyCodeLine{00011     uint32\_t logLevel;                        \textcolor{comment}{// level of verbosity}}
-\DoxyCodeLine{00012     \textcolor{keywordtype}{bool}     enableVoiceCmd;                  \textcolor{comment}{// will allow Sphinx input}}
-\DoxyCodeLine{00013     uint32\_t shaderBinaryFormat;              \textcolor{comment}{// found binary format for shaders}}
-\DoxyCodeLine{00014     \textcolor{keywordtype}{bool} fastLoadShaders;                     \textcolor{comment}{// if true, then fast load instead of compiling}}
-\DoxyCodeLine{00015     std::string getPath() \textcolor{keyword}{const};              \textcolor{comment}{// get the path for the preferences file}}
-\DoxyCodeLine{00016     std::string getGrailDir() \textcolor{keyword}{const};          \textcolor{comment}{// get the path for the preferences file}}
-\DoxyCodeLine{00017 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00018     \mbox{\hyperlink{classPrefs}{Prefs}}();}
-\DoxyCodeLine{00019     \textcolor{keywordtype}{void} load();}
-\DoxyCodeLine{00020     \textcolor{keywordtype}{void} save();}
+\DoxyCodeLine{00005  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00006   std::string baseDir;                       \textcolor{comment}{// location of all grail files}}
+\DoxyCodeLine{00007   uint32\_t preferredWidth, preferredHeight;  \textcolor{comment}{// desired window size}}
+\DoxyCodeLine{00008   uint32\_t preferredX, preferredY;           \textcolor{comment}{// desired window location}}
+\DoxyCodeLine{00009   \textcolor{keywordtype}{bool} allowMaximize;           \textcolor{comment}{// allow a web page to maximize the window?}}
+\DoxyCodeLine{00010   std::string logPath;          \textcolor{comment}{// path of the log file}}
+\DoxyCodeLine{00011   uint32\_t logLevel;            \textcolor{comment}{// level of verbosity}}
+\DoxyCodeLine{00012   \textcolor{keywordtype}{bool} enableVoiceCmd;          \textcolor{comment}{// will allow Sphinx input}}
+\DoxyCodeLine{00013   uint32\_t shaderBinaryFormat;  \textcolor{comment}{// found binary format for shaders}}
+\DoxyCodeLine{00014   \textcolor{keywordtype}{bool} fastLoadShaders;         \textcolor{comment}{// if true, then fast load instead of compiling}}
+\DoxyCodeLine{00015   std::string getPath() \textcolor{keyword}{const};  \textcolor{comment}{// get the path for the preferences file}}
+\DoxyCodeLine{00016   std::string getGrailDir() \textcolor{keyword}{const};  \textcolor{comment}{// get the path for the preferences file}}
+\DoxyCodeLine{00017  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018   \mbox{\hyperlink{classPrefs}{Prefs}}();}
+\DoxyCodeLine{00019   \textcolor{keywordtype}{void} load();}
+\DoxyCodeLine{00020   \textcolor{keywordtype}{void} save();}
 \DoxyCodeLine{00021 }
-\DoxyCodeLine{00022     \textcolor{keywordtype}{bool} trySavingShader;                     \textcolor{comment}{// set true first, if it fails, set false}}
+\DoxyCodeLine{00022   \textcolor{keywordtype}{bool} trySavingShader;  \textcolor{comment}{// set true first, if it fails, set false}}
 \DoxyCodeLine{00023 }
-\DoxyCodeLine{00024     std::string getConfDir()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} baseDir + \textcolor{stringliteral}{"{}conf/"{}}; \}}
-\DoxyCodeLine{00025     std::string getFontDir()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} baseDir + \textcolor{stringliteral}{"{}conf/fonts/"{}}; \}}
-\DoxyCodeLine{00026     std::string getShaderDir()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} baseDir + \textcolor{stringliteral}{"{}shaders/"{}}; \}}
-\DoxyCodeLine{00027     uint32\_t getPreferredX()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} preferredX; \}}
-\DoxyCodeLine{00028     uint32\_t getPreferredY()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} preferredY; \}}
-\DoxyCodeLine{00029     uint32\_t getPreferredWidth()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} preferredWidth; \}}
-\DoxyCodeLine{00030     uint32\_t getPreferredHeight()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} preferredHeight; \}}
-\DoxyCodeLine{00031     \textcolor{keywordtype}{bool} getFastLoadShaders()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} shaderBinaryFormat != 0;\}}
-\DoxyCodeLine{00032     \textcolor{keywordtype}{void} setFastLoadShaders(uint32\_t fmt) \{}
-\DoxyCodeLine{00033         shaderBinaryFormat = fmt;}
-\DoxyCodeLine{00034     \}   }
-\DoxyCodeLine{00035 \};}
-\DoxyCodeLine{00036 }
-\DoxyCodeLine{00037 \textcolor{keyword}{extern} \mbox{\hyperlink{classPrefs}{Prefs}} prefs;}
+\DoxyCodeLine{00024   std::string getConfDir()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} baseDir + \textcolor{stringliteral}{"{}conf/"{}}; \}}
+\DoxyCodeLine{00025   std::string getFontDir()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} baseDir + \textcolor{stringliteral}{"{}conf/fonts/"{}}; \}}
+\DoxyCodeLine{00026   std::string getShaderDir()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} baseDir + \textcolor{stringliteral}{"{}shaders/"{}}; \}}
+\DoxyCodeLine{00027   uint32\_t getPreferredX()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} preferredX; \}}
+\DoxyCodeLine{00028   uint32\_t getPreferredY()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} preferredY; \}}
+\DoxyCodeLine{00029   uint32\_t getPreferredWidth()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} preferredWidth; \}}
+\DoxyCodeLine{00030   uint32\_t getPreferredHeight()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} preferredHeight; \}}
+\DoxyCodeLine{00031   \textcolor{keywordtype}{bool} getFastLoadShaders()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} shaderBinaryFormat != 0; \}}
+\DoxyCodeLine{00032   \textcolor{keywordtype}{void} setFastLoadShaders(uint32\_t fmt) \{ shaderBinaryFormat = fmt; \}}
+\DoxyCodeLine{00033 \};}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035 \textcolor{keyword}{extern} \mbox{\hyperlink{classPrefs}{Prefs}} prefs;}
 
 \end{DoxyCode}

@@ -3,70 +3,85 @@
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <memory>}}
-\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/Widget2D.hh"{}}}
-\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}opengl/Scale.hh"{}}}
-\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <algorithm>}}
-\DoxyCodeLine{00008 }
-\DoxyCodeLine{00009 \textcolor{keyword}{class }\mbox{\hyperlink{classStyle}{Style}};}
-\DoxyCodeLine{\Hypertarget{GapMinderWidget_8hh_source_l00010}\mbox{\hyperlink{classGapMinderWidget}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{classGapMinderWidget}{GapMinderWidget}} : \textcolor{keyword}{public} \mbox{\hyperlink{classWidget2D}{Widget2D}} \{}
-\DoxyCodeLine{00011 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00012   std::string title;}
-\DoxyCodeLine{00013   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* titleStyle;}
-\DoxyCodeLine{00014   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* barStyle;}
-\DoxyCodeLine{00015   std::unique\_ptr<Scale> yAxisScale;}
-\DoxyCodeLine{00016   std::unique\_ptr<Scale> xAxisScale;}
-\DoxyCodeLine{00017   \textcolor{keywordtype}{float} relativeSpace; \textcolor{comment}{//space between bars as a fraction of bar width }}
-\DoxyCodeLine{00018   \textcolor{keywordtype}{float} minX;}
-\DoxyCodeLine{00019   \textcolor{keywordtype}{float} minY;}
-\DoxyCodeLine{00020   \textcolor{keywordtype}{float} maxX;}
-\DoxyCodeLine{00021   \textcolor{keywordtype}{float} maxY;}
-\DoxyCodeLine{00022   \textcolor{keywordtype}{float} maxMultiplier; }
-\DoxyCodeLine{00023   \textcolor{keywordtype}{float} tickSize;}
-\DoxyCodeLine{00024   \textcolor{keywordtype}{float} tickStart;}
-\DoxyCodeLine{00025   \mbox{\hyperlink{classScale}{Scale}} *yAxis;}
-\DoxyCodeLine{00026   \mbox{\hyperlink{classScale}{Scale}} *xAxis;}
-\DoxyCodeLine{00027   \textcolor{keywordtype}{float} minMultiplier;}
-\DoxyCodeLine{00028 }
-\DoxyCodeLine{00029 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00030   \mbox{\hyperlink{classGapMinderWidget}{GapMinderWidget}}(\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}* m, \mbox{\hyperlink{classMultiText}{MultiText}}* t,}
-\DoxyCodeLine{00031    \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h,}
-\DoxyCodeLine{00032    \textcolor{keyword}{const} std::string\& title, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}} *titleStyle,}
-\DoxyCodeLine{00033    \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}} *barStyle, }
-\DoxyCodeLine{00034    \textcolor{keywordtype}{float} minX, \textcolor{keywordtype}{float} maxX, \textcolor{keywordtype}{float} minY, \textcolor{keywordtype}{float} maxY , \textcolor{keywordtype}{float} maxMultiplier, \textcolor{keywordtype}{float} minMultiplier,}
-\DoxyCodeLine{00035    \textcolor{keywordtype}{float} tickSize, \textcolor{keywordtype}{float} tickStart, \mbox{\hyperlink{classScale}{Scale}} *yAxis, \mbox{\hyperlink{classScale}{Scale}} *xAxis) : }
-\DoxyCodeLine{00036     \mbox{\hyperlink{classWidget2D}{Widget2D}}(m, t, x, y, w, h), title(title), titleStyle(titleStyle), }
-\DoxyCodeLine{00037     barStyle(barStyle), minX(minX), maxX(maxX), minY(minY), maxY(maxY), }
-\DoxyCodeLine{00038     maxMultiplier(maxMultiplier), minMultiplier(minMultiplier),}
-\DoxyCodeLine{00039     tickSize(tickSize), tickStart(tickStart), yAxis(yAxis), xAxis(xAxis)\{\}}
-\DoxyCodeLine{00040 }
-\DoxyCodeLine{00041   \mbox{\hyperlink{classGapMinderWidget}{GapMinderWidget}}(\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}* m, \mbox{\hyperlink{classMultiText}{MultiText}}* t, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h) :}
-\DoxyCodeLine{00042     \mbox{\hyperlink{classGapMinderWidget}{GapMinderWidget}}(m,t, x, y, w, h, std::string (\textcolor{stringliteral}{"{}"{}}), \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr},}
-\DoxyCodeLine{00043     0, 100, 0, 100, 1.25, 10, 10, x, \textcolor{keyword}{new} \mbox{\hyperlink{classLinearScale}{LinearScale}}(), \textcolor{keyword}{new} \mbox{\hyperlink{classLinearScale}{LinearScale}}())\{\} }
-\DoxyCodeLine{00044 }
-\DoxyCodeLine{00045 }
-\DoxyCodeLine{00046   \mbox{\hyperlink{classGapMinderWidget}{GapMinderWidget}}(\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}* m, \mbox{\hyperlink{classMultiText}{MultiText}}* t, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, }
-\DoxyCodeLine{00047   \textcolor{keyword}{const} std::vector<float>\& xLocations, \textcolor{keyword}{const} std::vector<float>\& yLocations) :}
-\DoxyCodeLine{00048     \mbox{\hyperlink{classGapMinderWidget}{GapMinderWidget}}(m,t, x, y, w, h, \textcolor{stringliteral}{"{}"{}}, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr},}
-\DoxyCodeLine{00049     0, 0, 0, 0, 1.25, 10, 10, x, \textcolor{keyword}{new} \mbox{\hyperlink{classLinearScale}{LinearScale}}(), \textcolor{keyword}{new} \mbox{\hyperlink{classLinearScale}{LinearScale}}())\{}
-\DoxyCodeLine{00050       maxY = maxMultiplier*(*max\_element(yLocations.begin(), yLocations.end()));}
-\DoxyCodeLine{00051       maxX = maxMultiplier*(*max\_element(xLocations.begin(), xLocations.end()));}
-\DoxyCodeLine{00052     \}  }
-\DoxyCodeLine{00053 }
-\DoxyCodeLine{00054 }
-\DoxyCodeLine{00055   \textcolor{keywordtype}{void} setMinMaxY(\textcolor{keywordtype}{float} min, \textcolor{keywordtype}{float} max)\{}
-\DoxyCodeLine{00056     this-\/>minY = min;}
-\DoxyCodeLine{00057     this-\/>maxY = max;}
-\DoxyCodeLine{00058   \}}
-\DoxyCodeLine{00059   \textcolor{keywordtype}{void} setAxisScale(\mbox{\hyperlink{classScale}{Scale}} *yAxis)\{this-\/>yAxis = yAxis;\}}
-\DoxyCodeLine{00060   \textcolor{keywordtype}{void} setTitleStyle(\textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s) \{ titleStyle = s;\}}
-\DoxyCodeLine{00061   \textcolor{keywordtype}{void} chart(\textcolor{keyword}{const} std::vector<float>\& yLocations, \textcolor{keyword}{const} std::vector<float>\& xLocations, }
-\DoxyCodeLine{00062   \textcolor{keyword}{const} std::vector<float>\& sizes,\textcolor{keywordtype}{int} rulerInterval, \textcolor{keyword}{const} std::vector <glm::vec4>\& c);}
-\DoxyCodeLine{00063   \textcolor{comment}{//void chartLog(const float b[], int size, float relativeSpace, const std::string barNames[], int logBase);}}
-\DoxyCodeLine{00064   \textcolor{keywordtype}{void} setTitle(\textcolor{keyword}{const} std::string\& s);}
-\DoxyCodeLine{00065   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
-\DoxyCodeLine{00066 \};}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}opengl/Scale.hh"{}}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include "{}opengl/Widget2D.hh"{}}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{keyword}{class }\mbox{\hyperlink{classStyle}{Style}};}
+\DoxyCodeLine{\Hypertarget{GapMinderWidget_8hh_source_l00011}\mbox{\hyperlink{classGapMinderWidget}{00011}} \textcolor{keyword}{class }\mbox{\hyperlink{classGapMinderWidget}{GapMinderWidget}} : \textcolor{keyword}{public} \mbox{\hyperlink{classWidget2D}{Widget2D}} \{}
+\DoxyCodeLine{00012  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013   std::string title;}
+\DoxyCodeLine{00014   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* titleStyle;}
+\DoxyCodeLine{00015   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* barStyle;}
+\DoxyCodeLine{00016   std::unique\_ptr<Scale> yAxisScale;}
+\DoxyCodeLine{00017   std::unique\_ptr<Scale> xAxisScale;}
+\DoxyCodeLine{00018   \textcolor{keywordtype}{float} relativeSpace;  \textcolor{comment}{// space between bars as a fraction of bar width}}
+\DoxyCodeLine{00019   \textcolor{keywordtype}{float} minX;}
+\DoxyCodeLine{00020   \textcolor{keywordtype}{float} minY;}
+\DoxyCodeLine{00021   \textcolor{keywordtype}{float} maxX;}
+\DoxyCodeLine{00022   \textcolor{keywordtype}{float} maxY;}
+\DoxyCodeLine{00023   \textcolor{keywordtype}{float} maxMultiplier;}
+\DoxyCodeLine{00024   \textcolor{keywordtype}{float} tickSize;}
+\DoxyCodeLine{00025   \textcolor{keywordtype}{float} tickStart;}
+\DoxyCodeLine{00026   \mbox{\hyperlink{classScale}{Scale}}* yAxis;}
+\DoxyCodeLine{00027   \mbox{\hyperlink{classScale}{Scale}}* xAxis;}
+\DoxyCodeLine{00028   \textcolor{keywordtype}{float} minMultiplier;}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031   \mbox{\hyperlink{classGapMinderWidget}{GapMinderWidget}}(\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}* m, \mbox{\hyperlink{classMultiText}{MultiText}}* t, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y,}
+\DoxyCodeLine{00032                   \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keyword}{const} std::string\& title,}
+\DoxyCodeLine{00033                   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* titleStyle, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* barStyle, \textcolor{keywordtype}{float} minX,}
+\DoxyCodeLine{00034                   \textcolor{keywordtype}{float} maxX, \textcolor{keywordtype}{float} minY, \textcolor{keywordtype}{float} maxY, \textcolor{keywordtype}{float} maxMultiplier,}
+\DoxyCodeLine{00035                   \textcolor{keywordtype}{float} minMultiplier, \textcolor{keywordtype}{float} tickSize, \textcolor{keywordtype}{float} tickStart,}
+\DoxyCodeLine{00036                   \mbox{\hyperlink{classScale}{Scale}}* yAxis, \mbox{\hyperlink{classScale}{Scale}}* xAxis)}
+\DoxyCodeLine{00037       : \mbox{\hyperlink{classWidget2D}{Widget2D}}(m, t, x, y, w, h),}
+\DoxyCodeLine{00038         title(title),}
+\DoxyCodeLine{00039         titleStyle(titleStyle),}
+\DoxyCodeLine{00040         barStyle(barStyle),}
+\DoxyCodeLine{00041         minX(minX),}
+\DoxyCodeLine{00042         maxX(maxX),}
+\DoxyCodeLine{00043         minY(minY),}
+\DoxyCodeLine{00044         maxY(maxY),}
+\DoxyCodeLine{00045         maxMultiplier(maxMultiplier),}
+\DoxyCodeLine{00046         minMultiplier(minMultiplier),}
+\DoxyCodeLine{00047         tickSize(tickSize),}
+\DoxyCodeLine{00048         tickStart(tickStart),}
+\DoxyCodeLine{00049         yAxis(yAxis),}
+\DoxyCodeLine{00050         xAxis(xAxis) \{\}}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052   \mbox{\hyperlink{classGapMinderWidget}{GapMinderWidget}}(\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}* m, \mbox{\hyperlink{classMultiText}{MultiText}}* t, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y,}
+\DoxyCodeLine{00053                   \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h)}
+\DoxyCodeLine{00054       : \mbox{\hyperlink{classGapMinderWidget}{GapMinderWidget}}(m, t, x, y, w, h, std::string(\textcolor{stringliteral}{"{}"{}}), \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}, 0,}
+\DoxyCodeLine{00055                         100, 0, 100, 1.25, 10, 10, x, \textcolor{keyword}{new} \mbox{\hyperlink{classLinearScale}{LinearScale}}(),}
+\DoxyCodeLine{00056                         \textcolor{keyword}{new} \mbox{\hyperlink{classLinearScale}{LinearScale}}()) \{\}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058   \mbox{\hyperlink{classGapMinderWidget}{GapMinderWidget}}(\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}* m, \mbox{\hyperlink{classMultiText}{MultiText}}* t, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y,}
+\DoxyCodeLine{00059                   \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keyword}{const} std::vector<float>\& xLocations,}
+\DoxyCodeLine{00060                   \textcolor{keyword}{const} std::vector<float>\& yLocations)}
+\DoxyCodeLine{00061       : \mbox{\hyperlink{classGapMinderWidget}{GapMinderWidget}}(m, t, x, y, w, h, \textcolor{stringliteral}{"{}"{}}, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}, 0, 0, 0, 0,}
+\DoxyCodeLine{00062                         1.25, 10, 10, x, \textcolor{keyword}{new} \mbox{\hyperlink{classLinearScale}{LinearScale}}(), \textcolor{keyword}{new} \mbox{\hyperlink{classLinearScale}{LinearScale}}()) \{}
+\DoxyCodeLine{00063     maxY = maxMultiplier * (*max\_element(yLocations.begin(), yLocations.end()));}
+\DoxyCodeLine{00064     maxX = maxMultiplier * (*max\_element(xLocations.begin(), xLocations.end()));}
+\DoxyCodeLine{00065   \}}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067   \textcolor{keywordtype}{void} setMinMaxY(\textcolor{keywordtype}{float} min, \textcolor{keywordtype}{float} max) \{}
+\DoxyCodeLine{00068     this-\/>minY = min;}
+\DoxyCodeLine{00069     this-\/>maxY = max;}
+\DoxyCodeLine{00070   \}}
+\DoxyCodeLine{00071   \textcolor{keywordtype}{void} setAxisScale(\mbox{\hyperlink{classScale}{Scale}}* yAxis) \{ this-\/>yAxis = yAxis; \}}
+\DoxyCodeLine{00072   \textcolor{keywordtype}{void} setTitleStyle(\textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s) \{ titleStyle = s; \}}
+\DoxyCodeLine{00073   \textcolor{keywordtype}{void} chart(\textcolor{keyword}{const} std::vector<float>\& yLocations,}
+\DoxyCodeLine{00074              \textcolor{keyword}{const} std::vector<float>\& xLocations,}
+\DoxyCodeLine{00075              \textcolor{keyword}{const} std::vector<float>\& sizes, \textcolor{keywordtype}{int} rulerInterval,}
+\DoxyCodeLine{00076              \textcolor{keyword}{const} std::vector<glm::vec4>\& c);}
+\DoxyCodeLine{00077   \textcolor{comment}{// void chartLog(const float b[], int size, float relativeSpace, const}}
+\DoxyCodeLine{00078   \textcolor{comment}{// std::string barNames[], int logBase);}}
+\DoxyCodeLine{00079   \textcolor{keywordtype}{void} setTitle(\textcolor{keyword}{const} std::string\& s);}
+\DoxyCodeLine{00080   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
+\DoxyCodeLine{00081 \};}
 
 \end{DoxyCode}

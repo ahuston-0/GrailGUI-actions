@@ -7,34 +7,29 @@
 \DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/Widget2d.hh"{}}}
 \DoxyCodeLine{00004 }
 \DoxyCodeLine{\Hypertarget{PositionDisplayer2D_8hh_source_l00005}\mbox{\hyperlink{classPositionDisplayer2D}{00005}} \textcolor{keyword}{class }\mbox{\hyperlink{classPositionDisplayer2D}{PositionDisplayer2D}} : \textcolor{keyword}{public} Widget2d \{}
-\DoxyCodeLine{00006 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00007     std::vector< Point > points;}
-\DoxyCodeLine{00008 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00009     PositionDisplay2D(\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}* m, \mbox{\hyperlink{classMultiText}{MultiText}}* t, uint32\_t x, uint32\_t y, uint32\_t w, uint32\_t h) \{\}}
-\DoxyCodeLine{00010 }
-\DoxyCodeLine{00011     \textcolor{keywordtype}{void} addPoint(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y) \{}
-\DoxyCodeLine{00012         points.push\_back(\mbox{\hyperlink{structPoint}{Point}}(x,y))}
-\DoxyCodeLine{00013     \}}
+\DoxyCodeLine{00006  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00007   std::vector<Point> points;}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010   PositionDisplay2D(\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}}* m, \mbox{\hyperlink{classMultiText}{MultiText}}* t, uint32\_t x, uint32\_t y,}
+\DoxyCodeLine{00011                     uint32\_t w, uint32\_t h) \{\}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013   \textcolor{keywordtype}{void} addPoint(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y) \{ points.push\_back(\mbox{\hyperlink{structPoint}{Point}}(x, y)) \}}
 \DoxyCodeLine{00014 }
-\DoxyCodeLine{00015     \textcolor{keywordtype}{void} move(\textcolor{keywordtype}{int} i, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y) \{}
-\DoxyCodeLine{00016         points[i].x += x;}
-\DoxyCodeLine{00017         points[i].y += y;}
-\DoxyCodeLine{00018     \}}
+\DoxyCodeLine{00015   \textcolor{keywordtype}{void} move(\textcolor{keywordtype}{int} i, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y) \{}
+\DoxyCodeLine{00016     points[i].x += x;}
+\DoxyCodeLine{00017     points[i].y += y;}
+\DoxyCodeLine{00018   \}}
 \DoxyCodeLine{00019 }
-\DoxyCodeLine{00020     \textcolor{keywordtype}{void} init() \{}
-\DoxyCodeLine{00021             m-\/>drawPoint(x,y);}
-\DoxyCodeLine{00022     \}}
-\DoxyCodeLine{00023 \}}
-\DoxyCodeLine{00024 }
-\DoxyCodeLine{00025     \textcolor{keyword}{class }SolarSystemDisplayer : \textcolor{keyword}{public} PositionDisplay2D \{}
-\DoxyCodeLine{00026     \textcolor{keyword}{private}:}
-\DoxyCodeLine{00027         std::vector<Body> bodies;}
-\DoxyCodeLine{00028     \textcolor{keyword}{public}:}
-\DoxyCodeLine{00029         \textcolor{keywordtype}{void} init() \{}
-\DoxyCodeLine{00030 }
-\DoxyCodeLine{00031             m-\/>drawCircle(r, grail::black)}
-\DoxyCodeLine{00032     \}}
-\DoxyCodeLine{00033 }
-\DoxyCodeLine{00034     \};}
+\DoxyCodeLine{00020   \textcolor{keywordtype}{void} init() \{ m-\/>drawPoint(x, y); \}}
+\DoxyCodeLine{00021 \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 \textcolor{keyword}{class }SolarSystemDisplayer : \textcolor{keyword}{public} PositionDisplay2D \{}
+\DoxyCodeLine{00024  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025   std::vector<Body> bodies;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028   \textcolor{keywordtype}{void} init() \{ m-\/>drawCircle(r, grail::black) \}}
+\DoxyCodeLine{00029 \};}
 
 \end{DoxyCode}

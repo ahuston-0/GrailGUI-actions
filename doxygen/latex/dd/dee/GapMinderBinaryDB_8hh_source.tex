@@ -7,7 +7,7 @@
 \DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <iostream>}}
 \DoxyCodeLine{00004 }
 \DoxyCodeLine{00005 \textcolor{keyword}{class }GapMinderBinaryDB \{}
-\DoxyCodeLine{00006 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00006  \textcolor{keyword}{private}:}
 \DoxyCodeLine{00007   std::vector<string> countryCodes;}
 \DoxyCodeLine{00008 }
 \DoxyCodeLine{00009   \textcolor{comment}{/*}}
@@ -15,51 +15,58 @@
 \DoxyCodeLine{00011 \textcolor{comment}{}}
 \DoxyCodeLine{00012 \textcolor{comment}{   */}}
 \DoxyCodeLine{00013   \textcolor{keyword}{class }Dataset \{}
-\DoxyCodeLine{00014   \textcolor{keyword}{private}:}
-\DoxyCodeLine{00015     std::string name;    \textcolor{comment}{// name of the data set (variable)}}
+\DoxyCodeLine{00014    \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015     std::string name;  \textcolor{comment}{// name of the data set (variable)}}
 \DoxyCodeLine{00016     \textcolor{comment}{// this might be useful summary data, not required}}
-\DoxyCodeLine{00017     uint32\_t startYear;  \textcolor{comment}{// OPTIONAL starting year (earliest) for this dataset for ALL countries}}
-\DoxyCodeLine{00018     uint32\_t endYear;    \textcolor{comment}{// OPTIONAL end year (latest) for this dataset, ANY country}}
-\DoxyCodeLine{00019     uint32\_t startIndex; \textcolor{comment}{// start index within data}}
-\DoxyCodeLine{00020     uint32\_t endIndex;   \textcolor{comment}{// end index within data (this variable between startIndex,endIndex}}
-\DoxyCodeLine{00021     \textcolor{keyword}{struct }Country \{}
-\DoxyCodeLine{00022       uint32\_t startIndex; \textcolor{comment}{// start of the country's data within data}}
-\DoxyCodeLine{00023       uint32\_t startYear;  \textcolor{comment}{// year corresponding to first datapoint. TODO: ASSUMED sequential}}
-\DoxyCodeLine{00024     \};}
-\DoxyCodeLine{00025     std::vector<Country> countries; }
-\DoxyCodeLine{00026   \textcolor{keyword}{public}:}
-\DoxyCodeLine{00027     Dataset(uint32\_t numCountries,}
-\DoxyCodeLine{00028         \textcolor{keyword}{const} std::string\& name, uint32\_t startIndex, uint32\_t endIndex,}
-\DoxyCodeLine{00029         uint32\_t startYear = 0, uint32\_t endYear = 0) : countries(numCountries) \{}
-\DoxyCodeLine{00030       }
-\DoxyCodeLine{00031 }
-\DoxyCodeLine{00032     \}}
-\DoxyCodeLine{00033   \};}
-\DoxyCodeLine{00034   }
-\DoxyCodeLine{00035   \textcolor{keyword}{class }Index \{}
-\DoxyCodeLine{00036   \textcolor{keyword}{private}:}
-\DoxyCodeLine{00037     std::vector<Dataset> datasets; \textcolor{comment}{// index to all variables}}
-\DoxyCodeLine{00038   \textcolor{keyword}{public}:}
-\DoxyCodeLine{00039     Index();}
-\DoxyCodeLine{00040     \textcolor{keywordtype}{void} addDataSet(\textcolor{keyword}{const} std::string\& name, uint32\_t startIndex, uint32\_t endIndex,}
-\DoxyCodeLine{00041         uint32\_t startYear = 0, uint32\_t endYear = 0);}
-\DoxyCodeLine{00042   \};}
-\DoxyCodeLine{00043   std::vector<Dataset> index;}
-\DoxyCodeLine{00044   std::vector<float> data; \textcolor{comment}{// MASSIVE}}
-\DoxyCodeLine{00045 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00046   GapMinderBinaryDB(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]) : data(2000000) \{}
-\DoxyCodeLine{00047   \}}
-\DoxyCodeLine{00048   \textcolor{keywordtype}{void} loadDir(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]); \textcolor{comment}{// opendir, readdir, closedir https://man7.org/linux/man-\/pages/man3/opendir.3.html}}
-\DoxyCodeLine{00049 }
-\DoxyCodeLine{00050   \textcolor{comment}{/*}}
-\DoxyCodeLine{00051 \textcolor{comment}{    save the file in binary so that it can be loaded in a single memory read next time}}
-\DoxyCodeLine{00052 \textcolor{comment}{  */}}
-\DoxyCodeLine{00053   \textcolor{keywordtype}{void} saveBinary(\textcolor{keyword}{const} \textcolor{keywordtype}{char} binaryData[]) \{}
-\DoxyCodeLine{00054     ofstream f(binaryData, ios::binary);}
-\DoxyCodeLine{00055     \textcolor{comment}{//write the index information}}
-\DoxyCodeLine{00056     f.write((\textcolor{keywordtype}{char}*)\&data[0], data.size() * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float})); \textcolor{comment}{// write all the numbers}}
-\DoxyCodeLine{00057   \}}
-\DoxyCodeLine{00058 }
-\DoxyCodeLine{00059   \textcolor{keywordtype}{void} loadCountryCodes();}
+\DoxyCodeLine{00017     uint32\_t startYear;  \textcolor{comment}{// OPTIONAL starting year (earliest) for this dataset}}
+\DoxyCodeLine{00018                          \textcolor{comment}{// for ALL countries}}
+\DoxyCodeLine{00019     uint32\_t}
+\DoxyCodeLine{00020         endYear;  \textcolor{comment}{// OPTIONAL end year (latest) for this dataset, ANY country}}
+\DoxyCodeLine{00021     uint32\_t startIndex;  \textcolor{comment}{// start index within data}}
+\DoxyCodeLine{00022     uint32\_t endIndex;    \textcolor{comment}{// end index within data (this variable between}}
+\DoxyCodeLine{00023                           \textcolor{comment}{// startIndex,endIndex}}
+\DoxyCodeLine{00024     \textcolor{keyword}{struct }Country \{}
+\DoxyCodeLine{00025       uint32\_t startIndex;  \textcolor{comment}{// start of the country's data within data}}
+\DoxyCodeLine{00026       uint32\_t startYear;   \textcolor{comment}{// year corresponding to first datapoint. TODO:}}
+\DoxyCodeLine{00027                             \textcolor{comment}{// ASSUMED sequential}}
+\DoxyCodeLine{00028     \};}
+\DoxyCodeLine{00029     std::vector<Country> countries;}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031    \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032     Dataset(uint32\_t numCountries, \textcolor{keyword}{const} std::string\& name, uint32\_t startIndex,}
+\DoxyCodeLine{00033             uint32\_t endIndex, uint32\_t startYear = 0, uint32\_t endYear = 0)}
+\DoxyCodeLine{00034         : countries(numCountries) \{\}}
+\DoxyCodeLine{00035   \};}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037   \textcolor{keyword}{class }Index \{}
+\DoxyCodeLine{00038    \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039     std::vector<Dataset> datasets;  \textcolor{comment}{// index to all variables}}
+\DoxyCodeLine{00040    \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041     Index();}
+\DoxyCodeLine{00042     \textcolor{keywordtype}{void} addDataSet(\textcolor{keyword}{const} std::string\& name, uint32\_t startIndex,}
+\DoxyCodeLine{00043                     uint32\_t endIndex, uint32\_t startYear = 0,}
+\DoxyCodeLine{00044                     uint32\_t endYear = 0);}
+\DoxyCodeLine{00045   \};}
+\DoxyCodeLine{00046   std::vector<Dataset> index;}
+\DoxyCodeLine{00047   std::vector<float> data;  \textcolor{comment}{// MASSIVE}}
+\DoxyCodeLine{00048  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049   GapMinderBinaryDB(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]) : data(2000000) \{\}}
+\DoxyCodeLine{00050   \textcolor{keywordtype}{void} loadDir(}
+\DoxyCodeLine{00051       \textcolor{keyword}{const} \textcolor{keywordtype}{char}}
+\DoxyCodeLine{00052           filename[]);  \textcolor{comment}{// opendir, readdir, closedir}}
+\DoxyCodeLine{00053                         \textcolor{comment}{// https://man7.org/linux/man-\/pages/man3/opendir.3.html}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055   \textcolor{comment}{/*}}
+\DoxyCodeLine{00056 \textcolor{comment}{    save the file in binary so that it can be loaded in a single memory read}}
+\DoxyCodeLine{00057 \textcolor{comment}{    next time}}
+\DoxyCodeLine{00058 \textcolor{comment}{  */}}
+\DoxyCodeLine{00059   \textcolor{keywordtype}{void} saveBinary(\textcolor{keyword}{const} \textcolor{keywordtype}{char} binaryData[]) \{}
+\DoxyCodeLine{00060     ofstream f(binaryData, ios::binary);}
+\DoxyCodeLine{00061     \textcolor{comment}{// write the index information}}
+\DoxyCodeLine{00062     f.write((\textcolor{keywordtype}{char}*)\&data[0],}
+\DoxyCodeLine{00063             data.size() * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}));  \textcolor{comment}{// write all the numbers}}
+\DoxyCodeLine{00064   \}}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066   \textcolor{keywordtype}{void} loadCountryCodes();}
 
 \end{DoxyCode}

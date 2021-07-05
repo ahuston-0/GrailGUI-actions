@@ -4,16 +4,16 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{00002 }
-\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/MultiShape.hh"{}}}
-\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}opengl/Bezier.hh"{}}}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/Bezier.hh"{}}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}opengl/MultiShape.hh"{}}}
 \DoxyCodeLine{00005 }
 \DoxyCodeLine{00006 \textcolor{keyword}{class }\mbox{\hyperlink{classStyle}{Style}};}
 \DoxyCodeLine{\Hypertarget{MultiShape2D_8hh_source_l00007}\mbox{\hyperlink{classMultiShape2D}{00007}} \textcolor{keyword}{class }\mbox{\hyperlink{classMultiShape2D}{MultiShape2D}} : \textcolor{keyword}{public} \mbox{\hyperlink{classMultiShape}{MultiShape}} \{}
-\DoxyCodeLine{00008 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00008  \textcolor{keyword}{protected}:}
 \DoxyCodeLine{00009   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* style;}
 \DoxyCodeLine{00010   uint32\_t elemPerVert;}
 \DoxyCodeLine{00011 }
-\DoxyCodeLine{00012   \textcolor{comment}{//Utility}}
+\DoxyCodeLine{00012   \textcolor{comment}{// Utility}}
 \DoxyCodeLine{00013   \textcolor{keywordtype}{void} sAddTriIndices();}
 \DoxyCodeLine{00014   \textcolor{keywordtype}{void} sAddQuadIndices();}
 \DoxyCodeLine{00015   \textcolor{keywordtype}{void} sAddSectorIndices(uint32\_t centerIndex, uint32\_t indexCount);}
@@ -26,69 +26,70 @@
 \DoxyCodeLine{00022   \textcolor{keywordtype}{void} pAddQuadIndices();}
 \DoxyCodeLine{00023   \textcolor{keywordtype}{void} pAddSectorIndices(uint32\_t centerIndex, uint32\_t indexCount);}
 \DoxyCodeLine{00024 }
-\DoxyCodeLine{00025   uint32\_t addSector(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad,\textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} fromAngle, \textcolor{keywordtype}{float} toAngle,\textcolor{keywordtype}{float} angleInc);}
-\DoxyCodeLine{00026   uint32\_t getPointIndex()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00027     \textcolor{keywordflow}{return} vertices.size()/elemPerVert;}
-\DoxyCodeLine{00028   \}}
-\DoxyCodeLine{00029   \textcolor{keywordtype}{void} addLine(\textcolor{keywordtype}{float} x1,\textcolor{keywordtype}{float} y1,\textcolor{keywordtype}{float} x2,\textcolor{keywordtype}{float} y2) \{}
-\DoxyCodeLine{00030     uint32\_t ind = getPointIndex();}
-\DoxyCodeLine{00031 }
-\DoxyCodeLine{00032     addPoint(x1,y1);addPoint(x2,y2);}
-\DoxyCodeLine{00033     lineIndices.push\_back(ind++);lineIndices.push\_back(ind);}
-\DoxyCodeLine{00034   \}}
-\DoxyCodeLine{00035 }
-\DoxyCodeLine{00036 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00037     \textcolor{keywordtype}{void} drawPoint(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y);}
-\DoxyCodeLine{00038   \mbox{\hyperlink{classMultiShape2D}{MultiShape2D}}(\mbox{\hyperlink{classCanvas}{Canvas}}* parent, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}} * s,}
-\DoxyCodeLine{00039                              uint32\_t vertCount=1024,}
-\DoxyCodeLine{00040                              uint32\_t solidIndCount=1024,}
-\DoxyCodeLine{00041                              uint32\_t lineIndCount=1024,}
-\DoxyCodeLine{00042                              uint32\_t pointIndCount=1024,}
-\DoxyCodeLine{00043                              uint32\_t elemPerVert = 2) :}
-\DoxyCodeLine{00044     \mbox{\hyperlink{classMultiShape}{MultiShape}}(parent, vertCount, solidIndCount, lineIndCount, pointIndCount),}
-\DoxyCodeLine{00045     style(s),elemPerVert(elemPerVert) \{\} }
-\DoxyCodeLine{00046     \string~\mbox{\hyperlink{classMultiShape2D}{MultiShape2D}}();}
+\DoxyCodeLine{00025   uint32\_t addSector(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} fromAngle,}
+\DoxyCodeLine{00026                      \textcolor{keywordtype}{float} toAngle, \textcolor{keywordtype}{float} angleInc);}
+\DoxyCodeLine{00027   uint32\_t getPointIndex()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} vertices.size() / elemPerVert; \}}
+\DoxyCodeLine{00028   \textcolor{keywordtype}{void} addLine(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2) \{}
+\DoxyCodeLine{00029     uint32\_t ind = getPointIndex();}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031     addPoint(x1, y1);}
+\DoxyCodeLine{00032     addPoint(x2, y2);}
+\DoxyCodeLine{00033     lineIndices.push\_back(ind++);}
+\DoxyCodeLine{00034     lineIndices.push\_back(ind);}
+\DoxyCodeLine{00035   \}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038   \textcolor{keywordtype}{void} drawPoint(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y);}
+\DoxyCodeLine{00039   \mbox{\hyperlink{classMultiShape2D}{MultiShape2D}}(\mbox{\hyperlink{classCanvas}{Canvas}}* parent, \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* s, uint32\_t vertCount = 1024,}
+\DoxyCodeLine{00040                uint32\_t solidIndCount = 1024, uint32\_t lineIndCount = 1024,}
+\DoxyCodeLine{00041                uint32\_t pointIndCount = 1024, uint32\_t elemPerVert = 2)}
+\DoxyCodeLine{00042       : \mbox{\hyperlink{classMultiShape}{MultiShape}}(parent, vertCount, solidIndCount, lineIndCount,}
+\DoxyCodeLine{00043                    pointIndCount),}
+\DoxyCodeLine{00044         style(s),}
+\DoxyCodeLine{00045         elemPerVert(elemPerVert) \{\}}
+\DoxyCodeLine{00046   \string~\mbox{\hyperlink{classMultiShape2D}{MultiShape2D}}();}
 \DoxyCodeLine{00047 }
 \DoxyCodeLine{00048   \textcolor{comment}{// override Shape methods to draw us}}
 \DoxyCodeLine{00049   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
 \DoxyCodeLine{00050   \textcolor{keywordtype}{void} render() \textcolor{keyword}{override};}
 \DoxyCodeLine{00051 }
-\DoxyCodeLine{00052   \textcolor{comment}{//Solid Primitives}}
+\DoxyCodeLine{00052   \textcolor{comment}{// Solid Primitives}}
 \DoxyCodeLine{00053   \textcolor{keywordtype}{void} fillRectangle(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h);}
-\DoxyCodeLine{00054   \textcolor{keywordtype}{void} fillRoundRect(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keywordtype}{float} rx,\textcolor{keywordtype}{float} ry);}
-\DoxyCodeLine{00055   \textcolor{keywordtype}{void} fillTriangle(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2,\textcolor{keywordtype}{float} x3, \textcolor{keywordtype}{float} y3);}
-\DoxyCodeLine{00056   \textcolor{keywordtype}{void} fillPolygon(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} n); }
-\DoxyCodeLine{00057  \textcolor{keywordtype}{void} fillCircle(\textcolor{keywordtype}{float} x ,\textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} rad, \textcolor{keywordtype}{float} angleInc);}
+\DoxyCodeLine{00054   \textcolor{keywordtype}{void} fillRoundRect(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keywordtype}{float} rx, \textcolor{keywordtype}{float} ry);}
+\DoxyCodeLine{00055   \textcolor{keywordtype}{void} fillTriangle(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2, \textcolor{keywordtype}{float} x3, \textcolor{keywordtype}{float} y3);}
+\DoxyCodeLine{00056   \textcolor{keywordtype}{void} fillPolygon(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} n);}
+\DoxyCodeLine{00057   \textcolor{keywordtype}{void} fillCircle(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} rad, \textcolor{keywordtype}{float} angleInc);}
 \DoxyCodeLine{00058   \textcolor{keywordtype}{void} fillEllipse(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} angleInc);}
 \DoxyCodeLine{00059 }
-\DoxyCodeLine{00060   \textcolor{comment}{//Line Primitives}}
+\DoxyCodeLine{00060   \textcolor{comment}{// Line Primitives}}
 \DoxyCodeLine{00061   \textcolor{keywordtype}{void} drawRectangle(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h);}
 \DoxyCodeLine{00062   \textcolor{keywordtype}{void} drawRoundRect(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keywordtype}{float} rx, \textcolor{keywordtype}{float} ry);}
-\DoxyCodeLine{00063   \textcolor{keywordtype}{void} drawTriangle(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2,\textcolor{keywordtype}{float} x3, \textcolor{keywordtype}{float} y3);}
+\DoxyCodeLine{00063   \textcolor{keywordtype}{void} drawTriangle(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2, \textcolor{keywordtype}{float} x3, \textcolor{keywordtype}{float} y3);}
 \DoxyCodeLine{00064   \textcolor{keywordtype}{void} drawPolygon(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} n);}
 \DoxyCodeLine{00065   \textcolor{keywordtype}{void} drawCompletePolygon(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} n);}
-\DoxyCodeLine{00066   \textcolor{keywordtype}{void} drawCircle(\textcolor{keywordtype}{float} x ,\textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} rad, \textcolor{keywordtype}{float} angleInc);}
+\DoxyCodeLine{00066   \textcolor{keywordtype}{void} drawCircle(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} rad, \textcolor{keywordtype}{float} angleInc);}
 \DoxyCodeLine{00067   \textcolor{keywordtype}{void} drawEllipse(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} angleInc);}
-\DoxyCodeLine{00068   \textcolor{keywordtype}{void} drawLine(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2,\textcolor{keywordtype}{float} y2);}
+\DoxyCodeLine{00068   \textcolor{keywordtype}{void} drawLine(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2);}
 \DoxyCodeLine{00069 }
-\DoxyCodeLine{00070   \textcolor{comment}{//drawBezier, end bezier,grid}}
-\DoxyCodeLine{00071     \textcolor{keywordtype}{void} bezierSegment(\textcolor{keyword}{const} \mbox{\hyperlink{classBezier}{Bezier}}* b);}
+\DoxyCodeLine{00070   \textcolor{comment}{// drawBezier, end bezier,grid}}
+\DoxyCodeLine{00071   \textcolor{keywordtype}{void} bezierSegment(\textcolor{keyword}{const} \mbox{\hyperlink{classBezier}{Bezier}}* b);}
 \DoxyCodeLine{00072   \textcolor{keywordtype}{void} bezierSegmentByPoints(\textcolor{keywordtype}{float} p1x, \textcolor{keywordtype}{float} p1y, \textcolor{keywordtype}{float} p2x, \textcolor{keywordtype}{float} p2y,}
-\DoxyCodeLine{00073                                                          \textcolor{keywordtype}{float} p3x, \textcolor{keywordtype}{float} p3y, \textcolor{keywordtype}{float} p4x, \textcolor{keywordtype}{float} p4y, \textcolor{keywordtype}{int} n, \textcolor{keywordtype}{bool} end);}
-\DoxyCodeLine{00074   \textcolor{keywordtype}{void} endBezierSegment(\textcolor{keyword}{const} \mbox{\hyperlink{classBezier}{Bezier}}* b);}
-\DoxyCodeLine{00075   \textcolor{keywordtype}{void} spline(\textcolor{keyword}{const} std::vector<double> \&points, \textcolor{keywordtype}{int} n);}
-\DoxyCodeLine{00076     }
-\DoxyCodeLine{00077   \textcolor{comment}{//Point Primitives}}
-\DoxyCodeLine{00078   \textcolor{keywordtype}{void} rectanglePoints(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h);}
-\DoxyCodeLine{00079   \textcolor{keywordtype}{void} roundRectPoints(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keywordtype}{float} rx, \textcolor{keywordtype}{float} ry);}
-\DoxyCodeLine{00080   \textcolor{keywordtype}{void} trianglePoints(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2,\textcolor{keywordtype}{float} x3, \textcolor{keywordtype}{float} y3);}
-\DoxyCodeLine{00081   \textcolor{keywordtype}{void} polygonPoints(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} n);}
-\DoxyCodeLine{00082   \textcolor{keywordtype}{void} circlePoints(\textcolor{keywordtype}{float} x ,\textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} rad, \textcolor{keywordtype}{float} angleInc);}
-\DoxyCodeLine{00083   \textcolor{keywordtype}{void} ellipsePoints(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} angleInc);}
-\DoxyCodeLine{00084 }
-\DoxyCodeLine{00085   \textcolor{comment}{// getter for style}}
-\DoxyCodeLine{00086   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* getStyle();}
-\DoxyCodeLine{00087 }
-\DoxyCodeLine{00088 \};}
+\DoxyCodeLine{00073                              \textcolor{keywordtype}{float} p3x, \textcolor{keywordtype}{float} p3y, \textcolor{keywordtype}{float} p4x, \textcolor{keywordtype}{float} p4y, \textcolor{keywordtype}{int} n,}
+\DoxyCodeLine{00074                              \textcolor{keywordtype}{bool} end);}
+\DoxyCodeLine{00075   \textcolor{keywordtype}{void} endBezierSegment(\textcolor{keyword}{const} \mbox{\hyperlink{classBezier}{Bezier}}* b);}
+\DoxyCodeLine{00076   \textcolor{keywordtype}{void} spline(\textcolor{keyword}{const} std::vector<double>\& points, \textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078   \textcolor{comment}{// Point Primitives}}
+\DoxyCodeLine{00079   \textcolor{keywordtype}{void} rectanglePoints(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h);}
+\DoxyCodeLine{00080   \textcolor{keywordtype}{void} roundRectPoints(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} w, \textcolor{keywordtype}{float} h, \textcolor{keywordtype}{float} rx, \textcolor{keywordtype}{float} ry);}
+\DoxyCodeLine{00081   \textcolor{keywordtype}{void} trianglePoints(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2, \textcolor{keywordtype}{float} x3,}
+\DoxyCodeLine{00082                       \textcolor{keywordtype}{float} y3);}
+\DoxyCodeLine{00083   \textcolor{keywordtype}{void} polygonPoints(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} n);}
+\DoxyCodeLine{00084   \textcolor{keywordtype}{void} circlePoints(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} rad, \textcolor{keywordtype}{float} angleInc);}
+\DoxyCodeLine{00085   \textcolor{keywordtype}{void} ellipsePoints(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} xRad, \textcolor{keywordtype}{float} yRad, \textcolor{keywordtype}{float} angleInc);}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087   \textcolor{comment}{// getter for style}}
+\DoxyCodeLine{00088   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* getStyle();}
+\DoxyCodeLine{00089 \};}
 
 \end{DoxyCode}

@@ -7,14 +7,14 @@
 \DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/Shape2D.hh"{}}}
 \DoxyCodeLine{00004 }
 \DoxyCodeLine{\Hypertarget{Line_8hh_source_l00005}\mbox{\hyperlink{classLine}{00005}} \textcolor{keyword}{class }\mbox{\hyperlink{classLine}{Line}} : \textcolor{keyword}{public} \mbox{\hyperlink{classShape2D}{Shape2D}} \{}
-\DoxyCodeLine{00006 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00007 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00008   \mbox{\hyperlink{classLine}{Line}}(\mbox{\hyperlink{classCanvas}{Canvas}}* c, \textcolor{keywordtype}{float} x1,\textcolor{keywordtype}{float} y1,\textcolor{keywordtype}{float} x2,\textcolor{keywordtype}{float} y2, \mbox{\hyperlink{classStyle}{Style}} * s):}
-\DoxyCodeLine{00009     \mbox{\hyperlink{classShape2D}{Shape2D}}(c, x1,y1,s) \{ }
-\DoxyCodeLine{00010     addPoint(x1,y1);}
-\DoxyCodeLine{00011     addPoint(x2,y2);}
+\DoxyCodeLine{00006  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00007  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008   \mbox{\hyperlink{classLine}{Line}}(\mbox{\hyperlink{classCanvas}{Canvas}}* c, \textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2, \mbox{\hyperlink{classStyle}{Style}}* s)}
+\DoxyCodeLine{00009       : \mbox{\hyperlink{classShape2D}{Shape2D}}(c, x1, y1, s) \{}
+\DoxyCodeLine{00010     addPoint(x1, y1);}
+\DoxyCodeLine{00011     addPoint(x2, y2);}
 \DoxyCodeLine{00012 }
-\DoxyCodeLine{00013     initIndices(); }
+\DoxyCodeLine{00013     initIndices();}
 \DoxyCodeLine{00014   \}}
 \DoxyCodeLine{00015   \textcolor{keywordtype}{void} initIndices();}
 \DoxyCodeLine{00016   \textcolor{keywordtype}{void} render();}

@@ -100,64 +100,69 @@ $(document).ready(function(){initNavTree('d4/d36/BlastMapLoader_8hh_source.html'
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    uint32_t version;  <span class="comment">// version</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  };</div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../dc/dfc/structBlockLoader_1_1SecurityHeaderV1.html">   14</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../dc/dfc/structBlockLoader_1_1SecurityHeaderV1.html">SecurityHeaderV1</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    uint8_t hash[32];   <span class="comment">// SHA256 hash signed by author</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    uint8_t hash2[32];  <span class="comment">// SHA256 hash of alternate region in data signed by author</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    uint8_t sigid[32];  <span class="comment">// id of author</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  };</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="comment">// get the size of the SecurityHeader for any BlockLoader</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  uint32_t getAuthHeaderSize() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">bool</span> authenticate() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">class </span><a class="code" href="../../d8/d98/classBlockMapLoader.html">BlockMapLoader</a> : <span class="keyword">public</span> <a class="code" href="../../df/d1b/classBlockLoader.html">BlockLoader</a>, <span class="keyword">public</span> <a class="code" href="../../da/db4/classESRIShape.html">ESRIShape</a> {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">struct </span>SpecificHeader {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    uint32_t numLists;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    uint32_t unused;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  };</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">struct </span>Segment {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    uint32_t numPoints;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    uint32_t type : 8;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    uint32_t unused : 8;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">double</span> baseLocX, baseLocY;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  };</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  SpecificHeader* specificHeader;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  Segment* segments;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">float</span>* points;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="../../d8/d98/classBlockMapLoader.html">BlockMapLoader</a>(uint32_t numLists, uint32_t numPoints) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    uint32_t headerWords = ((<span class="keyword">sizeof</span>(Header) + numLists * <span class="keyword">sizeof</span>(Segment)) + 7) / 8;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    uint32_t size = (headerWords + numPoints) * 8;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    mem = std::make_unique&lt;uint64_t[headerWords + numPoints]&gt;;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    head = (Header*)mem;                                 <span class="comment">// header is the first chunk of bytes</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    segments = (Segment*)((<span class="keywordtype">char</span>*)mem + <span class="keyword">sizeof</span>(Header));  <span class="comment">// list of segments is next</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    points = (<span class="keywordtype">float</span>*)((<span class="keywordtype">char</span>*)mem + <span class="keyword">sizeof</span>(Header) + numPoints * <span class="keyword">sizeof</span>(Segment));</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// load in all points from ESRI</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">int</span> fh = open(<span class="stringliteral">&quot;uscounties.bml&quot;</span>, writeBinFlags);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    write(fh, (<span class="keywordtype">char</span>*)mem, size);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    close(fh);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// byte-endian-ness matters! You cannot write this in on an Intel and read in on Sparc</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// if you have to worry about endianness</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// float: b1 b2 b3 b4 uint32_t:   b1 b2 b3 b4   b4 b3 b2 b1 b4 b3 b2 b1</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// uint64_t:   b1 b2 b3 b4 b5 b6 b7 b8 --&gt; b8 b7 b6 b5 b4 b3 b2 b1</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  }</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    uint8_t hash[32];  <span class="comment">// SHA256 hash signed by author</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    uint8_t</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        hash2[32];  <span class="comment">// SHA256 hash of alternate region in data signed by author</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    uint8_t sigid[32];  <span class="comment">// id of author</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  };</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="comment">// get the size of the SecurityHeader for any BlockLoader</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  uint32_t getAuthHeaderSize() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">bool</span> authenticate() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">class </span><a class="code" href="../../d8/d98/classBlockMapLoader.html">BlockMapLoader</a> : <span class="keyword">public</span> <a class="code" href="../../df/d1b/classBlockLoader.html">BlockLoader</a>, <span class="keyword">public</span> <a class="code" href="../../da/db4/classESRIShape.html">ESRIShape</a> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">struct </span>SpecificHeader {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    uint32_t numLists;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    uint32_t unused;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  };</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">struct </span>Segment {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    uint32_t numPoints;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    uint32_t type : 8;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    uint32_t unused : 8;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">double</span> baseLocX, baseLocY;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  };</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  SpecificHeader* specificHeader;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  Segment* segments;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">float</span>* points;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="../../d8/d98/classBlockMapLoader.html">BlockMapLoader</a>(uint32_t numLists, uint32_t numPoints) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    uint32_t headerWords =</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        ((<span class="keyword">sizeof</span>(Header) + numLists * <span class="keyword">sizeof</span>(Segment)) + 7) / 8;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    uint32_t size = (headerWords + numPoints) * 8;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    mem = std::make_unique&lt;uint64_t[headerWords + numPoints]&gt;;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    head = (Header*)mem;  <span class="comment">// header is the first chunk of bytes</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    segments =</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        (Segment*)((<span class="keywordtype">char</span>*)mem + <span class="keyword">sizeof</span>(Header));  <span class="comment">// list of segments is next</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    points =</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        (<span class="keywordtype">float</span>*)((<span class="keywordtype">char</span>*)mem + <span class="keyword">sizeof</span>(Header) + numPoints * <span class="keyword">sizeof</span>(Segment));</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// load in all points from ESRI</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span> fh = open(<span class="stringliteral">&quot;uscounties.bml&quot;</span>, writeBinFlags);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    write(fh, (<span class="keywordtype">char</span>*)mem, size);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    close(fh);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// byte-endian-ness matters! You cannot write this in on an Intel and read</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// in on Sparc</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="../../d8/d98/classBlockMapLoader.html">BlockMapLoader</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> filename[]) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">int</span> fh = open(<span class="stringliteral">&quot;uscounties.bml&quot;</span>, writeBinFlags);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    st_stat s;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    stat(fh, &amp;s);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    mem = <span class="keyword">new</span> uint64_t[s.st_size / 8];</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    read(fh, (<span class="keywordtype">char</span>*)mem, size);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    close(fh);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// floats are now completely loaded, ready to draw!</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// if you have to worry about endianness</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// float: b1 b2 b3 b4 uint32_t:   b1 b2 b3 b4   b4 b3 b2 b1 b4 b3 b2 b1</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// uint64_t:   b1 b2 b3 b4 b5 b6 b7 b8 --&gt; b8 b7 b6 b5 b4 b3 b2 b1</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="../../d8/d98/classBlockMapLoader.html">BlockMapLoader</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> filename[]) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">int</span> fh = open(<span class="stringliteral">&quot;uscounties.bml&quot;</span>, writeBinFlags);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    st_stat s;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    stat(fh, &amp;s);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    mem = <span class="keyword">new</span> uint64_t[s.st_size / 8];</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    read(fh, (<span class="keywordtype">char</span>*)mem, size);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    close(fh);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// floats are now completely loaded, ready to draw!</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  }</div>
 <div class="ttc" id="aclassBlockLoader_html"><div class="ttname"><a href="../../df/d1b/classBlockLoader.html">BlockLoader</a></div><div class="ttdef"><b>Definition:</b> BlockLoader.hh:10</div></div>
 <div class="ttc" id="aclassBlockMapLoader_html"><div class="ttname"><a href="../../d8/d98/classBlockMapLoader.html">BlockMapLoader</a></div><div class="ttdef"><b>Definition:</b> BlockMapLoader.hh:4</div></div>
 <div class="ttc" id="aclassESRIShape_html"><div class="ttname"><a href="../../da/db4/classESRIShape.html">ESRIShape</a></div><div class="ttdef"><b>Definition:</b> Shapefile.hh:34</div></div>

@@ -4,47 +4,41 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <memory.h>}}
-\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{00004 \textcolor{comment}{/*}}
-\DoxyCodeLine{00005 \textcolor{comment}{    constant-\/size string, lighter weight}}
-\DoxyCodeLine{00006 \textcolor{comment}{*/}}
-\DoxyCodeLine{\Hypertarget{CString_8hh_source_l00007}\mbox{\hyperlink{classCString}{00007}} \textcolor{keyword}{class }\mbox{\hyperlink{classCString}{CString}} \{}
-\DoxyCodeLine{00008 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00009     uint32\_t len\_;}
-\DoxyCodeLine{00010     \textcolor{keywordtype}{char}* p;}
-\DoxyCodeLine{00011 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00012     \mbox{\hyperlink{classCString}{CString}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} msg[], uint32\_t len) : len\_(len), p(\textcolor{keyword}{new} \textcolor{keywordtype}{char}[len]) \{}
-\DoxyCodeLine{00013         memcpy(p, msg, len);}
-\DoxyCodeLine{00014     \}}
-\DoxyCodeLine{00015     \string~\mbox{\hyperlink{classCString}{CString}}() \{ \textcolor{keyword}{delete} [] p; \}}
-\DoxyCodeLine{00016     \mbox{\hyperlink{classCString}{CString}}(\textcolor{keyword}{const} \mbox{\hyperlink{classCString}{CString}}\& orig) : len\_(orig.len\_), p(\textcolor{keyword}{new} \textcolor{keywordtype}{char}[len\_]) \{}
-\DoxyCodeLine{00017         memcpy(p, orig.p, len\_);}
-\DoxyCodeLine{00018     \}}
-\DoxyCodeLine{00019     \mbox{\hyperlink{classCString}{CString}}\& operator =(\textcolor{keyword}{const} \mbox{\hyperlink{classCString}{CString}}\& orig) \{}
-\DoxyCodeLine{00020         \mbox{\hyperlink{classCString}{CString}} copy(orig);}
-\DoxyCodeLine{00021         swap(p, orig.p);}
-\DoxyCodeLine{00022     \}}
-\DoxyCodeLine{00023     \mbox{\hyperlink{classCString}{CString}}(\mbox{\hyperlink{classCString}{CString}}\&\& orig) : len\_(orig.len\_) \{}
-\DoxyCodeLine{00024         swap(p, orig.p);}
-\DoxyCodeLine{00025     \}}
-\DoxyCodeLine{00026     }
-\DoxyCodeLine{00027     \textcolor{keywordtype}{char} operator[](uint32\_t i)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00028         \textcolor{keywordflow}{return} p[i];}
-\DoxyCodeLine{00029     \}}
-\DoxyCodeLine{00030     \textcolor{keywordtype}{char}\& operator[](uint32\_t i) \{}
-\DoxyCodeLine{00031         \textcolor{keywordflow}{return} p[i];}
-\DoxyCodeLine{00032     \}}
-\DoxyCodeLine{00033 }
-\DoxyCodeLine{00034     uint32\_t len()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} len\_; \}}
-\DoxyCodeLine{00035   \textcolor{keywordtype}{char}* str() \{ \textcolor{keywordflow}{return} p; \}}
-\DoxyCodeLine{00036     }
-\DoxyCodeLine{00037     \textcolor{keyword}{friend} std::ostream\& operator <<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classCString}{CString}}\& str) \{}
-\DoxyCodeLine{00038         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < str.len\_; i++)}
-\DoxyCodeLine{00039             s << str.p[i];}
-\DoxyCodeLine{00040         \textcolor{keywordflow}{return} s;}
-\DoxyCodeLine{00041     \}}
-\DoxyCodeLine{00042 \};}
-\DoxyCodeLine{00043                                                                                         \string~}
-\DoxyCodeLine{00044     }
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00005 \textcolor{comment}{/*}}
+\DoxyCodeLine{00006 \textcolor{comment}{        constant-\/size string, lighter weight}}
+\DoxyCodeLine{00007 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{CString_8hh_source_l00008}\mbox{\hyperlink{classCString}{00008}} \textcolor{keyword}{class }\mbox{\hyperlink{classCString}{CString}} \{}
+\DoxyCodeLine{00009  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010   uint32\_t len\_;}
+\DoxyCodeLine{00011   \textcolor{keywordtype}{char}* p;}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014   \mbox{\hyperlink{classCString}{CString}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} msg[], uint32\_t len) : len\_(len), p(\textcolor{keyword}{new} \textcolor{keywordtype}{char}[len]) \{}
+\DoxyCodeLine{00015     memcpy(p, msg, len);}
+\DoxyCodeLine{00016   \}}
+\DoxyCodeLine{00017   \string~\mbox{\hyperlink{classCString}{CString}}() \{ \textcolor{keyword}{delete}[] p; \}}
+\DoxyCodeLine{00018   \mbox{\hyperlink{classCString}{CString}}(\textcolor{keyword}{const} \mbox{\hyperlink{classCString}{CString}}\& orig) : len\_(orig.len\_), p(\textcolor{keyword}{new} \textcolor{keywordtype}{char}[len\_]) \{}
+\DoxyCodeLine{00019     memcpy(p, orig.p, len\_);}
+\DoxyCodeLine{00020   \}}
+\DoxyCodeLine{00021   \mbox{\hyperlink{classCString}{CString}}\& operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classCString}{CString}}\& orig) \{}
+\DoxyCodeLine{00022     \mbox{\hyperlink{classCString}{CString}} copy(orig);}
+\DoxyCodeLine{00023     swap(p, orig.p);}
+\DoxyCodeLine{00024   \}}
+\DoxyCodeLine{00025   \mbox{\hyperlink{classCString}{CString}}(\mbox{\hyperlink{classCString}{CString}}\&\& orig) : len\_(orig.len\_) \{ swap(p, orig.p); \}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027   \textcolor{keywordtype}{char} operator[](uint32\_t i)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} p[i]; \}}
+\DoxyCodeLine{00028   \textcolor{keywordtype}{char}\& operator[](uint32\_t i) \{ \textcolor{keywordflow}{return} p[i]; \}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030   uint32\_t len()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} len\_; \}}
+\DoxyCodeLine{00031   \textcolor{keywordtype}{char}* str() \{ \textcolor{keywordflow}{return} p; \}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033   \textcolor{keyword}{friend} std::ostream\& operator<<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classCString}{CString}}\& str) \{}
+\DoxyCodeLine{00034     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < str.len\_; i++) s << str.p[i];}
+\DoxyCodeLine{00035     \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{00036   \}}
+\DoxyCodeLine{00037 \};}
+\DoxyCodeLine{00038 \string~}
 
 \end{DoxyCode}

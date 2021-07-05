@@ -4,19 +4,18 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{00002 }
-\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <sys/time.h>}}
-\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <sys/time.h>}}
 \DoxyCodeLine{00005 }
-\DoxyCodeLine{00006 \textcolor{keyword}{inline} \textcolor{keywordtype}{double} wtime()}
-\DoxyCodeLine{00007 \{}
-\DoxyCodeLine{00008     \textcolor{keywordtype}{double} time[2]; }
-\DoxyCodeLine{00009     \textcolor{keyword}{struct }timeval time1;}
-\DoxyCodeLine{00010     gettimeofday(\&time1, NULL);}
-\DoxyCodeLine{00011 }
-\DoxyCodeLine{00012     time[0]=time1.tv\_sec;}
-\DoxyCodeLine{00013     time[1]=time1.tv\_usec;}
-\DoxyCodeLine{00014 }
-\DoxyCodeLine{00015     \textcolor{keywordflow}{return} time[0]+time[1]*1.0e-\/6;}
-\DoxyCodeLine{00016 \}}
+\DoxyCodeLine{00006 \textcolor{keyword}{inline} \textcolor{keywordtype}{double} wtime() \{}
+\DoxyCodeLine{00007   \textcolor{keywordtype}{double} time[2];}
+\DoxyCodeLine{00008   \textcolor{keyword}{struct }timeval time1;}
+\DoxyCodeLine{00009   gettimeofday(\&time1, NULL);}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011   time[0] = time1.tv\_sec;}
+\DoxyCodeLine{00012   time[1] = time1.tv\_usec;}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014   \textcolor{keywordflow}{return} time[0] + time[1] * 1.0e-\/6;}
+\DoxyCodeLine{00015 \}}
 
 \end{DoxyCode}

@@ -10,18 +10,17 @@
 \DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <csp/CSPServlet.hh>}}
 \DoxyCodeLine{00007 }
 \DoxyCodeLine{\Hypertarget{CSPTest2_8hh_source_l00008}\mbox{\hyperlink{classCSPTest2}{00008}} \textcolor{keyword}{class }\mbox{\hyperlink{classCSPTest2}{CSPTest2}} : \textcolor{keyword}{public} \mbox{\hyperlink{classCSPServlet}{CSPServlet}} \{}
-\DoxyCodeLine{00009 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00010 }
-\DoxyCodeLine{00011 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00012     \mbox{\hyperlink{classCSPTest2}{CSPTest2}}() \{\}}
-\DoxyCodeLine{00013     \string~\mbox{\hyperlink{classCSPTest2}{CSPTest2}}() \{\}}
-\DoxyCodeLine{00014     \textcolor{keywordtype}{void} request(\mbox{\hyperlink{classCSPRequest}{CSPRequest}}\& r) \{}
-\DoxyCodeLine{00015         cout<<\textcolor{stringliteral}{"{}Test2 is loaded\(\backslash\)n"{}};}
-\DoxyCodeLine{00016         \mbox{\hyperlink{classBuffer}{Buffer}}\& out = r.getOut();}
-\DoxyCodeLine{00017         \textcolor{keywordflow}{for} (uint32\_t x = 0; x < 1024; x++)}
-\DoxyCodeLine{00018             \textcolor{comment}{//out.write(x);}}
-\DoxyCodeLine{00019             out<<x;}
-\DoxyCodeLine{00020         \}}
-\DoxyCodeLine{00021 \};}
+\DoxyCodeLine{00009  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011   \mbox{\hyperlink{classCSPTest2}{CSPTest2}}() \{\}}
+\DoxyCodeLine{00012   \string~\mbox{\hyperlink{classCSPTest2}{CSPTest2}}() \{\}}
+\DoxyCodeLine{00013   \textcolor{keywordtype}{void} request(\mbox{\hyperlink{classCSPRequest}{CSPRequest}}\& r) \{}
+\DoxyCodeLine{00014     cout << \textcolor{stringliteral}{"{}Test2 is loaded\(\backslash\)n"{}};}
+\DoxyCodeLine{00015     \mbox{\hyperlink{classBuffer}{Buffer}}\& out = r.getOut();}
+\DoxyCodeLine{00016     \textcolor{keywordflow}{for} (uint32\_t x = 0; x < 1024; x++)}
+\DoxyCodeLine{00017       \textcolor{comment}{// out.write(x);}}
+\DoxyCodeLine{00018       out << x;}
+\DoxyCodeLine{00019   \}}
+\DoxyCodeLine{00020 \};}
 
 \end{DoxyCode}
