@@ -3,14 +3,14 @@
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{comment}{/*}}
-\DoxyCodeLine{00002 \textcolor{comment}{    This file contains all the classes for built-\/in XDL types that are}}
-\DoxyCodeLine{00003 \textcolor{comment}{    pregenerated manually as well as some example classes that will}}
+\DoxyCodeLine{00002 \textcolor{comment}{        This file contains all the classes for built-\/in XDL types that are}}
+\DoxyCodeLine{00003 \textcolor{comment}{        pregenerated manually as well as some example classes that will}}
 \DoxyCodeLine{00004 \textcolor{comment}{  eventually be generated from the xdl compiler which at the moment does not}}
 \DoxyCodeLine{00005 \textcolor{comment}{  exist.}}
 \DoxyCodeLine{00006 \textcolor{comment}{}}
-\DoxyCodeLine{00007 \textcolor{comment}{    When that happens, this comment will change and those classes will be}}
-\DoxyCodeLine{00008 \textcolor{comment}{    removed from std.hh}}
-\DoxyCodeLine{00009 \textcolor{comment}{    }}
+\DoxyCodeLine{00007 \textcolor{comment}{        When that happens, this comment will change and those classes will be}}
+\DoxyCodeLine{00008 \textcolor{comment}{        removed from std.hh}}
+\DoxyCodeLine{00009 \textcolor{comment}{}}
 \DoxyCodeLine{00010 \textcolor{comment}{  what should be generated:}}
 \DoxyCodeLine{00011 \textcolor{comment}{        if you declare        to send                 metadata should be}}
 \DoxyCodeLine{00012 \textcolor{comment}{        u8 x;                 buf.write(x);           buf.write(DataType::U8);}}
@@ -23,10 +23,10 @@
 \DoxyCodeLine{00019 \textcolor{preprocessor}{\#include <string>}}
 \DoxyCodeLine{00020 }
 \DoxyCodeLine{00021 \textcolor{preprocessor}{\#include "{}opengl/Errcode.hh"{}}}
-\DoxyCodeLine{00022 \textcolor{preprocessor}{\#include "{}util/DynArray.hh"{}}}
-\DoxyCodeLine{00023 \textcolor{preprocessor}{\#include "{}util/HashMap.hh"{}}}
-\DoxyCodeLine{00024 \textcolor{preprocessor}{\#include "{}util/datatype.hh"{}}}
-\DoxyCodeLine{00025 \textcolor{preprocessor}{\#include "{}util/Buffer.hh"{}}}
+\DoxyCodeLine{00022 \textcolor{preprocessor}{\#include "{}util/Buffer.hh"{}}}
+\DoxyCodeLine{00023 \textcolor{preprocessor}{\#include "{}util/DynArray.hh"{}}}
+\DoxyCodeLine{00024 \textcolor{preprocessor}{\#include "{}util/HashMap.hh"{}}}
+\DoxyCodeLine{00025 \textcolor{preprocessor}{\#include "{}util/datatype.hh"{}}}
 \DoxyCodeLine{00026 }
 \DoxyCodeLine{00027 \textcolor{comment}{/*}}
 \DoxyCodeLine{00028 \textcolor{comment}{  XDLType is the base class of all XDL-\/generated code.}}
@@ -59,724 +59,728 @@
 \DoxyCodeLine{00055   \textcolor{keyword}{const} \textcolor{keyword}{static} std::string empty;}
 \DoxyCodeLine{00056   uint32\_t nameOffset;}
 \DoxyCodeLine{00057   \textcolor{keyword}{static} \mbox{\hyperlink{classDynArray}{DynArray<const XDLType*>}} types;}
-\DoxyCodeLine{00058   \textcolor{keyword}{static} \mbox{\hyperlink{classDynArray}{DynArray<std::string>}} typeNames;  \textcolor{comment}{// the list of all unique names in the system}}
-\DoxyCodeLine{00059   \textcolor{keyword}{static} std::unordered\_map<std::string, uint32\_t> byName;}
-\DoxyCodeLine{00060   \textcolor{keyword}{static} \textcolor{keywordtype}{void} addType(\textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* type);}
-\DoxyCodeLine{00061 }
-\DoxyCodeLine{00062  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00063   \textcolor{keyword}{static} \textcolor{keywordtype}{void} classInit();}
-\DoxyCodeLine{00064   \textcolor{keyword}{static} \textcolor{keywordtype}{void} classCleanup();}
-\DoxyCodeLine{00065   \textcolor{keyword}{static} uint32\_t computeNameOffset(\textcolor{keyword}{const} std::string\& typeName) \{}
-\DoxyCodeLine{00066     uint32\_t nameOffset;}
-\DoxyCodeLine{00067     \textcolor{keywordflow}{if} (byName.find(typeName) != byName.end())}
-\DoxyCodeLine{00068       nameOffset = byName.at(typeName);}
-\DoxyCodeLine{00069     \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{00070       nameOffset = byName[typeName] = typeNames.size();}
-\DoxyCodeLine{00071       typeNames.add(typeName);}
-\DoxyCodeLine{00072     \}}
-\DoxyCodeLine{00073     \textcolor{keywordflow}{return} nameOffset;}
-\DoxyCodeLine{00074   \}}
-\DoxyCodeLine{00075   \textcolor{keyword}{static} uint32\_t computeNameOffset(DataType t) \{}
-\DoxyCodeLine{00076     uint32\_t nameOffset = 0;}
-\DoxyCodeLine{00077     \textcolor{keywordflow}{return} nameOffset;}
-\DoxyCodeLine{00078   \}}
-\DoxyCodeLine{00079   \mbox{\hyperlink{classXDLType}{XDLType}}() \{\}}
-\DoxyCodeLine{00080   \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{keyword}{const} std::string\& typeName)}
-\DoxyCodeLine{00081       : nameOffset(computeNameOffset(typeName)) \{\}}
-\DoxyCodeLine{00082   \mbox{\hyperlink{classXDLType}{XDLType}}(DataType t) : nameOffset(computeNameOffset(t)) \{\}}
-\DoxyCodeLine{00083   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& b) \textcolor{keyword}{const} = 0;}
-\DoxyCodeLine{00084   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const};}
-\DoxyCodeLine{00085   \textcolor{keyword}{virtual} uint32\_t size() \textcolor{keyword}{const} = 0;}
-\DoxyCodeLine{00086   \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* getBuiltinType(DataType dt) \{}
-\DoxyCodeLine{00087     \textcolor{keywordflow}{return} types[uint32\_t(dt)];}
-\DoxyCodeLine{00088   \}}
-\DoxyCodeLine{00089 }
-\DoxyCodeLine{00090   \textcolor{keyword}{virtual} DataType getDataType() \textcolor{keyword}{const} = 0;}
-\DoxyCodeLine{00091   \textcolor{comment}{// TODO: virtual void generateCode() = 0;}}
-\DoxyCodeLine{00092   \textcolor{keyword}{const} std::string\& getTypeName()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} typeNames[nameOffset]; \}}
-\DoxyCodeLine{00093   \textcolor{comment}{// using this XDL type as ASCII text, not formatted}}
-\DoxyCodeLine{00094     \textcolor{comment}{// each class must implement its own iterator?}}
-\DoxyCodeLine{00095     \textcolor{keyword}{virtual} \mbox{\hyperlink{classXDLIterator}{XDLIterator}}* createIterator();}
-\DoxyCodeLine{00096   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00097   \textcolor{comment}{// TODO: for efficiency, add another display function since we usually do NOT}}
-\DoxyCodeLine{00098   \textcolor{comment}{// want to know w,h virtual void display(Buffer\& in, Canvas* c, const Style*}}
-\DoxyCodeLine{00099   \textcolor{comment}{// s, float x0, float y0) const; using this XDL type, output formatted}}
-\DoxyCodeLine{00100   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[])\textcolor{keyword}{ const }\{\}}
-\DoxyCodeLine{00101   \textcolor{comment}{/* read from metadata and create a struct of all the variables specified}}
-\DoxyCodeLine{00102 \textcolor{comment}{           if any variables are structures, then this can get recursive}}
-\DoxyCodeLine{00103 \textcolor{comment}{   */}}
-\DoxyCodeLine{00104   \textcolor{keyword}{static} \textcolor{keywordtype}{void} readMeta(\mbox{\hyperlink{classXDLCompiler}{XDLCompiler}}* compiler, \mbox{\hyperlink{classBuffer}{Buffer}}\& in, uint32\_t count, \mbox{\hyperlink{classStruct}{Struct}}* s);}
-\DoxyCodeLine{00105   \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classStruct}{Struct}}* read(\mbox{\hyperlink{classBuffer}{Buffer}}\& in);}
-\DoxyCodeLine{00106   \textcolor{keyword}{static} DataType readType(\mbox{\hyperlink{classBuffer}{Buffer}}\& in);}
-\DoxyCodeLine{00107 \};}
-\DoxyCodeLine{00108 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00109}\mbox{\hyperlink{classXDLIterator}{00109}} \textcolor{keyword}{class }\mbox{\hyperlink{classXDLIterator}{XDLIterator}} \{}
-\DoxyCodeLine{00110 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00111     uint32\_t pos;}
-\DoxyCodeLine{00112 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00113     \mbox{\hyperlink{classXDLIterator}{XDLIterator}}() : pos(0) \{\}}
-\DoxyCodeLine{00114     \textcolor{keywordtype}{void} advance() \{ pos++; \}}
-\DoxyCodeLine{00115     \textcolor{keywordtype}{void} advance(uint32\_t d) \{ pos += d; \}}
-\DoxyCodeLine{00116     uint32\_t getPos()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} pos; \}}
-\DoxyCodeLine{00117 \};}
-\DoxyCodeLine{00118 }
-\DoxyCodeLine{00119 \textcolor{comment}{/*}}
-\DoxyCodeLine{00120 \textcolor{comment}{    XDLRaw loads block binary data and can write it directly to the client}}
-\DoxyCodeLine{00121 \textcolor{comment}{    without bothering to analyze. Useful for large datasets that don't change}}
-\DoxyCodeLine{00122 \textcolor{comment}{    often. Uses extremely little CPU}}
-\DoxyCodeLine{00123 \textcolor{comment}{ */}}
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00124}\mbox{\hyperlink{classXDLRaw}{00124}} \textcolor{keyword}{class }\mbox{\hyperlink{classXDLRaw}{XDLRaw}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00125 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00126     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* data;}
-\DoxyCodeLine{00127     \textcolor{keywordtype}{size\_t} len;}
-\DoxyCodeLine{00128     \textcolor{keyword}{friend} \mbox{\hyperlink{classBuffer}{Buffer}};}
-\DoxyCodeLine{00129 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00130     \mbox{\hyperlink{classXDLRaw}{XDLRaw}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* p, \textcolor{keywordtype}{size\_t} len) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}XDLRaw"{}}), data(p), len(len) \{\}}
-\DoxyCodeLine{00131   DataType getDataType() \textcolor{keyword}{const};}
-\DoxyCodeLine{00132   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00133   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const};}
-\DoxyCodeLine{00134   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00135   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00136 \};}
-\DoxyCodeLine{00137 }
-\DoxyCodeLine{00138 \textcolor{comment}{/*}}
-\DoxyCodeLine{00139 \textcolor{comment}{}}
-\DoxyCodeLine{00140 \textcolor{comment}{*/}}
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00141}\mbox{\hyperlink{classCompoundType}{00141}} \textcolor{keyword}{class }\mbox{\hyperlink{classCompoundType}{CompoundType}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00142  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00143   \mbox{\hyperlink{classCompoundType}{CompoundType}}(\textcolor{keyword}{const} std::string\& name) : \mbox{\hyperlink{classXDLType}{XDLType}}(name) \{\}}
-\DoxyCodeLine{00144   \mbox{\hyperlink{classCompoundType}{CompoundType}}() : \mbox{\hyperlink{classXDLType}{XDLType}}() \{\}}
-\DoxyCodeLine{00145 \};}
-\DoxyCodeLine{00146 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00147}\mbox{\hyperlink{classU8}{00147}} \textcolor{keyword}{class }\mbox{\hyperlink{classU8}{U8}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00148  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00149   uint8\_t val;}
+\DoxyCodeLine{00058   \textcolor{keyword}{static} \mbox{\hyperlink{classDynArray}{DynArray<std::string>}}}
+\DoxyCodeLine{00059       typeNames;  \textcolor{comment}{// the list of all unique names in the system}}
+\DoxyCodeLine{00060   \textcolor{keyword}{static} std::unordered\_map<std::string, uint32\_t> byName;}
+\DoxyCodeLine{00061   \textcolor{keyword}{static} \textcolor{keywordtype}{void} addType(\textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* type);}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00064   \textcolor{keyword}{static} \textcolor{keywordtype}{void} classInit();}
+\DoxyCodeLine{00065   \textcolor{keyword}{static} \textcolor{keywordtype}{void} classCleanup();}
+\DoxyCodeLine{00066   \textcolor{keyword}{static} uint32\_t computeNameOffset(\textcolor{keyword}{const} std::string\& typeName) \{}
+\DoxyCodeLine{00067     uint32\_t nameOffset;}
+\DoxyCodeLine{00068     \textcolor{keywordflow}{if} (byName.find(typeName) != byName.end())}
+\DoxyCodeLine{00069       nameOffset = byName.at(typeName);}
+\DoxyCodeLine{00070     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00071       nameOffset = byName[typeName] = typeNames.size();}
+\DoxyCodeLine{00072       typeNames.add(typeName);}
+\DoxyCodeLine{00073     \}}
+\DoxyCodeLine{00074     \textcolor{keywordflow}{return} nameOffset;}
+\DoxyCodeLine{00075   \}}
+\DoxyCodeLine{00076   \textcolor{keyword}{static} uint32\_t computeNameOffset(DataType t) \{}
+\DoxyCodeLine{00077     uint32\_t nameOffset = 0;}
+\DoxyCodeLine{00078     \textcolor{keywordflow}{return} nameOffset;}
+\DoxyCodeLine{00079   \}}
+\DoxyCodeLine{00080   \mbox{\hyperlink{classXDLType}{XDLType}}() \{\}}
+\DoxyCodeLine{00081   \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{keyword}{const} std::string\& typeName)}
+\DoxyCodeLine{00082       : nameOffset(computeNameOffset(typeName)) \{\}}
+\DoxyCodeLine{00083   \mbox{\hyperlink{classXDLType}{XDLType}}(DataType t) : nameOffset(computeNameOffset(t)) \{\}}
+\DoxyCodeLine{00084   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& b) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{00085   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const};}
+\DoxyCodeLine{00086   \textcolor{keyword}{virtual} uint32\_t size() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{00087   \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* getBuiltinType(DataType dt) \{}
+\DoxyCodeLine{00088     \textcolor{keywordflow}{return} types[uint32\_t(dt)];}
+\DoxyCodeLine{00089   \}}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091   \textcolor{keyword}{virtual} DataType getDataType() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{00092   \textcolor{comment}{// TODO: virtual void generateCode() = 0;}}
+\DoxyCodeLine{00093   \textcolor{keyword}{const} std::string\& getTypeName()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} typeNames[nameOffset]; \}}
+\DoxyCodeLine{00094   \textcolor{comment}{// using this XDL type as ASCII text, not formatted}}
+\DoxyCodeLine{00095   \textcolor{comment}{// each class must implement its own iterator?}}
+\DoxyCodeLine{00096   \textcolor{keyword}{virtual} \mbox{\hyperlink{classXDLIterator}{XDLIterator}}* createIterator();}
+\DoxyCodeLine{00097   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00098   \textcolor{comment}{// TODO: for efficiency, add another display function since we usually do NOT}}
+\DoxyCodeLine{00099   \textcolor{comment}{// want to know w,h virtual void display(Buffer\& in, Canvas* c, const Style*}}
+\DoxyCodeLine{00100   \textcolor{comment}{// s, float x0, float y0) const; using this XDL type, output formatted}}
+\DoxyCodeLine{00101   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[])\textcolor{keyword}{ const }\{\}}
+\DoxyCodeLine{00102   \textcolor{comment}{/* read from metadata and create a struct of all the variables specified}}
+\DoxyCodeLine{00103 \textcolor{comment}{           if any variables are structures, then this can get recursive}}
+\DoxyCodeLine{00104 \textcolor{comment}{   */}}
+\DoxyCodeLine{00105   \textcolor{keyword}{static} \textcolor{keywordtype}{void} readMeta(\mbox{\hyperlink{classXDLCompiler}{XDLCompiler}}* compiler, \mbox{\hyperlink{classBuffer}{Buffer}}\& in, uint32\_t count,}
+\DoxyCodeLine{00106                        \mbox{\hyperlink{classStruct}{Struct}}* s);}
+\DoxyCodeLine{00107   \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classStruct}{Struct}}* read(\mbox{\hyperlink{classBuffer}{Buffer}}\& in);}
+\DoxyCodeLine{00108   \textcolor{keyword}{static} DataType readType(\mbox{\hyperlink{classBuffer}{Buffer}}\& in);}
+\DoxyCodeLine{00109 \};}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00111}\mbox{\hyperlink{classXDLIterator}{00111}} \textcolor{keyword}{class }\mbox{\hyperlink{classXDLIterator}{XDLIterator}} \{}
+\DoxyCodeLine{00112  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00113   uint32\_t pos;}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00116   \mbox{\hyperlink{classXDLIterator}{XDLIterator}}() : pos(0) \{\}}
+\DoxyCodeLine{00117   \textcolor{keywordtype}{void} advance() \{ pos++; \}}
+\DoxyCodeLine{00118   \textcolor{keywordtype}{void} advance(uint32\_t d) \{ pos += d; \}}
+\DoxyCodeLine{00119   uint32\_t getPos()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} pos; \}}
+\DoxyCodeLine{00120 \};}
+\DoxyCodeLine{00121 }
+\DoxyCodeLine{00122 \textcolor{comment}{/*}}
+\DoxyCodeLine{00123 \textcolor{comment}{        XDLRaw loads block binary data and can write it directly to the client}}
+\DoxyCodeLine{00124 \textcolor{comment}{        without bothering to analyze. Useful for large datasets that don't}}
+\DoxyCodeLine{00125 \textcolor{comment}{   change often. Uses extremely little CPU}}
+\DoxyCodeLine{00126 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00127}\mbox{\hyperlink{classXDLRaw}{00127}} \textcolor{keyword}{class }\mbox{\hyperlink{classXDLRaw}{XDLRaw}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00128  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00129   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* data;}
+\DoxyCodeLine{00130   \textcolor{keywordtype}{size\_t} len;}
+\DoxyCodeLine{00131   \textcolor{keyword}{friend} \mbox{\hyperlink{classBuffer}{Buffer}};}
+\DoxyCodeLine{00132 }
+\DoxyCodeLine{00133  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00134   \mbox{\hyperlink{classXDLRaw}{XDLRaw}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* p, \textcolor{keywordtype}{size\_t} len) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}XDLRaw"{}}), data(p), len(len) \{\}}
+\DoxyCodeLine{00135   DataType getDataType() \textcolor{keyword}{const};}
+\DoxyCodeLine{00136   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00137   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const};}
+\DoxyCodeLine{00138   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00139   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00140 \};}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142 \textcolor{comment}{/*}}
+\DoxyCodeLine{00143 \textcolor{comment}{}}
+\DoxyCodeLine{00144 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00145}\mbox{\hyperlink{classCompoundType}{00145}} \textcolor{keyword}{class }\mbox{\hyperlink{classCompoundType}{CompoundType}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00146  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00147   \mbox{\hyperlink{classCompoundType}{CompoundType}}(\textcolor{keyword}{const} std::string\& name) : \mbox{\hyperlink{classXDLType}{XDLType}}(name) \{\}}
+\DoxyCodeLine{00148   \mbox{\hyperlink{classCompoundType}{CompoundType}}() : \mbox{\hyperlink{classXDLType}{XDLType}}() \{\}}
+\DoxyCodeLine{00149 \};}
 \DoxyCodeLine{00150 }
-\DoxyCodeLine{00151  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00152   \mbox{\hyperlink{classU8}{U8}}(uint8\_t val = 0) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U8"{}}), val(val) \{\}}
-\DoxyCodeLine{00153   DataType getDataType() \textcolor{keyword}{const};}
-\DoxyCodeLine{00154   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00155   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const};}
-\DoxyCodeLine{00156   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00157   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00158 \};}
-\DoxyCodeLine{00159 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00160}\mbox{\hyperlink{classU16}{00160}} \textcolor{keyword}{class }\mbox{\hyperlink{classU16}{U16}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00161  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00162   uint16\_t val;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00151}\mbox{\hyperlink{classU8}{00151}} \textcolor{keyword}{class }\mbox{\hyperlink{classU8}{U8}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00152  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00153   uint8\_t val;}
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{00155  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00156   \mbox{\hyperlink{classU8}{U8}}(uint8\_t val = 0) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U8"{}}), val(val) \{\}}
+\DoxyCodeLine{00157   DataType getDataType() \textcolor{keyword}{const};}
+\DoxyCodeLine{00158   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00159   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const};}
+\DoxyCodeLine{00160   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00161   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00162 \};}
 \DoxyCodeLine{00163 }
-\DoxyCodeLine{00164  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00165   \mbox{\hyperlink{classU16}{U16}}(uint16\_t val = 0) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U16"{}}), val(val) \{\}}
-\DoxyCodeLine{00166   DataType getDataType() \textcolor{keyword}{const};}
-\DoxyCodeLine{00167   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00168   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const};}
-\DoxyCodeLine{00169   \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classU16}{U16}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classU16}{U16}}\& b) \{ \textcolor{keywordflow}{return} a.val == b.val; \}}
-\DoxyCodeLine{00170   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00171   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00172 \};}
-\DoxyCodeLine{00173 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00174}\mbox{\hyperlink{classU24}{00174}} \textcolor{keyword}{class }\mbox{\hyperlink{classU24}{U24}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00175  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00176   uint32\_t val;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00164}\mbox{\hyperlink{classU16}{00164}} \textcolor{keyword}{class }\mbox{\hyperlink{classU16}{U16}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00165  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00166   uint16\_t val;}
+\DoxyCodeLine{00167 }
+\DoxyCodeLine{00168  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00169   \mbox{\hyperlink{classU16}{U16}}(uint16\_t val = 0) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U16"{}}), val(val) \{\}}
+\DoxyCodeLine{00170   DataType getDataType() \textcolor{keyword}{const};}
+\DoxyCodeLine{00171   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00172   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const};}
+\DoxyCodeLine{00173   \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classU16}{U16}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classU16}{U16}}\& b) \{ \textcolor{keywordflow}{return} a.val == b.val; \}}
+\DoxyCodeLine{00174   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00175   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00176 \};}
 \DoxyCodeLine{00177 }
-\DoxyCodeLine{00178  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00179   \mbox{\hyperlink{classU24}{U24}}(uint32\_t val = 0) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U24"{}}), val(val \& 0xFFFFFF) \{\}}
-\DoxyCodeLine{00180   DataType getDataType() \textcolor{keyword}{const};}
-\DoxyCodeLine{00181   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00182   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00183   \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classU24}{U24}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classU24}{U24}}\& b) \{ \textcolor{keywordflow}{return} a.val == b.val; \}}
-\DoxyCodeLine{00184   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00185   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00186 \};}
-\DoxyCodeLine{00187 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00188}\mbox{\hyperlink{classU32}{00188}} \textcolor{keyword}{class }\mbox{\hyperlink{classU32}{U32}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00189  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00190   uint32\_t val;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00178}\mbox{\hyperlink{classU24}{00178}} \textcolor{keyword}{class }\mbox{\hyperlink{classU24}{U24}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00179  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00180   uint32\_t val;}
+\DoxyCodeLine{00181 }
+\DoxyCodeLine{00182  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00183   \mbox{\hyperlink{classU24}{U24}}(uint32\_t val = 0) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U24"{}}), val(val \& 0xFFFFFF) \{\}}
+\DoxyCodeLine{00184   DataType getDataType() \textcolor{keyword}{const};}
+\DoxyCodeLine{00185   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00186   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00187   \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classU24}{U24}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classU24}{U24}}\& b) \{ \textcolor{keywordflow}{return} a.val == b.val; \}}
+\DoxyCodeLine{00188   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00189   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00190 \};}
 \DoxyCodeLine{00191 }
-\DoxyCodeLine{00192  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00193   \mbox{\hyperlink{classU32}{U32}}(uint32\_t val = 0) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U32"{}}), val(val) \{\}}
-\DoxyCodeLine{00194   DataType getDataType() \textcolor{keyword}{const};}
-\DoxyCodeLine{00195   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00196   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00197   \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classU32}{U32}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classU32}{U32}}\& b) \{ \textcolor{keywordflow}{return} a.val == b.val; \}}
-\DoxyCodeLine{00198   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00199   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00200 \};}
-\DoxyCodeLine{00201 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00202}\mbox{\hyperlink{classU64}{00202}} \textcolor{keyword}{class }\mbox{\hyperlink{classU64}{U64}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00203  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00204   uint64\_t val;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00192}\mbox{\hyperlink{classU32}{00192}} \textcolor{keyword}{class }\mbox{\hyperlink{classU32}{U32}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00193  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00194   uint32\_t val;}
+\DoxyCodeLine{00195 }
+\DoxyCodeLine{00196  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00197   \mbox{\hyperlink{classU32}{U32}}(uint32\_t val = 0) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U32"{}}), val(val) \{\}}
+\DoxyCodeLine{00198   DataType getDataType() \textcolor{keyword}{const};}
+\DoxyCodeLine{00199   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00200   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00201   \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classU32}{U32}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classU32}{U32}}\& b) \{ \textcolor{keywordflow}{return} a.val == b.val; \}}
+\DoxyCodeLine{00202   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00203   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00204 \};}
 \DoxyCodeLine{00205 }
-\DoxyCodeLine{00206  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00207   \mbox{\hyperlink{classU64}{U64}}(uint64\_t val = 0) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U64"{}}), val(val) \{\}}
-\DoxyCodeLine{00208   DataType getDataType() \textcolor{keyword}{const};}
-\DoxyCodeLine{00209   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00210   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00211   \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classU64}{U64}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classU64}{U64}}\& b) \{ \textcolor{keywordflow}{return} a.val == b.val; \}}
-\DoxyCodeLine{00212   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00213   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00214 \};}
-\DoxyCodeLine{00215 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00216}\mbox{\hyperlink{classU128}{00216}} \textcolor{keyword}{class }\mbox{\hyperlink{classU128}{U128}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00217  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00218   uint64\_t a, b;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00206}\mbox{\hyperlink{classU64}{00206}} \textcolor{keyword}{class }\mbox{\hyperlink{classU64}{U64}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00207  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00208   uint64\_t val;}
+\DoxyCodeLine{00209 }
+\DoxyCodeLine{00210  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00211   \mbox{\hyperlink{classU64}{U64}}(uint64\_t val = 0) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U64"{}}), val(val) \{\}}
+\DoxyCodeLine{00212   DataType getDataType() \textcolor{keyword}{const};}
+\DoxyCodeLine{00213   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00214   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00215   \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classU64}{U64}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classU64}{U64}}\& b) \{ \textcolor{keywordflow}{return} a.val == b.val; \}}
+\DoxyCodeLine{00216   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00217   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00218 \};}
 \DoxyCodeLine{00219 }
-\DoxyCodeLine{00220  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00221   \mbox{\hyperlink{classU128}{U128}}(uint64\_t a = 0, uint64\_t b = 0) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U128"{}}), a(a), b(b) \{\}}
-\DoxyCodeLine{00222   DataType getDataType() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00223   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00224   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00225   \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classU128}{U128}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classU128}{U128}}\& b) \{}
-\DoxyCodeLine{00226     \textcolor{keywordflow}{return} a.a == b.a \&\& a.b == b.b;}
-\DoxyCodeLine{00227   \}}
-\DoxyCodeLine{00228   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00229   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00230 \};}
-\DoxyCodeLine{00231 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00232}\mbox{\hyperlink{classU256}{00232}} \textcolor{keyword}{class }\mbox{\hyperlink{classU256}{U256}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00233  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00234   uint64\_t a, b, c, d;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00220}\mbox{\hyperlink{classU128}{00220}} \textcolor{keyword}{class }\mbox{\hyperlink{classU128}{U128}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00221  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00222   uint64\_t a, b;}
+\DoxyCodeLine{00223 }
+\DoxyCodeLine{00224  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00225   \mbox{\hyperlink{classU128}{U128}}(uint64\_t a = 0, uint64\_t b = 0) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U128"{}}), a(a), b(b) \{\}}
+\DoxyCodeLine{00226   DataType getDataType() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00227   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00228   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00229   \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classU128}{U128}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classU128}{U128}}\& b) \{}
+\DoxyCodeLine{00230     \textcolor{keywordflow}{return} a.a == b.a \&\& a.b == b.b;}
+\DoxyCodeLine{00231   \}}
+\DoxyCodeLine{00232   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00233   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00234 \};}
 \DoxyCodeLine{00235 }
-\DoxyCodeLine{00236  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00237   \mbox{\hyperlink{classU256}{U256}}(uint64\_t a, uint64\_t b, uint64\_t c, uint64\_t d)}
-\DoxyCodeLine{00238       : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U256"{}}), a(a), b(b), c(c), d(d) \{\}}
-\DoxyCodeLine{00239   \mbox{\hyperlink{classU256}{U256}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U256"{}}), a(0), b(0), c(0), d(0) \{\}}
-\DoxyCodeLine{00240   DataType getDataType() \textcolor{keyword}{const};}
-\DoxyCodeLine{00241   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00242   \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classU256}{U256}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classU256}{U256}}\& b) \{}
-\DoxyCodeLine{00243     \textcolor{keywordflow}{return} a.a == b.a \&\& a.b == b.b;}
-\DoxyCodeLine{00244   \}}
-\DoxyCodeLine{00245   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00246   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00247   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00248 \};}
-\DoxyCodeLine{00249 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00250}\mbox{\hyperlink{classI8}{00250}} \textcolor{keyword}{class }\mbox{\hyperlink{classI8}{I8}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00251  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00252   int8\_t val;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00236}\mbox{\hyperlink{classU256}{00236}} \textcolor{keyword}{class }\mbox{\hyperlink{classU256}{U256}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00237  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00238   uint64\_t a, b, c, d;}
+\DoxyCodeLine{00239 }
+\DoxyCodeLine{00240  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00241   \mbox{\hyperlink{classU256}{U256}}(uint64\_t a, uint64\_t b, uint64\_t c, uint64\_t d)}
+\DoxyCodeLine{00242       : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U256"{}}), a(a), b(b), c(c), d(d) \{\}}
+\DoxyCodeLine{00243   \mbox{\hyperlink{classU256}{U256}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U256"{}}), a(0), b(0), c(0), d(0) \{\}}
+\DoxyCodeLine{00244   DataType getDataType() \textcolor{keyword}{const};}
+\DoxyCodeLine{00245   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00246   \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classU256}{U256}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classU256}{U256}}\& b) \{}
+\DoxyCodeLine{00247     \textcolor{keywordflow}{return} a.a == b.a \&\& a.b == b.b;}
+\DoxyCodeLine{00248   \}}
+\DoxyCodeLine{00249   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00250   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00251   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00252 \};}
 \DoxyCodeLine{00253 }
-\DoxyCodeLine{00254  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00255   \mbox{\hyperlink{classI8}{I8}}(int8\_t val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I8"{}}), val(val) \{\}}
-\DoxyCodeLine{00256   \mbox{\hyperlink{classI8}{I8}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I8"{}}), val(0) \{\}}
-\DoxyCodeLine{00257   DataType getDataType() \textcolor{keyword}{const};}
-\DoxyCodeLine{00258   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00259   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00260   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00261   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00262 \};}
-\DoxyCodeLine{00263 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00264}\mbox{\hyperlink{classI16}{00264}} \textcolor{keyword}{class }\mbox{\hyperlink{classI16}{I16}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00265  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00266   int16\_t val;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00254}\mbox{\hyperlink{classI8}{00254}} \textcolor{keyword}{class }\mbox{\hyperlink{classI8}{I8}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00255  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00256   int8\_t val;}
+\DoxyCodeLine{00257 }
+\DoxyCodeLine{00258  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00259   \mbox{\hyperlink{classI8}{I8}}(int8\_t val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I8"{}}), val(val) \{\}}
+\DoxyCodeLine{00260   \mbox{\hyperlink{classI8}{I8}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I8"{}}), val(0) \{\}}
+\DoxyCodeLine{00261   DataType getDataType() \textcolor{keyword}{const};}
+\DoxyCodeLine{00262   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00263   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00264   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00265   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00266 \};}
 \DoxyCodeLine{00267 }
-\DoxyCodeLine{00268  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00269   \mbox{\hyperlink{classI16}{I16}}(int16\_t val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I16"{}}), val(val) \{\}}
-\DoxyCodeLine{00270   \mbox{\hyperlink{classI16}{I16}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I16"{}}), val(0) \{\}}
-\DoxyCodeLine{00271   DataType getDataType() \textcolor{keyword}{const};}
-\DoxyCodeLine{00272   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00273   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00274   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00275   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00276 \};}
-\DoxyCodeLine{00277 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00278}\mbox{\hyperlink{classI24}{00278}} \textcolor{keyword}{class }\mbox{\hyperlink{classI24}{I24}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00279  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00280   int32\_t val;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00268}\mbox{\hyperlink{classI16}{00268}} \textcolor{keyword}{class }\mbox{\hyperlink{classI16}{I16}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00269  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00270   int16\_t val;}
+\DoxyCodeLine{00271 }
+\DoxyCodeLine{00272  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00273   \mbox{\hyperlink{classI16}{I16}}(int16\_t val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I16"{}}), val(val) \{\}}
+\DoxyCodeLine{00274   \mbox{\hyperlink{classI16}{I16}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I16"{}}), val(0) \{\}}
+\DoxyCodeLine{00275   DataType getDataType() \textcolor{keyword}{const};}
+\DoxyCodeLine{00276   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00277   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00278   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00279   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00280 \};}
 \DoxyCodeLine{00281 }
-\DoxyCodeLine{00282  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00283   \mbox{\hyperlink{classI24}{I24}}(int32\_t val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I24"{}}), val(val) \{\}}
-\DoxyCodeLine{00284   \mbox{\hyperlink{classI24}{I24}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I24"{}}), val(0) \{\}}
-\DoxyCodeLine{00285   DataType getDataType() \textcolor{keyword}{const};}
-\DoxyCodeLine{00286   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00287   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00288   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00289   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00290 \};}
-\DoxyCodeLine{00291 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00292}\mbox{\hyperlink{classI32}{00292}} \textcolor{keyword}{class }\mbox{\hyperlink{classI32}{I32}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00293  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00294   int32\_t val;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00282}\mbox{\hyperlink{classI24}{00282}} \textcolor{keyword}{class }\mbox{\hyperlink{classI24}{I24}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00283  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00284   int32\_t val;}
+\DoxyCodeLine{00285 }
+\DoxyCodeLine{00286  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00287   \mbox{\hyperlink{classI24}{I24}}(int32\_t val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I24"{}}), val(val) \{\}}
+\DoxyCodeLine{00288   \mbox{\hyperlink{classI24}{I24}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I24"{}}), val(0) \{\}}
+\DoxyCodeLine{00289   DataType getDataType() \textcolor{keyword}{const};}
+\DoxyCodeLine{00290   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00291   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00292   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00293   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00294 \};}
 \DoxyCodeLine{00295 }
-\DoxyCodeLine{00296  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00297   \mbox{\hyperlink{classI32}{I32}}(int32\_t val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I32"{}}), val(val) \{\}}
-\DoxyCodeLine{00298   \mbox{\hyperlink{classI32}{I32}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I32"{}}), val(0) \{\}}
-\DoxyCodeLine{00299   DataType getDataType() \textcolor{keyword}{const};}
-\DoxyCodeLine{00300   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00301   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00302   ;}
-\DoxyCodeLine{00303   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00304   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00305 \};}
-\DoxyCodeLine{00306 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00307}\mbox{\hyperlink{classI64}{00307}} \textcolor{keyword}{class }\mbox{\hyperlink{classI64}{I64}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00308  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00309   int8\_t val;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00296}\mbox{\hyperlink{classI32}{00296}} \textcolor{keyword}{class }\mbox{\hyperlink{classI32}{I32}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00297  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00298   int32\_t val;}
+\DoxyCodeLine{00299 }
+\DoxyCodeLine{00300  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00301   \mbox{\hyperlink{classI32}{I32}}(int32\_t val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I32"{}}), val(val) \{\}}
+\DoxyCodeLine{00302   \mbox{\hyperlink{classI32}{I32}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I32"{}}), val(0) \{\}}
+\DoxyCodeLine{00303   DataType getDataType() \textcolor{keyword}{const};}
+\DoxyCodeLine{00304   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00305   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00306   ;}
+\DoxyCodeLine{00307   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00308   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00309 \};}
 \DoxyCodeLine{00310 }
-\DoxyCodeLine{00311  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00312   \mbox{\hyperlink{classI64}{I64}}(int64\_t val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I64"{}}), val(val) \{\}}
-\DoxyCodeLine{00313   \mbox{\hyperlink{classI64}{I64}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I64"{}}), val(0) \{\}}
-\DoxyCodeLine{00314   DataType getDataType() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00315   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00316   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00317   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00318   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00319 \};}
-\DoxyCodeLine{00320 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00321}\mbox{\hyperlink{classI128}{00321}} \textcolor{keyword}{class }\mbox{\hyperlink{classI128}{I128}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00322  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00323   int64\_t a;}
-\DoxyCodeLine{00324   uint64\_t b;}
-\DoxyCodeLine{00325 }
-\DoxyCodeLine{00326  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00327   \mbox{\hyperlink{classI128}{I128}}(int64\_t a, uint64\_t b) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I128"{}}), a(a), b(b) \{\}}
-\DoxyCodeLine{00328   \mbox{\hyperlink{classI128}{I128}}(int64\_t b)}
-\DoxyCodeLine{00329       : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U128"{}}), a(b < 0 ? 0xFFFFFFFFFFFFFFFFLL : 0), b(b) \{\}}
-\DoxyCodeLine{00330   \mbox{\hyperlink{classI128}{I128}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U128"{}}), a(0), b(0) \{\}}
-\DoxyCodeLine{00331   DataType getDataType() \textcolor{keyword}{const};}
-\DoxyCodeLine{00332   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00333   \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classI128}{I128}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classI128}{I128}}\& b) \{}
-\DoxyCodeLine{00334     \textcolor{keywordflow}{return} a.a == b.a \&\& a.b == b.b;}
-\DoxyCodeLine{00335   \}}
-\DoxyCodeLine{00336   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00337   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00338   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00339 \};}
-\DoxyCodeLine{00340 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00341}\mbox{\hyperlink{classI256}{00341}} \textcolor{keyword}{class }\mbox{\hyperlink{classI256}{I256}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00342  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00343   int64\_t a;}
-\DoxyCodeLine{00344   uint64\_t b, c, d;}
-\DoxyCodeLine{00345 }
-\DoxyCodeLine{00346  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00347   \mbox{\hyperlink{classI256}{I256}}(int64\_t a, uint64\_t b, uint64\_t c, uint64\_t d)}
-\DoxyCodeLine{00348       : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I256"{}}), a(a), b(b), c(c), d(d) \{\}}
-\DoxyCodeLine{00349   \mbox{\hyperlink{classI256}{I256}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I256"{}}), a(0), b(0), c(0), d(0) \{\}}
-\DoxyCodeLine{00350   DataType getDataType() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00351   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00352   \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classI256}{I256}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classI256}{I256}}\& b) \{}
-\DoxyCodeLine{00353     \textcolor{keywordflow}{return} a.a == b.a \&\& a.b == b.b;}
-\DoxyCodeLine{00354   \}}
-\DoxyCodeLine{00355   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00356   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00357   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00358 \};}
-\DoxyCodeLine{00359 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00360}\mbox{\hyperlink{classBool}{00360}} \textcolor{keyword}{class }\mbox{\hyperlink{classBool}{Bool}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00361  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00362   \textcolor{keywordtype}{bool} val;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00311}\mbox{\hyperlink{classI64}{00311}} \textcolor{keyword}{class }\mbox{\hyperlink{classI64}{I64}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00312  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00313   int8\_t val;}
+\DoxyCodeLine{00314 }
+\DoxyCodeLine{00315  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00316   \mbox{\hyperlink{classI64}{I64}}(int64\_t val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I64"{}}), val(val) \{\}}
+\DoxyCodeLine{00317   \mbox{\hyperlink{classI64}{I64}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I64"{}}), val(0) \{\}}
+\DoxyCodeLine{00318   DataType getDataType() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00319   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00320   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00321   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00322   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00323 \};}
+\DoxyCodeLine{00324 }
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00325}\mbox{\hyperlink{classI128}{00325}} \textcolor{keyword}{class }\mbox{\hyperlink{classI128}{I128}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00326  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00327   int64\_t a;}
+\DoxyCodeLine{00328   uint64\_t b;}
+\DoxyCodeLine{00329 }
+\DoxyCodeLine{00330  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00331   \mbox{\hyperlink{classI128}{I128}}(int64\_t a, uint64\_t b) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I128"{}}), a(a), b(b) \{\}}
+\DoxyCodeLine{00332   \mbox{\hyperlink{classI128}{I128}}(int64\_t b)}
+\DoxyCodeLine{00333       : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U128"{}}), a(b < 0 ? 0xFFFFFFFFFFFFFFFFLL : 0), b(b) \{\}}
+\DoxyCodeLine{00334   \mbox{\hyperlink{classI128}{I128}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}U128"{}}), a(0), b(0) \{\}}
+\DoxyCodeLine{00335   DataType getDataType() \textcolor{keyword}{const};}
+\DoxyCodeLine{00336   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00337   \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classI128}{I128}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classI128}{I128}}\& b) \{}
+\DoxyCodeLine{00338     \textcolor{keywordflow}{return} a.a == b.a \&\& a.b == b.b;}
+\DoxyCodeLine{00339   \}}
+\DoxyCodeLine{00340   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00341   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00342   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00343 \};}
+\DoxyCodeLine{00344 }
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00345}\mbox{\hyperlink{classI256}{00345}} \textcolor{keyword}{class }\mbox{\hyperlink{classI256}{I256}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00346  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00347   int64\_t a;}
+\DoxyCodeLine{00348   uint64\_t b, c, d;}
+\DoxyCodeLine{00349 }
+\DoxyCodeLine{00350  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00351   \mbox{\hyperlink{classI256}{I256}}(int64\_t a, uint64\_t b, uint64\_t c, uint64\_t d)}
+\DoxyCodeLine{00352       : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I256"{}}), a(a), b(b), c(c), d(d) \{\}}
+\DoxyCodeLine{00353   \mbox{\hyperlink{classI256}{I256}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}I256"{}}), a(0), b(0), c(0), d(0) \{\}}
+\DoxyCodeLine{00354   DataType getDataType() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00355   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00356   \textcolor{keyword}{friend} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classI256}{I256}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{classI256}{I256}}\& b) \{}
+\DoxyCodeLine{00357     \textcolor{keywordflow}{return} a.a == b.a \&\& a.b == b.b;}
+\DoxyCodeLine{00358   \}}
+\DoxyCodeLine{00359   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00360   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00361   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00362 \};}
 \DoxyCodeLine{00363 }
-\DoxyCodeLine{00364  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00365   \mbox{\hyperlink{classBool}{Bool}}(\textcolor{keywordtype}{bool} val = \textcolor{keyword}{false}) : val(val), \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}BOOL"{}}) \{\}}
-\DoxyCodeLine{00366   DataType getDataType() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00367   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00368   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00369   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00370   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00371 \};}
-\DoxyCodeLine{00372 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00373}\mbox{\hyperlink{classF32}{00373}} \textcolor{keyword}{class }\mbox{\hyperlink{classF32}{F32}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00374  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00375   \textcolor{keywordtype}{float} val;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00364}\mbox{\hyperlink{classBool}{00364}} \textcolor{keyword}{class }\mbox{\hyperlink{classBool}{Bool}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00365  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00366   \textcolor{keywordtype}{bool} val;}
+\DoxyCodeLine{00367 }
+\DoxyCodeLine{00368  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00369   \mbox{\hyperlink{classBool}{Bool}}(\textcolor{keywordtype}{bool} val = \textcolor{keyword}{false}) : val(val), \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}BOOL"{}}) \{\}}
+\DoxyCodeLine{00370   DataType getDataType() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00371   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00372   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00373   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00374   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00375 \};}
 \DoxyCodeLine{00376 }
-\DoxyCodeLine{00377  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00378   \mbox{\hyperlink{classF32}{F32}}(\textcolor{keywordtype}{float} val = 0) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}F32"{}}), val(val) \{\}}
-\DoxyCodeLine{00379   DataType getDataType() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00380   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00381   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00382   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00383   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00384 \};}
-\DoxyCodeLine{00385 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00386}\mbox{\hyperlink{classF64}{00386}} \textcolor{keyword}{class }\mbox{\hyperlink{classF64}{F64}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00387  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00388   \textcolor{keywordtype}{double} val;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00377}\mbox{\hyperlink{classF32}{00377}} \textcolor{keyword}{class }\mbox{\hyperlink{classF32}{F32}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00378  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00379   \textcolor{keywordtype}{float} val;}
+\DoxyCodeLine{00380 }
+\DoxyCodeLine{00381  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00382   \mbox{\hyperlink{classF32}{F32}}(\textcolor{keywordtype}{float} val = 0) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}F32"{}}), val(val) \{\}}
+\DoxyCodeLine{00383   DataType getDataType() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00384   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00385   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00386   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00387   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00388 \};}
 \DoxyCodeLine{00389 }
-\DoxyCodeLine{00390  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00391   \mbox{\hyperlink{classF64}{F64}}(\textcolor{keywordtype}{double} val = 0) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}F64"{}}), val(val) \{\}}
-\DoxyCodeLine{00392   DataType getDataType() \textcolor{keyword}{const};}
-\DoxyCodeLine{00393   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00394   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00395   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00396   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00397 \};}
-\DoxyCodeLine{00398 }
-\DoxyCodeLine{00399 \textcolor{keyword}{class }\mbox{\hyperlink{classDate}{Date}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00400  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00401   int32\_t val;}
-\DoxyCodeLine{00402   \mbox{\hyperlink{classDate}{Date}}(int32\_t val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}Date"{}}), val(val) \{\}}
-\DoxyCodeLine{00403 }
-\DoxyCodeLine{00404  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00405   \mbox{\hyperlink{classDate}{Date}}(int32\_t year, uint8\_t month, uint8\_t day);}
-\DoxyCodeLine{00406   \mbox{\hyperlink{classDate}{Date}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}Date"{}}), val(0) \{\}}
-\DoxyCodeLine{00407   int32\_t getYear() \textcolor{keyword}{const};}
-\DoxyCodeLine{00408   uint32\_t getMonth() \textcolor{keyword}{const};}
-\DoxyCodeLine{00409   uint32\_t getDay() \textcolor{keyword}{const};}
-\DoxyCodeLine{00410   DataType getDataType() \textcolor{keyword}{const};}
-\DoxyCodeLine{00411   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00412   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00413   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00414   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00415 \};}
-\DoxyCodeLine{00416 }
-\DoxyCodeLine{00417 \textcolor{comment}{/*}}
-\DoxyCodeLine{00418 \textcolor{comment}{  Represent a Julian Date which uses a single double precision number to}}
-\DoxyCodeLine{00419 \textcolor{comment}{  represent a date relative to a known "{}0-\/day"{} called the epoch.}}
-\DoxyCodeLine{00420 \textcolor{comment}{}}
-\DoxyCodeLine{00421 \textcolor{comment}{  In Util is a JulianDate class that does the real Date arithmetic. That should}}
-\DoxyCodeLine{00422 \textcolor{comment}{  be brought in here.}}
-\DoxyCodeLine{00423 \textcolor{comment}{*/}}
-\DoxyCodeLine{00424 \textcolor{keyword}{class }\mbox{\hyperlink{classJulianDate}{JulianDate}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00425  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00426   \textcolor{keywordtype}{double} val;}
-\DoxyCodeLine{00427   \mbox{\hyperlink{classJulianDate}{JulianDate}}(\textcolor{keywordtype}{double} val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}JulDate"{}}), val(val) \{\}}
-\DoxyCodeLine{00428 }
-\DoxyCodeLine{00429  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00430   \mbox{\hyperlink{classJulianDate}{JulianDate}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}JulDate"{}}), val(0) \{\}}
-\DoxyCodeLine{00431   \mbox{\hyperlink{classJulianDate}{JulianDate}}(int32\_t year, uint8\_t month, uint8\_t day, uint8\_t hour,}
-\DoxyCodeLine{00432              uint8\_t min, uint8\_t sec);}
-\DoxyCodeLine{00433   int32\_t getYear() \textcolor{keyword}{const};}
-\DoxyCodeLine{00434   uint32\_t getMonth() \textcolor{keyword}{const};}
-\DoxyCodeLine{00435   uint32\_t getDay() \textcolor{keyword}{const};}
-\DoxyCodeLine{00436   uint32\_t getHour() \textcolor{keyword}{const};}
-\DoxyCodeLine{00437   uint32\_t getMin() \textcolor{keyword}{const};}
-\DoxyCodeLine{00438   \textcolor{keywordtype}{double} getSecond() \textcolor{keyword}{const};}
-\DoxyCodeLine{00439   DataType getDataType() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00440   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00441   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00442   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00443   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00444 \};}
-\DoxyCodeLine{00445 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00446}\mbox{\hyperlink{classTimestamp}{00446}} \textcolor{keyword}{class }\mbox{\hyperlink{classTimestamp}{Timestamp}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00447  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00448   uint64\_t val;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00390}\mbox{\hyperlink{classF64}{00390}} \textcolor{keyword}{class }\mbox{\hyperlink{classF64}{F64}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00391  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00392   \textcolor{keywordtype}{double} val;}
+\DoxyCodeLine{00393 }
+\DoxyCodeLine{00394  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00395   \mbox{\hyperlink{classF64}{F64}}(\textcolor{keywordtype}{double} val = 0) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}F64"{}}), val(val) \{\}}
+\DoxyCodeLine{00396   DataType getDataType() \textcolor{keyword}{const};}
+\DoxyCodeLine{00397   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00398   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00399   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00400   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00401 \};}
+\DoxyCodeLine{00402 }
+\DoxyCodeLine{00403 \textcolor{keyword}{class }\mbox{\hyperlink{classDate}{Date}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00404  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00405   int32\_t val;}
+\DoxyCodeLine{00406   \mbox{\hyperlink{classDate}{Date}}(int32\_t val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}Date"{}}), val(val) \{\}}
+\DoxyCodeLine{00407 }
+\DoxyCodeLine{00408  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00409   \mbox{\hyperlink{classDate}{Date}}(int32\_t year, uint8\_t month, uint8\_t day);}
+\DoxyCodeLine{00410   \mbox{\hyperlink{classDate}{Date}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}Date"{}}), val(0) \{\}}
+\DoxyCodeLine{00411   int32\_t getYear() \textcolor{keyword}{const};}
+\DoxyCodeLine{00412   uint32\_t getMonth() \textcolor{keyword}{const};}
+\DoxyCodeLine{00413   uint32\_t getDay() \textcolor{keyword}{const};}
+\DoxyCodeLine{00414   DataType getDataType() \textcolor{keyword}{const};}
+\DoxyCodeLine{00415   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00416   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00417   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00418   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00419 \};}
+\DoxyCodeLine{00420 }
+\DoxyCodeLine{00421 \textcolor{comment}{/*}}
+\DoxyCodeLine{00422 \textcolor{comment}{  Represent a Julian Date which uses a single double precision number to}}
+\DoxyCodeLine{00423 \textcolor{comment}{  represent a date relative to a known "{}0-\/day"{} called the epoch.}}
+\DoxyCodeLine{00424 \textcolor{comment}{}}
+\DoxyCodeLine{00425 \textcolor{comment}{  In Util is a JulianDate class that does the real Date arithmetic. That should}}
+\DoxyCodeLine{00426 \textcolor{comment}{  be brought in here.}}
+\DoxyCodeLine{00427 \textcolor{comment}{*/}}
+\DoxyCodeLine{00428 \textcolor{keyword}{class }\mbox{\hyperlink{classJulianDate}{JulianDate}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00429  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00430   \textcolor{keywordtype}{double} val;}
+\DoxyCodeLine{00431   \mbox{\hyperlink{classJulianDate}{JulianDate}}(\textcolor{keywordtype}{double} val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}JulDate"{}}), val(val) \{\}}
+\DoxyCodeLine{00432 }
+\DoxyCodeLine{00433  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00434   \mbox{\hyperlink{classJulianDate}{JulianDate}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}JulDate"{}}), val(0) \{\}}
+\DoxyCodeLine{00435   \mbox{\hyperlink{classJulianDate}{JulianDate}}(int32\_t year, uint8\_t month, uint8\_t day, uint8\_t hour,}
+\DoxyCodeLine{00436              uint8\_t min, uint8\_t sec);}
+\DoxyCodeLine{00437   int32\_t getYear() \textcolor{keyword}{const};}
+\DoxyCodeLine{00438   uint32\_t getMonth() \textcolor{keyword}{const};}
+\DoxyCodeLine{00439   uint32\_t getDay() \textcolor{keyword}{const};}
+\DoxyCodeLine{00440   uint32\_t getHour() \textcolor{keyword}{const};}
+\DoxyCodeLine{00441   uint32\_t getMin() \textcolor{keyword}{const};}
+\DoxyCodeLine{00442   \textcolor{keywordtype}{double} getSecond() \textcolor{keyword}{const};}
+\DoxyCodeLine{00443   DataType getDataType() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00444   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00445   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00446   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00447   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00448 \};}
 \DoxyCodeLine{00449 }
-\DoxyCodeLine{00450  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00451   \mbox{\hyperlink{classTimestamp}{Timestamp}}(uint64\_t v = 0) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}Timestamp"{}}), val(v) \{\}}
-\DoxyCodeLine{00452   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& b) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00453   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00454   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00455   DataType getDataType() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00456   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00457   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00458 \};}
-\DoxyCodeLine{00459 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00460}\mbox{\hyperlink{classString8}{00460}} \textcolor{keyword}{class }\mbox{\hyperlink{classString8}{String8}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00461  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00462   std::string val;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00450}\mbox{\hyperlink{classTimestamp}{00450}} \textcolor{keyword}{class }\mbox{\hyperlink{classTimestamp}{Timestamp}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00451  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00452   uint64\_t val;}
+\DoxyCodeLine{00453 }
+\DoxyCodeLine{00454  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00455   \mbox{\hyperlink{classTimestamp}{Timestamp}}(uint64\_t v = 0) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}Timestamp"{}}), val(v) \{\}}
+\DoxyCodeLine{00456   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& b) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00457   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00458   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00459   DataType getDataType() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00460   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00461   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00462 \};}
 \DoxyCodeLine{00463 }
-\DoxyCodeLine{00464  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00465   \mbox{\hyperlink{classString8}{String8}}(\textcolor{keyword}{const} std::string\& val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}STRING8"{}}), val(val) \{\}}
-\DoxyCodeLine{00466   \mbox{\hyperlink{classString8}{String8}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}STRING8"{}}), val(empty) \{\}}
-\DoxyCodeLine{00467   DataType getDataType() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00468   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00469   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00470   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00471   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00472 \};}
-\DoxyCodeLine{00473 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00474}\mbox{\hyperlink{classString16}{00474}} \textcolor{keyword}{class }\mbox{\hyperlink{classString16}{String16}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00475  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00476   std::string val;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00464}\mbox{\hyperlink{classString8}{00464}} \textcolor{keyword}{class }\mbox{\hyperlink{classString8}{String8}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00465  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00466   std::string val;}
+\DoxyCodeLine{00467 }
+\DoxyCodeLine{00468  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00469   \mbox{\hyperlink{classString8}{String8}}(\textcolor{keyword}{const} std::string\& val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}STRING8"{}}), val(val) \{\}}
+\DoxyCodeLine{00470   \mbox{\hyperlink{classString8}{String8}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}STRING8"{}}), val(empty) \{\}}
+\DoxyCodeLine{00471   DataType getDataType() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00472   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00473   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00474   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00475   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00476 \};}
 \DoxyCodeLine{00477 }
-\DoxyCodeLine{00478  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00479   \mbox{\hyperlink{classString16}{String16}}(\textcolor{keyword}{const} std::string\& val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}STRING16"{}}), val(val) \{\}}
-\DoxyCodeLine{00480   \mbox{\hyperlink{classString16}{String16}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}STRING16"{}}), val(empty) \{\}}
-\DoxyCodeLine{00481   DataType getDataType() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00482   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00483   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00484   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00485   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00486 \};}
-\DoxyCodeLine{00487 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00488}\mbox{\hyperlink{classString32}{00488}} \textcolor{keyword}{class }\mbox{\hyperlink{classString32}{String32}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00489  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00490   std::string val;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00478}\mbox{\hyperlink{classString16}{00478}} \textcolor{keyword}{class }\mbox{\hyperlink{classString16}{String16}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00479  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00480   std::string val;}
+\DoxyCodeLine{00481 }
+\DoxyCodeLine{00482  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00483   \mbox{\hyperlink{classString16}{String16}}(\textcolor{keyword}{const} std::string\& val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}STRING16"{}}), val(val) \{\}}
+\DoxyCodeLine{00484   \mbox{\hyperlink{classString16}{String16}}() : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}STRING16"{}}), val(empty) \{\}}
+\DoxyCodeLine{00485   DataType getDataType() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00486   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00487   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00488   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00489   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00490 \};}
 \DoxyCodeLine{00491 }
-\DoxyCodeLine{00492  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00493   \mbox{\hyperlink{classString32}{String32}}(\textcolor{keywordtype}{string} val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}STRING32"{}}), val(val) \{\}}
-\DoxyCodeLine{00494   DataType getDataType() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00495   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00496   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00497   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00498   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00499 \};}
-\DoxyCodeLine{00500 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00501}\mbox{\hyperlink{classString64}{00501}} \textcolor{keyword}{class }\mbox{\hyperlink{classString64}{String64}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00502  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00503   std::string val;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00492}\mbox{\hyperlink{classString32}{00492}} \textcolor{keyword}{class }\mbox{\hyperlink{classString32}{String32}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00493  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00494   std::string val;}
+\DoxyCodeLine{00495 }
+\DoxyCodeLine{00496  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00497   \mbox{\hyperlink{classString32}{String32}}(\textcolor{keywordtype}{string} val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}STRING32"{}}), val(val) \{\}}
+\DoxyCodeLine{00498   DataType getDataType() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00499   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00500   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00501   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00502   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00503 \};}
 \DoxyCodeLine{00504 }
-\DoxyCodeLine{00505  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00506   \mbox{\hyperlink{classString64}{String64}}(\textcolor{keywordtype}{string} val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}STRING64"{}}), val(val) \{\}}
-\DoxyCodeLine{00507   DataType getDataType() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00508   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00509   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00510   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00511   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00512 \};}
-\DoxyCodeLine{00513 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00514}\mbox{\hyperlink{classUserId}{00514}} \textcolor{keyword}{class }\mbox{\hyperlink{classUserId}{UserId}} : \textcolor{keyword}{public} \mbox{\hyperlink{classU64}{U64}} \{}
-\DoxyCodeLine{00515  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00516   std::string typeName;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00505}\mbox{\hyperlink{classString64}{00505}} \textcolor{keyword}{class }\mbox{\hyperlink{classString64}{String64}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00506  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00507   std::string val;}
+\DoxyCodeLine{00508 }
+\DoxyCodeLine{00509  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00510   \mbox{\hyperlink{classString64}{String64}}(\textcolor{keywordtype}{string} val) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}STRING64"{}}), val(val) \{\}}
+\DoxyCodeLine{00511   DataType getDataType() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00512   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00513   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00514   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00515   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00516 \};}
 \DoxyCodeLine{00517 }
-\DoxyCodeLine{00518  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00519   \mbox{\hyperlink{classUserId}{UserId}}(uint64\_t v) : typeName(\textcolor{stringliteral}{"{}UserId"{}}), \mbox{\hyperlink{classU64}{U64}}(v) \{\}}
-\DoxyCodeLine{00520   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00521   \textcolor{comment}{// TODO:    b.write(DataType::DEFINETYPE); b.write("{}UserId"{});}}
-\DoxyCodeLine{00522   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00523   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00524 \};}
-\DoxyCodeLine{00525 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00526}\mbox{\hyperlink{classAddress}{00526}} \textcolor{keyword}{class }\mbox{\hyperlink{classAddress}{Address}} : \textcolor{keyword}{public} \mbox{\hyperlink{classString8}{String8}} \{}
-\DoxyCodeLine{00527  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00528   std::string typeName;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00518}\mbox{\hyperlink{classUserId}{00518}} \textcolor{keyword}{class }\mbox{\hyperlink{classUserId}{UserId}} : \textcolor{keyword}{public} \mbox{\hyperlink{classU64}{U64}} \{}
+\DoxyCodeLine{00519  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00520   std::string typeName;}
+\DoxyCodeLine{00521 }
+\DoxyCodeLine{00522  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00523   \mbox{\hyperlink{classUserId}{UserId}}(uint64\_t v) : typeName(\textcolor{stringliteral}{"{}UserId"{}}), \mbox{\hyperlink{classU64}{U64}}(v) \{\}}
+\DoxyCodeLine{00524   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00525   \textcolor{comment}{// TODO:    b.write(DataType::DEFINETYPE); b.write("{}UserId"{});}}
+\DoxyCodeLine{00526   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00527   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00528 \};}
 \DoxyCodeLine{00529 }
-\DoxyCodeLine{00530  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00531   \mbox{\hyperlink{classAddress}{Address}}(\textcolor{keyword}{const} std::string\& s) : \mbox{\hyperlink{classString8}{String8}}(s), typeName(\textcolor{stringliteral}{"{}Address"{}}) \{\}}
-\DoxyCodeLine{00532   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& b) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00533   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00534   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00535 \};}
-\DoxyCodeLine{00536 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00537}\mbox{\hyperlink{classPhone}{00537}} \textcolor{keyword}{class }\mbox{\hyperlink{classPhone}{Phone}} : \textcolor{keyword}{public} \mbox{\hyperlink{classU64}{U64}} \{}
-\DoxyCodeLine{00538  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00539   std::string typeName;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00530}\mbox{\hyperlink{classAddress}{00530}} \textcolor{keyword}{class }\mbox{\hyperlink{classAddress}{Address}} : \textcolor{keyword}{public} \mbox{\hyperlink{classString8}{String8}} \{}
+\DoxyCodeLine{00531  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00532   std::string typeName;}
+\DoxyCodeLine{00533 }
+\DoxyCodeLine{00534  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00535   \mbox{\hyperlink{classAddress}{Address}}(\textcolor{keyword}{const} std::string\& s) : \mbox{\hyperlink{classString8}{String8}}(s), typeName(\textcolor{stringliteral}{"{}Address"{}}) \{\}}
+\DoxyCodeLine{00536   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& b) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00537   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00538   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00539 \};}
 \DoxyCodeLine{00540 }
-\DoxyCodeLine{00541  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00542   \mbox{\hyperlink{classPhone}{Phone}}(uint64\_t v) : typeName(\textcolor{stringliteral}{"{}Phone"{}}), \mbox{\hyperlink{classU64}{U64}}(v) \{\}}
-\DoxyCodeLine{00543   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& b) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00544   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00545   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00546 \};}
-\DoxyCodeLine{00547 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00548}\mbox{\hyperlink{classEmail}{00548}} \textcolor{keyword}{class }\mbox{\hyperlink{classEmail}{Email}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00549  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00550   std::string val;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00541}\mbox{\hyperlink{classPhone}{00541}} \textcolor{keyword}{class }\mbox{\hyperlink{classPhone}{Phone}} : \textcolor{keyword}{public} \mbox{\hyperlink{classU64}{U64}} \{}
+\DoxyCodeLine{00542  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00543   std::string typeName;}
+\DoxyCodeLine{00544 }
+\DoxyCodeLine{00545  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00546   \mbox{\hyperlink{classPhone}{Phone}}(uint64\_t v) : typeName(\textcolor{stringliteral}{"{}Phone"{}}), \mbox{\hyperlink{classU64}{U64}}(v) \{\}}
+\DoxyCodeLine{00547   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& b) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00548   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00549   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00550 \};}
 \DoxyCodeLine{00551 }
-\DoxyCodeLine{00552  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00553   \mbox{\hyperlink{classEmail}{Email}}(\textcolor{keyword}{const} std::string\& s) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}Email"{}}), val(s) \{\}}
-\DoxyCodeLine{00554   DataType getDataType() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00555   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00556   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& b) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00557   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& b) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00558   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00559   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00560 \};}
-\DoxyCodeLine{00561 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00562}\mbox{\hyperlink{classContactInfo}{00562}} \textcolor{keyword}{class }\mbox{\hyperlink{classContactInfo}{ContactInfo}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00563  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00564   \mbox{\hyperlink{classAddress}{Address}} address;}
-\DoxyCodeLine{00565   \mbox{\hyperlink{classPhone}{Phone}} phone;}
-\DoxyCodeLine{00566   \mbox{\hyperlink{classEmail}{Email}} email;}
-\DoxyCodeLine{00567 }
-\DoxyCodeLine{00568  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00569   \mbox{\hyperlink{classContactInfo}{ContactInfo}}(\textcolor{keyword}{const} \mbox{\hyperlink{classAddress}{Address}}\& address, \textcolor{keyword}{const} \mbox{\hyperlink{classPhone}{Phone}}\& phone, \textcolor{keyword}{const} \mbox{\hyperlink{classEmail}{Email}}\& email)}
-\DoxyCodeLine{00570       : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}ContactInfo"{}}), address(address), phone(phone), email(email) \{\}}
-\DoxyCodeLine{00571   DataType getDataType() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00572   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00573   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& b) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00574   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& b) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00575   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00576   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00577 \};}
-\DoxyCodeLine{00578 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00579}\mbox{\hyperlink{classUser}{00579}} \textcolor{keyword}{class }\mbox{\hyperlink{classUser}{User}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00580  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00581   \mbox{\hyperlink{classUserId}{UserId}} userid;}
-\DoxyCodeLine{00582   \textcolor{keywordtype}{string} firstname;}
-\DoxyCodeLine{00583   \textcolor{keywordtype}{string} lastname;}
-\DoxyCodeLine{00584   \mbox{\hyperlink{classContactInfo}{ContactInfo}} contact;}
-\DoxyCodeLine{00585 }
-\DoxyCodeLine{00586  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00587   \mbox{\hyperlink{classUser}{User}}(\textcolor{keyword}{const} \mbox{\hyperlink{classUserId}{UserId}}\& userid, \textcolor{keyword}{const} \textcolor{keywordtype}{char} firstname[], \textcolor{keyword}{const} \textcolor{keywordtype}{char} lastname[],}
-\DoxyCodeLine{00588        \textcolor{keyword}{const} \mbox{\hyperlink{classAddress}{Address}}\& address, \textcolor{keyword}{const} \mbox{\hyperlink{classPhone}{Phone}}\& phone, \textcolor{keyword}{const} \mbox{\hyperlink{classEmail}{Email}}\& email)}
-\DoxyCodeLine{00589       : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}User"{}}),}
-\DoxyCodeLine{00590         userid(userid),}
-\DoxyCodeLine{00591         firstname(firstname),}
-\DoxyCodeLine{00592         lastname(lastname),}
-\DoxyCodeLine{00593         contact(address, phone, email) \{\}}
-\DoxyCodeLine{00594   DataType getDataType() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00595   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00596   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00597   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00598   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00599   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00600 \};}
-\DoxyCodeLine{00601 }
-\DoxyCodeLine{00602 \textcolor{comment}{/*}}
-\DoxyCodeLine{00603 \textcolor{comment}{  GenericList is the metadata for a list of unknown type coming in.}}
-\DoxyCodeLine{00604 \textcolor{comment}{  A hardcoded type is more efficient}}
-\DoxyCodeLine{00605 \textcolor{comment}{*/}}
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00606}\mbox{\hyperlink{classGenericList}{00606}} \textcolor{keyword}{class }\mbox{\hyperlink{classGenericList}{GenericList}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00607   \textcolor{keyword}{private}:}
-\DoxyCodeLine{00608   uint32\_t capacity;}
-\DoxyCodeLine{00609   uint32\_t size\_;}
-\DoxyCodeLine{00610   std::string listType;}
-\DoxyCodeLine{00611  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00612   \mbox{\hyperlink{classGenericList}{GenericList}}(\textcolor{keyword}{const} std::string\& name, uint32\_t size,}
-\DoxyCodeLine{00613               \textcolor{keyword}{const} std::string\& listType)}
-\DoxyCodeLine{00614       : \mbox{\hyperlink{classXDLType}{XDLType}}(name), capacity(size), size\_(size), listType(listType) \{\}}
-\DoxyCodeLine{00615   DataType getDataType() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00616   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00617   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00618   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00619   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00620     \mbox{\hyperlink{classXDLIterator}{XDLIterator}}* createIterator() \textcolor{keyword}{override};}
-\DoxyCodeLine{00621 \};}
-\DoxyCodeLine{00622 }
-\DoxyCodeLine{00623 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00624}\mbox{\hyperlink{classList}{00624}} \textcolor{keyword}{class }\mbox{\hyperlink{classList}{List}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00625  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00626   \mbox{\hyperlink{classDynArray}{DynArray<T>}} impl;}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00552}\mbox{\hyperlink{classEmail}{00552}} \textcolor{keyword}{class }\mbox{\hyperlink{classEmail}{Email}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00553  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00554   std::string val;}
+\DoxyCodeLine{00555 }
+\DoxyCodeLine{00556  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00557   \mbox{\hyperlink{classEmail}{Email}}(\textcolor{keyword}{const} std::string\& s) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}Email"{}}), val(s) \{\}}
+\DoxyCodeLine{00558   DataType getDataType() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00559   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00560   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& b) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00561   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& b) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00562   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00563   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00564 \};}
+\DoxyCodeLine{00565 }
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00566}\mbox{\hyperlink{classContactInfo}{00566}} \textcolor{keyword}{class }\mbox{\hyperlink{classContactInfo}{ContactInfo}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00567  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00568   \mbox{\hyperlink{classAddress}{Address}} address;}
+\DoxyCodeLine{00569   \mbox{\hyperlink{classPhone}{Phone}} phone;}
+\DoxyCodeLine{00570   \mbox{\hyperlink{classEmail}{Email}} email;}
+\DoxyCodeLine{00571 }
+\DoxyCodeLine{00572  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00573   \mbox{\hyperlink{classContactInfo}{ContactInfo}}(\textcolor{keyword}{const} \mbox{\hyperlink{classAddress}{Address}}\& address, \textcolor{keyword}{const} \mbox{\hyperlink{classPhone}{Phone}}\& phone, \textcolor{keyword}{const} \mbox{\hyperlink{classEmail}{Email}}\& email)}
+\DoxyCodeLine{00574       : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}ContactInfo"{}}), address(address), phone(phone), email(email) \{\}}
+\DoxyCodeLine{00575   DataType getDataType() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00576   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00577   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& b) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00578   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& b) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00579   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00580   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00581 \};}
+\DoxyCodeLine{00582 }
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00583}\mbox{\hyperlink{classUser}{00583}} \textcolor{keyword}{class }\mbox{\hyperlink{classUser}{User}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00584  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00585   \mbox{\hyperlink{classUserId}{UserId}} userid;}
+\DoxyCodeLine{00586   \textcolor{keywordtype}{string} firstname;}
+\DoxyCodeLine{00587   \textcolor{keywordtype}{string} lastname;}
+\DoxyCodeLine{00588   \mbox{\hyperlink{classContactInfo}{ContactInfo}} contact;}
+\DoxyCodeLine{00589 }
+\DoxyCodeLine{00590  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00591   \mbox{\hyperlink{classUser}{User}}(\textcolor{keyword}{const} \mbox{\hyperlink{classUserId}{UserId}}\& userid, \textcolor{keyword}{const} \textcolor{keywordtype}{char} firstname[], \textcolor{keyword}{const} \textcolor{keywordtype}{char} lastname[],}
+\DoxyCodeLine{00592        \textcolor{keyword}{const} \mbox{\hyperlink{classAddress}{Address}}\& address, \textcolor{keyword}{const} \mbox{\hyperlink{classPhone}{Phone}}\& phone, \textcolor{keyword}{const} \mbox{\hyperlink{classEmail}{Email}}\& email)}
+\DoxyCodeLine{00593       : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}User"{}}),}
+\DoxyCodeLine{00594         userid(userid),}
+\DoxyCodeLine{00595         firstname(firstname),}
+\DoxyCodeLine{00596         lastname(lastname),}
+\DoxyCodeLine{00597         contact(address, phone, email) \{\}}
+\DoxyCodeLine{00598   DataType getDataType() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00599   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00600   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00601   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00602   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00603   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00604 \};}
+\DoxyCodeLine{00605 }
+\DoxyCodeLine{00606 \textcolor{comment}{/*}}
+\DoxyCodeLine{00607 \textcolor{comment}{  GenericList is the metadata for a list of unknown type coming in.}}
+\DoxyCodeLine{00608 \textcolor{comment}{  A hardcoded type is more efficient}}
+\DoxyCodeLine{00609 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00610}\mbox{\hyperlink{classGenericList}{00610}} \textcolor{keyword}{class }\mbox{\hyperlink{classGenericList}{GenericList}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00611  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00612   uint32\_t capacity;}
+\DoxyCodeLine{00613   uint32\_t size\_;}
+\DoxyCodeLine{00614   std::string listType;}
+\DoxyCodeLine{00615 }
+\DoxyCodeLine{00616  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00617   \mbox{\hyperlink{classGenericList}{GenericList}}(\textcolor{keyword}{const} std::string\& name, uint32\_t size,}
+\DoxyCodeLine{00618               \textcolor{keyword}{const} std::string\& listType)}
+\DoxyCodeLine{00619       : \mbox{\hyperlink{classXDLType}{XDLType}}(name), capacity(size), size\_(size), listType(listType) \{\}}
+\DoxyCodeLine{00620   DataType getDataType() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00621   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00622   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00623   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00624   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00625   \mbox{\hyperlink{classXDLIterator}{XDLIterator}}* createIterator() \textcolor{keyword}{override};}
+\DoxyCodeLine{00626 \};}
 \DoxyCodeLine{00627 }
-\DoxyCodeLine{00628  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00629   \mbox{\hyperlink{classList}{List}}(uint32\_t size = 16) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}LIST16"{}}), impl(size) \{\}}
-\DoxyCodeLine{00630   DataType getDataType()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} DataType::LIST8; \}}
-\DoxyCodeLine{00631   \textcolor{keywordtype}{void} add(\textcolor{keyword}{const} T\& e) \{ impl.push\_back(e); \}}
-\DoxyCodeLine{00632 \textcolor{preprocessor}{\#if 0}}
-\DoxyCodeLine{00633   \textcolor{keyword}{template} <\textcolor{keyword}{class}... Args>}
-\DoxyCodeLine{00634   \textcolor{keywordtype}{void} add(Args\&\&... args) \{}
-\DoxyCodeLine{00635     impl.emplace\_back(args);}
-\DoxyCodeLine{00636   \}}
-\DoxyCodeLine{00637 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00638   uint32\_t size()\textcolor{keyword}{ const override }\{}
-\DoxyCodeLine{00639     \textcolor{keywordflow}{return} impl.size();  \textcolor{comment}{// TODO: * T.size();}}
-\DoxyCodeLine{00640   \}}
-\DoxyCodeLine{00641   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf)\textcolor{keyword}{ const override }\{}
-\DoxyCodeLine{00642         buf.write(uint16\_t(impl.size()));}
-\DoxyCodeLine{00643     \textcolor{keywordflow}{for} (uint32\_t i = 0; i < impl.size(); i++)}
-\DoxyCodeLine{00644             impl[i].write(buf);}
+\DoxyCodeLine{00628 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00629}\mbox{\hyperlink{classList}{00629}} \textcolor{keyword}{class }\mbox{\hyperlink{classList}{List}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00630  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00631   \mbox{\hyperlink{classDynArray}{DynArray<T>}} impl;}
+\DoxyCodeLine{00632 }
+\DoxyCodeLine{00633  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00634   \mbox{\hyperlink{classList}{List}}(uint32\_t size = 16) : \mbox{\hyperlink{classXDLType}{XDLType}}(\textcolor{stringliteral}{"{}LIST16"{}}), impl(size) \{\}}
+\DoxyCodeLine{00635   DataType getDataType()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} DataType::LIST8; \}}
+\DoxyCodeLine{00636   \textcolor{keywordtype}{void} add(\textcolor{keyword}{const} T\& e) \{ impl.push\_back(e); \}}
+\DoxyCodeLine{00637 \textcolor{preprocessor}{\#if 0}}
+\DoxyCodeLine{00638   \textcolor{keyword}{template} <\textcolor{keyword}{class}... Args>}
+\DoxyCodeLine{00639   \textcolor{keywordtype}{void} add(Args\&\&... args) \{}
+\DoxyCodeLine{00640     impl.emplace\_back(args);}
+\DoxyCodeLine{00641   \}}
+\DoxyCodeLine{00642 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00643   uint32\_t size()\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{00644     \textcolor{keywordflow}{return} impl.size();  \textcolor{comment}{// TODO: * T.size();}}
 \DoxyCodeLine{00645   \}}
-\DoxyCodeLine{00646   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf)\textcolor{keyword}{ const override }\{}
-\DoxyCodeLine{00647     buf.write(DataType::LIST16);}
-\DoxyCodeLine{00648     \textcolor{keywordflow}{if} (impl.size() == 0) \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00649     impl[0].writeMeta(buf);}
-\DoxyCodeLine{00650   \}}
-\DoxyCodeLine{00651     \textcolor{keywordtype}{void} read(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \{}
-\DoxyCodeLine{00652         uint32\_t len = buf.\_readU16();}
-\DoxyCodeLine{00653         T val;}
-\DoxyCodeLine{00654         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < len; i++) \{}
-\DoxyCodeLine{00655             val.read(buf);}
-\DoxyCodeLine{00656             add(val);}
-\DoxyCodeLine{00657         \}}
-\DoxyCodeLine{00658     \}}
-\DoxyCodeLine{00659     \mbox{\hyperlink{classXDLIterator}{XDLIterator}}* createIterator() \textcolor{keyword}{override};}
-\DoxyCodeLine{00660   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00661 \};}
-\DoxyCodeLine{00662 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00663}\mbox{\hyperlink{classBuiltinType}{00663}} \textcolor{keyword}{class }\mbox{\hyperlink{classBuiltinType}{BuiltinType}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00664  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00665   DataType t;}
+\DoxyCodeLine{00646   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf)\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{00647     buf.write(uint16\_t(impl.size()));}
+\DoxyCodeLine{00648     \textcolor{keywordflow}{for} (uint32\_t i = 0; i < impl.size(); i++) impl[i].write(buf);}
+\DoxyCodeLine{00649   \}}
+\DoxyCodeLine{00650   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf)\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{00651     buf.write(DataType::LIST16);}
+\DoxyCodeLine{00652     \textcolor{keywordflow}{if} (impl.size() == 0) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00653     impl[0].writeMeta(buf);}
+\DoxyCodeLine{00654   \}}
+\DoxyCodeLine{00655   \textcolor{keywordtype}{void} read(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \{}
+\DoxyCodeLine{00656     uint32\_t len = buf.\_readU16();}
+\DoxyCodeLine{00657     T val;}
+\DoxyCodeLine{00658     \textcolor{keywordflow}{for} (uint32\_t i = 0; i < len; i++) \{}
+\DoxyCodeLine{00659       val.read(buf);}
+\DoxyCodeLine{00660       add(val);}
+\DoxyCodeLine{00661     \}}
+\DoxyCodeLine{00662   \}}
+\DoxyCodeLine{00663   \mbox{\hyperlink{classXDLIterator}{XDLIterator}}* createIterator() \textcolor{keyword}{override};}
+\DoxyCodeLine{00664   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00665 \};}
 \DoxyCodeLine{00666 }
-\DoxyCodeLine{00667  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00668   \mbox{\hyperlink{classBuiltinType}{BuiltinType}}(\textcolor{keyword}{const} std::string\& name, \textcolor{keyword}{const} DataType\& t)}
-\DoxyCodeLine{00669       : \mbox{\hyperlink{classXDLType}{XDLType}}(name), t(t) \{\}}
-\DoxyCodeLine{00670   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00671   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00672   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00673   DataType getDataType()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} t; \}}
-\DoxyCodeLine{00674   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00675   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00676 \};}
-\DoxyCodeLine{00677 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00678}\mbox{\hyperlink{classTypeDef}{00678}} \textcolor{keyword}{class }\mbox{\hyperlink{classTypeDef}{TypeDef}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00679  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00680   \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* type;}
-\DoxyCodeLine{00681   \textcolor{keywordtype}{bool} strict;}
-\DoxyCodeLine{00682 }
-\DoxyCodeLine{00683  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00684   \mbox{\hyperlink{classTypeDef}{TypeDef}}(\textcolor{keyword}{const} std::string\& name, \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* t)}
-\DoxyCodeLine{00685       : \mbox{\hyperlink{classXDLType}{XDLType}}(name), type(t), strict(\textcolor{keyword}{true}) \{\}}
-\DoxyCodeLine{00686   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00687   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00688   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00689   DataType getDataType()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} type-\/>getDataType(); \}}
-\DoxyCodeLine{00690   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00691   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00692 \};}
-\DoxyCodeLine{00693 }
-\DoxyCodeLine{00694 \textcolor{keyword}{class }\mbox{\hyperlink{classStruct}{Struct}} : \textcolor{keyword}{public} \mbox{\hyperlink{classCompoundType}{CompoundType}} \{}
-\DoxyCodeLine{00695  \textcolor{keyword}{protected}:}
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00696}\mbox{\hyperlink{classStruct_1_1Member}{00696}}   \textcolor{keyword}{class }\mbox{\hyperlink{classStruct_1_1Member}{Member}} \{}
-\DoxyCodeLine{00697    \textcolor{keyword}{public}:}
-\DoxyCodeLine{00698     uint32\_t nameOffset;}
-\DoxyCodeLine{00699     uint32\_t nameLen;}
-\DoxyCodeLine{00700     \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* type;  \textcolor{comment}{// used only for compound types}}
-\DoxyCodeLine{00701     \mbox{\hyperlink{classStruct_1_1Member}{Member}}(uint32\_t nameOffset, uint32\_t nameLen, \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* type)}
-\DoxyCodeLine{00702         : nameOffset(nameOffset), nameLen(nameLen), type(type) \{\}}
-\DoxyCodeLine{00703   \};}
-\DoxyCodeLine{00704    \mbox{\hyperlink{classXDLCompiler}{XDLCompiler}}* compiler;}
-\DoxyCodeLine{00705    \mbox{\hyperlink{classDynArray}{DynArray<Member>}} members;  \textcolor{comment}{// sequential list of all members}}
-\DoxyCodeLine{00706  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00707  }
-\DoxyCodeLine{00708   std::string memberNames;   \textcolor{comment}{// single string containing names of all members}}
-\DoxyCodeLine{00709 }
-\DoxyCodeLine{00710   \mbox{\hyperlink{classHashMap}{HashMap<uint32\_t>}} byName;  \textcolor{comment}{// map to index into members}}
-\DoxyCodeLine{00711   uint32\_t packedSize;}
-\DoxyCodeLine{00712   \textcolor{keyword}{const} \mbox{\hyperlink{classStruct_1_1Member}{Member}}\& getMember(uint32\_t index)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} members[index]; \}}
-\DoxyCodeLine{00713  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00714   \mbox{\hyperlink{classStruct}{Struct}}(\mbox{\hyperlink{classXDLCompiler}{XDLCompiler}}* compiler, \textcolor{keyword}{const} std::string\& name)}
-\DoxyCodeLine{00715       : \mbox{\hyperlink{classCompoundType}{CompoundType}}(name), members(16), byName(16), packedSize(0) \{\}}
-\DoxyCodeLine{00716   \mbox{\hyperlink{classStruct}{Struct}}(\mbox{\hyperlink{classXDLCompiler}{XDLCompiler}}* c) : \mbox{\hyperlink{classStruct}{Struct}}(c, empty) \{\}}
-\DoxyCodeLine{00717 }
-\DoxyCodeLine{00718   \textcolor{keywordtype}{void} addSym(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name, \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* t);}
-\DoxyCodeLine{00719   \textcolor{keywordtype}{void} addSymCheckNull(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name, \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* t);}
-\DoxyCodeLine{00720   \textcolor{keywordtype}{void} addSymCheckDup(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name, \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* t);}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00667}\mbox{\hyperlink{classBuiltinType}{00667}} \textcolor{keyword}{class }\mbox{\hyperlink{classBuiltinType}{BuiltinType}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00668  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00669   DataType t;}
+\DoxyCodeLine{00670 }
+\DoxyCodeLine{00671  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00672   \mbox{\hyperlink{classBuiltinType}{BuiltinType}}(\textcolor{keyword}{const} std::string\& name, \textcolor{keyword}{const} DataType\& t)}
+\DoxyCodeLine{00673       : \mbox{\hyperlink{classXDLType}{XDLType}}(name), t(t) \{\}}
+\DoxyCodeLine{00674   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00675   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00676   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00677   DataType getDataType()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} t; \}}
+\DoxyCodeLine{00678   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00679   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00680 \};}
+\DoxyCodeLine{00681 }
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00682}\mbox{\hyperlink{classTypeDef}{00682}} \textcolor{keyword}{class }\mbox{\hyperlink{classTypeDef}{TypeDef}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00683  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00684   \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* type;}
+\DoxyCodeLine{00685   \textcolor{keywordtype}{bool} strict;}
+\DoxyCodeLine{00686 }
+\DoxyCodeLine{00687  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00688   \mbox{\hyperlink{classTypeDef}{TypeDef}}(\textcolor{keyword}{const} std::string\& name, \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* t)}
+\DoxyCodeLine{00689       : \mbox{\hyperlink{classXDLType}{XDLType}}(name), type(t), strict(\textcolor{keyword}{true}) \{\}}
+\DoxyCodeLine{00690   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00691   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00692   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00693   DataType getDataType()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} type-\/>getDataType(); \}}
+\DoxyCodeLine{00694   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00695   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00696 \};}
+\DoxyCodeLine{00697 }
+\DoxyCodeLine{00698 \textcolor{keyword}{class }\mbox{\hyperlink{classStruct}{Struct}} : \textcolor{keyword}{public} \mbox{\hyperlink{classCompoundType}{CompoundType}} \{}
+\DoxyCodeLine{00699  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00700}\mbox{\hyperlink{classStruct_1_1Member}{00700}}   \textcolor{keyword}{class }\mbox{\hyperlink{classStruct_1_1Member}{Member}} \{}
+\DoxyCodeLine{00701    \textcolor{keyword}{public}:}
+\DoxyCodeLine{00702     uint32\_t nameOffset;}
+\DoxyCodeLine{00703     uint32\_t nameLen;}
+\DoxyCodeLine{00704     \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* type;  \textcolor{comment}{// used only for compound types}}
+\DoxyCodeLine{00705     \mbox{\hyperlink{classStruct_1_1Member}{Member}}(uint32\_t nameOffset, uint32\_t nameLen, \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* type)}
+\DoxyCodeLine{00706         : nameOffset(nameOffset), nameLen(nameLen), type(type) \{\}}
+\DoxyCodeLine{00707   \};}
+\DoxyCodeLine{00708   \mbox{\hyperlink{classXDLCompiler}{XDLCompiler}}* compiler;}
+\DoxyCodeLine{00709   \mbox{\hyperlink{classDynArray}{DynArray<Member>}} members;  \textcolor{comment}{// sequential list of all members}}
+\DoxyCodeLine{00710  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00711   std::string memberNames;  \textcolor{comment}{// single string containing names of all members}}
+\DoxyCodeLine{00712 }
+\DoxyCodeLine{00713   \mbox{\hyperlink{classHashMap}{HashMap<uint32\_t>}} byName;  \textcolor{comment}{// map to index into members}}
+\DoxyCodeLine{00714   uint32\_t packedSize;}
+\DoxyCodeLine{00715   \textcolor{keyword}{const} \mbox{\hyperlink{classStruct_1_1Member}{Member}}\& getMember(uint32\_t index)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} members[index]; \}}
+\DoxyCodeLine{00716 }
+\DoxyCodeLine{00717  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00718   \mbox{\hyperlink{classStruct}{Struct}}(\mbox{\hyperlink{classXDLCompiler}{XDLCompiler}}* compiler, \textcolor{keyword}{const} std::string\& name)}
+\DoxyCodeLine{00719       : \mbox{\hyperlink{classCompoundType}{CompoundType}}(name), members(16), byName(16), packedSize(0) \{\}}
+\DoxyCodeLine{00720   \mbox{\hyperlink{classStruct}{Struct}}(\mbox{\hyperlink{classXDLCompiler}{XDLCompiler}}* c) : \mbox{\hyperlink{classStruct}{Struct}}(c, empty) \{\}}
 \DoxyCodeLine{00721 }
-\DoxyCodeLine{00722   uint32\_t addMemberName(\textcolor{keyword}{const} \textcolor{keywordtype}{char} memberName[]) \{}
-\DoxyCodeLine{00723     uint32\_t offset = memberNames.size();}
-\DoxyCodeLine{00724     memberNames += memberName;}
-\DoxyCodeLine{00725     \textcolor{keywordflow}{return} offset;}
-\DoxyCodeLine{00726   \}}
-\DoxyCodeLine{00727   \textcolor{keywordtype}{void} addMember(\textcolor{keyword}{const} std::string\& name, \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* t);}
-\DoxyCodeLine{00728   \textcolor{keywordtype}{void} addBuiltin(\textcolor{keyword}{const} std::string\& name, DataType dt);}
-\DoxyCodeLine{00729   \textcolor{keywordtype}{void} addRegex(\textcolor{keyword}{const} std::string\& name, \textcolor{keyword}{const} std::string\& regex);}
-\DoxyCodeLine{00730   \textcolor{keywordtype}{void} addTypedef(\textcolor{keyword}{const} \textcolor{keywordtype}{char} name[], \textcolor{keyword}{const} \textcolor{keywordtype}{char} type[]);}
-\DoxyCodeLine{00731   \textcolor{keywordtype}{void} addStructMember(\textcolor{keyword}{const} std::string\& memberName,}
-\DoxyCodeLine{00732                        \textcolor{keyword}{const} \mbox{\hyperlink{classStruct}{Struct}}* memberStruct);}
-\DoxyCodeLine{00733 }
-\DoxyCodeLine{00734   \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* getMemberType(\textcolor{keyword}{const} std::string\& memberName)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00735     uint32\_t index;}
-\DoxyCodeLine{00736     \textcolor{keywordflow}{return} byName.get(memberName.c\_str(), \&index) ? members[index].type}
-\DoxyCodeLine{00737                                                  : \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00738   \}}
-\DoxyCodeLine{00739 }
-\DoxyCodeLine{00740   \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* getMemberType(uint32\_t index)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00741     \textcolor{keywordflow}{return} members[index].type;}
+\DoxyCodeLine{00722   \textcolor{keywordtype}{void} addSym(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name, \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* t);}
+\DoxyCodeLine{00723   \textcolor{keywordtype}{void} addSymCheckNull(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name, \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* t);}
+\DoxyCodeLine{00724   \textcolor{keywordtype}{void} addSymCheckDup(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name, \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* t);}
+\DoxyCodeLine{00725 }
+\DoxyCodeLine{00726   uint32\_t addMemberName(\textcolor{keyword}{const} \textcolor{keywordtype}{char} memberName[]) \{}
+\DoxyCodeLine{00727     uint32\_t offset = memberNames.size();}
+\DoxyCodeLine{00728     memberNames += memberName;}
+\DoxyCodeLine{00729     \textcolor{keywordflow}{return} offset;}
+\DoxyCodeLine{00730   \}}
+\DoxyCodeLine{00731   \textcolor{keywordtype}{void} addMember(\textcolor{keyword}{const} std::string\& name, \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* t);}
+\DoxyCodeLine{00732   \textcolor{keywordtype}{void} addBuiltin(\textcolor{keyword}{const} std::string\& name, DataType dt);}
+\DoxyCodeLine{00733   \textcolor{keywordtype}{void} addRegex(\textcolor{keyword}{const} std::string\& name, \textcolor{keyword}{const} std::string\& regex);}
+\DoxyCodeLine{00734   \textcolor{keywordtype}{void} addTypedef(\textcolor{keyword}{const} \textcolor{keywordtype}{char} name[], \textcolor{keyword}{const} \textcolor{keywordtype}{char} type[]);}
+\DoxyCodeLine{00735   \textcolor{keywordtype}{void} addStructMember(\textcolor{keyword}{const} std::string\& memberName,}
+\DoxyCodeLine{00736                        \textcolor{keyword}{const} \mbox{\hyperlink{classStruct}{Struct}}* memberStruct);}
+\DoxyCodeLine{00737 }
+\DoxyCodeLine{00738   \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* getMemberType(\textcolor{keyword}{const} std::string\& memberName)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00739     uint32\_t index;}
+\DoxyCodeLine{00740     \textcolor{keywordflow}{return} byName.get(memberName.c\_str(), \&index) ? members[index].type}
+\DoxyCodeLine{00741                                                   : \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{00742   \}}
 \DoxyCodeLine{00743 }
-\DoxyCodeLine{00744   uint32\_t getMemberCount() \textcolor{keyword}{const};}
-\DoxyCodeLine{00745   std::string getMemberName(uint32\_t index)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00746     \textcolor{keyword}{const} Member\& m = getMember(index);}
-\DoxyCodeLine{00747     \textcolor{keywordflow}{return} memberNames.substr(m.nameOffset, m.nameLen);}
-\DoxyCodeLine{00748   \}}
-\DoxyCodeLine{00749   \textcolor{comment}{/*}}
-\DoxyCodeLine{00750 \textcolor{comment}{    return the size of the object as packed bytes  (not aligned)}}
-\DoxyCodeLine{00751 \textcolor{comment}{  */}}
-\DoxyCodeLine{00752   uint32\_t size() \textcolor{keyword}{const override};}
-\DoxyCodeLine{00753   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00754   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00755   DataType getDataType()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} DataType::STRUCT8; \}}
-\DoxyCodeLine{00756   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00757   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00758 \};}
-\DoxyCodeLine{00759 }
-\DoxyCodeLine{\Hypertarget{std_8hh_source_l00760}\mbox{\hyperlink{classRegex}{00760}} \textcolor{keyword}{class }\mbox{\hyperlink{classRegex}{Regex}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
-\DoxyCodeLine{00761  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00762   std::regex rexp;}
+\DoxyCodeLine{00744   \textcolor{keyword}{const} \mbox{\hyperlink{classXDLType}{XDLType}}* getMemberType(uint32\_t index)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00745     \textcolor{keywordflow}{return} members[index].type;}
+\DoxyCodeLine{00746   \}}
+\DoxyCodeLine{00747 }
+\DoxyCodeLine{00748   uint32\_t getMemberCount() \textcolor{keyword}{const};}
+\DoxyCodeLine{00749   std::string getMemberName(uint32\_t index)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00750     \textcolor{keyword}{const} Member\& m = getMember(index);}
+\DoxyCodeLine{00751     \textcolor{keywordflow}{return} memberNames.substr(m.nameOffset, m.nameLen);}
+\DoxyCodeLine{00752   \}}
+\DoxyCodeLine{00753   \textcolor{comment}{/*}}
+\DoxyCodeLine{00754 \textcolor{comment}{    return the size of the object as packed bytes  (not aligned)}}
+\DoxyCodeLine{00755 \textcolor{comment}{  */}}
+\DoxyCodeLine{00756   uint32\_t size() \textcolor{keyword}{const override};}
+\DoxyCodeLine{00757   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00758   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00759   DataType getDataType()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} DataType::STRUCT8; \}}
+\DoxyCodeLine{00760   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00761   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00762 \};}
 \DoxyCodeLine{00763 }
-\DoxyCodeLine{00764  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00765   \mbox{\hyperlink{classRegex}{Regex}}(\textcolor{keyword}{const} std::string\& name, \textcolor{keyword}{const} std::string\& exp)}
-\DoxyCodeLine{00766       : \mbox{\hyperlink{classXDLType}{XDLType}}(name), rexp(exp) \{\}}
-\DoxyCodeLine{00767   \textcolor{comment}{// return true if this regex object matches the text}}
-\DoxyCodeLine{00768   \textcolor{keywordtype}{bool} match(\textcolor{keyword}{const} std::string\& text)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} regex\_match(text, rexp); \}}
-\DoxyCodeLine{00769   uint32\_t size()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} 0; \}  \textcolor{comment}{// TODO: implement in .cc}}
-\DoxyCodeLine{00770   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00771   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
-\DoxyCodeLine{00772   DataType getDataType()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} DataType::REGEX; \}}
-\DoxyCodeLine{00773   \textcolor{comment}{// string getTypeName() const \{return typeName;\}}}
-\DoxyCodeLine{00774   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
-\DoxyCodeLine{00775   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
-\DoxyCodeLine{00776 \};}
+\DoxyCodeLine{\Hypertarget{std_8hh_source_l00764}\mbox{\hyperlink{classRegex}{00764}} \textcolor{keyword}{class }\mbox{\hyperlink{classRegex}{Regex}} : \textcolor{keyword}{public} \mbox{\hyperlink{classXDLType}{XDLType}} \{}
+\DoxyCodeLine{00765  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00766   std::regex rexp;}
+\DoxyCodeLine{00767 }
+\DoxyCodeLine{00768  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00769   \mbox{\hyperlink{classRegex}{Regex}}(\textcolor{keyword}{const} std::string\& name, \textcolor{keyword}{const} std::string\& exp)}
+\DoxyCodeLine{00770       : \mbox{\hyperlink{classXDLType}{XDLType}}(name), rexp(exp) \{\}}
+\DoxyCodeLine{00771   \textcolor{comment}{// return true if this regex object matches the text}}
+\DoxyCodeLine{00772   \textcolor{keywordtype}{bool} match(\textcolor{keyword}{const} std::string\& text)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} regex\_match(text, rexp); \}}
+\DoxyCodeLine{00773   uint32\_t size()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} 0; \}  \textcolor{comment}{// TODO: implement in .cc}}
+\DoxyCodeLine{00774   \textcolor{keywordtype}{void} write(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00775   \textcolor{keywordtype}{void} writeMeta(\mbox{\hyperlink{classBuffer}{Buffer}}\& buf) \textcolor{keyword}{const override};}
+\DoxyCodeLine{00776   DataType getDataType()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} DataType::REGEX; \}}
+\DoxyCodeLine{00777   \textcolor{comment}{// string getTypeName() const \{return typeName;\}}}
+\DoxyCodeLine{00778   \textcolor{keywordtype}{void} display(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut) \textcolor{keyword}{const};}
+\DoxyCodeLine{00779   \textcolor{keywordtype}{void} format(\mbox{\hyperlink{classBuffer}{Buffer}}\& binaryIn, \mbox{\hyperlink{classBuffer}{Buffer}}\& asciiOut, \textcolor{keyword}{const} \textcolor{keywordtype}{char} fmt[]) \textcolor{keyword}{const};}
+\DoxyCodeLine{00780 \};}
 
 \end{DoxyCode}

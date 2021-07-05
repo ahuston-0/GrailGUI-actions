@@ -7,88 +7,92 @@
 \DoxyCodeLine{00003 \textcolor{comment}{//}}
 \DoxyCodeLine{00004 }
 \DoxyCodeLine{00005 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <cstring>}}
-\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <string>}}
 \DoxyCodeLine{00009 }
-\DoxyCodeLine{\Hypertarget{Student_8hh_source_l00010}\mbox{\hyperlink{classStudent}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{classStudent}{Student}}\{}
-\DoxyCodeLine{00011 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00012     std::string first;}
-\DoxyCodeLine{00013     std::string last;}
-\DoxyCodeLine{00014     uint32\_t id;}
-\DoxyCodeLine{00015 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00016     \mbox{\hyperlink{classStudent}{Student}}(\textcolor{keyword}{const} std::string\& first, \textcolor{keyword}{const} std::string\& last, uint16\_t \textcolor{keywordtype}{id}) : first(first), last(last), id(\textcolor{keywordtype}{id}) \{\}}
-\DoxyCodeLine{00017     \mbox{\hyperlink{classStudent}{Student}}()\{}
-\DoxyCodeLine{00018         first=\textcolor{stringliteral}{"{}fdefault"{}};}
-\DoxyCodeLine{00019         last=\textcolor{stringliteral}{"{}ldefault"{}};}
-\DoxyCodeLine{00020         \textcolor{keywordtype}{id}=0;}
-\DoxyCodeLine{00021     \}}
-\DoxyCodeLine{00022 }
-\DoxyCodeLine{00023     uint32\_t serializeSize()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(uint32\_t)*3+first.length()+last.length(); \}}
+\DoxyCodeLine{\Hypertarget{Student_8hh_source_l00010}\mbox{\hyperlink{classStudent}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{classStudent}{Student}} \{}
+\DoxyCodeLine{00011  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012   std::string first;}
+\DoxyCodeLine{00013   std::string last;}
+\DoxyCodeLine{00014   uint32\_t id;}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017   \mbox{\hyperlink{classStudent}{Student}}(\textcolor{keyword}{const} std::string\& first, \textcolor{keyword}{const} std::string\& last, uint16\_t \textcolor{keywordtype}{id})}
+\DoxyCodeLine{00018       : first(first), last(last), id(\textcolor{keywordtype}{id}) \{\}}
+\DoxyCodeLine{00019   \mbox{\hyperlink{classStudent}{Student}}() \{}
+\DoxyCodeLine{00020     first = \textcolor{stringliteral}{"{}fdefault"{}};}
+\DoxyCodeLine{00021     last = \textcolor{stringliteral}{"{}ldefault"{}};}
+\DoxyCodeLine{00022     \textcolor{keywordtype}{id} = 0;}
+\DoxyCodeLine{00023   \}}
 \DoxyCodeLine{00024 }
-\DoxyCodeLine{00025     std::string \textcolor{keyword}{const} getFirst()\{}
-\DoxyCodeLine{00026         \textcolor{keywordflow}{return} first;}
-\DoxyCodeLine{00027     \}}
+\DoxyCodeLine{00025   uint32\_t serializeSize()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00026     \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(uint32\_t) * 3 + first.length() + last.length();}
+\DoxyCodeLine{00027   \}}
 \DoxyCodeLine{00028 }
-\DoxyCodeLine{00029     std::string \textcolor{keyword}{const} getLast()\{}
-\DoxyCodeLine{00030         \textcolor{keywordflow}{return} last;}
-\DoxyCodeLine{00031     \}}
+\DoxyCodeLine{00029   std::string \textcolor{keyword}{const} getFirst() \{ \textcolor{keywordflow}{return} first; \}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031   std::string \textcolor{keyword}{const} getLast() \{ \textcolor{keywordflow}{return} last; \}}
 \DoxyCodeLine{00032 }
-\DoxyCodeLine{00033     uint32\_t \textcolor{keyword}{const} getID()\{}
-\DoxyCodeLine{00034         \textcolor{keywordflow}{return} id;}
-\DoxyCodeLine{00035     \}}
-\DoxyCodeLine{00036 }
-\DoxyCodeLine{00037     \textcolor{keywordtype}{char} * write(\textcolor{keywordtype}{char} *p)\{}
-\DoxyCodeLine{00038         \textcolor{comment}{//Value of ID}}
-\DoxyCodeLine{00039         *(uint32\_t*)p=\textcolor{keywordtype}{id};}
-\DoxyCodeLine{00040         p+=\textcolor{keyword}{sizeof}(uint32\_t);}
-\DoxyCodeLine{00041         \textcolor{comment}{//Length of First}}
-\DoxyCodeLine{00042         *(uint32\_t*)p =first.length();}
-\DoxyCodeLine{00043         p+=\textcolor{keyword}{sizeof}(uint32\_t);}
-\DoxyCodeLine{00044         \textcolor{comment}{//Length of Last}}
-\DoxyCodeLine{00045         *(uint32\_t*)p =last.length();}
-\DoxyCodeLine{00046         p+=\textcolor{keyword}{sizeof}(uint32\_t);}
-\DoxyCodeLine{00047         \textcolor{comment}{//Value of First}}
-\DoxyCodeLine{00048         \textcolor{comment}{//memcpy(p,\&first,first.length());}}
-\DoxyCodeLine{00049         \textcolor{comment}{//p+=first.length();}}
-\DoxyCodeLine{00050         \textcolor{keywordflow}{for} (uint32\_t i = 0;i<first.length();i++)\{}
-\DoxyCodeLine{00051             *p=first.at(i);}
-\DoxyCodeLine{00052             ++p;}
-\DoxyCodeLine{00053         \}}
-\DoxyCodeLine{00054         \textcolor{comment}{//Value of Last}}
-\DoxyCodeLine{00055        \textcolor{comment}{// memcpy(p,\&last,last.length());}}
-\DoxyCodeLine{00056         \textcolor{keywordflow}{for} (uint32\_t i = 0;i<last.length();i++)\{}
-\DoxyCodeLine{00057             *p=last.at(i);}
-\DoxyCodeLine{00058             ++p;}
-\DoxyCodeLine{00059         \}}
-\DoxyCodeLine{00060         \textcolor{keywordflow}{return} p;}
-\DoxyCodeLine{00061     \}}
-\DoxyCodeLine{00062     \textcolor{comment}{//Student(const Student \&cSource)}}
-\DoxyCodeLine{00063 \textcolor{comment}{//    Student(const Student\&  src) : first(src.first), last(src.last), id(src.id) \{\}}}
-\DoxyCodeLine{00064 \textcolor{comment}{/*}}
-\DoxyCodeLine{00065 \textcolor{comment}{    //TODO:Gets here and segfaults; sdt has all values correct; "{}this"{} has the following error}}
-\DoxyCodeLine{00066 \textcolor{comment}{    //TODO:<error reading variable: Cannot access memory at address 0x433b6e69625c7451>\{static npos = 18446744073709551615, \_M\_dataplus = \{<std::allocator<char>> = \{<\_\_gnu\_cxx::new\_allocator<char>> = \{<No data fields>\}, <No data fields>\}, \_M\_p = 0x433b6e69625c7469 <error: Cannot access memory at address 0x433b6e69625c7469>\}\}}}
-\DoxyCodeLine{00067 \textcolor{comment}{    //TODO: id works fine}}
-\DoxyCodeLine{00068 \textcolor{comment}{    Student\& operator= (const Student \&sdt)}}
-\DoxyCodeLine{00069 \textcolor{comment}{    \{}}
-\DoxyCodeLine{00070 \textcolor{comment}{        Student temp;}}
-\DoxyCodeLine{00071 \textcolor{comment}{        temp.first=sdt.first;}}
-\DoxyCodeLine{00072 \textcolor{comment}{        temp.last=sdt.last;}}
-\DoxyCodeLine{00073 \textcolor{comment}{        temp.id=sdt.id;}}
-\DoxyCodeLine{00074 \textcolor{comment}{        return temp;}}
-\DoxyCodeLine{00075 \textcolor{comment}{        first=sdt.first;}}
-\DoxyCodeLine{00076 \textcolor{comment}{        last=sdt.last;}}
-\DoxyCodeLine{00077 \textcolor{comment}{        id=sdt.id;}}
-\DoxyCodeLine{00078 \textcolor{comment}{        return *this;}}
-\DoxyCodeLine{00079 \textcolor{comment}{    \}}}
-\DoxyCodeLine{00080 \textcolor{comment}{*/}}
-\DoxyCodeLine{00081     \textcolor{comment}{/*Student \& Student::operator = (const Student \&s)}}
-\DoxyCodeLine{00082 \textcolor{comment}{    \{}}
-\DoxyCodeLine{00083 \textcolor{comment}{        if(this != \&s)\{}}
-\DoxyCodeLine{00084 \textcolor{comment}{            first=s.getFirst();}}
-\DoxyCodeLine{00085 \textcolor{comment}{        \}}}
-\DoxyCodeLine{00086 \textcolor{comment}{        return *this;}}
-\DoxyCodeLine{00087 \textcolor{comment}{    \}*/}}
-\DoxyCodeLine{00088 \};}
+\DoxyCodeLine{00033   uint32\_t \textcolor{keyword}{const} getID() \{ \textcolor{keywordflow}{return} id; \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035   \textcolor{keywordtype}{char}* write(\textcolor{keywordtype}{char}* p) \{}
+\DoxyCodeLine{00036     \textcolor{comment}{// Value of ID}}
+\DoxyCodeLine{00037     *(uint32\_t*)p = \textcolor{keywordtype}{id};}
+\DoxyCodeLine{00038     p += \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{00039     \textcolor{comment}{// Length of First}}
+\DoxyCodeLine{00040     *(uint32\_t*)p = first.length();}
+\DoxyCodeLine{00041     p += \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{00042     \textcolor{comment}{// Length of Last}}
+\DoxyCodeLine{00043     *(uint32\_t*)p = last.length();}
+\DoxyCodeLine{00044     p += \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{00045     \textcolor{comment}{// Value of First}}
+\DoxyCodeLine{00046     \textcolor{comment}{// memcpy(p,\&first,first.length());}}
+\DoxyCodeLine{00047     \textcolor{comment}{// p+=first.length();}}
+\DoxyCodeLine{00048     \textcolor{keywordflow}{for} (uint32\_t i = 0; i < first.length(); i++) \{}
+\DoxyCodeLine{00049       *p = first.at(i);}
+\DoxyCodeLine{00050       ++p;}
+\DoxyCodeLine{00051     \}}
+\DoxyCodeLine{00052     \textcolor{comment}{// Value of Last}}
+\DoxyCodeLine{00053     \textcolor{comment}{// memcpy(p,\&last,last.length());}}
+\DoxyCodeLine{00054     \textcolor{keywordflow}{for} (uint32\_t i = 0; i < last.length(); i++) \{}
+\DoxyCodeLine{00055       *p = last.at(i);}
+\DoxyCodeLine{00056       ++p;}
+\DoxyCodeLine{00057     \}}
+\DoxyCodeLine{00058     \textcolor{keywordflow}{return} p;}
+\DoxyCodeLine{00059   \}}
+\DoxyCodeLine{00060   \textcolor{comment}{// Student(const Student \&cSource)}}
+\DoxyCodeLine{00061   \textcolor{comment}{//    Student(const Student\&  src) : first(src.first), last(src.last),}}
+\DoxyCodeLine{00062   \textcolor{comment}{//    id(src.id) \{\}}}
+\DoxyCodeLine{00063   \textcolor{comment}{/*}}
+\DoxyCodeLine{00064 \textcolor{comment}{      //TODO:Gets here and segfaults; sdt has all values correct; "{}this"{} has the}}
+\DoxyCodeLine{00065 \textcolor{comment}{     following error}}
+\DoxyCodeLine{00066 \textcolor{comment}{      //TODO:<error reading variable: Cannot access memory at address}}
+\DoxyCodeLine{00067 \textcolor{comment}{     0x433b6e69625c7451>\{static npos = 18446744073709551615, \_M\_dataplus =}}
+\DoxyCodeLine{00068 \textcolor{comment}{     \{<std::allocator<char>> = \{<\_\_gnu\_cxx::new\_allocator<char>> = \{<No data}}
+\DoxyCodeLine{00069 \textcolor{comment}{     fields>\}, <No data fields>\}, \_M\_p = 0x433b6e69625c7469 <error: Cannot}}
+\DoxyCodeLine{00070 \textcolor{comment}{     access memory at address 0x433b6e69625c7469>\}\}}}
+\DoxyCodeLine{00071 \textcolor{comment}{      //TODO: id works fine}}
+\DoxyCodeLine{00072 \textcolor{comment}{      Student\& operator= (const Student \&sdt)}}
+\DoxyCodeLine{00073 \textcolor{comment}{      \{}}
+\DoxyCodeLine{00074 \textcolor{comment}{          Student temp;}}
+\DoxyCodeLine{00075 \textcolor{comment}{          temp.first=sdt.first;}}
+\DoxyCodeLine{00076 \textcolor{comment}{          temp.last=sdt.last;}}
+\DoxyCodeLine{00077 \textcolor{comment}{          temp.id=sdt.id;}}
+\DoxyCodeLine{00078 \textcolor{comment}{          return temp;}}
+\DoxyCodeLine{00079 \textcolor{comment}{          first=sdt.first;}}
+\DoxyCodeLine{00080 \textcolor{comment}{          last=sdt.last;}}
+\DoxyCodeLine{00081 \textcolor{comment}{          id=sdt.id;}}
+\DoxyCodeLine{00082 \textcolor{comment}{          return *this;}}
+\DoxyCodeLine{00083 \textcolor{comment}{      \}}}
+\DoxyCodeLine{00084 \textcolor{comment}{  */}}
+\DoxyCodeLine{00085   \textcolor{comment}{/*Student \& Student::operator = (const Student \&s)}}
+\DoxyCodeLine{00086 \textcolor{comment}{  \{}}
+\DoxyCodeLine{00087 \textcolor{comment}{      if(this != \&s)\{}}
+\DoxyCodeLine{00088 \textcolor{comment}{          first=s.getFirst();}}
+\DoxyCodeLine{00089 \textcolor{comment}{      \}}}
+\DoxyCodeLine{00090 \textcolor{comment}{      return *this;}}
+\DoxyCodeLine{00091 \textcolor{comment}{  \}*/}}
+\DoxyCodeLine{00092 \};}
 
 \end{DoxyCode}

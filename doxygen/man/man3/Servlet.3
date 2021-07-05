@@ -1,4 +1,4 @@
-.TH "Servlet" 3 "Thu Jul 1 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.TH "Servlet" 3 "Mon Jul 5 2021" "Version 1.0" "Grail" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -19,16 +19,25 @@ Inherited by \fBHttpServlet\fP\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Base class for servlet This is the common behavior between protocols such as HTTP and CSP so this is the low-level data methods\&.
-.PP
-All servlets support a request, which is a client sending a message to the server requesting data\&. In HTTP, a request is ASCII with many potential lines if input, whereas in CSP it is a lot shorter, fixed format, and binary
-.PP
-\fBAuthor\fP
-.RS 4
-: Dov Kruger 
-.RE
-.PP
 
+.PP
+.nf
+  Base class for servlet
+  This is the common behavior between protocols such as HTTP and CSP
+  so this is the low-level data methods.
+
+  All servlets support a request, which is a client sending a message to
+
+.fi
+.PP
+ the server requesting data\&. In HTTP, a request is ASCII with many potential lines if input, whereas in CSP it is a lot shorter, fixed format, and binary 
+.PP
+.nf
+  @author: Dov Kruger
+
+.fi
+.PP
+ 
 
 .SH "Author"
 .PP 

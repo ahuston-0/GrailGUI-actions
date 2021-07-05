@@ -89,25 +89,22 @@ $(document).ready(function(){initNavTree('d3/da4/Stack_8hh_source.html','../../'
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;util/DynArray.hh&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="../../d4/dc1/classStack.html">    5</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/dc1/classStack.html">Stack</a> {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="../../d0/d0c/classDynArray.html">DynArray&lt;T&gt;</a> impl;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="../../d4/dc1/classStack.html">Stack</a>(uint32_t capacity) : impl(capacity) {}</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordtype">void</span> push(<span class="keyword">const</span> T&amp; v) { impl.add(v); }</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">bool</span> isEmpty()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> impl.size() == 0; }</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  T peek()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">return</span> impl.last();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    T pop() {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">return</span> impl.removeEnd();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">friend</span> std::ostream&amp; operator &lt;&lt;(std::ostream&amp; s, <span class="keyword">const</span> <a class="code" href="../../d4/dc1/classStack.html">Stack</a>&amp; stack) {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">return</span> s &lt;&lt; stack.impl;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
-<div class="ttc" id="aclassDynArray_html"><div class="ttname"><a href="../../d0/d0c/classDynArray.html">DynArray</a></div><div class="ttdef"><b>Definition:</b> DynArray.hh:6</div></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <a class="code" href="../../d0/d0c/classDynArray.html">DynArray&lt;T&gt;</a> impl;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <a class="code" href="../../d4/dc1/classStack.html">Stack</a>(uint32_t capacity) : impl(capacity) {}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">void</span> push(<span class="keyword">const</span> T&amp; v) { impl.add(v); }</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordtype">bool</span> isEmpty()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> impl.size() == 0; }</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  T peek()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> impl.last(); }</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  T pop() { <span class="keywordflow">return</span> impl.removeEnd(); }</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">friend</span> std::ostream&amp; operator&lt;&lt;(std::ostream&amp; s, <span class="keyword">const</span> <a class="code" href="../../d4/dc1/classStack.html">Stack</a>&amp; stack) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">return</span> s &lt;&lt; stack.impl;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
+<div class="ttc" id="aclassDynArray_html"><div class="ttname"><a href="../../d0/d0c/classDynArray.html">DynArray</a></div><div class="ttdef"><b>Definition:</b> DynArray.hh:7</div></div>
 <div class="ttc" id="aclassStack_html"><div class="ttname"><a href="../../d4/dc1/classStack.html">Stack</a></div><div class="ttdef"><b>Definition:</b> Stack.hh:5</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

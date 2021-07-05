@@ -20,8 +20,8 @@
 \DoxyCodeLine{00016   \textcolor{comment}{// Scale(double scale, double shift) : scale(scale), shift(shift) \{\}}}
 \DoxyCodeLine{00017   \mbox{\hyperlink{classScale}{Scale}}() : scale(0), shift(0) \{\}}
 \DoxyCodeLine{00018   \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} transform(\textcolor{keywordtype}{double} x) = 0;}
-\DoxyCodeLine{00019   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} init(\textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max, \textcolor{keywordtype}{double} shift,}
-\DoxyCodeLine{00020                     \textcolor{keywordtype}{double} axisSize, \textcolor{keywordtype}{double} tickInterval) = 0;}
+\DoxyCodeLine{00019   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} init(\textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max, \textcolor{keywordtype}{double} shift, \textcolor{keywordtype}{double} axisSize,}
+\DoxyCodeLine{00020                     \textcolor{keywordtype}{double} tickInterval) = 0;}
 \DoxyCodeLine{00021   \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} next(\textcolor{keywordtype}{float} v) = 0;}
 \DoxyCodeLine{00022 \};}
 \DoxyCodeLine{00023 }
@@ -29,8 +29,8 @@
 \DoxyCodeLine{00025  \textcolor{keyword}{public}:}
 \DoxyCodeLine{00026   \textcolor{comment}{// LinearScale(double scale, double shift) : Scale(scale, shift) \{\}}}
 \DoxyCodeLine{00027   \textcolor{keywordtype}{float} transform(\textcolor{keywordtype}{double} x) \textcolor{keyword}{override};}
-\DoxyCodeLine{00028   \textcolor{keywordtype}{void} init(\textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max, \textcolor{keywordtype}{double} shift,}
-\DoxyCodeLine{00029             \textcolor{keywordtype}{double} axisSize, \textcolor{keywordtype}{double} tickInterval) \textcolor{keyword}{override};}
+\DoxyCodeLine{00028   \textcolor{keywordtype}{void} init(\textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max, \textcolor{keywordtype}{double} shift, \textcolor{keywordtype}{double} axisSize,}
+\DoxyCodeLine{00029             \textcolor{keywordtype}{double} tickInterval) \textcolor{keyword}{override};}
 \DoxyCodeLine{00030   \textcolor{keywordtype}{float} next(\textcolor{keywordtype}{float} v) \textcolor{keyword}{override};}
 \DoxyCodeLine{00031 \};}
 \DoxyCodeLine{00032 }
@@ -38,8 +38,8 @@
 \DoxyCodeLine{00034  \textcolor{keyword}{public}:}
 \DoxyCodeLine{00035   \textcolor{comment}{// LogarithmicScale(double scale, double shift) : Scale(scale, shift) \{\}}}
 \DoxyCodeLine{00036   \textcolor{keywordtype}{float} transform(\textcolor{keywordtype}{double} x) \textcolor{keyword}{override};}
-\DoxyCodeLine{00037   \textcolor{keywordtype}{void} init(\textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max, \textcolor{keywordtype}{double} shift,}
-\DoxyCodeLine{00038             \textcolor{keywordtype}{double} axisSize, \textcolor{keywordtype}{double} tickInterval) \textcolor{keyword}{override};}
+\DoxyCodeLine{00037   \textcolor{keywordtype}{void} init(\textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max, \textcolor{keywordtype}{double} shift, \textcolor{keywordtype}{double} axisSize,}
+\DoxyCodeLine{00038             \textcolor{keywordtype}{double} tickInterval) \textcolor{keyword}{override};}
 \DoxyCodeLine{00039   \textcolor{keywordtype}{float} next(\textcolor{keywordtype}{float} v) \textcolor{keyword}{override};}
 \DoxyCodeLine{00040 \};}
 

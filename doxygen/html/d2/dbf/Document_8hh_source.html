@@ -98,10 +98,10 @@ $(document).ready(function(){initNavTree('d2/dbf/Document_8hh_source.html','../.
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../d7/d9e/classPageLayout.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a> {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordtype">float</span> x0, x1;  <span class="comment">// left and right margins</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordtype">float</span> xDropDead; <span class="comment">// never go beyond this edge, even if no space is found</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">float</span> y0, y1;  <span class="comment">// top and botton margins</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordtype">float</span> w, h;    <span class="comment">// width and height of the active part</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordtype">float</span> x0, x1;     <span class="comment">// left and right margins</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordtype">float</span> xDropDead;  <span class="comment">// never go beyond this edge, even if no space is found</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">float</span> y0, y1;     <span class="comment">// top and botton margins</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordtype">float</span> w, h;       <span class="comment">// width and height of the active part</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordtype">float</span> pageNumX, pageNumY;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordtype">float</span> paragraphSpacing;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  uint32_t linesPerPage;</div>
@@ -122,68 +122,70 @@ $(document).ready(function(){initNavTree('d2/dbf/Document_8hh_source.html','../.
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        paragraphSpacing(paragraphSpacing),</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        linesPerPage(linesPerPage),</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        f(f),</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        xDropDead(dropDead != 0 ? dropDead : x1)</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {}</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/dcc/classPage.html">Page</a> {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *text;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a> *layout;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  std::vector&lt;uint32_t&gt; lines;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="../../d1/dcc/classPage.html">Page</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *text, <span class="keyword">const</span> <a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a> *pageLayout,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;       uint32_t offset);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">void</span> addLine(uint32_t offset) { lines.push_back(offset); }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  uint32_t getLine(uint32_t line)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (line &gt; size()) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      std::cerr &lt;&lt; <span class="stringliteral">&quot;src/opengl/primitivesV2/&quot;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                   <span class="stringliteral">&quot;Document.hh:page::getLine(uint32_t): line out of bounds&quot;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> lines[line];</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a> *getLayout()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> layout; }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  uint32_t size()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> lines.size(); }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../d1/d67/classDocument.html">   64</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/d67/classDocument.html">Document</a> {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// TODO: the buffer should be rope</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *text;  <span class="comment">// the main buffer</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  std::vector&lt;Page&gt;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      pages;  <span class="comment">// TODO: Replace by rope for high performance editable document</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a> layout;  <span class="comment">// size of the page to render to</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="comment">/*</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">   precompute text with each line ending at flush margin, stopping in the middle of</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">   a word if necessary</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">  */</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> buildJustifiedText(<span class="keyword">const</span> <a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a>&amp; layout, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* text, uint32_t len);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="comment">/*</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">   precompute text with each line ending at a space or - if that lies within margin range</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        xDropDead(dropDead != 0 ? dropDead : x1) {}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/dcc/classPage.html">Page</a> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *text;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a> *layout;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  std::vector&lt;uint32_t&gt; lines;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="../../d1/dcc/classPage.html">Page</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *text, <span class="keyword">const</span> <a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a> *pageLayout,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;       uint32_t offset);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">void</span> addLine(uint32_t offset) { lines.push_back(offset); }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  uint32_t getLine(uint32_t line)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (line &gt; size()) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      std::cerr &lt;&lt; <span class="stringliteral">&quot;src/opengl/primitivesV2/&quot;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                   <span class="stringliteral">&quot;Document.hh:page::getLine(uint32_t): line out of bounds&quot;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> lines[line];</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a> *getLayout()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> layout; }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  uint32_t size()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> lines.size(); }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../d1/d67/classDocument.html">   62</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/d67/classDocument.html">Document</a> {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// TODO: the buffer should be rope</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *text;  <span class="comment">// the main buffer</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  std::vector&lt;Page&gt;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      pages;  <span class="comment">// TODO: Replace by rope for high performance editable document</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a> layout;  <span class="comment">// size of the page to render to</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="comment">/*</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">   precompute text with each line ending at flush margin, stopping in the middle</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">   of a word if necessary</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">  */</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">void</span> buildJustifiedText(<span class="keyword">const</span> <a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a> &amp;layout, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *text,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                          uint32_t len);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="comment">/*</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">   precompute text with each line ending at a space or - if that lies within</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">   margin range</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">  */</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span> buildRaggedText(<span class="keyword">const</span> <a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a>&amp; layout, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* text, uint32_t len);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="../../d1/d67/classDocument.html">Document</a>(<span class="keyword">const</span> <a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a> &amp;layout) : layout(layout), text(<span class="keyword">nullptr</span>) {}</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  ~<a class="code" href="../../d1/d67/classDocument.html">Document</a>() { <span class="keyword">delete</span>[] text; }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="../../d1/d67/classDocument.html">Document</a>(<span class="keyword">const</span> <a class="code" href="../../d1/d67/classDocument.html">Document</a> &amp;orig) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="../../d1/d67/classDocument.html">Document</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="../../d1/d67/classDocument.html">Document</a> &amp;orig) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *getText()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> text; }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d1/dcc/classPage.html">Page</a> *getPage(uint32_t p)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;pages[p]; }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a> *getLayout()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;layout; }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  uint32_t getPageCount()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> pages.size(); }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">void</span> appendFile(<span class="keyword">const</span> <a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a> &amp;layout, <span class="keyword">const</span> <span class="keywordtype">char</span> filename[]);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
-<div class="ttc" id="aclassDocument_html"><div class="ttname"><a href="../../d1/d67/classDocument.html">Document</a></div><div class="ttdef"><b>Definition:</b> Document.hh:64</div></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span> buildRaggedText(<span class="keyword">const</span> <a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a> &amp;layout, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *text,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                       uint32_t len);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="../../d1/d67/classDocument.html">Document</a>(<span class="keyword">const</span> <a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a> &amp;layout) : layout(layout), text(<span class="keyword">nullptr</span>) {}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  ~<a class="code" href="../../d1/d67/classDocument.html">Document</a>() { <span class="keyword">delete</span>[] text; }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="../../d1/d67/classDocument.html">Document</a>(<span class="keyword">const</span> <a class="code" href="../../d1/d67/classDocument.html">Document</a> &amp;orig) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="../../d1/d67/classDocument.html">Document</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="../../d1/d67/classDocument.html">Document</a> &amp;orig) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *getText()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> text; }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d1/dcc/classPage.html">Page</a> *getPage(uint32_t p)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;pages[p]; }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a> *getLayout()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;layout; }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  uint32_t getPageCount()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> pages.size(); }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordtype">void</span> appendFile(<span class="keyword">const</span> <a class="code" href="../../d7/d9e/classPageLayout.html">PageLayout</a> &amp;layout, <span class="keyword">const</span> <span class="keywordtype">char</span> filename[]);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
+<div class="ttc" id="aclassDocument_html"><div class="ttname"><a href="../../d1/d67/classDocument.html">Document</a></div><div class="ttdef"><b>Definition:</b> Document.hh:62</div></div>
 <div class="ttc" id="aclassFont_html"><div class="ttname"><a href="../../d4/d42/classFont.html">Font</a></div><div class="ttdef"><b>Definition:</b> GLWinFonts.hh:80</div></div>
 <div class="ttc" id="aclassPageLayout_html"><div class="ttname"><a href="../../d7/d9e/classPageLayout.html">PageLayout</a></div><div class="ttdef"><b>Definition:</b> Document.hh:11</div></div>
-<div class="ttc" id="aclassPage_html"><div class="ttname"><a href="../../d1/dcc/classPage.html">Page</a></div><div class="ttdef"><b>Definition:</b> Page.hh:12</div></div>
+<div class="ttc" id="aclassPage_html"><div class="ttname"><a href="../../d1/dcc/classPage.html">Page</a></div><div class="ttdef"><b>Definition:</b> Page.hh:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

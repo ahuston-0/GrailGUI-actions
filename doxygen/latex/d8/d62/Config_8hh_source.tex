@@ -4,182 +4,182 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{00002 }
-\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <cstdint>}}
-\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <cstdarg>}}
-\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <fstream>}}
-\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <map>}}
-\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <regex>}}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <cstdarg>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <regex>}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <string>}}
 \DoxyCodeLine{00009 \textcolor{comment}{//\#include <boost/any.hpp>}}
 \DoxyCodeLine{00010 }
 \DoxyCodeLine{00011 \textcolor{keyword}{using namespace }std;}
-\DoxyCodeLine{00012 \textcolor{comment}{//using namespace boost;}}
+\DoxyCodeLine{00012 \textcolor{comment}{// using namespace boost;}}
 \DoxyCodeLine{00013 }
-\DoxyCodeLine{\Hypertarget{Config_8hh_source_l00029}\mbox{\hyperlink{classBadType}{00029}} \textcolor{keyword}{class }\mbox{\hyperlink{classBadType}{BadType}} \{ \textcolor{comment}{//BadType exception is thrown when an incorrect type is passed as a parameter for the "{}get"{} functions}}
-\DoxyCodeLine{00030     \textcolor{keyword}{private}:}
-\DoxyCodeLine{00031         \textcolor{keyword}{const} \textcolor{keywordtype}{string} filename;}
-\DoxyCodeLine{00032         \textcolor{keywordtype}{int} lineNum;}
-\DoxyCodeLine{00033     \textcolor{keyword}{public}:}
-\DoxyCodeLine{00034         \mbox{\hyperlink{classBadType}{BadType}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[], \textcolor{keywordtype}{int} lineNum) :}
-\DoxyCodeLine{00035             filename(filename), lineNum(lineNum) \{\}}
-\DoxyCodeLine{00036         \textcolor{keyword}{friend} ostream\& operator <<(ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classBadType}{BadType}}\& e) \{}
-\DoxyCodeLine{00037             \textcolor{keywordflow}{return} s << \textcolor{stringliteral}{"{}Bad Type at "{}} << e.filename << \textcolor{stringliteral}{"{}: "{}} << e.lineNum;}
-\DoxyCodeLine{00038         \}}
-\DoxyCodeLine{00039 \};}
-\DoxyCodeLine{00040 }
-\DoxyCodeLine{\Hypertarget{Config_8hh_source_l00041}\mbox{\hyperlink{classConfig}{00041}} \textcolor{keyword}{class }\mbox{\hyperlink{classConfig}{Config}} \{}
-\DoxyCodeLine{00042 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00043 \textcolor{comment}{//TODO: this should use the Datatype types}}
-\DoxyCodeLine{00044     \textcolor{keyword}{enum class} Type \{\mbox{\hyperlink{classU16}{U16}}, \mbox{\hyperlink{classU32}{U32}}, \mbox{\hyperlink{classU64}{U64}}, \mbox{\hyperlink{classI16}{I16}}, \mbox{\hyperlink{classI32}{I32}}, \mbox{\hyperlink{classI64}{I64}},}
-\DoxyCodeLine{00045                          \mbox{\hyperlink{classF64}{F64}}, \mbox{\hyperlink{classF32}{F32}}, BOOL, STRING\};}
-\DoxyCodeLine{00046 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00047     \textcolor{keyword}{struct }Sym \{}
-\DoxyCodeLine{00048         Type type;}
-\DoxyCodeLine{00049         \textcolor{keyword}{union }\{}
-\DoxyCodeLine{00050             uint16\_t u16;}
-\DoxyCodeLine{00051             uint32\_t u32;}
-\DoxyCodeLine{00052             uint64\_t u64;}
-\DoxyCodeLine{00053             int16\_t  i16;}
-\DoxyCodeLine{00054             int32\_t  i32;}
-\DoxyCodeLine{00055             int64\_t  i64;}
-\DoxyCodeLine{00056             \textcolor{keywordtype}{double}   d;}
-\DoxyCodeLine{00057             \textcolor{keywordtype}{string}   *s;}
-\DoxyCodeLine{00058             \textcolor{keywordtype}{bool}       b;}
-\DoxyCodeLine{00059         \};}
-\DoxyCodeLine{00060 }
-\DoxyCodeLine{00061         \textcolor{comment}{//Constructors}}
-\DoxyCodeLine{00062         Sym(Type t, \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& val) : type(t) \{}
-\DoxyCodeLine{00063             \textcolor{comment}{//TODO: check online for actual integer bit-\/precision conversions}}
-\DoxyCodeLine{00064             \textcolor{keywordflow}{if} (t == Type::U16) }
-\DoxyCodeLine{00065                 u16 = stoi(val);}
-\DoxyCodeLine{00066             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (t == Type::U32)}
-\DoxyCodeLine{00067                 u32 = stoi(val);}
-\DoxyCodeLine{00068             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (t == Type::U64)}
-\DoxyCodeLine{00069                 u64 = stoi(val);}
-\DoxyCodeLine{00070             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (t == Type::I16)}
-\DoxyCodeLine{00071                 i16 = stoi(val);}
-\DoxyCodeLine{00072             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (t == Type::I32)}
-\DoxyCodeLine{00073                 i32 = stoi(val);}
-\DoxyCodeLine{00074             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (t == Type::I64)}
-\DoxyCodeLine{00075                 i64 = stoi(val);}
-\DoxyCodeLine{00076             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (t == Type::F64)}
-\DoxyCodeLine{00077                 d = stod(val);}
-\DoxyCodeLine{00078             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (t == Type::STRING)}
-\DoxyCodeLine{00079                 s = \textcolor{keyword}{new} string(val);}
-\DoxyCodeLine{00080             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (t == Type::BOOL) }
-\DoxyCodeLine{00081                 b = stoi(val);}
-\DoxyCodeLine{00082             \textcolor{keywordflow}{else} }
-\DoxyCodeLine{00083                 \textcolor{keywordflow}{throw} \mbox{\hyperlink{classBadType}{BadType}}(\_\_FILE\_\_, \_\_LINE\_\_);}
-\DoxyCodeLine{00084         \}}
-\DoxyCodeLine{00085         Sym(uint16\_t u16) : type(Type::U16),  u16(u16) \{\}}
-\DoxyCodeLine{00086         Sym(uint32\_t u32) : type(Type::U32),  u32(u32) \{\}}
-\DoxyCodeLine{00087         Sym(uint64\_t u64) : type(Type::U64),  u64(u64) \{\}}
-\DoxyCodeLine{00088         Sym(int16\_t i16)  : type(Type::I16),   i16(i16) \{\}}
-\DoxyCodeLine{00089         Sym(int32\_t i32)  : type(Type::I32),   i32(i32) \{\}}
-\DoxyCodeLine{00090         Sym(int64\_t i64)  : type(Type::I64),   i64(i64) \{\}}
-\DoxyCodeLine{00091         Sym(\textcolor{keywordtype}{double} d)     : type(Type::F64),  d(d)     \{\}}
-\DoxyCodeLine{00092         Sym(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& str)  : type(Type::STRING),  s(\textcolor{keyword}{new} \textcolor{keywordtype}{string}(str))   \{\}}
-\DoxyCodeLine{00093         Sym(\textcolor{keywordtype}{bool} b)       : type(Type::BOOL),    b(b)     \{\}\textcolor{comment}{// true = 1, false = 0}}
-\DoxyCodeLine{00094         Sym(\textcolor{keywordtype}{double} size, \textcolor{keywordtype}{char} mul) : type(Type::U64) \{ \textcolor{comment}{// 1024 or 128k or 16M or 2G}}
-\DoxyCodeLine{00095             \textcolor{keywordflow}{if} (mul == \textcolor{charliteral}{'k'}) size *= 1024;}
-\DoxyCodeLine{00096             \textcolor{keywordflow}{if} (mul == \textcolor{charliteral}{'M'}) size *= 1024*1024;}
-\DoxyCodeLine{00097             \textcolor{keywordflow}{if} (mul == \textcolor{charliteral}{'G'}) size *= 1024*1024*1024;}
-\DoxyCodeLine{00098             u64 = uint64\_t(size);}
-\DoxyCodeLine{00099         \}}
-\DoxyCodeLine{00100         Sym(\textcolor{keyword}{const} Sym\& orig) \{}
-\DoxyCodeLine{00101             memcpy(\textcolor{keyword}{this}, \&orig, \textcolor{keyword}{sizeof}(*\textcolor{keyword}{this}));}
-\DoxyCodeLine{00102             \textcolor{keywordflow}{if} (type == Type::STRING) \{}
-\DoxyCodeLine{00103                 s = \textcolor{keyword}{new} string(orig.s-\/>c\_str());}
-\DoxyCodeLine{00104             \}}
-\DoxyCodeLine{00105         \}}
-\DoxyCodeLine{00106         \textcolor{comment}{// void operator =(const Sym\& orig) \{}}
-\DoxyCodeLine{00107         \textcolor{comment}{//  if (this != \&orig) \{}}
-\DoxyCodeLine{00108         \textcolor{comment}{//      \string~Sym();}}
-\DoxyCodeLine{00109         \textcolor{comment}{//      type = orig.type;}}
-\DoxyCodeLine{00110         \textcolor{comment}{//      s = new string(orig.s-\/>c\_str());}}
-\DoxyCodeLine{00111         \textcolor{comment}{//  \}}}
-\DoxyCodeLine{00112         \textcolor{comment}{//  return *this;}}
-\DoxyCodeLine{00113         \textcolor{comment}{// \}}}
-\DoxyCodeLine{00114         Sym\& operator =(Sym orig) \{}
-\DoxyCodeLine{00115             swap(*\textcolor{keyword}{this}, orig);}
-\DoxyCodeLine{00116             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{00117         \}}
-\DoxyCodeLine{00118         \string~Sym() \{}
-\DoxyCodeLine{00119             \textcolor{keywordflow}{switch}(type) \{}
-\DoxyCodeLine{00120             \textcolor{comment}{//TODO: there is an issue with the case for STRING, had to comment it out to make configTester run}}
-\DoxyCodeLine{00121             \textcolor{comment}{//case STRING: delete [] s; break;      }}
-\DoxyCodeLine{00122             \textcolor{keywordflow}{default}:;}
-\DoxyCodeLine{00123             \}}
-\DoxyCodeLine{00124         \}}
-\DoxyCodeLine{00125     \};}
-\DoxyCodeLine{00126     std::map<string, Type> types;}
-\DoxyCodeLine{00127     std::map<string, Type> optTypes;}
-\DoxyCodeLine{00128     std::map<string, Sym> f;}
-\DoxyCodeLine{00129 }
-\DoxyCodeLine{00130     \textcolor{keyword}{const} \textcolor{keyword}{static} regex commentOrWhitespace;}
-\DoxyCodeLine{00131     \textcolor{keyword}{const} \textcolor{keyword}{static} regex checkVector;}
-\DoxyCodeLine{00132     }
-\DoxyCodeLine{00133     \textcolor{keyword}{const} Sym* getSym(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name, \textcolor{keywordtype}{int} linenum)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00134         map<string,Sym>::const\_iterator i = f.find(name);}
-\DoxyCodeLine{00135         \textcolor{keywordflow}{if} (i == f.end())}
-\DoxyCodeLine{00136             \textcolor{keywordflow}{throw} \mbox{\hyperlink{classBadType}{BadType}}(\_\_FILE\_\_, linenum);}
-\DoxyCodeLine{00137         \textcolor{keywordflow}{return} \&i-\/>second;}
-\DoxyCodeLine{00138     \}}
-\DoxyCodeLine{00139 \textcolor{keyword}{public}: }
-\DoxyCodeLine{00140     \mbox{\hyperlink{classConfig}{Config}}()\{\}}
-\DoxyCodeLine{00141     \textcolor{keywordtype}{void} load(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& filename);}
-\DoxyCodeLine{00142     \textcolor{keywordtype}{void} save(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& filename);}
-\DoxyCodeLine{00143 }
-\DoxyCodeLine{00144     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{00145     \textcolor{keywordtype}{void} set(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name, T val) \{}
-\DoxyCodeLine{00146         map<string,Sym>::iterator i = f.find(name);}
-\DoxyCodeLine{00147         \textcolor{keywordflow}{if} (i == f.end()) \{}
-\DoxyCodeLine{00148             f[name] = Sym(val);}
-\DoxyCodeLine{00149             \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00150         \}}
-\DoxyCodeLine{00151         \textcolor{comment}{//const char *i-\/>first = name.c\_str(); }}
-\DoxyCodeLine{00152         \textcolor{comment}{//*i-\/>first = name.c\_str();}}
-\DoxyCodeLine{00153         f[name] = Sym(val);}
-\DoxyCodeLine{00154         \textcolor{comment}{//i-\/>second = Sym(val);}}
-\DoxyCodeLine{00155     \}}
-\DoxyCodeLine{00156 }
-\DoxyCodeLine{00157     uint16\_t getUInt16 (\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00158         \textcolor{keywordflow}{return} getSym(name, \_\_LINE\_\_)-\/>u16;}
-\DoxyCodeLine{00159     \}}
-\DoxyCodeLine{00160 }
-\DoxyCodeLine{00161     uint32\_t getUInt32 (\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00162         \textcolor{keywordflow}{return} getSym(name, \_\_LINE\_\_)-\/>u32;}
-\DoxyCodeLine{00163     \}}
-\DoxyCodeLine{00164 }
-\DoxyCodeLine{00165     uint64\_t getUInt64 (\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00166         \textcolor{keywordflow}{return} getSym(name, \_\_LINE\_\_)-\/>u64;}
-\DoxyCodeLine{00167     \}}
-\DoxyCodeLine{00168 }
-\DoxyCodeLine{00169     int16\_t getInt16 (\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00170         \textcolor{keywordflow}{return} getSym(name, \_\_LINE\_\_)-\/>i16;}
-\DoxyCodeLine{00171     \}}
-\DoxyCodeLine{00172 }
-\DoxyCodeLine{00173     int32\_t getInt32 (\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00174         \textcolor{keywordflow}{return} getSym(name, \_\_LINE\_\_)-\/>i32;}
-\DoxyCodeLine{00175     \}}
-\DoxyCodeLine{00176 }
-\DoxyCodeLine{00177     int64\_t getInt64 (\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00178         \textcolor{keywordflow}{return} getSym(name, \_\_LINE\_\_)-\/>i64;}
-\DoxyCodeLine{00179     \}}
-\DoxyCodeLine{00180 }
-\DoxyCodeLine{00181     \textcolor{keywordtype}{bool} getBool(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00182         \textcolor{keywordflow}{return} getSym(name, \_\_LINE\_\_)-\/>b;}
-\DoxyCodeLine{00183     \}}
-\DoxyCodeLine{00184 }
-\DoxyCodeLine{00185     \textcolor{keywordtype}{double} getDouble (\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00186         \textcolor{keywordflow}{return} getSym(name, \_\_LINE\_\_)-\/>d;}
-\DoxyCodeLine{00187     \}}
-\DoxyCodeLine{00188 }
-\DoxyCodeLine{00189     \textcolor{keywordtype}{string} getString(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00190         \textcolor{keywordflow}{return} *getSym(name, \_\_LINE\_\_)-\/>s;}
-\DoxyCodeLine{00191     \}}
-\DoxyCodeLine{00192     \textcolor{keywordtype}{void} mandatory(\textcolor{keywordtype}{int} count...);}
-\DoxyCodeLine{00193     \textcolor{keywordtype}{void} optional(\textcolor{keywordtype}{int} count...);}
-\DoxyCodeLine{00194 \};}
+\DoxyCodeLine{\Hypertarget{Config_8hh_source_l00030}\mbox{\hyperlink{classBadType}{00030}} \textcolor{keyword}{class }\mbox{\hyperlink{classBadType}{BadType}} \{  \textcolor{comment}{// BadType exception is thrown when an incorrect type is passed}}
+\DoxyCodeLine{00031                  \textcolor{comment}{// as a parameter for the "{}get"{} functions}}
+\DoxyCodeLine{00032  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033   \textcolor{keyword}{const} \textcolor{keywordtype}{string} filename;}
+\DoxyCodeLine{00034   \textcolor{keywordtype}{int} lineNum;}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037   \mbox{\hyperlink{classBadType}{BadType}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[], \textcolor{keywordtype}{int} lineNum)}
+\DoxyCodeLine{00038       : filename(filename), lineNum(lineNum) \{\}}
+\DoxyCodeLine{00039   \textcolor{keyword}{friend} ostream\& operator<<(ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classBadType}{BadType}}\& e) \{}
+\DoxyCodeLine{00040     \textcolor{keywordflow}{return} s << \textcolor{stringliteral}{"{}Bad Type at "{}} << e.filename << \textcolor{stringliteral}{"{}: "{}} << e.lineNum;}
+\DoxyCodeLine{00041   \}}
+\DoxyCodeLine{00042 \};}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{\Hypertarget{Config_8hh_source_l00044}\mbox{\hyperlink{classConfig}{00044}} \textcolor{keyword}{class }\mbox{\hyperlink{classConfig}{Config}} \{}
+\DoxyCodeLine{00045  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046   \textcolor{comment}{// TODO: this should use the Datatype types}}
+\DoxyCodeLine{00047   \textcolor{keyword}{enum class} Type \{ \mbox{\hyperlink{classU16}{U16}}, \mbox{\hyperlink{classU32}{U32}}, \mbox{\hyperlink{classU64}{U64}}, \mbox{\hyperlink{classI16}{I16}}, \mbox{\hyperlink{classI32}{I32}}, \mbox{\hyperlink{classI64}{I64}}, \mbox{\hyperlink{classF64}{F64}}, \mbox{\hyperlink{classF32}{F32}}, BOOL, STRING \};}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050   \textcolor{keyword}{struct }Sym \{}
+\DoxyCodeLine{00051     Type type;}
+\DoxyCodeLine{00052     \textcolor{keyword}{union }\{}
+\DoxyCodeLine{00053       uint16\_t u16;}
+\DoxyCodeLine{00054       uint32\_t u32;}
+\DoxyCodeLine{00055       uint64\_t u64;}
+\DoxyCodeLine{00056       int16\_t i16;}
+\DoxyCodeLine{00057       int32\_t i32;}
+\DoxyCodeLine{00058       int64\_t i64;}
+\DoxyCodeLine{00059       \textcolor{keywordtype}{double} d;}
+\DoxyCodeLine{00060       \textcolor{keywordtype}{string}* s;}
+\DoxyCodeLine{00061       \textcolor{keywordtype}{bool} b;}
+\DoxyCodeLine{00062     \};}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     \textcolor{comment}{// Constructors}}
+\DoxyCodeLine{00065     Sym(Type t, \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& val) : type(t) \{}
+\DoxyCodeLine{00066       \textcolor{comment}{// TODO: check online for actual integer bit-\/precision conversions}}
+\DoxyCodeLine{00067       \textcolor{keywordflow}{if} (t == Type::U16)}
+\DoxyCodeLine{00068         u16 = stoi(val);}
+\DoxyCodeLine{00069       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (t == Type::U32)}
+\DoxyCodeLine{00070         u32 = stoi(val);}
+\DoxyCodeLine{00071       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (t == Type::U64)}
+\DoxyCodeLine{00072         u64 = stoi(val);}
+\DoxyCodeLine{00073       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (t == Type::I16)}
+\DoxyCodeLine{00074         i16 = stoi(val);}
+\DoxyCodeLine{00075       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (t == Type::I32)}
+\DoxyCodeLine{00076         i32 = stoi(val);}
+\DoxyCodeLine{00077       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (t == Type::I64)}
+\DoxyCodeLine{00078         i64 = stoi(val);}
+\DoxyCodeLine{00079       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (t == Type::F64)}
+\DoxyCodeLine{00080         d = stod(val);}
+\DoxyCodeLine{00081       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (t == Type::STRING)}
+\DoxyCodeLine{00082         s = \textcolor{keyword}{new} string(val);}
+\DoxyCodeLine{00083       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (t == Type::BOOL)}
+\DoxyCodeLine{00084         b = stoi(val);}
+\DoxyCodeLine{00085       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00086         \textcolor{keywordflow}{throw} \mbox{\hyperlink{classBadType}{BadType}}(\_\_FILE\_\_, \_\_LINE\_\_);}
+\DoxyCodeLine{00087     \}}
+\DoxyCodeLine{00088     Sym(uint16\_t u16) : type(Type::U16), u16(u16) \{\}}
+\DoxyCodeLine{00089     Sym(uint32\_t u32) : type(Type::U32), u32(u32) \{\}}
+\DoxyCodeLine{00090     Sym(uint64\_t u64) : type(Type::U64), u64(u64) \{\}}
+\DoxyCodeLine{00091     Sym(int16\_t i16) : type(Type::I16), i16(i16) \{\}}
+\DoxyCodeLine{00092     Sym(int32\_t i32) : type(Type::I32), i32(i32) \{\}}
+\DoxyCodeLine{00093     Sym(int64\_t i64) : type(Type::I64), i64(i64) \{\}}
+\DoxyCodeLine{00094     Sym(\textcolor{keywordtype}{double} d) : type(Type::F64), d(d) \{\}}
+\DoxyCodeLine{00095     Sym(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& str) : type(Type::STRING), s(\textcolor{keyword}{new} \textcolor{keywordtype}{string}(str)) \{\}}
+\DoxyCodeLine{00096     Sym(\textcolor{keywordtype}{bool} b) : type(Type::BOOL), b(b) \{\}         \textcolor{comment}{// true = 1, false = 0}}
+\DoxyCodeLine{00097     Sym(\textcolor{keywordtype}{double} size, \textcolor{keywordtype}{char} mul) : type(Type::U64) \{  \textcolor{comment}{// 1024 or 128k or 16M or 2G}}
+\DoxyCodeLine{00098       \textcolor{keywordflow}{if} (mul == \textcolor{charliteral}{'k'}) size *= 1024;}
+\DoxyCodeLine{00099       \textcolor{keywordflow}{if} (mul == \textcolor{charliteral}{'M'}) size *= 1024 * 1024;}
+\DoxyCodeLine{00100       \textcolor{keywordflow}{if} (mul == \textcolor{charliteral}{'G'}) size *= 1024 * 1024 * 1024;}
+\DoxyCodeLine{00101       u64 = uint64\_t(size);}
+\DoxyCodeLine{00102     \}}
+\DoxyCodeLine{00103     Sym(\textcolor{keyword}{const} Sym\& orig) \{}
+\DoxyCodeLine{00104       memcpy(\textcolor{keyword}{this}, \&orig, \textcolor{keyword}{sizeof}(*\textcolor{keyword}{this}));}
+\DoxyCodeLine{00105       \textcolor{keywordflow}{if} (type == Type::STRING) \{}
+\DoxyCodeLine{00106         s = \textcolor{keyword}{new} string(orig.s-\/>c\_str());}
+\DoxyCodeLine{00107       \}}
+\DoxyCodeLine{00108     \}}
+\DoxyCodeLine{00109     \textcolor{comment}{// void operator =(const Sym\& orig) \{}}
+\DoxyCodeLine{00110     \textcolor{comment}{//  if (this != \&orig) \{}}
+\DoxyCodeLine{00111     \textcolor{comment}{//      \string~Sym();}}
+\DoxyCodeLine{00112     \textcolor{comment}{//      type = orig.type;}}
+\DoxyCodeLine{00113     \textcolor{comment}{//      s = new string(orig.s-\/>c\_str());}}
+\DoxyCodeLine{00114     \textcolor{comment}{//  \}}}
+\DoxyCodeLine{00115     \textcolor{comment}{//  return *this;}}
+\DoxyCodeLine{00116     \textcolor{comment}{// \}}}
+\DoxyCodeLine{00117     Sym\& operator=(Sym orig) \{}
+\DoxyCodeLine{00118       swap(*\textcolor{keyword}{this}, orig);}
+\DoxyCodeLine{00119       \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00120     \}}
+\DoxyCodeLine{00121     \string~Sym() \{}
+\DoxyCodeLine{00122       \textcolor{keywordflow}{switch} (type) \{}
+\DoxyCodeLine{00123         \textcolor{comment}{// TODO: there is an issue with the case for STRING, had to comment it}}
+\DoxyCodeLine{00124         \textcolor{comment}{// out to make configTester run case STRING: delete [] s; break;}}
+\DoxyCodeLine{00125         \textcolor{keywordflow}{default}:;}
+\DoxyCodeLine{00126       \}}
+\DoxyCodeLine{00127     \}}
+\DoxyCodeLine{00128   \};}
+\DoxyCodeLine{00129   std::map<string, Type> types;}
+\DoxyCodeLine{00130   std::map<string, Type> optTypes;}
+\DoxyCodeLine{00131   std::map<string, Sym> f;}
+\DoxyCodeLine{00132 }
+\DoxyCodeLine{00133   \textcolor{keyword}{const} \textcolor{keyword}{static} regex commentOrWhitespace;}
+\DoxyCodeLine{00134   \textcolor{keyword}{const} \textcolor{keyword}{static} regex checkVector;}
+\DoxyCodeLine{00135 }
+\DoxyCodeLine{00136   \textcolor{keyword}{const} Sym* getSym(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name, \textcolor{keywordtype}{int} linenum)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00137     map<string, Sym>::const\_iterator i = f.find(name);}
+\DoxyCodeLine{00138     \textcolor{keywordflow}{if} (i == f.end()) \textcolor{keywordflow}{throw} \mbox{\hyperlink{classBadType}{BadType}}(\_\_FILE\_\_, linenum);}
+\DoxyCodeLine{00139     \textcolor{keywordflow}{return} \&i-\/>second;}
+\DoxyCodeLine{00140   \}}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00143   \mbox{\hyperlink{classConfig}{Config}}() \{\}}
+\DoxyCodeLine{00144   \textcolor{keywordtype}{void} load(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& filename);}
+\DoxyCodeLine{00145   \textcolor{keywordtype}{void} save(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& filename);}
+\DoxyCodeLine{00146 }
+\DoxyCodeLine{00147   \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{00148   \textcolor{keywordtype}{void} set(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name, T val) \{}
+\DoxyCodeLine{00149     map<string, Sym>::iterator i = f.find(name);}
+\DoxyCodeLine{00150     \textcolor{keywordflow}{if} (i == f.end()) \{}
+\DoxyCodeLine{00151       f[name] = Sym(val);}
+\DoxyCodeLine{00152       \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00153     \}}
+\DoxyCodeLine{00154     \textcolor{comment}{// const char *i-\/>first = name.c\_str();}}
+\DoxyCodeLine{00155     \textcolor{comment}{//*i-\/>first = name.c\_str();}}
+\DoxyCodeLine{00156     f[name] = Sym(val);}
+\DoxyCodeLine{00157     \textcolor{comment}{// i-\/>second = Sym(val);}}
+\DoxyCodeLine{00158   \}}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160   uint16\_t getUInt16(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00161     \textcolor{keywordflow}{return} getSym(name, \_\_LINE\_\_)-\/>u16;}
+\DoxyCodeLine{00162   \}}
+\DoxyCodeLine{00163 }
+\DoxyCodeLine{00164   uint32\_t getUInt32(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00165     \textcolor{keywordflow}{return} getSym(name, \_\_LINE\_\_)-\/>u32;}
+\DoxyCodeLine{00166   \}}
+\DoxyCodeLine{00167 }
+\DoxyCodeLine{00168   uint64\_t getUInt64(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00169     \textcolor{keywordflow}{return} getSym(name, \_\_LINE\_\_)-\/>u64;}
+\DoxyCodeLine{00170   \}}
+\DoxyCodeLine{00171 }
+\DoxyCodeLine{00172   int16\_t getInt16(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00173     \textcolor{keywordflow}{return} getSym(name, \_\_LINE\_\_)-\/>i16;}
+\DoxyCodeLine{00174   \}}
+\DoxyCodeLine{00175 }
+\DoxyCodeLine{00176   int32\_t getInt32(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00177     \textcolor{keywordflow}{return} getSym(name, \_\_LINE\_\_)-\/>i32;}
+\DoxyCodeLine{00178   \}}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00180   int64\_t getInt64(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00181     \textcolor{keywordflow}{return} getSym(name, \_\_LINE\_\_)-\/>i64;}
+\DoxyCodeLine{00182   \}}
+\DoxyCodeLine{00183 }
+\DoxyCodeLine{00184   \textcolor{keywordtype}{bool} getBool(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} getSym(name, \_\_LINE\_\_)-\/>b; \}}
+\DoxyCodeLine{00185 }
+\DoxyCodeLine{00186   \textcolor{keywordtype}{double} getDouble(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00187     \textcolor{keywordflow}{return} getSym(name, \_\_LINE\_\_)-\/>d;}
+\DoxyCodeLine{00188   \}}
+\DoxyCodeLine{00189 }
+\DoxyCodeLine{00190   \textcolor{keywordtype}{string} getString(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& name)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00191     \textcolor{keywordflow}{return} *getSym(name, \_\_LINE\_\_)-\/>s;}
+\DoxyCodeLine{00192   \}}
+\DoxyCodeLine{00193   \textcolor{keywordtype}{void} mandatory(\textcolor{keywordtype}{int} count...);}
+\DoxyCodeLine{00194   \textcolor{keywordtype}{void} optional(\textcolor{keywordtype}{int} count...);}
+\DoxyCodeLine{00195 \};}
 
 \end{DoxyCode}

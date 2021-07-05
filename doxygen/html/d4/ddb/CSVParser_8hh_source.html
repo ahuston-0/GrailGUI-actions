@@ -91,20 +91,16 @@ $(document).ready(function(){initNavTree('d4/ddb/CSVParser_8hh_source.html','../
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="../../d3/d22/classCSVParser.html">    5</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d22/classCSVParser.html">CSVParser</a> {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keyword">enum class</span> CSVState {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    UnquotedField,</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    QuotedField,</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    QuotedQuote</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  };</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">static</span> std::vector&lt;std::string&gt; readCSVRow(<span class="keyword">const</span> std::string &amp;row);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">static</span> std::vector&lt;std::vector&lt;std::string&gt;&gt; <a class="code" href="../../d3/d22/classCSVParser.html#a9712f3972d50c07f0e2e0b9ae2b9ad20">readCSV</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> filename[]);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keyword">enum class</span> CSVState { UnquotedField, QuotedField, QuotedQuote };</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">static</span> std::vector&lt;std::string&gt; readCSVRow(<span class="keyword">const</span> std::string &amp;row);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">static</span> std::vector&lt;std::vector&lt;std::string&gt;&gt; <a class="code" href="../../d3/d22/classCSVParser.html#a9712f3972d50c07f0e2e0b9ae2b9ad20">readCSV</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> filename[]);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;};</div>
 <div class="ttc" id="aclassCSVParser_html"><div class="ttname"><a href="../../d3/d22/classCSVParser.html">CSVParser</a></div><div class="ttdef"><b>Definition:</b> CSVParser.hh:5</div></div>
-<div class="ttc" id="aclassCSVParser_html_a9712f3972d50c07f0e2e0b9ae2b9ad20"><div class="ttname"><a href="../../d3/d22/classCSVParser.html#a9712f3972d50c07f0e2e0b9ae2b9ad20">CSVParser::readCSV</a></div><div class="ttdeci">static std::vector&lt; std::vector&lt; std::string &gt; &gt; readCSV(const char filename[])</div><div class="ttdoc">Read CSV file, Excel dialect. Accept &quot;quoted fields &quot;&quot;with quotes&quot;&quot;&quot;.</div><div class="ttdef"><b>Definition:</b> CSVParser.cc:49</div></div>
+<div class="ttc" id="aclassCSVParser_html_a9712f3972d50c07f0e2e0b9ae2b9ad20"><div class="ttname"><a href="../../d3/d22/classCSVParser.html#a9712f3972d50c07f0e2e0b9ae2b9ad20">CSVParser::readCSV</a></div><div class="ttdeci">static std::vector&lt; std::vector&lt; std::string &gt; &gt; readCSV(const char filename[])</div><div class="ttdoc">Read CSV file, Excel dialect. Accept &quot;quoted fields &quot;&quot;with quotes&quot;&quot;&quot;.</div><div class="ttdef"><b>Definition:</b> CSVParser.cc:59</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

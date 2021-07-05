@@ -90,22 +90,22 @@ $(document).ready(function(){initNavTree('d2/def/Sphere_8hh_source.html','../../
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;opengl/Shape.hh&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="../../de/d9d/classSphere.html">    4</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/d9d/classSphere.html">Sphere</a> : <span class="keyword">public</span> <a class="code" href="../../de/d0a/classShape.html">Shape</a> {</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  std::vector&lt;float&gt; vert;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  std::vector&lt;uint32_t&gt; ind;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keywordtype">void</span> addRect(uint32_t i1, uint32_t i2, uint32_t i3, uint32_t i4);</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keywordtype">void</span> addTri(uint32_t i1, uint32_t i2, uint32_t i3);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordtype">void</span> addVert(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z); <span class="comment">// add just coords</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">void</span> addVert(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z, <span class="keywordtype">float</span> u, <span class="keywordtype">float</span> v); <span class="comment">// add with texture</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="../../de/d9d/classSphere.html">Sphere</a>(uint32_t latRes, uint32_t lonRes);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  ~<a class="code" href="../../de/d9d/classSphere.html">Sphere</a>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">void</span> init();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordtype">void</span> render();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordtype">void</span> cleanup();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordtype">void</span> addVert(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z);  <span class="comment">// add just coords</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">void</span> addVert(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z, <span class="keywordtype">float</span> u,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;               <span class="keywordtype">float</span> v);  <span class="comment">// add with texture</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="../../de/d9d/classSphere.html">Sphere</a>(uint32_t latRes, uint32_t lonRes);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  ~<a class="code" href="../../de/d9d/classSphere.html">Sphere</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordtype">void</span> init();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordtype">void</span> render();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordtype">void</span> cleanup();</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
-<div class="ttc" id="aclassShape_html"><div class="ttname"><a href="../../de/d0a/classShape.html">Shape</a></div><div class="ttdef"><b>Definition:</b> Shape.hh:15</div></div>
+<div class="ttc" id="aclassShape_html"><div class="ttname"><a href="../../de/d0a/classShape.html">Shape</a></div><div class="ttdef"><b>Definition:</b> Shape.hh:14</div></div>
 <div class="ttc" id="aclassSphere_html"><div class="ttname"><a href="../../de/d9d/classSphere.html">Sphere</a></div><div class="ttdef"><b>Definition:</b> Sphere.hh:4</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

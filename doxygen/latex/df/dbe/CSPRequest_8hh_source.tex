@@ -8,15 +8,15 @@
 \DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}util/Buffer.hh"{}}}
 \DoxyCodeLine{00005 }
 \DoxyCodeLine{\Hypertarget{CSPRequest_8hh_source_l00006}\mbox{\hyperlink{classCSPRequest}{00006}} \textcolor{keyword}{class }\mbox{\hyperlink{classCSPRequest}{CSPRequest}} : \textcolor{keyword}{public} \mbox{\hyperlink{classRequest}{Request}} \{}
-\DoxyCodeLine{00007 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00007  \textcolor{keyword}{private}:}
 \DoxyCodeLine{00008   \textcolor{comment}{//    CSPServlet servlets;}}
-\DoxyCodeLine{00009 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00010     \mbox{\hyperlink{classCSPRequest}{CSPRequest}}();}
-\DoxyCodeLine{00011     \string~\mbox{\hyperlink{classCSPRequest}{CSPRequest}}()\textcolor{keyword}{override};}
-\DoxyCodeLine{00012     \textcolor{keywordtype}{void} handle(\textcolor{keywordtype}{int} fd) \textcolor{keyword}{override};}
-\DoxyCodeLine{00013     \textcolor{comment}{//below is from father class Request, it is for http server}}
-\DoxyCodeLine{00014     \textcolor{keywordtype}{void} handle(\textcolor{keywordtype}{int} sckt, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* command) \textcolor{keyword}{override};}
-\DoxyCodeLine{00015     \textcolor{comment}{//TODO: getParameter(const string\& name);}}
+\DoxyCodeLine{00009  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010   \mbox{\hyperlink{classCSPRequest}{CSPRequest}}();}
+\DoxyCodeLine{00011   \string~\mbox{\hyperlink{classCSPRequest}{CSPRequest}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{00012   \textcolor{keywordtype}{void} handle(\textcolor{keywordtype}{int} fd) \textcolor{keyword}{override};}
+\DoxyCodeLine{00013   \textcolor{comment}{// below is from father class Request, it is for http server}}
+\DoxyCodeLine{00014   \textcolor{keywordtype}{void} handle(\textcolor{keywordtype}{int} sckt, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* command) \textcolor{keyword}{override};}
+\DoxyCodeLine{00015   \textcolor{comment}{// TODO:  getParameter(const string\& name);}}
 \DoxyCodeLine{00016 \};}
 
 \end{DoxyCode}

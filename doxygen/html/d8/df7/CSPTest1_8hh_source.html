@@ -95,22 +95,21 @@ $(document).ready(function(){initNavTree('d8/df7/CSPTest1_8hh_source.html','../.
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//#include &quot;csp/HttpServlet.hh&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//#include &quot;csp/HTTPRequest.hh&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../dd/d3e/classCSPTest1.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/d3e/classCSPTest1.html">CSPTest1</a> : <span class="keyword">public</span> <a class="code" href="../../d8/dbc/classCSPServlet.html">CSPServlet</a> {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="../../dd/d3e/classCSPTest1.html">CSPTest1</a>() {}</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    ~<a class="code" href="../../dd/d3e/classCSPTest1.html">CSPTest1</a>() {}</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> request(<a class="code" href="../../d1/d96/classCSPRequest.html">CSPRequest</a>&amp; r) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Test1 is loaded\n&quot;</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="../../d0/d11/classBuffer.html">Buffer</a>&amp; out = r.getOut();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        uint32_t x = 12345;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        out &lt;&lt; x ;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="comment">//out.flush(); // TODO: this should not be necessary</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <a class="code" href="../../dd/d3e/classCSPTest1.html">CSPTest1</a>() {}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  ~<a class="code" href="../../dd/d3e/classCSPTest1.html">CSPTest1</a>() {}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordtype">void</span> request(<a class="code" href="../../d1/d96/classCSPRequest.html">CSPRequest</a>&amp; r) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Test1 is loaded\n&quot;</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="../../d0/d11/classBuffer.html">Buffer</a>&amp; out = r.getOut();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    uint32_t x = 12345;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    out &lt;&lt; x;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// out.flush(); // TODO: this should not be necessary</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
 <div class="ttc" id="aclassBuffer_html"><div class="ttname"><a href="../../d0/d11/classBuffer.html">Buffer</a></div><div class="ttdef"><b>Definition:</b> BinBuffer.hh:6</div></div>
 <div class="ttc" id="aclassCSPRequest_html"><div class="ttname"><a href="../../d1/d96/classCSPRequest.html">CSPRequest</a></div><div class="ttdef"><b>Definition:</b> CSPRequest.hh:6</div></div>
-<div class="ttc" id="aclassCSPServlet_html"><div class="ttname"><a href="../../d8/dbc/classCSPServlet.html">CSPServlet</a></div><div class="ttdef"><b>Definition:</b> CSPServlet.hh:10</div></div>
+<div class="ttc" id="aclassCSPServlet_html"><div class="ttname"><a href="../../d8/dbc/classCSPServlet.html">CSPServlet</a></div><div class="ttdef"><b>Definition:</b> CSPServlet.hh:11</div></div>
 <div class="ttc" id="aclassCSPTest1_html"><div class="ttname"><a href="../../dd/d3e/classCSPTest1.html">CSPTest1</a></div><div class="ttdef"><b>Definition:</b> CSPTest1.hh:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

@@ -6,33 +6,34 @@
 \DoxyCodeLine{00002 }
 \DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/Shape2D.hh"{}}}
 \DoxyCodeLine{00004 }
-\DoxyCodeLine{\Hypertarget{Rectangle_8hh_source_l00005}\mbox{\hyperlink{classRectangle}{00005}} \textcolor{keyword}{class }\mbox{\hyperlink{classRectangle}{Rectangle}} : \textcolor{keyword}{public} \mbox{\hyperlink{classShape2D}{Shape2D}}\{}
-\DoxyCodeLine{00006 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00007   \textcolor{keywordtype}{float} width,height;}
-\DoxyCodeLine{00008 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00009   \mbox{\hyperlink{classRectangle}{Rectangle}}(\mbox{\hyperlink{classCanvas}{Canvas}}* c, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} width,\textcolor{keywordtype}{float} height, \mbox{\hyperlink{classStyle}{Style}}* s) :}
-\DoxyCodeLine{00010    \mbox{\hyperlink{classShape2D}{Shape2D}}(c, x,y,s) \{}
-\DoxyCodeLine{00011     addPoint(x,y);}
-\DoxyCodeLine{00012     addPoint(x,y-\/height);}
-\DoxyCodeLine{00013     addPoint(x+width,y-\/height);}
-\DoxyCodeLine{00014     addPoint(x+width,y);}
-\DoxyCodeLine{00015 }
-\DoxyCodeLine{00016     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0;i<vertices.size();i++)\{}
-\DoxyCodeLine{00017       lineIndices.push\_back(i);}
-\DoxyCodeLine{00018       pointIndices.push\_back(i);}
-\DoxyCodeLine{00019     \}}
-\DoxyCodeLine{00020 }
-\DoxyCodeLine{00021     solidIndices.push\_back(0);}
-\DoxyCodeLine{00022     solidIndices.push\_back(1);}
-\DoxyCodeLine{00023     solidIndices.push\_back(2);}
-\DoxyCodeLine{00024 }
-\DoxyCodeLine{00025     solidIndices.push\_back(3);}
-\DoxyCodeLine{00026     solidIndices.push\_back(0);}
-\DoxyCodeLine{00027     solidIndices.push\_back(2);}
-\DoxyCodeLine{00028   \}}
-\DoxyCodeLine{00029 }
-\DoxyCodeLine{00030   \textcolor{keywordtype}{void} initIndices();}
-\DoxyCodeLine{00031   \textcolor{keywordtype}{void} render();}
-\DoxyCodeLine{00032 \};}
+\DoxyCodeLine{\Hypertarget{Rectangle_8hh_source_l00005}\mbox{\hyperlink{classRectangle}{00005}} \textcolor{keyword}{class }\mbox{\hyperlink{classRectangle}{Rectangle}} : \textcolor{keyword}{public} \mbox{\hyperlink{classShape2D}{Shape2D}} \{}
+\DoxyCodeLine{00006  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00007   \textcolor{keywordtype}{float} width, height;}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010   \mbox{\hyperlink{classRectangle}{Rectangle}}(\mbox{\hyperlink{classCanvas}{Canvas}}* c, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} width, \textcolor{keywordtype}{float} height, \mbox{\hyperlink{classStyle}{Style}}* s)}
+\DoxyCodeLine{00011       : \mbox{\hyperlink{classShape2D}{Shape2D}}(c, x, y, s) \{}
+\DoxyCodeLine{00012     addPoint(x, y);}
+\DoxyCodeLine{00013     addPoint(x, y -\/ height);}
+\DoxyCodeLine{00014     addPoint(x + width, y -\/ height);}
+\DoxyCodeLine{00015     addPoint(x + width, y);}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < vertices.size(); i++) \{}
+\DoxyCodeLine{00018       lineIndices.push\_back(i);}
+\DoxyCodeLine{00019       pointIndices.push\_back(i);}
+\DoxyCodeLine{00020     \}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022     solidIndices.push\_back(0);}
+\DoxyCodeLine{00023     solidIndices.push\_back(1);}
+\DoxyCodeLine{00024     solidIndices.push\_back(2);}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     solidIndices.push\_back(3);}
+\DoxyCodeLine{00027     solidIndices.push\_back(0);}
+\DoxyCodeLine{00028     solidIndices.push\_back(2);}
+\DoxyCodeLine{00029   \}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031   \textcolor{keywordtype}{void} initIndices();}
+\DoxyCodeLine{00032   \textcolor{keywordtype}{void} render();}
+\DoxyCodeLine{00033 \};}
 
 \end{DoxyCode}

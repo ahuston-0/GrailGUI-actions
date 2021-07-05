@@ -3,151 +3,140 @@
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <assert.h>}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <assert.h>}}
+\DoxyCodeLine{00003 }
 \DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <cmath>}}
-\DoxyCodeLine{00005 }
-\DoxyCodeLine{00006 \textcolor{comment}{/*}}
-\DoxyCodeLine{00007 \textcolor{comment}{  @author Dov Kruger 2019-\/06-\/06}}
-\DoxyCodeLine{00008 \textcolor{comment}{  }}
-\DoxyCodeLine{00009 \textcolor{comment}{  Represent a date as a double for scientific representation of date accurate }}
-\DoxyCodeLine{00010 \textcolor{comment}{  to the microsecond over thousands of years.}}
-\DoxyCodeLine{00011 \textcolor{comment}{  }}
-\DoxyCodeLine{00012 \textcolor{comment}{  The convention here is that midnight 00:00:00 starts the day, so a}}
-\DoxyCodeLine{00013 \textcolor{comment}{  JulianDate of 0.5 would be 12:00:00 (noon)}}
-\DoxyCodeLine{00014 \textcolor{comment}{  }}
-\DoxyCodeLine{00015 \textcolor{comment}{  I have set the epoch for this implementation to J2000 (January 1,}}
-\DoxyCodeLine{00016 \textcolor{comment}{  2000) }}
-\DoxyCodeLine{00017 \textcolor{comment}{  }}
-\DoxyCodeLine{00018 \textcolor{comment}{  There is a related class Date which just stores the integer}}
-\DoxyCodeLine{00019 \textcolor{comment}{  portion for business purposes.}}
-\DoxyCodeLine{00020 \textcolor{comment}{}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{comment}{/*}}
+\DoxyCodeLine{00008 \textcolor{comment}{  @author Dov Kruger 2019-\/06-\/06}}
+\DoxyCodeLine{00009 \textcolor{comment}{}}
+\DoxyCodeLine{00010 \textcolor{comment}{  Represent a date as a double for scientific representation of date accurate}}
+\DoxyCodeLine{00011 \textcolor{comment}{  to the microsecond over thousands of years.}}
+\DoxyCodeLine{00012 \textcolor{comment}{}}
+\DoxyCodeLine{00013 \textcolor{comment}{  The convention here is that midnight 00:00:00 starts the day, so a}}
+\DoxyCodeLine{00014 \textcolor{comment}{  JulianDate of 0.5 would be 12:00:00 (noon)}}
+\DoxyCodeLine{00015 \textcolor{comment}{}}
+\DoxyCodeLine{00016 \textcolor{comment}{  I have set the epoch for this implementation to J2000 (January 1,}}
+\DoxyCodeLine{00017 \textcolor{comment}{  2000)}}
+\DoxyCodeLine{00018 \textcolor{comment}{}}
+\DoxyCodeLine{00019 \textcolor{comment}{  There is a related class Date which just stores the integer}}
+\DoxyCodeLine{00020 \textcolor{comment}{  portion for business purposes.}}
 \DoxyCodeLine{00021 \textcolor{comment}{}}
-\DoxyCodeLine{00022 \textcolor{comment}{  reference: Get source code from octave the use epoch J0  Jan 1, 0000}}
-\DoxyCodeLine{00023 \textcolor{comment}{  http://www.agopax.it/Libri\_astronomia/pdf/Astronomical\%20Algorithms.pdf}}
-\DoxyCodeLine{00024 \textcolor{comment}{  https://dl.acm.org/doi/abs/10.1145/219340.219343}}
-\DoxyCodeLine{00025 \textcolor{comment}{  }}
-\DoxyCodeLine{00026 \textcolor{comment}{*/}}
-\DoxyCodeLine{00027 \textcolor{keyword}{class }\mbox{\hyperlink{classDate}{Date}};}
-\DoxyCodeLine{\Hypertarget{JulianDate_8hh_source_l00028}\mbox{\hyperlink{classJulianDate}{00028}} \textcolor{keyword}{class }\mbox{\hyperlink{classJulianDate}{JulianDate}} \{}
-\DoxyCodeLine{00029 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00030   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classDate}{Date}};}
-\DoxyCodeLine{00031   \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{double} epoch;}
-\DoxyCodeLine{00032   \textcolor{keyword}{static} \textcolor{keyword}{const} uint16\_t daysUpTo[12];}
-\DoxyCodeLine{00033   \textcolor{keyword}{static} \textcolor{keyword}{const} uint16\_t daysInMonth[12];}
-\DoxyCodeLine{00034   \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* monthAbbr[12];}
-\DoxyCodeLine{00035   \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* monthNames[12];}
-\DoxyCodeLine{00036 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00037   }
-\DoxyCodeLine{00038   \textcolor{keywordtype}{double} date;}
-\DoxyCodeLine{00039 \textcolor{preprocessor}{\#if 0}}
-\DoxyCodeLine{00040   uint32\_t Z;}
-\DoxyCodeLine{00041   \textcolor{keywordtype}{double} F;}
-\DoxyCodeLine{00042   uint32\_t alpha;}
-\DoxyCodeLine{00043   uint32\_t \mbox{\hyperlink{classA}{A}};}
-\DoxyCodeLine{00044   uint32\_t B;}
-\DoxyCodeLine{00045   uint32\_t C;}
-\DoxyCodeLine{00046   uint32\_t D;}
-\DoxyCodeLine{00047   uint32\_t E;}
-\DoxyCodeLine{00048 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00049   \textcolor{keyword}{static} constexpr \textcolor{keywordtype}{double} invSecondsPerDay = 1.0 / 86400;}
-\DoxyCodeLine{00050   \mbox{\hyperlink{classJulianDate}{JulianDate}}(\textcolor{keywordtype}{double} d) : date(d) \{\}}
-\DoxyCodeLine{00051   }
-\DoxyCodeLine{00052 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00053   \textcolor{keywordtype}{bool} \textcolor{keyword}{static} isLeap(uint32\_t year) \{ \textcolor{comment}{//ex: 1900 is NOT a leap year (divisible by 100) 1904 is a leap year 2000 is a leap year (\% 400)}}
-\DoxyCodeLine{00054     \textcolor{keywordflow}{return} year \% 4 == 0 \&\& year \% 100 != 0 || year \% 400 == 0;}
-\DoxyCodeLine{00055   \}}
-\DoxyCodeLine{00056   \mbox{\hyperlink{classJulianDate}{JulianDate}}(int32\_t year, uint32\_t month, uint32\_t day,}
-\DoxyCodeLine{00057                          uint32\_t hour = 0, uint32\_t min = 0, uint32\_t second = 0);}
-\DoxyCodeLine{00058   }
-\DoxyCodeLine{00059   \mbox{\hyperlink{classJulianDate}{JulianDate}} operator +(\textcolor{keywordtype}{double} days)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00060     \textcolor{keywordflow}{return} \mbox{\hyperlink{classJulianDate}{JulianDate}}(date + days);}
-\DoxyCodeLine{00061   \}}
-\DoxyCodeLine{00062   \textcolor{keyword}{friend} \textcolor{keywordtype}{double} operator -\/(\mbox{\hyperlink{classJulianDate}{JulianDate}} a, \mbox{\hyperlink{classJulianDate}{JulianDate}} b) \{}
-\DoxyCodeLine{00063     \textcolor{keywordflow}{return} a.date -\/ b.date;}
-\DoxyCodeLine{00064   \}}
-\DoxyCodeLine{00065   \mbox{\hyperlink{classJulianDate}{JulianDate}} operator -\/(\textcolor{keywordtype}{double} days)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00066     \textcolor{keywordflow}{return} \mbox{\hyperlink{classJulianDate}{JulianDate}}(date -\/ days);}
-\DoxyCodeLine{00067   \}}
-\DoxyCodeLine{00068   \mbox{\hyperlink{classJulianDate}{JulianDate}} operator +=(\textcolor{keywordtype}{double} days) \{}
-\DoxyCodeLine{00069     \textcolor{keywordflow}{return} date += days;}
-\DoxyCodeLine{00070   \}}
-\DoxyCodeLine{00071   \mbox{\hyperlink{classJulianDate}{JulianDate}} operator -\/=(\textcolor{keywordtype}{double} days) \{}
-\DoxyCodeLine{00072     \textcolor{keywordflow}{return} date -\/= days;}
-\DoxyCodeLine{00073   \}}
-\DoxyCodeLine{00074     \textcolor{comment}{//TODO: Decide when two dates are equal}}
-\DoxyCodeLine{00075     \textcolor{comment}{// Right now 1/80 of a msec}}
-\DoxyCodeLine{00076   \textcolor{keywordtype}{bool} operator ==(\mbox{\hyperlink{classJulianDate}{JulianDate}} orig)\{}
-\DoxyCodeLine{00077     \textcolor{keywordflow}{return} abs(date -\/ orig.date) < 0.0000125;}
-\DoxyCodeLine{00078   \}}
-\DoxyCodeLine{00079     \textcolor{keyword}{operator} double()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} date; \}}
-\DoxyCodeLine{00080   \textcolor{comment}{//TODO: need to implement extraction of date info}}
-\DoxyCodeLine{00081   int32\_t getYear()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00082         int64\_t ddate = int64\_t(date);}
-\DoxyCodeLine{00083         int32\_t dy = ddate / 365 + ddate / 4 -\/ ddate / 100 + ddate / 400;}
-\DoxyCodeLine{00084         std::cout << dy;}
-\DoxyCodeLine{00085         std::cout << (dy = ddate / 365.2425);}
-\DoxyCodeLine{00086         \textcolor{keywordflow}{return} epoch + dy;}
-\DoxyCodeLine{00087         \textcolor{comment}{//    uint32\_t month = (E < 13.5) ? E -\/ 1 : E -\/ 13;}}
-\DoxyCodeLine{00088     \textcolor{comment}{//    return (month > 2.5) ? C -\/ 4716 : C -\/ 4715;}}
-\DoxyCodeLine{00089   \}}
-\DoxyCodeLine{00090   uint32\_t getMonth()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00091         \textcolor{keywordtype}{double}  ddate = floor(date);}
-\DoxyCodeLine{00092         int32\_t mm = ddate -\/ floor(floor(ddate / 365.2425) * 365.2425);}
-\DoxyCodeLine{00093         \textcolor{keywordflow}{return} mm;}
-\DoxyCodeLine{00094         \textcolor{comment}{//     return (E < 13.5) ? E -\/ 1 : E -\/ 13;}}
-\DoxyCodeLine{00095   \}}
-\DoxyCodeLine{00096   uint32\_t getDay()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00097         \textcolor{keywordtype}{double}  ddate = floor(date);}
-\DoxyCodeLine{00098         int32\_t dd = ddate -\/ floor(floor(ddate / 365.2425) * 365.2425);}
-\DoxyCodeLine{00099         \textcolor{keywordflow}{return} dd; \textcolor{comment}{//TODO: this is completely wrong}}
-\DoxyCodeLine{00100   \}}
-\DoxyCodeLine{00101   uint32\_t getHour()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00102         \textcolor{keywordtype}{double} frac = date -\/ floor(date);}
-\DoxyCodeLine{00103         \textcolor{keywordflow}{return} uint32\_t(frac * 24);}
-\DoxyCodeLine{00104   \}}
-\DoxyCodeLine{00105   uint32\_t getMinute()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00106         \textcolor{keywordtype}{double} frac = date -\/ floor(date);}
-\DoxyCodeLine{00107         \textcolor{keywordflow}{return} uint32\_t(frac * (24*60)) \% 60;}
-\DoxyCodeLine{00108   \}}
-\DoxyCodeLine{00109   \textcolor{keywordtype}{double} getSecond()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00110         \textcolor{keywordtype}{double} frac = date -\/ floor(date);}
-\DoxyCodeLine{00111         \textcolor{keywordflow}{return} uint32\_t(frac * (24*60*60)) \% 60;}
-\DoxyCodeLine{00112   \}}
-\DoxyCodeLine{00113 }
-\DoxyCodeLine{00114   \textcolor{comment}{// write a Julian date into the string at dest}}
-\DoxyCodeLine{00115   \textcolor{keywordtype}{void} format(\textcolor{keywordtype}{char} dest[]) \{}
-\DoxyCodeLine{00116     }
-\DoxyCodeLine{00117   \}}
-\DoxyCodeLine{00118 }
-\DoxyCodeLine{00119     \textcolor{comment}{//  void format(MultiText* text, uint32\_t style);}}
-\DoxyCodeLine{00120   \textcolor{keywordtype}{double} getJulDate()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00121     \textcolor{keywordflow}{return} date;}
-\DoxyCodeLine{00122   \}}
-\DoxyCodeLine{00123     \textcolor{keywordtype}{void} extract(int32\_t* year, uint32\_t* mm, uint32\_t* dd,}
-\DoxyCodeLine{00124                              uint32\_t* hh, uint32\_t* min, uint32\_t* ss) \{}
-\DoxyCodeLine{00125         \textcolor{keywordtype}{double}  ddate = floor(date);}
-\DoxyCodeLine{00126         int32\_t dy = ddate / 365 + ddate / 4 -\/ ddate / 100 + ddate / 400;}
-\DoxyCodeLine{00127         *year = epoch + dy;}
-\DoxyCodeLine{00128         int32\_t month = ddate -\/ floor(floor(ddate / 365.2425) * 365.2425);}
-\DoxyCodeLine{00129         *mm = month;}
-\DoxyCodeLine{00130         *dd = 0; \textcolor{comment}{//TODO: use a single lookup table for both month and day, easy}}
-\DoxyCodeLine{00131         \textcolor{keywordtype}{double} whole = floor(date);}
-\DoxyCodeLine{00132         \textcolor{keywordtype}{double} frac = date -\/ whole;}
-\DoxyCodeLine{00133         uint32\_t h = uint32\_t(frac *= 24);}
-\DoxyCodeLine{00134         frac -\/= h;}
-\DoxyCodeLine{00135         *hh = h;}
-\DoxyCodeLine{00136         uint32\_t m = uint32\_t(frac *= 60);}
-\DoxyCodeLine{00137         *min = m;}
-\DoxyCodeLine{00138         frac -\/= m;}
-\DoxyCodeLine{00139         *ss = frac*60;}
-\DoxyCodeLine{00140     \}}
-\DoxyCodeLine{00141 }
-\DoxyCodeLine{00142   \textcolor{keyword}{friend} std::ostream\& operator<<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classJulianDate}{JulianDate}}\& jd) \{}
-\DoxyCodeLine{00143     s << JulianDate::monthAbbr[jd.getMonth()-\/1];}
-\DoxyCodeLine{00144     \textcolor{keywordflow}{return} s;}
-\DoxyCodeLine{00145   \}}
-\DoxyCodeLine{00146     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classDate}{Date}};}
-\DoxyCodeLine{00147 \};}
+\DoxyCodeLine{00022 \textcolor{comment}{}}
+\DoxyCodeLine{00023 \textcolor{comment}{  reference: Get source code from octave the use epoch J0  Jan 1, 0000}}
+\DoxyCodeLine{00024 \textcolor{comment}{  http://www.agopax.it/Libri\_astronomia/pdf/Astronomical\%20Algorithms.pdf}}
+\DoxyCodeLine{00025 \textcolor{comment}{  https://dl.acm.org/doi/abs/10.1145/219340.219343}}
+\DoxyCodeLine{00026 \textcolor{comment}{}}
+\DoxyCodeLine{00027 \textcolor{comment}{*/}}
+\DoxyCodeLine{00028 \textcolor{keyword}{class }\mbox{\hyperlink{classDate}{Date}};}
+\DoxyCodeLine{\Hypertarget{JulianDate_8hh_source_l00029}\mbox{\hyperlink{classJulianDate}{00029}} \textcolor{keyword}{class }\mbox{\hyperlink{classJulianDate}{JulianDate}} \{}
+\DoxyCodeLine{00030  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classDate}{Date}};}
+\DoxyCodeLine{00032   \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{double} epoch;}
+\DoxyCodeLine{00033   \textcolor{keyword}{static} \textcolor{keyword}{const} uint16\_t daysUpTo[12];}
+\DoxyCodeLine{00034   \textcolor{keyword}{static} \textcolor{keyword}{const} uint16\_t daysInMonth[12];}
+\DoxyCodeLine{00035   \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* monthAbbr[12];}
+\DoxyCodeLine{00036   \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* monthNames[12];}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039   \textcolor{keywordtype}{double} date;}
+\DoxyCodeLine{00040 \textcolor{preprocessor}{\#if 0}}
+\DoxyCodeLine{00041   uint32\_t Z;}
+\DoxyCodeLine{00042   \textcolor{keywordtype}{double} F;}
+\DoxyCodeLine{00043   uint32\_t alpha;}
+\DoxyCodeLine{00044   uint32\_t \mbox{\hyperlink{classA}{A}};}
+\DoxyCodeLine{00045   uint32\_t B;}
+\DoxyCodeLine{00046   uint32\_t C;}
+\DoxyCodeLine{00047   uint32\_t D;}
+\DoxyCodeLine{00048   uint32\_t E;}
+\DoxyCodeLine{00049 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00050   \textcolor{keyword}{static} constexpr \textcolor{keywordtype}{double} invSecondsPerDay = 1.0 / 86400;}
+\DoxyCodeLine{00051   \mbox{\hyperlink{classJulianDate}{JulianDate}}(\textcolor{keywordtype}{double} d) : date(d) \{\}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054   \textcolor{keywordtype}{bool} \textcolor{keyword}{static} isLeap(}
+\DoxyCodeLine{00055       uint32\_t year) \{  \textcolor{comment}{// ex: 1900 is NOT a leap year (divisible by 100) 1904}}
+\DoxyCodeLine{00056                         \textcolor{comment}{// is a leap year 2000 is a leap year (\% 400)}}
+\DoxyCodeLine{00057     \textcolor{keywordflow}{return} year \% 4 == 0 \&\& year \% 100 != 0 || year \% 400 == 0;}
+\DoxyCodeLine{00058   \}}
+\DoxyCodeLine{00059   \mbox{\hyperlink{classJulianDate}{JulianDate}}(int32\_t year, uint32\_t month, uint32\_t day, uint32\_t hour = 0,}
+\DoxyCodeLine{00060              uint32\_t min = 0, uint32\_t second = 0);}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062   \mbox{\hyperlink{classJulianDate}{JulianDate}} operator+(\textcolor{keywordtype}{double} days)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classJulianDate}{JulianDate}}(date + days); \}}
+\DoxyCodeLine{00063   \textcolor{keyword}{friend} \textcolor{keywordtype}{double} operator-\/(\mbox{\hyperlink{classJulianDate}{JulianDate}} a, \mbox{\hyperlink{classJulianDate}{JulianDate}} b) \{}
+\DoxyCodeLine{00064     \textcolor{keywordflow}{return} a.date -\/ b.date;}
+\DoxyCodeLine{00065   \}}
+\DoxyCodeLine{00066   \mbox{\hyperlink{classJulianDate}{JulianDate}} operator-\/(\textcolor{keywordtype}{double} days)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classJulianDate}{JulianDate}}(date -\/ days); \}}
+\DoxyCodeLine{00067   \mbox{\hyperlink{classJulianDate}{JulianDate}} operator+=(\textcolor{keywordtype}{double} days) \{ \textcolor{keywordflow}{return} date += days; \}}
+\DoxyCodeLine{00068   \mbox{\hyperlink{classJulianDate}{JulianDate}} operator-\/=(\textcolor{keywordtype}{double} days) \{ \textcolor{keywordflow}{return} date -\/= days; \}}
+\DoxyCodeLine{00069   \textcolor{comment}{// TODO: Decide when two dates are equal}}
+\DoxyCodeLine{00070   \textcolor{comment}{// Right now 1/80 of a msec}}
+\DoxyCodeLine{00071   \textcolor{keywordtype}{bool} operator==(\mbox{\hyperlink{classJulianDate}{JulianDate}} orig) \{ \textcolor{keywordflow}{return} abs(date -\/ orig.date) < 0.0000125; \}}
+\DoxyCodeLine{00072   \textcolor{keyword}{operator} double()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} date; \}}
+\DoxyCodeLine{00073   \textcolor{comment}{// TODO: need to implement extraction of date info}}
+\DoxyCodeLine{00074   int32\_t getYear()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00075     int64\_t ddate = int64\_t(date);}
+\DoxyCodeLine{00076     int32\_t dy = ddate / 365 + ddate / 4 -\/ ddate / 100 + ddate / 400;}
+\DoxyCodeLine{00077     std::cout << dy;}
+\DoxyCodeLine{00078     std::cout << (dy = ddate / 365.2425);}
+\DoxyCodeLine{00079     \textcolor{keywordflow}{return} epoch + dy;}
+\DoxyCodeLine{00080     \textcolor{comment}{//    uint32\_t month = (E < 13.5) ? E -\/ 1 : E -\/ 13;}}
+\DoxyCodeLine{00081     \textcolor{comment}{//    return (month > 2.5) ? C -\/ 4716 : C -\/ 4715;}}
+\DoxyCodeLine{00082   \}}
+\DoxyCodeLine{00083   uint32\_t getMonth()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00084     \textcolor{keywordtype}{double} ddate = floor(date);}
+\DoxyCodeLine{00085     int32\_t mm = ddate -\/ floor(floor(ddate / 365.2425) * 365.2425);}
+\DoxyCodeLine{00086     \textcolor{keywordflow}{return} mm;}
+\DoxyCodeLine{00087     \textcolor{comment}{//     return (E < 13.5) ? E -\/ 1 : E -\/ 13;}}
+\DoxyCodeLine{00088   \}}
+\DoxyCodeLine{00089   uint32\_t getDay()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00090     \textcolor{keywordtype}{double} ddate = floor(date);}
+\DoxyCodeLine{00091     int32\_t dd = ddate -\/ floor(floor(ddate / 365.2425) * 365.2425);}
+\DoxyCodeLine{00092     \textcolor{keywordflow}{return} dd;  \textcolor{comment}{// TODO: this is completely wrong}}
+\DoxyCodeLine{00093   \}}
+\DoxyCodeLine{00094   uint32\_t getHour()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00095     \textcolor{keywordtype}{double} frac = date -\/ floor(date);}
+\DoxyCodeLine{00096     \textcolor{keywordflow}{return} uint32\_t(frac * 24);}
+\DoxyCodeLine{00097   \}}
+\DoxyCodeLine{00098   uint32\_t getMinute()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00099     \textcolor{keywordtype}{double} frac = date -\/ floor(date);}
+\DoxyCodeLine{00100     \textcolor{keywordflow}{return} uint32\_t(frac * (24 * 60)) \% 60;}
+\DoxyCodeLine{00101   \}}
+\DoxyCodeLine{00102   \textcolor{keywordtype}{double} getSecond()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00103     \textcolor{keywordtype}{double} frac = date -\/ floor(date);}
+\DoxyCodeLine{00104     \textcolor{keywordflow}{return} uint32\_t(frac * (24 * 60 * 60)) \% 60;}
+\DoxyCodeLine{00105   \}}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107   \textcolor{comment}{// write a Julian date into the string at dest}}
+\DoxyCodeLine{00108   \textcolor{keywordtype}{void} format(\textcolor{keywordtype}{char} dest[]) \{\}}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110   \textcolor{comment}{//    void format(MultiText* text, uint32\_t style);}}
+\DoxyCodeLine{00111   \textcolor{keywordtype}{double} getJulDate()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} date; \}}
+\DoxyCodeLine{00112   \textcolor{keywordtype}{void} extract(int32\_t* year, uint32\_t* mm, uint32\_t* dd, uint32\_t* hh,}
+\DoxyCodeLine{00113                uint32\_t* min, uint32\_t* ss) \{}
+\DoxyCodeLine{00114     \textcolor{keywordtype}{double} ddate = floor(date);}
+\DoxyCodeLine{00115     int32\_t dy = ddate / 365 + ddate / 4 -\/ ddate / 100 + ddate / 400;}
+\DoxyCodeLine{00116     *year = epoch + dy;}
+\DoxyCodeLine{00117     int32\_t month = ddate -\/ floor(floor(ddate / 365.2425) * 365.2425);}
+\DoxyCodeLine{00118     *mm = month;}
+\DoxyCodeLine{00119     *dd = 0;  \textcolor{comment}{// TODO: use a single lookup table for both month and day, easy}}
+\DoxyCodeLine{00120     \textcolor{keywordtype}{double} whole = floor(date);}
+\DoxyCodeLine{00121     \textcolor{keywordtype}{double} frac = date -\/ whole;}
+\DoxyCodeLine{00122     uint32\_t h = uint32\_t(frac *= 24);}
+\DoxyCodeLine{00123     frac -\/= h;}
+\DoxyCodeLine{00124     *hh = h;}
+\DoxyCodeLine{00125     uint32\_t m = uint32\_t(frac *= 60);}
+\DoxyCodeLine{00126     *min = m;}
+\DoxyCodeLine{00127     frac -\/= m;}
+\DoxyCodeLine{00128     *ss = frac * 60;}
+\DoxyCodeLine{00129   \}}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131   \textcolor{keyword}{friend} std::ostream\& operator<<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classJulianDate}{JulianDate}}\& jd) \{}
+\DoxyCodeLine{00132     s << JulianDate::monthAbbr[jd.getMonth() -\/ 1];}
+\DoxyCodeLine{00133     \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{00134   \}}
+\DoxyCodeLine{00135   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classDate}{Date}};}
+\DoxyCodeLine{00136 \};}
 
 \end{DoxyCode}

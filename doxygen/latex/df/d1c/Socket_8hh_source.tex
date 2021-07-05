@@ -12,17 +12,17 @@
 \DoxyCodeLine{00026 }
 \DoxyCodeLine{00027 \textcolor{keyword}{using namespace }std;}
 \DoxyCodeLine{00028 }
-\DoxyCodeLine{00029 \textcolor{keyword}{class }\mbox{\hyperlink{classRequest}{Request}}; \textcolor{comment}{// forward reference, all code is included in .cc}}
+\DoxyCodeLine{00029 \textcolor{keyword}{class }\mbox{\hyperlink{classRequest}{Request}};  \textcolor{comment}{// forward reference, all code is included in .cc}}
 \DoxyCodeLine{\Hypertarget{Socket_8hh_source_l00030}\mbox{\hyperlink{classSocket}{00030}} \textcolor{keyword}{class }\mbox{\hyperlink{classSocket}{Socket}} \{}
 \DoxyCodeLine{00031  \textcolor{keyword}{protected}:}
 \DoxyCodeLine{00032   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* address;}
 \DoxyCodeLine{00033   uint16\_t port;}
-\DoxyCodeLine{00034 \textcolor{preprocessor}{  \#ifdef \_\_linux\_\_}}
-\DoxyCodeLine{00035        \textcolor{keywordtype}{char} sockaddress[16]; \textcolor{comment}{// placeholder big enough to hold sockaddr\_in structure}}
-\DoxyCodeLine{00036 \textcolor{preprocessor}{  \#elif \_WIN32}}
-\DoxyCodeLine{00037       \textcolor{keyword}{static} WSADATA wsaData;}
-\DoxyCodeLine{00038       \textcolor{keyword}{struct }addrinfo* result;}
-\DoxyCodeLine{00039 \textcolor{preprocessor}{  \#endif}}
+\DoxyCodeLine{00034 \textcolor{preprocessor}{\#ifdef \_\_linux\_\_}}
+\DoxyCodeLine{00035   \textcolor{keywordtype}{char} sockaddress[16];  \textcolor{comment}{// placeholder big enough to hold sockaddr\_in structure}}
+\DoxyCodeLine{00036 \textcolor{preprocessor}{\#elif \_WIN32}}
+\DoxyCodeLine{00037   \textcolor{keyword}{static} WSADATA wsaData;}
+\DoxyCodeLine{00038   \textcolor{keyword}{struct }addrinfo* result;}
+\DoxyCodeLine{00039 \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{00040   \mbox{\hyperlink{classRequest}{Request}}* req;    \textcolor{comment}{// to be called when a request is INCOMING (req-\/>handle() )}}
 \DoxyCodeLine{00041   \mbox{\hyperlink{classBuffer}{Buffer}} in, out;  \textcolor{comment}{// buffers to send and receive data}}
 \DoxyCodeLine{00042 }

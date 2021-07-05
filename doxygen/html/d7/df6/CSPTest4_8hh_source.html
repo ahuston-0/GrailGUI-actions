@@ -95,30 +95,29 @@ $(document).ready(function(){initNavTree('d7/df6/CSPTest4_8hh_source.html','../.
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//#include &quot;csp/HttpServlet.hh&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//#include &quot;csp/HTTPRequest.hh&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../d4/d1c/classCSPTest4.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/d1c/classCSPTest4.html">CSPTest4</a> : <span class="keyword">public</span> <a class="code" href="../../d8/dbc/classCSPServlet.html">CSPServlet</a> {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="../../d4/d1c/classCSPTest4.html">CSPTest4</a>() {}</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    ~<a class="code" href="../../d4/d1c/classCSPTest4.html">CSPTest4</a>() {}</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> request(<a class="code" href="../../d1/d96/classCSPRequest.html">CSPRequest</a>&amp; r) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="../../d0/d11/classBuffer.html">Buffer</a>&amp; out = r.getOut();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                uint8_t a = 1;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                uint16_t b = 2;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                uint32_t c = 3;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                uint64_t d = 12345678901234567;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                int8_t e = -1;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                int16_t f = -2;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                int32_t g = -3;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                int64_t h = -12345678901234567;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keywordtype">float</span> i = 1.234567;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordtype">double</span> j = 1.23456789012345;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keywordtype">string</span> s = <span class="stringliteral">&quot;This is a test string.&quot;</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                out &lt;&lt; a &lt;&lt; b &lt;&lt; c &lt;&lt; d &lt;&lt; e &lt;&lt; f &lt;&lt; g &lt;&lt; h &lt;&lt; i &lt;&lt; j &lt;&lt; s;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <a class="code" href="../../d4/d1c/classCSPTest4.html">CSPTest4</a>() {}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  ~<a class="code" href="../../d4/d1c/classCSPTest4.html">CSPTest4</a>() {}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordtype">void</span> request(<a class="code" href="../../d1/d96/classCSPRequest.html">CSPRequest</a>&amp; r) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../d0/d11/classBuffer.html">Buffer</a>&amp; out = r.getOut();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    uint8_t a = 1;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    uint16_t b = 2;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    uint32_t c = 3;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    uint64_t d = 12345678901234567;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    int8_t e = -1;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    int16_t f = -2;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    int32_t g = -3;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    int64_t h = -12345678901234567;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">float</span> i = 1.234567;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">double</span> j = 1.23456789012345;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">string</span> s = <span class="stringliteral">&quot;This is a test string.&quot;</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    out &lt;&lt; a &lt;&lt; b &lt;&lt; c &lt;&lt; d &lt;&lt; e &lt;&lt; f &lt;&lt; g &lt;&lt; h &lt;&lt; i &lt;&lt; j &lt;&lt; s;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
 <div class="ttc" id="aclassBuffer_html"><div class="ttname"><a href="../../d0/d11/classBuffer.html">Buffer</a></div><div class="ttdef"><b>Definition:</b> BinBuffer.hh:6</div></div>
 <div class="ttc" id="aclassCSPRequest_html"><div class="ttname"><a href="../../d1/d96/classCSPRequest.html">CSPRequest</a></div><div class="ttdef"><b>Definition:</b> CSPRequest.hh:6</div></div>
-<div class="ttc" id="aclassCSPServlet_html"><div class="ttname"><a href="../../d8/dbc/classCSPServlet.html">CSPServlet</a></div><div class="ttdef"><b>Definition:</b> CSPServlet.hh:10</div></div>
+<div class="ttc" id="aclassCSPServlet_html"><div class="ttname"><a href="../../d8/dbc/classCSPServlet.html">CSPServlet</a></div><div class="ttdef"><b>Definition:</b> CSPServlet.hh:11</div></div>
 <div class="ttc" id="aclassCSPTest4_html"><div class="ttname"><a href="../../d4/d1c/classCSPTest4.html">CSPTest4</a></div><div class="ttdef"><b>Definition:</b> CSPTest4.hh:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

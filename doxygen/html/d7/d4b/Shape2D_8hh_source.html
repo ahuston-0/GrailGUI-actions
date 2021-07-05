@@ -90,17 +90,17 @@ $(document).ready(function(){initNavTree('d7/d4b/Shape2D_8hh_source.html','../..
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;opengl/util/Transformation.hh&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;opengl/Style.hh&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;opengl/Shape.hh&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;opengl/Shader.hh&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;opengl/Shader.hh&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;opengl/Shape.hh&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;opengl/Style.hh&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;opengl/util/Transformation.hh&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="../../d5/db1/classShape2D.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/db1/classShape2D.html">Shape2D</a> : <span class="keyword">public</span> <a class="code" href="../../de/d0a/classShape.html">Shape</a> {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordtype">float</span> x,y;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordtype">float</span> x, y;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  std::vector&lt;float&gt; vertices;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  std::vector&lt;float&gt; colors;<span class="comment">//move this to style</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  std::vector&lt;float&gt; colors;  <span class="comment">// move this to style</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  std::vector&lt;uint32_t&gt; solidIndices;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  std::vector&lt;uint32_t&gt; lineIndices;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  std::vector&lt;uint32_t&gt; pointIndices;</div>
@@ -110,50 +110,47 @@ $(document).ready(function(){initNavTree('d7/d4b/Shape2D_8hh_source.html','../..
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">void</span> applyTransform(<a class="code" href="../../d9/d69/classShader.html">Shader</a>* s);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="comment">//Shape2D(float x, float y) : Shape2D(x,y,nullptr,nullptr){}</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="comment">//Shape2D(float x, float y, Transformation* transform) : Shape2D(x,y,nullptr,transform){}</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="../../d5/db1/classShape2D.html">Shape2D</a>(<a class="code" href="../../d5/d70/classCanvas.html">Canvas</a>* c, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y,<a class="code" href="../../d2/dff/classStyle.html">Style</a>* style, <a class="code" href="../../d1/d02/classTransformation.html">Transformation</a>* transform = <span class="keyword">new</span> <a class="code" href="../../d1/d02/classTransformation.html">Transformation</a>()) : </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="../../de/d0a/classShape.html">Shape</a>(c), x(x),y(y),style(style),transform(transform)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  {}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">void</span> addPoint(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y){</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    vertices.push_back(x);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    vertices.push_back(y);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> addColor(<span class="keywordtype">float</span> r, <span class="keywordtype">float</span> g, <span class="keywordtype">float</span> b){</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    colors.push_back(r);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    colors.push_back(g);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    colors.push_back(b);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">void</span> setColors(<span class="keywordtype">float</span> cols[], uint32_t size){</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    colors.insert(colors.end(),&amp;cols[0],&amp;cols[size]);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span> setColors(std::vector&lt;float&gt; cols){</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    colors = cols;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  std::vector&lt;float&gt; getVertices() { <span class="keywordflow">return</span> vertices; }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  uint32_t getSize(){ <span class="keywordflow">return</span> vertices.size();}</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="../../d2/dff/classStyle.html">Style</a> * getStyle(){ <span class="keywordflow">return</span> style; }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="../../d1/d02/classTransformation.html">Transformation</a> * getTransformation() { <span class="keywordflow">return</span> transform; }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">void</span> setTransform(<a class="code" href="../../d1/d02/classTransformation.html">Transformation</a>* t){</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    transform = t;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  ~<a class="code" href="../../d5/db1/classShape2D.html">Shape2D</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> init() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> process_input(Inputs* in,<span class="keywordtype">float</span> dt)<span class="keyword"> override </span>{}</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> update()<span class="keyword"> override </span>{}</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> render() = 0;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">void</span> initIndices();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="comment">// Shape2D(float x, float y) : Shape2D(x,y,nullptr,nullptr){}</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="comment">// Shape2D(float x, float y, Transformation* transform) :</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="comment">// Shape2D(x,y,nullptr,transform){}</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="../../d5/db1/classShape2D.html">Shape2D</a>(<a class="code" href="../../d5/d70/classCanvas.html">Canvas</a>* c, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <a class="code" href="../../d2/dff/classStyle.html">Style</a>* style,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;          <a class="code" href="../../d1/d02/classTransformation.html">Transformation</a>* transform = <span class="keyword">new</span> <a class="code" href="../../d1/d02/classTransformation.html">Transformation</a>())</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      : <a class="code" href="../../de/d0a/classShape.html">Shape</a>(c), x(x), y(y), style(style), transform(transform) {}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> addPoint(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    vertices.push_back(x);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    vertices.push_back(y);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> addColor(<span class="keywordtype">float</span> r, <span class="keywordtype">float</span> g, <span class="keywordtype">float</span> b) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    colors.push_back(r);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    colors.push_back(g);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    colors.push_back(b);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">void</span> setColors(<span class="keywordtype">float</span> cols[], uint32_t size) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    colors.insert(colors.end(), &amp;cols[0], &amp;cols[size]);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">void</span> setColors(std::vector&lt;float&gt; cols) { colors = cols; }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  std::vector&lt;float&gt; getVertices() { <span class="keywordflow">return</span> vertices; }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  uint32_t getSize() { <span class="keywordflow">return</span> vertices.size(); }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="../../d2/dff/classStyle.html">Style</a>* getStyle() { <span class="keywordflow">return</span> style; }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="../../d1/d02/classTransformation.html">Transformation</a>* getTransformation() { <span class="keywordflow">return</span> transform; }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> setTransform(<a class="code" href="../../d1/d02/classTransformation.html">Transformation</a>* t) { transform = t; }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  ~<a class="code" href="../../d5/db1/classShape2D.html">Shape2D</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> init() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> process_input(Inputs* in, <span class="keywordtype">float</span> dt)<span class="keyword"> override </span>{}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> update()<span class="keyword"> override </span>{}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> render() = 0;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> initIndices();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
 <div class="ttc" id="aclassCanvas_html"><div class="ttname"><a href="../../d5/d70/classCanvas.html">Canvas</a></div><div class="ttdef"><b>Definition:</b> Canvas.hh:10</div></div>
 <div class="ttc" id="aclassShader_html"><div class="ttname"><a href="../../d9/d69/classShader.html">Shader</a></div><div class="ttdef"><b>Definition:</b> Shader.hh:16</div></div>
 <div class="ttc" id="aclassShape2D_html"><div class="ttname"><a href="../../d5/db1/classShape2D.html">Shape2D</a></div><div class="ttdef"><b>Definition:</b> Shape2D.hh:10</div></div>
-<div class="ttc" id="aclassShape_html"><div class="ttname"><a href="../../de/d0a/classShape.html">Shape</a></div><div class="ttdef"><b>Definition:</b> Shape.hh:15</div></div>
+<div class="ttc" id="aclassShape_html"><div class="ttname"><a href="../../de/d0a/classShape.html">Shape</a></div><div class="ttdef"><b>Definition:</b> Shape.hh:14</div></div>
 <div class="ttc" id="aclassStyle_html"><div class="ttname"><a href="../../d2/dff/classStyle.html">Style</a></div><div class="ttdef"><b>Definition:</b> Style.hh:8</div></div>
 <div class="ttc" id="aclassTransformation_html"><div class="ttname"><a href="../../d1/d02/classTransformation.html">Transformation</a></div><div class="ttdef"><b>Definition:</b> Transformation.hh:13</div></div>
 </div><!-- fragment --></div><!-- contents -->

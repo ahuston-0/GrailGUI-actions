@@ -23,14 +23,12 @@
 <section>
 <title>Detailed Description</title>
 
-<para>Base class for servlet This is the common behavior between protocols such as HTTP and CSP so this is the low-level data methods.</para>
+<para><literallayout><computeroutput>  Base class for servlet
+  This is the common behavior between protocols such as HTTP and CSP
+  so this is the low-level data methods.
 
-<para>All servlets support a request, which is a client sending a message to the server requesting data. In HTTP, a request is ASCII with many potential lines if input, whereas in CSP it is a lot shorter, fixed format, and binary</para>
-
-<para><formalpara><title>Author</title>
-
-<para>: Dov Kruger </para>
-</formalpara>
-</para>
+  All servlets support a request, which is a client sending a message to
+</computeroutput></literallayout> the server requesting data. In HTTP, a request is ASCII with many potential lines if input, whereas in CSP it is a lot shorter, fixed format, and binary <literallayout><computeroutput>  @author: Dov Kruger
+</computeroutput></literallayout> </para>
 </section>
 </section>

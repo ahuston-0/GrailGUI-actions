@@ -4,30 +4,34 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{00002 \textcolor{preprocessor}{\#include "{}opengl/GLWin.hh"{}}}
-\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/primitivesV2/Shape.hh"{}}}
-\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}opengl/GLWinFonts.hh"{}}}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/GLWinFonts.hh"{}}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}opengl/primitivesV2/Shape.hh"{}}}
 \DoxyCodeLine{00005 \textcolor{keyword}{class }\mbox{\hyperlink{classStyle}{Style}};}
 \DoxyCodeLine{00006 }
 \DoxyCodeLine{\Hypertarget{Text_8hh_source_l00007}\mbox{\hyperlink{classText}{00007}} \textcolor{keyword}{class }\mbox{\hyperlink{classText}{Text}} : \textcolor{keyword}{public} \mbox{\hyperlink{classShape}{Shape}} \{}
-\DoxyCodeLine{00008 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00008  \textcolor{keyword}{private}:}
 \DoxyCodeLine{00009   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f;}
 \DoxyCodeLine{00010   uint32\_t textureId;}
-\DoxyCodeLine{00011   \textcolor{keywordtype}{float} x,y;}
+\DoxyCodeLine{00011   \textcolor{keywordtype}{float} x, y;}
 \DoxyCodeLine{00012   \mbox{\hyperlink{classStyle}{Style}}* style;}
 \DoxyCodeLine{00013   std::string text;}
 \DoxyCodeLine{00014   std::vector<float> vert;}
-\DoxyCodeLine{00015   \textcolor{keywordtype}{void} addPoint(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} u, \textcolor{keywordtype}{float} v)\{}
-\DoxyCodeLine{00016     vert.push\_back(x);  vert.push\_back(y);}
-\DoxyCodeLine{00017     vert.push\_back(u);  vert.push\_back(v);}
-\DoxyCodeLine{00018   \}}
-\DoxyCodeLine{00019   \textcolor{keywordtype}{float} velX = 1,velY=1;}
-\DoxyCodeLine{00020 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00021   \mbox{\hyperlink{classText}{Text}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \mbox{\hyperlink{classStyle}{Style}} * style, \textcolor{keyword}{const} std::string\& text) : \mbox{\hyperlink{classShape}{Shape}}(),x(x),y(y),style(style),text(text)\{\}}
-\DoxyCodeLine{00022   \string~\mbox{\hyperlink{classText}{Text}}();}
-\DoxyCodeLine{00023   \textcolor{keywordtype}{void} init();}
-\DoxyCodeLine{00024   \textcolor{keywordtype}{void} update();}
-\DoxyCodeLine{00025   \textcolor{keywordtype}{void} render();}
-\DoxyCodeLine{00026   \textcolor{keyword}{const} \textcolor{keyword}{static} uint32\_t LINE\_LENGTH = 256;}
-\DoxyCodeLine{00027 \};}
+\DoxyCodeLine{00015   \textcolor{keywordtype}{void} addPoint(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} u, \textcolor{keywordtype}{float} v) \{}
+\DoxyCodeLine{00016     vert.push\_back(x);}
+\DoxyCodeLine{00017     vert.push\_back(y);}
+\DoxyCodeLine{00018     vert.push\_back(u);}
+\DoxyCodeLine{00019     vert.push\_back(v);}
+\DoxyCodeLine{00020   \}}
+\DoxyCodeLine{00021   \textcolor{keywordtype}{float} velX = 1, velY = 1;}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024   \mbox{\hyperlink{classText}{Text}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \mbox{\hyperlink{classStyle}{Style}}* style, \textcolor{keyword}{const} std::string\& text)}
+\DoxyCodeLine{00025       : \mbox{\hyperlink{classShape}{Shape}}(), x(x), y(y), style(style), text(text) \{\}}
+\DoxyCodeLine{00026   \string~\mbox{\hyperlink{classText}{Text}}();}
+\DoxyCodeLine{00027   \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{00028   \textcolor{keywordtype}{void} update();}
+\DoxyCodeLine{00029   \textcolor{keywordtype}{void} render();}
+\DoxyCodeLine{00030   \textcolor{keyword}{const} \textcolor{keyword}{static} uint32\_t LINE\_LENGTH = 256;}
+\DoxyCodeLine{00031 \};}
 
 \end{DoxyCode}

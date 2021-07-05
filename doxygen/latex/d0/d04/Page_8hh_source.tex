@@ -4,58 +4,60 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{00002 }
-\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <string.h>}}
-\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}util/datatype.hh"{}}}
-\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}csp/Insertion.hh"{}}}
-\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <fstream>}}
-\DoxyCodeLine{00009 }
-\DoxyCodeLine{00010 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include "{}csp/Insertion.hh"{}}}
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "{}util/datatype.hh"{}}}
 \DoxyCodeLine{00011 }
-\DoxyCodeLine{\Hypertarget{Page_8hh_source_l00012}\mbox{\hyperlink{classPage}{00012}} \textcolor{keyword}{class }\mbox{\hyperlink{classPage}{Page}} \{}
+\DoxyCodeLine{00012 \textcolor{keyword}{using namespace }std;}
 \DoxyCodeLine{00013 }
-\DoxyCodeLine{00014 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00015     \textcolor{keywordtype}{string} staticContent; \textcolor{comment}{//static content}}
-\DoxyCodeLine{00016     std::vector<Insertion> insertions; \textcolor{comment}{//dynamic content}}
-\DoxyCodeLine{00017     \textcolor{comment}{//Make field for full size, update each time dynamic content is added (static + dynamic)}}
-\DoxyCodeLine{00018     uint32\_t size;}
-\DoxyCodeLine{00019     uint32\_t staticSize;}
-\DoxyCodeLine{00020     \textcolor{keywordtype}{void} readOffsetVector(ifstream\& infile);}
-\DoxyCodeLine{00021 }
-\DoxyCodeLine{00022 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00023     \textcolor{comment}{//Constructors}}
-\DoxyCodeLine{00024     \mbox{\hyperlink{classPage}{Page}}() \{\}}
-\DoxyCodeLine{00025     \mbox{\hyperlink{classPage}{Page}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& inputFile) ;}
-\DoxyCodeLine{00026     \mbox{\hyperlink{classPage}{Page}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& staticContent, vector<Insertion> insertions) : staticContent(staticContent), insertions(insertions), size(staticContent.size()) \{}
-\DoxyCodeLine{00027         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i : insertions)}
-\DoxyCodeLine{00028             size += dynamicSize(i.d);}
-\DoxyCodeLine{00029     \}}
-\DoxyCodeLine{00030     \mbox{\hyperlink{classPage}{Page}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& staticFile, \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& insertFile);}
-\DoxyCodeLine{00031     \textcolor{comment}{//Getters}}
-\DoxyCodeLine{00032     \textcolor{keywordtype}{char}* getStaticPointer() \{\textcolor{keywordflow}{return} \&staticContent[0u];\}}
-\DoxyCodeLine{00033     \textcolor{keywordtype}{string} getStaticContent()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} staticContent;\}}
-\DoxyCodeLine{00034     vector<Insertion> getInsertions()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} insertions;\}}
-\DoxyCodeLine{00035     uint32\_t getSize()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} size;\}}
-\DoxyCodeLine{00036     uint32\_t getStaticSize()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} staticSize;\}}
-\DoxyCodeLine{00037 }
-\DoxyCodeLine{00038     \textcolor{comment}{//Methods}}
-\DoxyCodeLine{00039     \textcolor{keywordtype}{void} addDynamic(uint32\_t offset, DataType d) \{}
-\DoxyCodeLine{00040         insertions.emplace\_back(\mbox{\hyperlink{classInsertion}{Insertion}}(offset, d));}
-\DoxyCodeLine{00041         size += dynamicSize(d);}
-\DoxyCodeLine{00042     \}}
-\DoxyCodeLine{00043 }
-\DoxyCodeLine{00044     \textcolor{keywordtype}{void} addStatic(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& t) \{}
-\DoxyCodeLine{00045         staticContent += t;}
-\DoxyCodeLine{00046     \}}
+\DoxyCodeLine{\Hypertarget{Page_8hh_source_l00014}\mbox{\hyperlink{classPage}{00014}} \textcolor{keyword}{class }\mbox{\hyperlink{classPage}{Page}} \{}
+\DoxyCodeLine{00015  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016   \textcolor{keywordtype}{string} staticContent;               \textcolor{comment}{// static content}}
+\DoxyCodeLine{00017   std::vector<Insertion> insertions;  \textcolor{comment}{// dynamic content}}
+\DoxyCodeLine{00018   \textcolor{comment}{// Make field for full size, update each time dynamic content is added (static}}
+\DoxyCodeLine{00019   \textcolor{comment}{// + dynamic)}}
+\DoxyCodeLine{00020   uint32\_t size;}
+\DoxyCodeLine{00021   uint32\_t staticSize;}
+\DoxyCodeLine{00022   \textcolor{keywordtype}{void} readOffsetVector(ifstream\& infile);}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025   \textcolor{comment}{// Constructors}}
+\DoxyCodeLine{00026   \mbox{\hyperlink{classPage}{Page}}() \{\}}
+\DoxyCodeLine{00027   \mbox{\hyperlink{classPage}{Page}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& inputFile);}
+\DoxyCodeLine{00028   \mbox{\hyperlink{classPage}{Page}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& staticContent, vector<Insertion> insertions)}
+\DoxyCodeLine{00029       : staticContent(staticContent),}
+\DoxyCodeLine{00030         insertions(insertions),}
+\DoxyCodeLine{00031         size(staticContent.size()) \{}
+\DoxyCodeLine{00032     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i : insertions) size += dynamicSize(i.d);}
+\DoxyCodeLine{00033   \}}
+\DoxyCodeLine{00034   \mbox{\hyperlink{classPage}{Page}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& staticFile, \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& insertFile);}
+\DoxyCodeLine{00035   \textcolor{comment}{// Getters}}
+\DoxyCodeLine{00036   \textcolor{keywordtype}{char}* getStaticPointer() \{ \textcolor{keywordflow}{return} \&staticContent[0u]; \}}
+\DoxyCodeLine{00037   \textcolor{keywordtype}{string} getStaticContent()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} staticContent; \}}
+\DoxyCodeLine{00038   vector<Insertion> getInsertions()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} insertions; \}}
+\DoxyCodeLine{00039   uint32\_t getSize()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} size; \}}
+\DoxyCodeLine{00040   uint32\_t getStaticSize()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} staticSize; \}}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042   \textcolor{comment}{// Methods}}
+\DoxyCodeLine{00043   \textcolor{keywordtype}{void} addDynamic(uint32\_t offset, DataType d) \{}
+\DoxyCodeLine{00044     insertions.emplace\_back(\mbox{\hyperlink{classInsertion}{Insertion}}(offset, d));}
+\DoxyCodeLine{00045     size += dynamicSize(d);}
+\DoxyCodeLine{00046   \}}
 \DoxyCodeLine{00047 }
-\DoxyCodeLine{00048     \textcolor{comment}{//TODO: make function to add static content}}
-\DoxyCodeLine{00049     \textcolor{keywordtype}{bool} isStatic() \{\textcolor{keywordflow}{return} insertions.empty();\}}
-\DoxyCodeLine{00050     uint32\_t dynamicSize(DataType d);}
-\DoxyCodeLine{00051 }
-\DoxyCodeLine{00052     \textcolor{keyword}{friend} ostream\& operator <<(ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classPage}{Page}}\& p);}
-\DoxyCodeLine{00053 \};}
-\DoxyCodeLine{00054 }
-\DoxyCodeLine{00055 \textcolor{comment}{//TODO: Write function to write file}}
+\DoxyCodeLine{00048   \textcolor{keywordtype}{void} addStatic(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& t) \{ staticContent += t; \}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050   \textcolor{comment}{// TODO: make function to add static content}}
+\DoxyCodeLine{00051   \textcolor{keywordtype}{bool} isStatic() \{ \textcolor{keywordflow}{return} insertions.empty(); \}}
+\DoxyCodeLine{00052   uint32\_t dynamicSize(DataType d);}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054   \textcolor{keyword}{friend} ostream\& operator<<(ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classPage}{Page}}\& p);}
+\DoxyCodeLine{00055 \};}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057 \textcolor{comment}{// TODO: Write function to write file}}
 
 \end{DoxyCode}

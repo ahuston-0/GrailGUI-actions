@@ -6,17 +6,17 @@
 \DoxyCodeLine{00002 }
 \DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <vector>}}
 \DoxyCodeLine{00004 \textcolor{comment}{//\#include <iostream>}}
-\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}opengl/util/Transformation.hh"{}}}
-\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}opengl/Style.hh"{}}}
-\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}opengl/Shape.hh"{}}}
-\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include "{}opengl/Shader.hh"{}}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}opengl/Shader.hh"{}}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}opengl/Shape.hh"{}}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}opengl/Style.hh"{}}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include "{}opengl/util/Transformation.hh"{}}}
 \DoxyCodeLine{00009 }
 \DoxyCodeLine{\Hypertarget{Shape2D_8hh_source_l00010}\mbox{\hyperlink{classShape2D}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{classShape2D}{Shape2D}} : \textcolor{keyword}{public} \mbox{\hyperlink{classShape}{Shape}} \{}
-\DoxyCodeLine{00011 \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00012   \textcolor{keywordtype}{float} x,y;}
+\DoxyCodeLine{00011  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00012   \textcolor{keywordtype}{float} x, y;}
 \DoxyCodeLine{00013 }
 \DoxyCodeLine{00014   std::vector<float> vertices;}
-\DoxyCodeLine{00015   std::vector<float> colors;\textcolor{comment}{//move this to style}}
+\DoxyCodeLine{00015   std::vector<float> colors;  \textcolor{comment}{// move this to style}}
 \DoxyCodeLine{00016   std::vector<uint32\_t> solidIndices;}
 \DoxyCodeLine{00017   std::vector<uint32\_t> lineIndices;}
 \DoxyCodeLine{00018   std::vector<uint32\_t> pointIndices;}
@@ -26,45 +26,42 @@
 \DoxyCodeLine{00022 }
 \DoxyCodeLine{00023   \textcolor{keywordtype}{void} applyTransform(\mbox{\hyperlink{classShader}{Shader}}* s);}
 \DoxyCodeLine{00024 }
-\DoxyCodeLine{00025 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00026   \textcolor{comment}{//Shape2D(float x, float y) : Shape2D(x,y,nullptr,nullptr)\{\}}}
-\DoxyCodeLine{00027   \textcolor{comment}{//Shape2D(float x, float y, Transformation* transform) : Shape2D(x,y,nullptr,transform)\{\}}}
-\DoxyCodeLine{00028   \mbox{\hyperlink{classShape2D}{Shape2D}}(\mbox{\hyperlink{classCanvas}{Canvas}}* c, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y,\mbox{\hyperlink{classStyle}{Style}}* style, \mbox{\hyperlink{classTransformation}{Transformation}}* transform = \textcolor{keyword}{new} \mbox{\hyperlink{classTransformation}{Transformation}}()) : }
-\DoxyCodeLine{00029     \mbox{\hyperlink{classShape}{Shape}}(c), x(x),y(y),style(style),transform(transform)}
-\DoxyCodeLine{00030   \{\}}
-\DoxyCodeLine{00031 }
-\DoxyCodeLine{00032   \textcolor{keywordtype}{void} addPoint(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y)\{}
-\DoxyCodeLine{00033     vertices.push\_back(x);}
-\DoxyCodeLine{00034     vertices.push\_back(y);}
-\DoxyCodeLine{00035   \}}
-\DoxyCodeLine{00036   \textcolor{keywordtype}{void} addColor(\textcolor{keywordtype}{float} r, \textcolor{keywordtype}{float} g, \textcolor{keywordtype}{float} b)\{}
-\DoxyCodeLine{00037     colors.push\_back(r);}
-\DoxyCodeLine{00038     colors.push\_back(g);}
-\DoxyCodeLine{00039     colors.push\_back(b);}
-\DoxyCodeLine{00040   \}}
-\DoxyCodeLine{00041   \textcolor{keywordtype}{void} setColors(\textcolor{keywordtype}{float} cols[], uint32\_t size)\{}
-\DoxyCodeLine{00042     colors.insert(colors.end(),\&cols[0],\&cols[size]);}
-\DoxyCodeLine{00043   \}}
-\DoxyCodeLine{00044 }
-\DoxyCodeLine{00045   \textcolor{keywordtype}{void} setColors(std::vector<float> cols)\{}
-\DoxyCodeLine{00046     colors = cols;}
-\DoxyCodeLine{00047   \}}
-\DoxyCodeLine{00048   std::vector<float> getVertices() \{ \textcolor{keywordflow}{return} vertices; \}}
-\DoxyCodeLine{00049 }
-\DoxyCodeLine{00050   uint32\_t getSize()\{ \textcolor{keywordflow}{return} vertices.size();\}}
-\DoxyCodeLine{00051 }
-\DoxyCodeLine{00052   \mbox{\hyperlink{classStyle}{Style}} * getStyle()\{ \textcolor{keywordflow}{return} style; \}}
-\DoxyCodeLine{00053 }
-\DoxyCodeLine{00054   \mbox{\hyperlink{classTransformation}{Transformation}} * getTransformation() \{ \textcolor{keywordflow}{return} transform; \}}
-\DoxyCodeLine{00055   \textcolor{keywordtype}{void} setTransform(\mbox{\hyperlink{classTransformation}{Transformation}}* t)\{}
-\DoxyCodeLine{00056     transform = t;}
-\DoxyCodeLine{00057   \}}
-\DoxyCodeLine{00058   \string~\mbox{\hyperlink{classShape2D}{Shape2D}}() \textcolor{keyword}{override};}
-\DoxyCodeLine{00059   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
-\DoxyCodeLine{00060   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} process\_input(Inputs* in,\textcolor{keywordtype}{float} dt)\textcolor{keyword}{ override }\{\}}
-\DoxyCodeLine{00061   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} update()\textcolor{keyword}{ override }\{\}}
-\DoxyCodeLine{00062   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} render() = 0;}
-\DoxyCodeLine{00063   \textcolor{keywordtype}{void} initIndices();}
-\DoxyCodeLine{00064 \};}
+\DoxyCodeLine{00025  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026   \textcolor{comment}{// Shape2D(float x, float y) : Shape2D(x,y,nullptr,nullptr)\{\}}}
+\DoxyCodeLine{00027   \textcolor{comment}{// Shape2D(float x, float y, Transformation* transform) :}}
+\DoxyCodeLine{00028   \textcolor{comment}{// Shape2D(x,y,nullptr,transform)\{\}}}
+\DoxyCodeLine{00029   \mbox{\hyperlink{classShape2D}{Shape2D}}(\mbox{\hyperlink{classCanvas}{Canvas}}* c, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \mbox{\hyperlink{classStyle}{Style}}* style,}
+\DoxyCodeLine{00030           \mbox{\hyperlink{classTransformation}{Transformation}}* transform = \textcolor{keyword}{new} \mbox{\hyperlink{classTransformation}{Transformation}}())}
+\DoxyCodeLine{00031       : \mbox{\hyperlink{classShape}{Shape}}(c), x(x), y(y), style(style), transform(transform) \{\}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033   \textcolor{keywordtype}{void} addPoint(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y) \{}
+\DoxyCodeLine{00034     vertices.push\_back(x);}
+\DoxyCodeLine{00035     vertices.push\_back(y);}
+\DoxyCodeLine{00036   \}}
+\DoxyCodeLine{00037   \textcolor{keywordtype}{void} addColor(\textcolor{keywordtype}{float} r, \textcolor{keywordtype}{float} g, \textcolor{keywordtype}{float} b) \{}
+\DoxyCodeLine{00038     colors.push\_back(r);}
+\DoxyCodeLine{00039     colors.push\_back(g);}
+\DoxyCodeLine{00040     colors.push\_back(b);}
+\DoxyCodeLine{00041   \}}
+\DoxyCodeLine{00042   \textcolor{keywordtype}{void} setColors(\textcolor{keywordtype}{float} cols[], uint32\_t size) \{}
+\DoxyCodeLine{00043     colors.insert(colors.end(), \&cols[0], \&cols[size]);}
+\DoxyCodeLine{00044   \}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046   \textcolor{keywordtype}{void} setColors(std::vector<float> cols) \{ colors = cols; \}}
+\DoxyCodeLine{00047   std::vector<float> getVertices() \{ \textcolor{keywordflow}{return} vertices; \}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049   uint32\_t getSize() \{ \textcolor{keywordflow}{return} vertices.size(); \}}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051   \mbox{\hyperlink{classStyle}{Style}}* getStyle() \{ \textcolor{keywordflow}{return} style; \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053   \mbox{\hyperlink{classTransformation}{Transformation}}* getTransformation() \{ \textcolor{keywordflow}{return} transform; \}}
+\DoxyCodeLine{00054   \textcolor{keywordtype}{void} setTransform(\mbox{\hyperlink{classTransformation}{Transformation}}* t) \{ transform = t; \}}
+\DoxyCodeLine{00055   \string~\mbox{\hyperlink{classShape2D}{Shape2D}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{00056   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
+\DoxyCodeLine{00057   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} process\_input(Inputs* in, \textcolor{keywordtype}{float} dt)\textcolor{keyword}{ override }\{\}}
+\DoxyCodeLine{00058   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} update()\textcolor{keyword}{ override }\{\}}
+\DoxyCodeLine{00059   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} render() = 0;}
+\DoxyCodeLine{00060   \textcolor{keywordtype}{void} initIndices();}
+\DoxyCodeLine{00061 \};}
 
 \end{DoxyCode}

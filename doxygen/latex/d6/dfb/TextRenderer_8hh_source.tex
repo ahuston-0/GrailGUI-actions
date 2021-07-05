@@ -4,33 +4,36 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{00002 }
-\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}opengl/Shape2D.hh"{}}}
-\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}opengl/shader.hpp"{}}}
-\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}opengl/GLWinFonts.hh"{}}}
-\DoxyCodeLine{00008 }
-\DoxyCodeLine{00009 \textcolor{keyword}{class }\mbox{\hyperlink{classGLWin}{GLWin}};}
-\DoxyCodeLine{00010 }
-\DoxyCodeLine{00011 \textcolor{keyword}{class }\mbox{\hyperlink{classText}{Text}} : \textcolor{keyword}{public} \mbox{\hyperlink{classShape2D}{Shape2D}} \{}
-\DoxyCodeLine{00012 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00013     \mbox{\hyperlink{classGLWin}{GLWin}}* w;}
-\DoxyCodeLine{00014     \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f;}
-\DoxyCodeLine{00015     uint32\_t textureId;}
-\DoxyCodeLine{00016     \textcolor{keywordtype}{float} x0, y0;}
-\DoxyCodeLine{00017     std::string text;}
-\DoxyCodeLine{00018     std::vector<float> vert;}
-\DoxyCodeLine{00019     \textcolor{keywordtype}{void} addPoint(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} u, \textcolor{keywordtype}{float} v) \{}
-\DoxyCodeLine{00020         vert.push\_back(x); vert.push\_back(y);}
-\DoxyCodeLine{00021         vert.push\_back(u); vert.push\_back(v);}
-\DoxyCodeLine{00022     \}}
-\DoxyCodeLine{00023 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00024   \mbox{\hyperlink{classText}{Text}}(\mbox{\hyperlink{classGLWin}{GLWin}}* w, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} std::string\& text) :}
-\DoxyCodeLine{00025         \mbox{\hyperlink{classShape2D}{Shape2D}}(x, y), w(w), x0(x), y0(y), text(text) \{\}}
-\DoxyCodeLine{00026     constexpr \textcolor{keyword}{static} uint32\_t LINE\_LENGTH = 256;}
-\DoxyCodeLine{00027     \textcolor{keywordtype}{void} init();}
-\DoxyCodeLine{00028   \textcolor{keywordtype}{void} render();}
-\DoxyCodeLine{00029     }
-\DoxyCodeLine{00030 \};}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}opengl/GLWinFonts.hh"{}}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}opengl/Shape2D.hh"{}}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include "{}opengl/shader.hpp"{}}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{keyword}{class }\mbox{\hyperlink{classGLWin}{GLWin}};}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{keyword}{class }\mbox{\hyperlink{classText}{Text}} : \textcolor{keyword}{public} \mbox{\hyperlink{classShape2D}{Shape2D}} \{}
+\DoxyCodeLine{00013  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014   \mbox{\hyperlink{classGLWin}{GLWin}}* w;}
+\DoxyCodeLine{00015   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* f;}
+\DoxyCodeLine{00016   uint32\_t textureId;}
+\DoxyCodeLine{00017   \textcolor{keywordtype}{float} x0, y0;}
+\DoxyCodeLine{00018   std::string text;}
+\DoxyCodeLine{00019   std::vector<float> vert;}
+\DoxyCodeLine{00020   \textcolor{keywordtype}{void} addPoint(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} u, \textcolor{keywordtype}{float} v) \{}
+\DoxyCodeLine{00021     vert.push\_back(x);}
+\DoxyCodeLine{00022     vert.push\_back(y);}
+\DoxyCodeLine{00023     vert.push\_back(u);}
+\DoxyCodeLine{00024     vert.push\_back(v);}
+\DoxyCodeLine{00025   \}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028   \mbox{\hyperlink{classText}{Text}}(\mbox{\hyperlink{classGLWin}{GLWin}}* w, \textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keyword}{const} std::string\& text)}
+\DoxyCodeLine{00029       : \mbox{\hyperlink{classShape2D}{Shape2D}}(x, y), w(w), x0(x), y0(y), text(text) \{\}}
+\DoxyCodeLine{00030   constexpr \textcolor{keyword}{static} uint32\_t LINE\_LENGTH = 256;}
+\DoxyCodeLine{00031   \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{00032   \textcolor{keywordtype}{void} render();}
+\DoxyCodeLine{00033 \};}
 
 \end{DoxyCode}

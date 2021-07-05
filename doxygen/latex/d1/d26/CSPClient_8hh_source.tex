@@ -8,47 +8,46 @@
 \DoxyCodeLine{00004 }
 \DoxyCodeLine{00005 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{00006 }
-\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}csp/Request.hh"{}}}
-\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include "{}util/Buffer.hh"{}}}
-\DoxyCodeLine{00009 \textcolor{preprocessor}{\#include "{}csp/Page.hh"{}}}
-\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "{}csp/Socket.hh"{}}}
-\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "{}csp/IPV4Socket.hh"{}}}
-\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "{}cspservlet/UtilityStructs.hh"{}}}
-\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "{}csp/PageBuffer.hh"{}}}
-\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include "{}csp/CSPServlet.hh"{}}}
-\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include "{}csp/CSPRequest.hh"{}}}
-\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include <csp/csp.hh>}}
-\DoxyCodeLine{00018 \textcolor{comment}{// === Removed for compatibility, use plibsys ===}}
-\DoxyCodeLine{00019 \textcolor{comment}{// \#include <sys/socket.h>}}
-\DoxyCodeLine{00020 \textcolor{comment}{// \#include <netinet/in.h>}}
-\DoxyCodeLine{00021 \textcolor{comment}{// \#include <netdb.h>}}
-\DoxyCodeLine{00022 \textcolor{comment}{// ==============================================}}
-\DoxyCodeLine{00023 \textcolor{preprocessor}{\#include <cstdio>}}
-\DoxyCodeLine{00024 }
-\DoxyCodeLine{\Hypertarget{CSPClient_8hh_source_l00025}\mbox{\hyperlink{classCSPClient}{00025}} \textcolor{keyword}{class }\mbox{\hyperlink{classCSPClient}{CSPClient}} \{}
-\DoxyCodeLine{00026 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00027 \textcolor{comment}{//    int fd;}}
-\DoxyCodeLine{00028     \mbox{\hyperlink{classIPV4Socket}{IPV4Socket}} s;}
-\DoxyCodeLine{00029     vector<Page> pages;}
-\DoxyCodeLine{00030     \textcolor{keywordtype}{void} addDynamic(\textcolor{keyword}{const} DataType\& type, \textcolor{keywordtype}{char}*\& a);}
-\DoxyCodeLine{00031 }
-\DoxyCodeLine{00032 \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00033     \mbox{\hyperlink{classBuffer}{Buffer}}\& in;}
-\DoxyCodeLine{00034     \mbox{\hyperlink{classBuffer}{Buffer}}\& out;}
-\DoxyCodeLine{00035 }
-\DoxyCodeLine{00036 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00037     \mbox{\hyperlink{classCSPClient}{CSPClient}}(\textcolor{keywordtype}{char}* addr, \textcolor{keywordtype}{int} port);}
-\DoxyCodeLine{00038     \mbox{\hyperlink{classpageBuffer}{pageBuffer}} pageRequest(uint32\_t pageid);}
-\DoxyCodeLine{00039     \textcolor{keywordtype}{void} testPrint(\textcolor{keywordtype}{int} pageid);}
-\DoxyCodeLine{00040 }
-\DoxyCodeLine{00041     \textcolor{keywordtype}{void} addPage(\textcolor{keywordtype}{string} staticData, vector<Insertion>\& dynamic);}
-\DoxyCodeLine{00042     \textcolor{keywordtype}{void} addPage(\textcolor{keywordtype}{string} staticData);}
-\DoxyCodeLine{00043     \textcolor{keywordtype}{void} addPage(\textcolor{keywordtype}{string} staticFile, \textcolor{keywordtype}{string} offsetFile);}
-\DoxyCodeLine{00044     \textcolor{keywordtype}{void} printPageData(\textcolor{keywordtype}{int} pageid) \{}
-\DoxyCodeLine{00045         cout << pages[pageid];}
-\DoxyCodeLine{00046     \}}
-\DoxyCodeLine{00047     \mbox{\hyperlink{classpageBuffer}{pageBuffer}} pageRequestFile(uint32\_t pageid); \textcolor{comment}{//Requests page from text file}}
-\DoxyCodeLine{00048 \};}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <csp/csp.hh>}}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "{}csp/CSPRequest.hh"{}}}
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "{}csp/CSPServlet.hh"{}}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "{}csp/IPV4Socket.hh"{}}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "{}csp/Page.hh"{}}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "{}csp/PageBuffer.hh"{}}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include "{}csp/Request.hh"{}}}
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include "{}csp/Socket.hh"{}}}
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include "{}cspservlet/UtilityStructs.hh"{}}}
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#include "{}util/Buffer.hh"{}}}
+\DoxyCodeLine{00019 \textcolor{comment}{// === Removed for compatibility, use plibsys ===}}
+\DoxyCodeLine{00020 \textcolor{comment}{// \#include <sys/socket.h>}}
+\DoxyCodeLine{00021 \textcolor{comment}{// \#include <netinet/in.h>}}
+\DoxyCodeLine{00022 \textcolor{comment}{// \#include <netdb.h>}}
+\DoxyCodeLine{00023 \textcolor{comment}{// ==============================================}}
+\DoxyCodeLine{00024 \textcolor{preprocessor}{\#include <cstdio>}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{\Hypertarget{CSPClient_8hh_source_l00026}\mbox{\hyperlink{classCSPClient}{00026}} \textcolor{keyword}{class }\mbox{\hyperlink{classCSPClient}{CSPClient}} \{}
+\DoxyCodeLine{00027  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028   \textcolor{comment}{//    int fd;}}
+\DoxyCodeLine{00029   \mbox{\hyperlink{classIPV4Socket}{IPV4Socket}} s;}
+\DoxyCodeLine{00030   vector<Page> pages;}
+\DoxyCodeLine{00031   \textcolor{keywordtype}{void} addDynamic(\textcolor{keyword}{const} DataType\& type, \textcolor{keywordtype}{char}*\& a);}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033  \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00034   \mbox{\hyperlink{classBuffer}{Buffer}}\& in;}
+\DoxyCodeLine{00035   \mbox{\hyperlink{classBuffer}{Buffer}}\& out;}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038   \mbox{\hyperlink{classCSPClient}{CSPClient}}(\textcolor{keywordtype}{char}* addr, \textcolor{keywordtype}{int} port);}
+\DoxyCodeLine{00039   \mbox{\hyperlink{classpageBuffer}{pageBuffer}} pageRequest(uint32\_t pageid);}
+\DoxyCodeLine{00040   \textcolor{keywordtype}{void} testPrint(\textcolor{keywordtype}{int} pageid);}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042   \textcolor{keywordtype}{void} addPage(\textcolor{keywordtype}{string} staticData, vector<Insertion>\& dynamic);}
+\DoxyCodeLine{00043   \textcolor{keywordtype}{void} addPage(\textcolor{keywordtype}{string} staticData);}
+\DoxyCodeLine{00044   \textcolor{keywordtype}{void} addPage(\textcolor{keywordtype}{string} staticFile, \textcolor{keywordtype}{string} offsetFile);}
+\DoxyCodeLine{00045   \textcolor{keywordtype}{void} printPageData(\textcolor{keywordtype}{int} pageid) \{ cout << pages[pageid]; \}}
+\DoxyCodeLine{00046   \mbox{\hyperlink{classpageBuffer}{pageBuffer}} pageRequestFile(uint32\_t pageid);  \textcolor{comment}{// Requests page from text file}}
+\DoxyCodeLine{00047 \};}
 
 \end{DoxyCode}

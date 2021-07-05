@@ -6,86 +6,69 @@
 \DoxyCodeLine{00002 }
 \DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <iostream>}}
 \DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}util/DynArray.hh"{}}}
-\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}util/HashMap.hh"{}}}
-\DoxyCodeLine{00007 }
-\DoxyCodeLine{\Hypertarget{MetaData_8hh_source_l00008}\mbox{\hyperlink{classStruct}{00008}} \textcolor{keyword}{class }\mbox{\hyperlink{classStruct}{Struct}} \{}
-\DoxyCodeLine{00009 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00010     \textcolor{keyword}{struct }pair \{}
-\DoxyCodeLine{00011         \textcolor{keywordtype}{string} name; DataType type;}
-\DoxyCodeLine{00012     \}}
-\DoxyCodeLine{00013     \mbox{\hyperlink{classDynArray}{DynArray<pair>}} fields;}
-\DoxyCodeLine{00014     \mbox{\hyperlink{classHashMap}{HashMap<DataType>}} byName;}
-\DoxyCodeLine{00015     std::string name;}
-\DoxyCodeLine{00016 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00017     \mbox{\hyperlink{classStruct}{Struct}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} name[]) : name(name) \{\}}
-\DoxyCodeLine{00018     \textcolor{keywordtype}{void} add(\textcolor{keyword}{const} \textcolor{keywordtype}{char} name[], DataType t);}
-\DoxyCodeLine{00019     \textcolor{keywordtype}{void} write(\textcolor{keywordtype}{char}* buf);}
-\DoxyCodeLine{00020     \textcolor{keywordtype}{void} read(\textcolor{keyword}{const} \textcolor{keywordtype}{char} buf[]);}
-\DoxyCodeLine{00021   \textcolor{keyword}{friend} std::ostream\& operator <<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classStruct}{Struct}}\& str);}
-\DoxyCodeLine{00022 }
-\DoxyCodeLine{00023 }
-\DoxyCodeLine{00024     \textcolor{comment}{/*}}
-\DoxyCodeLine{00025 \textcolor{comment}{        copying a structure. This is how inheritance is done}}
-\DoxyCodeLine{00026 \textcolor{comment}{        copy the parent, then override.}}
-\DoxyCodeLine{00027 \textcolor{comment}{     */}}
-\DoxyCodeLine{00028     \mbox{\hyperlink{classStruct}{Struct}}(\textcolor{keyword}{const} \mbox{\hyperlink{classStruct}{Struct}}\& orig) \{}
-\DoxyCodeLine{00029 }
-\DoxyCodeLine{00030     \}}
-\DoxyCodeLine{00031 \};}
-\DoxyCodeLine{00032 }
-\DoxyCodeLine{\Hypertarget{MetaData_8hh_source_l00033}\mbox{\hyperlink{classInterpretCSPStream}{00033}} \textcolor{keyword}{class }\mbox{\hyperlink{classInterpretCSPStream}{InterpretCSPStream}} \{}
-\DoxyCodeLine{00034 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00035     \mbox{\hyperlink{classStruct}{Struct}} metadata;}
-\DoxyCodeLine{00036     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* data;}
-\DoxyCodeLine{00037 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00038 }
-\DoxyCodeLine{00039 \};}
-\DoxyCodeLine{00040 }
-\DoxyCodeLine{00041 \textcolor{comment}{/*}}
-\DoxyCodeLine{00042 \textcolor{comment}{describes the type of data}}
-\DoxyCodeLine{00043 \textcolor{comment}{contains the size in bytes}}
-\DoxyCodeLine{00044 \textcolor{comment}{}}
-\DoxyCodeLine{00045 \textcolor{comment}{*/}}
-\DoxyCodeLine{\Hypertarget{MetaData_8hh_source_l00046}\mbox{\hyperlink{classSymbol}{00046}} \textcolor{keyword}{class }\mbox{\hyperlink{classSymbol}{Symbol}} \{}
-\DoxyCodeLine{00047 \textcolor{keyword}{public}: \textcolor{comment}{// TODO should this be public?}}
-\DoxyCodeLine{00048     uint32\_t size; \textcolor{comment}{// size of this type in bytes}}
-\DoxyCodeLine{00049     std::string name;}
-\DoxyCodeLine{00050     std::string cppType; \textcolor{comment}{// corresponding type string in C++ U32 -\/-\/> uint32\_t}}
-\DoxyCodeLine{00051   \mbox{\hyperlink{classSymbol}{Symbol}}* assignCompatibleWith; \textcolor{comment}{// if not null, type may be assigned from another that is internally equivalent}}
-\DoxyCodeLine{00052     }
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}util/DynArray.hh"{}}}
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "{}util/HashMap.hh"{}}}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{\Hypertarget{MetaData_8hh_source_l00009}\mbox{\hyperlink{classStruct}{00009}} \textcolor{keyword}{class }\mbox{\hyperlink{classStruct}{Struct}} \{}
+\DoxyCodeLine{00010  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011   \textcolor{keyword}{struct }pair \{}
+\DoxyCodeLine{00012     \textcolor{keywordtype}{string} name;}
+\DoxyCodeLine{00013     DataType type;}
+\DoxyCodeLine{00014   \} \mbox{\hyperlink{classDynArray}{DynArray<pair>}} fields;}
+\DoxyCodeLine{00015   \mbox{\hyperlink{classHashMap}{HashMap<DataType>}} byName;}
+\DoxyCodeLine{00016   std::string name;}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019   \mbox{\hyperlink{classStruct}{Struct}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} name[]) : name(name) \{\}}
+\DoxyCodeLine{00020   \textcolor{keywordtype}{void} add(\textcolor{keyword}{const} \textcolor{keywordtype}{char} name[], DataType t);}
+\DoxyCodeLine{00021   \textcolor{keywordtype}{void} write(\textcolor{keywordtype}{char}* buf);}
+\DoxyCodeLine{00022   \textcolor{keywordtype}{void} read(\textcolor{keyword}{const} \textcolor{keywordtype}{char} buf[]);}
+\DoxyCodeLine{00023   \textcolor{keyword}{friend} std::ostream\& operator<<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classStruct}{Struct}}\& str);}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025   \textcolor{comment}{/*}}
+\DoxyCodeLine{00026 \textcolor{comment}{          copying a structure. This is how inheritance is done}}
+\DoxyCodeLine{00027 \textcolor{comment}{          copy the parent, then override.}}
+\DoxyCodeLine{00028 \textcolor{comment}{   */}}
+\DoxyCodeLine{00029   \mbox{\hyperlink{classStruct}{Struct}}(\textcolor{keyword}{const} \mbox{\hyperlink{classStruct}{Struct}}\& orig) \{\}}
+\DoxyCodeLine{00030 \};}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{\Hypertarget{MetaData_8hh_source_l00032}\mbox{\hyperlink{classInterpretCSPStream}{00032}} \textcolor{keyword}{class }\mbox{\hyperlink{classInterpretCSPStream}{InterpretCSPStream}} \{}
+\DoxyCodeLine{00033  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034   \mbox{\hyperlink{classStruct}{Struct}} metadata;}
+\DoxyCodeLine{00035   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* data;}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038 \};}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040 \textcolor{comment}{/*}}
+\DoxyCodeLine{00041 \textcolor{comment}{describes the type of data}}
+\DoxyCodeLine{00042 \textcolor{comment}{contains the size in bytes}}
+\DoxyCodeLine{00043 \textcolor{comment}{}}
+\DoxyCodeLine{00044 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{MetaData_8hh_source_l00045}\mbox{\hyperlink{classSymbol}{00045}} \textcolor{keyword}{class }\mbox{\hyperlink{classSymbol}{Symbol}} \{}
+\DoxyCodeLine{00046  \textcolor{keyword}{public}:          \textcolor{comment}{// TODO should this be public?}}
+\DoxyCodeLine{00047   uint32\_t size;  \textcolor{comment}{// size of this type in bytes}}
+\DoxyCodeLine{00048   std::string name;}
+\DoxyCodeLine{00049   std::string cppType;  \textcolor{comment}{// corresponding type string in C++ U32 -\/-\/> uint32\_t}}
+\DoxyCodeLine{00050   \mbox{\hyperlink{classSymbol}{Symbol}}* assignCompatibleWith;  \textcolor{comment}{// if not null, type may be assigned from}}
+\DoxyCodeLine{00051                                  \textcolor{comment}{// another that is internally equivalent}}
+\DoxyCodeLine{00052 }
 \DoxyCodeLine{00053 \}}
-\DoxyCodeLine{00054     }
+\DoxyCodeLine{00054 }
 \DoxyCodeLine{00055 \textcolor{keyword}{class }CSPSymbolTable \{}
-\DoxyCodeLine{00056 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00057     \mbox{\hyperlink{classHashMap}{HashMap<Symbol>}} symbols;}
-\DoxyCodeLine{00058 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00059     CSPSymbolTable() \{}
-\DoxyCodeLine{00060         symbols.add(\textcolor{stringliteral}{"{}U8"{}}, \mbox{\hyperlink{classSymbol}{Symbol}}(   ) );}
-\DoxyCodeLine{00061         symbols.add(\textcolor{stringliteral}{"{}U16"{}}, \mbox{\hyperlink{classSymbol}{Symbol}}(   ) );}
-\DoxyCodeLine{00062     }
-\DoxyCodeLine{00063     \}}
-\DoxyCodeLine{00064     \textcolor{keywordtype}{void} addSymbol(\textcolor{keyword}{const} \mbox{\hyperlink{classStruct}{Struct}}\& s) \{}
-\DoxyCodeLine{00065 }
+\DoxyCodeLine{00056  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057   \mbox{\hyperlink{classHashMap}{HashMap<Symbol>}} symbols;}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060   CSPSymbolTable() \{}
+\DoxyCodeLine{00061     symbols.add(\textcolor{stringliteral}{"{}U8"{}}, \mbox{\hyperlink{classSymbol}{Symbol}}());}
+\DoxyCodeLine{00062     symbols.add(\textcolor{stringliteral}{"{}U16"{}}, \mbox{\hyperlink{classSymbol}{Symbol}}());}
+\DoxyCodeLine{00063   \}}
+\DoxyCodeLine{00064   \textcolor{keywordtype}{void} addSymbol(\textcolor{keyword}{const} \mbox{\hyperlink{classStruct}{Struct}}\& s) \{\}}
+\DoxyCodeLine{00065   \mbox{\hyperlink{classSymbol}{Symbol}}* inherits(\textcolor{keyword}{const} \textcolor{keywordtype}{char} parent[], \textcolor{keyword}{const} \textcolor{keywordtype}{char} childname[]) \{\}}
 \DoxyCodeLine{00066 }
-\DoxyCodeLine{00067     \}}
-\DoxyCodeLine{00068   \mbox{\hyperlink{classSymbol}{Symbol}}* inherits(\textcolor{keyword}{const} \textcolor{keywordtype}{char} parent[], \textcolor{keyword}{const} \textcolor{keywordtype}{char} childname[]) \{}
-\DoxyCodeLine{00069     \}}
-\DoxyCodeLine{00070 }
-\DoxyCodeLine{00071     \textcolor{keywordtype}{void} loadLanguage(\textcolor{keyword}{const} \textcolor{keywordtype}{char} langCode[]) \{}
-\DoxyCodeLine{00072 }
-\DoxyCodeLine{00073     \}}
-\DoxyCodeLine{00074 \};}
-\DoxyCodeLine{00075 }
-\DoxyCodeLine{00076 }
-\DoxyCodeLine{00077 }
-\DoxyCodeLine{00078 }
-\DoxyCodeLine{00079 }
-\DoxyCodeLine{00080 }
-\DoxyCodeLine{00081 }
-\DoxyCodeLine{00082 }
-\DoxyCodeLine{00083 }
-\DoxyCodeLine{00084 }
-\DoxyCodeLine{00085                                  }
+\DoxyCodeLine{00067   \textcolor{keywordtype}{void} loadLanguage(\textcolor{keyword}{const} \textcolor{keywordtype}{char} langCode[]) \{\}}
+\DoxyCodeLine{00068 \};}
 
 \end{DoxyCode}

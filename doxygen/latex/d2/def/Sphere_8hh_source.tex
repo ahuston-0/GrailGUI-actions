@@ -6,20 +6,20 @@
 \DoxyCodeLine{00002 \textcolor{preprocessor}{\#include "{}opengl/Shape.hh"{}}}
 \DoxyCodeLine{00003 }
 \DoxyCodeLine{\Hypertarget{Sphere_8hh_source_l00004}\mbox{\hyperlink{classSphere}{00004}} \textcolor{keyword}{class }\mbox{\hyperlink{classSphere}{Sphere}} : \textcolor{keyword}{public} \mbox{\hyperlink{classShape}{Shape}} \{}
-\DoxyCodeLine{00005 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00005  \textcolor{keyword}{private}:}
 \DoxyCodeLine{00006   std::vector<float> vert;}
 \DoxyCodeLine{00007   std::vector<uint32\_t> ind;}
 \DoxyCodeLine{00008   \textcolor{keywordtype}{void} addRect(uint32\_t i1, uint32\_t i2, uint32\_t i3, uint32\_t i4);}
 \DoxyCodeLine{00009   \textcolor{keywordtype}{void} addTri(uint32\_t i1, uint32\_t i2, uint32\_t i3);}
-\DoxyCodeLine{00010   \textcolor{keywordtype}{void} addVert(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z); \textcolor{comment}{// add just coords}}
-\DoxyCodeLine{00011   \textcolor{keywordtype}{void} addVert(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z, \textcolor{keywordtype}{float} u, \textcolor{keywordtype}{float} v); \textcolor{comment}{// add with texture}}
-\DoxyCodeLine{00012 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00013   \mbox{\hyperlink{classSphere}{Sphere}}(uint32\_t latRes, uint32\_t lonRes);}
-\DoxyCodeLine{00014   \string~\mbox{\hyperlink{classSphere}{Sphere}}();}
-\DoxyCodeLine{00015   \textcolor{keywordtype}{void} init();}
-\DoxyCodeLine{00016   \textcolor{keywordtype}{void} render();}
-\DoxyCodeLine{00017   \textcolor{keywordtype}{void} cleanup();}
-\DoxyCodeLine{00018   }
+\DoxyCodeLine{00010   \textcolor{keywordtype}{void} addVert(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z);  \textcolor{comment}{// add just coords}}
+\DoxyCodeLine{00011   \textcolor{keywordtype}{void} addVert(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z, \textcolor{keywordtype}{float} u,}
+\DoxyCodeLine{00012                \textcolor{keywordtype}{float} v);  \textcolor{comment}{// add with texture}}
+\DoxyCodeLine{00013  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014   \mbox{\hyperlink{classSphere}{Sphere}}(uint32\_t latRes, uint32\_t lonRes);}
+\DoxyCodeLine{00015   \string~\mbox{\hyperlink{classSphere}{Sphere}}();}
+\DoxyCodeLine{00016   \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{00017   \textcolor{keywordtype}{void} render();}
+\DoxyCodeLine{00018   \textcolor{keywordtype}{void} cleanup();}
 \DoxyCodeLine{00019 \};}
 
 \end{DoxyCode}

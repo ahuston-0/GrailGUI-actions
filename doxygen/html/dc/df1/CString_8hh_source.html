@@ -88,49 +88,43 @@ $(document).ready(function(){initNavTree('dc/df1/CString_8hh_source.html','../..
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;memory.h&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">    constant-size string, lighter weight</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../d7/da9/classCString.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/da9/classCString.html">CString</a> {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    uint32_t len_;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">char</span>* p;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="../../d7/da9/classCString.html">CString</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> msg[], uint32_t len) : len_(len), p(<span class="keyword">new</span> <span class="keywordtype">char</span>[len]) {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        memcpy(p, msg, len);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    ~<a class="code" href="../../d7/da9/classCString.html">CString</a>() { <span class="keyword">delete</span> [] p; }</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="../../d7/da9/classCString.html">CString</a>(<span class="keyword">const</span> <a class="code" href="../../d7/da9/classCString.html">CString</a>&amp; orig) : len_(orig.len_), p(<span class="keyword">new</span> <span class="keywordtype">char</span>[len_]) {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        memcpy(p, orig.p, len_);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="../../d7/da9/classCString.html">CString</a>&amp; operator =(<span class="keyword">const</span> <a class="code" href="../../d7/da9/classCString.html">CString</a>&amp; orig) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="../../d7/da9/classCString.html">CString</a> copy(orig);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        swap(p, orig.p);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="../../d7/da9/classCString.html">CString</a>(<a class="code" href="../../d7/da9/classCString.html">CString</a>&amp;&amp; orig) : len_(orig.len_) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        swap(p, orig.p);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">char</span> operator[](uint32_t i)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">return</span> p[i];</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">char</span>&amp; operator[](uint32_t i) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span> p[i];</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    uint32_t len()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> len_; }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">char</span>* str() { <span class="keywordflow">return</span> p; }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">friend</span> std::ostream&amp; operator &lt;&lt;(std::ostream&amp; s, <span class="keyword">const</span> <a class="code" href="../../d7/da9/classCString.html">CString</a>&amp; str) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; str.len_; i++)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            s &lt;&lt; str.p[i];</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> s;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                                                                        ~</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
-<div class="ttc" id="aclassCString_html"><div class="ttname"><a href="../../d7/da9/classCString.html">CString</a></div><div class="ttdef"><b>Definition:</b> CString.hh:7</div></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">        constant-size string, lighter weight</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../d7/da9/classCString.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/da9/classCString.html">CString</a> {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  uint32_t len_;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">char</span>* p;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="../../d7/da9/classCString.html">CString</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> msg[], uint32_t len) : len_(len), p(<span class="keyword">new</span> <span class="keywordtype">char</span>[len]) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    memcpy(p, msg, len);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  ~<a class="code" href="../../d7/da9/classCString.html">CString</a>() { <span class="keyword">delete</span>[] p; }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <a class="code" href="../../d7/da9/classCString.html">CString</a>(<span class="keyword">const</span> <a class="code" href="../../d7/da9/classCString.html">CString</a>&amp; orig) : len_(orig.len_), p(<span class="keyword">new</span> <span class="keywordtype">char</span>[len_]) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    memcpy(p, orig.p, len_);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="../../d7/da9/classCString.html">CString</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="../../d7/da9/classCString.html">CString</a>&amp; orig) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../d7/da9/classCString.html">CString</a> copy(orig);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    swap(p, orig.p);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="../../d7/da9/classCString.html">CString</a>(<a class="code" href="../../d7/da9/classCString.html">CString</a>&amp;&amp; orig) : len_(orig.len_) { swap(p, orig.p); }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">char</span> operator[](uint32_t i)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> p[i]; }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">char</span>&amp; operator[](uint32_t i) { <span class="keywordflow">return</span> p[i]; }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  uint32_t len()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> len_; }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">char</span>* str() { <span class="keywordflow">return</span> p; }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">friend</span> std::ostream&amp; operator&lt;&lt;(std::ostream&amp; s, <span class="keyword">const</span> <a class="code" href="../../d7/da9/classCString.html">CString</a>&amp; str) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; str.len_; i++) s &lt;&lt; str.p[i];</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> s;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;~</div>
+<div class="ttc" id="aclassCString_html"><div class="ttname"><a href="../../d7/da9/classCString.html">CString</a></div><div class="ttdef"><b>Definition:</b> CString.hh:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

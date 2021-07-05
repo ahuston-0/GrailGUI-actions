@@ -14,10 +14,10 @@
 \DoxyCodeLine{00010 }
 \DoxyCodeLine{\Hypertarget{Document_8hh_source_l00011}\mbox{\hyperlink{classPageLayout}{00011}} \textcolor{keyword}{class }\mbox{\hyperlink{classPageLayout}{PageLayout}} \{}
 \DoxyCodeLine{00012  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00013   \textcolor{keywordtype}{float} x0, x1;  \textcolor{comment}{// left and right margins}}
-\DoxyCodeLine{00014   \textcolor{keywordtype}{float} xDropDead; \textcolor{comment}{// never go beyond this edge, even if no space is found}}
-\DoxyCodeLine{00015   \textcolor{keywordtype}{float} y0, y1;  \textcolor{comment}{// top and botton margins}}
-\DoxyCodeLine{00016   \textcolor{keywordtype}{float} w, h;    \textcolor{comment}{// width and height of the active part}}
+\DoxyCodeLine{00013   \textcolor{keywordtype}{float} x0, x1;     \textcolor{comment}{// left and right margins}}
+\DoxyCodeLine{00014   \textcolor{keywordtype}{float} xDropDead;  \textcolor{comment}{// never go beyond this edge, even if no space is found}}
+\DoxyCodeLine{00015   \textcolor{keywordtype}{float} y0, y1;     \textcolor{comment}{// top and botton margins}}
+\DoxyCodeLine{00016   \textcolor{keywordtype}{float} w, h;       \textcolor{comment}{// width and height of the active part}}
 \DoxyCodeLine{00017   \textcolor{keywordtype}{float} pageNumX, pageNumY;}
 \DoxyCodeLine{00018   \textcolor{keywordtype}{float} paragraphSpacing;}
 \DoxyCodeLine{00019   uint32\_t linesPerPage;}
@@ -38,63 +38,65 @@
 \DoxyCodeLine{00034         paragraphSpacing(paragraphSpacing),}
 \DoxyCodeLine{00035         linesPerPage(linesPerPage),}
 \DoxyCodeLine{00036         f(f),}
-\DoxyCodeLine{00037         xDropDead(dropDead != 0 ? dropDead : x1)}
-\DoxyCodeLine{00038         \{\}}
-\DoxyCodeLine{00039 \};}
-\DoxyCodeLine{00040 }
-\DoxyCodeLine{00041 \textcolor{keyword}{class }\mbox{\hyperlink{classPage}{Page}} \{}
-\DoxyCodeLine{00042  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00043   \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *text;}
-\DoxyCodeLine{00044   \textcolor{keyword}{const} \mbox{\hyperlink{classPageLayout}{PageLayout}} *layout;}
-\DoxyCodeLine{00045   std::vector<uint32\_t> lines;}
-\DoxyCodeLine{00046 }
-\DoxyCodeLine{00047  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00048   \mbox{\hyperlink{classPage}{Page}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *text, \textcolor{keyword}{const} \mbox{\hyperlink{classPageLayout}{PageLayout}} *pageLayout,}
-\DoxyCodeLine{00049        uint32\_t offset);}
-\DoxyCodeLine{00050   \textcolor{keywordtype}{void} addLine(uint32\_t offset) \{ lines.push\_back(offset); \}}
-\DoxyCodeLine{00051   uint32\_t getLine(uint32\_t line)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00052     \textcolor{keywordflow}{if} (line > size()) \{}
-\DoxyCodeLine{00053       std::cerr << \textcolor{stringliteral}{"{}src/opengl/primitivesV2/"{}}}
-\DoxyCodeLine{00054                    \textcolor{stringliteral}{"{}Document.hh:page::getLine(uint32\_t): line out of bounds"{}}}
-\DoxyCodeLine{00055                 << std::endl;}
-\DoxyCodeLine{00056     \}}
-\DoxyCodeLine{00057     \textcolor{keywordflow}{return} lines[line];}
-\DoxyCodeLine{00058   \}}
-\DoxyCodeLine{00059   \textcolor{keyword}{const} \mbox{\hyperlink{classPageLayout}{PageLayout}} *getLayout()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} layout; \}}
-\DoxyCodeLine{00060   uint32\_t size()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} lines.size(); \}}
-\DoxyCodeLine{00061 \};}
-\DoxyCodeLine{00062 }
-\DoxyCodeLine{00063 }
-\DoxyCodeLine{\Hypertarget{Document_8hh_source_l00064}\mbox{\hyperlink{classDocument}{00064}} \textcolor{keyword}{class }\mbox{\hyperlink{classDocument}{Document}} \{}
-\DoxyCodeLine{00065  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00066   \textcolor{comment}{// TODO: the buffer should be rope}}
-\DoxyCodeLine{00067   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *text;  \textcolor{comment}{// the main buffer}}
-\DoxyCodeLine{00068   std::vector<Page>}
-\DoxyCodeLine{00069       pages;  \textcolor{comment}{// TODO: Replace by rope for high performance editable document}}
-\DoxyCodeLine{00070 }
-\DoxyCodeLine{00071   \mbox{\hyperlink{classPageLayout}{PageLayout}} layout;  \textcolor{comment}{// size of the page to render to}}
-\DoxyCodeLine{00072   \textcolor{comment}{/*}}
-\DoxyCodeLine{00073 \textcolor{comment}{   precompute text with each line ending at flush margin, stopping in the middle of}}
-\DoxyCodeLine{00074 \textcolor{comment}{   a word if necessary}}
-\DoxyCodeLine{00075 \textcolor{comment}{  */}}
-\DoxyCodeLine{00076   \textcolor{keywordtype}{void} buildJustifiedText(\textcolor{keyword}{const} \mbox{\hyperlink{classPageLayout}{PageLayout}}\& layout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* text, uint32\_t len);}
-\DoxyCodeLine{00077 }
-\DoxyCodeLine{00078   \textcolor{comment}{/*}}
-\DoxyCodeLine{00079 \textcolor{comment}{   precompute text with each line ending at a space or -\/ if that lies within margin range}}
+\DoxyCodeLine{00037         xDropDead(dropDead != 0 ? dropDead : x1) \{\}}
+\DoxyCodeLine{00038 \};}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040 \textcolor{keyword}{class }\mbox{\hyperlink{classPage}{Page}} \{}
+\DoxyCodeLine{00041  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042   \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *text;}
+\DoxyCodeLine{00043   \textcolor{keyword}{const} \mbox{\hyperlink{classPageLayout}{PageLayout}} *layout;}
+\DoxyCodeLine{00044   std::vector<uint32\_t> lines;}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047   \mbox{\hyperlink{classPage}{Page}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *text, \textcolor{keyword}{const} \mbox{\hyperlink{classPageLayout}{PageLayout}} *pageLayout,}
+\DoxyCodeLine{00048        uint32\_t offset);}
+\DoxyCodeLine{00049   \textcolor{keywordtype}{void} addLine(uint32\_t offset) \{ lines.push\_back(offset); \}}
+\DoxyCodeLine{00050   uint32\_t getLine(uint32\_t line)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00051     \textcolor{keywordflow}{if} (line > size()) \{}
+\DoxyCodeLine{00052       std::cerr << \textcolor{stringliteral}{"{}src/opengl/primitivesV2/"{}}}
+\DoxyCodeLine{00053                    \textcolor{stringliteral}{"{}Document.hh:page::getLine(uint32\_t): line out of bounds"{}}}
+\DoxyCodeLine{00054                 << std::endl;}
+\DoxyCodeLine{00055     \}}
+\DoxyCodeLine{00056     \textcolor{keywordflow}{return} lines[line];}
+\DoxyCodeLine{00057   \}}
+\DoxyCodeLine{00058   \textcolor{keyword}{const} \mbox{\hyperlink{classPageLayout}{PageLayout}} *getLayout()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} layout; \}}
+\DoxyCodeLine{00059   uint32\_t size()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} lines.size(); \}}
+\DoxyCodeLine{00060 \};}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{\Hypertarget{Document_8hh_source_l00062}\mbox{\hyperlink{classDocument}{00062}} \textcolor{keyword}{class }\mbox{\hyperlink{classDocument}{Document}} \{}
+\DoxyCodeLine{00063  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00064   \textcolor{comment}{// TODO: the buffer should be rope}}
+\DoxyCodeLine{00065   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *text;  \textcolor{comment}{// the main buffer}}
+\DoxyCodeLine{00066   std::vector<Page>}
+\DoxyCodeLine{00067       pages;  \textcolor{comment}{// TODO: Replace by rope for high performance editable document}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069   \mbox{\hyperlink{classPageLayout}{PageLayout}} layout;  \textcolor{comment}{// size of the page to render to}}
+\DoxyCodeLine{00070   \textcolor{comment}{/*}}
+\DoxyCodeLine{00071 \textcolor{comment}{   precompute text with each line ending at flush margin, stopping in the middle}}
+\DoxyCodeLine{00072 \textcolor{comment}{   of a word if necessary}}
+\DoxyCodeLine{00073 \textcolor{comment}{  */}}
+\DoxyCodeLine{00074   \textcolor{keywordtype}{void} buildJustifiedText(\textcolor{keyword}{const} \mbox{\hyperlink{classPageLayout}{PageLayout}} \&layout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *text,}
+\DoxyCodeLine{00075                           uint32\_t len);}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077   \textcolor{comment}{/*}}
+\DoxyCodeLine{00078 \textcolor{comment}{   precompute text with each line ending at a space or -\/ if that lies within}}
+\DoxyCodeLine{00079 \textcolor{comment}{   margin range}}
 \DoxyCodeLine{00080 \textcolor{comment}{  */}}
-\DoxyCodeLine{00081   \textcolor{keywordtype}{void} buildRaggedText(\textcolor{keyword}{const} \mbox{\hyperlink{classPageLayout}{PageLayout}}\& layout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* text, uint32\_t len);}
-\DoxyCodeLine{00082  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00083   \mbox{\hyperlink{classDocument}{Document}}(\textcolor{keyword}{const} \mbox{\hyperlink{classPageLayout}{PageLayout}} \&layout) : layout(layout), text(\textcolor{keyword}{nullptr}) \{\}}
-\DoxyCodeLine{00084   \string~\mbox{\hyperlink{classDocument}{Document}}() \{ \textcolor{keyword}{delete}[] text; \}}
-\DoxyCodeLine{00085   \mbox{\hyperlink{classDocument}{Document}}(\textcolor{keyword}{const} \mbox{\hyperlink{classDocument}{Document}} \&orig) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{00086   \mbox{\hyperlink{classDocument}{Document}} \&operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classDocument}{Document}} \&orig) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{00087 }
-\DoxyCodeLine{00088   \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *getText()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} text; \}}
-\DoxyCodeLine{00089   \textcolor{keyword}{const} \mbox{\hyperlink{classPage}{Page}} *getPage(uint32\_t p)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \&pages[p]; \}}
-\DoxyCodeLine{00090   \textcolor{keyword}{const} \mbox{\hyperlink{classPageLayout}{PageLayout}} *getLayout()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \&layout; \}}
-\DoxyCodeLine{00091   uint32\_t getPageCount()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} pages.size(); \}}
-\DoxyCodeLine{00092 }
-\DoxyCodeLine{00093   \textcolor{keywordtype}{void} appendFile(\textcolor{keyword}{const} \mbox{\hyperlink{classPageLayout}{PageLayout}} \&layout, \textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]);}
-\DoxyCodeLine{00094 \};}
+\DoxyCodeLine{00081   \textcolor{keywordtype}{void} buildRaggedText(\textcolor{keyword}{const} \mbox{\hyperlink{classPageLayout}{PageLayout}} \&layout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *text,}
+\DoxyCodeLine{00082                        uint32\_t len);}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00085   \mbox{\hyperlink{classDocument}{Document}}(\textcolor{keyword}{const} \mbox{\hyperlink{classPageLayout}{PageLayout}} \&layout) : layout(layout), text(\textcolor{keyword}{nullptr}) \{\}}
+\DoxyCodeLine{00086   \string~\mbox{\hyperlink{classDocument}{Document}}() \{ \textcolor{keyword}{delete}[] text; \}}
+\DoxyCodeLine{00087   \mbox{\hyperlink{classDocument}{Document}}(\textcolor{keyword}{const} \mbox{\hyperlink{classDocument}{Document}} \&orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00088   \mbox{\hyperlink{classDocument}{Document}} \&operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classDocument}{Document}} \&orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090   \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *getText()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} text; \}}
+\DoxyCodeLine{00091   \textcolor{keyword}{const} \mbox{\hyperlink{classPage}{Page}} *getPage(uint32\_t p)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \&pages[p]; \}}
+\DoxyCodeLine{00092   \textcolor{keyword}{const} \mbox{\hyperlink{classPageLayout}{PageLayout}} *getLayout()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \&layout; \}}
+\DoxyCodeLine{00093   uint32\_t getPageCount()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} pages.size(); \}}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095   \textcolor{keywordtype}{void} appendFile(\textcolor{keyword}{const} \mbox{\hyperlink{classPageLayout}{PageLayout}} \&layout, \textcolor{keyword}{const} \textcolor{keywordtype}{char} filename[]);}
+\DoxyCodeLine{00096 \};}
 
 \end{DoxyCode}

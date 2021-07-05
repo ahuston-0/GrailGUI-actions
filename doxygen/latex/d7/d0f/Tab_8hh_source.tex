@@ -5,51 +5,49 @@
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{00002 }
 \DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <cstdint>}}
-\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}opengl/Canvas.hh"{}}}
-\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}util/DynArray.hh"{}}}
-\DoxyCodeLine{00006 \textcolor{comment}{/*}}
-\DoxyCodeLine{00007 \textcolor{comment}{TODO: Add border and other kinds of style info.}}
-\DoxyCodeLine{00008 \textcolor{comment}{This could go into several classes related by inheritance in some way.}}
-\DoxyCodeLine{00009 \textcolor{comment}{We have to decide how much style we want to support. We're not doing css3,}}
-\DoxyCodeLine{00010 \textcolor{comment}{but we could do more than just font and color.  Perhaps borders? Patterns?}}
-\DoxyCodeLine{00011 \textcolor{comment}{Background pictures?}}
-\DoxyCodeLine{00012 \textcolor{comment}{}}
-\DoxyCodeLine{00013 \textcolor{comment}{Predefine an array of images so they can be referred at runtime with an int}}
-\DoxyCodeLine{00014 \textcolor{comment}{ */}}
-\DoxyCodeLine{00015 \textcolor{keyword}{class }\mbox{\hyperlink{classGLWin}{GLWin}};}
-\DoxyCodeLine{00016 \textcolor{keyword}{class }\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}};}
-\DoxyCodeLine{00017 \textcolor{keyword}{class }\mbox{\hyperlink{classMultiText}{MultiText}};}
-\DoxyCodeLine{\Hypertarget{Tab_8hh_source_l00018}\mbox{\hyperlink{classTab}{00018}} \textcolor{keyword}{class }\mbox{\hyperlink{classTab}{Tab}} \{}
-\DoxyCodeLine{00019 \textcolor{keyword}{private}:}
-\DoxyCodeLine{00020   \mbox{\hyperlink{classDynArray}{DynArray<Canvas*>}} canvases;}
-\DoxyCodeLine{00021   \mbox{\hyperlink{classDynArray}{DynArray<Style*>}} styles;}
-\DoxyCodeLine{00022 }
-\DoxyCodeLine{00023     \mbox{\hyperlink{classMainCanvas}{MainCanvas}} mainCanvas; \textcolor{comment}{//special canvas for drawing GUI and menus}}
-\DoxyCodeLine{00024     \textcolor{comment}{// For anything custom, you should use your own objects, not use these}}
-\DoxyCodeLine{00025   \mbox{\hyperlink{classGLWin}{GLWin}}* parent;}
-\DoxyCodeLine{00026 \textcolor{keyword}{public}:}
-\DoxyCodeLine{00027   \mbox{\hyperlink{classTab}{Tab}}(\mbox{\hyperlink{classGLWin}{GLWin}}* parent);}
-\DoxyCodeLine{00028   \string~\mbox{\hyperlink{classTab}{Tab}}();}
-\DoxyCodeLine{00029   \mbox{\hyperlink{classGLWin}{GLWin}}* getParent()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} parent; \}}
-\DoxyCodeLine{00030 }
-\DoxyCodeLine{00031   \textcolor{comment}{//copying a tab is not supported. What would it mean?}}
-\DoxyCodeLine{00032   \mbox{\hyperlink{classTab}{Tab}}(\textcolor{keyword}{const} \mbox{\hyperlink{classTab}{Tab}}\& orig) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{00033   \mbox{\hyperlink{classTab}{Tab}}\& operator =(\textcolor{keyword}{const} \mbox{\hyperlink{classTab}{Tab}}\& orig) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{00034   \mbox{\hyperlink{classCanvas}{Canvas}}* addCanvas}
-\DoxyCodeLine{00035     (\textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* style, uint32\_t vpX, uint32\_t vpY, uint32\_t vpW, uint32\_t vpH);}
-\DoxyCodeLine{00036 }
-\DoxyCodeLine{00037   \mbox{\hyperlink{classCanvas}{Canvas}}* getCanvas(uint32\_t i)\{}
-\DoxyCodeLine{00038     \textcolor{keywordflow}{return} canvases[i];}
-\DoxyCodeLine{00039   \}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}opengl/Canvas.hh"{}}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}util/DynArray.hh"{}}}
+\DoxyCodeLine{00007 \textcolor{comment}{/*}}
+\DoxyCodeLine{00008 \textcolor{comment}{TODO: Add border and other kinds of style info.}}
+\DoxyCodeLine{00009 \textcolor{comment}{This could go into several classes related by inheritance in some way.}}
+\DoxyCodeLine{00010 \textcolor{comment}{We have to decide how much style we want to support. We're not doing css3,}}
+\DoxyCodeLine{00011 \textcolor{comment}{but we could do more than just font and color.  Perhaps borders? Patterns?}}
+\DoxyCodeLine{00012 \textcolor{comment}{Background pictures?}}
+\DoxyCodeLine{00013 \textcolor{comment}{}}
+\DoxyCodeLine{00014 \textcolor{comment}{Predefine an array of images so they can be referred at runtime with an int}}
+\DoxyCodeLine{00015 \textcolor{comment}{ */}}
+\DoxyCodeLine{00016 \textcolor{keyword}{class }\mbox{\hyperlink{classGLWin}{GLWin}};}
+\DoxyCodeLine{00017 \textcolor{keyword}{class }\mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}};}
+\DoxyCodeLine{00018 \textcolor{keyword}{class }\mbox{\hyperlink{classMultiText}{MultiText}};}
+\DoxyCodeLine{\Hypertarget{Tab_8hh_source_l00019}\mbox{\hyperlink{classTab}{00019}} \textcolor{keyword}{class }\mbox{\hyperlink{classTab}{Tab}} \{}
+\DoxyCodeLine{00020  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021   \mbox{\hyperlink{classDynArray}{DynArray<Canvas*>}} canvases;}
+\DoxyCodeLine{00022   \mbox{\hyperlink{classDynArray}{DynArray<Style*>}} styles;}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024   \mbox{\hyperlink{classMainCanvas}{MainCanvas}} mainCanvas;  \textcolor{comment}{// special canvas for drawing GUI and menus}}
+\DoxyCodeLine{00025   \textcolor{comment}{// For anything custom, you should use your own objects, not use these}}
+\DoxyCodeLine{00026   \mbox{\hyperlink{classGLWin}{GLWin}}* parent;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029   \mbox{\hyperlink{classTab}{Tab}}(\mbox{\hyperlink{classGLWin}{GLWin}}* parent);}
+\DoxyCodeLine{00030   \string~\mbox{\hyperlink{classTab}{Tab}}();}
+\DoxyCodeLine{00031   \mbox{\hyperlink{classGLWin}{GLWin}}* getParent()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} parent; \}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033   \textcolor{comment}{// copying a tab is not supported. What would it mean?}}
+\DoxyCodeLine{00034   \mbox{\hyperlink{classTab}{Tab}}(\textcolor{keyword}{const} \mbox{\hyperlink{classTab}{Tab}}\& orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00035   \mbox{\hyperlink{classTab}{Tab}}\& operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classTab}{Tab}}\& orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00036   \mbox{\hyperlink{classCanvas}{Canvas}}* addCanvas(\textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}}* style, uint32\_t vpX, uint32\_t vpY,}
+\DoxyCodeLine{00037                     uint32\_t vpW, uint32\_t vpH);}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039   \mbox{\hyperlink{classCanvas}{Canvas}}* getCanvas(uint32\_t i) \{ \textcolor{keywordflow}{return} canvases[i]; \}}
 \DoxyCodeLine{00040 }
-\DoxyCodeLine{00041   \mbox{\hyperlink{classMainCanvas}{MainCanvas}}* getMainCanvas()\{}
-\DoxyCodeLine{00042     \textcolor{keywordflow}{return} \&mainCanvas;}
-\DoxyCodeLine{00043   \}}
-\DoxyCodeLine{00044 }
-\DoxyCodeLine{00045   \textcolor{keywordtype}{void} init();}
-\DoxyCodeLine{00046   \textcolor{keywordtype}{void} update();}
-\DoxyCodeLine{00047   \textcolor{keywordtype}{void} render();}
-\DoxyCodeLine{00048   \textcolor{keywordtype}{void} cleanup();}
-\DoxyCodeLine{00049 \};}
+\DoxyCodeLine{00041   \mbox{\hyperlink{classMainCanvas}{MainCanvas}}* getMainCanvas() \{ \textcolor{keywordflow}{return} \&mainCanvas; \}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043   \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{00044   \textcolor{keywordtype}{void} update();}
+\DoxyCodeLine{00045   \textcolor{keywordtype}{void} render();}
+\DoxyCodeLine{00046   \textcolor{keywordtype}{void} cleanup();}
+\DoxyCodeLine{00047 \};}
 
 \end{DoxyCode}

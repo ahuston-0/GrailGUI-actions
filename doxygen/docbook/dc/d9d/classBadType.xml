@@ -22,9 +22,11 @@
 <section>
 <title>Detailed Description</title>
 
-<para>Represent a config file used to configure complicated applications</para>
+<para><literallayout><computeroutput>  Represent a config file used to configure complicated applications
 
-<para>File format supports comments starting with # name-value pairs of data, with declaration of the type of names supported in the constructor so that subclsses of <link linkend="_classConfig">Config</link> can specify the required types of each tag. In this way, the <link linkend="_classConfig">Config</link> utility can display the line number and an error if the data is not as required</para>
+  File format supports comments starting with #
+  name-value pairs of data, with declaration of the type of names
+</computeroutput></literallayout> supported in the constructor so that subclsses of <link linkend="_classConfig">Config</link> can specify the required types of each tag. In this way, the <link linkend="_classConfig">Config</link> utility can display the line number and an error if the data is not as required</para>
 
 <para>TODO: Since <link linkend="_classConfig">Config</link> files can be very large, and parsing is slow, it is possible to extend this model to automatically generate a binary version of the config. In this way, the config file can effectively be compiled. This is important only if the file is large so at the moment we can ignore </para>
 </section>

@@ -87,27 +87,29 @@ $(document).ready(function(){initNavTree('df/d47/Benchmark_8hh_source.html','../
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../dc/d7d/classBenchmark.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/d7d/classBenchmark.html">Benchmark</a> {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    uint64_t elapsedUserTime, elapsedSystemTime, elapsedWallTime, elapsedClockTicks;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordtype">int</span> BENCHCLOCKS_PER_SEC;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">// struct tms startCPUTimes;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">// struct tms startWallTime;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="../../dc/d7d/classBenchmark.html">Benchmark</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="comment">// measure how long it takes to execute a function</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> benchmark(<span class="keywordtype">void</span> (*Func)() );</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> benchmark(<span class="keywordtype">void</span> (*Func)(<span class="keywordtype">int</span>), <span class="keywordtype">int</span> n );</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    uint64_t elapsed() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> start();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> end();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">friend</span> std::ostream&amp; operator &lt;&lt;(std::ostream&amp; s, <span class="keyword">const</span> <a class="code" href="../../dc/d7d/classBenchmark.html">Benchmark</a>&amp; b);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
-<div class="ttc" id="aclassBenchmark_html"><div class="ttname"><a href="../../dc/d7d/classBenchmark.html">Benchmark</a></div><div class="ttdef"><b>Definition:</b> Benchmark.hh:6</div></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../dc/d7d/classBenchmark.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/d7d/classBenchmark.html">Benchmark</a> {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  uint64_t elapsedUserTime, elapsedSystemTime, elapsedWallTime,</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;      elapsedClockTicks;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">int</span> BENCHCLOCKS_PER_SEC;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="comment">// struct tms startCPUTimes;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="comment">// struct tms startWallTime;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="../../dc/d7d/classBenchmark.html">Benchmark</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="comment">// measure how long it takes to execute a function</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> benchmark(<span class="keywordtype">void</span> (*Func)());</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> benchmark(<span class="keywordtype">void</span> (*Func)(<span class="keywordtype">int</span>), <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  uint64_t elapsed() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordtype">void</span> start();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">void</span> end();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">friend</span> std::ostream&amp; operator&lt;&lt;(std::ostream&amp; s, <span class="keyword">const</span> <a class="code" href="../../dc/d7d/classBenchmark.html">Benchmark</a>&amp; b);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
+<div class="ttc" id="aclassBenchmark_html"><div class="ttname"><a href="../../dc/d7d/classBenchmark.html">Benchmark</a></div><div class="ttdef"><b>Definition:</b> Benchmark.hh:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

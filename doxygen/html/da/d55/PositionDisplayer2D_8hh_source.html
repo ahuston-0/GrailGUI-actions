@@ -91,39 +91,34 @@ $(document).ready(function(){initNavTree('da/d55/PositionDisplayer2D_8hh_source.
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;opengl/Widget2d.hh&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="../../d5/d41/classPositionDisplayer2D.html">    5</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/d41/classPositionDisplayer2D.html">PositionDisplayer2D</a> : <span class="keyword">public</span> Widget2d {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    std::vector&lt; Point &gt; points;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    PositionDisplay2D(<a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a>* m, <a class="code" href="../../df/d89/classMultiText.html">MultiText</a>* t, uint32_t x, uint32_t y, uint32_t w, uint32_t h) {}</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">void</span> addPoint(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y) {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        points.push_back(<a class="code" href="../../d8/d43/structPoint.html">Point</a>(x,y))</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  std::vector&lt;Point&gt; points;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  PositionDisplay2D(<a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a>* m, <a class="code" href="../../df/d89/classMultiText.html">MultiText</a>* t, uint32_t x, uint32_t y,</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                    uint32_t w, uint32_t h) {}</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordtype">void</span> addPoint(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y) { points.push_back(<a class="code" href="../../d8/d43/structPoint.html">Point</a>(x, y)) }</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> move(<span class="keywordtype">int</span> i, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        points[i].x += x;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        points[i].y += y;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">void</span> move(<span class="keywordtype">int</span> i, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    points[i].x += x;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    points[i].y += y;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  }</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> init() {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            m-&gt;drawPoint(x,y);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">class </span>SolarSystemDisplayer : <span class="keyword">public</span> PositionDisplay2D {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        std::vector&lt;Body&gt; bodies;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> init() {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            m-&gt;drawCircle(r, grail::black)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    };</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordtype">void</span> init() { m-&gt;drawPoint(x, y); }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">class </span>SolarSystemDisplayer : <span class="keyword">public</span> PositionDisplay2D {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  std::vector&lt;Body&gt; bodies;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">void</span> init() { m-&gt;drawCircle(r, grail::black) }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
 <div class="ttc" id="aclassMultiText_html"><div class="ttname"><a href="../../df/d89/classMultiText.html">MultiText</a></div><div class="ttdef"><b>Definition:</b> MultiText.hh:7</div></div>
 <div class="ttc" id="aclassPositionDisplayer2D_html"><div class="ttname"><a href="../../d5/d41/classPositionDisplayer2D.html">PositionDisplayer2D</a></div><div class="ttdef"><b>Definition:</b> PositionDisplayer2D.hh:5</div></div>
 <div class="ttc" id="aclassStyledMultiShape2D_html"><div class="ttname"><a href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a></div><div class="ttdef"><b>Definition:</b> MapViewer.hh:8</div></div>
-<div class="ttc" id="astructPoint_html"><div class="ttname"><a href="../../d8/d43/structPoint.html">Point</a></div><div class="ttdef"><b>Definition:</b> SimpleJSONClient.cc:13</div></div>
+<div class="ttc" id="astructPoint_html"><div class="ttname"><a href="../../d8/d43/structPoint.html">Point</a></div><div class="ttdef"><b>Definition:</b> SimpleJSONClient.cc:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
