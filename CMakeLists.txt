@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16.1)
+cmake_minimum_required(VERSION 3.10.2)
 
 project(Grail VERSION 0.1.0
 DESCRIPTION
@@ -46,6 +46,7 @@ include(GrailFunctions)
 find_package(PkgConfig REQUIRED) 
 
 # opengl
+set(OpenGL_GL_PREFERENCE "GLVND") # added for compatbility for cmake < 3.11
 find_package(OpenGL REQUIRED)
 
 # GLFW
