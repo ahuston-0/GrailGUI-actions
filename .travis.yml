@@ -2,7 +2,7 @@ language: cpp
 compiler: gcc
 
 before_install:
-- |-
+  - |-
     case $TRAVIS_OS_NAME in
       windows)
         [[ ! -f C:/tools/msys64/msys2_shell.cmd ]] && rm -rf C:/tools/msys64
@@ -22,7 +22,7 @@ before_install:
     esac
 
 before_cache:
-- |-
+  - |-
     case $TRAVIS_OS_NAME in
       windows)
         # https://unix.stackexchange.com/a/137322/107554
@@ -31,23 +31,24 @@ before_cache:
     esac
 
 cache:
-    directories:
+  directories:
     - $HOME/AppData/Local/Temp/chocolatey
     - /C/tools/msys64
 
-matrix:
-  include:
-    os: linux
-      apt:
-        packages:
-          - ninja-build
-          - libglfw3-dev
-          - libfreetype-dev
-          - mpv
-          - libmpv-dev
-          - flex
-          - bison
-    os: windows
+os:
+  - linux
+  - windows
+
+addons:
+  apt:
+    packages:
+      - ninja-build
+      - libglfw3-dev
+      - libfreetype-dev
+      - mpv
+      - libmpv-dev
+      - flex
+      - bison
 
 script: ./build.sh
 notifications:
