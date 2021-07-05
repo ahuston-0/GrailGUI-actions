@@ -44,7 +44,7 @@ addons:
     packages:
       - ninja-build
       - libglfw3-dev
-      - libfreetype-dev
+      - libfreetype6-dev
       - mpv
       - libmpv-dev
       - flex
