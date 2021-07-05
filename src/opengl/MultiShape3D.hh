@@ -106,8 +106,8 @@ class MultiShape3D : public MultiShape {
 
   // static void genSphere(std::vector<float>& vert,
   // 											std::vector<uint32_t>&
-  // ind, 											uint32_t
-  // latRes, uint32_t lonRes, const Transform* t); static void
+  // ind,
+  // uint32_t latRes, uint32_t lonRes, const Transform* t); static void
   // genCylinder(std::vector<float>& vert, std::vector<uint32_t>& ind, uint32_t
   // lonRes, const Transform* t); static void cube(std::vector<float>& vert,
   // const Transform* t); static void tetrahedron(std::vector<float>& vert,
