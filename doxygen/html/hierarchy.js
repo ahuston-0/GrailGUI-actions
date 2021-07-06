@@ -201,6 +201,9 @@ var hierarchy =
     [ "Vec3d", "da/d32/classVec3d.html", null ],
     [ "CSRGraph< VertexIndex_t, EdgeIndex_t, Weight_t >::VertexCount", "dd/dce/structCSRGraph_1_1VertexCount.html", null ],
     [ "WebCursor", "db/d88/classWebCursor.html", null ],
+    [ "Widget2d", null, [
+      [ "PositionDisplayer2D", "d5/d41/classPositionDisplayer2D.html", null ]
+    ] ],
     [ "Widget2D", "da/ded/classWidget2D.html", [
       [ "AxisWidget", "d5/dfb/classAxisWidget.html", [
         [ "LinearAxisWidget", "dc/d12/classLinearAxisWidget.html", null ],
@@ -212,9 +215,6 @@ var hierarchy =
       [ "CandlestickChartWidget", "d1/d77/classCandlestickChartWidget.html", null ],
       [ "GapMinderWidget", "da/d77/classGapMinderWidget.html", null ],
       [ "SparklineWidget", "d9/dfd/classSparklineWidget.html", null ]
-    ] ],
-    [ "Widget2d", null, [
-      [ "PositionDisplayer2D", "d5/d41/classPositionDisplayer2D.html", null ]
     ] ],
     [ "X11Util", "d6/df8/classX11Util.html", null ],
     [ "XDLCompiler", "de/d59/classXDLCompiler.html", null ],
