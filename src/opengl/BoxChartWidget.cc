@@ -1,9 +1,10 @@
+#include "opengl/BoxChartWidget.hh"
+
 #include <algorithm>
 #include <numbers>
 
 #include "data/Stats.hh"
 #include "opengl/AngledMultiText.hh"
-#include "opengl/BoxChartWidget.hh"
 #include "util/Ex.hh"
 
 using namespace std;
