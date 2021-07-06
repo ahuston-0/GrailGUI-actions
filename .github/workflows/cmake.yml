@@ -24,16 +24,18 @@ jobs:
         version: latest
         platform: x64
 
-    - run: sudo apt install make cmake libglfw3-dev libfreetype-dev mpv libmpv-dev flex bison
+    - run: sudo apt install cmake libglfw3-dev libfreetype-dev mpv libmpv-dev
+      # Add gcc-11 via ubuntu toolchain test ppa
+      # add as env variable
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -B ${{github.workspace}}/build -GNinja -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -S . -B build -GNinja -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
     - name: Build
       # Build your program with the given configuration
-      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+      run: cmake --build build --config ${{env.BUILD_TYPE}}
 
   build-windows:
     runs-on: windows-latest
@@ -46,11 +48,13 @@ jobs:
     - uses: msys2/setup-msys2@v2
     - uses: seanmiddleditch/gha-setup-ninja@master
     - run: pacman -S --noconfirm --needed git nano make mingw64/mingw-w64-x86_64-gcc mingw-w64-x86_64-gdb mingw-w64-x86_64-gcc mingw-w64-x86_64-toolchain mingw-w64-x86_64-cmake mingw-w64-x86_64-ninja mingw-w64-x86_64-zlib mingw-w64-x86_64-freetype mingw-w64-x86_64-glfw mingw-w64-x86_64-mpv mingw-w64-x86_64-youtube-dl bison flex
+
+      #the directory on this is just wrong
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -B ${{github.workspace}}/build -GNinja -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -S . -B build -GNinja -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
     - name: Build
       # Build your program with the given configuration
-      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+      run: cmake --build build --config ${{env.BUILD_TYPE}}

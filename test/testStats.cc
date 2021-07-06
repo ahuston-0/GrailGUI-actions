@@ -3,8 +3,8 @@
 #include <iostream>
 #include <random>
 
+#include "data/Stats.hh"
 #include "unistd.h"
-#include "xp/Stats.hh"
 
 using namespace std;
 

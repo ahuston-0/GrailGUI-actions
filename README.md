@@ -15,7 +15,7 @@
 
 ## Getting Set Up - Ubuntu
 
-1. Install Dependencies: `sudo apt install make libglfw3-dev libfreetype-dev mpv libmpv-dev flex bison`
+1. Install Dependencies: `sudo apt install build-essential pkg-config make libglfw3-dev libfreetype-dev mpv libmpv-dev flex bison`
 
 2. Refer to step 4 of [Getting Set up - Windows](#getting-set-up---windows) to set up the environment variables.
 

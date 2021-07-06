@@ -30,7 +30,7 @@ fi
 if [ -f "build.ninja" ]; then
 	ninja
 else
-	cmake -S . -GNinja -DCMAKE_BUILD_TYPE=DEBUG --trace --debug-output .. 
+	cmake -S . -B build GNinja -DCMAKE_BUILD_TYPE=DEBUG .. 
 	ninja
 fi
 
