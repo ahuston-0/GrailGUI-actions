@@ -7,13 +7,12 @@ on:
     branches: [ cmake ]
   workflow_dispatch:
 
-env:
-  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
-  BUILD_TYPE: Release
-
 jobs:
   build-ubuntu:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        build-type: [Debug, Release]
     
     steps:
     - uses: actions/checkout@v2
@@ -24,37 +23,51 @@ jobs:
         version: latest
         platform: x64
 
-    - run: sudo apt install cmake libglfw3-dev libfreetype-dev mpv libmpv-dev
-      # Add gcc-11 via ubuntu toolchain test ppa
-      # add as env variable
+    - name: Install Grail dependencies
+      run: sudo apt install libglfw3-dev libfreetype-dev mpv libmpv-dev liblzma-dev
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -S . -B build -GNinja -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -S . -B build -GNinja -DCMAKE_BUILD_TYPE=${{ matrix.build-type }}
 
     - name: Build
       # Build your program with the given configuration
-      run: cmake --build build --config ${{env.BUILD_TYPE}}
+      run: cmake --build build --config ${{ matrix.build-type }}
 
   build-windows:
     runs-on: windows-latest
+    strategy:
+      matrix:
+        build-type: [Debug, Release]
     defaults:
       run:
-        shell: msys2 {0}
+        shell: MINGW64 {0}
     
     steps:
     - uses: actions/checkout@v2
     - uses: msys2/setup-msys2@v2
-    - uses: seanmiddleditch/gha-setup-ninja@master
-    - run: pacman -S --noconfirm --needed git nano make mingw64/mingw-w64-x86_64-gcc mingw-w64-x86_64-gdb mingw-w64-x86_64-gcc mingw-w64-x86_64-toolchain mingw-w64-x86_64-cmake mingw-w64-x86_64-ninja mingw-w64-x86_64-zlib mingw-w64-x86_64-freetype mingw-w64-x86_64-glfw mingw-w64-x86_64-mpv mingw-w64-x86_64-youtube-dl bison flex
+      with:
+        msystem: MINGW64
+        update: true
+        install: >-
+          git
+          base-devel
+          mingw-w64-x86_64-toolchain
+          mingw-w64-x86_64-cmake
+          mingw-w64-x86_64-zlib
+          mingw-w64-x86_64-freetype
+          mingw-w64-x86_64-glfw
+          mingw-w64-x86_64-mpv
+          mingw-w64-x86_64-youtube-dl
 
-      #the directory on this is just wrong
+    - uses: seanmiddleditch/gha-setup-ninja@master
+    
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -S . -B build -GNinja -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -S . -B build -GNinja -DCMAKE_BUILD_TYPE=${{ matrix.build-type }}
 
     - name: Build
       # Build your program with the given configuration
-      run: cmake --build build --config ${{env.BUILD_TYPE}}
+      run: cmake --build build --config ${{ matrix.build-type }}
