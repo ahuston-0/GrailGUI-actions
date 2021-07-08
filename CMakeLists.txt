@@ -22,11 +22,27 @@ set(CMAKE_DEBUG_POSTFIX d)
 
 string(TOLOWER "${CMAKE_BUILD_TYPE}" build_type_lower)
 
-if(build_type_lower EQUAL "debug")
-    message(STATUS "Debug mode:")
+# Set a default build type if none was specified
+set(default_build_type "Release")
+if(EXISTS "${CMAKE_SOURCE_DIR}/.git")
+  set(default_build_type "Debug")
+endif()
+
+if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+  message(STATUS "Setting build type to '${default_build_type}' as none was specified.")
+  set(CMAKE_BUILD_TYPE "${default_build_type}" CACHE
+      STRING "Choose the type of build." FORCE)
+  # Set the possible values of build type for cmake-gui
+  set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS
+    "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
+endif()
+
+message(STATUS "Build mode: ${CMAKE_BUILD_TYPE}")
+if(build_type_lower MATCHES "debug")
     message(STATUS "Building shared libs")
     option(BUILD_SHARED_LIBS ON)
 else()
+
     set(CMAKE_POSITION_INDEPENDENT_CODE ON)
     include(CheckIPOSupported)
     check_ipo_supported(RESULT supported OUTPUT error)

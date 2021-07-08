@@ -23,6 +23,7 @@ namespace grail {
 extern glm::vec4 black;
 extern glm::vec4 white;
 extern glm::vec4 red;
+extern glm::vec4 orange;
 extern glm::vec4 darkred;
 extern glm::vec4 green;
 extern glm::vec4 darkgreen;
@@ -35,8 +36,6 @@ extern glm::vec4 gray;
 extern glm::vec4 cyan;
 extern glm::vec4 pink;
 extern glm::vec4 purple;
-
-inline void disp(const char msg[], glm::vec4 c) {
-  std::cerr << msg << '[' << c.r << ", " << c.g << "," << c.b << "]\n";
-}
+extern glm::vec4 brown;
+inline void disp(const char msg[], glm::vec4 c) {}
 };  // namespace grail
