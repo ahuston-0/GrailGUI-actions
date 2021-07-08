@@ -4,153 +4,155 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{00002 }
-\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <ft2build.h>}}
+\DoxyCodeLine{00003 \textcolor{comment}{// \#include <ft2build.h>}}
 \DoxyCodeLine{00004 }
 \DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
 \DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <iostream>}}
 \DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <string>}}
 \DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <unordered\_map>}}
 \DoxyCodeLine{00009 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include FT\_FREETYPE\_H}}
-\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include FT\_GLYPH\_H}}
+\DoxyCodeLine{00010 \textcolor{comment}{// \#include FT\_FREETYPE\_H}}
+\DoxyCodeLine{00011 \textcolor{comment}{// \#include FT\_GLYPH\_H}}
 \DoxyCodeLine{00012 }
 \DoxyCodeLine{00013 \textcolor{keyword}{class }\mbox{\hyperlink{classGLWin}{GLWin}};}
 \DoxyCodeLine{00014 \textcolor{keyword}{class }\mbox{\hyperlink{classFont}{Font}};}
-\DoxyCodeLine{00015 }
-\DoxyCodeLine{\Hypertarget{GLWinFonts_8hh_source_l00016}\mbox{\hyperlink{classFontFace}{00016}} \textcolor{keyword}{class }\mbox{\hyperlink{classFontFace}{FontFace}} \{}
-\DoxyCodeLine{00017  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00018   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classFont}{Font}};}
-\DoxyCodeLine{00019   \textcolor{comment}{//  static bool hasBeenInitialized;}}
-\DoxyCodeLine{00020   \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* FONT\_CONF\_FILEPATH;}
-\DoxyCodeLine{00021   \textcolor{keyword}{static} std::vector<std::string> loaded\_fonts;}
-\DoxyCodeLine{00022   std::string faceName;}
-\DoxyCodeLine{00023   uint32\_t boldness : 5;}
-\DoxyCodeLine{00024   uint32\_t italics : 5;}
-\DoxyCodeLine{00025   uint32\_t fixed : 1;}
-\DoxyCodeLine{00026   uint32\_t numGlyphs;  \textcolor{comment}{// the number of distinct glyphs rendered into this face}}
-\DoxyCodeLine{00027 }
-\DoxyCodeLine{00028   \textcolor{comment}{// look up a font by size -\/-\/> index into the fonts vector}}
-\DoxyCodeLine{00029   std::unordered\_map<uint32\_t, uint32\_t> fontBySize;}
-\DoxyCodeLine{00030   \textcolor{keyword}{static} std::unordered\_map<std::string, uint32\_t> faceByName;}
-\DoxyCodeLine{00031   \textcolor{keyword}{static} std::vector<FontFace*> faces;}
-\DoxyCodeLine{00032   std::vector<Font*> fonts;  \textcolor{comment}{// each font object is rendered for a specific size}}
-\DoxyCodeLine{00033   \textcolor{keywordtype}{void} addFont(\mbox{\hyperlink{classFont}{Font}}* f) \{ fonts.push\_back(f); \}}
-\DoxyCodeLine{00034   uint32\_t textureId;  \textcolor{comment}{// id of the texture in OpenGL for the ENTIRE FONT FACE}}
-\DoxyCodeLine{00035   \textcolor{keyword}{static} std::unordered\_map<std::string, std::string> pathByName;}
-\DoxyCodeLine{00036 }
-\DoxyCodeLine{00037   \textcolor{keyword}{static} \textcolor{keywordtype}{void} setTexture(\textcolor{keyword}{const} uint8\_t bitmap[], uint32\_t w, uint32\_t h);}
+\DoxyCodeLine{00015 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }FT\_LibraryRec\_  *FT\_Library;}
+\DoxyCodeLine{00016 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }FT\_FaceRec\_*  FT\_Face;}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{\Hypertarget{GLWinFonts_8hh_source_l00018}\mbox{\hyperlink{classFontFace}{00018}} \textcolor{keyword}{class }\mbox{\hyperlink{classFontFace}{FontFace}} \{}
+\DoxyCodeLine{00019  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classFont}{Font}};}
+\DoxyCodeLine{00021   \textcolor{comment}{//  static bool hasBeenInitialized;}}
+\DoxyCodeLine{00022   \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* FONT\_CONF\_FILEPATH;}
+\DoxyCodeLine{00023   \textcolor{keyword}{static} std::vector<std::string> loaded\_fonts;}
+\DoxyCodeLine{00024   std::string faceName;}
+\DoxyCodeLine{00025   uint32\_t boldness : 5;}
+\DoxyCodeLine{00026   uint32\_t italics : 5;}
+\DoxyCodeLine{00027   uint32\_t fixed : 1;}
+\DoxyCodeLine{00028   uint32\_t numGlyphs;  \textcolor{comment}{// the number of distinct glyphs rendered into this face}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030   \textcolor{comment}{// look up a font by size -\/-\/> index into the fonts vector}}
+\DoxyCodeLine{00031   std::unordered\_map<uint32\_t, uint32\_t> fontBySize;}
+\DoxyCodeLine{00032   \textcolor{keyword}{static} std::unordered\_map<std::string, uint32\_t> faceByName;}
+\DoxyCodeLine{00033   \textcolor{keyword}{static} std::vector<FontFace*> faces;}
+\DoxyCodeLine{00034   std::vector<Font*> fonts;  \textcolor{comment}{// each font object is rendered for a specific size}}
+\DoxyCodeLine{00035   \textcolor{keywordtype}{void} addFont(\mbox{\hyperlink{classFont}{Font}}* f) \{ fonts.push\_back(f); \}}
+\DoxyCodeLine{00036   uint32\_t textureId;  \textcolor{comment}{// id of the texture in OpenGL for the ENTIRE FONT FACE}}
+\DoxyCodeLine{00037   \textcolor{keyword}{static} std::unordered\_map<std::string, std::string> pathByName;}
 \DoxyCodeLine{00038 }
-\DoxyCodeLine{00039   \textcolor{keywordtype}{void} save(std::ostream\& s);  \textcolor{comment}{// save a single font face to binary file}}
+\DoxyCodeLine{00039   \textcolor{keyword}{static} \textcolor{keywordtype}{void} setTexture(\textcolor{keyword}{const} uint8\_t bitmap[], uint32\_t w, uint32\_t h);}
 \DoxyCodeLine{00040 }
-\DoxyCodeLine{00041   \textcolor{comment}{// save all font faces to a fast binary file for instant retrieval later}}
-\DoxyCodeLine{00042   \textcolor{keyword}{static} \textcolor{keywordtype}{void} saveFonts(\textcolor{keyword}{const} uint8\_t* combinedBitmap, uint32\_t sizeX,}
-\DoxyCodeLine{00043                         uint32\_t sizeY);}
-\DoxyCodeLine{00044   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} combineFaces();}
-\DoxyCodeLine{00045 }
-\DoxyCodeLine{00046  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00047   uint32\_t maxWidthIndex;}
-\DoxyCodeLine{00048   \textcolor{keyword}{static} \textcolor{keywordtype}{void} initAll();}
-\DoxyCodeLine{00049   \textcolor{keyword}{static} \textcolor{keywordtype}{void} addFontName(std::string name, \textcolor{keyword}{const} std::string\& path);}
-\DoxyCodeLine{00050   uint32\_t getTexture()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} textureId; \}}
-\DoxyCodeLine{00051 }
-\DoxyCodeLine{00052   \textcolor{comment}{/* Build a font face by}}
-\DoxyCodeLine{00053 \textcolor{comment}{      opening a freetype face}}
-\DoxyCodeLine{00054 \textcolor{comment}{      generating each size}}
-\DoxyCodeLine{00055 \textcolor{comment}{      storing the rendered characters into a single large bitmap in row-\/major}}
-\DoxyCodeLine{00056 \textcolor{comment}{     scan order}}
-\DoxyCodeLine{00057 \textcolor{comment}{  */}}
-\DoxyCodeLine{00058   \mbox{\hyperlink{classFontFace}{FontFace}}(FT\_Library ft, \textcolor{keyword}{const} std::string\& faceName,}
-\DoxyCodeLine{00059            \textcolor{keyword}{const} std::string\& facePath, uint32\_t minFontSize, uint32\_t inc,}
-\DoxyCodeLine{00060            uint32\_t maxFontSize, uint8\_t bitmap[], uint32\_t\& sizeX,}
-\DoxyCodeLine{00061            uint32\_t\& sizeY, uint32\_t\& currX, uint32\_t\& currY,}
-\DoxyCodeLine{00062            uint32\_t\& rowSize);}
-\DoxyCodeLine{00063   \textcolor{keyword}{static} \textcolor{keywordtype}{void} emptyFaces();}
-\DoxyCodeLine{00064   \string~\mbox{\hyperlink{classFontFace}{FontFace}}();}
-\DoxyCodeLine{00065   \textcolor{keyword}{static} FT\_Library ftLib;}
-\DoxyCodeLine{00066   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* getFont(uint32\_t size, \textcolor{keywordtype}{int} weight) \textcolor{keyword}{const};}
-\DoxyCodeLine{00067 }
-\DoxyCodeLine{00068   \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classFontFace}{FontFace}}* getFace(\textcolor{keywordtype}{int} i) \{ \textcolor{keywordflow}{return} faces.at(i); \}}
-\DoxyCodeLine{00069   \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* get(\textcolor{keyword}{const} \textcolor{keywordtype}{char} faceName[], uint32\_t size,}
-\DoxyCodeLine{00070                          uint32\_t boldness);}
-\DoxyCodeLine{00071   \textcolor{keyword}{static} constexpr \textcolor{keywordtype}{char} TIMES[] = \textcolor{stringliteral}{"{}Times"{}};}
-\DoxyCodeLine{00072   \textcolor{keyword}{static} constexpr \textcolor{keywordtype}{char} HELVETICA[] = \textcolor{stringliteral}{"{}Helvetica"{}};}
-\DoxyCodeLine{00073   \textcolor{keyword}{static} constexpr \textcolor{keywordtype}{char} COURIER[] = \textcolor{stringliteral}{"{}Courier"{}};}
-\DoxyCodeLine{00074   \textcolor{keyword}{static} constexpr uint32\_t NORMAL = 1;}
-\DoxyCodeLine{00075   \textcolor{comment}{//    static constexpr uint32\_t ITALICS = 9;}}
-\DoxyCodeLine{00076 }
-\DoxyCodeLine{00077   \textcolor{keyword}{static} constexpr uint32\_t BOLD = 9;}
-\DoxyCodeLine{00078 \};}
-\DoxyCodeLine{00079 }
-\DoxyCodeLine{\Hypertarget{GLWinFonts_8hh_source_l00080}\mbox{\hyperlink{classFont}{00080}} \textcolor{keyword}{class }\mbox{\hyperlink{classFont}{Font}} \{}
-\DoxyCodeLine{00081   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classFontFace}{FontFace}};}
-\DoxyCodeLine{00082 }
-\DoxyCodeLine{00083  \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{GLWinFonts_8hh_source_l00084}\mbox{\hyperlink{classFont_1_1Glyph}{00084}}   \textcolor{keyword}{class }\mbox{\hyperlink{classFont_1_1Glyph}{Glyph}} \{}
-\DoxyCodeLine{00085    \textcolor{keyword}{public}:}
-\DoxyCodeLine{00086     \textcolor{keywordtype}{float} advance;}
-\DoxyCodeLine{00087     \textcolor{keywordtype}{float} bearingX, bearingY;}
-\DoxyCodeLine{00088     \textcolor{keywordtype}{float} sizeX, sizeY;}
-\DoxyCodeLine{00089     \textcolor{keywordtype}{float} u0;  \textcolor{comment}{// left side of texture, always zero for vertical strip font}}
-\DoxyCodeLine{00090     \textcolor{keywordtype}{float} u1;  \textcolor{comment}{// right side of texture, always 1.0 for vertical strip font}}
-\DoxyCodeLine{00091     \textcolor{keywordtype}{float} v1;  \textcolor{comment}{// top edge of texture}}
-\DoxyCodeLine{00092     \textcolor{keywordtype}{float} v0;  \textcolor{comment}{// bottom edge of texture}}
-\DoxyCodeLine{00093     \textcolor{comment}{// NOTE the order!!! v1 is top, v0 is bottom}}
-\DoxyCodeLine{00094     \mbox{\hyperlink{classFont_1_1Glyph}{Glyph}}(\textcolor{keywordtype}{float} advance, \textcolor{keywordtype}{float} bearingX, \textcolor{keywordtype}{float} bearingY, \textcolor{keywordtype}{float} sizeX,}
-\DoxyCodeLine{00095           \textcolor{keywordtype}{float} sizeY, \textcolor{keywordtype}{float} u0, \textcolor{keywordtype}{float} u1, \textcolor{keywordtype}{float} v1, \textcolor{keywordtype}{float} v0)}
-\DoxyCodeLine{00096         : advance(advance),}
-\DoxyCodeLine{00097           bearingX(bearingX),}
-\DoxyCodeLine{00098           bearingY(bearingY),}
-\DoxyCodeLine{00099           sizeX(sizeX),}
-\DoxyCodeLine{00100           sizeY(sizeY),}
-\DoxyCodeLine{00101           u0(u0),}
-\DoxyCodeLine{00102           u1(u1),}
-\DoxyCodeLine{00103           v1(v1),}
-\DoxyCodeLine{00104           v0(v0) \{\}}
-\DoxyCodeLine{00105     \mbox{\hyperlink{classFont_1_1Glyph}{Glyph}}() \{\}  \textcolor{comment}{// TODO: uninitialized just for loading, better way?}}
-\DoxyCodeLine{00106     \textcolor{keyword}{friend} std::ostream\& operator<<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classFont_1_1Glyph}{Font::Glyph}}\& g);}
-\DoxyCodeLine{00107   \};}
-\DoxyCodeLine{00108 }
-\DoxyCodeLine{00109  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00110   \mbox{\hyperlink{classFontFace}{FontFace}}* parentFace;}
-\DoxyCodeLine{00111   \textcolor{comment}{// TODO:uint32\_t parentFace;   // offset of parent into the static fontface}}
-\DoxyCodeLine{00112   \textcolor{comment}{// table for ease of serialization to disk}}
-\DoxyCodeLine{00113   uint16\_t height;  \textcolor{comment}{// height of rectangle for each glyph of this font in pixels}}
-\DoxyCodeLine{00114   uint32\_t}
-\DoxyCodeLine{00115       startGlyph;  \textcolor{comment}{// first character to be written, 32 bits to handle any char}}
-\DoxyCodeLine{00116   \textcolor{comment}{// uint32\_t numGlyphs;    // number of glyphs supported, some might be the}}
-\DoxyCodeLine{00117   \textcolor{comment}{// same}}
-\DoxyCodeLine{00118   uint32\_t textureId;}
-\DoxyCodeLine{00119   std::vector<Glyph> glyphs;}
-\DoxyCodeLine{00120 }
-\DoxyCodeLine{00121  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00122   uint32\_t maxWidth;    \textcolor{comment}{// biggest width of any glyph}}
-\DoxyCodeLine{00123   uint16\_t spaceWidth;  \textcolor{comment}{// width of a space character}}
-\DoxyCodeLine{00124   \mbox{\hyperlink{classFont}{Font}}(\mbox{\hyperlink{classFontFace}{FontFace}}* Face, FT\_Face ftFace, uint16\_t height, uint8\_t bitmap[],}
-\DoxyCodeLine{00125        uint32\_t\& sizeX, uint32\_t\& sizeY, uint32\_t\& currX, uint32\_t\& currY,}
-\DoxyCodeLine{00126        uint32\_t\& rowSize);}
-\DoxyCodeLine{00127   \mbox{\hyperlink{classFont}{Font}}(std::istream\&);}
-\DoxyCodeLine{00128   \string~\mbox{\hyperlink{classFont}{Font}}();}
-\DoxyCodeLine{00129 }
-\DoxyCodeLine{00130   uint32\_t getStartGlyph()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} startGlyph; \}}
-\DoxyCodeLine{00131   \textcolor{keywordtype}{void} \mbox{\hyperlink{classFont_ab6d0d5a6921217004a5e5b560500c38a}{addGlyph}}(FT\_Face ftFace,}
-\DoxyCodeLine{00132                 std::unordered\_map<uint32\_t, uint32\_t>\& glyphMap, uint8\_t c,}
-\DoxyCodeLine{00133                 uint8\_t bitmap[], uint32\_t\& sizeX, uint32\_t\& sizeY,}
-\DoxyCodeLine{00134                 uint32\_t\& currX, uint32\_t\& currY, uint32\_t\& rowSize);}
-\DoxyCodeLine{00135   \textcolor{keyword}{const} Glyph* getGlyph(uint32\_t i)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \&glyphs.at(i); \}}
-\DoxyCodeLine{00136   uint16\_t getHeight()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} height; \}}
-\DoxyCodeLine{00137   uint32\_t getTexture()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{00138     \textcolor{keywordflow}{return} textureId;}
-\DoxyCodeLine{00139   \}  \textcolor{comment}{// get the texture shared by all Fonts within the FontFace}}
-\DoxyCodeLine{00140   \textcolor{keywordtype}{float} getWidth(\textcolor{keyword}{const} \textcolor{keywordtype}{char} text[], \textcolor{keyword}{const} uint32\_t len) \textcolor{keyword}{const};}
-\DoxyCodeLine{00141   \textcolor{keyword}{friend} std::ostream\& operator<<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}\& f) \{}
-\DoxyCodeLine{00142     \textcolor{keywordflow}{return} s << \textcolor{stringliteral}{"{}Font height="{}} << f.height << \textcolor{stringliteral}{"{} numGlyphs="{}} << f.glyphs.size();}
-\DoxyCodeLine{00143     \textcolor{comment}{// return s << "{}Font "{} << f.parentFace-\/>faceName << "{} height="{} << f.height}}
-\DoxyCodeLine{00144     \textcolor{comment}{// << "{} numGlyphs="{} << f.numGlyphs; // friend isn't working? what a pain}}
-\DoxyCodeLine{00145     \textcolor{comment}{// return s << "{}Font "{} << FontFace::faces[f.parentFace]-\/>faceName << "{}}}
-\DoxyCodeLine{00146     \textcolor{comment}{// height="{} << f.height << "{} numGlyphs="{} << f.numGlyphs;}}
-\DoxyCodeLine{00147   \}}
-\DoxyCodeLine{00148   \textcolor{keywordtype}{void} save(std::ostream\& fastfont);}
-\DoxyCodeLine{00149   \textcolor{keyword}{static} \mbox{\hyperlink{classFont}{Font}}* getDefault();}
-\DoxyCodeLine{00150 \};}
+\DoxyCodeLine{00041   \textcolor{keywordtype}{void} save(std::ostream\& s);  \textcolor{comment}{// save a single font face to binary file}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043   \textcolor{comment}{// save all font faces to a fast binary file for instant retrieval later}}
+\DoxyCodeLine{00044   \textcolor{keyword}{static} \textcolor{keywordtype}{void} saveFonts(\textcolor{keyword}{const} uint8\_t* combinedBitmap, uint32\_t sizeX,}
+\DoxyCodeLine{00045                         uint32\_t sizeY);}
+\DoxyCodeLine{00046   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} combineFaces();}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049   uint32\_t maxWidthIndex;}
+\DoxyCodeLine{00050   \textcolor{keyword}{static} \textcolor{keywordtype}{void} initAll();}
+\DoxyCodeLine{00051   \textcolor{keyword}{static} \textcolor{keywordtype}{void} addFontName(std::string name, \textcolor{keyword}{const} std::string\& path);}
+\DoxyCodeLine{00052   uint32\_t getTexture()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} textureId; \}}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054   \textcolor{comment}{/* Build a font face by}}
+\DoxyCodeLine{00055 \textcolor{comment}{      opening a freetype face}}
+\DoxyCodeLine{00056 \textcolor{comment}{      generating each size}}
+\DoxyCodeLine{00057 \textcolor{comment}{      storing the rendered characters into a single large bitmap in row-\/major}}
+\DoxyCodeLine{00058 \textcolor{comment}{     scan order}}
+\DoxyCodeLine{00059 \textcolor{comment}{  */}}
+\DoxyCodeLine{00060   \mbox{\hyperlink{classFontFace}{FontFace}}(FT\_Library ft, \textcolor{keyword}{const} std::string\& faceName,}
+\DoxyCodeLine{00061            \textcolor{keyword}{const} std::string\& facePath, uint32\_t minFontSize, uint32\_t inc,}
+\DoxyCodeLine{00062            uint32\_t maxFontSize, uint8\_t bitmap[], uint32\_t\& sizeX,}
+\DoxyCodeLine{00063            uint32\_t\& sizeY, uint32\_t\& currX, uint32\_t\& currY,}
+\DoxyCodeLine{00064            uint32\_t\& rowSize);}
+\DoxyCodeLine{00065   \textcolor{keyword}{static} \textcolor{keywordtype}{void} emptyFaces();}
+\DoxyCodeLine{00066   \string~\mbox{\hyperlink{classFontFace}{FontFace}}();}
+\DoxyCodeLine{00067   \textcolor{keyword}{static} FT\_Library ftLib;}
+\DoxyCodeLine{00068   \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* getFont(uint32\_t size, \textcolor{keywordtype}{int} weight) \textcolor{keyword}{const};}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070   \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classFontFace}{FontFace}}* getFace(\textcolor{keywordtype}{int} i) \{ \textcolor{keywordflow}{return} faces.at(i); \}}
+\DoxyCodeLine{00071   \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}* get(\textcolor{keyword}{const} \textcolor{keywordtype}{char} faceName[], uint32\_t size,}
+\DoxyCodeLine{00072                          uint32\_t boldness);}
+\DoxyCodeLine{00073   \textcolor{keyword}{static} constexpr \textcolor{keywordtype}{char} TIMES[] = \textcolor{stringliteral}{"{}Times"{}};}
+\DoxyCodeLine{00074   \textcolor{keyword}{static} constexpr \textcolor{keywordtype}{char} HELVETICA[] = \textcolor{stringliteral}{"{}Helvetica"{}};}
+\DoxyCodeLine{00075   \textcolor{keyword}{static} constexpr \textcolor{keywordtype}{char} COURIER[] = \textcolor{stringliteral}{"{}Courier"{}};}
+\DoxyCodeLine{00076   \textcolor{keyword}{static} constexpr uint32\_t NORMAL = 1;}
+\DoxyCodeLine{00077   \textcolor{comment}{//    static constexpr uint32\_t ITALICS = 9;}}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079   \textcolor{keyword}{static} constexpr uint32\_t BOLD = 9;}
+\DoxyCodeLine{00080 \};}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{\Hypertarget{GLWinFonts_8hh_source_l00082}\mbox{\hyperlink{classFont}{00082}} \textcolor{keyword}{class }\mbox{\hyperlink{classFont}{Font}} \{}
+\DoxyCodeLine{00083   \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classFontFace}{FontFace}};}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085  \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{GLWinFonts_8hh_source_l00086}\mbox{\hyperlink{classFont_1_1Glyph}{00086}}   \textcolor{keyword}{class }\mbox{\hyperlink{classFont_1_1Glyph}{Glyph}} \{}
+\DoxyCodeLine{00087    \textcolor{keyword}{public}:}
+\DoxyCodeLine{00088     \textcolor{keywordtype}{float} advance;}
+\DoxyCodeLine{00089     \textcolor{keywordtype}{float} bearingX, bearingY;}
+\DoxyCodeLine{00090     \textcolor{keywordtype}{float} sizeX, sizeY;}
+\DoxyCodeLine{00091     \textcolor{keywordtype}{float} u0;  \textcolor{comment}{// left side of texture, always zero for vertical strip font}}
+\DoxyCodeLine{00092     \textcolor{keywordtype}{float} u1;  \textcolor{comment}{// right side of texture, always 1.0 for vertical strip font}}
+\DoxyCodeLine{00093     \textcolor{keywordtype}{float} v1;  \textcolor{comment}{// top edge of texture}}
+\DoxyCodeLine{00094     \textcolor{keywordtype}{float} v0;  \textcolor{comment}{// bottom edge of texture}}
+\DoxyCodeLine{00095     \textcolor{comment}{// NOTE the order!!! v1 is top, v0 is bottom}}
+\DoxyCodeLine{00096     \mbox{\hyperlink{classFont_1_1Glyph}{Glyph}}(\textcolor{keywordtype}{float} advance, \textcolor{keywordtype}{float} bearingX, \textcolor{keywordtype}{float} bearingY, \textcolor{keywordtype}{float} sizeX,}
+\DoxyCodeLine{00097           \textcolor{keywordtype}{float} sizeY, \textcolor{keywordtype}{float} u0, \textcolor{keywordtype}{float} u1, \textcolor{keywordtype}{float} v1, \textcolor{keywordtype}{float} v0)}
+\DoxyCodeLine{00098         : advance(advance),}
+\DoxyCodeLine{00099           bearingX(bearingX),}
+\DoxyCodeLine{00100           bearingY(bearingY),}
+\DoxyCodeLine{00101           sizeX(sizeX),}
+\DoxyCodeLine{00102           sizeY(sizeY),}
+\DoxyCodeLine{00103           u0(u0),}
+\DoxyCodeLine{00104           u1(u1),}
+\DoxyCodeLine{00105           v1(v1),}
+\DoxyCodeLine{00106           v0(v0) \{\}}
+\DoxyCodeLine{00107     \mbox{\hyperlink{classFont_1_1Glyph}{Glyph}}() \{\}  \textcolor{comment}{// TODO: uninitialized just for loading, better way?}}
+\DoxyCodeLine{00108     \textcolor{keyword}{friend} std::ostream\& operator<<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classFont_1_1Glyph}{Font::Glyph}}\& g);}
+\DoxyCodeLine{00109   \};}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00111  \textcolor{keyword}{private}:}
+\DoxyCodeLine{00112   \mbox{\hyperlink{classFontFace}{FontFace}}* parentFace;}
+\DoxyCodeLine{00113   \textcolor{comment}{// TODO:uint32\_t parentFace;   // offset of parent into the static fontface}}
+\DoxyCodeLine{00114   \textcolor{comment}{// table for ease of serialization to disk}}
+\DoxyCodeLine{00115   uint16\_t height;  \textcolor{comment}{// height of rectangle for each glyph of this font in pixels}}
+\DoxyCodeLine{00116   uint32\_t}
+\DoxyCodeLine{00117       startGlyph;  \textcolor{comment}{// first character to be written, 32 bits to handle any char}}
+\DoxyCodeLine{00118   \textcolor{comment}{// uint32\_t numGlyphs;    // number of glyphs supported, some might be the}}
+\DoxyCodeLine{00119   \textcolor{comment}{// same}}
+\DoxyCodeLine{00120   uint32\_t textureId;}
+\DoxyCodeLine{00121   std::vector<Glyph> glyphs;}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{00123  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00124   uint32\_t maxWidth;    \textcolor{comment}{// biggest width of any glyph}}
+\DoxyCodeLine{00125   uint16\_t spaceWidth;  \textcolor{comment}{// width of a space character}}
+\DoxyCodeLine{00126   \mbox{\hyperlink{classFont}{Font}}(\mbox{\hyperlink{classFontFace}{FontFace}}* Face, FT\_Face ftFace, uint16\_t height, uint8\_t bitmap[],}
+\DoxyCodeLine{00127        uint32\_t\& sizeX, uint32\_t\& sizeY, uint32\_t\& currX, uint32\_t\& currY,}
+\DoxyCodeLine{00128        uint32\_t\& rowSize);}
+\DoxyCodeLine{00129   \mbox{\hyperlink{classFont}{Font}}(std::istream\&);}
+\DoxyCodeLine{00130   \string~\mbox{\hyperlink{classFont}{Font}}();}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132   uint32\_t getStartGlyph()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} startGlyph; \}}
+\DoxyCodeLine{00133   \textcolor{keywordtype}{void} \mbox{\hyperlink{classFont_ab6d0d5a6921217004a5e5b560500c38a}{addGlyph}}(FT\_Face ftFace,}
+\DoxyCodeLine{00134                 std::unordered\_map<uint32\_t, uint32\_t>\& glyphMap, uint8\_t c,}
+\DoxyCodeLine{00135                 uint8\_t bitmap[], uint32\_t\& sizeX, uint32\_t\& sizeY,}
+\DoxyCodeLine{00136                 uint32\_t\& currX, uint32\_t\& currY, uint32\_t\& rowSize);}
+\DoxyCodeLine{00137   \textcolor{keyword}{const} Glyph* getGlyph(uint32\_t i)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \&glyphs.at(i); \}}
+\DoxyCodeLine{00138   uint16\_t getHeight()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} height; \}}
+\DoxyCodeLine{00139   uint32\_t getTexture()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00140     \textcolor{keywordflow}{return} textureId;}
+\DoxyCodeLine{00141   \}  \textcolor{comment}{// get the texture shared by all Fonts within the FontFace}}
+\DoxyCodeLine{00142   \textcolor{keywordtype}{float} getWidth(\textcolor{keyword}{const} \textcolor{keywordtype}{char} text[], \textcolor{keyword}{const} uint32\_t len) \textcolor{keyword}{const};}
+\DoxyCodeLine{00143   \textcolor{keyword}{friend} std::ostream\& operator<<(std::ostream\& s, \textcolor{keyword}{const} \mbox{\hyperlink{classFont}{Font}}\& f) \{}
+\DoxyCodeLine{00144     \textcolor{keywordflow}{return} s << \textcolor{stringliteral}{"{}Font height="{}} << f.height << \textcolor{stringliteral}{"{} numGlyphs="{}} << f.glyphs.size();}
+\DoxyCodeLine{00145     \textcolor{comment}{// return s << "{}Font "{} << f.parentFace-\/>faceName << "{} height="{} << f.height}}
+\DoxyCodeLine{00146     \textcolor{comment}{// << "{} numGlyphs="{} << f.numGlyphs; // friend isn't working? what a pain}}
+\DoxyCodeLine{00147     \textcolor{comment}{// return s << "{}Font "{} << FontFace::faces[f.parentFace]-\/>faceName << "{}}}
+\DoxyCodeLine{00148     \textcolor{comment}{// height="{} << f.height << "{} numGlyphs="{} << f.numGlyphs;}}
+\DoxyCodeLine{00149   \}}
+\DoxyCodeLine{00150   \textcolor{keywordtype}{void} save(std::ostream\& fastfont);}
+\DoxyCodeLine{00151   \textcolor{keyword}{static} \mbox{\hyperlink{classFont}{Font}}* getDefault();}
+\DoxyCodeLine{00152 \};}
 
 \end{DoxyCode}

@@ -3,7 +3,7 @@
 Inheritance diagram for Graph\+Widget\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.000000cm]{d8/d93/classGraphWidget}
+\includegraphics[height=2.727273cm]{d8/d93/classGraphWidget}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -18,14 +18,17 @@ enum {\bfseries Axis\+Type} \{ {\bfseries LINEAR}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classGraphWidget_a48117ac2557a16b76147a7af3f33dca2}\label{classGraphWidget_a48117ac2557a16b76147a7af3f33dca2}} 
-{\bfseries Graph\+Widget} (\mbox{\hyperlink{classCanvas}{Canvas}} $\ast$c, \mbox{\hyperlink{classStyledMultiShape2D}{Styled\+Multi\+Shape2D}} $\ast$m, \mbox{\hyperlink{classMultiText}{Multi\+Text}} $\ast$t, double x, double y, double w, double h)
+\mbox{\Hypertarget{classGraphWidget_aab9946c008287ed254f00ae2d95f7acf}\label{classGraphWidget_aab9946c008287ed254f00ae2d95f7acf}} 
+{\bfseries Graph\+Widget} (\mbox{\hyperlink{classCanvas}{Canvas}} $\ast$c, double x, double y, double w, double h, \mbox{\hyperlink{classStyle}{Style}} $\ast$base\+Style=nullptr, \mbox{\hyperlink{classStyle}{Style}} $\ast$x\+Axis\+Style=nullptr, \mbox{\hyperlink{classStyle}{Style}} $\ast$x\+Axis\+Text\+Style=nullptr, \mbox{\hyperlink{classStyle}{Style}} $\ast$y\+Axis\+Style=nullptr, \mbox{\hyperlink{classStyle}{Style}} $\ast$y\+Axis\+Text\+Style=nullptr)
 \item 
 \mbox{\Hypertarget{classGraphWidget_ae287624499d234ca05735b39d07fe266}\label{classGraphWidget_ae287624499d234ca05735b39d07fe266}} 
 virtual void {\bfseries create\+XAxis} (Axis\+Type a)=0
 \item 
 \mbox{\Hypertarget{classGraphWidget_a11600848dbaa46baccd81d2f62a4da06}\label{classGraphWidget_a11600848dbaa46baccd81d2f62a4da06}} 
 virtual void {\bfseries create\+YAxis} (Axis\+Type a)=0
+\item 
+\mbox{\Hypertarget{classGraphWidget_aa0203a400118f1931e5a81090f84b856}\label{classGraphWidget_aa0203a400118f1931e5a81090f84b856}} 
+void {\bfseries set\+Base\+Style} (const \mbox{\hyperlink{classStyle}{Style}} $\ast$s)
 \item 
 \mbox{\Hypertarget{classGraphWidget_a27174baaa206beff7467128dd757d70e}\label{classGraphWidget_a27174baaa206beff7467128dd757d70e}} 
 void {\bfseries set\+Graph\+Title} (std\+::string text)
@@ -35,6 +38,15 @@ void {\bfseries set\+XAxis\+Text\+Style} (const \mbox{\hyperlink{classStyle}{Sty
 \item 
 \mbox{\Hypertarget{classGraphWidget_a6aae045dda93bb64678f3d5ef9ea15c5}\label{classGraphWidget_a6aae045dda93bb64678f3d5ef9ea15c5}} 
 void {\bfseries set\+YAxis\+Text\+Style} (const \mbox{\hyperlink{classStyle}{Style}} $\ast$y\+Axis\+Text\+Style)
+\item 
+\mbox{\Hypertarget{classGraphWidget_a1741f41f173157e08dce898170e75ca7}\label{classGraphWidget_a1741f41f173157e08dce898170e75ca7}} 
+void {\bfseries set\+XAxis\+Style} (const \mbox{\hyperlink{classStyle}{Style}} $\ast$x\+Axis\+Style)
+\item 
+\mbox{\Hypertarget{classGraphWidget_afc7189a8c7e2f3a1ffd16426abd9af71}\label{classGraphWidget_afc7189a8c7e2f3a1ffd16426abd9af71}} 
+void {\bfseries set\+YAxis\+Style} (const \mbox{\hyperlink{classStyle}{Style}} $\ast$y\+Axis\+Style)
+\item 
+\mbox{\Hypertarget{classGraphWidget_abd89ed60cd4052f5c2fe2db206ba0198}\label{classGraphWidget_abd89ed60cd4052f5c2fe2db206ba0198}} 
+virtual void {\bfseries init} ()=0
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -57,8 +69,17 @@ void {\bfseries common\+Render} ()
 \mbox{\Hypertarget{classGraphWidget_af49d8cd2c8a805c6c1bba592861ea6e6}\label{classGraphWidget_af49d8cd2c8a805c6c1bba592861ea6e6}} 
 std\+::string {\bfseries graph\+Title}
 \item 
+\mbox{\Hypertarget{classGraphWidget_aa559cfb87e017d9c4ccc84c491113e64}\label{classGraphWidget_aa559cfb87e017d9c4ccc84c491113e64}} 
+const \mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries base\+Style}
+\item 
+\mbox{\Hypertarget{classGraphWidget_ad29da39eb570d46cf22af6d57406abea}\label{classGraphWidget_ad29da39eb570d46cf22af6d57406abea}} 
+const \mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries x\+Axis\+Style}
+\item 
 \mbox{\Hypertarget{classGraphWidget_a27262007aa01e09c9927ea050ad9204f}\label{classGraphWidget_a27262007aa01e09c9927ea050ad9204f}} 
 const \mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries x\+Axis\+Text\+Style}
+\item 
+\mbox{\Hypertarget{classGraphWidget_a06545bf242c9d1534cd33e78ebade913}\label{classGraphWidget_a06545bf242c9d1534cd33e78ebade913}} 
+const \mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries y\+Axis\+Style}
 \item 
 \mbox{\Hypertarget{classGraphWidget_acf7d0a09c976e6f89440276d977b8ee5}\label{classGraphWidget_acf7d0a09c976e6f89440276d977b8ee5}} 
 const \mbox{\hyperlink{classStyle}{Style}} $\ast$ {\bfseries y\+Axis\+Text\+Style}

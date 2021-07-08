@@ -8,34 +8,46 @@
 \DoxyCodeLine{00004 }
 \DoxyCodeLine{\Hypertarget{BoxChartWidget_8hh_source_l00005}\mbox{\hyperlink{classBoxChartWidget}{00005}} \textcolor{keyword}{class }\mbox{\hyperlink{classBoxChartWidget}{BoxChartWidget}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGraphWidget}{GraphWidget}} \{}
 \DoxyCodeLine{00006  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00007   std::vector<double> data;}
-\DoxyCodeLine{00008   std::vector<std::string> names;}
-\DoxyCodeLine{00009   glm::vec4 \&boxColor;}
-\DoxyCodeLine{00010   \textcolor{comment}{// glm::vec4 \&whiskerColors;}}
-\DoxyCodeLine{00011   \textcolor{comment}{// glm::vec4 rectOutlineColor;}}
-\DoxyCodeLine{00012   \textcolor{comment}{// StyledMultiShape2D *rectOutlineStyle;}}
-\DoxyCodeLine{00013 }
-\DoxyCodeLine{00014   \textcolor{keywordtype}{double} boxWidth;}
-\DoxyCodeLine{00015   \textcolor{keywordtype}{int} pointsPerBox;}
-\DoxyCodeLine{00016 }
-\DoxyCodeLine{00017  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00018   \mbox{\hyperlink{classBoxChartWidget}{BoxChartWidget}}(\mbox{\hyperlink{classCanvas}{Canvas}} *c, \mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}} *m, \mbox{\hyperlink{classMultiText}{MultiText}} *t, \textcolor{keywordtype}{double} x,}
-\DoxyCodeLine{00019                  \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} w, \textcolor{keywordtype}{double} h)}
-\DoxyCodeLine{00020       : \mbox{\hyperlink{classGraphWidget}{GraphWidget}}(c, m, t, x, y, w, h),}
-\DoxyCodeLine{00021         data(std::vector<double>()),}
-\DoxyCodeLine{00022         names(std::vector<std::string>()),}
-\DoxyCodeLine{00023         boxColor(grail::blue),}
-\DoxyCodeLine{00024         boxWidth(20),}
-\DoxyCodeLine{00025         pointsPerBox(3) \{\}}
-\DoxyCodeLine{00026 }
-\DoxyCodeLine{00027   \textcolor{keywordtype}{void} setBoxWidth(\textcolor{keywordtype}{double} width);}
-\DoxyCodeLine{00028   \textcolor{keywordtype}{void} setBoxColor(glm::vec4 \&color);}
-\DoxyCodeLine{00029   \textcolor{keywordtype}{void} setPointsPerBox(\textcolor{keywordtype}{int} n);}
-\DoxyCodeLine{00030   \textcolor{keywordtype}{void} setData(\textcolor{keyword}{const} std::vector<double> \&data);}
-\DoxyCodeLine{00031   \textcolor{keywordtype}{void} setNames(\textcolor{keyword}{const} std::vector<std::string> \&names);}
-\DoxyCodeLine{00032   \textcolor{keywordtype}{void} createXAxis(AxisType a = AxisType::TEXT) \textcolor{keyword}{override};}
-\DoxyCodeLine{00033   \textcolor{keywordtype}{void} createYAxis(AxisType a = AxisType::LINEAR) \textcolor{keyword}{override};}
-\DoxyCodeLine{00034   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
-\DoxyCodeLine{00035 \};}
+\DoxyCodeLine{00007   \textcolor{comment}{// TODO: remove this style and add the necessary number of styles to have}}
+\DoxyCodeLine{00008   \textcolor{comment}{// variable thicknesses for the min and max lines, possibly the center lines}}
+\DoxyCodeLine{00009   \textcolor{comment}{// connecting them to the main box, and the thickness of the outline of the}}
+\DoxyCodeLine{00010   \textcolor{comment}{// main box}}
+\DoxyCodeLine{00011   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}} *whiskerStyle;}
+\DoxyCodeLine{00012   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}} *boxStyle;}
+\DoxyCodeLine{00013   std::vector<double> data;}
+\DoxyCodeLine{00014   std::vector<std::string> names;}
+\DoxyCodeLine{00015   std::vector<glm::vec4> boxColors;}
+\DoxyCodeLine{00016   std::vector<glm::vec4> whiskerColors;}
+\DoxyCodeLine{00017   std::vector<glm::vec4> outlineColors;}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019   \textcolor{keywordtype}{int} pointsPerBox;}
+\DoxyCodeLine{00020   \textcolor{keywordtype}{double} boxWidth;}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023   \mbox{\hyperlink{classBoxChartWidget}{BoxChartWidget}}(\mbox{\hyperlink{classCanvas}{Canvas}} *c, \textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} w, \textcolor{keywordtype}{double} h)}
+\DoxyCodeLine{00024       : \mbox{\hyperlink{classGraphWidget}{GraphWidget}}(c, x, y, w, h),}
+\DoxyCodeLine{00025         whiskerStyle(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{00026         boxStyle(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{00027         data(std::vector<double>()),}
+\DoxyCodeLine{00028         names(std::vector<std::string>()),}
+\DoxyCodeLine{00029         boxColors(\{grail::blue\}),}
+\DoxyCodeLine{00030         whiskerColors(\{grail::black\}),}
+\DoxyCodeLine{00031         outlineColors(\{grail::black\}),}
+\DoxyCodeLine{00032         boxWidth(20),}
+\DoxyCodeLine{00033         pointsPerBox(3) \{\}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035   \textcolor{keywordtype}{void} setWhiskerStyle(\textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}} *s);}
+\DoxyCodeLine{00036   \textcolor{keywordtype}{void} setBoxStyle(\textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}} *s);}
+\DoxyCodeLine{00037   \textcolor{keywordtype}{void} setBoxWidth(\textcolor{keywordtype}{double} width);}
+\DoxyCodeLine{00038   \textcolor{keywordtype}{void} setBoxColors(std::vector<glm::vec4> \&colors);}
+\DoxyCodeLine{00039   \textcolor{keywordtype}{void} setWhiskerColors(std::vector<glm::vec4> \&colors);}
+\DoxyCodeLine{00040   \textcolor{keywordtype}{void} setOutlineColors(std::vector<glm::vec4> \&colors);}
+\DoxyCodeLine{00041   \textcolor{keywordtype}{void} setPointsPerBox(\textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{00042   \textcolor{keywordtype}{void} setData(\textcolor{keyword}{const} std::vector<double> \&data);}
+\DoxyCodeLine{00043   \textcolor{keywordtype}{void} setNames(\textcolor{keyword}{const} std::vector<std::string> \&names);}
+\DoxyCodeLine{00044   \textcolor{keywordtype}{void} createXAxis(AxisType a = AxisType::TEXT) \textcolor{keyword}{override};}
+\DoxyCodeLine{00045   \textcolor{keywordtype}{void} createYAxis(AxisType a = AxisType::LINEAR) \textcolor{keyword}{override};}
+\DoxyCodeLine{00046   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
+\DoxyCodeLine{00047 \};}
 
 \end{DoxyCode}

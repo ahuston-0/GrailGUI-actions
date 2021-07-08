@@ -38,6 +38,7 @@ var hierarchy =
     [ "CSVParser", "d3/d22/classCSVParser.html", null ],
     [ "CTimer", "d3/dc2/classCTimer.html", null ],
     [ "CubicFunc", "d1/d18/classCubicFunc.html", null ],
+    [ "Decompressor", "dc/d3c/classDecompressor.html", null ],
     [ "Document", "d1/d67/classDocument.html", null ],
     [ "DynArray< T >", "d0/d0c/classDynArray.html", null ],
     [ "DynArray< Block >", "d0/d0c/classDynArray.html", null ],
@@ -173,7 +174,8 @@ var hierarchy =
         [ "Text", "df/d53/classText.html", null ]
       ] ],
       [ "Sphere", "de/d9d/classSphere.html", null ],
-      [ "Text", "df/d53/classText.html", null ]
+      [ "Text", "df/d53/classText.html", null ],
+      [ "VideoPlayer", "d7/d08/classVideoPlayer.html", null ]
     ] ],
     [ "Shapefile", "d0/d2f/classShapefile.html", null ],
     [ "Socket", "d4/d33/classSocket.html", [
@@ -190,6 +192,7 @@ var hierarchy =
       [ "GraphWidget", "d8/d93/classGraphWidget.html", [
         [ "BarChartWidget", "d4/d89/classBarChartWidget.html", null ],
         [ "BoxChartWidget", "d8/d07/classBoxChartWidget.html", null ],
+        [ "CandlestickChartWidget", "d1/d77/classCandlestickChartWidget.html", null ],
         [ "LineGraphWidget", "da/d81/classLineGraphWidget.html", null ]
       ] ]
     ] ],
@@ -212,7 +215,6 @@ var hierarchy =
       ] ],
       [ "ButtonWidget", "df/dc8/classButtonWidget.html", null ],
       [ "ButtonWidget", "df/dc8/classButtonWidget.html", null ],
-      [ "CandlestickChartWidget", "d1/d77/classCandlestickChartWidget.html", null ],
       [ "GapMinderWidget", "da/d77/classGapMinderWidget.html", null ],
       [ "SparklineWidget", "d9/dfd/classSparklineWidget.html", null ]
     ] ],

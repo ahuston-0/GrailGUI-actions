@@ -2,12 +2,12 @@
 
   \item {A}, \hyperpage{13}
   \item {addGlyph}
-    \subitem {Font}, \hyperpage{46}
+    \subitem {Font}, \hyperpage{47}
   \item {Address}, \hyperpage{13}
   \item {AngledMultiText}, \hyperpage{14}
   \item {AudioPlayer}, \hyperpage{14}
   \item {AxisWidget}, \hyperpage{15}
-  \item {AxisWidget::Format}, \hyperpage{47}
+  \item {AxisWidget::Format}, \hyperpage{48}
 
   \indexspace
 
@@ -17,15 +17,15 @@
   \item {Bezier}, \hyperpage{17}
   \item {BlockAllocator$<$ blockSize $>$}, \hyperpage{18}
   \item {BlockLoader}, \hyperpage{18}
-  \item {BlockLoader::GeneralHeader}, \hyperpage{48}
+  \item {BlockLoader::GeneralHeader}, \hyperpage{49}
   \item {BlockLoader::Info}, \hyperpage{62}
   \item {BlockLoader::SecurityHeaderV0}, \hyperpage{86}
   \item {BlockLoader::SecurityHeaderV1}, \hyperpage{86}
   \item {BlockMapLoader}, \hyperpage{19}
   \item {BlockMapLoader::BlockMapHeader}, \hyperpage{19}
   \item {BlockMapLoader::BoundRect}, \hyperpage{21}
-  \item {BlockMapLoader::NamedEntities}, \hyperpage{76}
-  \item {BlockMapLoader::NamedEntry}, \hyperpage{76}
+  \item {BlockMapLoader::NamedEntities}, \hyperpage{77}
+  \item {BlockMapLoader::NamedEntry}, \hyperpage{77}
   \item {BlockMapLoader::Region}, \hyperpage{83}
   \item {BlockMapLoader::RegionContainer}, \hyperpage{83}
   \item {BlockMapLoader::Segment}, \hyperpage{87}
@@ -35,7 +35,7 @@
     \subitem {getNextTokenWithSpace}, \hyperpage{23}
     \subitem {write}, \hyperpage{23, 24}
   \item {buildMapNameToFile}
-    \subitem {FileUtil}, \hyperpage{45}
+    \subitem {FileUtil}, \hyperpage{46}
   \item {BuiltinType}, \hyperpage{24}
   \item {Button}, \hyperpage{24}
   \item {ButtonWidget}, \hyperpage{25}
@@ -81,33 +81,34 @@
 
   \item {Date}, \hyperpage{38}
   \item {daysInMonth}
-    \subitem {JulianDate}, \hyperpage{64}
+    \subitem {JulianDate}, \hyperpage{65}
   \item {daysUpTo}
     \subitem {JulianDate}, \hyperpage{65}
+  \item {Decompressor}, \hyperpage{39}
   \item {Document}, \hyperpage{39}
-  \item {DocView}, \hyperpage{39}
+  \item {DocView}, \hyperpage{40}
   \item {DynArray$<$ T $>$}, \hyperpage{40}
 
   \indexspace
 
-  \item {Ellipse}, \hyperpage{40}
+  \item {Ellipse}, \hyperpage{41}
   \item {Email}, \hyperpage{41}
   \item {ESRIPoint}, \hyperpage{41}
-  \item {ESRIPolygon}, \hyperpage{41}
+  \item {ESRIPolygon}, \hyperpage{42}
   \item {ESRIShape}, \hyperpage{42}
-  \item {Ex}, \hyperpage{42}
+  \item {Ex}, \hyperpage{43}
 
   \indexspace
 
   \item {F32}, \hyperpage{43}
-  \item {F64}, \hyperpage{43}
+  \item {F64}, \hyperpage{44}
   \item {F64Renderer}, \hyperpage{44}
-  \item {FastFontHeader}, \hyperpage{44}
+  \item {FastFontHeader}, \hyperpage{45}
   \item {FatalEx}, \hyperpage{45}
   \item {FileUtil}, \hyperpage{45}
-    \subitem {buildMapNameToFile}, \hyperpage{45}
+    \subitem {buildMapNameToFile}, \hyperpage{46}
   \item {Font}, \hyperpage{46}
-    \subitem {addGlyph}, \hyperpage{46}
+    \subitem {addGlyph}, \hyperpage{47}
   \item {Font::Glyph}, \hyperpage{52}
   \item {FontFace}, \hyperpage{47}
   \item {FormServlet}, \hyperpage{48}
@@ -143,46 +144,46 @@
   \item {HashMap$<$ Val $>$}, \hyperpage{55}
   \item {HashMap$<$ Val $>$::ConstIterator}, \hyperpage{30}
   \item {HashMap$<$ Val $>$::Iterator}, \hyperpage{63}
-  \item {HashMapBase}, \hyperpage{55}
-  \item {HeatMap}, \hyperpage{56}
+  \item {HashMapBase}, \hyperpage{56}
+  \item {HeatMap}, \hyperpage{57}
   \item {HTTPRequest}, \hyperpage{57}
-  \item {HttpServlet}, \hyperpage{57}
+  \item {HttpServlet}, \hyperpage{58}
 
   \indexspace
 
   \item {I128}, \hyperpage{58}
-  \item {I16}, \hyperpage{58}
+  \item {I16}, \hyperpage{59}
   \item {I24}, \hyperpage{59}
-  \item {I256}, \hyperpage{59}
+  \item {I256}, \hyperpage{60}
   \item {I32}, \hyperpage{60}
-  \item {I64}, \hyperpage{60}
+  \item {I64}, \hyperpage{61}
   \item {I8}, \hyperpage{61}
-  \item {Image}, \hyperpage{61}
+  \item {Image}, \hyperpage{62}
   \item {InputEvent}, \hyperpage{62}
-  \item {Insertion}, \hyperpage{62}
-  \item {InterpretCSPStream}, \hyperpage{62}
-  \item {IPV4Socket}, \hyperpage{62}
+  \item {Insertion}, \hyperpage{63}
+  \item {InterpretCSPStream}, \hyperpage{63}
+  \item {IPV4Socket}, \hyperpage{63}
 
   \indexspace
 
-  \item {JulianDate}, \hyperpage{63}
-    \subitem {daysInMonth}, \hyperpage{64}
+  \item {JulianDate}, \hyperpage{64}
+    \subitem {daysInMonth}, \hyperpage{65}
     \subitem {daysUpTo}, \hyperpage{65}
     \subitem {monthAbbr}, \hyperpage{65}
-    \subitem {monthNames}, \hyperpage{65}
+    \subitem {monthNames}, \hyperpage{66}
 
   \indexspace
 
   \item {Line}, \hyperpage{66}
   \item {LinearAxisWidget}, \hyperpage{66}
-  \item {LinearScale}, \hyperpage{66}
+  \item {LinearScale}, \hyperpage{67}
   \item {LineGraphWidget}, \hyperpage{67}
-  \item {List$<$ T $>$}, \hyperpage{67}
+  \item {List$<$ T $>$}, \hyperpage{68}
   \item {List1$<$ T $>$}, \hyperpage{68}
-  \item {List2}, \hyperpage{68}
-  \item {Log}, \hyperpage{68}
+  \item {List2}, \hyperpage{69}
+  \item {Log}, \hyperpage{69}
   \item {LogAxisWidget}, \hyperpage{69}
-  \item {LogReader}, \hyperpage{69}
+  \item {LogReader}, \hyperpage{70}
   \item {LogScale}, \hyperpage{70}
 
   \indexspace
@@ -193,7 +194,7 @@
   \item {monthAbbr}
     \subitem {JulianDate}, \hyperpage{65}
   \item {monthNames}
-    \subitem {JulianDate}, \hyperpage{65}
+    \subitem {JulianDate}, \hyperpage{66}
   \item {MultiShape}, \hyperpage{72}
   \item {MultiShape2D}, \hyperpage{73}
   \item {MultiShape3D}, \hyperpage{74}
@@ -208,15 +209,15 @@
   \indexspace
 
   \item {ObjectHorizontalRenderer}, \hyperpage{77}
-  \item {ObjectNameValueRenderer}, \hyperpage{77}
+  \item {ObjectNameValueRenderer}, \hyperpage{78}
 
   \indexspace
 
   \item {Page}, \hyperpage{78}
-  \item {pageBuffer}, \hyperpage{78}
-  \item {PageLayout}, \hyperpage{78}
+  \item {pageBuffer}, \hyperpage{79}
+  \item {PageLayout}, \hyperpage{79}
   \item {PageText}, \hyperpage{79}
-  \item {Phone}, \hyperpage{79}
+  \item {Phone}, \hyperpage{80}
   \item {Point}, \hyperpage{80}
   \item {Polygon}, \hyperpage{80}
   \item {PositionDisplayer2D}, \hyperpage{81}
@@ -224,7 +225,7 @@
 
   \indexspace
 
-  \item {RCString}, \hyperpage{81}
+  \item {RCString}, \hyperpage{82}
   \item {Record}, \hyperpage{82}
   \item {Rectangle}, \hyperpage{82}
   \item {Regex}, \hyperpage{83}
@@ -310,10 +311,11 @@
 
   \item {Vec3d}, \hyperpage{117}
   \item {VerticalListRenderer}, \hyperpage{117}
+  \item {VideoPlayer}, \hyperpage{117}
 
   \indexspace
 
-  \item {WebCursor}, \hyperpage{117}
+  \item {WebCursor}, \hyperpage{118}
   \item {WebDraw}, \hyperpage{118}
   \item {Widget2D}, \hyperpage{119}
   \item {write}
@@ -322,11 +324,11 @@
 
   \indexspace
 
-  \item {X11Util}, \hyperpage{119}
-  \item {XDLCompiler}, \hyperpage{119}
+  \item {X11Util}, \hyperpage{120}
+  \item {XDLCompiler}, \hyperpage{120}
   \item {XDLIterator}, \hyperpage{120}
-  \item {XDLRaw}, \hyperpage{120}
-  \item {XDLRequest}, \hyperpage{120}
-  \item {XDLType}, \hyperpage{121}
+  \item {XDLRaw}, \hyperpage{121}
+  \item {XDLRequest}, \hyperpage{121}
+  \item {XDLType}, \hyperpage{122}
 
 \end{theindex}

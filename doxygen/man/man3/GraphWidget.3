@@ -9,7 +9,7 @@ GraphWidget
 .PP
 Inherits \fBSuperWidget2D\fP\&.
 .PP
-Inherited by \fBBarChartWidget\fP, \fBBoxChartWidget\fP, and \fBLineGraphWidget\fP\&.
+Inherited by \fBBarChartWidget\fP, \fBBoxChartWidget\fP, \fBCandlestickChartWidget\fP, and \fBLineGraphWidget\fP\&.
 .SS "Public Types"
 
 .in +1c
@@ -21,13 +21,16 @@ Inherited by \fBBarChartWidget\fP, \fBBoxChartWidget\fP, and \fBLineGraphWidget\
 
 .in +1c
 .ti -1c
-.RI "\fBGraphWidget\fP (\fBCanvas\fP *c, \fBStyledMultiShape2D\fP *m, \fBMultiText\fP *t, double x, double y, double w, double h)"
+.RI "\fBGraphWidget\fP (\fBCanvas\fP *c, double x, double y, double w, double h, \fBStyle\fP *baseStyle=nullptr, \fBStyle\fP *xAxisStyle=nullptr, \fBStyle\fP *xAxisTextStyle=nullptr, \fBStyle\fP *yAxisStyle=nullptr, \fBStyle\fP *yAxisTextStyle=nullptr)"
 .br
 .ti -1c
 .RI "virtual void \fBcreateXAxis\fP (AxisType a)=0"
 .br
 .ti -1c
 .RI "virtual void \fBcreateYAxis\fP (AxisType a)=0"
+.br
+.ti -1c
+.RI "void \fBsetBaseStyle\fP (const \fBStyle\fP *s)"
 .br
 .ti -1c
 .RI "void \fBsetGraphTitle\fP (std::string text)"
@@ -37,6 +40,15 @@ Inherited by \fBBarChartWidget\fP, \fBBoxChartWidget\fP, and \fBLineGraphWidget\
 .br
 .ti -1c
 .RI "void \fBsetYAxisTextStyle\fP (const \fBStyle\fP *yAxisTextStyle)"
+.br
+.ti -1c
+.RI "void \fBsetXAxisStyle\fP (const \fBStyle\fP *xAxisStyle)"
+.br
+.ti -1c
+.RI "void \fBsetYAxisStyle\fP (const \fBStyle\fP *yAxisStyle)"
+.br
+.ti -1c
+.RI "virtual void \fBinit\fP ()=0"
 .br
 .in -1c
 .SS "Public Attributes"
@@ -63,7 +75,16 @@ Inherited by \fBBarChartWidget\fP, \fBBoxChartWidget\fP, and \fBLineGraphWidget\
 .RI "std::string \fBgraphTitle\fP"
 .br
 .ti -1c
+.RI "const \fBStyle\fP * \fBbaseStyle\fP"
+.br
+.ti -1c
+.RI "const \fBStyle\fP * \fBxAxisStyle\fP"
+.br
+.ti -1c
 .RI "const \fBStyle\fP * \fBxAxisTextStyle\fP"
+.br
+.ti -1c
+.RI "const \fBStyle\fP * \fByAxisStyle\fP"
 .br
 .ti -1c
 .RI "const \fBStyle\fP * \fByAxisTextStyle\fP"

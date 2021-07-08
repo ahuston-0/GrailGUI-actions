@@ -88,25 +88,25 @@ $(document).ready(function(){initNavTree('d7/d4e/GraphWidget_8hh_source.html','.
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;opengl/AxisWidget.hh&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;opengl/SuperWidget2D.hh&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;opengl/AxisWidget.hh&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;opengl/SuperWidget2D.hh&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/dff/classStyle.html">Style</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../d8/d93/classGraphWidget.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d8/d93/classGraphWidget.html">GraphWidget</a> : <span class="keyword">public</span> <a class="code" href="../../d8/d87/classSuperWidget2D.html">SuperWidget2D</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">enum</span> AxisType {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    LINEAR,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    LOGARITHMIC,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    TEXT,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  };</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  std::string graphTitle;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a> *xAxisTextStyle;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/dff/classStyle.html">Style</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../d8/d93/classGraphWidget.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d8/d93/classGraphWidget.html">GraphWidget</a> : <span class="keyword">public</span> <a class="code" href="../../d8/d87/classSuperWidget2D.html">SuperWidget2D</a> {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">enum</span> AxisType {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    LINEAR,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    LOGARITHMIC,</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    TEXT,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  };</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  std::string graphTitle;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a> *baseStyle;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a> *xAxisStyle;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a> *xAxisTextStyle;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a> *yAxisStyle;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a> *yAxisTextStyle;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  AxisType xAxisType;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  AxisType yAxisType;</div>
@@ -117,25 +117,26 @@ $(document).ready(function(){initNavTree('d7/d4e/GraphWidget_8hh_source.html','.
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="../../d5/dfb/classAxisWidget.html">AxisWidget</a> *xAxis;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="../../d5/dfb/classAxisWidget.html">AxisWidget</a> *yAxis;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../d8/d93/classGraphWidget.html">GraphWidget</a>(<a class="code" href="../../d5/d70/classCanvas.html">Canvas</a> *c, <a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a> *m, <a class="code" href="../../df/d89/classMultiText.html">MultiText</a> *t, <span class="keywordtype">double</span> x,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;              <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> h)</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      : <a class="code" href="../../d8/d87/classSuperWidget2D.html">SuperWidget2D</a>(c, m, t, x, y, w, h),</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        xAxisTextStyle(<span class="keyword">new</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a>(<span class="stringliteral">&quot;TIMES&quot;</span>, 12, 1, 0, 0, 0, 0, 0, 0)),</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        yAxisTextStyle(<span class="keyword">new</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a>(<span class="stringliteral">&quot;TIMES&quot;</span>, 12, 1, 0, 0, 0, 0, 0, 0)),</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        xAxis(<span class="keyword">nullptr</span>),</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        yAxis(<span class="keyword">nullptr</span>) {}</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> createXAxis(AxisType a) = 0;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> createYAxis(AxisType a) = 0;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../d8/d93/classGraphWidget.html">GraphWidget</a>(<a class="code" href="../../d5/d70/classCanvas.html">Canvas</a> *c, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> h,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;              <a class="code" href="../../d2/dff/classStyle.html">Style</a> *baseStyle = <span class="keyword">nullptr</span>, <a class="code" href="../../d2/dff/classStyle.html">Style</a> *xAxisStyle = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;              <a class="code" href="../../d2/dff/classStyle.html">Style</a> *xAxisTextStyle = <span class="keyword">nullptr</span>, <a class="code" href="../../d2/dff/classStyle.html">Style</a> *yAxisStyle = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;              <a class="code" href="../../d2/dff/classStyle.html">Style</a> *yAxisTextStyle = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  ~<a class="code" href="../../d8/d93/classGraphWidget.html">GraphWidget</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> createXAxis(AxisType a) = 0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> createYAxis(AxisType a) = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">void</span> setBaseStyle(<span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a> *s);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">void</span> setGraphTitle(std::string text);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">void</span> setXAxisTextStyle(<span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a> *xAxisTextStyle);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> setYAxisTextStyle(<span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a> *yAxisTextStyle);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
-<div class="ttc" id="aclassAxisWidget_html"><div class="ttname"><a href="../../d5/dfb/classAxisWidget.html">AxisWidget</a></div><div class="ttdef"><b>Definition:</b> AxisWidget.hh:8</div></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span> setXAxisStyle(<span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a> *xAxisStyle);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span> setYAxisStyle(<span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a> *yAxisStyle);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> init() = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="ttc" id="aclassAxisWidget_html"><div class="ttname"><a href="../../d5/dfb/classAxisWidget.html">AxisWidget</a></div><div class="ttdef"><b>Definition:</b> AxisWidget.hh:5</div></div>
 <div class="ttc" id="aclassCanvas_html"><div class="ttname"><a href="../../d5/d70/classCanvas.html">Canvas</a></div><div class="ttdef"><b>Definition:</b> Canvas.hh:10</div></div>
-<div class="ttc" id="aclassGraphWidget_html"><div class="ttname"><a href="../../d8/d93/classGraphWidget.html">GraphWidget</a></div><div class="ttdef"><b>Definition:</b> GraphWidget.hh:11</div></div>
-<div class="ttc" id="aclassMultiText_html"><div class="ttname"><a href="../../df/d89/classMultiText.html">MultiText</a></div><div class="ttdef"><b>Definition:</b> MultiText.hh:7</div></div>
+<div class="ttc" id="aclassGraphWidget_html"><div class="ttname"><a href="../../d8/d93/classGraphWidget.html">GraphWidget</a></div><div class="ttdef"><b>Definition:</b> GraphWidget.hh:8</div></div>
 <div class="ttc" id="aclassStyle_html"><div class="ttname"><a href="../../d2/dff/classStyle.html">Style</a></div><div class="ttdef"><b>Definition:</b> Style.hh:8</div></div>
-<div class="ttc" id="aclassStyledMultiShape2D_html"><div class="ttname"><a href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a></div><div class="ttdef"><b>Definition:</b> MapViewer.hh:8</div></div>
 <div class="ttc" id="aclassSuperWidget2D_html"><div class="ttname"><a href="../../d8/d87/classSuperWidget2D.html">SuperWidget2D</a></div><div class="ttdef"><b>Definition:</b> SuperWidget2D.hh:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

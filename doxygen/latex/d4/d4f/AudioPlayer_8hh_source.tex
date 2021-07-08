@@ -13,41 +13,52 @@
 \DoxyCodeLine{00009 }
 \DoxyCodeLine{\Hypertarget{AudioPlayer_8hh_source_l00010}\mbox{\hyperlink{classAudioPlayer}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{classAudioPlayer}{AudioPlayer}} \{}
 \DoxyCodeLine{00011  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00012   std::unordered\_map<std::string, mpv\_handle *> contexts;}
-\DoxyCodeLine{00013   mpv\_handle *currentCtx;}
-\DoxyCodeLine{00014   \textcolor{keywordtype}{bool} isPlaying;}
-\DoxyCodeLine{00015 }
-\DoxyCodeLine{00016   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} checkError(\textcolor{keywordtype}{int} status) \{}
-\DoxyCodeLine{00017     \textcolor{keywordflow}{if} (status < 0) \{}
-\DoxyCodeLine{00018       printf(\textcolor{stringliteral}{"{}mpv API error: \%s\(\backslash\)n"{}}, mpv\_error\_string(status));}
-\DoxyCodeLine{00019       \textcolor{keywordflow}{throw} Ex1(Errcode::MPV\_FAILURE);}
-\DoxyCodeLine{00020     \}}
-\DoxyCodeLine{00021   \}}
-\DoxyCodeLine{00022 }
-\DoxyCodeLine{00023  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00024   \mbox{\hyperlink{classAudioPlayer}{AudioPlayer}}();}
-\DoxyCodeLine{00025   \string~\mbox{\hyperlink{classAudioPlayer}{AudioPlayer}}();}
-\DoxyCodeLine{00026   \mbox{\hyperlink{classAudioPlayer}{AudioPlayer}}(\textcolor{keyword}{const} \mbox{\hyperlink{classAudioPlayer}{AudioPlayer}} \&orig) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{00027   \mbox{\hyperlink{classAudioPlayer}{AudioPlayer}} \&operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classAudioPlayer}{AudioPlayer}} \&orig) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{00028   \textcolor{keywordtype}{void} newContext(std::string name);}
-\DoxyCodeLine{00029   \textcolor{keywordtype}{void} setCurrentContext(std::string name);}
-\DoxyCodeLine{00030   \textcolor{keywordtype}{void} addFile(std::string filePath);}
-\DoxyCodeLine{00031   \textcolor{keywordtype}{void} addPlaylist(std::string filePath, \textcolor{keywordtype}{bool} append = \textcolor{keyword}{false});}
-\DoxyCodeLine{00032   \textcolor{keywordtype}{void} setVolume(\textcolor{keywordtype}{int} volume);}
-\DoxyCodeLine{00033   \textcolor{keywordtype}{void} seekLocation(std::string time, std::string type = \textcolor{stringliteral}{"{}relative"{}});}
-\DoxyCodeLine{00034   \textcolor{keywordtype}{void} revertSeek();}
-\DoxyCodeLine{00035   \textcolor{keywordtype}{void} playlistNext();}
-\DoxyCodeLine{00036   \textcolor{keywordtype}{void} playlistPrev();}
-\DoxyCodeLine{00037   \textcolor{keywordtype}{void} playlistPlayIndex(\textcolor{keywordtype}{int} index);}
-\DoxyCodeLine{00038   \textcolor{keywordtype}{void} playlistClear();}
-\DoxyCodeLine{00039   \textcolor{keywordtype}{void} playlistRemoveIndex(\textcolor{keywordtype}{int} index);}
-\DoxyCodeLine{00040   \textcolor{keywordtype}{void} playlistMove(\textcolor{keywordtype}{int} index1, \textcolor{keywordtype}{int} index2);}
-\DoxyCodeLine{00041   \textcolor{keywordtype}{void} playlistShuffle();}
-\DoxyCodeLine{00042   \textcolor{keywordtype}{void} togglePause();}
-\DoxyCodeLine{00043   \textcolor{keywordtype}{void} setPlaying();}
-\DoxyCodeLine{00044   \textcolor{keywordtype}{void} setPaused();}
-\DoxyCodeLine{00045   \textcolor{keywordtype}{void} printCurrentTime();}
-\DoxyCodeLine{00046   \textcolor{comment}{// void playlistPrintEntries();}}
-\DoxyCodeLine{00047 \};}
+\DoxyCodeLine{00012   \textcolor{keyword}{struct }context \{}
+\DoxyCodeLine{00013     std::string name;}
+\DoxyCodeLine{00014     mpv\_handle *handle;}
+\DoxyCodeLine{00015     \textcolor{keywordtype}{bool} playing;}
+\DoxyCodeLine{00016   \};}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018   std::unordered\_map<std::string, context> contexts;}
+\DoxyCodeLine{00019   \textcolor{keyword}{struct }context *currentCtx;}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021   \textcolor{keyword}{inline} \textcolor{keywordtype}{void} checkError(\textcolor{keywordtype}{int} status) \{}
+\DoxyCodeLine{00022     \textcolor{keywordflow}{if} (status < 0) \{}
+\DoxyCodeLine{00023       printf(\textcolor{stringliteral}{"{}mpv API error: \%s\(\backslash\)n"{}}, mpv\_error\_string(status));}
+\DoxyCodeLine{00024       \textcolor{keywordflow}{throw} Ex1(Errcode::MPV\_FAILURE);}
+\DoxyCodeLine{00025     \}}
+\DoxyCodeLine{00026   \}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029   \mbox{\hyperlink{classAudioPlayer}{AudioPlayer}}();}
+\DoxyCodeLine{00030   \string~\mbox{\hyperlink{classAudioPlayer}{AudioPlayer}}();}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032   \mbox{\hyperlink{classAudioPlayer}{AudioPlayer}}(\textcolor{keyword}{const} \mbox{\hyperlink{classAudioPlayer}{AudioPlayer}} \&orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00033   \mbox{\hyperlink{classAudioPlayer}{AudioPlayer}} \&operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classAudioPlayer}{AudioPlayer}} \&orig) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035   \textcolor{keywordtype}{void} newContext(std::string name);}
+\DoxyCodeLine{00036   \textcolor{keywordtype}{void} setCurrentContext(std::string name);}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038   \textcolor{keywordtype}{void} loadFile(std::string filePath);}
+\DoxyCodeLine{00039   \textcolor{keywordtype}{void} loadPlaylist(std::string filePath, \textcolor{keywordtype}{bool} append = \textcolor{keyword}{false});}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041   \textcolor{keywordtype}{void} setVolume(\textcolor{keywordtype}{int} volume);}
+\DoxyCodeLine{00042   \textcolor{keywordtype}{void} seekLocation(std::string time, std::string type = \textcolor{stringliteral}{"{}relative"{}});}
+\DoxyCodeLine{00043   \textcolor{keywordtype}{void} revertSeek();}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045   \textcolor{keywordtype}{void} playlistNext();}
+\DoxyCodeLine{00046   \textcolor{keywordtype}{void} playlistPrev();}
+\DoxyCodeLine{00047   \textcolor{keywordtype}{void} playlistPlayIndex(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{00048   \textcolor{keywordtype}{void} playlistClear();}
+\DoxyCodeLine{00049   \textcolor{keywordtype}{void} playlistRemoveIndex(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{00050   \textcolor{keywordtype}{void} playlistMove(\textcolor{keywordtype}{int} index1, \textcolor{keywordtype}{int} index2);}
+\DoxyCodeLine{00051   \textcolor{keywordtype}{void} playlistShuffle();}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053   \textcolor{keywordtype}{void} printCurrentTime();}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055   \textcolor{keywordtype}{void} setPaused();}
+\DoxyCodeLine{00056   \textcolor{keywordtype}{void} setPlaying();}
+\DoxyCodeLine{00057   \textcolor{keywordtype}{void} togglePause();}
+\DoxyCodeLine{00058 \};}
 
 \end{DoxyCode}

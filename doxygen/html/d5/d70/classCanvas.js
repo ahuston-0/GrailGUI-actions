@@ -10,6 +10,7 @@ var classCanvas =
     [ "getProjection", "d5/d70/classCanvas.html#a765206cf77e881cf62c57fba4f6bbb53", null ],
     [ "getStyle", "d5/d70/classCanvas.html#a460cc390cb820daaa0e9b33ed77b351f", null ],
     [ "getWidth", "d5/d70/classCanvas.html#ad031d7eaf01b713d0ed70a778a3b7548", null ],
+    [ "getWin", "d5/d70/classCanvas.html#a9baee49d84bcaac4ebaeda4e9a429eca", null ],
     [ "init", "d5/d70/classCanvas.html#a26dbbb834c56e2f1dafce81535646a35", null ],
     [ "operator=", "d5/d70/classCanvas.html#ab001c6bf893f5e6d01ecf620cb11a801", null ],
     [ "process_input", "d5/d70/classCanvas.html#a8966011056d8204bac0e2da96902e368", null ],

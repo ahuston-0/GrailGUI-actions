@@ -12,13 +12,25 @@ Inherits \fBGraphWidget\fP\&.
 
 .in +1c
 .ti -1c
-.RI "\fBBoxChartWidget\fP (\fBCanvas\fP *c, \fBStyledMultiShape2D\fP *m, \fBMultiText\fP *t, double x, double y, double w, double h)"
+.RI "\fBBoxChartWidget\fP (\fBCanvas\fP *c, double x, double y, double w, double h)"
+.br
+.ti -1c
+.RI "void \fBsetWhiskerStyle\fP (const \fBStyle\fP *s)"
+.br
+.ti -1c
+.RI "void \fBsetBoxStyle\fP (const \fBStyle\fP *s)"
 .br
 .ti -1c
 .RI "void \fBsetBoxWidth\fP (double width)"
 .br
 .ti -1c
-.RI "void \fBsetBoxColor\fP (glm::vec4 &color)"
+.RI "void \fBsetBoxColors\fP (std::vector< glm::vec4 > &colors)"
+.br
+.ti -1c
+.RI "void \fBsetWhiskerColors\fP (std::vector< glm::vec4 > &colors)"
+.br
+.ti -1c
+.RI "void \fBsetOutlineColors\fP (std::vector< glm::vec4 > &colors)"
 .br
 .ti -1c
 .RI "void \fBsetPointsPerBox\fP (int n)"

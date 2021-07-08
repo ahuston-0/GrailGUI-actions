@@ -12,38 +12,22 @@ Inherits \fBShape\fP\&.
 
 .in +1c
 .ti -1c
-.RI "\fBImage\fP (\fBCanvas\fP *c, float x, float y, float width, float height, uint32_t textureId, const \fBStyle\fP *s)"
+.RI "\fBImage\fP (\fBCanvas\fP *c, float x, float y, float width, float height, uint32_t textureID=0)"
 .br
 .ti -1c
-.RI "\fBImage\fP (\fBCanvas\fP *c, float x, float y, float width, float height, const char *filePath, const \fBStyle\fP *s)"
+.RI "\fBImage\fP (\fBCanvas\fP *c, float x, float y, float width, float height, const char *filePath, uint32_t textureID=0)"
 .br
 .ti -1c
-.RI "\fBImage\fP (\fBCanvas\fP *c, float x, float y, float width, float height, char *filePath, const \fBStyle\fP *s)"
-.br
-.ti -1c
-.RI "void \fBchange\fP (const char *filePath)"
+.RI "void \fBaddImage\fP (const char *filePath)"
 .br
 .ti -1c
 .RI "void \fBinit\fP ()"
-.br
-.ti -1c
-.RI "void \fBprocess_input\fP (Inputs *in, float dt)"
 .br
 .ti -1c
 .RI "void \fBupdate\fP ()"
 .br
 .ti -1c
 .RI "void \fBrender\fP ()"
-.br
-.ti -1c
-.RI "void \fBaddImage\fP (float x, float y, float width, float height, float u0=0, float v0=0, float u1=1, float v1=1)"
-.br
-.in -1c
-.SS "Static Public Member Functions"
-
-.in +1c
-.ti -1c
-.RI "static void \fBcombineImage\fP (const std::vector< std::string > &images)"
 .br
 .in -1c
 .SS "Additional Inherited Members"

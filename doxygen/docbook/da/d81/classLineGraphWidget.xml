@@ -13,7 +13,9 @@
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classLineGraphWidget_1a0f3905dc45409aff6f730bfc3c25a2df"/><emphasis role="strong">LineGraphWidget</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, <link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, double x, double y, double w, double h)</para>
+            <listitem><para><anchor xml:id="_classLineGraphWidget_1ae8dac2a8a8488dad56459f112abb1c42"/><emphasis role="strong">LineGraphWidget</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, double x, double y, double w, double h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classLineGraphWidget_1a2a64204b2d2c55fe5604b6e0f8e056cc"/>void <emphasis role="strong">setDataStyle</emphasis> (const <link linkend="_classStyle">Style</link> *s)</para>
 </listitem>
             <listitem><para><anchor xml:id="_classLineGraphWidget_1afbfa3473f103407acea8389352083b15"/>void <emphasis role="strong">setPointFormat</emphasis> (char pt, double size, glm::vec4 &amp;color)</para>
 </listitem>

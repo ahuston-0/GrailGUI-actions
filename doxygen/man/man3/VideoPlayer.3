@@ -1,0 +1,71 @@
+.TH "VideoPlayer" 3 "Thu Jul 8 2021" "Version 1.0" "Grail" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+VideoPlayer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBShape\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVideoPlayer\fP (\fBCanvas\fP *c, float x, float y, int width, int height)"
+.br
+.ti -1c
+.RI "\fBVideoPlayer\fP (const \fBVideoPlayer\fP &orig)=delete"
+.br
+.ti -1c
+.RI "\fBVideoPlayer\fP & \fBoperator=\fP (const \fBVideoPlayer\fP &orig)=delete"
+.br
+.ti -1c
+.RI "void \fBinit\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBrender\fP ()"
+.br
+.ti -1c
+.RI "void \fBloadFile\fP (std::string filePath)"
+.br
+.ti -1c
+.RI "void \fBloadPlaylist\fP (std::string filePath, bool append=false)"
+.br
+.ti -1c
+.RI "void \fBsetVolume\fP (int volume)"
+.br
+.ti -1c
+.RI "void \fBseekLocation\fP (std::string time, std::string type='relative')"
+.br
+.ti -1c
+.RI "void \fBrevertSeek\fP ()"
+.br
+.ti -1c
+.RI "void \fBplaylistNext\fP ()"
+.br
+.ti -1c
+.RI "void \fBplaylistPrev\fP ()"
+.br
+.ti -1c
+.RI "void \fBcropVideo\fP (float xLeft, float xRight, float yTop, float yBottom)"
+.br
+.ti -1c
+.RI "void \fBsetPaused\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetPlaying\fP ()"
+.br
+.ti -1c
+.RI "void \fBtogglePause\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Grail from the source code\&.

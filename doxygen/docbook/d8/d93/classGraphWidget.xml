@@ -23,17 +23,25 @@
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classGraphWidget_1a48117ac2557a16b76147a7af3f33dca2"/><emphasis role="strong">GraphWidget</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, <link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, double x, double y, double w, double h)</para>
+            <listitem><para><anchor xml:id="_classGraphWidget_1aab9946c008287ed254f00ae2d95f7acf"/><emphasis role="strong">GraphWidget</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, double x, double y, double w, double h, <link linkend="_classStyle">Style</link> *baseStyle=nullptr, <link linkend="_classStyle">Style</link> *xAxisStyle=nullptr, <link linkend="_classStyle">Style</link> *xAxisTextStyle=nullptr, <link linkend="_classStyle">Style</link> *yAxisStyle=nullptr, <link linkend="_classStyle">Style</link> *yAxisTextStyle=nullptr)</para>
 </listitem>
             <listitem><para><anchor xml:id="_classGraphWidget_1ae287624499d234ca05735b39d07fe266"/>virtual void <emphasis role="strong">createXAxis</emphasis> (AxisType a)=0</para>
 </listitem>
             <listitem><para><anchor xml:id="_classGraphWidget_1a11600848dbaa46baccd81d2f62a4da06"/>virtual void <emphasis role="strong">createYAxis</emphasis> (AxisType a)=0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphWidget_1aa0203a400118f1931e5a81090f84b856"/>void <emphasis role="strong">setBaseStyle</emphasis> (const <link linkend="_classStyle">Style</link> *s)</para>
 </listitem>
             <listitem><para><anchor xml:id="_classGraphWidget_1a27174baaa206beff7467128dd757d70e"/>void <emphasis role="strong">setGraphTitle</emphasis> (std::string text)</para>
 </listitem>
             <listitem><para><anchor xml:id="_classGraphWidget_1a6b8ce833b4d5bb958e43f0efecfc2c7e"/>void <emphasis role="strong">setXAxisTextStyle</emphasis> (const <link linkend="_classStyle">Style</link> *xAxisTextStyle)</para>
 </listitem>
             <listitem><para><anchor xml:id="_classGraphWidget_1a6aae045dda93bb64678f3d5ef9ea15c5"/>void <emphasis role="strong">setYAxisTextStyle</emphasis> (const <link linkend="_classStyle">Style</link> *yAxisTextStyle)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphWidget_1a1741f41f173157e08dce898170e75ca7"/>void <emphasis role="strong">setXAxisStyle</emphasis> (const <link linkend="_classStyle">Style</link> *xAxisStyle)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphWidget_1afc7189a8c7e2f3a1ffd16426abd9af71"/>void <emphasis role="strong">setYAxisStyle</emphasis> (const <link linkend="_classStyle">Style</link> *yAxisStyle)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphWidget_1abd89ed60cd4052f5c2fe2db206ba0198"/>virtual void <emphasis role="strong">init</emphasis> ()=0</para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -58,7 +66,13 @@
         <itemizedlist>
             <listitem><para><anchor xml:id="_classGraphWidget_1af49d8cd2c8a805c6c1bba592861ea6e6"/>std::string <emphasis role="strong">graphTitle</emphasis></para>
 </listitem>
+            <listitem><para><anchor xml:id="_classGraphWidget_1aa559cfb87e017d9c4ccc84c491113e64"/>const <link linkend="_classStyle">Style</link> * <emphasis role="strong">baseStyle</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphWidget_1ad29da39eb570d46cf22af6d57406abea"/>const <link linkend="_classStyle">Style</link> * <emphasis role="strong">xAxisStyle</emphasis></para>
+</listitem>
             <listitem><para><anchor xml:id="_classGraphWidget_1a27262007aa01e09c9927ea050ad9204f"/>const <link linkend="_classStyle">Style</link> * <emphasis role="strong">xAxisTextStyle</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classGraphWidget_1a06545bf242c9d1534cd33e78ebade913"/>const <link linkend="_classStyle">Style</link> * <emphasis role="strong">yAxisStyle</emphasis></para>
 </listitem>
             <listitem><para><anchor xml:id="_classGraphWidget_1acf7d0a09c976e6f89440276d977b8ee5"/>const <link linkend="_classStyle">Style</link> * <emphasis role="strong">yAxisTextStyle</emphasis></para>
 </listitem>

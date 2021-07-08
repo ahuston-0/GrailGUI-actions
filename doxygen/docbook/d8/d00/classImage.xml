@@ -13,30 +13,17 @@
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classImage_1a21fae1d0d7ecec019a64cd69e23287d9"/><emphasis role="strong">Image</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, float x, float y, float width, float height, uint32_t textureId, const <link linkend="_classStyle">Style</link> *s)</para>
+            <listitem><para><anchor xml:id="_classImage_1a24c0272579bcc935e5e5e3bf222a805a"/><emphasis role="strong">Image</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, float x, float y, float width, float height, uint32_t textureID=0)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classImage_1aeffbe12db5f8dfa97fc56f0add0c2da2"/><emphasis role="strong">Image</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, float x, float y, float width, float height, const char *filePath, const <link linkend="_classStyle">Style</link> *s)</para>
+            <listitem><para><anchor xml:id="_classImage_1afa5742b8f3869d51a7bd40189f20bcba"/><emphasis role="strong">Image</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, float x, float y, float width, float height, const char *filePath, uint32_t textureID=0)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classImage_1a76bfc1f0269370b71748cd807d1636b8"/><emphasis role="strong">Image</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, float x, float y, float width, float height, char *filePath, const <link linkend="_classStyle">Style</link> *s)</para>
-</listitem>
-            <listitem><para><anchor xml:id="_classImage_1a6f2ac99b917df475cf9f4c1fe512f76b"/>void <emphasis role="strong">change</emphasis> (const char *filePath)</para>
+            <listitem><para><anchor xml:id="_classImage_1a93c1a648ef00cba4015b4a80c9deadd9"/>void <emphasis role="strong">addImage</emphasis> (const char *filePath)</para>
 </listitem>
             <listitem><para><anchor xml:id="_classImage_1a0ecd52e5986c7aca7d0886969d361d9e"/>void <emphasis role="strong">init</emphasis> ()</para>
-</listitem>
-            <listitem><para><anchor xml:id="_classImage_1af81926eb1af9018eb003a9684f9aad57"/>void <emphasis role="strong">process_input</emphasis> (Inputs *in, float dt)</para>
 </listitem>
             <listitem><para><anchor xml:id="_classImage_1aa4f881e18d7b454ca185c05ec8e70b6d"/>void <emphasis role="strong">update</emphasis> ()</para>
 </listitem>
             <listitem><para><anchor xml:id="_classImage_1ac65b410a1271e4075c08974ac32cb373"/>void <emphasis role="strong">render</emphasis> ()</para>
-</listitem>
-            <listitem><para><anchor xml:id="_classImage_1a66539dc96478d908b51c21a71cafdf0a"/>void <emphasis role="strong">addImage</emphasis> (float x, float y, float width, float height, float u0=0, float v0=0, float u1=1, float v1=1)</para>
-</listitem>
-        </itemizedlist>
-</simplesect>
-<simplesect>
-    <title>Static Public Member Functions    </title>
-        <itemizedlist>
-            <listitem><para><anchor xml:id="_classImage_1aee05dfd6d03b2544c4ec640bea8da649"/>static void <emphasis role="strong">combineImage</emphasis> (const std::vector&lt; std::string &gt; &amp;images)</para>
 </listitem>
         </itemizedlist>
 </simplesect>

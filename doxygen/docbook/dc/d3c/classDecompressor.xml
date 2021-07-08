@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classDecompressor" xml:lang="en-US">
+<title>Decompressor Class Reference</title>
+<indexterm><primary>Decompressor</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classDecompressor_1ab508f8f0ec54d7bde17aae20d89956da"/>void <emphasis role="strong">decompressFileToRAM</emphasis> (const char compressedFile[])</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classDecompressor_1ab7ea2d51f2707d3b670bff7428b70747"/>void <emphasis role="strong">decompressFile</emphasis> (const char compressedFile[], const char outFile[])</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

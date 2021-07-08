@@ -57,6 +57,7 @@
     <xi:include href="d1/d18/classCubicFunc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="dc/d0c/classCursor.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="de/d4a/classDate.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dc/d3c/classDecompressor.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="d1/d67/classDocument.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="d4/dc1/classDocView.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="d0/d0c/classDynArray.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -206,6 +207,7 @@
     <xi:include href="da/d32/classVec3d.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="dd/dce/structCSRGraph_1_1VertexCount.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="d1/d82/classVerticalListRenderer.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="d7/d08/classVideoPlayer.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="db/d88/classWebCursor.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="df/df6/classWebDraw.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="da/ded/classWidget2D.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

@@ -99,10 +99,11 @@ Inheritance diagram for GraphWidget:</div>
  <div class="center">
   <img src="../../d8/d93/classGraphWidget.png" usemap="#GraphWidget_map" alt=""/>
   <map id="GraphWidget_map" name="GraphWidget_map">
-<area href="../../d8/d87/classSuperWidget2D.html" alt="SuperWidget2D" shape="rect" coords="119,0,228,24"/>
-<area href="../../d4/d89/classBarChartWidget.html" alt="BarChartWidget" shape="rect" coords="0,112,109,136"/>
-<area href="../../d8/d07/classBoxChartWidget.html" alt="BoxChartWidget" shape="rect" coords="119,112,228,136"/>
-<area href="../../da/d81/classLineGraphWidget.html" alt="LineGraphWidget" shape="rect" coords="238,112,347,136"/>
+<area href="../../d8/d87/classSuperWidget2D.html" alt="SuperWidget2D" shape="rect" coords="234,0,380,24"/>
+<area href="../../d4/d89/classBarChartWidget.html" alt="BarChartWidget" shape="rect" coords="0,112,146,136"/>
+<area href="../../d8/d07/classBoxChartWidget.html" alt="BoxChartWidget" shape="rect" coords="156,112,302,136"/>
+<area href="../../d1/d77/classCandlestickChartWidget.html" alt="CandlestickChartWidget" shape="rect" coords="312,112,458,136"/>
+<area href="../../da/d81/classLineGraphWidget.html" alt="LineGraphWidget" shape="rect" coords="468,112,614,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -116,15 +117,18 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a48117ac2557a16b76147a7af3f33dca2"><td class="memItemLeft" align="right" valign="top"><a id="a48117ac2557a16b76147a7af3f33dca2"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GraphWidget</b> (<a class="el" href="../../d5/d70/classCanvas.html">Canvas</a> *c, <a class="el" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a> *m, <a class="el" href="../../df/d89/classMultiText.html">MultiText</a> *t, double x, double y, double w, double h)</td></tr>
-<tr class="separator:a48117ac2557a16b76147a7af3f33dca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab9946c008287ed254f00ae2d95f7acf"><td class="memItemLeft" align="right" valign="top"><a id="aab9946c008287ed254f00ae2d95f7acf"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>GraphWidget</b> (<a class="el" href="../../d5/d70/classCanvas.html">Canvas</a> *c, double x, double y, double w, double h, <a class="el" href="../../d2/dff/classStyle.html">Style</a> *baseStyle=nullptr, <a class="el" href="../../d2/dff/classStyle.html">Style</a> *xAxisStyle=nullptr, <a class="el" href="../../d2/dff/classStyle.html">Style</a> *xAxisTextStyle=nullptr, <a class="el" href="../../d2/dff/classStyle.html">Style</a> *yAxisStyle=nullptr, <a class="el" href="../../d2/dff/classStyle.html">Style</a> *yAxisTextStyle=nullptr)</td></tr>
+<tr class="separator:aab9946c008287ed254f00ae2d95f7acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae287624499d234ca05735b39d07fe266"><td class="memItemLeft" align="right" valign="top"><a id="ae287624499d234ca05735b39d07fe266"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>createXAxis</b> (AxisType a)=0</td></tr>
 <tr class="separator:ae287624499d234ca05735b39d07fe266"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11600848dbaa46baccd81d2f62a4da06"><td class="memItemLeft" align="right" valign="top"><a id="a11600848dbaa46baccd81d2f62a4da06"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>createYAxis</b> (AxisType a)=0</td></tr>
 <tr class="separator:a11600848dbaa46baccd81d2f62a4da06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0203a400118f1931e5a81090f84b856"><td class="memItemLeft" align="right" valign="top"><a id="aa0203a400118f1931e5a81090f84b856"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setBaseStyle</b> (const <a class="el" href="../../d2/dff/classStyle.html">Style</a> *s)</td></tr>
+<tr class="separator:aa0203a400118f1931e5a81090f84b856"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27174baaa206beff7467128dd757d70e"><td class="memItemLeft" align="right" valign="top"><a id="a27174baaa206beff7467128dd757d70e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setGraphTitle</b> (std::string text)</td></tr>
 <tr class="separator:a27174baaa206beff7467128dd757d70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,13 +138,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setXAxisTextStyle</b>
 <tr class="memitem:a6aae045dda93bb64678f3d5ef9ea15c5"><td class="memItemLeft" align="right" valign="top"><a id="a6aae045dda93bb64678f3d5ef9ea15c5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setYAxisTextStyle</b> (const <a class="el" href="../../d2/dff/classStyle.html">Style</a> *yAxisTextStyle)</td></tr>
 <tr class="separator:a6aae045dda93bb64678f3d5ef9ea15c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classSuperWidget2D"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classSuperWidget2D')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d8/d87/classSuperWidget2D.html">SuperWidget2D</a></td></tr>
-<tr class="memitem:a2967443741f5e52310ebda1db0a3eb1d inherit pub_methods_classSuperWidget2D"><td class="memItemLeft" align="right" valign="top"><a id="a2967443741f5e52310ebda1db0a3eb1d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SuperWidget2D</b> (<a class="el" href="../../d5/d70/classCanvas.html">Canvas</a> *c, <a class="el" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a> *m, <a class="el" href="../../df/d89/classMultiText.html">MultiText</a> *t, float x, float y, float w, float h)</td></tr>
-<tr class="separator:a2967443741f5e52310ebda1db0a3eb1d inherit pub_methods_classSuperWidget2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c32795372522c83a2dea6ebf08eeab2 inherit pub_methods_classSuperWidget2D"><td class="memItemLeft" align="right" valign="top"><a id="a3c32795372522c83a2dea6ebf08eeab2"></a>
+<tr class="memitem:a1741f41f173157e08dce898170e75ca7"><td class="memItemLeft" align="right" valign="top"><a id="a1741f41f173157e08dce898170e75ca7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setXAxisStyle</b> (const <a class="el" href="../../d2/dff/classStyle.html">Style</a> *xAxisStyle)</td></tr>
+<tr class="separator:a1741f41f173157e08dce898170e75ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc7189a8c7e2f3a1ffd16426abd9af71"><td class="memItemLeft" align="right" valign="top"><a id="afc7189a8c7e2f3a1ffd16426abd9af71"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setYAxisStyle</b> (const <a class="el" href="../../d2/dff/classStyle.html">Style</a> *yAxisStyle)</td></tr>
+<tr class="separator:afc7189a8c7e2f3a1ffd16426abd9af71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd89ed60cd4052f5c2fe2db206ba0198"><td class="memItemLeft" align="right" valign="top"><a id="abd89ed60cd4052f5c2fe2db206ba0198"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> ()=0</td></tr>
-<tr class="separator:a3c32795372522c83a2dea6ebf08eeab2 inherit pub_methods_classSuperWidget2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:abd89ed60cd4052f5c2fe2db206ba0198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classSuperWidget2D"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classSuperWidget2D')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d8/d87/classSuperWidget2D.html">SuperWidget2D</a></td></tr>
+<tr class="memitem:a5ebca5e589c5af2fdc243e242e45f9dc inherit pub_methods_classSuperWidget2D"><td class="memItemLeft" align="right" valign="top"><a id="a5ebca5e589c5af2fdc243e242e45f9dc"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>SuperWidget2D</b> (<a class="el" href="../../d5/d70/classCanvas.html">Canvas</a> *c, float x, float y, float w, float h)</td></tr>
+<tr class="separator:a5ebca5e589c5af2fdc243e242e45f9dc inherit pub_methods_classSuperWidget2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -162,9 +172,18 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:af49d8cd2c8a805c6c1bba592861ea6e6"><td class="memItemLeft" align="right" valign="top"><a id="af49d8cd2c8a805c6c1bba592861ea6e6"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>graphTitle</b></td></tr>
 <tr class="separator:af49d8cd2c8a805c6c1bba592861ea6e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa559cfb87e017d9c4ccc84c491113e64"><td class="memItemLeft" align="right" valign="top"><a id="aa559cfb87e017d9c4ccc84c491113e64"></a>
+const <a class="el" href="../../d2/dff/classStyle.html">Style</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>baseStyle</b></td></tr>
+<tr class="separator:aa559cfb87e017d9c4ccc84c491113e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad29da39eb570d46cf22af6d57406abea"><td class="memItemLeft" align="right" valign="top"><a id="ad29da39eb570d46cf22af6d57406abea"></a>
+const <a class="el" href="../../d2/dff/classStyle.html">Style</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>xAxisStyle</b></td></tr>
+<tr class="separator:ad29da39eb570d46cf22af6d57406abea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27262007aa01e09c9927ea050ad9204f"><td class="memItemLeft" align="right" valign="top"><a id="a27262007aa01e09c9927ea050ad9204f"></a>
 const <a class="el" href="../../d2/dff/classStyle.html">Style</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>xAxisTextStyle</b></td></tr>
 <tr class="separator:a27262007aa01e09c9927ea050ad9204f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06545bf242c9d1534cd33e78ebade913"><td class="memItemLeft" align="right" valign="top"><a id="a06545bf242c9d1534cd33e78ebade913"></a>
+const <a class="el" href="../../d2/dff/classStyle.html">Style</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>yAxisStyle</b></td></tr>
+<tr class="separator:a06545bf242c9d1534cd33e78ebade913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf7d0a09c976e6f89440276d977b8ee5"><td class="memItemLeft" align="right" valign="top"><a id="acf7d0a09c976e6f89440276d977b8ee5"></a>
 const <a class="el" href="../../d2/dff/classStyle.html">Style</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>yAxisTextStyle</b></td></tr>
 <tr class="separator:acf7d0a09c976e6f89440276d977b8ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,12 +197,6 @@ AxisType&#160;</td><td class="memItemRight" valign="bottom"><b>yAxisType</b></td
 <tr class="memitem:a076f7ecde563d8a46f4aaec16c52fe06 inherit pro_attribs_classSuperWidget2D"><td class="memItemLeft" align="right" valign="top"><a id="a076f7ecde563d8a46f4aaec16c52fe06"></a>
 <a class="el" href="../../d5/d70/classCanvas.html">Canvas</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>c</b></td></tr>
 <tr class="separator:a076f7ecde563d8a46f4aaec16c52fe06 inherit pro_attribs_classSuperWidget2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61c84a065e830d022ddfc19c5fad0bd1 inherit pro_attribs_classSuperWidget2D"><td class="memItemLeft" align="right" valign="top"><a id="a61c84a065e830d022ddfc19c5fad0bd1"></a>
-<a class="el" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m</b></td></tr>
-<tr class="separator:a61c84a065e830d022ddfc19c5fad0bd1 inherit pro_attribs_classSuperWidget2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afeb2049e65368efecfff341cb44f2b10 inherit pro_attribs_classSuperWidget2D"><td class="memItemLeft" align="right" valign="top"><a id="afeb2049e65368efecfff341cb44f2b10"></a>
-<a class="el" href="../../df/d89/classMultiText.html">MultiText</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>t</b></td></tr>
-<tr class="separator:afeb2049e65368efecfff341cb44f2b10 inherit pro_attribs_classSuperWidget2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a23784b9f17c554edbba75f13fbe5c7 inherit pro_attribs_classSuperWidget2D"><td class="memItemLeft" align="right" valign="top"><a id="a4a23784b9f17c554edbba75f13fbe5c7"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>x</b></td></tr>
 <tr class="separator:a4a23784b9f17c554edbba75f13fbe5c7 inherit pro_attribs_classSuperWidget2D"><td class="memSeparator" colspan="2">&#160;</td></tr>

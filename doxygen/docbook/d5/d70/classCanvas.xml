@@ -23,6 +23,8 @@
 </listitem>
             <listitem><para><anchor xml:id="_classCanvas_1a8928f381ed7567a2e77d873268bdc7e9"/>uint32_t <emphasis role="strong">getHeight</emphasis> () const</para>
 </listitem>
+            <listitem><para><anchor xml:id="_classCanvas_1a9baee49d84bcaac4ebaeda4e9a429eca"/><link linkend="_classGLWin">GLWin</link> * <emphasis role="strong">getWin</emphasis> () const</para>
+</listitem>
             <listitem><para><anchor xml:id="_classCanvas_1a765206cf77e881cf62c57fba4f6bbb53"/>glm::mat4 * <emphasis role="strong">getProjection</emphasis> ()</para>
 </listitem>
             <listitem><para><anchor xml:id="_classCanvas_1a42a74739a13148c6b8754e3133671117"/>void <emphasis role="strong">setProjection</emphasis> (const glm::mat4 &amp;proj)</para>

@@ -92,43 +92,46 @@ $(document).ready(function(){initNavTree('db/d35/LineGraphWidget_8hh_source.html
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="../../da/d81/classLineGraphWidget.html">    5</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../da/d81/classLineGraphWidget.html">LineGraphWidget</a> : <span class="keyword">public</span> <a class="code" href="../../d8/d93/classGraphWidget.html">GraphWidget</a> {</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  std::vector&lt;double&gt; xPoints;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  std::vector&lt;double&gt; yPoints;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  glm::vec4 &amp;pointColor;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordtype">double</span> pointSize;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="comment">// floats used here because its what StyledMultiShape wants</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  void (<a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a>::*markerFunction)(float, float, float, glm::vec4 &amp;);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  std::unordered_map&lt;char, void (<a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a>::*)(float, float, float,</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                                        glm::vec4 &amp;)&gt;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;      map;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <a class="code" href="../../da/d81/classLineGraphWidget.html">LineGraphWidget</a>(<a class="code" href="../../d5/d70/classCanvas.html">Canvas</a> *c, <a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a> *m, <a class="code" href="../../df/d89/classMultiText.html">MultiText</a> *t, <span class="keywordtype">double</span> x,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                  <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> h)</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      : <a class="code" href="../../d8/d93/classGraphWidget.html">GraphWidget</a>(c, m, t, x, y, w, h),</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        xPoints(std::vector&lt;double&gt;()),</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        yPoints(std::vector&lt;double&gt;()),</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        pointColor(grail::blue),</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        pointSize(4),</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        markerFunction(&amp;StyledMultiShape2D::drawCircleMarker) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    map[<span class="charliteral">&#39;o&#39;</span>] = &amp;StyledMultiShape2D::drawCircleMarker;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    map[<span class="charliteral">&#39;s&#39;</span>] = &amp;StyledMultiShape2D::drawSquareMarker;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    map[<span class="charliteral">&#39;h&#39;</span>] = &amp;StyledMultiShape2D::drawHexagonMarker;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    map[<span class="charliteral">&#39;t&#39;</span>] = &amp;StyledMultiShape2D::drawTriangleMarker;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    map[<span class="charliteral">&#39;p&#39;</span>] = &amp;StyledMultiShape2D::drawPentagonMarker;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    map[<span class="charliteral">&#39;c&#39;</span>] = &amp;StyledMultiShape2D::drawCrossMarker;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> setPointFormat(<span class="keywordtype">char</span> pt, <span class="keywordtype">double</span> size, glm::vec4 &amp;color);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">void</span> setXPoints(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;xPoints);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> setYPoints(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;yPoints);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> createXAxis(AxisType a) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> createYAxis(AxisType a) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">void</span> init() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a> *dataStyle;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  std::vector&lt;double&gt; xPoints;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  std::vector&lt;double&gt; yPoints;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  glm::vec4 &amp;pointColor;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">double</span> pointSize;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="comment">// floats used here because its what StyledMultiShape wants</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  void (<a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a>::*markerFunction)(float, float, float, glm::vec4 &amp;);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  std::unordered_map&lt;char, void (<a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a>::*)(float, float, float,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                                        glm::vec4 &amp;)&gt;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;      map;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="../../da/d81/classLineGraphWidget.html">LineGraphWidget</a>(<a class="code" href="../../d5/d70/classCanvas.html">Canvas</a> *c, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> h)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      : <a class="code" href="../../d8/d93/classGraphWidget.html">GraphWidget</a>(c, x, y, w, h),</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        dataStyle(<span class="keyword">nullptr</span>),</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        xPoints(std::vector&lt;double&gt;()),</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        yPoints(std::vector&lt;double&gt;()),</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        pointColor(grail::blue),</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        pointSize(4),</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        markerFunction(&amp;StyledMultiShape2D::drawCircleMarker) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    map[<span class="charliteral">&#39;o&#39;</span>] = &amp;StyledMultiShape2D::drawCircleMarker;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    map[<span class="charliteral">&#39;s&#39;</span>] = &amp;StyledMultiShape2D::drawSquareMarker;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    map[<span class="charliteral">&#39;h&#39;</span>] = &amp;StyledMultiShape2D::drawHexagonMarker;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    map[<span class="charliteral">&#39;t&#39;</span>] = &amp;StyledMultiShape2D::drawTriangleMarker;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    map[<span class="charliteral">&#39;p&#39;</span>] = &amp;StyledMultiShape2D::drawPentagonMarker;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    map[<span class="charliteral">&#39;c&#39;</span>] = &amp;StyledMultiShape2D::drawCrossMarker;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> setDataStyle(<span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a> *s);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> setPointFormat(<span class="keywordtype">char</span> pt, <span class="keywordtype">double</span> size, glm::vec4 &amp;color);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> setXPoints(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;xPoints);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">void</span> setYPoints(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;yPoints);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">void</span> createXAxis(AxisType a) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">void</span> createYAxis(AxisType a) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">void</span> init() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
 <div class="ttc" id="aclassCanvas_html"><div class="ttname"><a href="../../d5/d70/classCanvas.html">Canvas</a></div><div class="ttdef"><b>Definition:</b> Canvas.hh:10</div></div>
-<div class="ttc" id="aclassGraphWidget_html"><div class="ttname"><a href="../../d8/d93/classGraphWidget.html">GraphWidget</a></div><div class="ttdef"><b>Definition:</b> GraphWidget.hh:11</div></div>
+<div class="ttc" id="aclassGraphWidget_html"><div class="ttname"><a href="../../d8/d93/classGraphWidget.html">GraphWidget</a></div><div class="ttdef"><b>Definition:</b> GraphWidget.hh:8</div></div>
 <div class="ttc" id="aclassLineGraphWidget_html"><div class="ttname"><a href="../../da/d81/classLineGraphWidget.html">LineGraphWidget</a></div><div class="ttdef"><b>Definition:</b> LineGraphWidget.hh:5</div></div>
-<div class="ttc" id="aclassMultiText_html"><div class="ttname"><a href="../../df/d89/classMultiText.html">MultiText</a></div><div class="ttdef"><b>Definition:</b> MultiText.hh:7</div></div>
+<div class="ttc" id="aclassStyle_html"><div class="ttname"><a href="../../d2/dff/classStyle.html">Style</a></div><div class="ttdef"><b>Definition:</b> Style.hh:8</div></div>
 <div class="ttc" id="aclassStyledMultiShape2D_html"><div class="ttname"><a href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a></div><div class="ttdef"><b>Definition:</b> MapViewer.hh:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

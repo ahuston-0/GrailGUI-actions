@@ -13,11 +13,15 @@
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classBarChartWidget_1ad8bdc9fcf5f78d8e34402579928f134a"/><emphasis role="strong">BarChartWidget</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, <link linkend="_classStyledMultiShape2D">StyledMultiShape2D</link> *m, <link linkend="_classMultiText">MultiText</link> *t, double x, double y, double w, double h)</para>
+            <listitem><para><anchor xml:id="_classBarChartWidget_1ae57862e7a2c4be7a210b7760dbc90180"/><emphasis role="strong">BarChartWidget</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, double x, double y, double w, double h)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBarChartWidget_1a985cf594bdc4587322d5640762e68e45"/>void <emphasis role="strong">setBarStyle</emphasis> (const <link linkend="_classStyle">Style</link> *s)</para>
 </listitem>
             <listitem><para><anchor xml:id="_classBarChartWidget_1a0a227d91c47d0d04e650bafee90acce1"/>void <emphasis role="strong">setBarWidth</emphasis> (double width)</para>
 </listitem>
             <listitem><para><anchor xml:id="_classBarChartWidget_1a40084e1545171d731ae744ff751190af"/>void <emphasis role="strong">setBarColors</emphasis> (const std::vector&lt; glm::vec4 &gt; &amp;colors)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classBarChartWidget_1afb3048aa9d7ad165f4b0f623c86115c0"/>void <emphasis role="strong">setBarOutlineColors</emphasis> (const std::vector&lt; glm::vec4 &gt; &amp;colors)</para>
 </listitem>
             <listitem><para><anchor xml:id="_classBarChartWidget_1a7f756a75691b3597e3c1073f2fc3d69a"/>void <emphasis role="strong">setValues</emphasis> (const std::vector&lt; double &gt; &amp;values)</para>
 </listitem>

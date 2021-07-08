@@ -8,27 +8,32 @@
 \DoxyCodeLine{00004 }
 \DoxyCodeLine{\Hypertarget{BarChartWidget_8hh_source_l00005}\mbox{\hyperlink{classBarChartWidget}{00005}} \textcolor{keyword}{class }\mbox{\hyperlink{classBarChartWidget}{BarChartWidget}} : \textcolor{keyword}{public} \mbox{\hyperlink{classGraphWidget}{GraphWidget}} \{}
 \DoxyCodeLine{00006  \textcolor{keyword}{private}:}
-\DoxyCodeLine{00007   std::vector<std::string> names;}
-\DoxyCodeLine{00008   std::vector<double> values;}
-\DoxyCodeLine{00009   std::vector<glm::vec4> barColors;}
-\DoxyCodeLine{00010   \textcolor{keywordtype}{double} barWidth;}
-\DoxyCodeLine{00011 }
-\DoxyCodeLine{00012  \textcolor{keyword}{public}:}
-\DoxyCodeLine{00013   \mbox{\hyperlink{classBarChartWidget}{BarChartWidget}}(\mbox{\hyperlink{classCanvas}{Canvas}} *c, \mbox{\hyperlink{classStyledMultiShape2D}{StyledMultiShape2D}} *m, \mbox{\hyperlink{classMultiText}{MultiText}} *t, \textcolor{keywordtype}{double} x,}
-\DoxyCodeLine{00014                  \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} w, \textcolor{keywordtype}{double} h)}
-\DoxyCodeLine{00015       : \mbox{\hyperlink{classGraphWidget}{GraphWidget}}(c, m, t, x, y, w, h),}
-\DoxyCodeLine{00016         values(std::vector<double>()),}
-\DoxyCodeLine{00017         names(std::vector<std::string>()),}
-\DoxyCodeLine{00018         barColors(\{grail::blue\}),}
-\DoxyCodeLine{00019         barWidth(20) \{\}}
-\DoxyCodeLine{00020 }
-\DoxyCodeLine{00021   \textcolor{keywordtype}{void} setBarWidth(\textcolor{keywordtype}{double} width);}
-\DoxyCodeLine{00022   \textcolor{keywordtype}{void} setBarColors(\textcolor{keyword}{const} std::vector<glm::vec4> \&colors);}
-\DoxyCodeLine{00023   \textcolor{keywordtype}{void} setValues(\textcolor{keyword}{const} std::vector<double> \&values);}
-\DoxyCodeLine{00024   \textcolor{keywordtype}{void} setNames(\textcolor{keyword}{const} std::vector<std::string> \&names);}
-\DoxyCodeLine{00025   \textcolor{keywordtype}{void} createXAxis(AxisType a = AxisType::TEXT) \textcolor{keyword}{override};}
-\DoxyCodeLine{00026   \textcolor{keywordtype}{void} createYAxis(AxisType a) \textcolor{keyword}{override};}
-\DoxyCodeLine{00027   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
-\DoxyCodeLine{00028 \};}
+\DoxyCodeLine{00007   \textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}} *barStyle;  \textcolor{comment}{// for the thickness of bar outlines}}
+\DoxyCodeLine{00008   std::vector<std::string> names;}
+\DoxyCodeLine{00009   std::vector<double> values;}
+\DoxyCodeLine{00010   std::vector<glm::vec4> barColors;}
+\DoxyCodeLine{00011   std::vector<glm::vec4> barOutlineColors;}
+\DoxyCodeLine{00012   \textcolor{keywordtype}{double} barWidth;}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014  \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015   \mbox{\hyperlink{classBarChartWidget}{BarChartWidget}}(\mbox{\hyperlink{classCanvas}{Canvas}} *c, \textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} w, \textcolor{keywordtype}{double} h)}
+\DoxyCodeLine{00016       : \mbox{\hyperlink{classGraphWidget}{GraphWidget}}(c, x, y, w, h),}
+\DoxyCodeLine{00017         barStyle(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{00018         values(std::vector<double>()),}
+\DoxyCodeLine{00019         names(std::vector<std::string>()),}
+\DoxyCodeLine{00020         barColors(\{grail::blue\}),}
+\DoxyCodeLine{00021         barOutlineColors(\{grail::blue\}),}
+\DoxyCodeLine{00022         barWidth(20) \{\}}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024   \textcolor{keywordtype}{void} setBarStyle(\textcolor{keyword}{const} \mbox{\hyperlink{classStyle}{Style}} *s);}
+\DoxyCodeLine{00025   \textcolor{keywordtype}{void} setBarWidth(\textcolor{keywordtype}{double} width);}
+\DoxyCodeLine{00026   \textcolor{keywordtype}{void} setBarColors(\textcolor{keyword}{const} std::vector<glm::vec4> \&colors);}
+\DoxyCodeLine{00027   \textcolor{keywordtype}{void} setBarOutlineColors(\textcolor{keyword}{const} std::vector<glm::vec4> \&colors);}
+\DoxyCodeLine{00028   \textcolor{keywordtype}{void} setValues(\textcolor{keyword}{const} std::vector<double> \&values);}
+\DoxyCodeLine{00029   \textcolor{keywordtype}{void} setNames(\textcolor{keyword}{const} std::vector<std::string> \&names);}
+\DoxyCodeLine{00030   \textcolor{keywordtype}{void} createXAxis(AxisType a = AxisType::TEXT) \textcolor{keyword}{override};}
+\DoxyCodeLine{00031   \textcolor{keywordtype}{void} createYAxis(AxisType a) \textcolor{keyword}{override};}
+\DoxyCodeLine{00032   \textcolor{keywordtype}{void} init() \textcolor{keyword}{override};}
+\DoxyCodeLine{00033 \};}
 
 \end{DoxyCode}

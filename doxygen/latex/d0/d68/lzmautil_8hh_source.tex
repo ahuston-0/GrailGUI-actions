@@ -1,0 +1,17 @@
+\hypertarget{lzmautil_8hh_source}{}\doxysection{lzmautil.\+hh}
+\label{lzmautil_8hh_source}\index{src/xp/lzmautil.hh@{src/xp/lzmautil.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include <lzma.h>}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <util/Ex.hh>}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{comment}{// TODO: Add error handling for lzma}}
+\DoxyCodeLine{00006 \textcolor{keywordtype}{void} lzma\_err(lzma\_ret return\_val) \{}
+\DoxyCodeLine{00007   \textcolor{keywordflow}{if} (return\_val != LZMA\_OK \&\& return\_val != LZMA\_STREAM\_END) \{}
+\DoxyCodeLine{00008     std::cerr << return\_val << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00009     \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"{}lzma error"{}};}
+\DoxyCodeLine{00010   \}}
+\DoxyCodeLine{00011 \}}
+
+\end{DoxyCode}

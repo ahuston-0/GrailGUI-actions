@@ -7,33 +7,39 @@ CandlestickChartWidget
 .br
 .PP
 .PP
-Inherits \fBWidget2D\fP\&.
+Inherits \fBGraphWidget\fP\&.
 .SS "Public Member Functions"
 
 .in +1c
 .ti -1c
-.RI "\fBCandlestickChartWidget\fP (\fBStyledMultiShape2D\fP *m, \fBMultiText\fP *t, float x, float y, float w, float h, const std::string &title, const \fBStyle\fP *titleStyle, const \fBStyle\fP *barStyle, float min, float max, float maxMultiplier, float relativeSpace, int tickThicknessStart, int tickThicknessEnd, float tickSize, float tickStart, \fBScale\fP *yAxis)"
+.RI "\fBCandlestickChartWidget\fP (\fBCanvas\fP *c, double x, double y, double w, double h)"
 .br
 .ti -1c
-.RI "\fBCandlestickChartWidget\fP (\fBStyledMultiShape2D\fP *m, \fBMultiText\fP *t, float x, float y, float w, float h)"
+.RI "void \fBsetLineStyle\fP (const \fBStyle\fP *s)"
 .br
 .ti -1c
-.RI "\fBCandlestickChartWidget\fP (\fBStyledMultiShape2D\fP *m, \fBMultiText\fP *t, float x, float y, float w, float h, const std::vector< float > &b)"
+.RI "void \fBsetBoxStyle\fP (const \fBStyle\fP *s)"
 .br
 .ti -1c
-.RI "void \fBsetMinMax\fP (float min, float max)"
+.RI "void \fBsetBoxWidth\fP (double width)"
 .br
 .ti -1c
-.RI "void \fBsetAxisScale\fP (\fBScale\fP *yAxis)"
+.RI "void \fBsetBoxColors\fP (const std::vector< glm::vec4 > &colors)"
 .br
 .ti -1c
-.RI "void \fBsetTitleStyle\fP (const \fBStyle\fP *s)"
+.RI "void \fBsetBoxOutlineColors\fP (const std::vector< glm::vec4 > &colors)"
 .br
 .ti -1c
-.RI "void \fBchart\fP (const std::vector< float > &b, int rulerInterval, int dataPointsPerBar)"
+.RI "void \fBsetData\fP (const std::vector< double > &data)"
 .br
 .ti -1c
-.RI "void \fBsetTitle\fP (const std::string &s)"
+.RI "void \fBsetNames\fP (const std::vector< std::string > &names)"
+.br
+.ti -1c
+.RI "void \fBcreateXAxis\fP (AxisType a=AxisType::TEXT) override"
+.br
+.ti -1c
+.RI "void \fBcreateYAxis\fP (AxisType a) override"
 .br
 .ti -1c
 .RI "void \fBinit\fP () override"

@@ -12,13 +12,19 @@ Inherits \fBGraphWidget\fP\&.
 
 .in +1c
 .ti -1c
-.RI "\fBBarChartWidget\fP (\fBCanvas\fP *c, \fBStyledMultiShape2D\fP *m, \fBMultiText\fP *t, double x, double y, double w, double h)"
+.RI "\fBBarChartWidget\fP (\fBCanvas\fP *c, double x, double y, double w, double h)"
+.br
+.ti -1c
+.RI "void \fBsetBarStyle\fP (const \fBStyle\fP *s)"
 .br
 .ti -1c
 .RI "void \fBsetBarWidth\fP (double width)"
 .br
 .ti -1c
 .RI "void \fBsetBarColors\fP (const std::vector< glm::vec4 > &colors)"
+.br
+.ti -1c
+.RI "void \fBsetBarOutlineColors\fP (const std::vector< glm::vec4 > &colors)"
 .br
 .ti -1c
 .RI "void \fBsetValues\fP (const std::vector< double > &values)"

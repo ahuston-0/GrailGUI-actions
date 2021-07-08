@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Alpine Linux) (preloaded format=pdflatex 2021.7.8)  8 JUL 2021 13:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Alpine Linux) (preloaded format=pdflatex 2021.7.8)  8 JUL 2021 14:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1159,14 +1159,14 @@ LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 6.
 )
 (./de/d6b/classAddress.tex <./de/d6b/classAddress.pdf>
-<de/d6b/classAddress.pdf, id=2199, 501.875pt x 825.00218pt>
+<de/d6b/classAddress.pdf, id=2217, 501.875pt x 825.00218pt>
 File: de/d6b/classAddress.pdf Graphic file (type pdf)
 <use de/d6b/classAddress.pdf>
 Package pdftex.def Info: de/d6b/classAddress.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 85.35826pt.
 )
 (./d7/d80/classAngledMultiText.tex <./d7/d80/classAngledMultiText.pdf>
-<d7/d80/classAngledMultiText.pdf, id=2209, 501.875pt x 547.49545pt>
+<d7/d80/classAngledMultiText.pdf, id=2227, 501.875pt x 547.49545pt>
 File: d7/d80/classAngledMultiText.pdf Graphic file (type pdf)
 <use d7/d80/classAngledMultiText.pdf>
 Package pdftex.def Info: d7/d80/classAngledMultiText.pdf  used on input line 6.
@@ -1175,14 +1175,14 @@ Package pdftex.def Info: d7/d80/classAngledMultiText.pdf  used on input line 6.
  [13])
 (./d2/d75/classAudioPlayer.tex) (./d5/dfb/classAxisWidget.tex <./d5/dfb/classAx
 isWidget.pdf>
-<d5/dfb/classAxisWidget.pdf, id=2231, 501.875pt x 170.1256pt>
+<d5/dfb/classAxisWidget.pdf, id=2249, 501.875pt x 170.1256pt>
 File: d5/dfb/classAxisWidget.pdf Graphic file (type pdf)
 <use d5/dfb/classAxisWidget.pdf>
 Package pdftex.def Info: d5/dfb/classAxisWidget.pdf  used on input line 6.
 (pdftex.def)             Requested size: 251.80223pt x 85.35826pt.
  [14]) (./dc/d9d/classBadType.tex [15])
 (./d4/d89/classBarChartWidget.tex <./d4/d89/classBarChartWidget.pdf>
-<d4/d89/classBarChartWidget.pdf, id=2313, 501.875pt x 552.52425pt>
+<d4/d89/classBarChartWidget.pdf, id=2331, 501.875pt x 552.52425pt>
 File: d4/d89/classBarChartWidget.pdf Graphic file (type pdf)
 <use d4/d89/classBarChartWidget.pdf>
 Package pdftex.def Info: d4/d89/classBarChartWidget.pdf  used on input line 6.
@@ -1207,7 +1207,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
 ) (./df/d1b/classBlockLoader.tex <./df/d1b/classBlockLoader.pdf>
-<df/d1b/classBlockLoader.pdf, id=2340, 501.875pt x 346.1231pt>
+<df/d1b/classBlockLoader.pdf, id=2360, 501.875pt x 346.1231pt>
 File: df/d1b/classBlockLoader.pdf Graphic file (type pdf)
 <use df/d1b/classBlockLoader.pdf>
 Package pdftex.def Info: df/d1b/classBlockLoader.pdf  used on input line 6.
@@ -1230,14 +1230,14 @@ d
 l.9 \mbox
          {\Hypertarget{structBlockMapLoader_1_1BlockMapHeader_a7ef83845ff7ad...
 ]) (./d8/d98/classBlockMapLoader.tex <./d8/d98/classBlockMapLoader.pdf>
-<d8/d98/classBlockMapLoader.pdf, id=2422, 501.875pt x 346.1231pt>
+<d8/d98/classBlockMapLoader.pdf, id=2441, 501.875pt x 346.1231pt>
 File: d8/d98/classBlockMapLoader.pdf Graphic file (type pdf)
 <use d8/d98/classBlockMapLoader.pdf>
 Package pdftex.def Info: d8/d98/classBlockMapLoader.pdf  used on input line 6.
 (pdftex.def)             Requested size: 82.50713pt x 56.9055pt.
 
 [19]) (./d4/dc4/classBool.tex <./d4/dc4/classBool.pdf>
-<d4/dc4/classBool.pdf, id=2460, 501.875pt x 550.00482pt>
+<d4/dc4/classBool.pdf, id=2479, 501.875pt x 550.00482pt>
 File: d4/dc4/classBool.pdf Graphic file (type pdf)
 <use d4/dc4/classBool.pdf>
 Package pdftex.def Info: d4/dc4/classBool.pdf  used on input line 6.
@@ -1245,7 +1245,7 @@ Package pdftex.def Info: d4/dc4/classBool.pdf  used on input line 6.
 )
 (./d7/d5b/structBlockMapLoader_1_1BoundRect.tex [20])
 (./d8/d07/classBoxChartWidget.tex <./d8/d07/classBoxChartWidget.pdf>
-<d8/d07/classBoxChartWidget.pdf, id=2511, 501.875pt x 547.49545pt>
+<d8/d07/classBoxChartWidget.pdf, id=2530, 501.875pt x 547.49545pt>
 File: d8/d07/classBoxChartWidget.pdf Graphic file (type pdf)
 <use d8/d07/classBoxChartWidget.pdf>
 Package pdftex.def Info: d8/d07/classBoxChartWidget.pdf  used on input line 6.
@@ -1257,26 +1257,26 @@ LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 7.19995pt on input line 250.
  [23]) (./db/db6/classBuiltinType.tex <./db/db6/classBuiltinType.pdf>
-<db/db6/classBuiltinType.pdf, id=2646, 501.875pt x 489.62924pt>
+<db/db6/classBuiltinType.pdf, id=2670, 501.875pt x 489.62924pt>
 File: db/db6/classBuiltinType.pdf Graphic file (type pdf)
 <use db/db6/classBuiltinType.pdf>
 Package pdftex.def Info: db/db6/classBuiltinType.pdf  used on input line 6.
 (pdftex.def)             Requested size: 58.32321pt x 56.9055pt.
 ) (./d1/d19/classButton.tex <./d1/d19/classButton.pdf>
-<d1/d19/classButton.pdf, id=2657, 501.875pt x 1056.57736pt>
+<d1/d19/classButton.pdf, id=2681, 501.875pt x 1056.57736pt>
 File: d1/d19/classButton.pdf Graphic file (type pdf)
 <use d1/d19/classButton.pdf>
 Package pdftex.def Info: d1/d19/classButton.pdf  used on input line 6.
 (pdftex.def)             Requested size: 54.05771pt x 113.81102pt.
 [24]) (./df/dc8/classButtonWidget.tex <./df/dc8/classButtonWidget.pdf>
-<df/dc8/classButtonWidget.pdf, id=2681, 501.875pt x 215.85645pt>
+<df/dc8/classButtonWidget.pdf, id=2704, 501.875pt x 215.85645pt>
 File: df/dc8/classButtonWidget.pdf Graphic file (type pdf)
 <use df/dc8/classButtonWidget.pdf>
 Package pdftex.def Info: df/dc8/classButtonWidget.pdf  used on input line 6.
 (pdftex.def)             Requested size: 132.30702pt x 56.9055pt.
 )
 (./dd/dac/classCalendar.tex <./dd/dac/classCalendar.pdf>
-<dd/dac/classCalendar.pdf, id=2690, 501.875pt x 160.6pt>
+<dd/dac/classCalendar.pdf, id=2713, 501.875pt x 160.6pt>
 File: dd/dac/classCalendar.pdf Graphic file (type pdf)
 <use dd/dac/classCalendar.pdf>
 Package pdftex.def Info: dd/dac/classCalendar.pdf  used on input line 6.
@@ -1299,21 +1299,21 @@ l.24 \mbox
           {\Hypertarget{classCamera_ac79460eef36699711fbe8fbcfba9e24d}\label...
 ]) (./d1/d77/classCandlestickChartWidget.tex <./d1/d77/classCandlestickChartWid
 get.pdf>
-<d1/d77/classCandlestickChartWidget.pdf, id=2714, 501.875pt x 260.71402pt>
+<d1/d77/classCandlestickChartWidget.pdf, id=2737, 501.875pt x 391.07103pt>
 File: d1/d77/classCandlestickChartWidget.pdf Graphic file (type pdf)
 <use d1/d77/classCandlestickChartWidget.pdf>
 Package pdftex.def Info: d1/d77/classCandlestickChartWidget.pdf  used on input 
 line 6.
-(pdftex.def)             Requested size: 109.53983pt x 56.9055pt.
+(pdftex.def)             Requested size: 109.53983pt x 85.35826pt.
 ) (./d5/d70/classCanvas.tex <./d5/d70/classCanvas.pdf>
-<d5/d70/classCanvas.pdf, id=2730, 501.875pt x 441.20834pt>
+<d5/d70/classCanvas.pdf, id=2745, 501.875pt x 441.20834pt>
 File: d5/d70/classCanvas.pdf Graphic file (type pdf)
 <use d5/d70/classCanvas.pdf>
 Package pdftex.def Info: d5/d70/classCanvas.pdf  used on input line 6.
 (pdftex.def)             Requested size: 64.7253pt x 56.9055pt.
  [26])
 (./d8/d53/classCircle.tex <./d8/d53/classCircle.pdf>
-<d8/d53/classCircle.pdf, id=2780, 501.875pt x 1115.27664pt>
+<d8/d53/classCircle.pdf, id=2798, 501.875pt x 1115.27664pt>
 File: d8/d53/classCircle.pdf Graphic file (type pdf)
 <use d8/d53/classCircle.pdf>
 Package pdftex.def Info: d8/d53/classCircle.pdf  used on input line 6.
@@ -1338,20 +1338,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ) (./d2/d37/classColor.tex) (./d6/d18/classColorGrid.tex <./d6/d18/classColorGr
 id.pdf>
-<d6/d18/classColorGrid.pdf, id=2831, 501.875pt x 535.33pt>
+<d6/d18/classColorGrid.pdf, id=2850, 501.875pt x 535.33pt>
 File: d6/d18/classColorGrid.pdf Graphic file (type pdf)
 <use d6/d18/classColorGrid.pdf>
 Package pdftex.def Info: d6/d18/classColorGrid.pdf  used on input line 6.
 (pdftex.def)             Requested size: 53.34552pt x 56.9055pt.
  [28]) (./d7/dd3/classCombiner.tex) (./df/ded/classCompoundType.tex <./df/ded/c
 lassCompoundType.pdf>
-<df/ded/classCompoundType.pdf, id=2854, 501.875pt x 743.51776pt>
+<df/ded/classCompoundType.pdf, id=2873, 501.875pt x 743.51776pt>
 File: df/ded/classCompoundType.pdf Graphic file (type pdf)
 <use df/ded/classCompoundType.pdf>
 Package pdftex.def Info: df/ded/classCompoundType.pdf  used on input line 6.
 (pdftex.def)             Requested size: 76.81725pt x 113.81102pt.
  [29]) (./d9/df9/classConfig.tex <./d9/df9/classConfig.pdf>
-<d9/df9/classConfig.pdf, id=2881, 501.875pt x 489.62924pt>
+<d9/df9/classConfig.pdf, id=2900, 501.875pt x 489.62924pt>
 File: d9/df9/classConfig.pdf Graphic file (type pdf)
 <use d9/df9/classConfig.pdf>
 Package pdftex.def Info: d9/df9/classConfig.pdf  used on input line 6.
@@ -1374,7 +1374,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
 ) (./da/d9f/classContactInfo.tex <./da/d9f/classContactInfo.pdf>
-<da/d9f/classContactInfo.pdf, id=2887, 501.875pt x 477.97571pt>
+<da/d9f/classContactInfo.pdf, id=2906, 501.875pt x 477.97571pt>
 File: da/d9f/classContactInfo.pdf Graphic file (type pdf)
 <use da/d9f/classContactInfo.pdf>
 Package pdftex.def Info: da/d9f/classContactInfo.pdf  used on input line 6.
@@ -1382,70 +1382,70 @@ Package pdftex.def Info: da/d9f/classContactInfo.pdf  used on input line 6.
  [30])
 (./dd/d96/classcsp.tex) (./d9/da8/classCSPClient.tex [31])
 (./d9/d40/classCSPConfig.tex <./d9/d40/classCSPConfig.pdf>
-<d9/d40/classCSPConfig.pdf, id=2959, 501.875pt x 489.62924pt>
+<d9/d40/classCSPConfig.pdf, id=2978, 501.875pt x 489.62924pt>
 File: d9/d40/classCSPConfig.pdf Graphic file (type pdf)
 <use d9/d40/classCSPConfig.pdf>
 Package pdftex.def Info: d9/d40/classCSPConfig.pdf  used on input line 6.
 (pdftex.def)             Requested size: 58.32321pt x 56.9055pt.
 )
 (./d1/d96/classCSPRequest.tex <./d1/d96/classCSPRequest.pdf>
-<d1/d96/classCSPRequest.pdf, id=2964, 501.875pt x 451.1254pt>
+<d1/d96/classCSPRequest.pdf, id=2983, 501.875pt x 451.1254pt>
 File: d1/d96/classCSPRequest.pdf Graphic file (type pdf)
 <use d1/d96/classCSPRequest.pdf>
 Package pdftex.def Info: d1/d96/classCSPRequest.pdf  used on input line 6.
 (pdftex.def)             Requested size: 63.3009pt x 56.9055pt.
 )
 (./d8/dbc/classCSPServlet.tex <./d8/dbc/classCSPServlet.pdf>
-<d8/dbc/classCSPServlet.pdf, id=2969, 501.875pt x 67.48212pt>
+<d8/dbc/classCSPServlet.pdf, id=2988, 501.875pt x 67.48212pt>
 File: d8/dbc/classCSPServlet.pdf Graphic file (type pdf)
 <use d8/dbc/classCSPServlet.pdf>
 Package pdftex.def Info: d8/dbc/classCSPServlet.pdf  used on input line 6.
 (pdftex.def)             Requested size: 398.32246pt x 53.55817pt.
  [32])
 (./dd/d3e/classCSPTest1.tex <./dd/d3e/classCSPTest1.pdf>
-<dd/d3e/classCSPTest1.pdf, id=2999, 501.875pt x 472.3547pt>
+<dd/d3e/classCSPTest1.pdf, id=3018, 501.875pt x 472.3547pt>
 File: dd/d3e/classCSPTest1.pdf Graphic file (type pdf)
 <use dd/d3e/classCSPTest1.pdf>
 Package pdftex.def Info: dd/d3e/classCSPTest1.pdf  used on input line 6.
 (pdftex.def)             Requested size: 60.4598pt x 56.9055pt.
 )
 (./d4/dd5/classCSPTest2.tex <./d4/dd5/classCSPTest2.pdf>
-<d4/dd5/classCSPTest2.pdf, id=3005, 501.875pt x 472.3547pt>
+<d4/dd5/classCSPTest2.pdf, id=3024, 501.875pt x 472.3547pt>
 File: d4/dd5/classCSPTest2.pdf Graphic file (type pdf)
 <use d4/dd5/classCSPTest2.pdf>
 Package pdftex.def Info: d4/dd5/classCSPTest2.pdf  used on input line 6.
 (pdftex.def)             Requested size: 60.4598pt x 56.9055pt.
  [33])
 (./d5/d26/classCSPTest3.tex <./d5/d26/classCSPTest3.pdf>
-<d5/d26/classCSPTest3.pdf, id=3027, 501.875pt x 472.3547pt>
+<d5/d26/classCSPTest3.pdf, id=3046, 501.875pt x 472.3547pt>
 File: d5/d26/classCSPTest3.pdf Graphic file (type pdf)
 <use d5/d26/classCSPTest3.pdf>
 Package pdftex.def Info: d5/d26/classCSPTest3.pdf  used on input line 6.
 (pdftex.def)             Requested size: 60.4598pt x 56.9055pt.
 )
 (./d4/d1c/classCSPTest4.tex <./d4/d1c/classCSPTest4.pdf>
-<d4/d1c/classCSPTest4.pdf, id=3033, 501.875pt x 472.3547pt>
+<d4/d1c/classCSPTest4.pdf, id=3052, 501.875pt x 472.3547pt>
 File: d4/d1c/classCSPTest4.pdf Graphic file (type pdf)
 <use d4/d1c/classCSPTest4.pdf>
 Package pdftex.def Info: d4/d1c/classCSPTest4.pdf  used on input line 6.
 (pdftex.def)             Requested size: 60.4598pt x 56.9055pt.
 )
 (./d8/de1/classCSPTest5.tex <./d8/de1/classCSPTest5.pdf>
-<d8/de1/classCSPTest5.pdf, id=3039, 501.875pt x 472.3547pt>
+<d8/de1/classCSPTest5.pdf, id=3058, 501.875pt x 472.3547pt>
 File: d8/de1/classCSPTest5.pdf Graphic file (type pdf)
 <use d8/de1/classCSPTest5.pdf>
 Package pdftex.def Info: d8/de1/classCSPTest5.pdf  used on input line 6.
 (pdftex.def)             Requested size: 60.4598pt x 56.9055pt.
  [34])
 (./d1/dd2/classCSPTest6.tex <./d1/dd2/classCSPTest6.pdf>
-<d1/dd2/classCSPTest6.pdf, id=3060, 501.875pt x 472.3547pt>
+<d1/dd2/classCSPTest6.pdf, id=3079, 501.875pt x 472.3547pt>
 File: d1/dd2/classCSPTest6.pdf Graphic file (type pdf)
 <use d1/dd2/classCSPTest6.pdf>
 Package pdftex.def Info: d1/dd2/classCSPTest6.pdf  used on input line 6.
 (pdftex.def)             Requested size: 60.4598pt x 56.9055pt.
 )
 (./df/d21/classCSPTest7.tex <./df/d21/classCSPTest7.pdf>
-<df/d21/classCSPTest7.pdf, id=3066, 501.875pt x 472.3547pt>
+<df/d21/classCSPTest7.pdf, id=3085, 501.875pt x 472.3547pt>
 File: df/d21/classCSPTest7.pdf Graphic file (type pdf)
 <use df/d21/classCSPTest7.pdf>
 Package pdftex.def Info: df/d21/classCSPTest7.pdf  used on input line 6.
@@ -1469,7 +1469,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
  <./d3/dfd/classCSRGraph.pdf>
-<d3/dfd/classCSRGraph.pdf, id=3072, 501.875pt x 127.05467pt>
+<d3/dfd/classCSRGraph.pdf, id=3091, 501.875pt x 127.05467pt>
 File: d3/dfd/classCSRGraph.pdf Graphic file (type pdf)
 <use d3/dfd/classCSRGraph.pdf>
 Package pdftex.def Info: d3/dfd/classCSRGraph.pdf  used on input line 6.
@@ -1485,21 +1485,21 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 ) (./d3/dc2/classCTimer.tex)
 (./d1/d18/classCubicFunc.tex) (./dc/d0c/classCursor.tex <./dc/d0c/classCursor.p
 df>
-<dc/d0c/classCursor.pdf, id=3135, 501.875pt x 836.455pt>
+<dc/d0c/classCursor.pdf, id=3154, 501.875pt x 836.455pt>
 File: dc/d0c/classCursor.pdf Graphic file (type pdf)
 <use dc/d0c/classCursor.pdf>
 Package pdftex.def Info: dc/d0c/classCursor.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.20894pt x 85.35826pt.
  [37]) (./de/d4a/classDate.tex <./de/d4a/classDate.pdf>
-<de/d4a/classDate.pdf, id=3172, 501.875pt x 550.00482pt>
+<de/d4a/classDate.pdf, id=3191, 501.875pt x 550.00482pt>
 File: de/d4a/classDate.pdf Graphic file (type pdf)
 <use de/d4a/classDate.pdf>
 Package pdftex.def Info: de/d4a/classDate.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
  [38])
-(./d1/d67/classDocument.tex) (./d4/dc1/classDocView.tex <./d4/dc1/classDocView.
-pdf>
-<d4/dc1/classDocView.pdf, id=3217, 501.875pt x 565.49268pt>
+(./dc/d3c/classDecompressor.tex) (./d1/d67/classDocument.tex)
+(./d4/dc1/classDocView.tex <./d4/dc1/classDocView.pdf>
+<d4/dc1/classDocView.pdf, id=3236, 501.875pt x 565.49268pt>
 File: d4/dc1/classDocView.pdf Graphic file (type pdf)
 <use d4/dc1/classDocView.pdf>
 Package pdftex.def Info: d4/dc1/classDocView.pdf  used on input line 6.
@@ -1509,23 +1509,22 @@ _a57608244d4a2134a986009c7b740b238}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.21 \mbox
-          {\Hypertarget{classDocView_a5499afb53a6bf660a9b6d27452657f3e}\labe...
-pdfTeX warning (ext4): destination with the same identifier (name{classDate_a71
-f0df2fb33a169be6f5c594aa155150}) has been already used, duplicate ignored
+l.9 \doxysubsection
+                   *{Public Member Functions}pdfTeX warning (ext4): destination
+ with the same identifier (name{classDate_a71f0df2fb33a169be6f5c594aa155150}) h
+as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.21 \mbox
-          {\Hypertarget{classDocView_a5499afb53a6bf660a9b6d27452657f3e}\labe...
-pdfTeX warning (ext4): destination with the same identifier (name{classDate_acc
-f05200f2349b15cf88058ecc21dd73}) has been already used, duplicate ignored
+l.9 \doxysubsection
+                   *{Public Member Functions}pdfTeX warning (ext4): destination
+ with the same identifier (name{classDate_accf05200f2349b15cf88058ecc21dd73}) h
+as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.21 \mbox
-          {\Hypertarget{classDocView_a5499afb53a6bf660a9b6d27452657f3e}\labe...
-]) (./d0/d0c/classDynArray.tex
+l.9 \doxysubsection
+                   *{Public Member Functions}]) (./d0/d0c/classDynArray.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
@@ -1543,14 +1542,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
 ) (./db/dc7/classEllipse.tex <./db/dc7/classEllipse.pdf>
-<db/dc7/classEllipse.pdf, id=3267, 501.875pt x 1115.27664pt>
+<db/dc7/classEllipse.pdf, id=3288, 501.875pt x 1115.27664pt>
 File: db/dc7/classEllipse.pdf Graphic file (type pdf)
 <use db/dc7/classEllipse.pdf>
 Package pdftex.def Info: db/dc7/classEllipse.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.20894pt x 113.81102pt.
  [40])
 (./d9/d17/classEmail.tex <./d9/d17/classEmail.pdf>
-<d9/d17/classEmail.pdf, id=3308, 501.875pt x 550.00482pt>
+<d9/d17/classEmail.pdf, id=3329, 501.875pt x 550.00482pt>
 File: d9/d17/classEmail.pdf Graphic file (type pdf)
 <use d9/d17/classEmail.pdf>
 Package pdftex.def Info: d9/d17/classEmail.pdf  used on input line 6.
@@ -1558,112 +1557,113 @@ Package pdftex.def Info: d9/d17/classEmail.pdf  used on input line 6.
 )
 (./d9/db9/classESRIPoint.tex) (./da/d2b/classESRIPolygon.tex <./da/d2b/classESR
 IPolygon.pdf>
-<da/d2b/classESRIPolygon.pdf, id=3319, 501.875pt x 431.7229pt>
+<da/d2b/classESRIPolygon.pdf, id=3340, 501.875pt x 431.7229pt>
 File: da/d2b/classESRIPolygon.pdf Graphic file (type pdf)
 <use da/d2b/classESRIPolygon.pdf>
 Package pdftex.def Info: da/d2b/classESRIPolygon.pdf  used on input line 6.
 (pdftex.def)             Requested size: 66.14967pt x 56.9055pt.
-) (./da/db4/classESRIShape.tex <./da/db4/classESRIShape.pdf>
-<da/db4/classESRIShape.pdf, id=3325, 501.875pt x 431.7229pt>
+ [41]) (./da/db4/classESRIShape.tex <./da/db4/classESRIShape.pdf>
+<da/db4/classESRIShape.pdf, id=3368, 501.875pt x 431.7229pt>
 File: da/db4/classESRIShape.pdf Graphic file (type pdf)
 <use da/db4/classESRIShape.pdf>
 Package pdftex.def Info: da/db4/classESRIShape.pdf  used on input line 6.
 (pdftex.def)             Requested size: 66.14967pt x 56.9055pt.
-
-[41]) (./d1/d0a/classEx.tex <./d1/d0a/classEx.pdf>
-<d1/d0a/classEx.pdf, id=3357, 501.875pt x 647.57933pt>
+) (./d1/d0a/classEx.tex <./d1/d0a/classEx.pdf>
+<d1/d0a/classEx.pdf, id=3375, 501.875pt x 647.57933pt>
 File: d1/d0a/classEx.pdf Graphic file (type pdf)
 <use d1/d0a/classEx.pdf>
 Package pdftex.def Info: d1/d0a/classEx.pdf  used on input line 6.
 (pdftex.def)             Requested size: 44.09468pt x 56.9055pt.
  [42]) (./dd/d58/classF32.tex <./dd/d58/classF32.pdf>
-<dd/d58/classF32.pdf, id=3382, 501.875pt x 550.00482pt>
+<dd/d58/classF32.pdf, id=3401, 501.875pt x 550.00482pt>
 File: dd/d58/classF32.pdf Graphic file (type pdf)
 <use dd/d58/classF32.pdf>
 Package pdftex.def Info: dd/d58/classF32.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
 ) (./db/dcb/classF64.tex <./db/dcb/classF64.pdf>
-<db/dcb/classF64.pdf, id=3392, 501.875pt x 550.00482pt>
+<db/dcb/classF64.pdf, id=3411, 501.875pt x 550.00482pt>
 File: db/dcb/classF64.pdf Graphic file (type pdf)
 <use db/dcb/classF64.pdf>
 Package pdftex.def Info: db/dcb/classF64.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
-
-[43]) (./d0/dca/classF64Renderer.tex <./d0/dca/classF64Renderer.pdf>
-<d0/dca/classF64Renderer.pdf, id=3428, 501.875pt x 211.31949pt>
+ [43])
+(./d0/dca/classF64Renderer.tex <./d0/dca/classF64Renderer.pdf>
+<d0/dca/classF64Renderer.pdf, id=3441, 501.875pt x 211.31949pt>
 File: d0/dca/classF64Renderer.pdf Graphic file (type pdf)
 <use d0/dca/classF64Renderer.pdf>
 Package pdftex.def Info: d0/dca/classF64Renderer.pdf  used on input line 6.
 (pdftex.def)             Requested size: 135.14813pt x 56.9055pt.
 )
-(./d3/d44/structFastFontHeader.tex) (./d7/d12/classFatalEx.tex <./d7/d12/classF
-atalEx.pdf>
-<d7/d12/classFatalEx.pdf, id=3437, 501.875pt x 647.57933pt>
+(./d3/d44/structFastFontHeader.tex [44pdfTeX warning (ext4): destination with t
+he same identifier (name{classF64Renderer_a4a109bab2651c6ffd14bd1fa2191e852}) h
+as been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.9 \mbox
+         {\Hypertarget{structFastFontHeader_aabbdb226952b09a1694a8ab5c41e0b8...
+]) (./d7/d12/classFatalEx.tex <./d7/d12/classFatalEx.pdf>
+<d7/d12/classFatalEx.pdf, id=3475, 501.875pt x 647.57933pt>
 File: d7/d12/classFatalEx.pdf Graphic file (type pdf)
 <use d7/d12/classFatalEx.pdf>
 Package pdftex.def Info: d7/d12/classFatalEx.pdf  used on input line 6.
 (pdftex.def)             Requested size: 44.09468pt x 56.9055pt.
- [44pdfTeX warning (ext4): destination with the same identifier (name{classF64R
-enderer_a4a109bab2651c6ffd14bd1fa2191e852}) has been already used, duplicate ig
-nored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.14 \end{DoxyCompactItemize}
-                             ]) (./d4/ded/classFileUtil.tex
+)
+(./d4/ded/classFileUtil.tex
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 33.
-)
-(./d4/d42/classFont.tex [45]) (./dc/d34/classFontFace.tex [46])
-(./d6/dd4/structAxisWidget_1_1Format.tex) (./d0/d05/classFormServlet.tex <./d0/
-d05/classFormServlet.pdf>
-<d0/d05/classFormServlet.pdf, id=3516, 501.875pt x 676.68808pt>
+ [45]) (./d4/d42/classFont.tex [46])
+(./dc/d34/classFontFace.tex) (./d6/dd4/structAxisWidget_1_1Format.tex [47])
+(./d0/d05/classFormServlet.tex <./d0/d05/classFormServlet.pdf>
+<d0/d05/classFormServlet.pdf, id=3563, 501.875pt x 676.68808pt>
 File: d0/d05/classFormServlet.pdf Graphic file (type pdf)
 <use d0/d05/classFormServlet.pdf>
 Package pdftex.def Info: d0/d05/classFormServlet.pdf  used on input line 6.
 (pdftex.def)             Requested size: 63.3009pt x 85.35826pt.
- [47]) (./da/d77/classGapMinderWidget.tex <./da/d77/classGapMinderWidget.pdf>
-<da/d77/classGapMinderWidget.pdf, id=3552, 501.875pt x 331.81966pt>
+)
+(./da/d77/classGapMinderWidget.tex <./da/d77/classGapMinderWidget.pdf>
+<da/d77/classGapMinderWidget.pdf, id=3569, 501.875pt x 331.81966pt>
 File: da/d77/classGapMinderWidget.pdf Graphic file (type pdf)
 <use da/d77/classGapMinderWidget.pdf>
 Package pdftex.def Info: da/d77/classGapMinderWidget.pdf  used on input line 6.
 
 (pdftex.def)             Requested size: 86.0681pt x 56.9055pt.
-) (./d5/d41/structBlockLoader_1_1GeneralHeader.tex)
+)
+(./d5/d41/structBlockLoader_1_1GeneralHeader.tex [48])
 (./d4/d2f/classGenericList.tex <./d4/d2f/classGenericList.pdf>
-<d4/d2f/classGenericList.pdf, id=3569, 501.875pt x 477.97571pt>
+<d4/d2f/classGenericList.pdf, id=3609, 501.875pt x 477.97571pt>
 File: d4/d2f/classGenericList.pdf Graphic file (type pdf)
 <use d4/d2f/classGenericList.pdf>
 Package pdftex.def Info: d4/d2f/classGenericList.pdf  used on input line 6.
 (pdftex.def)             Requested size: 59.7476pt x 56.9055pt.
- [48])
-(./dc/dda/classGLWin.tex
+)
+(./dc/dda/classGLWin.tex [49]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 96.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 6.29996pt on input line 96.
- [49] [50] [51]) (./d6/dfc/classFont_1_1Glyph.tex)
-(./d2/d62/classGraph.tex <./d2/d62/classGraph.pdf>
-<d2/d62/classGraph.pdf, id=3793, 501.875pt x 63.52734pt>
+ [50] [51]) (./d6/dfc/classFont_1_1Glyph.tex
+[52]) (./d2/d62/classGraph.tex <./d2/d62/classGraph.pdf>
+<d2/d62/classGraph.pdf, id=3841, 501.875pt x 63.52734pt>
 File: d2/d62/classGraph.pdf Graphic file (type pdf)
 <use d2/d62/classGraph.pdf>
 Package pdftex.def Info: d2/d62/classGraph.pdf  used on input line 6.
 (pdftex.def)             Requested size: 398.36842pt x 50.42271pt.
- [52])
+)
 (./d8/d2a/classGraphView.tex <./d8/d2a/classGraphView.pdf>
-<d8/d2a/classGraphView.pdf, id=3836, 501.875pt x 483.73723pt>
+<d8/d2a/classGraphView.pdf, id=3846, 501.875pt x 483.73723pt>
 File: d8/d2a/classGraphView.pdf Graphic file (type pdf)
 <use d8/d2a/classGraphView.pdf>
 Package pdftex.def Info: d8/d2a/classGraphView.pdf  used on input line 6.
 (pdftex.def)             Requested size: 59.0354pt x 56.9055pt.
-)
+ [53])
 (./d8/d93/classGraphWidget.tex <./d8/d93/classGraphWidget.pdf>
-<d8/d93/classGraphWidget.pdf, id=3847, 501.875pt x 171.58102pt>
+<d8/d93/classGraphWidget.pdf, id=3880, 501.875pt x 97.76526pt>
 File: d8/d93/classGraphWidget.pdf Graphic file (type pdf)
 <use d8/d93/classGraphWidget.pdf>
 Package pdftex.def Info: d8/d93/classGraphWidget.pdf  used on input line 6.
-(pdftex.def)             Requested size: 249.67331pt x 85.35826pt.
- [53])
+(pdftex.def)             Requested size: 398.37608pt x 77.59862pt.
+ [54])
 (./df/d37/classHash.tex) (./db/d1a/classHashMap.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1682,97 +1682,97 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
  <./db/d1a/classHashMap.pdf>
-<db/d1a/classHashMap.pdf, id=3887, 501.875pt x 343.16205pt>
+<db/d1a/classHashMap.pdf, id=3937, 501.875pt x 343.16205pt>
 File: db/d1a/classHashMap.pdf Graphic file (type pdf)
 <use db/d1a/classHashMap.pdf>
 Package pdftex.def Info: db/d1a/classHashMap.pdf  used on input line 6.
 (pdftex.def)             Requested size: 83.21933pt x 56.9055pt.
- [54]) (./d5/dc1/classHashMapBase.tex <./d5/dc1/classHashMapBase.pdf>
-<d5/dc1/classHashMapBase.pdf, id=3924, 501.875pt x 88.04895pt>
+ [55]) (./d5/dc1/classHashMapBase.tex <./d5/dc1/classHashMapBase.pdf>
+<d5/dc1/classHashMapBase.pdf, id=3981, 501.875pt x 88.04895pt>
 File: d5/dc1/classHashMapBase.pdf Graphic file (type pdf)
 <use d5/dc1/classHashMapBase.pdf>
 Package pdftex.def Info: d5/dc1/classHashMapBase.pdf  used on input line 6.
 (pdftex.def)             Requested size: 324.36165pt x 56.9055pt.
- [55]) (./de/dcc/classHeatMap.tex <./de/dcc/classHeatMap.pdf>
-<de/dcc/classHeatMap.pdf, id=3955, 501.875pt x 565.49268pt>
+ [56]) (./de/dcc/classHeatMap.tex <./de/dcc/classHeatMap.pdf>
+<de/dcc/classHeatMap.pdf, id=4018, 501.875pt x 565.49268pt>
 File: de/dcc/classHeatMap.pdf Graphic file (type pdf)
 <use de/dcc/classHeatMap.pdf>
 Package pdftex.def Info: de/dcc/classHeatMap.pdf  used on input line 6.
 (pdftex.def)             Requested size: 50.49675pt x 56.9055pt.
 ) (./de/de6/classHTTPRequest.tex <./de/de6/classHTTPRequest.pdf>
-<de/de6/classHTTPRequest.pdf, id=3960, 501.875pt x 422.62892pt>
+<de/de6/classHTTPRequest.pdf, id=4023, 501.875pt x 422.62892pt>
 File: de/de6/classHTTPRequest.pdf Graphic file (type pdf)
 <use de/de6/classHTTPRequest.pdf>
 Package pdftex.def Info: de/de6/classHTTPRequest.pdf  used on input line 6.
 (pdftex.def)             Requested size: 67.57407pt x 56.9055pt.
- [56])
+)
 (./d3/d96/classHttpServlet.tex <./d3/d96/classHttpServlet.pdf>
-<d3/d96/classHttpServlet.pdf, id=3998, 501.875pt x 286.7814pt>
+<d3/d96/classHttpServlet.pdf, id=4028, 501.875pt x 286.7814pt>
 File: d3/d96/classHttpServlet.pdf Graphic file (type pdf)
 <use d3/d96/classHttpServlet.pdf>
 Package pdftex.def Info: d3/d96/classHttpServlet.pdf  used on input line 6.
 (pdftex.def)             Requested size: 149.37666pt x 85.35826pt.
-)
+ [57])
 (./df/d94/classI128.tex <./df/d94/classI128.pdf>
-<df/d94/classI128.pdf, id=4004, 501.875pt x 550.00482pt>
+<df/d94/classI128.pdf, id=4059, 501.875pt x 550.00482pt>
 File: df/d94/classI128.pdf Graphic file (type pdf)
 <use df/d94/classI128.pdf>
 Package pdftex.def Info: df/d94/classI128.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
- [57]) (./d2/d94/classI16.tex <./d2/d94/classI16.pdf>
-<d2/d94/classI16.pdf, id=4038, 501.875pt x 550.00482pt>
+) (./d2/d94/classI16.tex <./d2/d94/classI16.pdf>
+<d2/d94/classI16.pdf, id=4071, 501.875pt x 550.00482pt>
 File: d2/d94/classI16.pdf Graphic file (type pdf)
 <use d2/d94/classI16.pdf>
 Package pdftex.def Info: d2/d94/classI16.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
-) (./da/d22/classI24.tex <./da/d22/classI24.pdf>
-<da/d22/classI24.pdf, id=4048, 501.875pt x 550.00482pt>
+ [58]) (./da/d22/classI24.tex <./da/d22/classI24.pdf>
+<da/d22/classI24.pdf, id=4104, 501.875pt x 550.00482pt>
 File: da/d22/classI24.pdf Graphic file (type pdf)
 <use da/d22/classI24.pdf>
 Package pdftex.def Info: da/d22/classI24.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
- [58])
+)
 (./d5/d09/classI256.tex <./d5/d09/classI256.pdf>
-<d5/d09/classI256.pdf, id=4085, 501.875pt x 550.00482pt>
+<d5/d09/classI256.pdf, id=4114, 501.875pt x 550.00482pt>
 File: d5/d09/classI256.pdf Graphic file (type pdf)
 <use d5/d09/classI256.pdf>
 Package pdftex.def Info: d5/d09/classI256.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
-) (./d9/d96/classI32.tex <./d9/d96/classI32.pdf>
-<d9/d96/classI32.pdf, id=4097, 501.875pt x 550.00482pt>
+ [59]) (./d9/d96/classI32.tex <./d9/d96/classI32.pdf>
+<d9/d96/classI32.pdf, id=4149, 501.875pt x 550.00482pt>
 File: d9/d96/classI32.pdf Graphic file (type pdf)
 <use d9/d96/classI32.pdf>
 Package pdftex.def Info: d9/d96/classI32.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
- [59]) (./da/ddf/classI64.tex <./da/ddf/classI64.pdf>
-<da/ddf/classI64.pdf, id=4132, 501.875pt x 550.00482pt>
+) (./da/ddf/classI64.tex <./da/ddf/classI64.pdf>
+<da/ddf/classI64.pdf, id=4159, 501.875pt x 550.00482pt>
 File: da/ddf/classI64.pdf Graphic file (type pdf)
 <use da/ddf/classI64.pdf>
 Package pdftex.def Info: da/ddf/classI64.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
-)
+ [60])
 (./d8/d86/classI8.tex <./d8/d86/classI8.pdf>
-<d8/d86/classI8.pdf, id=4142, 501.875pt x 550.00482pt>
+<d8/d86/classI8.pdf, id=4194, 501.875pt x 550.00482pt>
 File: d8/d86/classI8.pdf Graphic file (type pdf)
 <use d8/d86/classI8.pdf>
 Package pdftex.def Info: d8/d86/classI8.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
- [60]) (./d8/d00/classImage.tex <./d8/d00/classImage.pdf>
-<d8/d00/classImage.pdf, id=4175, 501.875pt x 716.96857pt>
+) (./d8/d00/classImage.tex <./d8/d00/classImage.pdf>
+<d8/d00/classImage.pdf, id=4204, 501.875pt x 716.96857pt>
 File: d8/d00/classImage.pdf Graphic file (type pdf)
 <use d8/d00/classImage.pdf>
 Package pdftex.def Info: d8/d00/classImage.pdf  used on input line 6.
 (pdftex.def)             Requested size: 39.82918pt x 56.9055pt.
-) (./d8/d84/structBlockLoader_1_1Info.tex [61])
-(./da/d18/classInputEvent.tex) (./d1/d70/classInsertion.tex)
+ [61]) (./d8/d84/structBlockLoader_1_1Info.tex)
+(./da/d18/classInputEvent.tex) (./d1/d70/classInsertion.tex [62])
 (./d7/d1e/classInterpretCSPStream.tex) (./db/dc1/classIPV4Socket.tex <./db/dc1/
 classIPV4Socket.pdf>
-<db/dc1/classIPV4Socket.pdf, id=4213, 501.875pt x 472.3547pt>
+<db/dc1/classIPV4Socket.pdf, id=4260, 501.875pt x 472.3547pt>
 File: db/dc1/classIPV4Socket.pdf Graphic file (type pdf)
 <use db/dc1/classIPV4Socket.pdf>
 Package pdftex.def Info: db/dc1/classIPV4Socket.pdf  used on input line 6.
 (pdftex.def)             Requested size: 60.4598pt x 56.9055pt.
- [62]) (./d8/d32/classHashMap_1_1Iterator.tex
+) (./d8/d32/classHashMap_1_1Iterator.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
@@ -1790,7 +1790,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
 ) (./de/dfa/classJulianDate.tex <./de/dfa/classJulianDate.pdf>
-<de/dfa/classJulianDate.pdf, id=4242, 501.875pt x 501.875pt>
+<de/dfa/classJulianDate.pdf, id=4266, 501.875pt x 501.875pt>
 File: de/dfa/classJulianDate.pdf Graphic file (type pdf)
 <use de/dfa/classJulianDate.pdf>
 Package pdftex.def Info: de/dfa/classJulianDate.pdf  used on input line 6.
@@ -1801,63 +1801,65 @@ e ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.156 ...nDate_abfda2556d79a1117e6168de66ad10bfc}}
-                                                  pdfTeX warning (ext4): destin
-ation with the same identifier (name{classJulianDate_a5cf5e6167250516b53cc58a93
-724d2d0}) has been already used, duplicate ignored
+l.127 \end{DoxyCompactItemize}
+                              pdfTeX warning (ext4): destination with the same 
+identifier (name{classJulianDate_a5cf5e6167250516b53cc58a93724d2d0}) has been a
+lready used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.156 ...nDate_abfda2556d79a1117e6168de66ad10bfc}}
-                                                  pdfTeX warning (ext4): destin
-ation with the same identifier (name{classJulianDate_ae2e0a55266ffb0ffb9fcbc7a1
-12673c1}) has been already used, duplicate ignored
+l.127 \end{DoxyCompactItemize}
+                              pdfTeX warning (ext4): destination with the same 
+identifier (name{classJulianDate_ae2e0a55266ffb0ffb9fcbc7a112673c1}) has been a
+lready used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.156 ...nDate_abfda2556d79a1117e6168de66ad10bfc}}
-                                                  pdfTeX warning (ext4): destin
-ation with the same identifier (name{classJulianDate_aa8a42cac67ac9a0dfb92cc458
-32d5bc1}) has been already used, duplicate ignored
+l.127 \end{DoxyCompactItemize}
+                              pdfTeX warning (ext4): destination with the same 
+identifier (name{classJulianDate_aa8a42cac67ac9a0dfb92cc45832d5bc1}) has been a
+lready used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.156 ...nDate_abfda2556d79a1117e6168de66ad10bfc}}
-                                                  pdfTeX warning (ext4): destin
-ation with the same identifier (name{classJulianDate_aea0e207821339ea9530f25732
-6c6b338}) has been already used, duplicate ignored
+l.127 \end{DoxyCompactItemize}
+                              pdfTeX warning (ext4): destination with the same 
+identifier (name{classJulianDate_aea0e207821339ea9530f257326c6b338}) has been a
+lready used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.156 ...nDate_abfda2556d79a1117e6168de66ad10bfc}}
-                                                  ]) (./db/db6/classLine.tex <.
-/db/db6/classLine.pdf>
-<db/db6/classLine.pdf, id=4321, 501.875pt x 836.455pt>
+l.127 \end{DoxyCompactItemize}
+                              ] [65]) (./db/db6/classLine.tex <./db/db6/classLi
+ne.pdf>
+<db/db6/classLine.pdf, id=4358, 501.875pt x 836.455pt>
 File: db/db6/classLine.pdf Graphic file (type pdf)
 <use db/db6/classLine.pdf>
 Package pdftex.def Info: db/db6/classLine.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.20894pt x 85.35826pt.
- [65]) (./dc/d12/classLinearAxisWidget.tex <./dc/d12/classLinearAxisWidget.pdf>
-<dc/d12/classLinearAxisWidget.pdf, id=4336, 501.875pt x 510.37677pt>
+) (./dc/d12/classLinearAxisWidget.tex <./dc/d12/classLinearAxisWidget.pdf>
+<dc/d12/classLinearAxisWidget.pdf, id=4365, 501.875pt x 510.37677pt>
 File: dc/d12/classLinearAxisWidget.pdf Graphic file (type pdf)
 <use dc/d12/classLinearAxisWidget.pdf>
 Package pdftex.def Info: dc/d12/classLinearAxisWidget.pdf  used on input line 6
 .
 (pdftex.def)             Requested size: 83.93152pt x 85.35826pt.
-) (./dd/d6e/classLinearScale.tex <./dd/d6e/classLinearScale.pdf>
-<dd/d6e/classLinearScale.pdf, id=4343, 501.875pt x 456.25455pt>
+ [66]) (./dd/d6e/classLinearScale.tex <./dd/d6e/classLinearScale.pdf>
+<dd/d6e/classLinearScale.pdf, id=4384, 501.875pt x 456.25455pt>
 File: dd/d6e/classLinearScale.pdf Graphic file (type pdf)
 <use dd/d6e/classLinearScale.pdf>
 Package pdftex.def Info: dd/d6e/classLinearScale.pdf  used on input line 6.
 (pdftex.def)             Requested size: 62.58871pt x 56.9055pt.
- [66]) (./da/d81/classLineGraphWidget.tex <./da/d81/classLineGraphWidget.pdf>
-<da/d81/classLineGraphWidget.pdf, id=4367, 501.875pt x 514.74309pt>
+)
+(./da/d81/classLineGraphWidget.tex <./da/d81/classLineGraphWidget.pdf>
+<da/d81/classLineGraphWidget.pdf, id=4389, 501.875pt x 514.74309pt>
 File: da/d81/classLineGraphWidget.pdf Graphic file (type pdf)
 <use da/d81/classLineGraphWidget.pdf>
 Package pdftex.def Info: da/d81/classLineGraphWidget.pdf  used on input line 6.
 
 (pdftex.def)             Requested size: 83.21933pt x 85.35826pt.
-) (./d6/da9/classList.tex
+)
+(./d6/da9/classList.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
@@ -1875,12 +1877,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
  <./d6/da9/classList.pdf>
-<d6/da9/classList.pdf, id=4375, 501.875pt x 550.00482pt>
+<d6/da9/classList.pdf, id=4396, 501.875pt x 550.00482pt>
 File: d6/da9/classList.pdf Graphic file (type pdf)
 <use d6/da9/classList.pdf>
 Package pdftex.def Info: d6/da9/classList.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
-) (./dc/d7c/classList1.tex
+ [67]) (./dc/d7c/classList1.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
@@ -1897,110 +1899,108 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
-[67]) (./d1/d14/classList2.tex) (./d0/d77/classLog.tex [68])
+) (./d1/d14/classList2.tex) (./d0/d77/classLog.tex [68])
 (./da/dce/classLogAxisWidget.tex <./da/dce/classLogAxisWidget.pdf>
-<da/dce/classLogAxisWidget.pdf, id=4445, 501.875pt x 584.70447pt>
+<da/dce/classLogAxisWidget.pdf, id=4470, 501.875pt x 584.70447pt>
 File: da/dce/classLogAxisWidget.pdf Graphic file (type pdf)
 <use da/dce/classLogAxisWidget.pdf>
 Package pdftex.def Info: da/dce/classLogAxisWidget.pdf  used on input line 6.
 (pdftex.def)             Requested size: 73.26395pt x 85.35826pt.
 )
-(./de/db3/classLogReader.tex) (./d6/dca/classLogScale.tex <./d6/dca/classLogSca
-le.pdf>
-<d6/dca/classLogScale.pdf, id=4452, 501.875pt x 550.00482pt>
+(./de/db3/classLogReader.tex [69]) (./d6/dca/classLogScale.tex <./d6/dca/classL
+ogScale.pdf>
+<d6/dca/classLogScale.pdf, id=4501, 501.875pt x 550.00482pt>
 File: d6/dca/classLogScale.pdf Graphic file (type pdf)
 <use d6/dca/classLogScale.pdf>
 Package pdftex.def Info: d6/dca/classLogScale.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
- [69]) (./d7/d54/classMainCanvas.tex <./d7/d54/classMainCanvas.pdf>
-<d7/d54/classMainCanvas.pdf, id=4483, 501.875pt x 441.20834pt>
+) (./d7/d54/classMainCanvas.tex <./d7/d54/classMainCanvas.pdf>
+<d7/d54/classMainCanvas.pdf, id=4506, 501.875pt x 441.20834pt>
 File: d7/d54/classMainCanvas.pdf Graphic file (type pdf)
 <use d7/d54/classMainCanvas.pdf>
 Package pdftex.def Info: d7/d54/classMainCanvas.pdf  used on input line 6.
 (pdftex.def)             Requested size: 64.7253pt x 56.9055pt.
-)
-(./d9/d89/classMapView2D.tex <./d9/d89/classMapView2D.pdf>
-<d9/d89/classMapView2D.pdf, id=4496, 501.875pt x 451.1254pt>
+
+[70]) (./d9/d89/classMapView2D.tex <./d9/d89/classMapView2D.pdf>
+<d9/d89/classMapView2D.pdf, id=4536, 501.875pt x 451.1254pt>
 File: d9/d89/classMapView2D.pdf Graphic file (type pdf)
 <use d9/d89/classMapView2D.pdf>
 Package pdftex.def Info: d9/d89/classMapView2D.pdf  used on input line 6.
 (pdftex.def)             Requested size: 63.3009pt x 56.9055pt.
- [70])
-(./d2/d0e/classMatrixGraph.tex) (./d2/de7/classStruct_1_1Member.tex [71])
+)
+(./d2/d0e/classMatrixGraph.tex [71]) (./d2/de7/classStruct_1_1Member.tex)
 (./dc/d29/classMultiShape.tex <./dc/d29/classMultiShape.pdf>
-<dc/d29/classMultiShape.pdf, id=4569, 501.875pt x 249.69284pt>
+<dc/d29/classMultiShape.pdf, id=4594, 501.875pt x 249.69284pt>
 File: dc/d29/classMultiShape.pdf Graphic file (type pdf)
 <use dc/d29/classMultiShape.pdf>
 Package pdftex.def Info: dc/d29/classMultiShape.pdf  used on input line 6.
 (pdftex.def)             Requested size: 285.94919pt x 142.26378pt.
 )
 (./d7/d3b/classMultiShape2D.tex <./d7/d3b/classMultiShape2D.pdf>
-<d7/d3b/classMultiShape2D.pdf, id=4575, 501.875pt x 249.69284pt>
+<d7/d3b/classMultiShape2D.pdf, id=4600, 501.875pt x 249.69284pt>
 File: d7/d3b/classMultiShape2D.pdf Graphic file (type pdf)
 <use d7/d3b/classMultiShape2D.pdf>
 Package pdftex.def Info: d7/d3b/classMultiShape2D.pdf  used on input line 6.
 (pdftex.def)             Requested size: 285.94919pt x 142.26378pt.
  [72] [73])
 (./df/d52/classMultiShape3D.tex <./df/d52/classMultiShape3D.pdf>
-<df/d52/classMultiShape3D.pdf, id=4644, 501.875pt x 608.33272pt>
+<df/d52/classMultiShape3D.pdf, id=4665, 501.875pt x 608.33272pt>
 File: df/d52/classMultiShape3D.pdf Graphic file (type pdf)
 <use df/d52/classMultiShape3D.pdf>
 Package pdftex.def Info: df/d52/classMultiShape3D.pdf  used on input line 6.
 (pdftex.def)             Requested size: 70.41518pt x 85.35826pt.
-)
+ [74])
 (./df/d89/classMultiText.tex <./df/d89/classMultiText.pdf>
-<df/d89/classMultiText.pdf, id=4656, 501.875pt x 547.49545pt>
+<df/d89/classMultiText.pdf, id=4706, 501.875pt x 547.49545pt>
 File: df/d89/classMultiText.pdf Graphic file (type pdf)
 <use df/d89/classMultiText.pdf>
 Package pdftex.def Info: df/d89/classMultiText.pdf  used on input line 6.
 (pdftex.def)             Requested size: 78.24164pt x 85.35826pt.
- [74] [75])
+ [75])
 (./d2/d81/classMultiThreadHttpRequest.tex) (./da/dc4/classMultiTransform.tex)
-(./d9/d6a/structBlockMapLoader_1_1NamedEntities.tex)
+(./d9/d6a/structBlockMapLoader_1_1NamedEntities.tex [76])
 (./da/d86/structBlockMapLoader_1_1NamedEntry.tex)
 (./d2/da6/classNullGraphObserver.tex)
 (./d5/d28/classObjectHorizontalRenderer.tex <./d5/d28/classObjectHorizontalRend
 erer.pdf>
-<d5/d28/classObjectHorizontalRenderer.pdf, id=4753, 501.875pt x 120.2091pt>
+<d5/d28/classObjectHorizontalRenderer.pdf, id=4803, 501.875pt x 120.2091pt>
 File: d5/d28/classObjectHorizontalRenderer.pdf Graphic file (type pdf)
 <use d5/d28/classObjectHorizontalRenderer.pdf>
 Package pdftex.def Info: d5/d28/classObjectHorizontalRenderer.pdf  used on inpu
 t line 6.
 (pdftex.def)             Requested size: 237.58134pt x 56.9055pt.
- [76]) (./da/d29/classObjectNameValueRenderer.tex <./da/d29/classObjectNameValu
-eRenderer.pdf>
-<da/d29/classObjectNameValueRenderer.pdf, id=4793, 501.875pt x 114.71858pt>
+) (./da/d29/classObjectNameValueRenderer.tex <./da/d29/classObjectNameValueRend
+erer.pdf>
+<da/d29/classObjectNameValueRenderer.pdf, id=4812, 501.875pt x 114.71858pt>
 File: da/d29/classObjectNameValueRenderer.pdf Graphic file (type pdf)
 <use da/d29/classObjectNameValueRenderer.pdf>
 Package pdftex.def Info: da/d29/classObjectNameValueRenderer.pdf  used on input
  line 6.
 (pdftex.def)             Requested size: 248.95346pt x 56.9055pt.
-) (./d1/dcc/classPage.tex [77pdfTeX warning (ext4): destination with the same i
-dentifier (name{classObjectHorizontalRenderer_a138f2128f030cfe42fd7448f973bf164
-}) has been already used, duplicate ignored
+ [77pdfTeX warning (ext4): destination with the same identifier (name{classObje
+ctHorizontalRenderer_a138f2128f030cfe42fd7448f973bf164}) has been already used,
+ duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.15 \mbox
-          {\Hypertarget{classPage_ab269f34537be1e2563a0f65641c80107}\label{c...
-pdfTeX warning (ext4): destination with the same identifier (name{classObjectNa
-meValueRenderer_a44a82861e96b09f3da886566ef97e584}) has been already used, dupl
-icate ignored
+l.9 \doxysubsection
+                   *{Public Member Functions}]) (./d1/dcc/classPage.tex)
+(./d2/d38/classpageBuffer.tex) (./d7/d9e/classPageLayout.tex [78pdfTeX warning 
+(ext4): destination with the same identifier (name{classObjectNameValueRenderer
+_a44a82861e96b09f3da886566ef97e584}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.15 \mbox
-          {\Hypertarget{classPage_ab269f34537be1e2563a0f65641c80107}\label{c...
-]) (./d2/d38/classpageBuffer.tex) (./d7/d9e/classPageLayout.tex)
-(./d0/d8d/classPageText.tex <./d0/d8d/classPageText.pdf>
-<d0/d8d/classPageText.pdf, id=4826, 501.875pt x 557.64334pt>
+l.8 \end{DoxyCompactItemize}
+                            ]) (./d0/d8d/classPageText.tex <./d0/d8d/classPageT
+ext.pdf>
+<d0/d8d/classPageText.pdf, id=4881, 501.875pt x 557.64334pt>
 File: d0/d8d/classPageText.pdf Graphic file (type pdf)
 <use d0/d8d/classPageText.pdf>
 Package pdftex.def Info: d0/d8d/classPageText.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.20894pt x 56.9055pt.
- [78])
-(./dd/da7/classPhone.tex <./dd/da7/classPhone.pdf>
-<dd/da7/classPhone.pdf, id=4864, 501.875pt x 825.00218pt>
+) (./dd/da7/classPhone.tex <./dd/da7/classPhone.pdf>
+<dd/da7/classPhone.pdf, id=4888, 501.875pt x 825.00218pt>
 File: dd/da7/classPhone.pdf Graphic file (type pdf)
 <use dd/da7/classPhone.pdf>
 Package pdftex.def Info: dd/da7/classPhone.pdf  used on input line 6.
@@ -2008,29 +2008,29 @@ Package pdftex.def Info: dd/da7/classPhone.pdf  used on input line 6.
  [79])
 (./d8/d43/structPoint.tex) (./d0/db1/classPolygon.tex <./d0/db1/classPolygon.pd
 f>
-<d0/db1/classPolygon.pdf, id=4907, 501.875pt x 1115.27664pt>
+<d0/db1/classPolygon.pdf, id=4934, 501.875pt x 1115.27664pt>
 File: d0/db1/classPolygon.pdf Graphic file (type pdf)
 <use d0/db1/classPolygon.pdf>
 Package pdftex.def Info: d0/db1/classPolygon.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.20894pt x 113.81102pt.
-) (./d5/d41/classPositionDisplayer2D.tex <./d5/d41/classPositionDisplayer2D.pdf
->
-<d5/d41/classPositionDisplayer2D.pdf, id=4913, 501.875pt x 299.62943pt>
+ [80]) (./d5/d41/classPositionDisplayer2D.tex <./d5/d41/classPositionDisplayer2
+D.pdf>
+<d5/d41/classPositionDisplayer2D.pdf, id=4962, 501.875pt x 299.62943pt>
 File: d5/d41/classPositionDisplayer2D.pdf Graphic file (type pdf)
 <use d5/d41/classPositionDisplayer2D.pdf>
 Package pdftex.def Info: d5/d41/classPositionDisplayer2D.pdf  used on input lin
 e 6.
 (pdftex.def)             Requested size: 95.31128pt x 56.9055pt.
- [80]) (./d1/da3/classPrefs.tex) (./dc/dbe/classRCString.tex [81])
+) (./d1/da3/classPrefs.tex) (./dc/dbe/classRCString.tex [81])
 (./db/d3a/classRecord.tex) (./de/d00/classRectangle.tex <./de/d00/classRectangl
 e.pdf>
-<de/d00/classRectangle.pdf, id=4986, 501.875pt x 1056.57736pt>
+<de/d00/classRectangle.pdf, id=5005, 501.875pt x 1056.57736pt>
 File: de/d00/classRectangle.pdf Graphic file (type pdf)
 <use de/d00/classRectangle.pdf>
 Package pdftex.def Info: de/d00/classRectangle.pdf  used on input line 6.
 (pdftex.def)             Requested size: 54.05771pt x 113.81102pt.
 ) (./d8/d28/classRegex.tex <./d8/d28/classRegex.pdf>
-<d8/d28/classRegex.pdf, id=4993, 501.875pt x 550.00482pt>
+<d8/d28/classRegex.pdf, id=5012, 501.875pt x 550.00482pt>
 File: d8/d28/classRegex.pdf Graphic file (type pdf)
 <use d8/d28/classRegex.pdf>
 Package pdftex.def Info: d8/d28/classRegex.pdf  used on input line 6.
@@ -2039,28 +2039,28 @@ Package pdftex.def Info: d8/d28/classRegex.pdf  used on input line 6.
 (./d4/d46/structBlockMapLoader_1_1Region.tex)
 (./da/db7/structBlockMapLoader_1_1RegionContainer.tex)
 (./d1/d52/classRenderer.tex <./d1/d52/classRenderer.pdf>
-<d1/d52/classRenderer.pdf, id=5024, 501.875pt x 688.28143pt>
+<d1/d52/classRenderer.pdf, id=5049, 501.875pt x 688.28143pt>
 File: d1/d52/classRenderer.pdf Graphic file (type pdf)
 <use d1/d52/classRenderer.pdf>
 Package pdftex.def Info: d1/d52/classRenderer.pdf  used on input line 6.
 (pdftex.def)             Requested size: 248.96877pt x 341.43306pt.
  [83])
 (./d9/dbd/classRequest.tex <./d9/dbd/classRequest.pdf>
-<d9/dbd/classRequest.pdf, id=5059, 501.875pt x 140.87631pt>
+<d9/dbd/classRequest.pdf, id=5088, 501.875pt x 140.87631pt>
 File: d9/dbd/classRequest.pdf Graphic file (type pdf)
 <use d9/dbd/classRequest.pdf>
 Package pdftex.def Info: d9/dbd/classRequest.pdf  used on input line 6.
 (pdftex.def)             Requested size: 202.7222pt x 56.9055pt.
  [84])
 (./dd/d9a/classScale.tex <./dd/d9a/classScale.pdf>
-<dd/d9a/classScale.pdf, id=5079, 501.875pt x 228.12227pt>
+<dd/d9a/classScale.pdf, id=5108, 501.875pt x 228.12227pt>
 File: dd/d9a/classScale.pdf Graphic file (type pdf)
 <use dd/d9a/classScale.pdf>
 Package pdftex.def Info: dd/d9a/classScale.pdf  used on input line 6.
 (pdftex.def)             Requested size: 125.19275pt x 56.9055pt.
 )
 (./d1/d23/classScrollbarWidget.tex <./d1/d23/classScrollbarWidget.pdf>
-<d1/d23/classScrollbarWidget.pdf, id=5084, 501.875pt x 374.52924pt>
+<d1/d23/classScrollbarWidget.pdf, id=5113, 501.875pt x 374.52924pt>
 File: d1/d23/classScrollbarWidget.pdf Graphic file (type pdf)
 <use d1/d23/classScrollbarWidget.pdf>
 Package pdftex.def Info: d1/d23/classScrollbarWidget.pdf  used on input line 6.
@@ -2068,7 +2068,7 @@ Package pdftex.def Info: d1/d23/classScrollbarWidget.pdf  used on input line 6.
 (pdftex.def)             Requested size: 190.6379pt x 142.26378pt.
  [85])
 (./d1/d3b/classSector.tex <./d1/d3b/classSector.pdf>
-<d1/d3b/classSector.pdf, id=5116, 501.875pt x 371.75888pt>
+<d1/d3b/classSector.pdf, id=5146, 501.875pt x 371.75888pt>
 File: d1/d3b/classSector.pdf Graphic file (type pdf)
 <use d1/d3b/classSector.pdf>
 Package pdftex.def Info: d1/d3b/classSector.pdf  used on input line 6.
@@ -2094,7 +2094,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
 ) (./da/d8a/classServlet.tex <./da/d8a/classServlet.pdf>
-<da/d8a/classServlet.pdf, id=5148, 501.875pt x 286.7814pt>
+<da/d8a/classServlet.pdf, id=5177, 501.875pt x 286.7814pt>
 File: da/d8a/classServlet.pdf Graphic file (type pdf)
 <use da/d8a/classServlet.pdf>
 Package pdftex.def Info: da/d8a/classServlet.pdf  used on input line 10.
@@ -2103,14 +2103,14 @@ Package pdftex.def Info: da/d8a/classServlet.pdf  used on input line 10.
 (./da/d28/classServletMap.tex) (./d5/df2/structset1.tex [87])
 (./d8/dd3/structset3.tex) (./d7/d30/structset4.tex) (./d9/d69/classShader.tex
 [88]) (./de/d0a/classShape.tex <./de/d0a/classShape.pdf>
-<de/d0a/classShape.pdf, id=5193, 501.875pt x 1466.14755pt>
+<de/d0a/classShape.pdf, id=5222, 501.875pt x 1561.3934pt>
 File: de/d0a/classShape.pdf Graphic file (type pdf)
 <use de/d0a/classShape.pdf>
 Package pdftex.def Info: de/d0a/classShape.pdf  used on input line 6.
-(pdftex.def)             Requested size: 116.87617pt x 341.43306pt.
+(pdftex.def)             Requested size: 109.74658pt x 341.43306pt.
  [89])
 (./d5/db1/classShape2D.tex <./d5/db1/classShape2D.pdf>
-<d5/db1/classShape2D.pdf, id=5252, 501.875pt x 176.0979pt>
+<d5/db1/classShape2D.pdf, id=5281, 501.875pt x 176.0979pt>
 File: d5/db1/classShape2D.pdf Graphic file (type pdf)
 <use d5/db1/classShape2D.pdf>
 Package pdftex.def Info: d5/db1/classShape2D.pdf  used on input line 6.
@@ -2118,21 +2118,21 @@ Package pdftex.def Info: d5/db1/classShape2D.pdf  used on input line 6.
  [90])
 (./d0/d2f/classShapefile.tex [91]) (./d4/d33/classSocket.tex <./d4/d33/classSoc
 ket.pdf>
-<d4/d33/classSocket.pdf, id=5321, 501.875pt x 202.77757pt>
+<d4/d33/classSocket.pdf, id=5351, 501.875pt x 202.77757pt>
 File: d4/d33/classSocket.pdf Graphic file (type pdf)
 <use d4/d33/classSocket.pdf>
 Package pdftex.def Info: d4/d33/classSocket.pdf  used on input line 6.
 (pdftex.def)             Requested size: 140.83801pt x 56.9055pt.
 ) (./df/db9/classSocketIO.tex) (./d9/dfd/classSparklineWidget.tex <./d9/dfd/cla
 ssSparklineWidget.pdf>
-<d9/dfd/classSparklineWidget.pdf, id=5334, 501.875pt x 361.71133pt>
+<d9/dfd/classSparklineWidget.pdf, id=5363, 501.875pt x 361.71133pt>
 File: d9/dfd/classSparklineWidget.pdf Graphic file (type pdf)
 <use d9/dfd/classSparklineWidget.pdf>
 Package pdftex.def Info: d9/dfd/classSparklineWidget.pdf  used on input line 6.
 
 (pdftex.def)             Requested size: 78.95383pt x 56.9055pt.
  [92]) (./de/d9d/classSphere.tex <./de/d9d/classSphere.pdf>
-<de/d9d/classSphere.pdf, id=5380, 501.875pt x 658.19902pt>
+<de/d9d/classSphere.pdf, id=5409, 501.875pt x 658.19902pt>
 File: de/d9d/classSphere.pdf Graphic file (type pdf)
 <use de/d9d/classSphere.pdf>
 Package pdftex.def Info: de/d9d/classSphere.pdf  used on input line 6.
@@ -2207,35 +2207,35 @@ Underfull \hbox (badness 10000) detected at line 216
  []
 
 [99]) (./de/d60/classString16.tex <./de/d60/classString16.pdf>
-<de/d60/classString16.pdf, id=5514, 501.875pt x 550.00482pt>
+<de/d60/classString16.pdf, id=5544, 501.875pt x 550.00482pt>
 File: de/d60/classString16.pdf Graphic file (type pdf)
 <use de/d60/classString16.pdf>
 Package pdftex.def Info: de/d60/classString16.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
 )
 (./dd/ddc/classString32.tex <./dd/ddc/classString32.pdf>
-<dd/ddc/classString32.pdf, id=5524, 501.875pt x 550.00482pt>
+<dd/ddc/classString32.pdf, id=5554, 501.875pt x 550.00482pt>
 File: dd/ddc/classString32.pdf Graphic file (type pdf)
 <use dd/ddc/classString32.pdf>
 Package pdftex.def Info: dd/ddc/classString32.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
 )
 (./d3/d88/classString64.tex <./d3/d88/classString64.pdf>
-<d3/d88/classString64.pdf, id=5534, 501.875pt x 550.00482pt>
+<d3/d88/classString64.pdf, id=5564, 501.875pt x 550.00482pt>
 File: d3/d88/classString64.pdf Graphic file (type pdf)
 <use d3/d88/classString64.pdf>
 Package pdftex.def Info: d3/d88/classString64.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
  [100])
 (./db/d09/classString8.tex <./db/d09/classString8.pdf>
-<db/d09/classString8.pdf, id=5566, 501.875pt x 825.00218pt>
+<db/d09/classString8.pdf, id=5595, 501.875pt x 825.00218pt>
 File: db/d09/classString8.pdf Graphic file (type pdf)
 <use db/d09/classString8.pdf>
 Package pdftex.def Info: db/d09/classString8.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 85.35826pt.
 )
 (./d3/d17/classStruct.tex <./d3/d17/classStruct.pdf>
-<d3/d17/classStruct.pdf, id=5576, 501.875pt x 743.51776pt>
+<d3/d17/classStruct.pdf, id=5605, 501.875pt x 743.51776pt>
 File: d3/d17/classStruct.pdf Graphic file (type pdf)
 <use d3/d17/classStruct.pdf>
 Package pdftex.def Info: d3/d17/classStruct.pdf  used on input line 6.
@@ -2243,7 +2243,7 @@ Package pdftex.def Info: d3/d17/classStruct.pdf  used on input line 6.
  [101] [102])
 (./d2/dc2/classStudent.tex) (./d2/dff/classStyle.tex)
 (./d4/d61/classStyledMultiShape2D.tex <./d4/d61/classStyledMultiShape2D.pdf>
-<d4/d61/classStyledMultiShape2D.pdf, id=5666, 501.875pt x 374.52924pt>
+<d4/d61/classStyledMultiShape2D.pdf, id=5695, 501.875pt x 374.52924pt>
 File: d4/d61/classStyledMultiShape2D.pdf Graphic file (type pdf)
 <use d4/d61/classStyledMultiShape2D.pdf>
 Package pdftex.def Info: d4/d61/classStyledMultiShape2D.pdf  used on input line
@@ -2531,11 +2531,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
 ) (./d8/d87/classSuperWidget2D.tex <./d8/d87/classSuperWidget2D.pdf>
-<d8/d87/classSuperWidget2D.pdf, id=5773, 501.875pt x 171.58102pt>
+<d8/d87/classSuperWidget2D.pdf, id=5802, 501.875pt x 97.76526pt>
 File: d8/d87/classSuperWidget2D.pdf Graphic file (type pdf)
 <use d8/d87/classSuperWidget2D.pdf>
 Package pdftex.def Info: d8/d87/classSuperWidget2D.pdf  used on input line 6.
-(pdftex.def)             Requested size: 249.67331pt x 85.35826pt.
+(pdftex.def)             Requested size: 398.37608pt x 77.59862pt.
  [106pdfTeX warning (ext4): destination with the same identifier (name{classSty
 ledMultiShape2D_a01ea98c5552b846ffe7026e54768fcd1}) has been already used, dupl
 icate ignored
@@ -2543,7 +2543,7 @@ icate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.24 \mbox
-          {\Hypertarget{classSuperWidget2D_a61c84a065e830d022ddfc19c5fad0bd1...
+          {\Hypertarget{classSuperWidget2D_a4a23784b9f17c554edbba75f13fbe5c7...
 pdfTeX warning (ext4): destination with the same identifier (name{classStyledMu
 ltiShape2D_a121fc8f0319dd9a67e65a90a04e6ee9f}) has been already used, duplicate
  ignored
@@ -2551,7 +2551,7 @@ ltiShape2D_a121fc8f0319dd9a67e65a90a04e6ee9f}) has been already used, duplicate
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.24 \mbox
-          {\Hypertarget{classSuperWidget2D_a61c84a065e830d022ddfc19c5fad0bd1...
+          {\Hypertarget{classSuperWidget2D_a4a23784b9f17c554edbba75f13fbe5c7...
 pdfTeX warning (ext4): destination with the same identifier (name{classStyledMu
 ltiShape2D_a59cd4ce48555c8834488b49a84339e96}) has been already used, duplicate
  ignored
@@ -2559,7 +2559,7 @@ ltiShape2D_a59cd4ce48555c8834488b49a84339e96}) has been already used, duplicate
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.24 \mbox
-          {\Hypertarget{classSuperWidget2D_a61c84a065e830d022ddfc19c5fad0bd1...
+          {\Hypertarget{classSuperWidget2D_a4a23784b9f17c554edbba75f13fbe5c7...
 pdfTeX warning (ext4): destination with the same identifier (name{classStyledMu
 ltiShape2D_ab81a4ffe585c66c74458b37baa11b558}) has been already used, duplicate
  ignored
@@ -2567,17 +2567,17 @@ ltiShape2D_ab81a4ffe585c66c74458b37baa11b558}) has been already used, duplicate
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.24 \mbox
-          {\Hypertarget{classSuperWidget2D_a61c84a065e830d022ddfc19c5fad0bd1...
+          {\Hypertarget{classSuperWidget2D_a4a23784b9f17c554edbba75f13fbe5c7...
 ]) (./d7/d0f/classSymbol.tex) (./df/dd1/classSymbolTable.tex <./df/dd1/classSym
 bolTable.pdf>
-<df/dd1/classSymbolTable.pdf, id=5803, 501.875pt x 743.51776pt>
+<df/dd1/classSymbolTable.pdf, id=5828, 501.875pt x 743.51776pt>
 File: df/dd1/classSymbolTable.pdf Graphic file (type pdf)
 <use df/dd1/classSymbolTable.pdf>
 Package pdftex.def Info: df/dd1/classSymbolTable.pdf  used on input line 6.
 (pdftex.def)             Requested size: 76.81725pt x 113.81102pt.
 ) (./de/d9c/classTab.tex [107]) (./d6/dae/classTestHttpServlet.tex <./d6/dae/cl
 assTestHttpServlet.pdf>
-<d6/dae/classTestHttpServlet.pdf, id=5858, 501.875pt x 573.57286pt>
+<d6/dae/classTestHttpServlet.pdf, id=5881, 501.875pt x 573.57286pt>
 File: d6/dae/classTestHttpServlet.pdf Graphic file (type pdf)
 <use d6/dae/classTestHttpServlet.pdf>
 Package pdftex.def Info: d6/dae/classTestHttpServlet.pdf  used on input line 6.
@@ -2585,14 +2585,14 @@ Package pdftex.def Info: d6/dae/classTestHttpServlet.pdf  used on input line 6.
 (pdftex.def)             Requested size: 74.68832pt x 85.35826pt.
 ) (./d5/d13/classTestRecord.tex)
 (./df/d53/classText.tex <./df/d53/classText.pdf>
-<df/d53/classText.pdf, id=5864, 501.875pt x 418.23253pt>
+<df/d53/classText.pdf, id=5887, 501.875pt x 418.23253pt>
 File: df/d53/classText.pdf Graphic file (type pdf)
 <use df/d53/classText.pdf>
 Package pdftex.def Info: df/d53/classText.pdf  used on input line 6.
 (pdftex.def)             Requested size: 102.42555pt x 85.35826pt.
  [108])
 (./d9/d02/classTextAxisWidget.tex <./d9/d02/classTextAxisWidget.pdf>
-<d9/d02/classTextAxisWidget.pdf, id=5892, 501.875pt x 573.57286pt>
+<d9/d02/classTextAxisWidget.pdf, id=5915, 501.875pt x 573.57286pt>
 File: d9/d02/classTextAxisWidget.pdf Graphic file (type pdf)
 <use d9/d02/classTextAxisWidget.pdf>
 Package pdftex.def Info: d9/d02/classTextAxisWidget.pdf  used on input line 6.
@@ -2600,7 +2600,7 @@ Package pdftex.def Info: d9/d02/classTextAxisWidget.pdf  used on input line 6.
 )
 (./d8/d81/classTextureArray.tex) (./d2/d8f/classTimestamp.tex <./d2/d8f/classTi
 mestamp.pdf>
-<d2/d8f/classTimestamp.pdf, id=5900, 501.875pt x 514.74309pt>
+<d2/d8f/classTimestamp.pdf, id=5923, 501.875pt x 514.74309pt>
 File: d2/d8f/classTimestamp.pdf Graphic file (type pdf)
 <use d2/d8f/classTimestamp.pdf>
 Package pdftex.def Info: d2/d8f/classTimestamp.pdf  used on input line 6.
@@ -2621,81 +2621,81 @@ l.9 \doxysubsection
                    *{Public Member Functions}])
 (./d1/d02/classTransformation.tex) (./d3/dfa/classTypeDef.tex <./d3/dfa/classTy
 peDef.pdf>
-<d3/dfa/classTypeDef.pdf, id=5936, 501.875pt x 550.00482pt>
+<d3/dfa/classTypeDef.pdf, id=5960, 501.875pt x 550.00482pt>
 File: d3/dfa/classTypeDef.pdf Graphic file (type pdf)
 <use d3/dfa/classTypeDef.pdf>
 Package pdftex.def Info: d3/dfa/classTypeDef.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
  [110]) (./da/d8a/classU128.tex <./da/d8a/classU128.pdf>
-<da/d8a/classU128.pdf, id=5975, 501.875pt x 550.00482pt>
+<da/d8a/classU128.pdf, id=5998, 501.875pt x 550.00482pt>
 File: da/d8a/classU128.pdf Graphic file (type pdf)
 <use da/d8a/classU128.pdf>
 Package pdftex.def Info: da/d8a/classU128.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
 )
 (./d5/d08/classU16.tex <./d5/d08/classU16.pdf>
-<d5/d08/classU16.pdf, id=5987, 501.875pt x 550.00482pt>
+<d5/d08/classU16.pdf, id=6010, 501.875pt x 550.00482pt>
 File: d5/d08/classU16.pdf Graphic file (type pdf)
 <use d5/d08/classU16.pdf>
 Package pdftex.def Info: d5/d08/classU16.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
  [111]) (./db/d41/classU24.tex <./db/d41/classU24.pdf>
-<db/d41/classU24.pdf, id=6024, 501.875pt x 550.00482pt>
+<db/d41/classU24.pdf, id=6048, 501.875pt x 550.00482pt>
 File: db/d41/classU24.pdf Graphic file (type pdf)
 <use db/d41/classU24.pdf>
 Package pdftex.def Info: db/d41/classU24.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
 ) (./df/d67/classU256.tex <./df/d67/classU256.pdf>
-<df/d67/classU256.pdf, id=6036, 501.875pt x 550.00482pt>
+<df/d67/classU256.pdf, id=6060, 501.875pt x 550.00482pt>
 File: df/d67/classU256.pdf Graphic file (type pdf)
 <use df/d67/classU256.pdf>
 Package pdftex.def Info: df/d67/classU256.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
 
 [112]) (./dc/db4/classU32.tex <./dc/db4/classU32.pdf>
-<dc/db4/classU32.pdf, id=6075, 501.875pt x 550.00482pt>
+<dc/db4/classU32.pdf, id=6098, 501.875pt x 550.00482pt>
 File: dc/db4/classU32.pdf Graphic file (type pdf)
 <use dc/db4/classU32.pdf>
 Package pdftex.def Info: dc/db4/classU32.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
 )
 (./d3/d5f/classU32Renderer.tex <./d3/d5f/classU32Renderer.pdf>
-<d3/d5f/classU32Renderer.pdf, id=6087, 501.875pt x 422.62892pt>
+<d3/d5f/classU32Renderer.pdf, id=6110, 501.875pt x 422.62892pt>
 File: d3/d5f/classU32Renderer.pdf Graphic file (type pdf)
 <use d3/d5f/classU32Renderer.pdf>
 Package pdftex.def Info: d3/d5f/classU32Renderer.pdf  used on input line 6.
 (pdftex.def)             Requested size: 67.57407pt x 56.9055pt.
 )
 (./d7/d69/classU64.tex <./d7/d69/classU64.pdf>
-<d7/d69/classU64.pdf, id=6094, 501.875pt x 412.5011pt>
+<d7/d69/classU64.pdf, id=6117, 501.875pt x 412.5011pt>
 File: d7/d69/classU64.pdf Graphic file (type pdf)
 <use d7/d69/classU64.pdf>
 Package pdftex.def Info: d7/d69/classU64.pdf  used on input line 6.
 (pdftex.def)             Requested size: 103.84995pt x 85.35826pt.
  [113])
 (./d3/d1d/classU64Renderer.tex <./d3/d1d/classU64Renderer.pdf>
-<d3/d1d/classU64Renderer.pdf, id=6133, 501.875pt x 211.31949pt>
+<d3/d1d/classU64Renderer.pdf, id=6157, 501.875pt x 211.31949pt>
 File: d3/d1d/classU64Renderer.pdf Graphic file (type pdf)
 <use d3/d1d/classU64Renderer.pdf>
 Package pdftex.def Info: d3/d1d/classU64Renderer.pdf  used on input line 6.
 (pdftex.def)             Requested size: 135.14813pt x 56.9055pt.
 )
 (./dd/d12/classU8.tex <./dd/d12/classU8.pdf>
-<dd/d12/classU8.pdf, id=6142, 501.875pt x 550.00482pt>
+<dd/d12/classU8.pdf, id=6166, 501.875pt x 550.00482pt>
 File: dd/d12/classU8.pdf Graphic file (type pdf)
 <use dd/d12/classU8.pdf>
 Package pdftex.def Info: dd/d12/classU8.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
  [114])
 (./d9/db6/classUDPV4Socket.tex <./d9/db6/classUDPV4Socket.pdf>
-<d9/db6/classUDPV4Socket.pdf, id=6172, 501.875pt x 405.55516pt>
+<d9/db6/classUDPV4Socket.pdf, id=6195, 501.875pt x 405.55516pt>
 File: d9/db6/classUDPV4Socket.pdf Graphic file (type pdf)
 <use d9/db6/classUDPV4Socket.pdf>
 Package pdftex.def Info: d9/db6/classUDPV4Socket.pdf  used on input line 6.
 (pdftex.def)             Requested size: 70.41518pt x 56.9055pt.
 )
 (./d9/dc0/classUser.tex <./d9/dc0/classUser.pdf>
-<d9/dc0/classUser.pdf, id=6177, 501.875pt x 550.00482pt>
+<d9/dc0/classUser.pdf, id=6200, 501.875pt x 550.00482pt>
 File: d9/dc0/classUser.pdf Graphic file (type pdf)
 <use d9/dc0/classUser.pdf>
 Package pdftex.def Info: d9/dc0/classUser.pdf  used on input line 6.
@@ -2708,7 +2708,7 @@ gnored
                                                   \fi \fi 
 l.8 \end{figure}
                 ]) (./de/dba/classUserId.tex <./de/dba/classUserId.pdf>
-<de/dba/classUserId.pdf, id=6216, 501.875pt x 825.00218pt>
+<de/dba/classUserId.pdf, id=6239, 501.875pt x 825.00218pt>
 File: de/dba/classUserId.pdf Graphic file (type pdf)
 <use de/dba/classUserId.pdf>
 Package pdftex.def Info: de/dba/classUserId.pdf  used on input line 6.
@@ -2733,87 +2733,95 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [116]) (./d1/d82/classVerticalListRenderer.tex <./d1/d82/classVerticalListRende
 rer.pdf>
-<d1/d82/classVerticalListRenderer.pdf, id=6248, 501.875pt x 147.61147pt>
+<d1/d82/classVerticalListRenderer.pdf, id=6271, 501.875pt x 147.61147pt>
 File: d1/d82/classVerticalListRenderer.pdf Graphic file (type pdf)
 <use d1/d82/classVerticalListRenderer.pdf>
 Package pdftex.def Info: d1/d82/classVerticalListRenderer.pdf  used on input li
 ne 6.
 (pdftex.def)             Requested size: 193.479pt x 56.9055pt.
-) (./db/d88/classWebCursor.tex) (./df/df6/classWebDraw.tex <./df/df6/classWebDr
-aw.pdf>
-<df/df6/classWebDraw.pdf, id=6262, 501.875pt x 811.11032pt>
+) (./d7/d08/classVideoPlayer.tex <./d7/d08/classVideoPlayer.pdf>
+<d7/d08/classVideoPlayer.pdf, id=6280, 501.875pt x 446.10666pt>
+File: d7/d08/classVideoPlayer.pdf Graphic file (type pdf)
+<use d7/d08/classVideoPlayer.pdf>
+Package pdftex.def Info: d7/d08/classVideoPlayer.pdf  used on input line 6.
+(pdftex.def)             Requested size: 64.01309pt x 56.9055pt.
+
+[117pdfTeX warning (ext4): destination with the same identifier (name{classVert
+icalListRenderer_a98297285adb7f6a2eaf3db04122fe8c8}) has been already used, dup
+licate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.18 \mbox
+          {\Hypertarget{classVideoPlayer_ab3ab6389697bd121fea65b45b27ff93d}\...
+]) (./db/d88/classWebCursor.tex) (./df/df6/classWebDraw.tex <./df/df6/classWebD
+raw.pdf>
+<df/df6/classWebDraw.pdf, id=6311, 501.875pt x 811.11032pt>
 File: df/df6/classWebDraw.pdf Graphic file (type pdf)
 <use df/df6/classWebDraw.pdf>
 Package pdftex.def Info: df/df6/classWebDraw.pdf  used on input line 6.
 (pdftex.def)             Requested size: 70.41518pt x 113.81102pt.
- [117pdfTeX warning (ext4): destination with the same identifier (name{classVer
-ticalListRenderer_a98297285adb7f6a2eaf3db04122fe8c8}) has been already used, du
-plicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.9 \doxysubsection
-                   *{Public Member Functions}] [118])
-(./da/ded/classWidget2D.tex <./da/ded/classWidget2D.pdf>
-<da/ded/classWidget2D.pdf, id=6358, 501.875pt x 55.86873pt>
+ [118]) (./da/ded/classWidget2D.tex <./da/ded/classWidget2D.pdf>
+<da/ded/classWidget2D.pdf, id=6375, 501.875pt x 82.9499pt>
 File: da/ded/classWidget2D.pdf Graphic file (type pdf)
 <use da/ded/classWidget2D.pdf>
 Package pdftex.def Info: da/ded/classWidget2D.pdf  used on input line 6.
-(pdftex.def)             Requested size: 398.33778pt x 44.34193pt.
-)
-(./d6/df8/classX11Util.tex) (./de/d59/classXDLCompiler.tex)
-(./d6/dcb/classXDLIterator.tex [119]) (./dc/dd7/classXDLRaw.tex <./dc/dd7/class
-XDLRaw.pdf>
-<dc/dd7/classXDLRaw.pdf, id=6402, 501.875pt x 550.00482pt>
+(pdftex.def)             Requested size: 398.37608pt x 65.84128pt.
+
+[119]) (./d6/df8/classX11Util.tex) (./de/d59/classXDLCompiler.tex)
+(./d6/dcb/classXDLIterator.tex) (./dc/dd7/classXDLRaw.tex <./dc/dd7/classXDLRaw
+.pdf>
+<dc/dd7/classXDLRaw.pdf, id=6433, 501.875pt x 550.00482pt>
 File: dc/dd7/classXDLRaw.pdf Graphic file (type pdf)
 <use dc/dd7/classXDLRaw.pdf>
 Package pdftex.def Info: dc/dd7/classXDLRaw.pdf  used on input line 6.
 (pdftex.def)             Requested size: 51.92114pt x 56.9055pt.
-) (./dc/d19/classXDLRequest.tex <./dc/d19/classXDLRequest.pdf>
-<dc/d19/classXDLRequest.pdf, id=6412, 501.875pt x 451.1254pt>
+ [120]) (./dc/d19/classXDLRequest.tex <./dc/d19/classXDLRequest.pdf>
+<dc/d19/classXDLRequest.pdf, id=6473, 501.875pt x 451.1254pt>
 File: dc/d19/classXDLRequest.pdf Graphic file (type pdf)
 <use dc/d19/classXDLRequest.pdf>
 Package pdftex.def Info: dc/d19/classXDLRequest.pdf  used on input line 6.
 (pdftex.def)             Requested size: 63.3009pt x 56.9055pt.
 )
 (./dc/d47/classXDLType.tex <./dc/d47/classXDLType.pdf>
-<dc/d47/classXDLType.pdf, id=6420, 501.875pt x 3252.89276pt>
+<dc/d47/classXDLType.pdf, id=6481, 501.875pt x 3252.89276pt>
 File: dc/d47/classXDLType.pdf Graphic file (type pdf)
 <use dc/d47/classXDLType.pdf>
 Package pdftex.def Info: dc/d47/classXDLType.pdf  used on input line 6.
 (pdftex.def)             Requested size: 52.67162pt x 341.43306pt.
- [120] [121]) [122]
-(./refman.ind
+ [121] [122]) [123]
+[124
+
+] (./refman.ind
 Underfull \hbox (badness 4266) in paragraph at lines 72--74
 []\T1/phv/m/n/10 CSRGraph$\OML/cmm/m/it/10 <$ \T1/phv/m/n/10 Ver-texIn-dex_t, E
 dgeIn-dex_t, Weight_t
  []
 
-[123
+[125
 
 
-
-] [124] [125])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 399.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 399.
+] [126] [127])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 401.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 401.
  (./refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 399.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 399.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 401.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 401.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 22DE102CD1EB23FA49FDB89376C21CA2;55500.
+(rerunfilecheck)             Checksum: 75B62A9A34662565F0706D3CBF4D2A13;55969.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 23172 strings out of 480478
- 473126 string characters out of 5905925
- 689209 words of memory out of 5000000
- 35303 multiletter control sequences out of 15000+600000
+ 23258 strings out of 480478
+ 476849 string characters out of 5905925
+ 691379 words of memory out of 5000000
+ 35344 multiletter control sequences out of 15000+600000
  595122 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,15n,96p,938b,637s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,16n,96p,938b,637s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
@@ -2826,10 +2834,10 @@ texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb
 8ac.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/
 texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (133 pages, 830245 bytes).
+Output written on refman.pdf (135 pages, 837500 bytes).
 PDF statistics:
- 7425 PDF objects out of 8907 (max. 8388607)
- 6944 compressed objects within 70 object streams
- 2945 named destinations out of 2984 (max. 500000)
- 2607 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 7496 PDF objects out of 8907 (max. 8388607)
+ 7010 compressed objects within 71 object streams
+ 2984 named destinations out of 2984 (max. 500000)
+ 2628 words of extra memory for PDF output out of 10000 (max. 10000000)
 

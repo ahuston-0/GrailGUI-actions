@@ -97,42 +97,53 @@ $(document).ready(function(){initNavTree('d4/d4f/AudioPlayer_8hh_source.html','.
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="../../d2/d75/classAudioPlayer.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/d75/classAudioPlayer.html">AudioPlayer</a> {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  std::unordered_map&lt;std::string, mpv_handle *&gt; contexts;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  mpv_handle *currentCtx;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordtype">bool</span> isPlaying;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> checkError(<span class="keywordtype">int</span> status) {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span> (status &lt; 0) {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      printf(<span class="stringliteral">&quot;mpv API error: %s\n&quot;</span>, mpv_error_string(status));</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      <span class="keywordflow">throw</span> Ex1(Errcode::MPV_FAILURE);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="../../d2/d75/classAudioPlayer.html">AudioPlayer</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  ~<a class="code" href="../../d2/d75/classAudioPlayer.html">AudioPlayer</a>();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="../../d2/d75/classAudioPlayer.html">AudioPlayer</a>(<span class="keyword">const</span> <a class="code" href="../../d2/d75/classAudioPlayer.html">AudioPlayer</a> &amp;orig) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="../../d2/d75/classAudioPlayer.html">AudioPlayer</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="../../d2/d75/classAudioPlayer.html">AudioPlayer</a> &amp;orig) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">void</span> newContext(std::string name);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">void</span> setCurrentContext(std::string name);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">void</span> addFile(std::string filePath);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">void</span> addPlaylist(std::string filePath, <span class="keywordtype">bool</span> append = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">void</span> setVolume(<span class="keywordtype">int</span> volume);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> seekLocation(std::string time, std::string type = <span class="stringliteral">&quot;relative&quot;</span>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">void</span> revertSeek();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> playlistNext();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> playlistPrev();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> playlistPlayIndex(<span class="keywordtype">int</span> index);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">void</span> playlistClear();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">void</span> playlistRemoveIndex(<span class="keywordtype">int</span> index);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">void</span> playlistMove(<span class="keywordtype">int</span> index1, <span class="keywordtype">int</span> index2);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">void</span> playlistShuffle();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">void</span> togglePause();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> setPlaying();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span> setPaused();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span> printCurrentTime();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// void playlistPrintEntries();</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">struct </span>context {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    std::string name;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    mpv_handle *handle;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">bool</span> playing;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  };</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  std::unordered_map&lt;std::string, context&gt; contexts;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">struct </span>context *currentCtx;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> checkError(<span class="keywordtype">int</span> status) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">if</span> (status &lt; 0) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      printf(<span class="stringliteral">&quot;mpv API error: %s\n&quot;</span>, mpv_error_string(status));</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <span class="keywordflow">throw</span> Ex1(Errcode::MPV_FAILURE);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="../../d2/d75/classAudioPlayer.html">AudioPlayer</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  ~<a class="code" href="../../d2/d75/classAudioPlayer.html">AudioPlayer</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../d2/d75/classAudioPlayer.html">AudioPlayer</a>(<span class="keyword">const</span> <a class="code" href="../../d2/d75/classAudioPlayer.html">AudioPlayer</a> &amp;orig) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="../../d2/d75/classAudioPlayer.html">AudioPlayer</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="../../d2/d75/classAudioPlayer.html">AudioPlayer</a> &amp;orig) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> newContext(std::string name);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> setCurrentContext(std::string name);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">void</span> loadFile(std::string filePath);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">void</span> loadPlaylist(std::string filePath, <span class="keywordtype">bool</span> append = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">void</span> setVolume(<span class="keywordtype">int</span> volume);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">void</span> seekLocation(std::string time, std::string type = <span class="stringliteral">&quot;relative&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> revertSeek();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span> playlistNext();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">void</span> playlistPrev();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> playlistPlayIndex(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> playlistClear();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">void</span> playlistRemoveIndex(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">void</span> playlistMove(<span class="keywordtype">int</span> index1, <span class="keywordtype">int</span> index2);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">void</span> playlistShuffle();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">void</span> printCurrentTime();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">void</span> setPaused();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> setPlaying();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span> togglePause();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
 <div class="ttc" id="aclassAudioPlayer_html"><div class="ttname"><a href="../../d2/d75/classAudioPlayer.html">AudioPlayer</a></div><div class="ttdef"><b>Definition:</b> AudioPlayer.hh:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

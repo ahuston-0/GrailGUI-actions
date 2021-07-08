@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classVideoPlayer" xml:lang="en-US">
+<title>VideoPlayer Class Reference</title>
+<indexterm><primary>VideoPlayer</primary></indexterm>
+<para>Inheritance diagram for VideoPlayer:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="../../d7/d08/classVideoPlayer.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classVideoPlayer_1a20df0578099bcb64038eefa41ec51cd6"/><emphasis role="strong">VideoPlayer</emphasis> (<link linkend="_classCanvas">Canvas</link> *c, float x, float y, int width, int height)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classVideoPlayer_1afa46ecc0078b4924c6b9acfa5fc19378"/><emphasis role="strong">VideoPlayer</emphasis> (const <link linkend="_classVideoPlayer">VideoPlayer</link> &amp;orig)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classVideoPlayer_1ab3ab6389697bd121fea65b45b27ff93d"/><link linkend="_classVideoPlayer">VideoPlayer</link> &amp; <emphasis role="strong">operator=</emphasis> (const <link linkend="_classVideoPlayer">VideoPlayer</link> &amp;orig)=delete</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classVideoPlayer_1ae26bd48c167fa1051ab3c07a716dc89a"/>void <emphasis role="strong">init</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classVideoPlayer_1a7f24f99f73be01aca139b48f680846c6"/>void <emphasis role="strong">update</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classVideoPlayer_1a2c5c1f15b338f87924f9d2045cf49995"/>void <emphasis role="strong">render</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classVideoPlayer_1a5c2d9369a6f48067cf28c17a88fb0b9a"/>void <emphasis role="strong">loadFile</emphasis> (std::string filePath)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classVideoPlayer_1a877619bb8d73bf18857e0bc6d28c7b1d"/>void <emphasis role="strong">loadPlaylist</emphasis> (std::string filePath, bool append=false)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classVideoPlayer_1a7d43ef1b3e16968e1d80d2591f86ceb7"/>void <emphasis role="strong">setVolume</emphasis> (int volume)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classVideoPlayer_1af350019ba8abdf3a3dd8bcef68dc0360"/>void <emphasis role="strong">seekLocation</emphasis> (std::string time, std::string type=&quot;relative&quot;)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classVideoPlayer_1a26df02abe0edbe72d3cc3087f9ce3fab"/>void <emphasis role="strong">revertSeek</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classVideoPlayer_1aaa646ee020c4153bf2db315ce0cb008a"/>void <emphasis role="strong">playlistNext</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classVideoPlayer_1a45e0e080bddbf606896b93ee1bb2f6b9"/>void <emphasis role="strong">playlistPrev</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classVideoPlayer_1abf881d7b3169dbe6d554a711b77534fd"/>void <emphasis role="strong">cropVideo</emphasis> (float xLeft, float xRight, float yTop, float yBottom)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classVideoPlayer_1af178d9dc5bfde5ed5f5d2d235c72e491"/>void <emphasis role="strong">setPaused</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classVideoPlayer_1a20767c94e7486af1ff326cf8f4d28b0e"/>void <emphasis role="strong">setPlaying</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classVideoPlayer_1ae11dc249fd03defdacd7caa1189a841a"/>void <emphasis role="strong">togglePause</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</section>
