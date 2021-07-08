@@ -88,130 +88,131 @@ $(document).ready(function(){initNavTree('dc/d42/Canvas_8hh_source.html','../../
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;opengl/GLWin.hh&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;opengl/Shape.hh&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/df0/classCamera.html">Camera</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/dff/classStyle.html">Style</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="../../d5/d70/classCanvas.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/d70/classCanvas.html">Canvas</a> {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <a class="code" href="../../dc/dda/classGLWin.html">GLWin</a>* w;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  std::vector&lt;Shape*&gt; layers;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  uint32_t vpX, vpY, vpW, vpH;  <span class="comment">// viewport</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  uint32_t pX, pY;              <span class="comment">// projection</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  glm::mat4 projection;         <span class="comment">// the projection currently used</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  glm::mat4</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      originalProjection;  <span class="comment">// keep safe so you can reset to the original view</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a>* style;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="../../d1/df0/classCamera.html">Camera</a>* cam;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="../../d5/d70/classCanvas.html">Canvas</a>(<a class="code" href="../../dc/dda/classGLWin.html">GLWin</a>* w, <span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a>* style, uint32_t vpX, uint32_t vpY, uint32_t vpW,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;         uint32_t vpH, uint32_t pX, uint32_t pY)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      :  <span class="comment">// viewport, projection</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        w(w),</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        style(style),</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        vpX(vpX),</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        vpY(vpY),</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        vpW(vpW),</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        vpH(vpH),</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        pX(pX),</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        pY(pY) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    projection =</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        glm::ortho(0.0f, <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(pX), <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(pY), 0.0f);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    originalProjection = projection;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//    projection = glm::scale(projection, glm::vec3(16, -16, 1));</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">//    projection = glm::translate(projection, glm::vec3(180, -90, 0));</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  ~<a class="code" href="../../d5/d70/classCanvas.html">Canvas</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="../../d5/d70/classCanvas.html">Canvas</a>(<span class="keyword">const</span> <a class="code" href="../../d5/d70/classCanvas.html">Canvas</a>&amp; orig) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="../../d5/d70/classCanvas.html">Canvas</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="../../d5/d70/classCanvas.html">Canvas</a>&amp; orig) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  uint32_t getWidth()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> vpW; }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  uint32_t getHeight()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> vpH; }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="../../dc/dda/classGLWin.html">GLWin</a>* getWin()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> w; };</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  glm::mat4* getProjection() { <span class="keywordflow">return</span> &amp;projection; }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> setProjection(<span class="keyword">const</span> glm::mat4&amp; proj) { projection = proj; }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">void</span> setOrthoProjection(<span class="keywordtype">float</span> xLeft, <span class="keywordtype">float</span> xRight, <span class="keywordtype">float</span> yBottom,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                          <span class="keywordtype">float</span> yTop) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    projection = glm::ortho(xLeft, xRight, yBottom, yTop);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="../../d1/df0/classCamera.html">Camera</a>* setLookAtProjection(<span class="keywordtype">float</span> eyeX, <span class="keywordtype">float</span> eyeY, <span class="keywordtype">float</span> eyeZ, <span class="keywordtype">float</span> lookAtX,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                              <span class="keywordtype">float</span> lookAtY, <span class="keywordtype">float</span> lookAtZ, <span class="keywordtype">float</span> upX,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                              <span class="keywordtype">float</span> upY, <span class="keywordtype">float</span> upZ);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> resetProjection() { projection = originalProjection; }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// Add layer pointer and return its index</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> S&gt;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  S* addLayer(S* shape) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    layers.push_back(shape);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> shape;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="../../de/d0a/classShape.html">Shape</a>* getLayer(uint32_t i) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> (i &lt; layers.size()) <span class="keywordflow">return</span> layers[i];</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span> init() {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; layers.size(); i++) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      layers[i]-&gt;init();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> process_input(Inputs* in, <span class="keywordtype">float</span> dt) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; layers.size(); i++) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      layers[i]-&gt;process_input(in, dt);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">void</span> update() {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; layers.size(); i++) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      layers[i]-&gt;update();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a>* getStyle()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> style; }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">void</span> render();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordtype">void</span> cleanup();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d89/classMultiText.html">MultiText</a>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../d7/d54/classMainCanvas.html">   98</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/d54/classMainCanvas.html">MainCanvas</a> : <span class="keyword">public</span> <a class="code" href="../../d5/d70/classCanvas.html">Canvas</a> {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a>* gui;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="../../df/d89/classMultiText.html">MultiText</a>* guiText;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a>* menu;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <a class="code" href="../../df/d89/classMultiText.html">MultiText</a>* menuText;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <a class="code" href="../../d7/d54/classMainCanvas.html">MainCanvas</a>(<a class="code" href="../../dc/dda/classGLWin.html">GLWin</a>* parent);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  ~<a class="code" href="../../d7/d54/classMainCanvas.html">MainCanvas</a>();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <a class="code" href="../../d7/d54/classMainCanvas.html">MainCanvas</a>(<span class="keyword">const</span> <a class="code" href="../../d7/d54/classMainCanvas.html">MainCanvas</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <a class="code" href="../../d7/d54/classMainCanvas.html">MainCanvas</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="../../d7/d54/classMainCanvas.html">MainCanvas</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a>* getGui() { <span class="keywordflow">return</span> gui; }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <a class="code" href="../../df/d89/classMultiText.html">MultiText</a>* getGuiText() { <span class="keywordflow">return</span> guiText; }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a>* getMenu() { <span class="keywordflow">return</span> menu; }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="../../df/d89/classMultiText.html">MultiText</a>* getMenuText() { <span class="keywordflow">return</span> menuText; }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordtype">void</span> init();</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordtype">void</span> render();</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordtype">void</span> cleanup();</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordtype">void</span> addButton(<span class="keyword">const</span> <span class="keywordtype">char</span> text[], <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> w, <span class="keywordtype">float</span> h);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordtype">void</span> addLabel(<span class="keyword">const</span> <span class="keywordtype">char</span> text[], <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> w, <span class="keywordtype">float</span> h);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordtype">void</span> addMenu(<span class="keyword">const</span> std::string menu[], uint32_t numStrings, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;};</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cstring&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;opengl/GLWin.hh&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;opengl/Shape.hh&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/df0/classCamera.html">Camera</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/dff/classStyle.html">Style</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../d5/d70/classCanvas.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/d70/classCanvas.html">Canvas</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="../../dc/dda/classGLWin.html">GLWin</a>* w;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  std::vector&lt;Shape*&gt; layers;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  uint32_t vpX, vpY, vpW, vpH;  <span class="comment">// viewport</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  uint32_t pX, pY;              <span class="comment">// projection</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  glm::mat4 projection;         <span class="comment">// the projection currently used</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  glm::mat4</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      originalProjection;  <span class="comment">// keep safe so you can reset to the original view</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a>* style;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="../../d1/df0/classCamera.html">Camera</a>* cam;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="../../d5/d70/classCanvas.html">Canvas</a>(<a class="code" href="../../dc/dda/classGLWin.html">GLWin</a>* w, <span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a>* style, uint32_t vpX, uint32_t vpY, uint32_t vpW,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;         uint32_t vpH, uint32_t pX, uint32_t pY)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      :  <span class="comment">// viewport, projection</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        w(w),</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        style(style),</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        vpX(vpX),</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        vpY(vpY),</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        vpW(vpW),</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        vpH(vpH),</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        pX(pX),</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        pY(pY) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    projection =</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        glm::ortho(0.0f, <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(pX), <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(pY), 0.0f);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    originalProjection = projection;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">//    projection = glm::scale(projection, glm::vec3(16, -16, 1));</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">//    projection = glm::translate(projection, glm::vec3(180, -90, 0));</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  ~<a class="code" href="../../d5/d70/classCanvas.html">Canvas</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="../../d5/d70/classCanvas.html">Canvas</a>(<span class="keyword">const</span> <a class="code" href="../../d5/d70/classCanvas.html">Canvas</a>&amp; orig) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="../../d5/d70/classCanvas.html">Canvas</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="../../d5/d70/classCanvas.html">Canvas</a>&amp; orig) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  uint32_t getWidth()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> vpW; }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  uint32_t getHeight()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> vpH; }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="../../dc/dda/classGLWin.html">GLWin</a>* getWin()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> w; };</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  glm::mat4* getProjection() { <span class="keywordflow">return</span> &amp;projection; }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> setProjection(<span class="keyword">const</span> glm::mat4&amp; proj) { projection = proj; }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">void</span> setOrthoProjection(<span class="keywordtype">float</span> xLeft, <span class="keywordtype">float</span> xRight, <span class="keywordtype">float</span> yBottom,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                          <span class="keywordtype">float</span> yTop) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    projection = glm::ortho(xLeft, xRight, yBottom, yTop);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="../../d1/df0/classCamera.html">Camera</a>* setLookAtProjection(<span class="keywordtype">float</span> eyeX, <span class="keywordtype">float</span> eyeY, <span class="keywordtype">float</span> eyeZ, <span class="keywordtype">float</span> lookAtX,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                              <span class="keywordtype">float</span> lookAtY, <span class="keywordtype">float</span> lookAtZ, <span class="keywordtype">float</span> upX,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                              <span class="keywordtype">float</span> upY, <span class="keywordtype">float</span> upZ);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span> resetProjection() { projection = originalProjection; }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">// Add layer pointer and return its index</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> S&gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  S* addLayer(S* shape) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    layers.push_back(shape);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> shape;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="../../de/d0a/classShape.html">Shape</a>* getLayer(uint32_t i) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (i &lt; layers.size()) <span class="keywordflow">return</span> layers[i];</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">void</span> init() {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; layers.size(); i++) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      layers[i]-&gt;init();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">void</span> process_input(Inputs* in, <span class="keywordtype">float</span> dt) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; layers.size(); i++) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      layers[i]-&gt;process_input(in, dt);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">void</span> update() {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; layers.size(); i++) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      layers[i]-&gt;update();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d2/dff/classStyle.html">Style</a>* getStyle()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> style; }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordtype">void</span> render();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">void</span> cleanup();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d89/classMultiText.html">MultiText</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="../../d7/d54/classMainCanvas.html">   99</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/d54/classMainCanvas.html">MainCanvas</a> : <span class="keyword">public</span> <a class="code" href="../../d5/d70/classCanvas.html">Canvas</a> {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a>* gui;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <a class="code" href="../../df/d89/classMultiText.html">MultiText</a>* guiText;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a>* menu;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <a class="code" href="../../df/d89/classMultiText.html">MultiText</a>* menuText;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <a class="code" href="../../d7/d54/classMainCanvas.html">MainCanvas</a>(<a class="code" href="../../dc/dda/classGLWin.html">GLWin</a>* parent);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  ~<a class="code" href="../../d7/d54/classMainCanvas.html">MainCanvas</a>();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <a class="code" href="../../d7/d54/classMainCanvas.html">MainCanvas</a>(<span class="keyword">const</span> <a class="code" href="../../d7/d54/classMainCanvas.html">MainCanvas</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <a class="code" href="../../d7/d54/classMainCanvas.html">MainCanvas</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="../../d7/d54/classMainCanvas.html">MainCanvas</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a>* getGui() { <span class="keywordflow">return</span> gui; }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <a class="code" href="../../df/d89/classMultiText.html">MultiText</a>* getGuiText() { <span class="keywordflow">return</span> guiText; }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="../../d4/d61/classStyledMultiShape2D.html">StyledMultiShape2D</a>* getMenu() { <span class="keywordflow">return</span> menu; }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="../../df/d89/classMultiText.html">MultiText</a>* getMenuText() { <span class="keywordflow">return</span> menuText; }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordtype">void</span> init();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordtype">void</span> render();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keywordtype">void</span> cleanup();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordtype">void</span> addButton(<span class="keyword">const</span> <span class="keywordtype">char</span> text[], <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> w, <span class="keywordtype">float</span> h);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordtype">void</span> addLabel(<span class="keyword">const</span> <span class="keywordtype">char</span> text[], <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> w, <span class="keywordtype">float</span> h);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordtype">void</span> addMenu(<span class="keyword">const</span> std::string menu[], uint32_t numStrings, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;};</div>
 <div class="ttc" id="aclassCamera_html"><div class="ttname"><a href="../../d1/df0/classCamera.html">Camera</a></div><div class="ttdef"><b>Definition:</b> Camera.hh:6</div></div>
-<div class="ttc" id="aclassCanvas_html"><div class="ttname"><a href="../../d5/d70/classCanvas.html">Canvas</a></div><div class="ttdef"><b>Definition:</b> Canvas.hh:10</div></div>
+<div class="ttc" id="aclassCanvas_html"><div class="ttname"><a href="../../d5/d70/classCanvas.html">Canvas</a></div><div class="ttdef"><b>Definition:</b> Canvas.hh:11</div></div>
 <div class="ttc" id="aclassGLWin_html"><div class="ttname"><a href="../../dc/dda/classGLWin.html">GLWin</a></div><div class="ttdef"><b>Definition:</b> GLWin.hh:20</div></div>
-<div class="ttc" id="aclassMainCanvas_html"><div class="ttname"><a href="../../d7/d54/classMainCanvas.html">MainCanvas</a></div><div class="ttdef"><b>Definition:</b> Canvas.hh:98</div></div>
+<div class="ttc" id="aclassMainCanvas_html"><div class="ttname"><a href="../../d7/d54/classMainCanvas.html">MainCanvas</a></div><div class="ttdef"><b>Definition:</b> Canvas.hh:99</div></div>
 <div class="ttc" id="aclassMultiText_html"><div class="ttname"><a href="../../df/d89/classMultiText.html">MultiText</a></div><div class="ttdef"><b>Definition:</b> MultiText.hh:7</div></div>
 <div class="ttc" id="aclassShape_html"><div class="ttname"><a href="../../de/d0a/classShape.html">Shape</a></div><div class="ttdef"><b>Definition:</b> Shape.hh:14</div></div>
 <div class="ttc" id="aclassStyle_html"><div class="ttname"><a href="../../d2/dff/classStyle.html">Style</a></div><div class="ttdef"><b>Definition:</b> Style.hh:8</div></div>
