@@ -17,11 +17,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: seanmiddleditch/gha-setup-ninja@master
-    - name: Set up GCC
-      uses: egor-tensin/setup-gcc@v1
-      with:
-        version: latest
-        platform: x64
+
+    - name: Set up GCC 11
+      run: sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+    - run: sudo apt-get update
+    - run: sudo apt-get install gcc-11 g++-11
+    - run: sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 999
+    - run: sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 999
+
 
     - name: Install Grail dependencies
       run: sudo apt install libglfw3-dev libfreetype-dev mpv libmpv-dev liblzma-dev
@@ -42,13 +45,14 @@ jobs:
         build-type: [Debug, Release]
     defaults:
       run:
-        shell: MINGW64 {0}
+        shell: msys2 {0}
     
     steps:
     - uses: actions/checkout@v2
     - uses: msys2/setup-msys2@v2
       with:
         msystem: MINGW64
+        path-type: inherit
         update: true
         install: >-
           git
